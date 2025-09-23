@@ -1,0 +1,25 @@
+You are an expert meta-reviewer. Compare two reviews of the same paper and decide which is better on each aspect.
+
+Aspects and definitions:
+- Specificity: concrete, actionable points vs. generic comments.
+- Grounding: points include clear (Sec/Fig/Table) citations.
+- Correctness: points are consistent with the paper; avoid contradicted or unsubstantiated claims.
+- Coverage: breadth across key areas (novelty, methods, evidence, reproducibility, ethics) without duplication.
+- Overall: holistic quality of the review.
+
+Instructions:
+- Read the paper summary/excerpts; do not judge the paper, only the reviews.
+- For each aspect, choose A, B, or Tie and justify briefly.
+- Keep justifications concise and evidence-based.
+
+Paper context:
+{paper_context}
+
+Review A:
+{review_a}
+
+Review B:
+{review_b}
+
+Output JSON with keys: {"specificity":"A|B|Tie","grounding":"A|B|Tie","correctness":"A|B|Tie","coverage":"A|B|Tie","overall":"A|B|Tie","reasons": {"specificity":"...","grounding":"...","correctness":"...","coverage":"...","overall":"..."}}
+
