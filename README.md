@@ -1,64 +1,165 @@
+# Reviewer Agent MVP
 
-# Reviewer Agent — MVP Scaffold
+A modular, facet-routed peer review agent that produces structured reviews with dynamic expert routing, citation-based related work analysis, and rebuttal simulation.
 
-This is a minimal, modular scaffold for a **facet-routed reviewer agent with rebuttal simulation**.
+## Features
 
-## What you can do right now
-- Run a toy pipeline on a dummy "paper" (JSON) and get a structured review.
-- Swap in your own LLM backend by implementing `llm/base.py::LLMClient.generate`.
-- Extend facets, reviewers, and rubrics without changing the core loop.
+- **Dynamic Facet Routing**: Automatically selects relevant expertise facets based on paper content
+- **Multi-Agent Reviewers**: Specialized reviewers for methods, novelty, claims/evidence, reproducibility, ethics, figures, clarity, and societal impact
+- **Related Work Analysis**: Fetches and compares against top-cited papers via Crossref API
+- **Rebuttal Simulation**: Author rebuttal → verification → review revision loop
+- **Evaluation Tools**: LLM-as-judge comparison and sentence-level semantic similarity metrics
+- **Ablation Support**: Enable/disable components for systematic evaluation
 
-## Project layout
+## Architecture
+
+```
+Paper PDF/JSON → Parse → Tag Facets → Route → Specialized Reviewers → Merge → Rebuttal Loop → Structured Review
+```
+
+### Core Components
+
+- **Facet Tagger**: Labels paper sections with expertise facets (methods, novelty, etc.)
+- **Dynamic Router**: Selects relevant reviewers based on facet coverage
+- **Specialized Reviewers**: 8 facet-specific agents with NeurIPS 2025-aligned prompts
+- **Related Work Reviewer**: Compares against top-cited papers from Crossref
+- **Leader Agent**: Merges, deduplicates, and enforces grounding
+- **Rebuttal Loop**: Author → Verifier → Review revision
+
+## Installation
+
+```bash
+pip install pydantic rapidfuzz PyPDF2 requests sentence-transformers streamlit
+```
+
+## Usage
+
+### Basic Review Generation
+
+```bash
+# From PDF
+python cli.py --pdf /path/to/paper.pdf --model gpt-4o-mini
+
+# From JSON
+python cli.py --paper data/dummy_paper.json --model dummy
+```
+
+### Ablation Studies
+
+```bash
+# Dynamic routing (default)
+python cli.py --pdf paper.pdf --routing dynamic
+
+# All reviewers
+python cli.py --pdf paper.pdf --routing all
+
+# Skip components
+python cli.py --pdf paper.pdf --skip_related --skip_rebuttal --skip_grounding
+```
+
+### Streamlit Web Interface
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Upload a PDF to get a structured review with heuristic scores (specificity, coherence, correctness).
+
+### Evaluation
+
+```bash
+# LLM-as-judge comparison
+python reviewer_agent/eval/run_eval.py \
+  --paper_context paper_ctx.txt \
+  --review_a review_a.json \
+  --review_b review_b.json \
+  --model gpt-4o-mini
+
+# Sentence-level similarity
+python reviewer_agent/eval/run_eval.py \
+  --sim_pred predicted_review.json \
+  --sim_ref reference_review.json \
+  --embed_model all-MiniLM-L6-v2
+```
+
+## Project Structure
+
 ```
 reviewer_agent/
-  __init__.py
-  config.py
-  schemas.py
-  llm/
-    __init__.py
-    base.py
-  parsing/
-    __init__.py
-    pdf_to_json.py          # stub — replace with GROBID/PyMuPDF
-  routing/
-    __init__.py
-    facet_tagger.py
-  agents/
-    __init__.py
-    base.py
-    reviewer_methods.py
-    reviewer_novelty.py
-    leader.py
-    author.py
-    verifier.py
-  prompts/
-    reviewer_methods.txt
-    reviewer_novelty.txt
-    leader_merge.txt
-    author_rebuttal.txt
-    verifier_check.txt
-  eval/
-    __init__.py
-    datasets.py             # stubs for PeerRead/NLPeer/ReviewCritique
-    metrics.py              # simple coverage/genericity heuristics
-    run_eval.py
-cli.py                      # end-to-end toy run
-data/
-  dummy_paper.json
+├── agents/                    # Reviewer agents
+│   ├── reviewer_methods.py    # Methods & reproducibility
+│   ├── reviewer_novelty.py    # Novelty & positioning  
+│   ├── reviewer_claims.py     # Claims vs evidence
+│   ├── reviewer_ethics.py     # Ethics & licensing
+│   ├── reviewer_figures.py    # Figures & tables
+│   ├── reviewer_clarity.py    # Clarity & presentation
+│   ├── reviewer_impact.py     # Societal impact
+│   ├── reviewer_related.py    # Related work comparison
+│   ├── leader.py              # Merge & grounding
+│   ├── author.py              # Rebuttal generation
+│   ├── verifier.py            # Rebuttal verification
+│   └── router.py              # Dynamic routing
+├── routing/
+│   └── facet_tagger.py        # Section → facet mapping
+├── services/
+│   └── citations.py           # Crossref integration
+├── parsing/
+│   └── pdf_to_json.py         # PDF extraction
+├── prompts/                   # NeurIPS 2025-aligned prompts
+├── eval/                      # Evaluation tools
+│   ├── judge.py               # LLM-as-judge
+│   ├── similarity.py          # Semantic similarity
+│   └── run_eval.py            # Evaluation CLI
+├── schemas.py                 # Data models
+└── config.py                  # Configuration
 ```
 
-## Quickstart
-1. **Install**: `pip install pydantic==2.* rapidfuzz`
-2. **Implement your LLM** in `reviewer_agent/llm/base.py` (OpenAI/Anthropic/etc).
-3. **Run**:
-```bash
-python cli.py --paper data/dummy_paper.json --venue ICLR
-```
+## Facet Taxonomy
 
-The output review (JSON + Markdown) will be saved under `runs/<timestamp>/`.
+The system uses 8 reusable expertise facets:
 
-## Swapping in a real parser
-Replace `parsing/pdf_to_json.py` with GROBID+pdffigures2 or PyMuPDF. Make sure to fill the `Paper` schema with:
-- `sections`: list of `{name, text}`
-- `figures`: `{id, caption, mentions:[...]}`
-- `tables`: same as figures
+- **methods**: Statistical soundness, experimental design, reproducibility
+- **novelty**: Originality, positioning, comparative evidence  
+- **claims_vs_evidence**: Claim support, evidence quality
+- **reproducibility**: Code/data availability, seeds, variance
+- **ethics_licensing**: Dataset licensing, consent, privacy
+- **figures_tables**: Visual quality, caption accuracy
+- **clarity_presentation**: Organization, writing clarity
+- **societal_impact**: Risks, misuse, broader impacts
+
+## Cost Estimation (GPT-4o mini)
+
+- **Input**: ~27,000 tokens per review
+- **Output**: ~4,400 tokens per review  
+- **Cost**: ~$0.007 (0.7 cents) per review
+
+## Output Format
+
+Reviews include:
+- **Summary**: Neutral paper summary
+- **Strengths/Weaknesses/Suggestions**: Grounded bullet points
+- **Questions**: 3-5 actionable questions with score criteria
+- **Limitations**: Coverage of limitations and societal impact
+- **Ethics Flag**: Whether ethics review needed
+- **Ratings**: Quality, clarity, significance, originality (1-4), overall (1-6), confidence (1-5)
+
+## Extending the System
+
+1. **Add Facets**: Update `config.py` facets and create new reviewer agents
+2. **Custom Prompts**: Modify `prompts/*.txt` files for different venues
+3. **LLM Backend**: Implement `llm/base.py::LLMClient.generate()`
+4. **PDF Parser**: Replace `parsing/pdf_to_json.py` with GROBID or similar
+5. **Evaluation**: Add metrics to `eval/metrics.py` and datasets to `eval/datasets.py`
+
+## Research Applications
+
+This MVP supports the research agenda outlined in the original specification:
+- **Dynamic Expert Routing**: Principled facet taxonomy vs ad-hoc experts
+- **Section-Level Routing**: Avoids paragraph-level fragmentation  
+- **Adversarial Rebuttal**: Author must cite evidence, verifier checks citations
+- **Multi-Lens Evaluation**: Coverage, specificity, decision calibration
+- **Robust Parsing**: GROBID integration for structure preservation
+
+## License
+
+MIT License - see LICENSE file for details.
