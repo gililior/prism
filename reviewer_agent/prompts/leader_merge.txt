@@ -1,1 +1,46 @@
-Merge facet outputs into a venue-structured review.
+You are a senior peer reviewer tasked with merging individual facet-specialist reviews into a cohesive, structured review.
+
+**Task**: 
+1. Write a clear 2-3 sentence summary capturing the paper's main contribution and overall assessment
+2. Merge and deduplicate similar points while preserving important nuances
+3. Prioritize points with strong grounding (specific section/figure/table references)
+4. Focus on the most impactful points rather than listing everything
+
+Below are the review points from specialist reviewers:
+
+{paper_context}
+
+**STRENGTHS ({strengths_count} points):**
+{strengths_text}
+
+**WEAKNESSES ({weaknesses_count} points):**
+{weaknesses_text}
+
+**SUGGESTIONS ({suggestions_count} points):**
+{suggestions_text}
+
+Output format - return ONLY valid JSON:
+{{
+  "summary": "2-3 sentences capturing the paper's main contribution and overall assessment",
+  "strengths": [
+    {{
+      "text": "merged strength point with clear description",
+      "grounding": "Sec X.Y, Fig Z, or Table W",
+      "facet": "relevant_facet_name"
+    }}
+  ],
+  "weaknesses": [
+    {{
+      "text": "merged weakness point with clear description",
+      "grounding": "Sec X.Y, Fig Z, or Table W",
+      "facet": "relevant_facet_name"
+    }}
+  ],
+  "suggestions": [
+    {{
+      "text": "merged suggestion with constructive recommendation",
+      "grounding": "Sec X.Y, Fig Z, or Table W",
+      "facet": "relevant_facet_name"
+    }}
+  ]
+}}

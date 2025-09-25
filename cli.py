@@ -153,16 +153,20 @@ def main():
             rw_points = rw_agent.review(paper, rw_text, related=top_related)
             all_points.extend(rw_points)
 
-    # Merge and ground
-    review = merge_points(all_points, Rubric())
+    # Merge and ground with LLM enhancement
+    review = merge_points(all_points, Rubric(), llm=llm, paper=paper)
     if not args.skip_grounding:
         review = enforce_grounding(review)
 
-    # Rebuttal loop (toy)
+    # Enhanced rebuttal loop with LLM
     if not args.skip_rebuttal:
-        rebuttals = rebut(review.weaknesses + review.suggestions)
-        ver = verify(rebuttals)
+        print("Running rebuttal loop...")
+        rebuttals = rebut(review.weaknesses + review.suggestions, paper=paper, llm=llm)
+        print(f"Generated {len(rebuttals)} rebuttals")
+        ver = verify(rebuttals, llm=llm)
+        print(f"Verified rebuttals: {len([v for v in ver if v[0] == 'OK'])} OK, {len([v for v in ver if v[0] == 'WEAK'])} WEAK, {len([v for v in ver if v[0] == 'UNVERIFIED'])} UNVERIFIED")
         review = revise_review(review, rebuttals, ver)
+        print("Review revised based on rebuttals")
     else:
         rebuttals = []
         ver = []
