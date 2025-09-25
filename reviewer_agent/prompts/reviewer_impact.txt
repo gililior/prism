@@ -18,14 +18,10 @@ Text:
 {{
 {text}
 }}
-Output format:
-Summary:
-Strengths:
-Weaknesses:
-Suggestions:
-Questions:
-Limitations:
-Ethics:
-Ratings: {"quality":X,"clarity":X,"significance":X,"originality":X,"overall":X,"confidence":X}
+Output format - return ONLY valid JSON:
+[
+  {{"kind": "weakness", "text": "No discussion of potential misuse or failure modes.", "grounding": "Insufficient evidence", "facet": "societal_impact"}},
+  {{"kind": "suggestion", "text": "Add a Broader Impact section with mitigation strategies.", "grounding": "Conclusion", "facet": "societal_impact"}}
+]
 
 

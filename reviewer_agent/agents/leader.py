@@ -19,8 +19,7 @@ def merge_points(points: List[Point], rubric: Rubric) -> Review:
         elif p.kind == "suggestion":
             suggestions.append(p)
     summary = "This review aggregates facet-specialist feedback. Strengths include clear methods and positioning; weaknesses center on statistical rigor and comparative evidence."
-    scores = {"originality": 7, "soundness": 6, "clarity": 7, "impact": 6}
-    return Review(summary=summary, strengths=strengths, weaknesses=weaknesses, suggestions=suggestions, scores=scores, overall=6, confidence=3)
+    return Review(summary=summary, strengths=strengths, weaknesses=weaknesses, suggestions=suggestions, scores=None)
 
 def enforce_grounding(review: Review) -> Review:
     def grounded(pt: Point) -> bool:

@@ -18,14 +18,10 @@ Text:
 {{
 {text}
 }}
-Output format:
-Summary:
-Strengths:
-Weaknesses:
-Suggestions:
-Questions:
-Limitations:
-Ethics:
-Ratings: {"quality":X,"clarity":X,"significance":X,"originality":X,"overall":X,"confidence":X}
+Output format - return ONLY valid JSON:
+[
+  {{"kind": "weakness", "text": "Dataset license and usage restrictions not stated.", "grounding": "Insufficient evidence", "facet": "ethics_licensing"}},
+  {{"kind": "suggestion", "text": "Add explicit license and consent statements for datasets used.", "grounding": "Appendix D", "facet": "ethics_licensing"}}
+]
 
 

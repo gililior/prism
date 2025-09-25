@@ -18,14 +18,11 @@ Text:
 {{
 {text}
 }}
-Output format:
-Summary:
-Strengths:
-Weaknesses:
-Suggestions:
-Questions:
-Limitations:
-Ethics:
-Ratings: {"quality":X,"clarity":X,"significance":X,"originality":X,"overall":X,"confidence":X}
+Output format - return ONLY valid JSON:
+[
+  {{"kind": "strength", "text": "Main claim is supported by quantitative gains on two datasets.", "grounding": "Sec 4.2", "facet": "claims_vs_evidence"}},
+  {{"kind": "weakness", "text": "Ablation lacks evidence tying improvement to the proposed module.", "grounding": "Sec 3.4", "facet": "claims_vs_evidence"}},
+  {{"kind": "suggestion", "text": "Add a negative-control experiment to test claim specificity.", "grounding": "Appendix C", "facet": "claims_vs_evidence"}}
+]
 
 

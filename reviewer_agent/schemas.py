@@ -45,6 +45,6 @@ class Review(BaseModel):
     strengths: List[Point] = []
     weaknesses: List[Point] = []
     suggestions: List[Point] = []
-    scores: Dict[str, int] = {}
+    scores: Dict[str, int] = None
     overall: Optional[int] = None
     confidence: Optional[int] = None

@@ -21,3 +21,4 @@ class Config:
     })
     grounding_required: bool = True
     max_points_per_facet: int = 4
+    max_text_length: int = 6000  # Maximum text length to send to LLM

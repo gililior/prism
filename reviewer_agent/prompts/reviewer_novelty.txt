@@ -20,12 +20,9 @@ Text:
 {{
 {text}
 }}
-Output format:
-Summary:
-Strengths:
-Weaknesses:
-Suggestions:
-Questions:
-Limitations:
-Ethics:
-Ratings: {"quality":X,"clarity":X,"significance":X,"originality":X,"overall":X,"confidence":X}
+Output format - return ONLY valid JSON:
+[
+  {{"kind": "strength", "text": "Positions the work relative to prior art with clear gaps.", "grounding": "Intro §1.2", "facet": "novelty"}},
+  {{"kind": "weakness", "text": "Need stronger evidence distinguishing from closest baseline.", "grounding": "Related Work", "facet": "novelty"}},
+  {{"kind": "suggestion", "text": "Add a head-to-head comparison with contemporaneous method X.", "grounding": "Sec 4.1", "facet": "novelty"}}
+]

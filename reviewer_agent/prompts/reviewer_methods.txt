@@ -10,7 +10,7 @@ Deliverables (use all sections):
 - Summary: 2–3 sentences, neutral.
 - Strengths: bullets, grounded.
 - Weaknesses: bullets, grounded.
-- Suggestions: actionable edits with {what, where, how to verify}.
+- Suggestions: concrete comparative experiments/analyses.
 - Questions (3–5): include what answer would raise/lower your score.
 - Limitations: yes/no and brief comments if missing or weak.
 - Ethics flag: yes/no with one-line reason if yes.
@@ -20,12 +20,9 @@ Text:
 {{
 {text}
 }}
-Output format:
-Summary:
-Strengths:
-Weaknesses:
-Suggestions:
-Questions:
-Limitations:
-Ethics:
-Ratings: {"quality":X,"clarity":X,"significance":X,"originality":X,"overall":X,"confidence":X}
+Output format - return ONLY valid JSON:
+[
+  {{"kind": "strength", "text": "Clear training setup with reproducible hyperparameters.", "grounding": "Appendix A", "facet": "methods"}},
+  {{"kind": "weakness", "text": "Statistical power unclear for ablation study.", "grounding": "Sec 3.2", "facet": "methods"}},
+  {{"kind": "suggestion", "text": "Report confidence intervals for all metrics.", "grounding": "Table 2", "facet": "methods"}}
+]

@@ -10,7 +10,7 @@ from reviewer_agent.llm.base import LLMClient
 from reviewer_agent.schemas import Point, Review, Rubric
 from reviewer_agent.parsing.pdf_to_json import parse_pdf_file_to_paper
 from reviewer_agent.routing.facet_tagger import tag_facets
-from reviewer_agent.agents.router import DynamicRouter
+from reviewer_agent.agents.router import SectionBasedRouter
 from reviewer_agent.agents.reviewer_methods import ReviewerMethods
 from reviewer_agent.agents.reviewer_novelty import ReviewerNovelty
 from reviewer_agent.agents.reviewer_claims import ReviewerClaimsEvidence
@@ -111,7 +111,7 @@ def run_pipeline(pdf_bytes: bytes, model_name: str = "dummy") -> Tuple[Review, d
     with st.spinner("Fetching related works..."):
         related = fetch_top_related(paper, top_k=3)
 
-    router = DynamicRouter()
+    router = SectionBasedRouter(cfg)
     routed = router.route(paper)
 
     all_points: List[Point] = []
@@ -125,13 +125,13 @@ def run_pipeline(pdf_bytes: bytes, model_name: str = "dummy") -> Tuple[Review, d
         spans_text = route_info.get("text", "")
         if not spans_text.strip():
             continue
-        agent = agent_cls(llm)
+        agent = agent_cls(llm, cfg)
         pts = agent.review(paper, spans_text)
         all_points.extend(pts)
 
     # Related Work reviewer (global)
     if related:
-        rw_agent = ReviewerRelatedWork(llm)
+        rw_agent = ReviewerRelatedWork(llm, cfg)
         intro_related_texts = []
         for sec in paper.sections:
             nm = (sec.name or "").lower()

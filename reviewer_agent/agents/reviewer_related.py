@@ -1,22 +1,17 @@
+import json
 from typing import List, Dict
-from ..schemas import Paper, Point
+from pathlib import Path
 from .base import Agent
 from ..llm.base import LLMClient
-
-PROMPT = (
-    "You are the Related Work reviewer for NeurIPS 2025. Compare the current paper with the cited top papers.\n"
-    "Focus on (a) novelty and (b) methods: explicitly state what this paper adds over prior work,\n"
-    "where it differs in assumptions/architecture/training/evaluation, and which baselines are appropriate.\n"
-    "Ground each point with (Intro/Related/Sec X) or citation key if possible.\n\n"
-    "Current paper context:\n{paper_context}\n\nTop related papers (title + abstract/URL):\n{related_snippets}\n"
-)
+from ..schemas import Paper, Point
 
 
 class ReviewerRelatedWork(Agent):
-    name = "ReviewerRelatedWork"
+    name = "reviewer_related"
 
-    def __init__(self, llm: LLMClient):
-        self.llm = llm
+    def __init__(self, llm: LLMClient, config=None):
+        super().__init__(config, llm)
+        self.facet = "related_work"
 
     def _format_related(self, related: List[Dict[str, str]]) -> str:
         lines = []
@@ -26,17 +21,30 @@ class ReviewerRelatedWork(Agent):
             if absn:
                 lines.append(absn)
         return "\n".join(lines)
-
     def review(self, paper: Paper, spans_text: str, related: List[Dict[str, str]] = None) -> List[Point]:
+        # Load the prompt for this reviewer type
+        prompt_file = Path(__file__).parents[1] / "prompts" / "reviewer_related.txt"
         related = related or []
         paper_ctx = (paper.title + "\n" + (paper.sections[0].text[:1200] if paper.sections else ""))
-        prompt = PROMPT.format(paper_context=paper_ctx, related_snippets=self._format_related(related))
-        _ = self.llm.generate(prompt)
-        pts = [
-            Point(kind="weakness", text="Missing head-to-head comparison with a top cited baseline.", grounding="Related Work", facet="novelty"),
-            Point(kind="suggestion", text="Add ablation isolating the delta vs. cited method [1] (what the new module adds).", grounding="Sec 4.1", facet="methods"),
-            Point(kind="strength", text="Clearly distinguishes contributions and method differences from closely related approach [2].", grounding="Intro §1.2", facet="novelty"),
-        ]
-        return pts
+        prompt_template = prompt_file.read_text(encoding="utf-8")
+        prompt = prompt_template.format(
+            paper_context=paper_ctx,
+            related_snippets=self._format_related(related),
+            text=spans_text[:self.config.max_text_length]
+        )
+        response = self.llm.generate(prompt)
+        points_data = json.loads(response)
 
+        points = []
+        for point_data in points_data:
+            if isinstance(point_data, dict) and all(key in point_data for key in ['kind', 'text']):
+                point = Point(
+                    kind=point_data['kind'],
+                    text=point_data['text'],
+                    grounding=point_data.get('grounding'),
+                    facet=point_data.get('facet')
+                )
+                points.append(point)
+
+        return points
 

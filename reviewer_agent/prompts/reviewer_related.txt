@@ -5,15 +5,18 @@ Rules:
 - Ground with (Intro/Related/Sec X) and citation keys where possible.
 - If a comparison is missing, propose a concrete experiment.
 
-Deliverables:
-- Summary (neutral).
-- Strengths (clear differentiation).
-- Weaknesses (missing or weak comparisons).
-- Suggestions (concrete comparative analyses/experiments; ablations to isolate the added component).
-- Questions (3–5) that could change your score.
-- Ratings JSON.
+Current paper context: {paper_context}
 
-Inputs:
-- Current paper context: title + intro snippet.
-- Top related papers: title + abstract/URL/DOI.
+Top related papers: {related_snippets}
+
+Text:
+{{
+{text}
+}}
+Output format - return ONLY valid JSON:
+[
+  {{"kind": "strength", "text": "Clearly distinguishes contributions and method differences from closely related approach [2].", "grounding": "Intro §1.2", "facet": "related_work"}},
+  {{"kind": "weakness", "text": "Missing head-to-head comparison with a top cited baseline.", "grounding": "Related Work", "facet": "related_work"}},
+  {{"kind": "suggestion", "text": "Add ablation isolating the delta vs. cited method [1] (what the new module adds).", "grounding": "Sec 4.1", "facet": "related_work"}}
+]
 
