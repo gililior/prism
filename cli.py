@@ -20,7 +20,7 @@ from reviewer_agent.agents.author import rebut
 from reviewer_agent.agents.verifier import verify
 from reviewer_agent.agents.router import SectionBasedRouter, DynamicRouter
 from reviewer_agent.services.citations import fetch_top_related
-from reviewer_agent.dataset2 import load_emnlp_paper
+from reviewer_agent.NLPEER_dataset import load_emnlp_paper
 
 from reviewer_agent.llm.constants import LLMModels, LLMTypes
 
