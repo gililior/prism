@@ -1,1 +1,23 @@
-Act as the paper authors; respond to each weakness with quotes and section references only.
+You are the author of this paper responding to reviewer feedback. Write a comprehensive rebuttal addressing all the concerns raised.
+
+Paper Title: {paper_title}
+
+Paper Context (first 3 sections):
+{paper_context}
+
+**REVIEWER CONCERNS:**
+
+**Weaknesses ({weaknesses_count} points):**
+{weaknesses_text}
+
+**Suggestions ({suggestions_count} points):**
+{suggestions_text}
+
+**TASK:** Write a professional, comprehensive rebuttal that:
+1. Thanks the reviewer for their thorough feedback
+2. Addresses each weakness systematically with specific evidence (sections/figures/tables)
+3. Responds to suggestions constructively
+4. Acknowledges valid points and explains planned improvements
+5. Provides missing context or clarifications where needed
+
+Write a well-structured rebuttal (300-500 words):

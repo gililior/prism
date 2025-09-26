@@ -15,9 +15,8 @@ from reviewer_agent.agents.reviewer_figures import ReviewerFiguresTables
 from reviewer_agent.agents.reviewer_clarity import ReviewerClarity
 from reviewer_agent.agents.reviewer_impact import ReviewerSocietalImpact
 from reviewer_agent.agents.reviewer_related import ReviewerRelatedWork
-from reviewer_agent.agents.leader import merge_points, enforce_grounding, revise_review
+from reviewer_agent.agents.leader import merge_points, enforce_grounding, update_review_with_rebuttals
 from reviewer_agent.agents.author import rebut
-from reviewer_agent.agents.verifier import verify
 from reviewer_agent.agents.router import SectionBasedRouter, DynamicRouter
 from reviewer_agent.services.citations import fetch_top_related
 from reviewer_agent.NLPEER_dataset import load_emnlp_paper
@@ -67,7 +66,6 @@ def run_reviewers_parallel(routed, paper, cfg, model_name, model_type, max_worke
         route_info_with_paper = route_info.copy()
         route_info_with_paper["paper"] = paper
         tasks.append((facet, route_info_with_paper, cfg, model_name, model_type))
-    
     if not tasks:
         return []
     
@@ -158,57 +156,44 @@ def main():
     if not args.skip_grounding:
         review = enforce_grounding(review)
 
-    # Enhanced rebuttal loop with LLM
+    # Save original review before rebuttal
+    original_review = review
+    
+    # Generate author rebuttal and update review
     if not args.skip_rebuttal:
-        print("Running rebuttal loop...")
-        rebuttals = rebut(review.weaknesses + review.suggestions, paper=paper, llm=llm)
-        print(f"Generated {len(rebuttals)} rebuttals")
-        ver = verify(rebuttals, llm=llm)
-        print(f"Verified rebuttals: {len([v for v in ver if v[0] == 'OK'])} OK, {len([v for v in ver if v[0] == 'WEAK'])} WEAK, {len([v for v in ver if v[0] == 'UNVERIFIED'])} UNVERIFIED")
-        review = revise_review(review, rebuttals, ver)
-        print("Review revised based on rebuttals")
+        print("Generating author rebuttal...")
+        rebuttal = rebut(review.weaknesses + review.suggestions, paper=paper, llm=llm)
+        print("Generated comprehensive rebuttal")
+        
+        print("Updating review based on rebuttal...")
+        updated_review = update_review_with_rebuttals(review, [rebuttal], llm=llm, paper=paper)
+        print("Review updated")
     else:
-        rebuttals = []
-        ver = []
+        rebuttal = None
+        updated_review = None
 
     # Save outputs
     ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     outdir = pathlib.Path("runs") / ts
     outdir.mkdir(parents=True, exist_ok=True)
 
-    with open(outdir / "review.json", "w", encoding="utf-8") as f:
-        f.write(review.model_dump_json(indent=2))
-    with open(outdir / "review.md", "w", encoding="utf-8") as f:
-        f.write(render_md(review))
+    # Save original review (before rebuttal)
+    with open(outdir / "review_original.json", "w", encoding="utf-8") as f:
+        f.write(original_review.model_dump_json(indent=2))
 
-    with open(outdir / "rebuttals.txt", "w", encoding="utf-8") as f:
-        for status, r in ver:
-            f.write(f"[{status}] {r}\n")
+    # Save updated review (after rebuttal)
+    if updated_review is not None:
+        with open(outdir / "review_updated.json", "w", encoding="utf-8") as f:
+            f.write(updated_review.model_dump_json(indent=2))
+
+    # Save rebuttal
+    if rebuttal is not None:
+        with open(outdir / "rebuttal.txt", "w", encoding="utf-8") as f:
+            f.write(rebuttal)
 
     print(f"Saved to {outdir}/")
+    print(f"Files: review_original.json, review_updated.json" + (", rebuttal.txt" if rebuttal else ""))
 
-def render_md(review):
-    def bullets(points):
-        return "\n".join([f"- {p.text} ({p.grounding})" for p in points])
-    md = f"""# Structured Review
-
-**Summary**  
-{review.summary}
-
-**Strengths**  
-{bullets(review.strengths)}
-
-**Weaknesses**  
-{bullets(review.weaknesses)}
-
-**Suggestions**  
-{bullets(review.suggestions)}
-
-**Scores**  
-{review.scores}  
-**Overall:** {review.overall} &nbsp;&nbsp; **Confidence:** {review.confidence}
-"""
-    return md
 
 if __name__ == "__main__":
     main()

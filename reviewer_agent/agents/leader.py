@@ -86,6 +86,56 @@ def enforce_grounding(review: Review) -> Review:
     review.suggestions = [p for p in review.suggestions if grounded(p)]
     return review
 
+def update_review_with_rebuttals(review: Review, rebuttals: List[str], llm: LLMClient, paper: Paper = None) -> Review:
+    """Update the review based on author rebuttals using LLM."""
+    
+    # Read the prompt template
+    with open("reviewer_agent/prompts/leader_update_with_rebuttals.txt", "r", encoding="utf-8") as f:
+        prompt_template = f.read()
+    
+    # Prepare current review content
+    current_summary = review.summary
+    current_strengths = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in review.strengths])
+    current_weaknesses = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in review.weaknesses])
+    current_suggestions = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in review.suggestions])
+    
+    # Prepare rebuttals text
+    rebuttals_text = "\n\n".join([f"Rebuttal {i+1}: {r}" for i, r in enumerate(rebuttals)])
+    
+    # Paper context
+    paper_context = ""
+    if paper:
+        paper_context = f"Paper Title: {paper.title}"
+    
+    # Use the template with format substitution
+    full_prompt = prompt_template.format(
+        paper_context=paper_context,
+        current_summary=current_summary,
+        current_strengths=current_strengths,
+        current_weaknesses=current_weaknesses,
+        current_suggestions=current_suggestions,
+        rebuttals_text=rebuttals_text
+    )
+    
+    # Generate response
+    response = llm.generate(full_prompt, max_tokens=3000, temperature=0.1)
+    
+    # Parse JSON response
+    parsed = json.loads(response)
+    
+    # Convert back to Point objects
+    updated_strengths = [Point(kind="strength", **p) for p in parsed["strengths"]]
+    updated_weaknesses = [Point(kind="weakness", **p) for p in parsed["weaknesses"]]
+    updated_suggestions = [Point(kind="suggestion", **p) for p in parsed["suggestions"]]
+    
+    return Review(
+        summary=parsed["summary"],
+        strengths=updated_strengths,
+        weaknesses=updated_weaknesses,
+        suggestions=updated_suggestions,
+        scores=review.scores
+    )
+
 def revise_review(review: Review, rebuttals: List[str], verifications: List[tuple]) -> Review:
     """Revise the review based on author rebuttals and verifier outcomes.
 
