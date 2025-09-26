@@ -1,4 +1,4 @@
-from .base import LLMClient
+from reviewer_agent.base import LLMClient
 from .constants import LLMTypes, LLMModels
 from .config import load_api_key
 

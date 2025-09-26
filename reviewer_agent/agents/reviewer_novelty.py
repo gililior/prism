@@ -1,6 +1,6 @@
 
-from .base import Agent
-from ..llm.base import LLMClient
+from reviewer_agent.agents.base import Agent
+from reviewer_agent.llm.base import LLMClient
 
 class ReviewerNovelty(Agent):
     name = "reviewer_novelty"

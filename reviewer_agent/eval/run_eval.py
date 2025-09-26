@@ -1,8 +1,8 @@
 
 import argparse, json
 from pathlib import Path
-from .judge import judge_compare
-from .similarity import sentence_level_similarity
+from reviewer_agent.eval.judge import judge_compare
+from reviewer_agent.eval.similarity import sentence_level_similarity
 
 
 def main():

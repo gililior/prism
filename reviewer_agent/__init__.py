@@ -1,1 +1,1 @@
-from .config import Config
+from reviewer_agent.config import Config

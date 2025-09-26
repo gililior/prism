@@ -2,7 +2,7 @@ import json
 from typing import Dict
 from pathlib import Path
 
-from ..llm.base import LLMClient
+from reviewer_agent.llm.base import LLMClient
 
 PROMPT = (Path(__file__).parents[1] / "prompts" / "judge_compare.txt").read_text(encoding="utf-8")
 
