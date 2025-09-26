@@ -2,8 +2,9 @@ import json
 from typing import List, Dict
 from pathlib import Path
 from .base import Agent
-from ..llm.base import LLMClient
-from ..schemas import Paper, Point
+from reviewer_agent.llm.base import LLMClient
+from reviewer_agent.schemas import Paper, Point
+from reviewer_agent.llm.constants import TaskLLMConfigs
 
 
 class ReviewerRelatedWork(Agent):
@@ -32,7 +33,8 @@ class ReviewerRelatedWork(Agent):
             related_snippets=self._format_related(related),
             text=spans_text[:self.config.max_text_length]
         )
-        response = self.llm.generate(prompt)
+        config = TaskLLMConfigs.REVIEWER_RELATED
+        response = self.llm.generate(prompt, temperature=config.temperature, max_tokens=config.max_tokens)
         points_data = json.loads(response)
 
         points = []

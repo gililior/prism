@@ -1,13 +1,15 @@
-
 from typing import List, Tuple
-from ..llm.base import LLMClient
+
+from reviewer_agent.llm.base import LLMClient
+from reviewer_agent.llm.constants import TaskLLMConfigs
+
 
 def verify(rebuttals: List[str], llm: LLMClient = None) -> List[Tuple[str, str]]:
     """Verify author rebuttals using LLM or fallback to toy implementation."""
     if llm is None:
         # Fallback to toy implementation
         return _toy_verify(rebuttals)
-    
+
     verified = []
     for rebuttal in rebuttals:
         try:
@@ -21,8 +23,10 @@ Rebuttal: {rebuttal}
 
 Classification (just the category):"""
 
-            response = llm.generate(prompt, max_tokens=50).strip().upper()
-            
+            config = TaskLLMConfigs.VERIFIER_CHECK
+            response = llm.generate(prompt, temperature=config.temperature,
+                                    max_tokens=config.max_tokens).strip().upper()
+
             # Normalize response
             if "OK" in response:
                 status = "OK"
@@ -30,15 +34,16 @@ Classification (just the category):"""
                 status = "WEAK"
             else:
                 status = "UNVERIFIED"
-                
+
             verified.append((status, rebuttal))
-            
+
         except Exception as e:
             print(f"Error verifying rebuttal: {e}")
             # Fallback to toy verification
             verified.append(_toy_verify([rebuttal])[0])
-    
+
     return verified
+
 
 def _toy_verify(rebuttals: List[str]) -> List[Tuple[str, str]]:
     """Toy verifier ensures the rebuttal includes some 'see Sec'/'Table' hooks."""

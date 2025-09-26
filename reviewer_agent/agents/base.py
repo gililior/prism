@@ -1,9 +1,11 @@
-
 import json
-from typing import List
 from pathlib import Path
-from ..schemas import Paper, Point
-from ..config import Config
+from typing import List
+
+from reviewer_agent.config import Config
+from reviewer_agent.llm.constants import TaskLLMConfigs
+from reviewer_agent.schemas import Paper, Point
+
 
 class Agent:
     name: str = "Agent"
@@ -17,8 +19,9 @@ class Agent:
         prompt_file = Path(__file__).parents[1] / "prompts" / f"{self.name.lower()}.txt"
         prompt_template = prompt_file.read_text(encoding="utf-8")
         prompt = prompt_template.format(text=spans_text[:self.config.max_text_length])
-        response = self.llm.generate(prompt)
-        points_data =  json.loads(response)
+        config = TaskLLMConfigs.REVIEWER_BASE
+        response = self.llm.generate(prompt, temperature=config.temperature, max_tokens=config.max_tokens)
+        points_data = json.loads(response)
 
         points = []
         for point_data in points_data:

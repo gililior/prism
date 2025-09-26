@@ -1,12 +1,15 @@
-
-from typing import List
-from ..schemas import Point, Review, Rubric, Paper
-from ..llm.base import LLMClient
 import json
+from typing import List
+
+from reviewer_agent.llm.base import LLMClient
+from reviewer_agent.llm.constants import TaskLLMConfigs
+from reviewer_agent.schemas import Point, Review, Rubric, Paper
+
 
 def merge_points(points: List[Point], rubric: Rubric, llm: LLMClient = None, paper: Paper = None) -> Review:
     """Merge review points using LLM-powered synthesis or fallback to simple deduplication."""
     return _llm_merge_points(points, rubric, llm, paper)
+
 
 def _simple_merge_points(points: List[Point], rubric: Rubric) -> Review:
     """Simple deduplication-based merging (original implementation)."""
@@ -28,27 +31,28 @@ def _simple_merge_points(points: List[Point], rubric: Rubric) -> Review:
     summary = "This review aggregates facet-specialist feedback. Strengths include clear methods and positioning; weaknesses center on statistical rigor and comparative evidence."
     return Review(summary=summary, strengths=strengths, weaknesses=weaknesses, suggestions=suggestions, scores=None)
 
+
 def _llm_merge_points(points: List[Point], rubric: Rubric, llm: LLMClient, paper: Paper = None) -> Review:
     """Use LLM to intelligently merge and synthesize review points."""
     # Read the prompt template
     with open("reviewer_agent/prompts/leader_merge.txt", "r", encoding="utf-8") as f:
-            prompt_template = f.read()
+        prompt_template = f.read()
 
     # Separate points by kind
     strengths = [p for p in points if p.kind == "strength"]
-    weaknesses = [p for p in points if p.kind == "weakness"]  
+    weaknesses = [p for p in points if p.kind == "weakness"]
     suggestions = [p for p in points if p.kind == "suggestion"]
-    
+
     # Add paper context if available
     paper_context = ""
     if paper:
         paper_context = f"Paper Title: {paper.title}"
-    
+
     # Create simple point lists for the prompt
     strengths_text = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in strengths])
     weaknesses_text = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in weaknesses])
     suggestions_text = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in suggestions])
-    
+
     # Use the template with format substitution
     full_prompt = prompt_template.format(
         paper_context=paper_context,
@@ -61,7 +65,8 @@ def _llm_merge_points(points: List[Point], rubric: Rubric, llm: LLMClient, paper
     )
 
     # Generate response
-    response = llm.generate(full_prompt, max_tokens=10000, temperature=0.1)
+    config = TaskLLMConfigs.LEADER_MERGE
+    response = llm.generate(full_prompt, temperature=config.temperature, max_tokens=config.max_tokens)
     parsed = json.loads(response)
 
     # Convert back to Point objects
@@ -81,32 +86,34 @@ def _llm_merge_points(points: List[Point], rubric: Rubric, llm: LLMClient, paper
 def enforce_grounding(review: Review) -> Review:
     def grounded(pt: Point) -> bool:
         return bool(pt.grounding and len(pt.grounding.strip()) > 0)
+
     review.strengths = [p for p in review.strengths if grounded(p)]
     review.weaknesses = [p for p in review.weaknesses if grounded(p)]
     review.suggestions = [p for p in review.suggestions if grounded(p)]
     return review
 
+
 def update_review_with_rebuttals(review: Review, rebuttals: List[str], llm: LLMClient, paper: Paper = None) -> Review:
     """Update the review based on author rebuttals using LLM."""
-    
+
     # Read the prompt template
     with open("reviewer_agent/prompts/leader_update_with_rebuttals.txt", "r", encoding="utf-8") as f:
         prompt_template = f.read()
-    
+
     # Prepare current review content
     current_summary = review.summary
     current_strengths = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in review.strengths])
     current_weaknesses = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in review.weaknesses])
     current_suggestions = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in review.suggestions])
-    
+
     # Prepare rebuttals text
-    rebuttals_text = "\n\n".join([f"Rebuttal {i+1}: {r}" for i, r in enumerate(rebuttals)])
-    
+    rebuttals_text = "\n\n".join([f"Rebuttal {i + 1}: {r}" for i, r in enumerate(rebuttals)])
+
     # Paper context
     paper_context = ""
     if paper:
         paper_context = f"Paper Title: {paper.title}"
-    
+
     # Use the template with format substitution
     full_prompt = prompt_template.format(
         paper_context=paper_context,
@@ -116,18 +123,19 @@ def update_review_with_rebuttals(review: Review, rebuttals: List[str], llm: LLMC
         current_suggestions=current_suggestions,
         rebuttals_text=rebuttals_text
     )
-    
+
     # Generate response
-    response = llm.generate(full_prompt, max_tokens=3000, temperature=0.1)
-    
+    config = TaskLLMConfigs.LEADER_UPDATE_REBUTTALS
+    response = llm.generate(full_prompt, temperature=config.temperature, max_tokens=config.max_tokens)
+
     # Parse JSON response
     parsed = json.loads(response)
-    
+
     # Convert back to Point objects
     updated_strengths = [Point(kind="strength", **p) for p in parsed["strengths"]]
     updated_weaknesses = [Point(kind="weakness", **p) for p in parsed["weaknesses"]]
     updated_suggestions = [Point(kind="suggestion", **p) for p in parsed["suggestions"]]
-    
+
     return Review(
         summary=parsed["summary"],
         strengths=updated_strengths,
@@ -135,6 +143,7 @@ def update_review_with_rebuttals(review: Review, rebuttals: List[str], llm: LLMC
         suggestions=updated_suggestions,
         scores=review.scores
     )
+
 
 def revise_review(review: Review, rebuttals: List[str], verifications: List[tuple]) -> Review:
     """Revise the review based on author rebuttals and verifier outcomes.
@@ -155,7 +164,7 @@ def revise_review(review: Review, rebuttals: List[str], verifications: List[tupl
                 # Improved matching: use multiple approaches
                 key_words = p.text.lower().split(" ")[0:4]
                 key_phrase = " ".join(key_words)
-                
+
                 # Try exact phrase match first, then individual words
                 if key_phrase and key_phrase in r.lower():
                     matched_reb = r
@@ -163,23 +172,23 @@ def revise_review(review: Review, rebuttals: List[str], verifications: List[tupl
                 elif any(word in r.lower() for word in key_words if len(word) > 3):
                     matched_reb = r
                     break
-                    
+
             if not matched_reb:
                 revised.append(p)
                 continue
-                
+
             status = status_by_rebuttal.get(matched_reb, "UNVERIFIED")
             reb_lower = matched_reb.lower()
-            
+
             if status == "OK":
                 # Handle OK rebuttals
                 if ("misunderstanding" in reb_lower or "missing context" in reb_lower or "clarification" in reb_lower):
                     # Soften weakness to suggestion
                     if p.kind == "weakness":
                         revised.append(Point(
-                            kind="suggestion", 
-                            text=f"Consider clarifying: {p.text}", 
-                            grounding=p.grounding, 
+                            kind="suggestion",
+                            text=f"Consider clarifying: {p.text}",
+                            grounding=p.grounding,
                             facet=p.facet
                         ))
                     else:
@@ -191,17 +200,17 @@ def revise_review(review: Review, rebuttals: List[str], verifications: List[tupl
                         new_grounding = f"Author response: {matched_reb[:100]}..."
                     else:
                         new_grounding += f" (Author clarified: {matched_reb[:50]}...)"
-                    
+
                     revised.append(Point(
-                        kind=p.kind, 
-                        text=p.text, 
-                        grounding=new_grounding, 
+                        kind=p.kind,
+                        text=p.text,
+                        grounding=new_grounding,
                         facet=p.facet
                     ))
                 else:
                     # Valid rebuttal but no specific action needed
                     revised.append(p)
-                    
+
             elif status == "WEAK":
                 # Keep point but note the weak rebuttal
                 new_text = f"{p.text} (Author response noted but lacks specificity)"
@@ -211,11 +220,11 @@ def revise_review(review: Review, rebuttals: List[str], verifications: List[tupl
                     grounding=p.grounding,
                     facet=p.facet
                 ))
-                
+
             else:  # UNVERIFIED
                 # Keep original point unchanged
                 revised.append(p)
-                
+
         return revised
 
     review.weaknesses = process(review.weaknesses)
