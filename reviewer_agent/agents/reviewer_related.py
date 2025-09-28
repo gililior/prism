@@ -1,7 +1,7 @@
 import json
 from typing import List, Dict
 from pathlib import Path
-from reviewer_agent.base import Agent
+from reviewer_agent.agents.base import Agent
 from reviewer_agent.llm.base import LLMClient
 from reviewer_agent.schemas import Paper, Point
 from reviewer_agent.llm.constants import TaskLLMConfigs

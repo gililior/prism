@@ -3,3 +3,7 @@ together
 requests
 pydantic
 python-dotenv
+rapidfuzz
+pandas
+sentence-transformers
+numpy
