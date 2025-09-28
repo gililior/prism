@@ -31,6 +31,25 @@ def run_single_paper_direct(paper_id: str, emnlp_data: str, model: str, runs_dir
                            force: bool = False, workers: int = 4) -> Dict[str, Any]:
     """Run review generation directly via Python import (no subprocess)"""
     
+    # Check if review already exists (unless force is used)
+    if not force:
+        config_flags = []
+        if skip_rebuttal:
+            config_flags.append("no_rebuttal")
+        if skip_related:
+            config_flags.append("no_related")
+        if skip_grounding:
+            config_flags.append("no_grounding")
+        if routing != "dynamic":
+            config_flags.append(f"routing_{routing}")
+        
+        if check_review_exists(paper_id, model, config_flags, runs_dir):
+            return {
+                "paper_id": paper_id,
+                "status": "skipped",
+                "message": f"Review already exists for paper {paper_id}"
+            }
+    
     try:
         # Import cli main function
         from cli import main as cli_main
@@ -120,7 +139,7 @@ def generate_reviews_batch(paper_ids: List[str], emnlp_data: str, model: str = "
                           runs_dir: Optional[Path] = None, routing: str = "dynamic",
                           skip_related: bool = False, skip_rebuttal: bool = False, 
                           skip_grounding: bool = False, force: bool = False,
-                          workers: int = 1, delay: float = 60.0, 
+                          workers: int = 1, delay: float = 30.0, 
                           max_workers: int = 1) -> List[Dict[str, Any]]:
     """
     Generate reviews for multiple papers with smart caching.
@@ -293,7 +312,7 @@ def main():
                        help="Number of workers for individual paper processing")
     parser.add_argument("--max_workers", type=int, default=1,
                        help="Number of parallel paper processes (default: 1 to avoid quota issues)")
-    parser.add_argument("--delay", type=float, default=60.0,
+    parser.add_argument("--delay", type=float, default=30.0,
                        help="Delay between papers in seconds (default: 30)")
     
     # Pass-through arguments for cli.py

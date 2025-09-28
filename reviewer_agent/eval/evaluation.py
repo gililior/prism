@@ -15,6 +15,30 @@ import sys
 from .batch_generation import generate_reviews_batch, create_generation_summary
 from .comparison import calculate_metrics_for_runs, create_comprehensive_report
 
+def get_all_paper_ids(emnlp_data: str) -> List[str]:
+    """
+    Get all available paper IDs from EMNLP dataset directory, sorted numerically.
+    
+    Args:
+        emnlp_data: Path to EMNLP23 data directory
+        
+    Returns:
+        List of paper IDs sorted numerically (0, 1, 2, ... not 10, 2, 20)
+    """
+    data_path = Path(emnlp_data)
+    
+    if not data_path.exists():
+        print(f"Data directory not found: {data_path}")
+        return []
+    
+    # Get all subdirectories that are numeric paper IDs
+    paper_dirs = [d for d in data_path.iterdir() if d.is_dir() and d.name.isdigit()]
+    
+    # Sort numerically by converting to int, then back to string
+    paper_ids = sorted([d.name for d in paper_dirs], key=int)
+    
+    return paper_ids
+
 def run_full_evaluation(paper_ids: List[str], 
                        emnlp_data: str,
                        model: str = "gemini-2.5-flash-lite",
@@ -137,7 +161,10 @@ def run_full_evaluation(paper_ids: List[str],
                 "paper_id": comp.paper_id,
                 "avg_similarity": comp.avg_similarity,
                 "avg_coverage": comp.avg_coverage,
-                "generated_length": comp.generated_length
+                "generated_length": comp.generated_length,
+                "strengths_count": comp.strengths_count,
+                "weaknesses_count": comp.weaknesses_count,
+                "suggestions_count": comp.suggestions_count
             }
             for comp in comparison_results
         ]
@@ -249,6 +276,8 @@ def main():
     # Paper selection
     parser.add_argument("--paper_ids", nargs="+", help="List of paper IDs to process")
     parser.add_argument("--paper_list", type=str, help="Path to file containing paper IDs")
+    parser.add_argument("--num_papers", type=int, default=100, 
+                       help="Number of papers to process (default: 100). Takes first N papers sorted numerically.")
     
     # Basic parameters
     parser.add_argument("--emnlp_data", type=str, 
@@ -267,7 +296,8 @@ def main():
     parser.add_argument("--skip_grounding", action="store_true")
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--delay", type=float, default=30.0)
+    parser.add_argument("--delay", type=float, default=30.0,
+                       help="Delay between processing papers in seconds (default: 30)")
     parser.add_argument("--max_workers", type=int, default=1)
     
     # Phase control
@@ -286,13 +316,20 @@ def main():
         with open(args.paper_list, 'r') as f:
             paper_ids.extend([line.strip() for line in f if line.strip()])
     
+    # If no specific paper IDs provided, use --num_papers to get first N papers
+    if not paper_ids:
+        print(f"No specific paper IDs provided. Getting first {args.num_papers} papers from dataset...")
+        all_paper_ids = get_all_paper_ids(args.emnlp_data)
+        if not all_paper_ids:
+            print("Error: No papers found in dataset")
+            return 1
+        paper_ids = all_paper_ids[:args.num_papers]
+        print(f"Selected {len(paper_ids)} papers: {paper_ids[:10]}{'...' if len(paper_ids) > 10 else ''}")
+    
     runs_dir = Path(args.runs_dir)
     
     try:
         if args.mode == "full":
-            if not paper_ids:
-                print("Error: No paper IDs provided for full evaluation")
-                return 1
             
             results = run_full_evaluation(
                 paper_ids=paper_ids,
@@ -313,9 +350,6 @@ def main():
             )
             
         elif args.mode == "generate":
-            if not paper_ids:
-                print("Error: No paper IDs provided for generation")
-                return 1
             
             results = run_generation_only(
                 paper_ids=paper_ids,

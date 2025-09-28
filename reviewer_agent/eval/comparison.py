@@ -40,6 +40,11 @@ class ReviewComparison:
     has_weaknesses: bool
     has_suggestions: bool
     
+    # Content count metrics
+    strengths_count: int
+    weaknesses_count: int
+    suggestions_count: int
+    
     # Detailed results
     similarity_details: List[Dict[str, Any]]
     human_reviews_summary: List[Dict[str, Any]]
@@ -52,6 +57,101 @@ def extract_review_structure(review_data: Dict[str, Any]) -> Dict[str, bool]:
         "has_strengths": bool(review_data.get("strengths")) and len(review_data.get("strengths", [])) > 0,
         "has_weaknesses": bool(review_data.get("weaknesses")) and len(review_data.get("weaknesses", [])) > 0,
         "has_suggestions": bool(review_data.get("suggestions")) and len(review_data.get("suggestions", [])) > 0
+    }
+
+def extract_content_counts(review_data: Dict[str, Any]) -> Dict[str, int]:
+    """Extract content counts from review"""
+    return {
+        "strengths_count": len(review_data.get("strengths", [])),
+        "weaknesses_count": len(review_data.get("weaknesses", [])),
+        "suggestions_count": len(review_data.get("suggestions", []))
+    }
+
+def calculate_rebuttal_impact_metrics(comparisons: List[ReviewComparison]) -> Dict[str, Any]:
+    """Calculate metrics showing the impact of rebuttal on review content"""
+    
+    # Group comparisons by paper ID (without review type suffix)
+    papers_data = {}
+    for comp in comparisons:
+        if "_" in comp.paper_id:
+            paper_id, review_type = comp.paper_id.rsplit("_", 1)
+        else:
+            paper_id = comp.paper_id
+            review_type = "single"
+        
+        if paper_id not in papers_data:
+            papers_data[paper_id] = {}
+        papers_data[paper_id][review_type] = comp
+    
+    # Calculate rebuttal impact for papers that have both original and updated reviews
+    rebuttal_impacts = []
+    
+    for paper_id, paper_data in papers_data.items():
+        if 'original' in paper_data and 'updated' in paper_data:
+            orig = paper_data['original']
+            upd = paper_data['updated']
+            
+            # Calculate changes
+            strengths_change = upd.strengths_count - orig.strengths_count
+            weaknesses_change = upd.weaknesses_count - orig.weaknesses_count
+            suggestions_change = upd.suggestions_count - orig.suggestions_count
+            
+            # Calculate reduction rates (for weaknesses and suggestions)
+            weaknesses_reduction_rate = 0.0
+            if orig.weaknesses_count > 0:
+                weaknesses_reduction_rate = max(0, -weaknesses_change) / orig.weaknesses_count
+            
+            suggestions_reduction_rate = 0.0
+            if orig.suggestions_count > 0:
+                suggestions_reduction_rate = max(0, -suggestions_change) / orig.suggestions_count
+            
+            impact = {
+                "paper_id": paper_id,
+                "strengths_change": strengths_change,
+                "weaknesses_change": weaknesses_change,
+                "suggestions_change": suggestions_change,
+                "weaknesses_reduction_rate": weaknesses_reduction_rate,
+                "suggestions_reduction_rate": suggestions_reduction_rate,
+                "original_counts": {
+                    "strengths": orig.strengths_count,
+                    "weaknesses": orig.weaknesses_count,
+                    "suggestions": orig.suggestions_count
+                },
+                "updated_counts": {
+                    "strengths": upd.strengths_count,
+                    "weaknesses": upd.weaknesses_count,
+                    "suggestions": upd.suggestions_count
+                }
+            }
+            rebuttal_impacts.append(impact)
+    
+    # Calculate aggregate statistics
+    if rebuttal_impacts:
+        aggregate_stats = {
+            "papers_with_rebuttal": len(rebuttal_impacts),
+            "avg_strengths_change": np.mean([r["strengths_change"] for r in rebuttal_impacts]),
+            "avg_weaknesses_change": np.mean([r["weaknesses_change"] for r in rebuttal_impacts]),
+            "avg_suggestions_change": np.mean([r["suggestions_change"] for r in rebuttal_impacts]),
+            "avg_weaknesses_reduction_rate": np.mean([r["weaknesses_reduction_rate"] for r in rebuttal_impacts]),
+            "avg_suggestions_reduction_rate": np.mean([r["suggestions_reduction_rate"] for r in rebuttal_impacts]),
+            "papers_with_weakness_reduction": sum(1 for r in rebuttal_impacts if r["weaknesses_change"] < 0),
+            "papers_with_suggestion_reduction": sum(1 for r in rebuttal_impacts if r["suggestions_change"] < 0)
+        }
+    else:
+        aggregate_stats = {
+            "papers_with_rebuttal": 0,
+            "avg_strengths_change": 0.0,
+            "avg_weaknesses_change": 0.0,
+            "avg_suggestions_change": 0.0,
+            "avg_weaknesses_reduction_rate": 0.0,
+            "avg_suggestions_reduction_rate": 0.0,
+            "papers_with_weakness_reduction": 0,
+            "papers_with_suggestion_reduction": 0
+        }
+    
+    return {
+        "rebuttal_impact_details": rebuttal_impacts,
+        "rebuttal_impact_summary": aggregate_stats
     }
 
 def convert_human_review_to_text(human_review: Dict[str, Any]) -> str:
@@ -198,6 +298,7 @@ def compare_single_paper(paper_dir: Path) -> List[ReviewComparison]:
         
         # Extract structural information
         structure = extract_review_structure(generated_review)
+        content_counts = extract_content_counts(generated_review)
         
         comparisons.append(ReviewComparison(
             paper_id=comparison_paper_id,
@@ -213,6 +314,9 @@ def compare_single_paper(paper_dir: Path) -> List[ReviewComparison]:
             has_strengths=structure["has_strengths"],
             has_weaknesses=structure["has_weaknesses"],
             has_suggestions=structure["has_suggestions"],
+            strengths_count=content_counts["strengths_count"],
+            weaknesses_count=content_counts["weaknesses_count"],
+            suggestions_count=content_counts["suggestions_count"],
             similarity_details=similarity_results,
             human_reviews_summary=human_summaries
         ))
@@ -631,6 +735,16 @@ def create_markdown_summary(comparisons: List[ReviewComparison], output_dir: Pat
         'has_suggestions': sum(1 for comp in comparisons if comp.has_suggestions)
     }
     
+    # Calculate content count averages
+    content_averages = {
+        'avg_strengths': np.mean([comp.strengths_count for comp in comparisons]),
+        'avg_weaknesses': np.mean([comp.weaknesses_count for comp in comparisons]),
+        'avg_suggestions': np.mean([comp.suggestions_count for comp in comparisons])
+    }
+    
+    # Calculate rebuttal impact metrics
+    rebuttal_metrics = calculate_rebuttal_impact_metrics(comparisons)
+    
     # Create Markdown content
     md_content = []
     
@@ -656,6 +770,14 @@ def create_markdown_summary(comparisons: List[ReviewComparison], output_dir: Pat
     for metric, count in structural_counts.items():
         percentage = (count / total_reviews) * 100 if total_reviews > 0 else 0
         md_content.append(f"- **{metric.replace('_', ' ').title()}:** {count}/{total_reviews} ({percentage:.1f}%)")
+    md_content.append("")
+    
+    # Content count averages
+    md_content.append("### 📝 Content Count Averages")
+    md_content.append("")
+    md_content.append(f"- **Average Strengths:** {content_averages['avg_strengths']:.1f}")
+    md_content.append(f"- **Average Weaknesses:** {content_averages['avg_weaknesses']:.1f}")
+    md_content.append(f"- **Average Suggestions:** {content_averages['avg_suggestions']:.1f}")
     md_content.append("")
     
     # Per-paper breakdown
@@ -745,6 +867,23 @@ def create_markdown_summary(comparisons: List[ReviewComparison], output_dir: Pat
         md_content.append(f"- **Average similarity change:** {upd_avg_sim - orig_avg_sim:+.1%}")
         md_content.append(f"- **Average coverage change:** {upd_avg_cov - orig_avg_cov:+.1%}")
         
+        # Add content count changes from rebuttal metrics
+        rebuttal_summary = rebuttal_metrics["rebuttal_impact_summary"]
+        if rebuttal_summary["papers_with_rebuttal"] > 0:
+            md_content.append("")
+            md_content.append("#### 📊 Content Changes After Rebuttal")
+            md_content.append(f"- **Strengths change:** {rebuttal_summary['avg_strengths_change']:+.1f}")
+            md_content.append(f"- **Weaknesses change:** {rebuttal_summary['avg_weaknesses_change']:+.1f}")
+            md_content.append(f"- **Suggestions change:** {rebuttal_summary['avg_suggestions_change']:+.1f}")
+            md_content.append(f"- **Weaknesses reduction rate:** {rebuttal_summary['avg_weaknesses_reduction_rate']:.1%}")
+            md_content.append(f"- **Suggestions reduction rate:** {rebuttal_summary['avg_suggestions_reduction_rate']:.1%}")
+            
+            # Add interpretation
+            if rebuttal_summary['avg_weaknesses_reduction_rate'] > 0.3:
+                md_content.append("- ✅ **Significant weakness reduction after rebuttal**")
+            if rebuttal_summary['avg_suggestions_reduction_rate'] > 0.3:
+                md_content.append("- ✅ **Significant suggestion reduction after rebuttal**")
+        
         if upd_avg_cov > orig_avg_cov:
             md_content.append("- ✅ **Rebuttals generally improved coverage**")
         else:
@@ -781,6 +920,9 @@ def create_markdown_summary(comparisons: List[ReviewComparison], output_dir: Pat
 def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Path):
     """Save comparison results to files"""
     
+    # Calculate rebuttal impact metrics
+    rebuttal_metrics = calculate_rebuttal_impact_metrics(comparisons)
+    
     # Save detailed results
     detailed_results = [
         {
@@ -805,6 +947,11 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
                 "has_weaknesses": comp.has_weaknesses,
                 "has_suggestions": comp.has_suggestions
             },
+            "content_count_metrics": {
+                "strengths_count": comp.strengths_count,
+                "weaknesses_count": comp.weaknesses_count,
+                "suggestions_count": comp.suggestions_count
+            },
             "similarity_details": comp.similarity_details,
             "human_reviews_summary": comp.human_reviews_summary
         }
@@ -826,7 +973,13 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
             "has_strengths": sum(c.has_strengths for c in comparisons) / len(comparisons),
             "has_weaknesses": sum(c.has_weaknesses for c in comparisons) / len(comparisons),
             "has_suggestions": sum(c.has_suggestions for c in comparisons) / len(comparisons)
-        }
+        },
+        "content_count_averages": {
+            "avg_strengths_count": np.mean([c.strengths_count for c in comparisons]),
+            "avg_weaknesses_count": np.mean([c.weaknesses_count for c in comparisons]),
+            "avg_suggestions_count": np.mean([c.suggestions_count for c in comparisons])
+        },
+        "rebuttal_impact": rebuttal_metrics["rebuttal_impact_summary"]
     }
     
     with open(output_dir / "comparison_summary.json", "w", encoding="utf-8") as f:
@@ -847,11 +1000,18 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
             "has_strengths": comp.has_strengths,
             "has_weaknesses": comp.has_weaknesses,
             "has_suggestions": comp.has_suggestions,
+            "strengths_count": comp.strengths_count,
+            "weaknesses_count": comp.weaknesses_count,
+            "suggestions_count": comp.suggestions_count,
             "human_reviews_count": comp.human_reviews_count
         })
     
     df = pd.DataFrame(csv_data)
     df.to_csv(output_dir / "detailed_comparison.csv", index=False)
+    
+    # Save rebuttal impact metrics separately
+    with open(output_dir / "rebuttal_impact_metrics.json", "w", encoding="utf-8") as f:
+        json.dump(rebuttal_metrics, f, indent=2)
     
     # Print summary
     # Count unique papers and review types
@@ -877,11 +1037,27 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
     for key, value in summary_stats['structural_completeness'].items():
         print(f"  {key}: {value:.1%}")
     
+    print(f"\nContent count averages:")
+    for key, value in summary_stats['content_count_averages'].items():
+        print(f"  {key}: {value:.1f}")
+    
+    # Print rebuttal impact summary if available
+    rebuttal_summary = summary_stats['rebuttal_impact']
+    if rebuttal_summary['papers_with_rebuttal'] > 0:
+        print(f"\nRebuttal Impact Summary:")
+        print(f"  Papers with rebuttal: {rebuttal_summary['papers_with_rebuttal']}")
+        print(f"  Avg strengths change: {rebuttal_summary['avg_strengths_change']:+.1f}")
+        print(f"  Avg weaknesses change: {rebuttal_summary['avg_weaknesses_change']:+.1f}")
+        print(f"  Avg suggestions change: {rebuttal_summary['avg_suggestions_change']:+.1f}")
+        print(f"  Weaknesses reduction rate: {rebuttal_summary['avg_weaknesses_reduction_rate']:.1%}")
+        print(f"  Suggestions reduction rate: {rebuttal_summary['avg_suggestions_reduction_rate']:.1%}")
+    
     # Create Markdown summary
     summary_path = create_markdown_summary(comparisons, output_dir)
     print(f"📄 Markdown summary: {summary_path.name}")
     
     print(f"\nComparison results saved to: {output_dir}")
+    print(f"📊 Rebuttal impact metrics: rebuttal_impact_metrics.json")
 
 def find_paper_directories(runs_dir: Path, 
                           paper_ids: Optional[List[str]] = None,
