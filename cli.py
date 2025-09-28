@@ -19,7 +19,7 @@ from reviewer_agent.agents.leader import merge_points, enforce_grounding, update
 from reviewer_agent.agents.author import rebut
 from reviewer_agent.agents.router import SectionBasedRouter, DynamicRouter
 from reviewer_agent.services.citations import fetch_top_related
-from reviewer_agent.NLPEER_dataset import load_emnlp_paper
+from reviewer_agent.NLPEER_dataset import load_emnlp_paper, get_paper_by_id
 
 from reviewer_agent.llm.constants import LLMModels, LLMTypes
 
@@ -96,13 +96,15 @@ def main():
     ap.add_argument("--emnlp_data", type=str, help="Path to EMNLP23 data directory", 
                     default="/Users/ehabba/Downloads/EMNLP23/data/")
     # venue flags removed; venue-agnostic pipeline
-    ap.add_argument("--model", type=str, default=LLMModels.GEMINI_2_5_FLASH_LITE.value)
+    ap.add_argument("--model", type=str, default=LLMModels.GEMINI_2_0_FLASH_LITE.value)
     # Ablation flags
     ap.add_argument("--routing", type=str, choices=["dynamic", "all"], default="dynamic", help="Facet routing: dynamic (selected facets) or all (run all reviewers).")
     ap.add_argument("--skip_related", action="store_true", help="Disable Related Work reviewer.")
     ap.add_argument("--skip_rebuttal", action="store_true", help="Disable rebuttal/verify/revise loop.")
     ap.add_argument("--skip_grounding", action="store_true", help="Do not drop ungrounded points.")
     ap.add_argument("--workers", type=int, default=4, help="Number of parallel workers for reviewer execution (default: 4).")
+    ap.add_argument("--output_dir", type=str, help="Custom output directory (default: evaluation/results/runs)")
+    ap.add_argument("--force", action="store_true", help="Force regeneration even if review already exists")
     args = ap.parse_args()
 
     cfg = Config()
@@ -151,6 +153,9 @@ def main():
             rw_points = rw_agent.review(paper, rw_text, related=top_related)
             all_points.extend(rw_points)
 
+    # Save raw reviewer points before merging
+    raw_points = all_points.copy()
+
     # Merge and ground with LLM enhancement
     review = merge_points(all_points, Rubric(), llm=llm, paper=paper)
     if not args.skip_grounding:
@@ -172,10 +177,46 @@ def main():
         rebuttal = None
         updated_review = None
 
-    # Save outputs
-    ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    outdir = pathlib.Path("runs") / ts
+    # Save outputs with generic naming (no timestamp for caching)
+    model_short = args.model.replace("gemini-", "").replace("gpt-", "").replace("-", "_")
+    
+    # Create descriptive directory name
+    config_flags = []
+    if args.skip_rebuttal:
+        config_flags.append("no_rebuttal")
+    if args.skip_related:
+        config_flags.append("no_related")
+    if args.skip_grounding:
+        config_flags.append("no_grounding")
+    if args.routing != "dynamic":
+        config_flags.append(f"routing_{args.routing}")
+    
+    config_str = "_".join(config_flags) if config_flags else "default"
+    
+    # Use custom output directory if provided, otherwise default
+    base_dir = pathlib.Path(args.output_dir) if args.output_dir else pathlib.Path("evaluation/results/runs")
+    outdir = base_dir / f"paper_{args.paper_id}_{model_short}_{config_str}"
+    
+    # Check if review already exists (skip if it does, unless --force is used)
+    if not args.force and outdir.exists() and (outdir / "review_original.json").exists():
+        print(f"✓ Review already exists for paper {args.paper_id} with config {config_str}")
+        print(f"Skipping generation. Use --force to regenerate.")
+        return
+    
     outdir.mkdir(parents=True, exist_ok=True)
+
+    # Save raw reviewer points (before merging)
+    raw_points_data = [
+        {
+            "kind": p.kind,
+            "text": p.text,
+            "grounding": p.grounding,
+            "facet": p.facet
+        }
+        for p in raw_points
+    ]
+    with open(outdir / "reviewer_points_raw.json", "w", encoding="utf-8") as f:
+        json.dump(raw_points_data, f, indent=2)
 
     # Save original review (before rebuttal)
     with open(outdir / "review_original.json", "w", encoding="utf-8") as f:
@@ -191,8 +232,23 @@ def main():
         with open(outdir / "rebuttal.txt", "w", encoding="utf-8") as f:
             f.write(rebuttal)
 
+    # Save human reviews for comparison
+    paper_data = get_paper_by_id(args.paper_id, args.emnlp_data)
+    if paper_data and paper_data.get('reviews'):
+        human_reviews = paper_data['reviews']
+        with open(outdir / "human_reviews.json", "w", encoding="utf-8") as f:
+            json.dump(human_reviews, f, indent=2)
+        print(f"Saved {len(human_reviews)} human reviews for comparison")
+
+    files_saved = ["reviewer_points_raw.json", "review_original.json"]
+    if updated_review is not None:
+        files_saved.append("review_updated.json")
+    if rebuttal is not None:
+        files_saved.append("rebuttal.txt")
+    files_saved.append("human_reviews.json")
+    
     print(f"Saved to {outdir}/")
-    print(f"Files: review_original.json, review_updated.json" + (", rebuttal.txt" if rebuttal else ""))
+    print(f"Files: {', '.join(files_saved)}")
 
 
 if __name__ == "__main__":

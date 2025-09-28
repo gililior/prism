@@ -35,7 +35,11 @@ def _simple_merge_points(points: List[Point], rubric: Rubric) -> Review:
 def _llm_merge_points(points: List[Point], rubric: Rubric, llm: LLMClient, paper: Paper = None) -> Review:
     """Use LLM to intelligently merge and synthesize review points."""
     # Read the prompt template
-    with open("reviewer_agent/prompts/leader_merge.txt", "r", encoding="utf-8") as f:
+    # Get the path relative to this file using pathlib
+    from pathlib import Path
+    prompt_path = Path(__file__).parent.parent / "prompts" / "leader_merge.txt"
+    
+    with open(prompt_path, "r", encoding="utf-8") as f:
         prompt_template = f.read()
 
     # Separate points by kind
@@ -97,7 +101,11 @@ def update_review_with_rebuttals(review: Review, rebuttals: List[str], llm: LLMC
     """Update the review based on author rebuttals using LLM."""
 
     # Read the prompt template
-    with open("reviewer_agent/prompts/leader_update_with_rebuttals.txt", "r", encoding="utf-8") as f:
+    # Get the path relative to this file using pathlib
+    from pathlib import Path
+    prompt_path = Path(__file__).parent.parent / "prompts" / "leader_update_with_rebuttals.txt"
+    
+    with open(prompt_path, "r", encoding="utf-8") as f:
         prompt_template = f.read()
 
     # Prepare current review content

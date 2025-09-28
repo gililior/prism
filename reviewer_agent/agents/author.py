@@ -8,7 +8,11 @@ from reviewer_agent.schemas import Point, Paper
 def rebut(points: List[Point], paper: Paper = None, llm: LLMClient = None) -> str:
     """Generate a comprehensive author rebuttal addressing all review points."""
     # Read the prompt template
-    with open("reviewer_agent/prompts/author_rebuttal.txt", "r", encoding="utf-8") as f:
+    # Get the path relative to this file using pathlib
+    from pathlib import Path
+    prompt_path = Path(__file__).parent.parent / "prompts" / "author_rebuttal.txt"
+    
+    with open(prompt_path, "r", encoding="utf-8") as f:
         prompt_template = f.read()
 
     # Create context from paper sections

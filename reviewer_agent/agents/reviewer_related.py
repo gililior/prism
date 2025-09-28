@@ -17,11 +17,39 @@ class ReviewerRelatedWork(Agent):
     def _format_related(self, related: List[Dict[str, str]]) -> str:
         lines = []
         for i, r in enumerate(related, 1):
-            lines.append(f"[{i}] {r.get('title','')} | {r.get('doi','') or r.get('url','')}")
-            absn = (r.get('abstract','') or '')[:1200]
-            if absn:
-                lines.append(absn)
-        return "\n".join(lines)
+            # Format title and DOI/URL
+            title = r.get('title', '')
+            doi_or_url = r.get('doi', '') or r.get('url', '')
+            lines.append(f"[{i}] {title} | {doi_or_url}")
+            
+            # Add author and year info if available
+            authors = r.get('authors', '')
+            year = r.get('year', '')
+            venue = r.get('venue', '')
+            
+            metadata_parts = []
+            if authors:
+                metadata_parts.append(f"Authors: {authors}")
+            if year:
+                metadata_parts.append(f"Year: {year}")
+            if venue:
+                metadata_parts.append(f"Venue: {venue}")
+            
+            if metadata_parts:
+                lines.append(" | ".join(metadata_parts))
+            
+            # Add summary/abstract
+            summary = r.get('summary', '')
+            if summary and summary != title[:200]:  # Don't repeat if summary is just truncated title
+                # Check if this looks like a real abstract (longer, more descriptive)
+                if len(summary) > 200 and not summary.startswith("Authors:"):
+                    lines.append(f"Abstract: {summary}")
+                else:
+                    lines.append(f"Summary: {summary}")
+            
+            lines.append("")  # Empty line between citations
+        
+        return "\n".join(lines).strip()
     def review(self, paper: Paper, spans_text: str, related: List[Dict[str, str]] = None) -> List[Point]:
         # Load the prompt for this reviewer type
         prompt_file = Path(__file__).parents[1] / "prompts" / "reviewer_related.txt"

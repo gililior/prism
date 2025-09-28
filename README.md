@@ -37,11 +37,26 @@ pip install pydantic rapidfuzz PyPDF2 requests sentence-transformers streamlit
 ### Basic Review Generation
 
 ```bash
+# From EMNLP dataset (recommended)
+python cli.py --paper_id 100 --model gemini-2.5-flash-lite
+
 # From PDF
 python cli.py --pdf /path/to/paper.pdf --model gpt-4o-mini
 
 # From JSON
 python cli.py --paper data/dummy_paper.json --model dummy
+```
+
+### Evaluation System
+
+```bash
+# Quick test on a single paper
+python test_paper.py --paper_id 100
+
+# Full evaluation on multiple papers
+python run_evaluation.py --paper_ids 100 101 102
+
+# For more evaluation options, see evaluation/ directory
 ```
 
 ### Ablation Studies
