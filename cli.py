@@ -171,7 +171,7 @@ def main():
         print("Generated comprehensive rebuttal")
         
         print("Updating review based on rebuttal...")
-        updated_review = update_review_with_rebuttals(review, [rebuttal], llm=llm, paper=paper)
+        updated_review = update_review_with_rebuttals(review, rebuttal, llm=llm, paper=paper)
         print("Review updated")
     else:
         rebuttal = None

@@ -55,7 +55,7 @@ def extract_review_structure(review_data: Dict[str, Any]) -> Dict[str, bool]:
     }
 
 def convert_human_review_to_text(human_review: Dict[str, Any]) -> str:
-    """Convert human review structure to comparable text"""
+    """Convert human review structure to comparable text by concatenating all content"""
     parts = []
     
     # Add report sections
@@ -63,6 +63,19 @@ def convert_human_review_to_text(human_review: Dict[str, Any]) -> str:
     for section_name, content in report.items():
         if content and isinstance(content, str):
             parts.append(f"{section_name}: {content}")
+    
+    # Add scores section
+    scores = human_review.get("scores", {})
+    if scores:
+        parts.append("Scores:")
+        for score_name, score_value in scores.items():
+            if score_value and isinstance(score_value, str):
+                parts.append(f"  {score_name}: {score_value}")
+    
+    # Add any other top-level string fields
+    for key, value in human_review.items():
+        if key not in ["rid", "report", "scores", "meta", "reviewer"] and value and isinstance(value, str):
+            parts.append(f"{key}: {value}")
     
     return "\n\n".join(parts) if parts else ""
 
@@ -153,13 +166,13 @@ def compare_single_paper(paper_dir: Path) -> List[ReviewComparison]:
                     "similarity": similarity_result["mean_max_similarity"],
                     "coverage": similarity_result["coverage"],
                     "human_length": human_length,
-                    "scores": human_review.get("scores", {})
+                    "human_text": human_text
                 })
                 
                 human_summaries.append({
                     "reviewer_id": human_review.get("rid", f"reviewer_{i}"),
                     "length": human_length,
-                    "scores": human_review.get("scores", {}),
+                    "human_text": human_text,
                     "has_content": bool(human_text.strip())
                 })
                 
@@ -587,6 +600,184 @@ def calculate_metrics_for_runs(runs_dir: Path,
     
     return comparisons
 
+def create_markdown_summary(comparisons: List[ReviewComparison], output_dir: Path) -> Path:
+    """Create a readable Markdown summary of the evaluation results"""
+    
+    # Group comparisons by paper and review type
+    papers_data = {}
+    for comp in comparisons:
+        if "_" in comp.paper_id:
+            paper_id, review_type = comp.paper_id.rsplit("_", 1)
+        else:
+            paper_id = comp.paper_id
+            review_type = "single"
+        
+        if paper_id not in papers_data:
+            papers_data[paper_id] = {}
+        papers_data[paper_id][review_type] = comp
+    
+    # Calculate overall statistics
+    similarities = [comp.avg_similarity for comp in comparisons]
+    coverages = [comp.avg_coverage for comp in comparisons]
+    
+    avg_similarity = np.mean(similarities) if similarities else 0.0
+    avg_coverage = np.mean(coverages) if coverages else 0.0
+    
+    # Count structural completeness
+    structural_counts = {
+        'has_summary': sum(1 for comp in comparisons if comp.has_summary),
+        'has_strengths': sum(1 for comp in comparisons if comp.has_strengths),
+        'has_weaknesses': sum(1 for comp in comparisons if comp.has_weaknesses),
+        'has_suggestions': sum(1 for comp in comparisons if comp.has_suggestions)
+    }
+    
+    # Create Markdown content
+    md_content = []
+    
+    # Header
+    md_content.append("# Review Evaluation Summary")
+    md_content.append("")
+    md_content.append(f"**Generated on:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    md_content.append("")
+    
+    # Overall Statistics
+    md_content.append("## 📊 Overall Performance")
+    md_content.append("")
+    md_content.append(f"- **Papers evaluated:** {len(papers_data)}")
+    md_content.append(f"- **Total comparisons:** {len(comparisons)}")
+    md_content.append(f"- **Average similarity:** {avg_similarity:.1%}")
+    md_content.append(f"- **Average coverage:** {avg_coverage:.1%}")
+    md_content.append("")
+    
+    # Structural completeness
+    md_content.append("### 🏗️ Structural Completeness")
+    md_content.append("")
+    total_reviews = len(comparisons)
+    for metric, count in structural_counts.items():
+        percentage = (count / total_reviews) * 100 if total_reviews > 0 else 0
+        md_content.append(f"- **{metric.replace('_', ' ').title()}:** {count}/{total_reviews} ({percentage:.1f}%)")
+    md_content.append("")
+    
+    # Per-paper breakdown
+    md_content.append("## 📄 Per-Paper Results")
+    md_content.append("")
+    
+    for paper_id in sorted(papers_data.keys()):
+        paper_data = papers_data[paper_id]
+        md_content.append(f"### Paper {paper_id}")
+        md_content.append("")
+        
+        # Create comparison table
+        if len(paper_data) > 1:
+            md_content.append("| Review Type | Similarity | Coverage | Length | Human Reviews |")
+            md_content.append("|-------------|------------|----------|---------|---------------|")
+            
+            for review_type in sorted(paper_data.keys()):
+                comp = paper_data[review_type]
+                md_content.append(f"| {review_type.title()} | {comp.avg_similarity:.1%} | {comp.avg_coverage:.1%} | {comp.generated_length} chars | {comp.human_reviews_count} |")
+            
+            md_content.append("")
+            
+            # Impact analysis if both original and updated exist
+            if 'original' in paper_data and 'updated' in paper_data:
+                orig = paper_data['original']
+                upd = paper_data['updated']
+                
+                sim_change = upd.avg_similarity - orig.avg_similarity
+                cov_change = upd.avg_coverage - orig.avg_coverage
+                len_change = upd.generated_length - orig.generated_length
+                
+                md_content.append("#### 🔄 Rebuttal Impact")
+                md_content.append("")
+                md_content.append(f"- **Similarity change:** {sim_change:+.1%}")
+                md_content.append(f"- **Coverage change:** {cov_change:+.1%}")
+                md_content.append(f"- **Length change:** {len_change:+d} chars")
+                
+                # Interpretation
+                if cov_change > 0.05:
+                    md_content.append("- ✅ **Significant improvement in coverage**")
+                elif cov_change < -0.05:
+                    md_content.append("- ⚠️ **Significant decrease in coverage**")
+                
+                if sim_change > 0.02:
+                    md_content.append("- ✅ **Improved similarity to human reviews**")
+                elif sim_change < -0.02:
+                    md_content.append("- ⚠️ **Decreased similarity to human reviews**")
+                
+                md_content.append("")
+        else:
+            # Single review type
+            comp = list(paper_data.values())[0]
+            md_content.append(f"- **Similarity:** {comp.avg_similarity:.1%}")
+            md_content.append(f"- **Coverage:** {comp.avg_coverage:.1%}")
+            md_content.append(f"- **Generated length:** {comp.generated_length} characters")
+            md_content.append(f"- **Human reviews:** {comp.human_reviews_count}")
+            md_content.append("")
+    
+    # Performance insights
+    md_content.append("## 💡 Key Insights")
+    md_content.append("")
+    
+    # Best and worst performing papers
+    best_similarity = max(comparisons, key=lambda x: x.avg_similarity)
+    worst_similarity = min(comparisons, key=lambda x: x.avg_similarity)
+    best_coverage = max(comparisons, key=lambda x: x.avg_coverage)
+    worst_coverage = min(comparisons, key=lambda x: x.avg_coverage)
+    
+    md_content.append(f"- **Highest similarity:** {best_similarity.paper_id} ({best_similarity.avg_similarity:.1%})")
+    md_content.append(f"- **Lowest similarity:** {worst_similarity.paper_id} ({worst_similarity.avg_similarity:.1%})")
+    md_content.append(f"- **Best coverage:** {best_coverage.paper_id} ({best_coverage.avg_coverage:.1%})")
+    md_content.append(f"- **Worst coverage:** {worst_coverage.paper_id} ({worst_coverage.avg_coverage:.1%})")
+    md_content.append("")
+    
+    # Rebuttal analysis if applicable
+    original_comps = [comp for comp in comparisons if comp.paper_id.endswith('_original')]
+    updated_comps = [comp for comp in comparisons if comp.paper_id.endswith('_updated')]
+    
+    if original_comps and updated_comps:
+        orig_avg_sim = np.mean([comp.avg_similarity for comp in original_comps])
+        upd_avg_sim = np.mean([comp.avg_similarity for comp in updated_comps])
+        orig_avg_cov = np.mean([comp.avg_coverage for comp in original_comps])
+        upd_avg_cov = np.mean([comp.avg_coverage for comp in updated_comps])
+        
+        md_content.append("### 🔄 Overall Rebuttal Impact")
+        md_content.append("")
+        md_content.append(f"- **Average similarity change:** {upd_avg_sim - orig_avg_sim:+.1%}")
+        md_content.append(f"- **Average coverage change:** {upd_avg_cov - orig_avg_cov:+.1%}")
+        
+        if upd_avg_cov > orig_avg_cov:
+            md_content.append("- ✅ **Rebuttals generally improved coverage**")
+        else:
+            md_content.append("- ⚠️ **Rebuttals generally decreased coverage**")
+        md_content.append("")
+    
+    # Recommendations
+    md_content.append("## 🎯 Recommendations")
+    md_content.append("")
+    
+    if avg_similarity < 0.5:
+        md_content.append("- 🔍 **Low similarity scores** - Consider improving review content alignment with human reviewers")
+    if avg_coverage < 0.6:
+        md_content.append("- 📝 **Low coverage scores** - Generated reviews may be missing key points from human reviews")
+    
+    structural_issues = [k for k, v in structural_counts.items() if v < total_reviews * 0.8]
+    if structural_issues:
+        md_content.append(f"- 🏗️ **Structural gaps** - Some reviews missing: {', '.join([s.replace('_', ' ') for s in structural_issues])}")
+    
+    if not structural_issues and avg_similarity > 0.6 and avg_coverage > 0.7:
+        md_content.append("- ✅ **Strong performance** - Reviews show good alignment with human evaluations")
+    
+    md_content.append("")
+    md_content.append("---")
+    md_content.append("*Generated by Reviewer Agent Evaluation System*")
+    
+    # Save to file
+    summary_path = output_dir / "evaluation_summary.md"
+    with open(summary_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(md_content))
+    
+    return summary_path
+
 def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Path):
     """Save comparison results to files"""
     
@@ -685,6 +876,10 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
     print(f"\nStructural completeness:")
     for key, value in summary_stats['structural_completeness'].items():
         print(f"  {key}: {value:.1%}")
+    
+    # Create Markdown summary
+    summary_path = create_markdown_summary(comparisons, output_dir)
+    print(f"📄 Markdown summary: {summary_path.name}")
     
     print(f"\nComparison results saved to: {output_dir}")
 

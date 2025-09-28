@@ -20,7 +20,7 @@ def rebut(points: List[Point], paper: Paper = None, llm: LLMClient = None) -> st
     paper_title = ""
     if paper:
         paper_title = paper.title
-        paper_context = "\n\n".join([f"## {s.name}\n{s.text[:500]}..." for s in paper.sections[:3]])
+        paper_context = "\n\n".join([f"## {s.name}\n{s.text}..." for s in paper.sections])
 
     # Organize points by type
     weaknesses = [p for p in points if p.kind == "weakness"]

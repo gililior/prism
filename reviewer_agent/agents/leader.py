@@ -97,7 +97,7 @@ def enforce_grounding(review: Review) -> Review:
     return review
 
 
-def update_review_with_rebuttals(review: Review, rebuttals: List[str], llm: LLMClient, paper: Paper = None) -> Review:
+def update_review_with_rebuttals(review: Review, rebuttals: str, llm: LLMClient, paper: Paper = None) -> Review:
     """Update the review based on author rebuttals using LLM."""
 
     # Read the prompt template
@@ -115,7 +115,7 @@ def update_review_with_rebuttals(review: Review, rebuttals: List[str], llm: LLMC
     current_suggestions = "\n".join([f"- {p.text} ({p.grounding}) [{p.facet}]" for p in review.suggestions])
 
     # Prepare rebuttals text
-    rebuttals_text = "\n\n".join([f"Rebuttal {i + 1}: {r}" for i, r in enumerate(rebuttals)])
+    rebuttals_text = f"Rebuttal: {rebuttals}"
 
     # Paper context
     paper_context = ""
