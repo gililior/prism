@@ -17,7 +17,8 @@ class LLMModels(Enum):
     GEMINI_2_5_FLASH = "gemini-2.5-flash"
     GEMINI_2_5_FLASH_LITE = "gemini-2.5-flash-lite"
     GEMINI_2_0_FLASH_LITE = "gemini-2.0-flash-lite"
-
+    GEMINI_2_0_FLASH = "gemini-2.0-flash"
+    DEFAULT_MODEL = GEMINI_2_0_FLASH_LITE
     # Together AI models (popular open source models)
     LLAMA_3_3_70B = "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
 

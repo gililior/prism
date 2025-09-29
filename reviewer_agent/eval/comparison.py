@@ -29,6 +29,7 @@ class ReviewComparison:
     avg_similarity: float
     max_similarity: float
     avg_coverage: float
+    max_coverage: float
     
     # Content metrics
     generated_length: int
@@ -334,6 +335,7 @@ def compare_single_paper(paper_dir: Path, similarity_workers: int = 4, device: O
         avg_similarity = np.mean(similarities) if similarities else 0.0
         max_similarity = max(similarities) if similarities else 0.0
         avg_coverage = np.mean(coverages) if coverages else 0.0
+        max_coverage = max(coverages) if coverages else 0.0
         avg_human_length = np.mean(human_lengths) if human_lengths else 0
         
         # Create comparison with review type in paper_id
@@ -353,6 +355,7 @@ def compare_single_paper(paper_dir: Path, similarity_workers: int = 4, device: O
             avg_similarity=avg_similarity,
             max_similarity=max_similarity,
             avg_coverage=avg_coverage,
+            max_coverage=max_coverage,
             generated_length=generated_length,
             avg_human_length=avg_human_length,
             genericity_score=genericity_score,
@@ -377,7 +380,8 @@ def create_comparison_report(comparisons: List[ReviewComparison], output_dir: Pa
         "total_papers": len(comparisons),
         "avg_similarity": np.mean([c.avg_similarity for c in comparisons]),
         "avg_max_similarity": np.mean([c.max_similarity for c in comparisons]),
-        "avg_coverage": np.mean([c.avg_coverage for c in comparisons])
+        "avg_coverage": np.mean([c.avg_coverage for c in comparisons]),
+        "avg_max_coverage": np.mean([c.max_coverage for c in comparisons])
     }
     
     # Save summary statistics
@@ -408,7 +412,8 @@ def create_comparison_report(comparisons: List[ReviewComparison], output_dir: Pa
             "summary_metrics": {
                 "avg_similarity": comp.avg_similarity,
                 "max_similarity": comp.max_similarity,
-                "avg_coverage": comp.avg_coverage
+                "avg_coverage": comp.avg_coverage,
+                "max_coverage": comp.max_coverage
             },
             "length_metrics": {
                 "generated_length": comp.generated_length,
@@ -428,6 +433,7 @@ def create_comparison_report(comparisons: List[ReviewComparison], output_dir: Pa
     print(f"Average similarity: {summary_stats['avg_similarity']:.3f}")
     print(f"Average max similarity: {summary_stats['avg_max_similarity']:.3f}")
     print(f"Average coverage: {summary_stats['avg_coverage']:.3f}")
+    print(f"Average max coverage: {summary_stats['avg_max_coverage']:.3f}")
 
 def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Path):
     """Save comparison results in multiple formats"""
@@ -440,7 +446,8 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
         "total_papers": len(comparisons),
         "avg_similarity": np.mean([c.avg_similarity for c in comparisons]),
         "avg_max_similarity": np.mean([c.max_similarity for c in comparisons]),
-        "avg_coverage": np.mean([c.avg_coverage for c in comparisons])
+        "avg_coverage": np.mean([c.avg_coverage for c in comparisons]),
+        "avg_max_coverage": np.mean([c.max_coverage for c in comparisons])
     }
     
     with open(output_dir / "comparison_summary.json", "w", encoding="utf-8") as f:
@@ -454,6 +461,7 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
             "avg_similarity": comp.avg_similarity,
             "max_similarity": comp.max_similarity,
             "avg_coverage": comp.avg_coverage,
+            "max_coverage": comp.max_coverage,
             "generated_length": comp.generated_length,
             "avg_human_length": comp.avg_human_length,
             "human_reviews_count": comp.human_reviews_count
@@ -470,7 +478,8 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
             "summary_metrics": {
                 "avg_similarity": comp.avg_similarity,
                 "max_similarity": comp.max_similarity,
-                "avg_coverage": comp.avg_coverage
+                "avg_coverage": comp.avg_coverage,
+                "max_coverage": comp.max_coverage
             },
             "length_metrics": {
                 "generated_length": comp.generated_length,
@@ -533,7 +542,8 @@ def create_comprehensive_report(comparisons: List[ReviewComparison],
             "total_papers": len(comparisons),
             "avg_similarity": np.mean([c.avg_similarity for c in comparisons]),
             "avg_max_similarity": np.mean([c.max_similarity for c in comparisons]),
-            "avg_coverage": np.mean([c.avg_coverage for c in comparisons])
+            "avg_coverage": np.mean([c.avg_coverage for c in comparisons]),
+            "avg_max_coverage": np.mean([c.max_coverage for c in comparisons])
         },
         "review_type_analysis": review_type_analysis,
         "key_findings": {
@@ -551,7 +561,8 @@ def create_comprehensive_report(comparisons: List[ReviewComparison],
             "summary_metrics": {
                 "avg_similarity": comp.avg_similarity,
                 "max_similarity": comp.max_similarity,
-                "avg_coverage": comp.avg_coverage
+                "avg_coverage": comp.avg_coverage,
+                "max_coverage": comp.max_coverage
             },
             "length_metrics": {
                 "generated_length": comp.generated_length,
@@ -769,9 +780,11 @@ def create_markdown_summary(comparisons: List[ReviewComparison], output_dir: Pat
     # Calculate overall statistics
     similarities = [comp.avg_similarity for comp in comparisons]
     coverages = [comp.avg_coverage for comp in comparisons]
+    max_coverages = [comp.max_coverage for comp in comparisons]
     
     avg_similarity = np.mean(similarities) if similarities else 0.0
     avg_coverage = np.mean(coverages) if coverages else 0.0
+    max_coverage = np.mean(max_coverages) if max_coverages else 0.0
     
     # Count structural completeness
     structural_counts = {
@@ -807,6 +820,7 @@ def create_markdown_summary(comparisons: List[ReviewComparison], output_dir: Pat
     md_content.append(f"- **Total comparisons:** {len(comparisons)}")
     md_content.append(f"- **Average similarity:** {avg_similarity:.1%}")
     md_content.append(f"- **Average coverage:** {avg_coverage:.1%}")
+    md_content.append(f"- **Average max coverage:** {max_coverage:.1%}")
     md_content.append("")
     
     # Structural completeness
@@ -978,7 +992,8 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
             "summary_metrics": {
                 "avg_similarity": comp.avg_similarity,
                 "max_similarity": comp.max_similarity,
-                "avg_coverage": comp.avg_coverage
+                "avg_coverage": comp.avg_coverage,
+                "max_coverage": comp.max_coverage
             },
             "content_metrics": {
                 "genericity_score": comp.genericity_score
@@ -1013,6 +1028,7 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
         "avg_similarity": np.mean([c.avg_similarity for c in comparisons]),
         "avg_max_similarity": np.mean([c.max_similarity for c in comparisons]),
         "avg_coverage": np.mean([c.avg_coverage for c in comparisons]),
+        "avg_max_coverage": np.mean([c.max_coverage for c in comparisons]),
         "avg_genericity": np.mean([c.genericity_score for c in comparisons]),
         "structural_completeness": {
             "has_summary": sum(c.has_summary for c in comparisons) / len(comparisons),
@@ -1039,6 +1055,7 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
             "avg_similarity": comp.avg_similarity,
             "max_similarity": comp.max_similarity,
             "avg_coverage": comp.avg_coverage,
+            "max_coverage": comp.max_coverage,
             "genericity_score": comp.genericity_score,
             "generated_length": comp.generated_length,
             "avg_human_length": comp.avg_human_length,
@@ -1078,6 +1095,7 @@ def save_comparison_results(comparisons: List[ReviewComparison], output_dir: Pat
     print(f"Average similarity: {summary_stats['avg_similarity']:.3f}")
     print(f"Average max similarity: {summary_stats['avg_max_similarity']:.3f}")
     print(f"Average coverage: {summary_stats['avg_coverage']:.3f}")
+    print(f"Average max coverage: {summary_stats['avg_max_coverage']:.3f}")
     print(f"Average genericity: {summary_stats['avg_genericity']:.3f}")
     print(f"\nStructural completeness:")
     for key, value in summary_stats['structural_completeness'].items():

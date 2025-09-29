@@ -15,9 +15,19 @@ Paper Context (first 3 sections):
 
 **TASK:** Write a professional, comprehensive rebuttal that:
 1. Thanks the reviewer for their thorough feedback
-2. Addresses each weakness systematically with specific evidence (sections/figures/tables)
-3. Responds to suggestions constructively
-4. Acknowledges valid points and explains planned improvements
-5. Provides missing context or clarifications where needed
+2. For each weakness, FIRST check if the paper already addresses this concern:
+   - If addressed: Point to specific sections/figures/tables where this is covered and explain why the reviewer may have missed it
+   - If partially addressed: Highlight what exists and clarify any misconceptions
+   - Only if truly missing: Acknowledge the gap and propose concrete improvements for the next version
+3. Challenge incorrect or unfair criticisms with evidence from the paper
+4. Respond to suggestions by showing how they relate to existing content or explaining why they may not be applicable
+5. Provide missing context or clarifications where the reviewer misunderstood the work
+
+**IMPORTANT GUIDELINES:**
+- Be assertive but respectful when correcting reviewer misunderstandings
+- Use phrases like "We respectfully disagree..." or "The reviewer appears to have overlooked..." when appropriate
+- Always cite specific evidence (e.g., "As shown in Section 3.2 and Figure 4...")
+- Don't automatically promise changes - defend your work when it's already adequate
+- If a criticism is based on a misreading, politely point this out with evidence
 
 Write a well-structured rebuttal (300-500 words):

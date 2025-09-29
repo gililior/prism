@@ -17,12 +17,17 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 project_root = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(project_root))
 
+# Import LLM constants
+from reviewer_agent.llm.constants import LLMModels
+
 def check_review_exists(paper_id: str, model: str, config_flags: List[str], runs_dir: Path) -> bool:
     """Check if a review already exists for the given configuration"""
-    # model_short = model.replace("gemini-", "").replace("gpt-", "").replace("-", "_")
     config_str = "_".join(config_flags) if config_flags else "default"
     
-    review_dir = runs_dir / f"paper_{paper_id}_{model}_{config_str}"
+    # Create model-specific subdirectory path
+    model_dir = runs_dir / model
+    review_dir = model_dir / f"paper_{paper_id}_{model}_{config_str}"
+    
     return review_dir.exists() and (review_dir / "review_original.json").exists()
 
 def run_single_paper_direct(paper_id: str, emnlp_data: str, model: str, runs_dir: Path, 
@@ -135,7 +140,7 @@ def run_single_paper_direct(paper_id: str, emnlp_data: str, model: str, runs_dir
                 "error": error_msg
             }
 
-def generate_reviews_batch(paper_ids: List[str], emnlp_data: str, model: str = "gemini-2.0-flash-lite",
+def generate_reviews_batch(paper_ids: List[str], emnlp_data: str, model: str = LLMModels.DEFAULT_MODEL.value,
                           runs_dir: Optional[Path] = None, routing: str = "dynamic",
                           skip_related: bool = False, skip_rebuttal: bool = False, 
                           skip_grounding: bool = False, force: bool = False,
@@ -332,7 +337,7 @@ def main():
     parser.add_argument("--emnlp_data", type=str, 
                        default="/Users/ehabba/Downloads/EMNLP23/data/",
                        help="Path to EMNLP23 data directory")
-    parser.add_argument("--model", type=str, default="gemini-2.0-flash-lite",
+    parser.add_argument("--model", type=str, default=LLMModels.DEFAULT_MODEL.value,
                        help="Model to use for generation")
     parser.add_argument("--runs_dir", type=str, default="evaluation/results/runs",
                        help="Directory to save generated reviews")

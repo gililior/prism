@@ -98,7 +98,7 @@ def main():
     ap.add_argument("--emnlp_data", type=str, help="Path to EMNLP23 data directory", 
                     default="/Users/ehabba/Downloads/EMNLP23/data/")
     # venue flags removed; venue-agnostic pipeline
-    ap.add_argument("--model", type=str, default=LLMModels.GEMINI_2_0_FLASH_LITE.value)
+    ap.add_argument("--model", type=str, default=LLMModels.DEFAULT_MODEL.value)
     # Ablation flags
     ap.add_argument("--routing", type=str, choices=["dynamic", "all"], default="dynamic", help="Facet routing: dynamic (selected facets) or all (run all reviewers).")
     ap.add_argument("--skip_related", action="store_true", help="Disable Related Work reviewer.")
@@ -197,7 +197,10 @@ def main():
     
     # Use custom output directory if provided, otherwise default
     base_dir = pathlib.Path(args.output_dir) if args.output_dir else pathlib.Path("evaluation/results/runs")
-    outdir = base_dir / f"paper_{args.paper_id}_{args.model}_{config_str}"
+    
+    # Create model-specific subdirectory
+    model_dir = base_dir / args.model
+    outdir = model_dir / f"paper_{args.paper_id}_{args.model}_{config_str}"
     
     # Check if review already exists (skip if it does, unless --force is used)
     if not args.force and outdir.exists() and (outdir / "review_original.json").exists():

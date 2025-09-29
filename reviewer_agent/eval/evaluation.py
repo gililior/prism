@@ -14,6 +14,7 @@ import sys
 # Import our modules
 from .batch_generation import generate_reviews_batch, create_generation_summary
 from .comparison import calculate_metrics_for_runs, create_comprehensive_report
+from reviewer_agent.llm.constants import LLMModels
 
 def get_all_paper_ids(emnlp_data: str) -> List[str]:
     """
@@ -41,7 +42,7 @@ def get_all_paper_ids(emnlp_data: str) -> List[str]:
 
 def run_full_evaluation(paper_ids: List[str], 
                        emnlp_data: str,
-                       model: str = "gemini-2.0-flash-lite",
+                       model: str = LLMModels.DEFAULT_MODEL.value,
                        experiment_name: Optional[str] = None,
                        runs_dir: Optional[Path] = None,
                        # Generation parameters
@@ -148,9 +149,10 @@ def run_full_evaluation(paper_ids: List[str],
         print("PHASE 2: Metrics Calculation")
         print("="*60)
         
-        # Calculate metrics on all available reviews
+        # Calculate metrics on reviews for this specific model
+        model_runs_dir = runs_dir / model
         comparison_results = calculate_metrics_for_runs(
-            runs_dir=runs_dir,
+            runs_dir=model_runs_dir,
             paper_ids=paper_ids,
             output_dir=experiment_dir
         )
@@ -160,7 +162,9 @@ def run_full_evaluation(paper_ids: List[str],
             {
                 "paper_id": comp.paper_id,
                 "avg_similarity": comp.avg_similarity,
+                "max_similarity": comp.max_similarity,
                 "avg_coverage": comp.avg_coverage,
+                "max_coverage": comp.max_coverage,
                 "generated_length": comp.generated_length,
                 "strengths_count": comp.strengths_count,
                 "weaknesses_count": comp.weaknesses_count,
@@ -191,7 +195,7 @@ def run_full_evaluation(paper_ids: List[str],
 
 def run_generation_only(paper_ids: List[str], 
                        emnlp_data: str,
-                       model: str = "gemini-2.0-flash-lite",
+                       model: str = LLMModels.DEFAULT_MODEL.value,
                        runs_dir: Optional[Path] = None,
                        **kwargs) -> Dict[str, Any]:
     """Run only the generation phase"""
@@ -228,7 +232,8 @@ def run_generation_only(paper_ids: List[str],
 
 def run_metrics_only(runs_dir: Optional[Path] = None,
                     paper_ids: Optional[List[str]] = None,
-                    experiment_name: Optional[str] = None) -> Dict[str, Any]:
+                    experiment_name: Optional[str] = None,
+                    model: Optional[str] = None) -> Dict[str, Any]:
     """Run only the metrics calculation phase"""
     
     if runs_dir is None:
@@ -250,9 +255,16 @@ def run_metrics_only(runs_dir: Optional[Path] = None,
     else:
         print("Paper IDs: All available")
     
+    # If model is specified, look in model-specific subdirectory
+    if model:
+        model_runs_dir = runs_dir / model
+        print(f"Model-specific directory: {model_runs_dir}")
+    else:
+        model_runs_dir = runs_dir
+    
     # Calculate metrics
     comparison_results = calculate_metrics_for_runs(
-        runs_dir=runs_dir,
+        runs_dir=model_runs_dir,
         paper_ids=paper_ids,
         output_dir=experiment_dir
     )
@@ -283,7 +295,7 @@ def main():
     parser.add_argument("--emnlp_data", type=str, 
                        default="/Users/ehabba/Downloads/EMNLP23/data/",
                        help="Path to EMNLP23 data directory")
-    parser.add_argument("--model", type=str, default="gemini-2.0-flash-lite",
+    parser.add_argument("--model", type=str, default=LLMModels.DEFAULT_MODEL.value,
                        help="Model to use")
     parser.add_argument("--experiment_name", type=str, help="Name for this experiment")
     parser.add_argument("--runs_dir", type=str, default="evaluation/results/runs",
@@ -370,7 +382,8 @@ def main():
             results = run_metrics_only(
                 runs_dir=runs_dir,
                 paper_ids=paper_ids,
-                experiment_name=args.experiment_name
+                experiment_name=args.experiment_name,
+                model=args.model
             )
         
         return 0

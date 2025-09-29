@@ -1,18 +1,8 @@
 from typing import List, Tuple, Dict
 import re
 import time
-
-try:
-    import requests
-except Exception:  # optional dependency
-    requests = None
-
-try:
-    import arxiv
-    ARXIV_AVAILABLE = True
-except ImportError:
-    ARXIV_AVAILABLE = False
-
+import requests
+import arxiv
 from ..schemas import Paper
 
 
@@ -380,10 +370,9 @@ def _find_abstract_for_citation(citation_text: str) -> str:
     
     # Try different sources in order of reliability
     # 1. Try arXiv first (often has full abstracts)
-    if ARXIV_AVAILABLE:
-        abstract = _search_arxiv_for_abstract(title)
-        if abstract:
-            return abstract
+    abstract = _search_arxiv_for_abstract(title)
+    if abstract:
+        return abstract
     
     # 2. Try Semantic Scholar
     abstract = _search_semantic_scholar_for_abstract(title)
