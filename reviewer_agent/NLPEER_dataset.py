@@ -99,6 +99,7 @@ def clean_text(text):
         return None
     
     # Skip figure/table references and captions that are too short
+    # Note: We now handle figure/table captions separately in extract_figure_table_captions
     if re.match(r'^(Figure|Table|Fig\.|Tab\.)\s*\d+', text, re.IGNORECASE):
         # Allow longer figure captions, skip short references
         if len(text) < 50:
@@ -171,6 +172,24 @@ def process_reviews(review_path):
         print(f"Error processing reviews {review_path}: {e}")
         return []
 
+def extract_figure_table_captions(all_lines):
+    """Extract figure and table captions from all text lines"""
+    figure_captions = []
+    table_captions = []
+    
+    for line in all_lines:
+        line = line.strip()
+        
+        # Match figure captions: "Figure X:" or "Fig. X:" followed by description
+        if re.match(r'^(Figure|Fig\.)\s*\d+\s*:', line, re.IGNORECASE):
+            figure_captions.append(line)
+        
+        # Match table captions: "Table X:" followed by description  
+        elif re.match(r'^Table\s*\d+\s*:', line, re.IGNORECASE):
+            table_captions.append(line)
+    
+    return figure_captions, table_captions
+
 def process_paper(json_path):
     """Process a single paper JSON file"""
     try:
@@ -178,6 +197,9 @@ def process_paper(json_path):
             data = json.load(f)
         
         all_lines = list(walk(data))
+        
+        # Extract figure and table captions
+        figure_captions, table_captions = extract_figure_table_captions(all_lines)
         
         sections = {}
         current_section = None
@@ -190,6 +212,14 @@ def process_paper(json_path):
                 cleaned_text = clean_text(line)
                 if cleaned_text:
                     sections[current_section].append(cleaned_text)
+        
+        # Add figure captions as a dedicated section if any exist
+        if figure_captions:
+            sections["Figures"] = figure_captions
+            
+        # Add table captions as a dedicated section if any exist  
+        if table_captions:
+            sections["Tables"] = table_captions
         
         return sections
     except Exception as e:
@@ -321,7 +351,11 @@ def convert_to_paper_schema(paper_data, paper_id):
     sections = []
     for section_name, paragraphs in sections_data.items():
         if paragraphs:  # Only include sections with content
-            section_text = "\n\n".join(paragraphs)
+            # Handle both list and string formats
+            if isinstance(paragraphs, list):
+                section_text = "\n\n".join(paragraphs)
+            else:
+                section_text = str(paragraphs)
             sections.append({
                 "name": section_name,
                 "text": section_text

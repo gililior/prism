@@ -41,7 +41,7 @@ def get_all_paper_ids(emnlp_data: str) -> List[str]:
 
 def run_full_evaluation(paper_ids: List[str], 
                        emnlp_data: str,
-                       model: str = "gemini-2.5-flash-lite",
+                       model: str = "gemini-2.0-flash-lite",
                        experiment_name: Optional[str] = None,
                        runs_dir: Optional[Path] = None,
                        # Generation parameters
@@ -86,8 +86,8 @@ def run_full_evaluation(paper_ids: List[str],
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     if experiment_name is None:
-        model_short = model.replace("gemini-", "").replace("gpt-", "").replace("-", "_")
-        experiment_name = f"eval_{model_short}_{timestamp}"
+        # model_short = model.replace("gemini-", "").replace("gpt-", "").replace("-", "_")
+        experiment_name = f"eval_{model}_{timestamp}"
     
     # Create experiment directory
     experiment_dir = Path("evaluation/results/experiments") / f"{timestamp}_{experiment_name}"
@@ -191,7 +191,7 @@ def run_full_evaluation(paper_ids: List[str],
 
 def run_generation_only(paper_ids: List[str], 
                        emnlp_data: str,
-                       model: str = "gemini-2.5-flash-lite",
+                       model: str = "gemini-2.0-flash-lite",
                        runs_dir: Optional[Path] = None,
                        **kwargs) -> Dict[str, Any]:
     """Run only the generation phase"""
@@ -283,7 +283,7 @@ def main():
     parser.add_argument("--emnlp_data", type=str, 
                        default="/Users/ehabba/Downloads/EMNLP23/data/",
                        help="Path to EMNLP23 data directory")
-    parser.add_argument("--model", type=str, default="gemini-2.5-flash-lite",
+    parser.add_argument("--model", type=str, default="gemini-2.0-flash-lite",
                        help="Model to use")
     parser.add_argument("--experiment_name", type=str, help="Name for this experiment")
     parser.add_argument("--runs_dir", type=str, default="evaluation/results/runs",

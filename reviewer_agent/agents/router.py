@@ -25,7 +25,8 @@ class SectionBasedRouter:
             "claims_vs_evidence": ["results", "experiments", "evaluation", "discussion", "conclusion"],
             "reproducibility": ["method", "methods", "experiments", "experiment", "appendix", "supplement"],
             "clarity_presentation": ["*"],  # Should see everything for overall clarity
-            "figures_tables": ["results", "experiments", "evaluation"],
+            "figures": ["figures", "results", "experiments", "evaluation"],  # Dedicated figure sections
+            "tables": ["tables", "results", "experiments", "evaluation"],  # Dedicated table sections
             "ethics_licensing": ["introduction", "discussion", "conclusion", "ethics", "limitations"],
             "societal_impact": ["introduction", "discussion", "conclusion", "limitations", "impact"]
         }

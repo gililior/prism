@@ -6,7 +6,7 @@ from typing import List, Dict
 class Config:
     facets: List[str] = field(default_factory=lambda: [
         "methods", "claims_vs_evidence", "novelty", "reproducibility",
-        "ethics_licensing", "clarity_presentation", "figures_tables", "societal_impact"
+        "ethics_licensing", "clarity_presentation", "figures", "tables", "societal_impact"
     ])
     reviewers_for_facets: Dict[str, str] = field(default_factory=lambda: {
         "methods": "ReviewerMethods",
@@ -15,7 +15,8 @@ class Config:
         "reproducibility": "ReviewerReproducibility",
         "ethics_licensing": "ReviewerEthicsLicensing",
         "clarity_presentation": "ReviewerClarity",
-        "figures_tables": "ReviewerFiguresTables",
+        "figures": "ReviewerFigures",
+        "tables": "ReviewerTables",
         "societal_impact": "ReviewerSocietalImpact",
         # Note: Related work reviewer is invoked separately in CLI for top citations
     })

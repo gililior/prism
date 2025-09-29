@@ -11,7 +11,8 @@ from reviewer_agent.agents.reviewer_novelty import ReviewerNovelty
 from reviewer_agent.agents.reviewer_claims import ReviewerClaimsEvidence
 from reviewer_agent.agents.reviewer_repro import ReviewerReproducibility
 from reviewer_agent.agents.reviewer_ethics import ReviewerEthicsLicensing
-from reviewer_agent.agents.reviewer_figures import ReviewerFiguresTables
+from reviewer_agent.agents.reviewer_figures import ReviewerFigures
+from reviewer_agent.agents.reviewer_tables import ReviewerTables
 from reviewer_agent.agents.reviewer_clarity import ReviewerClarity
 from reviewer_agent.agents.reviewer_impact import ReviewerSocietalImpact
 from reviewer_agent.agents.reviewer_related import ReviewerRelatedWork
@@ -29,7 +30,8 @@ REVIEWER_CLASSES = {
     "ReviewerClaimsEvidence": ReviewerClaimsEvidence,
     "ReviewerReproducibility": ReviewerReproducibility,
     "ReviewerEthicsLicensing": ReviewerEthicsLicensing,
-    "ReviewerFiguresTables": ReviewerFiguresTables,
+    "ReviewerFigures": ReviewerFigures,
+    "ReviewerTables": ReviewerTables,
     "ReviewerClarity": ReviewerClarity,
     "ReviewerSocietalImpact": ReviewerSocietalImpact,
     "ReviewerRelatedWork": ReviewerRelatedWork,
@@ -178,7 +180,7 @@ def main():
         updated_review = None
 
     # Save outputs with generic naming (no timestamp for caching)
-    model_short = args.model.replace("gemini-", "").replace("gpt-", "").replace("-", "_")
+    # model_short = args.model.replace("gemini-", "").replace("gpt-", "").replace("-", "_")
     
     # Create descriptive directory name
     config_flags = []
@@ -195,7 +197,7 @@ def main():
     
     # Use custom output directory if provided, otherwise default
     base_dir = pathlib.Path(args.output_dir) if args.output_dir else pathlib.Path("evaluation/results/runs")
-    outdir = base_dir / f"paper_{args.paper_id}_{model_short}_{config_str}"
+    outdir = base_dir / f"paper_{args.paper_id}_{args.model}_{config_str}"
     
     # Check if review already exists (skip if it does, unless --force is used)
     if not args.force and outdir.exists() and (outdir / "review_original.json").exists():

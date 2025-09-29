@@ -19,10 +19,10 @@ sys.path.insert(0, str(project_root))
 
 def check_review_exists(paper_id: str, model: str, config_flags: List[str], runs_dir: Path) -> bool:
     """Check if a review already exists for the given configuration"""
-    model_short = model.replace("gemini-", "").replace("gpt-", "").replace("-", "_")
+    # model_short = model.replace("gemini-", "").replace("gpt-", "").replace("-", "_")
     config_str = "_".join(config_flags) if config_flags else "default"
     
-    review_dir = runs_dir / f"paper_{paper_id}_{model_short}_{config_str}"
+    review_dir = runs_dir / f"paper_{paper_id}_{model}_{config_str}"
     return review_dir.exists() and (review_dir / "review_original.json").exists()
 
 def run_single_paper_direct(paper_id: str, emnlp_data: str, model: str, runs_dir: Path, 
@@ -135,7 +135,7 @@ def run_single_paper_direct(paper_id: str, emnlp_data: str, model: str, runs_dir
                 "error": error_msg
             }
 
-def generate_reviews_batch(paper_ids: List[str], emnlp_data: str, model: str = "gemini-2.5-flash-lite",
+def generate_reviews_batch(paper_ids: List[str], emnlp_data: str, model: str = "gemini-2.0-flash-lite",
                           runs_dir: Optional[Path] = None, routing: str = "dynamic",
                           skip_related: bool = False, skip_rebuttal: bool = False, 
                           skip_grounding: bool = False, force: bool = False,
@@ -198,9 +198,33 @@ def generate_reviews_batch(paper_ids: List[str], emnlp_data: str, model: str = "
     
     if max_workers == 1:
         # Sequential execution (recommended for API quota management)
-        for i, paper_id in enumerate(paper_ids):
-            if i > 0:  # Add delay between papers (except first)
-                print(f"Waiting {delay} seconds before next paper...")
+        last_processed_paper = None  # Track last actually processed paper
+        
+        for paper_id in paper_ids:
+            # First, check if we need to skip this paper (without processing)
+            if not force:
+                config_flags = []
+                if skip_rebuttal:
+                    config_flags.append("no_rebuttal")
+                if skip_related:
+                    config_flags.append("no_related")
+                if skip_grounding:
+                    config_flags.append("no_grounding")
+                if routing != "dynamic":
+                    config_flags.append(f"routing_{routing}")
+                
+                if check_review_exists(paper_id, model, config_flags, runs_dir):
+                    print(f"⏭ Skipped {paper_id} (already exists)")
+                    results.append({
+                        "paper_id": paper_id,
+                        "status": "skipped",
+                        "message": f"Review already exists for paper {paper_id}"
+                    })
+                    continue  # Skip to next paper without delay
+            
+            # Add delay before processing (if we had a previous processed paper)
+            if last_processed_paper is not None:
+                print(f"Waiting {delay} seconds before processing {paper_id}...")
                 time.sleep(delay)
             
             try:
@@ -212,10 +236,13 @@ def generate_reviews_batch(paper_ids: List[str], emnlp_data: str, model: str = "
                 
                 if result["status"] == "success":
                     print(f"✓ Generated review for {paper_id}")
+                    last_processed_paper = paper_id
                 elif result["status"] == "skipped":
                     print(f"⏭ Skipped {paper_id} (already exists)")
+                    # This shouldn't happen since we check above, but just in case
                 else:
                     print(f"✗ Failed {paper_id}: {result.get('error', 'Unknown error')}")
+                    last_processed_paper = paper_id
                     
             except Exception as e:
                 print(f"✗ Exception processing {paper_id}: {e}")
@@ -224,6 +251,7 @@ def generate_reviews_batch(paper_ids: List[str], emnlp_data: str, model: str = "
                     "status": "exception",
                     "error": str(e)
                 })
+                last_processed_paper = paper_id
     else:
         # Parallel execution (use with caution for quota limits)
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -304,7 +332,7 @@ def main():
     parser.add_argument("--emnlp_data", type=str, 
                        default="/Users/ehabba/Downloads/EMNLP23/data/",
                        help="Path to EMNLP23 data directory")
-    parser.add_argument("--model", type=str, default="gemini-2.5-flash-lite",
+    parser.add_argument("--model", type=str, default="gemini-2.0-flash-lite",
                        help="Model to use for generation")
     parser.add_argument("--runs_dir", type=str, default="evaluation/results/runs",
                        help="Directory to save generated reviews")

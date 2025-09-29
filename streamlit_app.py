@@ -16,7 +16,8 @@ from reviewer_agent.agents.reviewer_novelty import ReviewerNovelty
 from reviewer_agent.agents.reviewer_claims import ReviewerClaimsEvidence
 from reviewer_agent.agents.reviewer_repro import ReviewerReproducibility
 from reviewer_agent.agents.reviewer_ethics import ReviewerEthicsLicensing
-from reviewer_agent.agents.reviewer_figures import ReviewerFiguresTables
+from reviewer_agent.agents.reviewer_figures import ReviewerFigures
+from reviewer_agent.agents.reviewer_tables import ReviewerTables
 from reviewer_agent.agents.reviewer_clarity import ReviewerClarity
 from reviewer_agent.agents.reviewer_impact import ReviewerSocietalImpact
 from reviewer_agent.agents.reviewer_related import ReviewerRelatedWork
@@ -33,7 +34,8 @@ REVIEWER_CLASSES = {
     "ReviewerClaimsEvidence": ReviewerClaimsEvidence,
     "ReviewerReproducibility": ReviewerReproducibility,
     "ReviewerEthicsLicensing": ReviewerEthicsLicensing,
-    "ReviewerFiguresTables": ReviewerFiguresTables,
+    "ReviewerFigures": ReviewerFigures,
+    "ReviewerTables": ReviewerTables,
     "ReviewerClarity": ReviewerClarity,
     "ReviewerSocietalImpact": ReviewerSocietalImpact,
 }

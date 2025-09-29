@@ -12,9 +12,10 @@ from dataclasses import dataclass
 import numpy as np
 from datetime import datetime
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Import existing evaluation modules
-from .similarity import sentence_level_similarity, _read_review_text
+from .similarity import sentence_level_similarity, sentence_level_similarity_from_text, _read_review_text
 from .metrics import coverage_overlap
 
 @dataclass
@@ -154,6 +155,76 @@ def calculate_rebuttal_impact_metrics(comparisons: List[ReviewComparison]) -> Di
         "rebuttal_impact_summary": aggregate_stats
     }
 
+def calculate_similarities_optimized(generated_text: str, human_reviews: List[Dict[str, Any]], 
+                                    embed_model: str = "all-MiniLM-L6-v2", max_workers: int = 4, 
+                                    device: Optional[str] = None) -> List[Dict[str, Any]]:
+    """Calculate similarities between generated review and human reviews - optimized for GPU/CPU"""
+    
+    # Import here to avoid circular imports
+    from .similarity import _get_best_device
+    
+    if device is None:
+        device = _get_best_device()
+    
+    def process_single_review(i: int, human_review: Dict[str, Any]) -> Dict[str, Any]:
+        """Process a single human review comparison"""
+        human_text = convert_human_review_to_text(human_review)
+        human_length = len(human_text.split())
+        
+        if not human_text.strip():
+            return {
+                "human_review_index": i,
+                "reviewer_id": human_review.get("rid", f"reviewer_{i}"),
+                "similarity": 0.0,
+                "coverage": 0.0,
+                "human_length": human_length,
+                "human_text": human_text
+            }
+        
+        # Calculate similarity directly from text
+        similarity_result = sentence_level_similarity_from_text(
+            generated_text, human_text, embed_model, device
+        )
+        
+        return {
+            "human_review_index": i,
+            "reviewer_id": human_review.get("rid", f"reviewer_{i}"),
+            "similarity": similarity_result["mean_max_similarity"],
+            "coverage": similarity_result["coverage"],
+            "human_length": human_length,
+            "human_text": human_text
+        }
+    
+    # GPU: Sequential processing (GPU is internally parallel)
+    if device != "cpu":
+        print(f"  Using GPU-optimized sequential processing on {device.upper()}")
+        results = []
+        for i, human_review in enumerate(human_reviews):
+            result = process_single_review(i, human_review)
+            results.append(result)
+        return results
+    
+    # CPU: Parallel processing (CPU benefits from threading)
+    else:
+        print(f"  Using CPU-optimized parallel processing with {max_workers} workers")
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # Submit all tasks
+            future_to_index = {
+                executor.submit(process_single_review, i, human_review): i 
+                for i, human_review in enumerate(human_reviews)
+            }
+            
+            # Collect results in order
+            results = [None] * len(human_reviews)
+            for future in as_completed(future_to_index):
+                result = future.result()
+                results[result["human_review_index"]] = result
+        
+        return results
+
+# Backward compatibility alias
+calculate_similarities_parallel = calculate_similarities_optimized
+
 def convert_human_review_to_text(human_review: Dict[str, Any]) -> str:
     """Convert human review structure to comparable text by concatenating all content"""
     parts = []
@@ -179,8 +250,14 @@ def convert_human_review_to_text(human_review: Dict[str, Any]) -> str:
     
     return "\n\n".join(parts) if parts else ""
 
-def compare_single_paper(paper_dir: Path) -> List[ReviewComparison]:
+def compare_single_paper(paper_dir: Path, similarity_workers: int = 4, device: Optional[str] = None) -> List[ReviewComparison]:
     """Compare generated review with human reviews for a single paper"""
+    
+    # Import here to avoid circular imports
+    from .similarity import _get_best_device
+    
+    if device is None:
+        device = _get_best_device()
     
     # Extract paper ID from directory name
     if paper_dir.name.startswith("paper_"):
@@ -234,52 +311,21 @@ def compare_single_paper(paper_dir: Path) -> List[ReviewComparison]:
         generated_text = _read_review_text(str(review_path))
         generated_length = len(generated_text.split())
         
-        # Convert human reviews to text and compute similarities
-        similarity_results = []
-        human_lengths = []
-        human_summaries = []
+        # Convert human reviews to text and compute similarities (optimized for GPU/CPU)
+        print(f"  Calculating similarities with {len(human_reviews)} human reviews...")
+        similarity_results = calculate_similarities_optimized(generated_text, human_reviews, max_workers=similarity_workers, device=device)
         
-        for i, human_review in enumerate(human_reviews):
-            human_text = convert_human_review_to_text(human_review)
-            human_length = len(human_text.split())
-            human_lengths.append(human_length)
-            
-            # Create temporary files for similarity calculation
-            temp_gen_path = paper_dir / f"temp_generated_{review_type}_{i}.txt"
-            temp_human_path = paper_dir / f"temp_human_{review_type}_{i}.txt"
-            
-            try:
-                with open(temp_gen_path, 'w', encoding='utf-8') as f:
-                    f.write(generated_text)
-                with open(temp_human_path, 'w', encoding='utf-8') as f:
-                    f.write(human_text)
-                
-                # Calculate similarity
-                similarity_result = sentence_level_similarity(
-                    str(temp_gen_path), 
-                    str(temp_human_path)
-                )
-                
-                similarity_results.append({
-                    "human_review_index": i,
-                    "reviewer_id": human_review.get("rid", f"reviewer_{i}"),
-                    "similarity": similarity_result["mean_max_similarity"],
-                    "coverage": similarity_result["coverage"],
-                    "human_length": human_length,
-                    "human_text": human_text
-                })
-                
-                human_summaries.append({
-                    "reviewer_id": human_review.get("rid", f"reviewer_{i}"),
-                    "length": human_length,
-                    "human_text": human_text,
-                    "has_content": bool(human_text.strip())
-                })
-                
-            finally:
-                # Clean up temporary files
-                temp_gen_path.unlink(missing_ok=True)
-                temp_human_path.unlink(missing_ok=True)
+        # Extract data for compatibility
+        human_lengths = [result["human_length"] for result in similarity_results]
+        human_summaries = [
+            {
+                "reviewer_id": result["reviewer_id"],
+                "length": result["human_length"],
+                "human_text": result["human_text"],
+                "has_content": bool(result["human_text"].strip())
+            }
+            for result in similarity_results
+        ]
         
         # Calculate aggregate metrics
         similarities = [r["similarity"] for r in similarity_results if r["similarity"] > 0]
@@ -626,7 +672,7 @@ def main():
     all_comparisons = []
     for paper_dir in paper_dirs:
         try:
-            comparisons = compare_single_paper(paper_dir)
+            comparisons = compare_single_paper(paper_dir, similarity_workers=4, device=None)
             all_comparisons.extend(comparisons)
             print(f"✓ Processed {paper_dir.name}: {len(comparisons)} comparisons")
         except Exception as e:
@@ -682,7 +728,7 @@ def calculate_metrics_for_runs(runs_dir: Path,
     comparisons = []
     for paper_dir in paper_dirs:
         try:
-            paper_comparisons = compare_single_paper(paper_dir)
+            paper_comparisons = compare_single_paper(paper_dir, similarity_workers=4, device=None)
             comparisons.extend(paper_comparisons)
             
             # Extract paper ID for display
