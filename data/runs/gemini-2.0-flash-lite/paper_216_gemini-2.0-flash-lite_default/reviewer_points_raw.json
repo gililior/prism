@@ -1,0 +1,320 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "novelty"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces COLT5, a new model for long-range inputs, and presents experimental results comparing it with LONGT5. The experiments evaluate COLT5's performance on long input datasets, extremely long inputs, and few-shot capabilities. The paper also includes ablations and an investigation of routing patterns.",
+    "grounding": "Sec 4",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "COLT5 demonstrates improved quality-speed trade-off compared to LONGT5, with speedups in training and inference. COLT5-XL achieves SOTA performance on the SCROLLS benchmark.",
+    "grounding": "Sec 4.2, Fig 2, Table 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "COLT5 effectively scales to extremely long inputs, achieving stronger performance and faster speed than LONGT5.",
+    "grounding": "Fig 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of COLT5. The model is specialized for long sequences and requires training from scratch. The paper does not address the limitations of the model.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient evidence to support the claim that COLT5's routing method is the primary driver of performance gains. Ablation studies are mentioned but not detailed.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct more detailed ablation studies to isolate the impact of individual COLT5 components, especially the learned router.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Investigate the potential of adapting COLT5's routing method to decoder-only models or exploring alternative routing methods for causal applications.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the specific architecture of the 'heavy branches' and 'light feedforward and attention layers'?",
+    "grounding": "Sec 5",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does COLT5's performance compare to other state-of-the-art models on the same benchmarks?",
+    "grounding": "Sec 4.2",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of COLT5, including its specialization for long sequences and the lack of a causal routing method.",
+    "grounding": "Sec 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces COLT5, a model based on the T5.1.1 architecture, and evaluates it on long input datasets. The paper details the experimental setup, including model configurations, pre-training, and fine-tuning procedures. The evaluation includes experiments on long inputs, few-shot learning, ablations, and routing patterns. The paper reports timing and performance metrics on various datasets.",
+    "grounding": "Sections 4, 4.1, and D",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides detailed information on model configurations, including architecture, embedding dimensions, number of layers, and attention heads, mirroring the LONGT5 models.",
+    "grounding": "Section 4.1",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper specifies the pre-training and fine-tuning hyperparameters, including the optimizer, learning rate schedule, batch size, and dropout rate.",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly mention the use of seeds for the experiments, making it difficult to assess the variance and reproducibility of the results.",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on the specific versions of the software libraries used (e.g., JAX, Flax, Flaxformer, T5X).",
+    "grounding": "Section 4.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the training and evaluation scripts.",
+    "grounding": "Section 4",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify and document the random seeds used for all experiments.",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a requirements.txt or a similar file to specify the exact versions of all software dependencies.",
+    "grounding": "Section 4.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used publicly available, and if not, what are the licensing restrictions?",
+    "grounding": "Section 4.1",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What is the variance of the reported results? Are the results averaged over multiple runs?",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Can the authors provide the exact hardware configuration (e.g., TPU version, memory) used for the experiments?",
+    "grounding": "Section 4.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the information provided in the paper. Without access to the code, data, and environment details, a full assessment of reproducibility is not possible.",
+    "grounding": "Entire paper",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "strength",
+    "text": "Paper is generally well organized with clear sectioning.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "Ambiguous definition of key term in Methods.",
+    "grounding": "Sec 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a notation table to aid readability.",
+    "grounding": "Appendix E",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally aim to support the claims about COLT5's performance and efficiency compared to LONGT5. However, some figures lack clear axis labels and legends, which could hinder understanding.",
+    "grounding": "Figures 1-8",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 effectively compares the quality-speed trade-off, supporting the claim that COLT5 performs better at any speed. Figure 4 supports the claim that COLT5 scales well to long inputs.",
+    "grounding": "Fig 2, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the attention pattern. Some figures lack legends or clear descriptions of what the different visual elements represent.",
+    "grounding": "Fig 3, Fig 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add error bars to the performance plots (e.g., Figure 2 and Figure 4) to indicate the confidence intervals. Ensure all axes are clearly labeled with units. Provide legends to explain the different colors and line styles used in the figures.",
+    "grounding": "Fig 2, Fig 4, Fig 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific datasets were used to generate the results in Figure 2? What do the different colors represent in Figure 4? How is the routing component defined in Figure 6? What is the meaning of the token routing weights in Figure 8?",
+    "grounding": "Fig 2, Fig 4, Fig 6, Fig 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics and do not provide detailed insights into the internal workings of the model beyond token routing.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present a comparison of COLT5 and LONGT5 across various datasets and model sizes. The tables include performance metrics, speed comparisons, and ablation studies. Some tables lack crucial statistical information.",
+    "grounding": "Tables 1-10",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 9 provides a comprehensive performance comparison with Rouge-1, Rouge-2, and Rouge-L metrics, offering a detailed view of summarization performance.",
+    "grounding": "Table 9",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks standard statistical measures like standard deviation or confidence intervals. Table 7 lacks clear units for hyperparameters.",
+    "grounding": "Tables 1, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for all reported metrics in Tables 3 and 9. Add units to the hyperparameters in Table 7.",
+    "grounding": "Tables 3, 7, 9",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the performance differences reported in Table 3? 2. What is the definition of 'Rgm' in Table 3? 3. What is the weighted average calculation used in Table 8?",
+    "grounding": "Tables 3, 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and model configurations evaluated. Generalizability to other tasks or datasets is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the training data or model outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the model to be misused for malicious purposes, such as generating fake news or spreading misinformation.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address the environmental impact of training and deploying the model.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of potential biases in the training data and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the potential for the model to be used for malicious purposes and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider the environmental impact of training and deploying the model and explore ways to reduce its carbon footprint.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  }
+]

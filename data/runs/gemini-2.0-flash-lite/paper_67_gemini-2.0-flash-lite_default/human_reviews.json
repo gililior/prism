@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "1YsBYrLcTO",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This research proposes an unsupervised pre-training method for news recommendation based on user behaviors. The authors introduce two tasks: user behavior masking to recover masked behaviors and user behavior generation to enhance user representations. Their approach outperforms existing methods in real-world news recommendation benchmarks.",
+      "reasons_to_accept": "1. The problem studied in this paper is interesting and important, but rarely researched. Thus, this research has some novelty.\n2. The proposed pretraining methods, i.e., user behavior masking to recover masked behaviors and user behavior generation to enhance user representations, are reasonable, although they are standard techniques in language modeling.\n3. The experiments are extensive and solid. The improvement brought by the proposed method is significant.",
+      "reasons_to_reject": "1. There are a few writing flaws. For example, there should be some punctuations after the equations.\n2. Besides the two MIND datasets, more datasets could be used in experiments.",
+      "questions_for_the_authors": "1. Why are  some methods mentioned in related works especially those for PLM-based news recommendation not compared in experiments?",
+      "missing_references": "None",
+      "typos_grammar_style_and_presentation_improvements": "There should be some punctuations after the equations.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "CZZmqI7wwN",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a pretraining model PUNR for news recommendation. PUNR is pretrained by two objectives of BERT-like masked behavior modeling and GPT-like autoregressive behavior generation. Comprehensive experiments show that PUNR beats several news recommendation baselines.",
+      "reasons_to_accept": "This paper explores user behavior pretraining, which is less studied by previous research. The idea is generally well stated and experiments are thorough.",
+      "reasons_to_reject": "1. The major weakness of this paper is the overlap of pretraining and finetuning data scopes. In principle, pretraining and finetuning data should not be overlapped. Otherwise, data contamination [1] makes the pretrained model memorize the data and cannot be well generalized to various downstream tasks. The essence (or target) of PLM is to pretrain on large-scale unlabeled text corpus and finetune on various downstream tasks. For example, GPT-3 and T5 [2,3] are pretrained on Common Crawl, WebText and Wikipedia corpus and finetuned on downstream supervised tasks. Pretraining on task-specific data makes the model difficult to be adapted to other tasks. The authors pretrain the model on MIND and also finetune on MIND, which is irrational and should not be called pertaining (it can be regarded as typical training), unless the author tests the model on other datasets or tasks. Pretraining and finetuning on the same dataset MIND is not a good setting for PLM study. Especially note that MIND-small is a subset of MIND-large, the MIND-small test set is also included in pertaining MIND-large corpus.\n2. As the authors use relatively high-cost computation resources to \"pretrain\" the model of large parameters, advanced news recommendation baselines should be compared, including [4,5,6,7]. Fairly speaking, the chosen baselines are not updated to advanced news recommendation works of the recent two years.\n3. Equation 4 is not right where $t_{<i}$ is either missing or not self-consistent with the notation of $E(T)$. 4. Minor concern of mine: Masked user behavior modeling is intuitive. However, incorporating GPT-like user behavior generation by introducing an additional decoder seems redundant and unnecessary, though the authors claim with experiments that it can help to learn the representation of user vectors. Since the user behavior and its containing news articles are represented in a hierarchy, I also doubt that it is too difficult for the decoder to generate such hierarchical and complex user behaviors only based on a user representation vector. Considering that the user representation vector [CLS] is a one-dimension vector (not like the $n\\times d$ hidden states of Transformer or T5 encoder outputs), I doubt if this vector can generate the whole complex user behaviors.\n5. Initializing the generative decoder with the original BERT is irrational. Moreover, using BERT's architecture to model generation is not a good choice. BERT's architecture is designed and pretrained for Mask Language Modeling, and the authors revised it to do autoregressive Language Modeling (CLM in the paper). The pretraining gap between Mask Language Modeling and Language Modeling exists.\n[1] Data Contamination: From Memorization to Exploitation, on ACL-2022 [2] Language Models are Few-Shot Learners, on NIPS-2020 [3] Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer, on JMLR-2020 [4] HieRec: Hierarchical User Interest Modeling for Personalized News Recommendation, on ACL-2021 [5] MINER: Multi-Interest Matching Network for News Recommendation, on ACL-2022 [6] MTRec: Multi-Task Learning over BERT for News Recommendation, on ACL-2022 [7] DIGAT: DIGAT: Modeling News Recommendation with Dual-Graph Interaction, on EMNLP-2022",
+      "ethical_concerns": "No",
+      "typos_grammar_style_and_presentation_improvements": "In line 005, 'works are mostly focused on' should be 'works mostly focus on'.\nThe terminology \"auto-regression\" should be \"auto-regressive\" which is standard used in our NLP community."
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "AqMwwF4NiN",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors propose an architecture that includes news and user representation using pre-training, which incorporate user behavior generation and user behavior masking tasks, to solve news recommendation.",
+      "reasons_to_accept": "1. Experiments fully prove the effectiveness of the proposed method. \n2. The description is logical and easy to follow. \n3. The proposed architecture is straightforward and easy to understand.",
+      "reasons_to_reject": "1. The idea of user behavior pre-training is very common in recommendation systems. \n2. According to the results in Table 2, the improvement of the model effect is gradual. Also, why not use UNBERT as a baseline for comparison, in Table 2?",
+      "questions_for_the_authors": "1. Can we look at case studies to see why this structure is more efficient than other baselines? \n2. What is the effect of word representations using random initialization?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

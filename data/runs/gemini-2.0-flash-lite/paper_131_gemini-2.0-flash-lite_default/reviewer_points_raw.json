@@ -1,0 +1,398 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper proposes a novel causal intervention technique to mitigate entity bias in both white-box and black-box LLMs.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the limitations of existing causal methods for mitigating entity bias, particularly in parameter estimation and applicability to black-box LLMs.",
+    "grounding": "Intro, \u00a71.2",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the most relevant prior work, especially those using causal interventions for bias mitigation. The delta is not clear.",
+    "grounding": "Related Work, \u00a73.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a quantitative comparison with a state-of-the-art method for entity bias mitigation, such as [cite a relevant paper].",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the selection of 'neighboring entities' and how their similarity is determined.",
+    "grounding": "\u00a73.2",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed method's performance compare to other methods on datasets with varying degrees of entity bias?",
+    "grounding": null,
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost of the proposed intervention, and how does it compare to other methods?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any limitations to the types of entities or relations for which the proposed method is effective?",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "limitations",
+    "text": "The effectiveness of the method may depend on the quality of the entity embeddings and the selection of neighboring entities.",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes and evaluates intervention techniques to mitigate entity bias in white-box and black-box LLMs. The experimental setup, including datasets, metrics, and baselines, is described. The paper reports average scores with standard deviations for white-box experiments. Black-box experiments use GPT-3.5 and evaluate performance under a zero-shot setting.",
+    "grounding": "Sections 3, 4, and 5",
+    "facet": "overview"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides implementation details, including backbone models, input formats, and specific parameter settings (k=3).",
+    "grounding": "Section 4.1, Appendix A.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper reports the average score with standard deviation of three runs for white-box experiments.",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly mention the random seeds used for experiments, making it difficult to reproduce the results.",
+    "grounding": "Sections 4 and 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide details on the computational resources used for the experiments.",
+    "grounding": "Sections 4 and 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments in the paper or supplementary material.",
+    "grounding": "Sections 4 and 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository with instructions on how to reproduce the experiments, including the environment setup (e.g., using a requirements.txt or a Dockerfile).",
+    "grounding": "Sections 4 and 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the computational resources (e.g., GPU type, memory) used for the experiments.",
+    "grounding": "Sections 4 and 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets and code publicly available?",
+    "grounding": "Sections 4 and 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the specific versions of the libraries and dependencies used in the experiments documented?",
+    "grounding": "Sections 4 and 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Can the authors provide the exact prompts used for the black-box experiments?",
+    "grounding": "Section 5.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of seed information and code availability hinders full reproducibility. Compute resources are not specified.",
+    "grounding": "Sections 4 and 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Partially reproducible",
+    "grounding": "Based on the strengths and weaknesses identified.",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results, but lack details on statistical significance.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The tables include mean and standard deviation, providing a basic measure of result variability.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The tables do not include confidence intervals or p-values, making it difficult to assess the statistical significance of the results.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include p-values or other statistical significance indicators to clarify the reliability of the observed differences between methods.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to compare the different methods? Are the observed differences statistically significant? What is the sample size for each experiment?",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the specific datasets and experimental settings used.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on dataset licensing, consent, or privacy is provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed section on dataset licensing, specifying the licenses for all datasets used. Provide information on how consent was obtained for the use of any personal data. Clarify the usage terms of the models and datasets, including any restrictions on commercial use or redistribution. Address potential privacy risks associated with the datasets, especially if they contain personal information.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented aim to illustrate the effectiveness of the proposed methods. The clarity and effectiveness of the figures vary.",
+    "grounding": "Figures 1, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 5 appears to show the F1 score of training-time intervention with different k on RE, which supports the claims made in the text.",
+    "grounding": "Figure 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes in Figure 5 lack clear labels and units, making it difficult to interpret the results without referring back to the text.",
+    "grounding": "Figure 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure 5, label the axes clearly (e.g., 'k' on the x-axis and 'F1 Score' on the y-axis). Include a legend to identify the different lines or bars.",
+    "grounding": "Figure 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the range of 'k' values used in Figure 5?",
+    "grounding": "Figure 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The figures are limited in scope, focusing on overall performance metrics and not providing detailed insights into the model's behavior.",
+    "grounding": "Figures 1, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the problem, the proposed solution, and the contributions of the paper.",
+    "grounding": "Abstract",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of entity bias and its impact on LLMs.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"neighboring entities\" used in the abstract and later lacks a precise definition. How are these entities identified?",
+    "grounding": "Abstract, \u00a73.2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper could benefit from a notation table to define the variables and symbols used in the causal models and intervention techniques.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the \"specific structured causal model (SCM)\" in the introduction or early in the methods section. What makes it specific?",
+    "grounding": "Abstract, \u00a73.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the criteria for identifying \"similar entities\" used in the training-time intervention.",
+    "grounding": "\u00a73.2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Elaborate on the practical implications of the \"in-context intervention\" for black-box LLMs. How is it implemented?",
+    "grounding": "\u00a73.3",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost of the proposed interventions compared to baseline methods?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive are the results to the choice of \"neighboring entities\" or the construction of the convex hull?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "Can the proposed methods be extended to other types of biases beyond entity bias?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the intervention techniques may not be sufficient for complete reproduction without access to the code and specific implementation details.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper presents a novel approach to mitigate entity bias in LLMs. The clarity can be improved by addressing the weaknesses and incorporating the suggestions.",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces causal intervention techniques to mitigate entity bias in language models. It proposes training-time and in-context interventions, demonstrating effectiveness on relation extraction and machine reading comprehension tasks.",
+    "grounding": "Introduction, Experiments",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strengths",
+    "text": "The paper addresses entity bias, a known issue in LLMs. The proposed methods are evaluated on both white-box and black-box models, showing performance improvements. The in-context intervention is designed for black-box LLMs, making it widely applicable.",
+    "grounding": "Introduction, Experiments",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section on societal impact, including potential risks, misuse cases, and fairness considerations. The discussion of limitations is missing.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section discussing potential misuse, such as the generation of biased or misleading information. Address fairness concerns related to the entities used in the experiments and the potential for the model to perpetuate existing biases. Discuss the limitations of the approach, such as its applicability to different types of biases or tasks.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "questions",
+    "text": "1.  How does the method handle cases where the entity bias is not related to the specific entities used in the experiments? 2.  What are the potential risks of using this method in high-stakes applications, such as medical diagnosis or legal reasoning? 3.  How does the method ensure fairness when dealing with entities from different demographic groups? 4.  What are the limitations of the in-context intervention approach, and how does it compare to fine-tuning?",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "limitations",
+    "text": "The societal scope is limited by the focus on entity bias in relation extraction and machine reading comprehension. The approach may not generalize to other types of biases or tasks. The paper does not address the broader societal implications of LLMs, such as their impact on employment or misinformation.",
+    "grounding": "Introduction, Experiments",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "ratings",
+    "text": "risks: insufficient evidence, misuse: insufficient evidence, fairness: insufficient evidence, broader_impacts: insufficient evidence",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's introduction and related work sections clearly differentiate the proposed causal intervention method from existing entity substitution techniques, highlighting the theoretical grounding and improved performance. The paper also addresses the limitations of prior work by extending the approach to black-box LLMs.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its causal intervention method with the entity renaming approach described in [2]. While the paper mentions the entity substitution technique, a direct comparison, especially on the same datasets, would strengthen the claims of improved performance and robustness.",
+    "grounding": "Related Work, Sec 4.1",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the proposed causal intervention method with the approach in [1] on the same relation extraction and machine reading comprehension tasks. This comparison should include the same datasets and evaluation metrics to quantify the performance gain.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the limitations of the proposed causal intervention method, such as the sensitivity to the choice of neighboring entities or the computational cost of the intervention process.",
+    "grounding": "Discussion",
+    "facet": "limitations"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study to analyze the impact of different intervention strategies (e.g., different numbers of neighboring entities, different similarity metrics) on the performance of the proposed method. This will provide insights into the robustness and generalizability of the approach.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

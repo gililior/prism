@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "YvLrlQHDzR",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper builds a new benchmark for the Arabic grammatical error correction (GEC) area. To build the benchmark, it starts with the grammatical error detection (GED) task. In this section, the paper proposes a new alignment algorithm for error type annotation and achieves better results compared with previous methods. In the GEC section, it finds that the pre-trained model BART can be enhanced with GED and Morphological Disambiguation output, and this combination performs best among most of the settings. It also shows how GED granularity affects final GEC performance.",
+      "reasons_to_accept": "The paper is well-written and easy to understand; the readers who do not speak Arabic, such as me, can also understand the nature and background of Arabic GEC quickly by reading Sections 2 and 3. The newly proposed alignment algorithm and the strong baseline are essential contributions to the Arabic GEC community.",
+      "reasons_to_reject": "I only have one concern about the missing explanations of results. In Section 7, Line 509, the paper only describes the results. In Section 5, we can see that AraT5 has a larger pre-trained data size than AraBART but performs worse in most of the situations on the GEC dataset. It would be better to provide some explanations about this kind of result.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "QZRng7EQYl",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper focuses on investigating the effectiveness of Grammatical Error Detection (GED) on Arabic Grammatical Error Correction (GEC). For the investigation process, they depend on three datasets (QALB-2014, QALB-2015, and ZAEBUC). They claim that they were the first to benchmark newly developed pretrained Seq2Seq models on Arabic Grammatical Error Correction. As for the GED task, they used their own alignment algorithm which shows that they were superior across all metrics. They could show that using GED information in GEC models improves the performance across GEC datasets. In addition, they discussed the importance of leveraging contextual morphological preprocessing in improving the GEC performance. Their experiments achieved SOTA results on the two (L1 and L2) datasets of (QALB-2014 and QALB-21015).",
+      "reasons_to_accept": "Grammatical error correction (GEC) is still problematic for morphologically rich languages, such as Arabic, due to the complexity and nature of such languages. Having a paper that focuses on GEC for Arabic, helps the NLP community in developing GEC systems for Arabic.",
+      "reasons_to_reject": "No reasons",
+      "typos_grammar_style_and_presentation_improvements": "It would be better if you add the structure of the paper in the last part of the introduction.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "qK9BghaIps",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper addresses the problem of grammatical error correction (GEC) and grammatical error detection (GED) in Arabic, more specifically on Modern Standard Arabic (no dialectal Arabic). Arabic is a morphologically rich language therefore the tasks is more difficult compared to e.g. English.  The authors work with three existing datasets for GEC in MSA, for all of them the erroneous text is provided with the corrected one.  For GED, the authors extend the three existing datasets with automatic annotation of errors types. This mainly requires alignment of the two texts. The authors propose a novel method for obtaining automatic word alignment of erroneous and correct text in Arabic, achieving almost 100% Precision and Recall. After alignment, the errors are automatically classified into 7 error classes and 32 subtypes (assigned individually or in a combination). An Arabic PLM CAMeLBERT is finetuned for the classification tasks with varying number of classes (43/13/2) and evaluated on the three data sets.  For GEC, where each error must be detected and a replacement produced.  The authors proposes two models, one based on AraBART, one on AraT5, each in three configurations, one includes morphological analysis of each Arabic word, one detecting error type, the last one combining both. The performance of those models are compared with other solutions and a few baselines (including e.g. ChatGPT). The results show a superior performance of the models combining both GED and Morphological analysis.",
+      "reasons_to_accept": "Nicely written paper on an interesting topic. Showing how explicit GED and Morphological analysis can help in GEC in Arabic. \nStrong evaluation on three diverse datasets, outperforming the current SOTA. Comparison with several baselines, also including ChatGPT. \nThe list of references is extremely rich and can well serve as a source of relevant references on this topic",
+      "reasons_to_reject": "While the authors outperform the current SOTA on all the datasets, the main reason for that is the large pretrained models - AraT5 and AraBART (the latter showed better perfomrance). The effect of including the morhological analysis and error classification is rather small (measured on the test sets, Table 6), most of the results are reported as not statistically significant.  Only the overall (average) improvements of the models combining GAD and Morphological analysis is provided. It is not clear, whether there are some error types where the models can benefit from knowing the explicit information of the type of the error.   It is not clear, from the paper, how acurrat is the automatic method for error type classification. At least a small qualitative study should have been performed to analyse, whether the errors are well classified. The authors report the results on the automatically obtained annotations, but the performance measured w.r.t. ground truth is not discussed.",
+      "questions_for_the_authors": "The problem of Arabic dialects is not really discussed in the paper. The large pretrained models are probably trained also on dialectal data. Are dialectal words considered as errors in MSA texts? Is there a special error type for them?  Please, provide better description of the alignment algorithm. It is not clear, whether the Levenshtein algorithm is applied to tokens or to the whole sentences.  The greedy part of the algorithm is not explained well.  Line 565 refers to a statistical test of significance. Please, provide details on the test results also for other experiments (mainly presented in Table 6).",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

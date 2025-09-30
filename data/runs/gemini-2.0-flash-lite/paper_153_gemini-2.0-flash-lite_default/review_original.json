@@ -1,0 +1,132 @@
+{
+  "summary": "This paper introduces PISTAQ, a disentangled approach to spatial reasoning, demonstrating strong performance on auto-generated datasets. However, the paper underperforms on real-world datasets and lacks sufficient comparison to state-of-the-art models, along with a thorough discussion of ethical considerations.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions the work relative to prior art by identifying limitations in end-to-end models and proposing a disentangled approach, providing context and motivation for the research.",
+      "grounding": "Intro, Sec 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The tables clearly present the results of the experiments, allowing for easy comparison of the different models, and provide clear metrics for the extraction modules.",
+      "grounding": "Tables 4, 5, and 6",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "PISTAQ outperforms baselines on auto-generated datasets, demonstrating the effectiveness of the extraction and symbolic reasoning pipeline.",
+      "grounding": "Table 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "PISTAQ outperforms PLMs on SPARTQA-HUMAN, with a significant margin on Yes/No questions.",
+      "grounding": "Table 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the different model architectures.",
+      "grounding": "Introduction §1",
+      "facet": "organization"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a detailed comparison with the closest baseline models, making it difficult to assess the delta.",
+      "grounding": "Abstract, Sec 1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The tables lack detailed axis labels, units, and statistical information (e.g., standard deviations, confidence intervals, p-values), making it difficult to fully understand the results.",
+      "grounding": "Tables 3, 5, 6, and 7",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of PISTAQ, as it underperforms on the RESQ dataset.",
+      "grounding": "Table 7",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'implicit spatial relations' is vague and could benefit from examples or a more formal definition.",
+      "grounding": "Introduction §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear notation section or table, making it difficult to follow the mathematical formulations and model descriptions.",
+      "grounding": "Throughout the paper",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address ethical considerations, including privacy, consent, usage terms, licensing, potential biases, misuse, and fairness.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy, ethics_consent, ethics_usage_terms, ethics_licensing, fairness, risks"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a direct comparison with a state-of-the-art model that also addresses spatial reasoning.",
+      "grounding": "Abstract, Sec 1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Consider adding error bars or confidence intervals to the tables to indicate the variability of the results and consider using a bar chart or line graph to visualize the results.",
+      "grounding": "Tables 5, 6, and 7",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments to isolate the impact of each component (extraction, reasoning) in the PISTAQ pipeline.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Evaluate PISTAQ on datasets with varying degrees of reliance on commonsense knowledge to better understand its limitations.",
+      "grounding": "Sec 5.2",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the 'rules' used in the symbolic reasoning component of the pipeline model and include examples of these rules.",
+      "grounding": "Introduction §1, Figure 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a table summarizing the key differences between the proposed models.",
+      "grounding": "Introduction §1",
+      "facet": "organization"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a notation table to aid readability.",
+      "grounding": "Throughout the paper",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section detailing the datasets used, their sources, and any associated licenses or usage restrictions.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Address potential ethical risks, such as bias or misuse, and outline mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_usage_terms, risks, fairness"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

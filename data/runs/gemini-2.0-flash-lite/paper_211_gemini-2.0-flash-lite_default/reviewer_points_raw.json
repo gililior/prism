@@ -1,0 +1,458 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel approach to prompt optimization using textual gradients.",
+    "grounding": "Abstract",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks details on the specific LLM API used and the hyperparameters of the algorithm.",
+    "grounding": "Sec 2",
+    "facet": "limitations"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of ProTeGi compare to other prompt optimization techniques on a wider range of tasks?",
+    "grounding": null,
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces ProTeGi, an algorithm for prompt learning, and evaluates it across four NLP tasks. The results suggest ProTeGi outperforms baseline methods. Ablation studies and analyses of different components are presented.",
+    "grounding": "Sec 3.4, Fig 3, Table 1, Table 2, Fig 4, Table 3, Table 4",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "ProTeGi outperforms baselines on all four datasets, with significant improvements over MC and RL baselines (3.9% and 8.2% margin, respectively) and over the original prompt p0 and AutoGPT (15.3% and 15.2%, respectively).",
+    "grounding": "Sec 3.4, Fig 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Beam search algorithm outperforms flat and greedy baselines on all tasks, with significant improvements in Jailbreak and Liar detection.",
+    "grounding": "Table 1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "UCB-style algorithms consistently outperform successive rejects-style algorithms.",
+    "grounding": "Table 2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the benefits of ProTeGi. The results suggest that different optimization techniques may be more suitable for different types of natural language processing tasks, and that a more adaptive approach like ProTeGi may be necessary to achieve optimal performance. However, the paper does not provide enough evidence to support this claim.",
+    "grounding": "Sec 3.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that the RLHF-tuned models dramatically outperform GPT-3, with GPT-4 offering the best performance. However, the paper does not provide enough evidence to support this claim.",
+    "grounding": "Table 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct more in-depth analysis of the failure cases of ProTeGi.",
+    "grounding": "Sec 3.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the datasets used, including their size and composition.",
+    "grounding": "Sec 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a more detailed discussion of the limitations of the proposed approach.",
+    "grounding": "Sec 3.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific hyperparameter settings used for each of the algorithms?",
+    "grounding": "Sec 3.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive are the results to the choice of LLM API?",
+    "grounding": "Table 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost of ProTeGi compared to the baselines?",
+    "grounding": "Sec 3.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge that the study is a preliminary case study and that the results may not generalize to other NLP tasks.",
+    "grounding": "Sec 3",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents a new prompt optimization algorithm, ProTeGi, and evaluates it on four NLP tasks. The paper lacks details on seeds, variance, and code availability.",
+    "grounding": "Sections 3.2, 3.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides detailed descriptions of the experimental setup, including the LLM API used, temperature settings, and hyperparameter values.",
+    "grounding": "Section 3.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments, making it difficult to reproduce the results. The variance of the results is only briefly mentioned in the context of the search query budget.",
+    "grounding": "Section 3.2, 3.4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about code availability.",
+    "grounding": "N/A",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should provide the code used for the experiments, including the implementation of the ProTeGi algorithm, baselines, and evaluation metrics. A link to a public repository (e.g., GitHub) would be ideal.",
+    "grounding": "N/A",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should report the random seeds used for all experiments. This includes the seed used for sampling the development and test sets, and for the LLM API calls. The variance of the results should be reported (e.g., standard deviation) across multiple runs.",
+    "grounding": "Section 3.2, 3.4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used in the experiments publicly available? If not, can the authors provide the data or a way to access it?",
+    "grounding": "Section 3.4",
+    "facet": "data availability"
+  },
+  {
+    "kind": "question",
+    "text": "Can the authors provide the exact versions of the libraries and dependencies used in the experiments, or a Dockerfile/environment file to ensure reproducibility?",
+    "grounding": "Section 3.2",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "How were the few-shot examples selected? Were they selected randomly, or based on some criteria? If randomly, what seed was used?",
+    "grounding": "Section 3.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper does not mention any computational constraints or resource limitations.",
+    "grounding": "N/A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "low",
+    "grounding": "lack of code, seeds, and variance reporting",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on data privacy measures or adherence to LLM API terms of service.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on consent for data involving human subjects.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "Usage terms for the algorithm are not specified.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a detailed description of the datasets used, including their sources, licenses, and any relevant usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "If human data is used, describe the consent process and any privacy-preserving measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Detail the privacy measures taken to protect user data, especially when using LLM APIs. Clarify adherence to the LLM's terms of service.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the usage terms for the developed algorithm, including any restrictions on commercial use or redistribution.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents several figures to visualize the performance of the proposed ProTeGi algorithm. The figures include performance comparisons, learning curves, and qualitative examples. The clarity and effectiveness of these figures vary.",
+    "grounding": "Figures 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 3 is mentioned as presenting the main results, suggesting it effectively supports the claims of the paper. Table 1 and Table 2 are well-organized and present clear results.",
+    "grounding": "Figure 3, Table 1, Table 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 4 lacks clear axis labels and units, hindering interpretation. The description of the figures is limited, making it difficult to assess their full impact.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure 4, label the x-axis clearly (e.g., 'Number of Optimization Steps') and the y-axis (e.g., 'F1 Score'). Include a legend to identify the different datasets.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific metrics used in Figure 3? What do the different lines or bars represent in Figure 3 and 4? Are the results in Table 1 and 2 statistically significant?",
+    "grounding": "Figures 3, 4, Table 1, Table 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on performance metrics, lacking detailed visual representations of the prompt optimization process itself.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces ProTeGi, a nonparametric algorithm for automatic prompt optimization using textual gradients. It aims to improve prompts for LLMs by iteratively refining them based on feedback and editing steps, mirroring gradient descent. The approach is evaluated on multiple NLP tasks, including LLM jailbreak detection, and demonstrates improved performance compared to baseline methods.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the problem of manual prompt engineering and motivates the need for automatic prompt optimization.",
+    "grounding": "Introduction \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a clear overview of the proposed method, ProTeGi, and its key components.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'gradient' is used in a non-standard way, which may confuse readers. The paper should clarify how textual 'gradients' are formed and used.",
+    "grounding": "Abstract, Sec 2.1",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of the metric function 'm' used for prompt evaluation.",
+    "grounding": "Sec 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the 'textual gradient' generation process, including the prompts used to elicit feedback from the LLM.",
+    "grounding": "Sec 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define the notation used in the paper more explicitly, especially for key variables and functions.",
+    "grounding": "Sec 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the choice of the initial prompt p0 affect the performance of ProTeGi?",
+    "grounding": "Sec 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the computational costs associated with the beam search and bandit selection procedures?",
+    "grounding": "Abstract, Sec 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the 'textual gradient' generation process is not detailed enough to reproduce the results.",
+    "grounding": "Sec 2.1",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Organization: 4/5, Clarity: 3/5, Terminology: 3/5",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results comparing different algorithms and model configurations. The tables are generally well-structured but lack some statistical rigor.",
+    "grounding": "Tables 1, 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 includes clear comparisons of different bandit algorithms.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks clear statistical measures to compare the performance of different methods. The table does not include standard deviations or confidence intervals.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to quantify the variability of the results in all tables. Add p-values to indicate statistical significance of performance differences.",
+    "grounding": "Tables 1, 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to compare the performance of different methods in each table? What is the variance of the results? What are the confidence intervals for the reported performance metrics?",
+    "grounding": "Tables 1, 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets and experimental setups used.",
+    "grounding": "Tables 1, 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential misuse cases or failure modes of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address fairness considerations, such as potential biases in the optimized prompts or the LLMs themselves.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a comprehensive discussion of the broader societal impacts of the proposed technology.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies for potential misuse and bias.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly differentiates itself from prior work by focusing on automatic prompt optimization using textual gradients, which is a novel approach compared to methods that rely on soft prompts or auxiliary models (Lester et al., 2021; Qin and Eisner, 2021; Hao et al., 2022; Deng et al., 2022; Zhou et al., 2022).",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's method, ProTeGi, is a nonparametric solution that operates without access to internal model parameters, making it applicable to LLMs accessed via API. This contrasts with methods requiring model training or internal state variables.",
+    "grounding": "Intro/Related Work",
+    "facet": "method"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance against the parameter-efficient prompt tuning methods described in [1] (Lester et al., 2021).",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare with methods that use LLM-based feedback for prompt improvement, such as those in Zhou et al. (2022) or Guo et al. (2023).",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a head-to-head comparison with [1] (Lester et al., 2021) on the same benchmark tasks. This should include a comparison of performance, computational cost, and the number of parameters tuned.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare ProTeGi with a baseline that uses LLM-based feedback, such as the MC baseline mentioned in the paper, to evaluate the effectiveness of the textual gradient approach.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  }
+]

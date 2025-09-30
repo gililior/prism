@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "jYwtGQBcSp",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper tackles the zero-shot intent detection tasks and proposes a two-stage zero-shot bert adapters (Z-BERT-A), which first leverages a dependency parser to extract a set of potential intents, then uses NLI methods relying on Bert models to classify on the candidate classes. Experimental results show this method can outperform a wide variety of baselines in both known intents zero-shot classification and unseen intent discovery.",
+      "reasons_to_accept": "1. This paper focus on important tasks of both known intents zero-shot classification and unseen intent discovery, and can leverages dependency parsers to enhance the intent generation process. \n2. Experimental results show the proposed methods are effective in zero-shot intent detection.",
+      "reasons_to_reject": "1. This work is better suited as a demo track paper, rather than a regular long paper. \n2. The idea of using NLI to handle zero-shot learning tasks are quite common.",
+      "questions_for_the_authors": "In section 4, the intent generation process generates the candidates novel class for intent classification, but I wonder for a set of unseen classes, how to normalize same intention with different utterances, and how to determine the total number of new intent classes?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "LzJ6Vg1zuU",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper presents a technique for zero-shot intent classification. The authors make use of a BERT model finetuned on the NLI task and a dependency parser to discover new intents not seen before.",
+      "reasons_to_accept": "Creativity: The authors present a creative pipeline that combines several components to predict new intents in a zero-shot setting.\nExperiments: For many experiments, the authors show results for several different methods, comparing to a variety of LLMs.",
+      "reasons_to_reject": "Simplistic approach: The method presented in Algorithm 1 just extracts words from the sentence. If the intent word is not explicitly expressed in the sentence, this method will be incapable of generating the correct intent.\nLack of baseline in Table 4: The authors only present various settings for their model. I'm not familiar with this research area, so I have no idea if there are approaches in previously published work that outperform this method that the authors have left out.\nMarginal improvement in Table 4: The difference in results for each approach are very small, so the benefit of the proposed method does not seem large.\nInterpretability of remaining results: It's hard to compare the performance to the LLMs because they only use cosine distance. It's clear the model outperforms in semantic similarity (according to the semantic encoder models used), but for more trustworthy results, a small sample of human evaluations should be used as well to be sure that this method outperforms the LLMs in the zero-shot setting. Another option would be to modify the LLM experiment such that label F1 scores could be produced (use a verbalizer to map LLM output to intent classes).",
+      "questions_for_the_authors": "1. What is the frequency of examples in the dataset where the intent is explicitly mentioned in the sentence? If this is almost all of the cases, then my first reason to reject is not important. If there are a lot of examples without the intent mentioned, this method is fundamentally limited compared to LLMs which can generalize better than this approach (generate an intent without the intent being mentioned explicitly).\n2. Are there any baselines that you could compare to for zero-shot intent classification? If so, why didn't you include them in Table 4?\n3. What is the test set for Table 4?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "POnuqpw0mh",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposed a method to do zero-shot intent classification, it can be applied to BERT-based transformer models. The method contains two stages, where for stage-1, the dependency parser is used to get potential intents and in stage-2 the zero-shot classification is performed for final output. Experiments are done on public datasets to verify the effectiveness of the proposed method.",
+      "reasons_to_accept": "The paper designed a method as a BERT adapter to handle the zero-shot intent discovery task. The model has been evaluated on two datasets and achieved state-of-the-art performance.",
+      "reasons_to_reject": "The contribution of the paper is not very clear, how does this method compare with other existing language model adapters. \nMore ablation study could be done to prove the effectiveness of components in the model architecture.",
+      "questions_for_the_authors": "1. How does this method compare with other existing language model adapters. \n2. What are the tunable parameters and what are the frozen parameters in the model? \n3. What is the size of the trainable parameters in the proposed method? \n4. The model has been used in English and Italian, can experiments be added to  one more language to better prove the multilingual ability?",
+      "typos_grammar_style_and_presentation_improvements": "Here are some minor notes that the author may consider: 1. In line-184, building a pipeline [that is] able to handle unseen classes. \n2. As the proposed method is a two-stage pipeline, it could be better if stage-1 and stage-2 can be clearly illustrated in the pipeline figure.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

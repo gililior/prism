@@ -1,0 +1,186 @@
+{
+  "summary": "This paper introduces a novel multilingual machine translation approach using pixel representations, aiming to overcome limitations of vocabulary-based methods. The paper demonstrates improved performance and addresses some weaknesses identified in the initial review, including clarifying comparisons with existing work and providing more detailed analysis of script and data representation. However, the paper still lacks crucial comparisons with relevant baselines and detailed analyses in some areas, hindering a comprehensive assessment of its contributions.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel approach to multilingual machine translation by utilizing pixel representations, addressing limitations of traditional vocabulary-based methods.",
+      "grounding": "Abstract, Intro",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions its work within the context of existing research on multilingual machine translation and pixel representations, highlighting the novelty of multilingual training with pixel representations.",
+      "grounding": "Intro, Related Work",
+      "facet": "positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper demonstrates improved performance compared to traditional subword approaches and analyzes various properties of pixel representations.",
+      "grounding": "Sec 7",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 clearly explains the pixel-based encoding process with a well-labeled diagram.",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper describes the reparameterization of models, providing details on layer depth and feed-forward width (Table 7).",
+      "grounding": "Section 2, Table 7",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 appears to present results for high-resource (HR) and low-resource (LR) language pairs, which is a good approach for comparing model performance across different resource settings.",
+      "grounding": "Table 2",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The rendering process is explained with references to existing work, and the use of PangoCairo is justified.",
+      "grounding": "Sec 2.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper explores the properties of pixel representations, such as parameter sharing within and across scripts, and their impact on cross-lingual transfer and data efficiency, providing insights into their effectiveness.",
+      "grounding": "Sec X",
+      "facet": "methods"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper compares its results to Salesky et al. (2021) in Table 1 and throughout Section 3, using their TED-7 dataset and architecture as a baseline.",
+      "grounding": "Table 1, Section 3",
+      "facet": "comparative evidence"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a direct comparison with the most relevant prior work on pixel-based machine translation, making it difficult to assess the delta.",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the benefits of pixel representations without sufficient evidence and lacks a detailed analysis of the impact of different scripts and data representation.",
+      "grounding": "Sec 7",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not mention the use of seeds or the reporting of variance, nor does it provide information about the environment used for the experiments.",
+      "grounding": "Section 2, Section 3.1, Table 7",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several figures lack clear axis labels and units, making it difficult to interpret the results quantitatively (e.g., Figure 3).",
+      "grounding": "Fig 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "Table 1, which reports model performance across datasets, does not specify the statistical measures used to determine the average metric scores and lacks information on variance or confidence intervals.",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term 'pixel representations' is used without a clear, concise definition early on, and the paper lacks a clear notation section or table.",
+      "grounding": "Abstract, §1, Sec 2.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential misuse scenarios, fairness considerations, or broader societal impacts.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare its performance against the transliteration-based approach [1] or vocabulary expansion methods [2], which are relevant baselines for multilingual and cross-lingual transfer.",
+      "grounding": "Related Work",
+      "facet": "missing_baselines"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a detailed analysis of the computational cost (e.g., training time, inference time) of using pixel representations compared to subword embeddings or other baselines.",
+      "grounding": "Methods",
+      "facet": "missing_comparisons"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the specific architectures and training methodologies used for the pixel-based models, including the size of the datasets and the computational resources used.",
+      "grounding": "Methods",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct more detailed experiments to analyze the impact of different scripts and data representation and provide more detailed analysis of the properties of pixel representations.",
+      "grounding": "Sec 7",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a link to the code repository, including the code and scripts used for the experiments.",
+      "grounding": "GitHub link placeholder",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Report the seeds used for all experiments and the variance across multiple runs and include details about the software and hardware environment used for the experiments.",
+      "grounding": "Section 2, Section 3.1, Table 7",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "In performance plots (e.g., Figures 3, 4, 5), add error bars or shaded regions to indicate confidence intervals or variance and include p-values or other statistical significance indicators in all tables, especially when comparing different models or settings.",
+      "grounding": "Figures 3, 4, 5, Tables 1, 3, 7, 8",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide explicit statements about dataset licenses and usage restrictions.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a concise definition of 'pixel representations' early in the introduction and include a notation table or section to define all symbols used.",
+      "grounding": "Abstract, §1, Sec 2.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Incorporate a figure or diagram to illustrate the architecture of the pixel-based multilingual translation model, clarifying how pixel representations are integrated.",
+      "grounding": "§2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a section on potential risks and misuse, including mitigation strategies, include a discussion of fairness considerations and potential biases, along with mitigation strategies, and expand the discussion of broader societal impacts, including positive and negative consequences.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments comparing the proposed pixel representation approach with the transliteration method [1] on a shared set of languages and scripts to quantify the performance difference and compare with vocabulary expansion methods [2].",
+      "grounding": "Sec 4.1",
+      "facet": "experiments"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section in the paper that analyzes the computational efficiency of the proposed method compared to subword embeddings and other baselines, including training and inference time.",
+      "grounding": "Sec X",
+      "facet": "experiments"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

@@ -1,0 +1,380 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces a co-training and co-distillation (CTCD) framework for improving the efficiency and performance of pre-trained language models (PLMs). The authors claim that CTCD overcomes the trade-off between efficiency and performance and achieves significant gains on the GLUE benchmark.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates performance gains on the GLUE benchmark, supporting the claim of improved performance.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the novelty of the approach without sufficient comparison to existing co-training or co-distillation methods.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed ablation study to isolate the contribution of each component of the CTCD framework.",
+    "grounding": "Sec 3.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does CTCD compare to other distillation methods in terms of computational cost?",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper does not adequately discuss the limitations of the CTCD framework, such as its sensitivity to hyperparameter settings or the potential for instability during co-training.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a CTCD method for knowledge distillation. The paper provides details on hyperparameters, training recipes, and datasets used. However, it lacks information on seeds and variance.",
+    "grounding": "Sections 5.1-5.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides detailed information on hyperparameters, including learning rate, optimizer, batch size, and training epochs. The model architecture is also clearly defined.",
+    "grounding": "Implementation details in Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not specify the random seeds used for the experiments, making it difficult to reproduce the results. No variance information is provided.",
+    "grounding": "Section 5.1-5.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments. Report the variance (e.g., standard deviation) across multiple runs.",
+    "grounding": "Section 5.1-5.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository and include a requirements file or a Dockerfile to specify the environment.",
+    "grounding": "Implementation details",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What is the variance of the reported results across multiple runs with the same settings?",
+    "grounding": "Section 5.1-5.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used publicly available, or can they be made available?",
+    "grounding": "Dataset section",
+    "facet": "data_availability"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of seed information and variance reporting limits the assessment of result reliability.",
+    "grounding": "Section 5.1-5.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions the proposed CTCD framework as a novel approach to knowledge distillation, addressing the performance degradation often observed in existing methods. The introduction highlights the limitations of current KD techniques and frames CTCD as a solution that aims to improve performance while compressing models.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "While the paper claims novelty in bidirectional knowledge transfer, it lacks a detailed comparison with existing co-training or distillation methods that might also involve mutual knowledge exchange. The specific delta compared to these methods is not clearly articulated.",
+    "grounding": "Related Work",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with a co-training or distillation method that is most similar to CTCD in terms of bidirectional knowledge transfer. This comparison should include quantitative results and a discussion of the differences in methodology and performance.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's claims are grounded in the two key findings: that distilling from the smaller model to the larger model improves the larger model's performance, and that this improvement further boosts the smaller model's performance. The ablation studies support these claims.",
+    "grounding": "Intro, Abstract",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a clear explanation of the specific mechanisms that enable the bidirectional knowledge transfer in CTCD. It is not clear how the knowledge is transferred between the models.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present the proposed methods and results, but some figures lack clarity in axes and legends.",
+    "grounding": "Figures 1-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 clearly illustrates the co-training and co-distillation approach, supporting the described methodology.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the results.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add error bars to the plots in Figure 4 and 6 to indicate the variance or confidence intervals of the performance metrics.",
+    "grounding": "Fig 4, Fig 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to evaluate the performance in Figure 4 and 6? What do the different colors or line styles represent in the visualizations?",
+    "grounding": "Fig 4, Fig 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics, potentially overlooking nuanced aspects of the models' behavior.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions are not explicitly stated for the GLUE benchmark.",
+    "grounding": "Introduction, Section 6",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed section on dataset licensing and usage terms, specifically for the GLUE benchmark. Clarify any restrictions on the use of the distilled models.",
+    "grounding": "Introduction, Section 6",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present performance results of different models on the GLUE benchmark. The tables are limited in scope and lack detailed statistical analysis.",
+    "grounding": "Tables 1, 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 compares the performance of different KD methods.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks detailed statistical information such as standard deviation or confidence intervals. Table 2 lacks specific performance metrics.",
+    "grounding": "Table 1, 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations and p-values to indicate statistical significance in both tables. Provide specific performance metrics (e.g., accuracy, F1-score) in Table 2.",
+    "grounding": "Tables 1, 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What specific metrics (e.g., accuracy, F1-score) are used to evaluate performance in Table 2? 2. What statistical tests were used to determine the significance of the performance gains in Table 1? 3. What are the standard deviations for the reported performance values in Table 1?",
+    "grounding": "Tables 1, 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables are limited to the GLUE benchmark, which may not generalize to other datasets or tasks.",
+    "grounding": "Tables 1, 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces Co-Training and Co-Distillation (CTCD), a novel framework for knowledge distillation that aims to improve both performance and inference speed of language models. CTCD involves co-training two models and mutually distilling knowledge between them. The authors claim that CTCD can surpass the performance of the original larger model while maintaining inference efficiency. They validate their approach on the GLUE benchmark.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the problem, the proposed solution (CTCD), the key findings, and the benefits of the approach.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of the challenges in knowledge distillation and motivates the need for the proposed CTCD framework.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"Community KD\" is introduced without a clear definition or explanation of its components and how it differs from CTCD. The relationship between CTCD and Community KD is not immediately clear.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for notation. Important variables and symbols used in the CTCD framework should be clearly defined.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the CTCD framework, including the training process, loss functions, and hyperparameters used.",
+    "grounding": "Methods Section (if present)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the relationship between CTCD and Community KD. Is Community KD a specific instantiation of CTCD, or a separate but related method?",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table to define all symbols and variables used in the equations and framework descriptions.",
+    "grounding": "Methods Section (if present), Appendix",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific loss functions used for distillation in the CTCD framework?",
+    "grounding": "Methods Section (if present)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of CTCD compare to other state-of-the-art knowledge distillation methods on the GLUE benchmark and other benchmarks?",
+    "grounding": "Results Section (if present)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost of CTCD compared to standard KD methods?",
+    "grounding": "Results Section (if present)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a detailed methods section and notation table may hinder the reproducibility of the results.",
+    "grounding": "Methods Section (if present), Appendix",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Organization: Good, Clarity: Needs Improvement, Terminology: Needs Improvement",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the model to be used for malicious purposes, such as generating fake news or spreading misinformation.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the training data and how they might affect the model's outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the environmental impact of training the models.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse cases and mitigation strategies, such as content moderation techniques.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss the potential for biases in the training data and how the model's outputs might be affected. Consider techniques to mitigate these biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of the environmental impact of training the models and potential mitigation strategies, such as using more energy-efficient hardware or training on smaller datasets.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel Co-Training and Co-Distillation (CTCD) framework, which distinguishes itself from traditional one-way Knowledge Distillation (KD) methods by enabling mutual knowledge transfer between two models. This approach aims to improve both performance and inference speed, addressing a key limitation of existing KD techniques.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explicitly highlights the benefits of distilling knowledge from the smaller model to the larger model, a concept inspired by reversed KD, and demonstrates how this co-distillation framework can achieve both performance improvement and model compression. This is a clear advancement over existing reversed KD methods.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare CTCD with TinyBERT [2], a well-known KD method. A direct comparison on a common benchmark would strengthen the claims of improved performance and efficiency.",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare with GLUE benchmark [1].",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments comparing CTCD with TinyBERT [2] on GLUE benchmark [1]. This comparison should include metrics for both performance (e.g., accuracy, F1-score) and inference speed (e.g., throughput, latency).",
+    "grounding": "Related Work",
+    "facet": "experiment_suggestion"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study that isolates the impact of the co-distillation component (distilling from the smaller model to the larger model) compared to a standard KD approach. This will help quantify the contribution of the proposed method.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment_suggestion"
+  }
+]

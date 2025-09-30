@@ -1,0 +1,83 @@
+[
+  {
+    "rid": "tYYYmxvc7F",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper marks the introduction of ALLIES, an innovative approach that leverages a beam search strategy for response generation in open-domain question answering. With a unique extension strategy and dynamic pruning technique, ALLIES capably tackles the critical limitations of narrow information coverage and low fault tolerance associated with large language models. Demonstrated on popular benchmarks, ALLIES excels, significantly outperforming existing methods.\nOverall, the contribution of the paper is substantial, leading me to lean towards accepting it.",
+      "reasons_to_accept": "- The paper effectively motivates its work by addressing the prevalent challenges of narrow information coverage and low fault tolerance encountered in existing methods utilizing LLMs for query responses.\n- The proposed ALLIES method is refreshingly innovative, employing an extension strategy for expansive information coverage and utilizing a dynamic pruning technique to maintain top-tier responses, thereby fostering the model's capacity to accommodate inaccuracies and alternative answers. This approach enhances response precision and reliability.\n- The paper successfully demonstrates the superiority of ALLIES over established methods through comprehensive experiments on zero-shot open-domain QA benchmarks, including NQ, TriviaQA, and WebQ, exhibiting marked improvements (+10 on NQ and WebQ).",
+      "reasons_to_reject": "- There is a noticeable increase in computational costs due to the proposed method's iterative nature, encompassing the retrieval and generation process.\n- While the paper illustrates its limitations in the introduction, the authors fail to provide a comprehensive comparison between ALLIES and existing methods, leaving the contribution of this work less well-defined.\n- Despite the use of a single prompt in the paper, the sensitivity of the model to variations in the prompt was not evaluated, leaving an important aspect of the method unexplored.",
+      "questions_for_the_authors": "- Concerning the issue of narrow information coverage, how do the authors view the relevance of their work in the context of query expansion [1]?\n- In relation to the low fault tolerance, how do the authors view the relevance of their work with self-consistency [2]?\n- Have the authors experimented with varying prompts at each step to assess prompt robustness?\n- In Figure 3, the paper presents the sensitivity of the beam size and depth. Could the authors provide their insights as to why an increase in depth leads to diminished performance?\n[1] Generation-augmented retrieval for open-domain question answering. ACL 2021 [2] Self-consistency improves chain of thought reasoning in language models. ICLR 2023",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "7rMg6rbslD",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper introduces Allies, a novel method designed to address the limitations of using large language models (LLMs) for complex tasks. Allies leverages LLMs to generate related queries iteratively, enabling iterative reasoning and expanding the scope of the original query to capture hidden knowledge. The proposed method is evaluated in zero-shot open-domain question answering and outperforms other baselines on benchmark datasets.",
+      "reasons_to_accept": "1. The paper identifies issues with stacking LLM queries and proposes a new framework to optimize iterative calling of LLM APIs. \n2. Allies presents a robust method for achieving prompt augmentation, enhancing the model's performance. \n3. Experimental results demonstrate the superior performance of Allies on open book QA benchmarks. \n4. The paper introduces a valuable approach for addressing the limitations of using LLMs for complex tasks.",
+      "reasons_to_reject": "1. The limitations of beam depths are not thoroughly explored. Further investigation is needed to understand how longer reasoning chains affect performance. \n2. The potential impact of larger beam sizes could be explored further.",
+      "questions_for_the_authors": "1. How do beam depths larger than 3 impact the results? It would be beneficial to provide specific examples illustrating the effects of longer reasoning chains. \n2. With a larger beam size, can we expect the generation of more noisy or greater numbers of augmented queries?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "RP8ax6rQpo",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "For open domain question answering, this paper employed an extension strategy to broaden the scope of the original question by generating multiple relevant questions, which allows the LLM to develop a more comprehensive understanding of the complex question by examining its individual components. Throughout the iterative process, a dynamic pruning technique was utilized to narrow down the options, retaining only the top answers at each step.",
+      "reasons_to_accept": "The testing results appear favorable.",
+      "reasons_to_reject": "The major contributions do not exhibit significant impact.  One instance is the utilization of beam search, which is not a new technique. Therefore, it is crucial to identify the main contribution of using beam search in this study. Additionally, it is important to elucidate the distinctions between the interactive and iterative process and the chain of thought approach.",
+      "questions_for_the_authors": "Question A: What are the distinctions between the interactive and iterative process depicted in Figure 1 and the algorithm based on a chain of thought?\nQuestion B: While beam search is not a novel technique, what is the main contribution of its utilization in this paper?\nQuestion C: The authors state that InstructGPT is employed, indicating LLM alignment with human feedbacks. How is beam search implemented on the top InstructGPT?\nQuestion D: Does ALLIES provide an answer based solely on the top-1 retrieved evidence?\nQuestion E: The authors mention scoring the response using the LLM. How is the score qualified or evaluated?",
+      "typos_grammar_style_and_presentation_improvements": "It is hard to follow the \"Algorithm 1 The process of generating the response to a given query using ALLIES\" on page 4.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "jrL3lg1lMn",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper introduces an iterative approach to enhance the retrieval-augmented generation (RAG) pipeline through query augmentation. \nThe method involves leveraging Language Models (LLMs) to generate additional related queries in an iterative manner, and then scoring the output using both the query and the retrieved evidence. \nThe effectiveness of the proposed approach is demonstrated through a comparison with the retrieve-then-read and generate-then-read pipelines.",
+      "reasons_to_accept": "Iterative query augmentation with scoring function can improve the RAG pipeline significantly.",
+      "reasons_to_reject": "While the paper demonstrates its effectiveness, there are some minor concerns that I would like to address: 1. Lack of experiment details:  - Providing explicit details regarding the corpus or external sources employed for retrieval purposes would be helpful - Table 4 could benefit from further explanation to improve understanding. \n    - It seems that the API time for GENREAD should be listed as 2 instead of 1. \n    - It is unclear which specific example was utilized to generate the results presented in Table 4. Does the \"retrieval&summary\" category for ALLIES indicate that the process was repeated five times?\n2. Unclear why WebQ results show performance decline with additional context which is contrast behavior with previous findings.",
+      "questions_for_the_authors": "1. What is the corpus for the retrieval?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

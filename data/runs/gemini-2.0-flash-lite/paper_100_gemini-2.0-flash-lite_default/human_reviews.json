@@ -1,0 +1,60 @@
+[
+  {
+    "rid": "sPeIAS5MuS",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper is about Adaptive Language-guided Multimodal Transformer, which incorporates an Adaptive Hyper-modality Learning module to learn an irrelevance/conflict-suppressing representation from visual and audio features under the guidance of language features at different scales for multimodal sentiment analysis task. The main contributions of the paper are: Proposed a novel multimodal sentiment analysis method, namely Adaptive Language-guided Multimodal Transformer, and explored a novel Adaptive Hyper-modality Learning module for representation learning.",
+      "reasons_to_accept": "1. The paper is written well. \n2. Explored ALMT with AHL module which is quite interesting. \n3. Ablation study is good.",
+      "reasons_to_reject": "1. The approach looks fine, but only one minor thing is it is good to share the results different fusion techniques as well.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "Gc9gy0Xnp2",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents a novel approach to Multimodal Sentiment Analysis (MSA) by introducing the Adaptive Language-guided Multimodal Transformer (ALMT). The primary problem addressed by this paper is the potential sentiment-irrelevant and conflicting information across different modalities (language, video, and audio) that may hinder the performance of MSA. The authors propose an Adaptive Hyper-modality Learning (AHL) module that learns an irrelevance/conflict-suppressing representation from visual and audio features under the guidance of language features at different scales. The paper claims that the proposed model achieves state-of-the-art performance on several popular datasets such as MOSI, MOSEI, and CH-SIMS.",
+      "reasons_to_accept": "1) The paper presents a novel approach to tackle the issue of sentiment-irrelevant and conflicting information across different modalities in MSA, which is a significant contribution to the field. \n2) The proposed model, ALMT, incorporates an Adaptive Hyper-modality Learning (AHL) module, which is a novel concept that could potentially inspire future research in this area. \n3) The paper provides empirical evidence of the model's effectiveness by demonstrating state-of-the-art performance on several popular datasets.",
+      "reasons_to_reject": "It appears that the improvement of ALMT over the CHFN method on the MOSI dataset is quite marginal. It would be beneficial if the authors could conduct significance tests to validate the statistical significance of the observed improvements.",
+      "questions_for_the_authors": "Can the authors provide more details on how the Adaptive Hyper-modality Learning (AHL) module works, specifically how it suppresses sentiment-irrelevant information? Is there any theoretical justification for the chosen architecture, especially the design of AHL in the proposed method?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "CXDSd1NENn",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work proposes Adaptive Language-guided Multimodal Transformer (ALMT) to better model sentiment cues for robust Multimodal Sentiment Analysis (MSA). ALMT consists of three major components, i.e., modality embedding, adaptive hyper-modality learning, and multimodal fusion. Due to effectively suppressing the adverse effects of redundant information in visual and audio modalities, the proposed method achieved highly improved performance on several popular datasets. Detail experiments and analyses are provided to prove the effectiveness of the ALMT.",
+      "reasons_to_accept": "- This work presents a novel multimodal sentiment analysis method, namely Adaptive Language-guided Multimodal Transformer (ALMT), which for the first time explicitly tackles the adverse effects of redundant and conflicting information in auxiliary modalities (i.e., visual and audio modalities), achieving a more robust sentiment understanding performance.\n- This work devises a novel Adaptive Hyper-modality Learning (AHL) module for representation learning. The AHL uses different scales of language features to guide the visual and audio modalities to form a hyper modality that complements the language modality.\n- State-of-the-art performance and detailed analysis in several public and widely are provided.",
+      "reasons_to_reject": "- Novelty limitations. This is an incremental job. It is common to use Transformers to fuse multiple modalities.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

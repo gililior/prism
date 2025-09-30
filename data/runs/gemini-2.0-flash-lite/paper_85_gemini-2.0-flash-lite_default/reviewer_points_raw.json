@@ -1,0 +1,476 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper presents results on fine-tuning SBERT and BART models for story retrieval. The evaluation includes metrics like precision at k, Kendall's Tau, and Spearman's correlation. The results show performance gains after fine-tuning on a new dataset.",
+    "grounding": "Section 6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper mentions the use of specific models (SBERT, BART) and evaluation metrics (Kendall's Tau, Spearman's correlation).",
+    "grounding": "Section 6, Table 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds or report variance across multiple runs. The statistical significance is mentioned, but the methodology is not clear.",
+    "grounding": "Section 6",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code, data, and a detailed description of the experimental setup, including the random seeds used for all experiments. Report the variance across multiple runs.",
+    "grounding": "Code repository, data repository, Appendix",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "questions",
+    "text": "1. Are the hyperparameters for fine-tuning SBERT and BART models available? 2. Is the dataset used for fine-tuning publicly available? 3. Are the specific versions of the libraries used for the experiments documented?",
+    "grounding": "Appendix, Section 6",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The review is limited by the information provided in the text. Without access to the code, data, and experimental setup, a complete assessment of reproducibility is not possible.",
+    "grounding": "Paper text",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Based on the provided text, there is no indication of data usage implicating licensing or privacy concerns.",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a novel task for retrieving empathically similar stories and presents a dataset (EMPATHICSTORIES) and a fine-tuned model to address this task. The authors demonstrate performance gains on retrieval metrics and validate the model's efficacy in a user study.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates performance gains across multiple metrics (k, Kendall's Tau, and Spearman's correlation) when fine-tuning SBERT and BART with the EMPATHICSTORIES dataset.",
+    "grounding": "Table 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors validate the real-world efficacy of their BART-finetuned retrieval model in a user study, showing significant improvements in feelings of empathy compared to off-the-shelf semantic similarity retrieval.",
+    "grounding": "Sec 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of the learned story representations, stating they are general purpose, while also acknowledging the potential for personalization to improve performance.",
+    "grounding": "Sec 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments to evaluate the impact of personalization on model performance, as suggested by the authors.",
+    "grounding": "Sec 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Explore the longitudinal effects of receiving stories retrieved by the system, as the current study uses short-term empathy measures.",
+    "grounding": "Sec 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the fine-tuned models compare to other state-of-the-art methods for empathic story retrieval?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific features of the EMPATHICSTORIES dataset contribute most to the observed performance gains?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the use of ChatGPT summaries in the annotation process affect the reliability and validity of the results?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss limitations, including the use of ChatGPT summaries, the lack of personalization, and the short-term nature of the empathy measurements.",
+    "grounding": "Sec 9",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a new task of identifying similarity in personal stories based on empathic resonance, as opposed to semantic similarity. They propose a framework based on three features: main events, emotional trajectories, and overall morals. They create a dataset, EMPATHICSTORIES, and finetune a model. They show that their model outperforms semantic similarity models and conduct a user study.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel task of empathic similarity, which is distinct from traditional semantic similarity in NLP. The paper clearly defines empathic similarity and its importance in fostering human connection.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper creates a new dataset, EMPATHICSTORIES, which is a valuable contribution to the field. The dataset includes annotations for empathic similarity features and scores.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The user study provides compelling evidence of the model's ability to improve empathy compared to a semantic similarity baseline.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the most relevant existing work on story similarity, especially those that consider emotional aspects. The delta between the proposed method and the baselines is not entirely clear.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide enough details about the model architecture and training process, making it difficult to assess the technical contributions.",
+    "grounding": "Sec 3.1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a more detailed comparison with existing methods for story similarity, especially those that consider emotional aspects. This should include quantitative results and a discussion of the differences.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details about the model architecture, training process, and hyperparameters used. This would help in understanding the technical contributions and reproducibility.",
+    "grounding": "Sec 3.1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct ablation studies to analyze the contribution of each feature (main events, emotional trajectories, and morals) to the overall performance.",
+    "grounding": "Sec 3.2",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of the proposed model vary across different types of stories or emotional experiences?",
+    "grounding": "Sec 4.1",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of the dataset, and how might they affect the generalizability of the results?",
+    "grounding": "Sec 3.1",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "Are there any potential biases in the dataset or the model that could lead to unfair or discriminatory outcomes?",
+    "grounding": "Ethics",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the specific operationalization of empathic similarity and the creation of the EMPATHICSTORIES dataset. The generalizability of the findings may be limited by the dataset's scope.",
+    "grounding": "Intro, Sec 3.1",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "6",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "Missing information on data licensing, consent, and privacy.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The use of ChatGPT summaries for annotation introduces potential biases.",
+    "grounding": "Section 9",
+    "facet": "ethics_bias"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed section on data licensing, consent procedures, and privacy measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a bias analysis of the ChatGPT summaries used for annotation.",
+    "grounding": "Section 9",
+    "facet": "ethics_bias"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures provide a visual overview of the empathic similarity framework and model performance. Some figures lack clear axis labels and legends.",
+    "grounding": "Figures 1-7",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 provides a clear overview of the annotation pipeline.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figures 3 and 4 lack clear axis labels and units, making it difficult to interpret the results.",
+    "grounding": "Figs 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to the axes of Figures 3 and 4, including units where applicable. Include a legend to clarify the different components in Figure 1 and 4.",
+    "grounding": "Figs 1, 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors represent in Figures 4 and 5? What is the scale of the empathic similarity scores in Figures 6 and 7? Are the error bars in Figure 3 standard error or standard deviation?",
+    "grounding": "Figs 3, 4, 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited in their ability to show the nuances of the model's performance on different types of stories.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present a variety of metrics related to model performance and data analysis, but the level of detail and statistical rigor varies across the tables.",
+    "grounding": "Tables 1-10",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 4 includes a variety of metrics (correlation, accuracy, retrieval) to evaluate model performance, providing a comprehensive view of the results.",
+    "grounding": "Table 4",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the findings. Some tables also lack clear descriptions of the metrics used.",
+    "grounding": "Tables 1, 2, 5, 6, 7, 8, 9, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations and confidence intervals for all reported metrics. Add p-values to indicate statistical significance of performance differences, especially in Table 4.",
+    "grounding": "Tables 1-10",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the differences in performance between the models? How were the confidence intervals calculated? What is the sample size for each of the analyses presented in the tables? Are there any missing values in the data presented in the tables?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the specific datasets and models used in the study, which may limit the generalizability of the findings.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a new task of identifying similarity in personal stories based on empathic resonance, contrasting it with semantic similarity. It proposes a framework using three features: main events, emotional trajectories, and morals. The authors create a dataset, EMPATHICSTORIES, and fine-tune a model. They evaluate the model with automated metrics and a user study, demonstrating improved performance and increased user empathy compared to semantic similarity baselines.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly defines the problem and motivates the need for empathy-aware models.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a clear overview of the proposed approach, including the dataset and model.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'empathic similarity' could be more precise. While the abstract and introduction provide a general idea, a formal definition with mathematical notation (if applicable) would improve clarity.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for the model architecture and training details. This information is crucial for reproducibility.",
+    "grounding": "\u00a71, \u00a72",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more formal definition of 'empathic similarity' using mathematical notation or a clear, concise formula. This would improve the precision of the concept.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a dedicated section or subsection detailing the model architecture, training procedure, and hyperparameters used. This is essential for reproducibility.",
+    "grounding": "\u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider adding a table of notation to define all symbols and abbreviations used throughout the paper. This will improve readability.",
+    "grounding": "Throughout",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the empathic similarity score between story pairs calculated? Is it a direct output of the model, or is it derived from the features?",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used for automated correlation and retrieval?",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the details of the user study? (e.g., demographics, instructions, and specific questions asked)",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed model architecture and training information may hinder reproducibility.",
+    "grounding": "\u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Organization: 3/5, Clarity: 3/5, Terminology: 4/5",
+    "grounding": "N/A",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential biases in the dataset or model, and how these biases might affect different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the model to be used to create echo chambers or reinforce existing biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the model to be used to manipulate or exploit individuals' emotions.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address potential biases in the dataset and model, and discuss mitigation strategies to ensure fairness across different demographic groups.",
+    "grounding": "Conclusion",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed discussion of potential misuse cases, such as the use of the model to manipulate or exploit individuals' emotions.",
+    "grounding": "Conclusion",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand the limitations section to discuss the potential for the model to be used to create echo chambers or reinforce existing biases.",
+    "grounding": "Conclusion",
+    "facet": "risks"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel task of identifying similarity in personal stories based on empathic resonance, which goes beyond semantic or lexical similarity, a common focus in NLP.",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper creates a new dataset, EMPATHICSTORIES, annotated with empathic similarity features, which is a valuable contribution to the field.",
+    "grounding": "Intro",
+    "facet": "dataset"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's approach of finetuning a model to compute empathic similarity and the user study to assess the model's impact on retrieving empathic stories are significant methodological contributions.",
+    "grounding": "Intro",
+    "facet": "methodology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly discuss the differences in the dataset creation process compared to existing datasets used in related work [1, 2].",
+    "grounding": "Related Work",
+    "facet": "dataset"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed comparison of the model architecture with existing models used for similar tasks, such as those mentioned in [3].",
+    "grounding": "Related Work",
+    "facet": "methodology"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed comparison of the dataset creation process with existing datasets, highlighting the novel aspects of EMPATHICSTORIES.",
+    "grounding": "Sec 3",
+    "facet": "dataset"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the impact of each empathic feature (main events, emotional trajectories, and morals) on the model's performance.",
+    "grounding": "Sec 4",
+    "facet": "methodology"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the proposed model with a baseline model based on semantic similarity, as well as a model that incorporates the features from [1] to show the added value of the proposed approach.",
+    "grounding": "Sec 4",
+    "facet": "methodology"
+  }
+]

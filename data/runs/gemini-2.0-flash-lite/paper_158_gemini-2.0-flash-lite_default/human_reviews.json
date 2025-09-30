@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "frrb5tLalt",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper looks at the problem of compressing the model size of a multilingual language model when its intended downstream use is on a monolingual task. The method the authors present is called vocabulary trimming (VT), which involves deleting tokens from the vocabulary which do not feature in the target language.  The main contributions of this paper are the following: - Explanation of VT, a method for removing tokens from the multilingual vocabulary which are not relevant to the target language.  - Extensive empirical work showing that VT has a minimal impact on downstream monolingual tasks (question answering, question generation, sentiment analysis, natural language inference) - Additional empirical work exploring the impact of vocabulary size and when VT is carried out - Exploration of VT as a debiasing technique",
+      "reasons_to_accept": "1) The paper presents extensive empirical work backing up their claims covering multiple high-resource languages. \n2) Their figures are particularly clear and helpful for explaining their method 3) Their method is well-situated in the current literature and they cover a wide range of related work",
+      "reasons_to_reject": "1) From reading the introduction and section 4, I was unclear why VT was an improvement over simply using an existing monolingual model. It would be good to have a better justification/explanation in the introduction and/or a comparison with monolingual models in the analysis in section 4 2) On lines 103-4, the authors say it is a \"natural question\" to ask if VT impacts bias levels. As someone unfamiliar with this field, I found the switch to VT's impact on bias jarring. It would help if the authors could make it clearer how they made this jump e.g. comparison with existing literature",
+      "typos_grammar_style_and_presentation_improvements": "- line 1: missing bracket after \"(LMs)\" - Figure 4: graphs are too small to interpret easily. Perhaps these results would be easier to understand in a table?\n- Table 1: having two metrics side by side was confusing and overloaded the table. Given they both say roughly the same thing, perhaps just pick one and put the full results for the other in the appendix - Tables 1, 2, 3: There is too much information here to parse easily. Given the main point here is that there is not much change over the baseline, a delta might be easier to understand than a raw result.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "4m6NZAgQLb",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces vocabulary trimming (VT) which aims to reduce a multilingual LM to a monolingual LM. The method involves trimming the vocabulary of a multilingual LM, using a target language's monolingual corpus, to include only tokens relevant to the target language. They consider applying VT before or after finetuning, and show the tradeoffs between both methods. Furthermore, they compare a trimmed multilingual model to a monolingual model trained from scratch and show that the trimmed model has less bias.",
+      "reasons_to_accept": "- Fairly efficient method because you can potentially extract several monolingual LMs from a single multilingual LM. \n-",
+      "reasons_to_reject": "- No analysis of tradeoff between extracting monolingual LM and potentially losing helpful cross-lingual transfer.  - Given that it is a long paper, it is missing important analysis such as effect of monolingual corpora domain and size, result on resourced languages and effect of % of target language composition in original multilingual corpora.  - Only evaluate on English - Did not evaluate on larger LMs.",
+      "questions_for_the_authors": "- Why report only accuracy for NLI?\n- Please report effect of VT on low resourced languages.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "qbGBfTcjY7",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Authors propose a simple vocabulary trimming technique that removes tokens from the vocabulary of multilingual LMs by identifying language-specific tokens and retaining those. Given a large enough text corpus (on which to perform token retention), theoretically there should be no drop in model performance.",
+      "reasons_to_accept": "- This method can significantly reduce the memory footprint of multilingual models, especially smaller multilingual models where a large portion of the parameters are tied to the vocabulary embedding lookup table.\n- While the capabilities are of this method are mostly tied to memory reduction",
+      "reasons_to_reject": "- This method essentially removes the capability of the model to do well in languages other than the intended language. While theoretically sound and would work well on academic datasets, real world text is rife with code-switching and text in multiple languages. This could limit the capabilities of this method.\n- Much of the benefits of this method could be potentially covered by just loading the vocabulary embeddings into CPU memory and pushing the required vocabulary embeddings per batch into GPU memory on-the-fly. Have the authors compared the inference latency increases using this method?",
+      "questions_for_the_authors": "- It's unclear why pre-FT VT reduces finetuning time -- if a language can be modeled with a subset of vocabulary V, V_subset, then finetuning would theoretically have the same computational complexity since we only use a subset of the vocabulary anyways (assuming V_subset contains all the tokens we need for that particular language). Is it just the extra time to perform the embedding lookup?\n- Is there a performane drop for pre-FT VT, since you can't leverage translate-train-all or cross-lingual transfer from high resource languages?\n- Have the authors tried this method for ultra-low-resource languages and on datasets like MasakhaNER?\n- What is the size of the per-language text corpora used to perform vocabulary retention?\n- Do the authors see a marked increase in OOV after applying this technique?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  }
+]

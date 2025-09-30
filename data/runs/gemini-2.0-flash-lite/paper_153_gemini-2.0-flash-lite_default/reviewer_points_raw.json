@@ -1,0 +1,392 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions the work relative to prior art by identifying limitations in end-to-end models for spatial reasoning and proposing a disentangled approach.",
+    "grounding": "Intro, Sec 1",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the closest baseline models, making it difficult to assess the delta.",
+    "grounding": "Abstract, Sec 1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with a state-of-the-art model that also addresses spatial reasoning, such as [insert relevant paper].",
+    "grounding": "Abstract, Sec 1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented in the paper are tables that summarize the performance of different models on various datasets. The tables are generally readable, but could benefit from more detailed labels and potentially, visualizations of the data.",
+    "grounding": "Tables 3, 4, 5, 6, and 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The tables clearly present the results of the experiments, allowing for easy comparison of the different models.",
+    "grounding": "Tables 5 and 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The tables lack detailed axis labels and units, making it difficult to fully understand the results without referring to the text. The tables could benefit from more descriptive captions.",
+    "grounding": "Tables 3, 4, 5, 6, and 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider adding error bars or confidence intervals to the tables to indicate the variability of the results. Also, consider using a bar chart or line graph to visualize the results in a more intuitive way.",
+    "grounding": "Tables 5, 6, and 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the differences in performance between the models statistically significant? What are the specific metrics used for evaluation (e.g., precision, recall, F1-score)?",
+    "grounding": "Tables 5, 6, and 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The figures are limited to presenting performance metrics and do not provide any visualizations of the model's internal workings or the data itself.",
+    "grounding": "All tables",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents PISTAQ, a model for spatial question answering. The results show PISTAQ outperforms baseline models on auto-generated and human-annotated datasets, but underperforms on a real-world dataset. The authors attribute the performance differences to the model's reliance on precise spatial reasoning and the need for commonsense knowledge.",
+    "grounding": "Sec 5, Tables 5, 6, 7",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "PISTAQ outperforms baselines on auto-generated datasets (SPARTUN, SPARTQA-AUTO), demonstrating the effectiveness of the extraction and symbolic reasoning pipeline in a controlled environment.",
+    "grounding": "Table 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "PISTAQ outperforms PLMs on SPARTQA-HUMAN, with a significant margin on Yes/No questions.",
+    "grounding": "Table 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of PISTAQ, as it underperforms on the RESQ dataset, a real-world setting.",
+    "grounding": "Table 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The analysis of the RESQ dataset suggests the model's underperformance is due to the lack of commonsense reasoning, but this is not directly tested.",
+    "grounding": "Sec 5.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments to isolate the impact of each component (extraction, reasoning) in the PISTAQ pipeline, e.g., by ablating components.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate PISTAQ on datasets with varying degrees of reliance on commonsense knowledge to better understand its limitations.",
+    "grounding": "Sec 5.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of PISTAQ change with different rule-based reasoners?",
+    "grounding": "Sec 5.1",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific types of spatial commonsense knowledge are missing in PISTAQ?",
+    "grounding": "Sec 5.2",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the extraction modules impact the overall performance of PISTAQ?",
+    "grounding": "Table 4, 5, 6",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations of PISTAQ in real-world settings and the need for commonsense reasoning.",
+    "grounding": "Sec 5.2",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper explores disentangling information extraction and reasoning in spatial reasoning over text. It proposes and evaluates models that separate these processes, comparing them with state-of-the-art baselines. The results demonstrate the benefits of disentangling for improved generalizability in realistic data domains.",
+    "grounding": "Abstract",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly defines the problem of spatial reasoning and its importance, providing context and motivation for the research.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the different model architectures, including the pipeline model, the end-to-end PLM with QA supervision, and the end-to-end PLM with explicit latent layers.",
+    "grounding": "Introduction \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'implicit spatial relations' could be more precise. The current definition is vague and could benefit from examples or a more formal definition.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation section or table, making it difficult to follow the mathematical formulations and model descriptions. This is particularly important for the different model architectures.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the 'rules' used in the symbolic reasoning component of the pipeline model. Include examples of these rules.",
+    "grounding": "Introduction \u00a71, Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table summarizing the key differences between the proposed models (pipeline, end-to-end with QA, end-to-end with latent layers).",
+    "grounding": "Introduction \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a notation table to aid readability.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific spatial relations are considered in this work?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the 'QA supervision' implemented in the second model?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific advantages and disadvantages of the pipeline model versus the end-to-end models?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a notation section and detailed model descriptions may hinder reproducibility.",
+    "grounding": "Throughout the paper",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Clarity: 3/5, Organization: 4/5, Terminology: 3/5",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "Privacy considerations for the datasets are not discussed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "Consent for data usage is not addressed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "Usage terms and ethical risks are not explicitly mentioned.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the datasets used, their sources, and any associated licenses or usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address potential privacy risks associated with the datasets, especially if they contain personal information.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "If applicable, clarify whether informed consent was obtained for data collection and usage.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss potential ethical risks, such as bias or misuse, and outline mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the sources of the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details on the data sources, including any existing licenses or usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the datasets or models.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on ethical considerations, discussing potential biases, misuse, and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not specify the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the datasets used for evaluation.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential misuse of the models.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss potential misuse of the models and outline mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of different models on various datasets, evaluating their performance on question answering tasks. The tables include accuracy, F1 scores, precision, and recall. However, the tables lack some statistical information.",
+    "grounding": "Tables 3, 4, 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 4 provides clear metrics (Macro F1, Accuracy) for the extraction modules, which is helpful for understanding the performance of the modules.",
+    "grounding": "Table 4",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the results. Table 3 is missing the actual results.",
+    "grounding": "Tables 3, 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to show statistical significance.",
+    "grounding": "Tables 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What are the standard deviations for the reported accuracy and F1 scores? 2. What statistical tests were used to compare the performance of different models? 3. How were the datasets split into training, validation, and test sets?",
+    "grounding": "Tables 4, 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and models evaluated. The generalizability of the findings to other datasets or models is not clear.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the models to be used for malicious purposes, such as creating fake news or manipulating spatial information.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the datasets and models.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential impact of the technology on different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse, such as generating misleading information or facilitating surveillance.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss potential biases in the datasets and models, and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address the potential for the technology to be used for malicious purposes, such as creating fake news or manipulating spatial information.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider the fairness implications of the technology, such as its potential impact on different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  }
+]

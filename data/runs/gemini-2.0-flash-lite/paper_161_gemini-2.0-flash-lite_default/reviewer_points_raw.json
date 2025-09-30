@@ -1,0 +1,428 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper introduces the WikiWeb2M dataset, detailing its construction and use for multimodal webpage understanding tasks.",
+    "grounding": "Sec 4, 5, 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper benchmarks Prefix Global attention against full attention and LongT5, providing details on model architectures, parameter settings, and evaluation metrics.",
+    "grounding": "Sec 4, 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims Prefix Global attention outperforms full attention, but the specific performance gains and the extent of the improvement are not clearly quantified.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper acknowledges limitations in the evaluation quality of page description generation and section summarization due to the use of pseudo summaries.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a detailed comparison of Prefix Global attention with other attention mechanisms, including quantitative results and statistical significance.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a more extensive ablation study to isolate the impact of Prefix Global attention, including comparisons with other global attention mechanisms.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of the limitations of the WikiWeb2M dataset, such as its monolingual nature and the potential for misinformation.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific performance gains of Prefix Global attention compared to other attention mechanisms?",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of Prefix Global attention vary with different input sequence lengths and model sizes?",
+    "grounding": "Sec 4, 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the impact of using pseudo summaries on the evaluation of page description generation and section summarization?",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of the dataset and the evaluation methods.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": "Ethics Statement",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel dataset, WikiWeb2M, which unifies webpage content including text, images, and structure, addressing a gap in existing datasets.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper proposes a new attention mechanism, Prefix Global, designed for webpage understanding tasks, offering a more efficient alternative to full attention.",
+    "grounding": "Abstract, Sec 1",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing methods for webpage understanding, particularly in terms of performance on the proposed tasks.",
+    "grounding": "Related Work, Sec 4",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The novelty of the Prefix Global attention mechanism needs to be more clearly articulated, especially in relation to existing local-global attention mechanisms.",
+    "grounding": "Sec 1",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a comparison with a strong baseline model on the proposed tasks, such as a model using full attention or a state-of-the-art multimodal model.",
+    "grounding": "Sec 4",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed ablation study to demonstrate the specific contributions of the Prefix Global attention mechanism, including comparisons to other attention mechanisms.",
+    "grounding": "Sec 4",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the performance of Prefix Global with different webpage structures and content types to assess its generalizability.",
+    "grounding": "Sec 4",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of Prefix Global compare to other attention mechanisms on tasks beyond the ones presented in the paper?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of WikiWeb2M in terms of the types of webpages it covers and the potential biases in the data?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any potential ethical concerns related to the use of the WikiWeb2M dataset, such as the representation of certain groups or topics?",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "limitation",
+    "text": "The novelty of the dataset is limited to the specific domain of Wikipedia webpages.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper details model architectures, parameter settings, and evaluation metrics for experiments. It lacks information on seeds and variance.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides detailed information on model architectures, parameter settings (batch size, optimizer, learning rate), and evaluation metrics (BLEU4, ROUGE-L, CIDEr).",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments, making it impossible to assess the variance and reproducibility of the results. Only a single run is reported.",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the software environment used for the experiments, such as the versions of the libraries and the operating system.",
+    "grounding": "Section 4",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code, data, and a script to reproduce the experiments. Include the random seeds used for all experiments. Report the variance across multiple runs.",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Release a requirements.txt or a Dockerfile to specify the software environment.",
+    "grounding": "Section 4",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Were multiple runs performed to calculate the variance? If so, what were the results?",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific versions of the libraries (e.g., PyTorch, TensorFlow) used in the experiments?",
+    "grounding": "Section 4",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code available? If so, where can it be found?",
+    "grounding": "Section 4",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "limitation",
+    "text": "The lack of seed information and variance reporting limits the assessment of result reliability. The absence of environment details hinders reproducibility.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethics concerns are apparent from the provided text.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Overall, the paper provides sufficient details on the experimental setup, but lacks crucial information on seeds, variance, and environment reproducibility.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the paper's contributions, including the introduction of a new dataset and a novel attention mechanism.",
+    "grounding": "Abstract",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of existing work and motivates the need for the new dataset and tasks.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'Prefix Global' attention mechanism. The explanation is brief and lacks mathematical formulation.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper could benefit from a more detailed explanation of the tasks, including input/output examples.",
+    "grounding": "Introduction, Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the Prefix Global attention mechanism, including a mathematical formulation and a diagram.",
+    "grounding": "Methods",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include example inputs and outputs for each of the three tasks (page description generation, section summarization, and contextual image captioning).",
+    "grounding": "Introduction, Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider adding a table summarizing the notation used throughout the paper.",
+    "grounding": "Throughout",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present the experimental setup, model architectures, and results. The figures are mostly readable, but some could benefit from improved labeling and clarity.",
+    "grounding": "Figures 1-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 clearly illustrates the difference between the local-global attention schemes.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 4 lacks clear axis labels and units, making it difficult to interpret the results quantitatively. Figure 3's color scheme could be improved for better clarity.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 4, label the axes clearly (e.g., 'Sequence Length' with units, 'ROUGE-L Score'). Use a more distinct color palette in Figure 3 to differentiate the components.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific tasks being studied in Figure 1? What do the colors in Figure 4 represent? What is the scale of the axes in Figure 4?",
+    "grounding": "Fig 1, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics, potentially overlooking nuances in the results.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present dataset statistics, ablation studies, and model comparisons. The quality varies, with some tables lacking crucial statistical information.",
+    "grounding": "Tables 1-13",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides a clear breakdown of dataset splits with counts for pages, sections, and images.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Many tables lack standard deviations, confidence intervals, or p-values to support claims of performance differences. Some tables lack clear headers or units.",
+    "grounding": "Tables 1, 3, 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for all reported metrics (BLEU-4, ROUGE-L, CIDEr) in Tables 5, 6, and 7. Add p-values to indicate statistical significance of performance differences between different configurations.",
+    "grounding": "Tables 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the differences reported in the ablation studies (Tables 5, 6, and 7)? 2. What is the variance or standard deviation of the reported metrics? 3. Are the reported metrics averaged over multiple runs?",
+    "grounding": "Tables 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and model configurations used in the experiments.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the dataset or model outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the model to be used to generate misleading or harmful content.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the dataset to be misused.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential biases in the dataset and how they will be mitigated.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss the potential for the model to generate misleading or harmful content and how these risks will be mitigated.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss the potential for the dataset to be misused and how to prevent it.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper acknowledges and differentiates itself from prior work in web-based tasks, such as those by Gur et al. (2022) and reinforcement learning methods (Gur et al., 2019; Liu et al., 2018; Jia et al., 2019).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper highlights the limitations of existing datasets like WIT (Srinivasan et al., 2021) and MMC4 (Zhu et al., 2023) in terms of capturing all modalities or retaining structure, thus motivating the need for a new dataset.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly state how it addresses the limitations of CM3 (Aghajanyan et al., 2022) or how it differs in terms of architecture, training, or evaluation.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a direct comparison with the methods used in Rico (Deka et al., 2017) and MoTIF (Burns et al., 2022), which are mentioned as datasets containing all modalities in mobile apps, the closest domain to webpages.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments comparing the proposed method with CM3 (Aghajanyan et al., 2022) on webpage-specific tasks such as image generation, in-filling, and entity disambiguation, using the proposed dataset.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the performance of the proposed method with MoTIF (Burns et al., 2022) on a shared task, such as web navigation or element classification, to demonstrate the advantages of the new dataset or method.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  }
+]

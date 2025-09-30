@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "E9tXyCblLg",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes a method for detecting semantic or usage differences and a method for extracting their typical instances in context based on the variance of contextualised word vectors. The approach should be effective in corpus pairs whose sizes are considerably different and also in infrequent words. The authors propose two methods: one for detecting words that have semantic differences in two corpora and one for extracting the representative instances.",
+      "reasons_to_accept": "The approach might be useful to compare diachronic corpora and detect periods of creation for some document collections. It could also be applied to detect texts developed by non-native speakers and even discriminate between texts developed by speakers with different mother tongues.",
+      "reasons_to_reject": "It goes without saying that vectors rely on specific texts, and that some degree of similarity between collections of texts can be measured. The authors stated a few limitations on the suggested approach themselves: the assumption that the form of a word is constant as its meaning(s) change. \nAlthough two-dimensional vectors are specified, it is unclear if this is always the case. Words that are formally identical but have different meanings ought to be connected to various vectors.",
+      "missing_references": "https://aclanthology.org/P19-1321/ https://paperswithcode.com/paper/learn-interpretable-word-embeddings",
+      "ethical_concerns": "Yes"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "thl9fnAVLq",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors present a new method for checking whether the same words occurring in two different corpora have the same or different meanings. The method is relatively simple because it uses pre-trained contextual word vectors and is based on counting the norm of the mean vectors. The intuition is that if a word has more meanings (more boundary meanings), the mean vector is shorter. A suitable coefficient for comparing norms in two corpora was defined and called \"coverage\".  An additional task that was solved was to identify a representative occurrence of a word for a meaning that does not occur in the other corpus.  The solution is based on counting the cosine similarity between a vector representing a particular occurrence of a word and a vector representing the difference between the weighted mean norms. Experiments were conducted on two pairs of corpora: English 1800s/2000s (COHA) and native and non-native speakers of English (ICNALE).  SMEval-2020 Task 1 data (from COHA) was used for quantitative evaluation.  The results obtained were very good, at the level obtained by much more computationally demanding methods.",
+      "reasons_to_accept": "The proposed method is relatively simple, but very effective. The authors presented the mathematical basis of the proposed measures. An extended qualitative analysis was conducted with some interesting observations about the English language itself.",
+      "reasons_to_reject": "I do not see any",
+      "questions_for_the_authors": "A: In a sketchy algorithm given in section 2.2 you write that the xs-xt should be counted. But the definition of representativeness  contains weights here.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "ye6gVGuSqN",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes methods for measuring semantic differences in words between two corpora, contributing to computationally-aided linguistic analysis.  Using a pre-trained large language model, e.g., BERT, new methods are used to examine the coverage of the meanings of words, through the norm of the mean word vectors across meanings. The proposed methods are easy to implement and without pre-training any language models, and do not require alignments between words or corpora for comparison. The proposed methods excel in semantic difference detection tasks compared to previous works, reveal potential semantic shift and difference in POS using diachronic datasets. Furthermore, the differences between native and non-native English usages are revealed using the proposed methods, in terms of different aspects, which can be beneficial for further investigation in second language acquisition.  The paper also discusses the limitations of the proposed methods, specifically the presumption of using von Mises-Fisher distribution and also other limitations for applications.",
+      "reasons_to_accept": "1. The proposed methods present a straightforward and effective approach for detecting semantic differences and the mathematical background is illustrated in certain detail. \n2. Use-cases are given with both quantitative and qualitative analyses. \n3. The codes are provided and the work is reproducible. \n4. The work can be beneficial in research in other disciplines, such as second language acquisition.",
+      "reasons_to_reject": "1. This work has only done experiments and reported results in English corpora, it would be very interesting to see some analysis in different languages or across languages, especially in the non-native English users with their mother tongue languages, and explore further potential in using variance metrics in second language acquisition research. \n2. As mentioned in the limitation section, that the usage of a large language model to obtain word vectors implicitly assumes that it models the target language as well. The methods rely on a monolingual language model trained on certain time period of data can be limited in detecting semantic shifts across a wider period of time. The current approach can be improved and this topic can be explored further.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

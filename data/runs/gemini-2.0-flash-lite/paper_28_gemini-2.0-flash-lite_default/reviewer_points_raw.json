@@ -1,0 +1,380 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper studies continual learning from human feedback in the context of extractive QA, which is a novel application.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents deployment studies of an extractive QA system, demonstrating performance gains through learning from human feedback. The authors explore update schedules and model design choices. The paper acknowledges limitations related to the use of crowdworkers and the focus on cooperative interactions.",
+    "grounding": "Sections 6, 7",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates performance gains over time in a deployed extractive QA system, supported by deployment studies.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors study the effects of update schedules and model design choices, supported by experiments.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overstates the generalizability of its findings due to the use of crowdworkers and the assumption of cooperative users.",
+    "grounding": "Section 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient evidence to support claims about the impact of the update schedule or model design choices on performance.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments with real users to validate the findings and address the limitations of using crowdworkers.",
+    "grounding": "Section 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Investigate the impact of adversarial behavior and develop robustness to such behaviors.",
+    "grounding": "Section 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How do the performance gains compare to other domain adaptation techniques?",
+    "grounding": "Section 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to evaluate the performance gains?",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive are the results to the choice of feedback mechanism?",
+    "grounding": "Section 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of using crowdworkers, the focus on cooperative interactions, and the focus on extractive QA.",
+    "grounding": "Section 7",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly address the dataset licensing or usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide details on consent procedures for the crowdworkers used to simulate user interactions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not detail privacy measures taken to protect user data.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not fully address the ethical risks associated with adversarial user behavior.",
+    "grounding": "Section 7",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include explicit licenses and usage terms for all datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details on the consent process for crowdworkers, including how their data is collected, used, and protected.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address privacy concerns by detailing data anonymization and storage practices.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss potential risks related to adversarial user behavior and mitigation strategies.",
+    "grounding": "Section 7",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "question",
+    "text": "What specific licenses govern the use of the datasets?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "question",
+    "text": "How is user consent obtained from crowdworkers, and what information is provided to them?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "question",
+    "text": "What measures are taken to anonymize and protect user data?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "question",
+    "text": "How does the system handle potentially adversarial user feedback?",
+    "grounding": "Section 7",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present the results of the experiments, but some figures lack clarity in axes labels and legends.",
+    "grounding": "Figures 1-8",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 is readable and appears to support the claims about model performance over rounds.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the results. Figure 4 and 5 could benefit from clearer labels.",
+    "grounding": "Fig 3, Fig 4, Fig 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add error bars to Figures 2, 4, and 5 to show variance or confidence intervals. Ensure all axes are clearly labeled with units where applicable. Provide a legend to clarify the meaning of different colors or line styles in Figures 4 and 5.",
+    "grounding": "Fig 2, Fig 4, Fig 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors or bar styles represent in Figures 4 and 5? What are the units for the axes in Figure 3? How is the test set constructed in Figure 2?",
+    "grounding": "Fig 3, Fig 4, Fig 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to overall performance metrics and do not provide detailed insights into specific types of errors or failure modes.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results from deployment studies and comparisons of different model training approaches. The quality varies across tables, with some lacking crucial statistical information.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2, which maps user feedback to reward values, is clearly structured and provides a direct mapping.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables 1 and 5, which provide user interaction examples, lack quantitative analysis and statistical measures. Table 3 lacks crucial statistical information such as standard deviation or confidence intervals. Table 4 lacks information on the number of examples used for training.",
+    "grounding": "Tables 1, 3, 4, and 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations and confidence intervals in Table 3 to quantify the variability in user feedback. Add p-values to Table 4 to indicate the statistical significance of the performance differences between the different training methods. Provide the number of examples used for training in Table 4.",
+    "grounding": "Tables 3 and 4",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to compare the performance of the different training methods in Table 4? 2. What is the definition of 'Round' in Table 3 and 4? 3. How were the user feedback actions in Table 2 determined and validated?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the specific datasets and experimental setups described in the paper. The generalizability of the findings is not clear.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates continual learning for extractive question answering (QA) systems using human feedback. It introduces an iterative approach where users provide feedback on model predictions, and the system learns over time. The study explores the impact of user feedback across different data regimes, including domain adaptation.",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the iterative approach and the components involved (user interaction, model prediction, feedback, and learning).",
+    "grounding": "Abstract, Figure 1, \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good motivation for the research, highlighting the potential of continual learning and the challenges involved.",
+    "grounding": "\u00a71",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'contextual bandit problem' is introduced without a clear definition or explanation, potentially hindering understanding for readers unfamiliar with the concept.",
+    "grounding": "\u00a71",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for the methodology, making it difficult to understand the specifics of the approach (e.g., model architecture, feedback mapping, learning algorithm).",
+    "grounding": "\u00a71, \u00a72",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'contextual bandit problem' or link to relevant resources.",
+    "grounding": "\u00a71",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a dedicated 'Methods' section detailing the model architecture, feedback mapping, and learning algorithm.",
+    "grounding": "\u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand on the 'diverse setups' mentioned in the abstract. Specify the different data regimes and domain adaptation scenarios.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific model architecture is used for the extractive QA system?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How are the feedback signals ('correct', 'partially correct', 'wrong') mapped to reward values?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the learning algorithm used to update the model parameters?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's methodology section is missing, which prevents full reproduction of the experiments.",
+    "grounding": null,
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Overall, the paper presents a promising approach to continual learning for QA. However, the lack of methodological details and unclear terminology could hinder understanding. Addressing these issues would significantly improve the paper's clarity and reproducibility.",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly differentiates its approach to continual learning for extractive QA from Reinforcement Learning from Human Feedback (RLHF) methods, such as [2], by focusing on single-output feedback and offline contextual bandit learning, which is more suitable for real user feedback.",
+    "grounding": "Intro and Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare its continual learning approach with the iterative process explored in [1] for embodied instruction generation. A comparison of the iterative dynamics and performance gains would strengthen the paper.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the proposed method with a baseline that uses a reward model trained on pairwise comparisons, similar to RLHF methods like [2]. This would provide a direct comparison of the two feedback mechanisms.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper mentions that the feedback signal is less informative and at times noisy compared to methods using complete labels or multiple annotations [Li et al. 2022]. However, it does not provide a quantitative analysis of the impact of noise on the model's performance over time.",
+    "grounding": "Related Work",
+    "facet": "evaluation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study to analyze the impact of different feedback noise levels on the continual learning process. This could involve simulating different levels of noise in the user feedback and evaluating the model's performance under each condition.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  }
+]

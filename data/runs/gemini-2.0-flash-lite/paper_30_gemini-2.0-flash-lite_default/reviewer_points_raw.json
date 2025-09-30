@@ -1,0 +1,410 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces ReVisE for generating natural language explanations in visual reasoning tasks. Experiments are presented to demonstrate its performance.",
+    "grounding": "Sections 4, 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates the ability to generate language explanations with less data compared to existing models.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the ability to self-correct without providing evidence.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments to identify and address failure cases.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does ReVisE compare to other models in terms of computational cost?",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the potential for social bias in BLIPv2.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Ethics Statement",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces ReVisE, a recursive visual explanation algorithm for generating explanations in visual reasoning tasks. ReVisE iteratively refines explanations, leveraging a multi-step approach to improve explanation quality and using generated explanations for self-training. The method is evaluated on several VL-NLE tasks and claims to outperform existing methods, especially in low-data regimes.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions the work within the context of vision-language explanation generation and highlights the limitations of existing methods, particularly in scenarios with limited annotations. (Intro)",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The proposed approach of iterative refinement of explanations is novel and addresses the challenge of generating high-quality explanations with limited data. (Intro)",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the most relevant baseline methods, especially those that also operate in low-data regimes or utilize iterative refinement. The delta between ReVisE and the closest baseline is not clearly articulated.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a head-to-head comparison with a state-of-the-art method that uses a similar iterative approach or operates in a low-data setting. This comparison should include quantitative results and qualitative analysis.",
+    "grounding": "Sec 4.1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to demonstrate the contribution of each component of ReVisE (e.g., iterative refinement, self-training).",
+    "grounding": "Sec 4.2",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "How does the choice of BLIP-v2 impact the performance of ReVisE? Would other VLMs yield similar or better results?",
+    "grounding": "Sec 1.3",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost of ReVisE compared to single-step explanation generation methods?",
+    "grounding": "Sec 1.3",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "Are there any failure cases or limitations of ReVisE that are not discussed in the paper?",
+    "grounding": "Sec 1.3",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of ReVisE hinges on the effectiveness of the iterative refinement process and the quality of the pseudo-labels generated for self-training. The performance is likely dependent on the initial fine-tuning and the choice of VLM.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces ReVisE, a method for VL-NLE tasks, building upon BLIPv2. The paper details the architecture, training, and experimental setup. However, the paper lacks information on seeds and variance.",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a detailed description of the BLIPv2 architecture and the ReVisE method, including pseudo-code (Algorithm 1) and equations, which aids in understanding and potential replication.",
+    "grounding": "Section 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments. This lack of information makes it difficult to assess the variance of the results and the reliability of the findings.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the computational environment used for training and evaluation, making it difficult to reproduce the results.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments. Report the variance of the results, such as standard deviation, across multiple runs with different seeds.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the training and evaluation scripts, and a requirements file (e.g., `environment.yml` or `requirements.txt`) to specify the software dependencies.",
+    "grounding": "GitHub link placeholder",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the hardware (e.g., GPU type, memory) and software (e.g., operating system, CUDA version, PyTorch version) used for the experiments.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Were multiple runs performed with different seeds? If so, what were the results?",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code for ReVisE and the experimental setup publicly available?",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost (e.g., GPU hours) of training and evaluating the models?",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The lack of seed information and variance reporting limits the assessment of result reliability. The absence of environment details hinders reproducibility.",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper's reproducibility is limited due to the lack of seed information, variance reporting, and environment details.",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present the experimental results, but some lack clarity in axes and legends.",
+    "grounding": "Figures 1-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 provides a clear case study with Grad-CAM visualizations.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the convergence step distribution.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to the axes in Figure 3, including units where applicable. Include a legend to explain the different colors or line styles used in the plots.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to evaluate the performance in Figure 5? What do the colors represent in Figure 4?",
+    "grounding": "Fig 4, Fig 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance and convergence, potentially missing finer-grained insights.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results across various datasets and models, with a focus on ablation studies and performance comparisons. The tables generally lack detailed statistical analysis, such as confidence intervals or p-values, which limits the ability to assess the significance of the findings.",
+    "grounding": "Tables 1-8",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides improvement scores and includes a reference model for comparison, which helps in understanding the relative performance of the proposed approach.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as standard deviations or confidence intervals. Table 1, for example, presents scores without any indication of the variability or significance of the results. The headers are sometimes unclear, and the presentation could be improved for better readability.",
+    "grounding": "Tables 1, 3, 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to quantify the variability of the results. Add p-values to indicate the statistical significance of the performance differences between different models or settings. Clearly define all acronyms and abbreviations in the table headers or captions. Consider using a consistent format across all tables for clarity.",
+    "grounding": "Tables 1-8",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the results presented in the tables? How were the datasets split for training, validation, and testing? What is the definition of 'filtered scores' used in Table 1 and Table 7? Are the results in Table 3 averaged over multiple runs, and if so, what is the standard deviation?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets and models evaluated. Generalizability to other datasets or tasks is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces ReVisE, a recursive visual explanation algorithm for visual reasoning tasks. ReVisE iteratively refines explanations by computing visual features, answers, and explanations in a multi-step process. The method is evaluated on several datasets and shows improvements over existing methods, especially in low-data scenarios. The paper also highlights the use of ReVisE for generating pseudo-labels for self-training.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the problem of generating explanations for visual reasoning tasks with limited annotations and motivates the need for the proposed approach. The paper clearly outlines the limitations of existing methods and positions ReVisE as a solution.",
+    "grounding": "Intro \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract provides a concise overview of the method, results, and contributions.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'step' or 'iteration' within the ReVisE algorithm. It is unclear how the visual features, answers, and explanations are computed and refined in each step. The exact mechanism of how the 'preceding sentence' guides the generation of the 'new sentence' is not well-defined.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a notation table to define the variables and symbols used in the equations or algorithm descriptions. This makes it difficult to understand the technical details of ReVisE.",
+    "grounding": "Methods \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the iterative process in the methods section, including pseudocode or a clear algorithmic description. Define the inputs, outputs, and operations performed in each step of ReVisE.",
+    "grounding": "Methods \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table to define all variables, symbols, and acronyms used in the paper. This will improve readability and understanding.",
+    "grounding": "Appendix E",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the role of the 'preceding sentence' in guiding the generation of the 'new sentence'. Explain how the visual features are computed and integrated with the text input.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What is the specific architecture of the 'frozen LLM' used in ReVisE? 2. How are the visual features computed and updated in each step? 3. What are the specific loss functions used for fine-tuning and self-training? 4. What is the computational cost of ReVisE compared to single-step methods?",
+    "grounding": "Methods \u00a72, Results \u00a73",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed algorithmic descriptions and notation may hinder reproducibility.",
+    "grounding": "Methods \u00a72",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper presents a novel approach to visual explanation generation. However, the clarity of the method description needs improvement.",
+    "grounding": "N/A",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly articulates its novelty by introducing ReVisE, a recursive visual explanation algorithm, and highlights its iterative approach for improving explanation quality, which distinguishes it from existing methods.",
+    "grounding": "Abstract, Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explicitly states its advantages over prior work by mentioning the use of a unified approach for generating answers and explanations, which is more efficient than modular approaches.",
+    "grounding": "Related Work, VL-NLE",
+    "facet": "method"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare ReVisE with VLMO [1], a unified vision-language pre-training model, which is a top-cited related work. A comparison would help to understand the advantages of ReVisE over VLMO.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not compare with A-OKVQA [2] benchmark for visual question answering using world knowledge. It is important to compare with this benchmark to show the effectiveness of ReVisE.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing ReVisE with VLMO [1] on VCR and VQAX datasets. This experiment should include metrics like BLEU-1 to quantify the performance difference.",
+    "grounding": "Sec 4.1, VCR and VQAX datasets",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate ReVisE on the A-OKVQA [2] benchmark to assess its performance on tasks requiring world knowledge. Compare the results with existing methods on this benchmark.",
+    "grounding": "Sec 4.1, A-OKVQA",
+    "facet": "experiment"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper highlights the use of explanations generated by ReVisE as valuable annotations for few-shot self-training, demonstrating its data efficiency.",
+    "grounding": "Abstract, Few-Shot Self Training",
+    "facet": "method"
+  }
+]

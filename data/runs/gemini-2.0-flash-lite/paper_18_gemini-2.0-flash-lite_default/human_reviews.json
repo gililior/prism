@@ -1,0 +1,68 @@
+[
+  {
+    "rid": "J6WeppqCO7",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The work proposes to teach vision-language Transformers structured information leveraging scene graphs (SGs). Supervision signals are obtained from SGs in two ways: 1)  positive and negative captions are generated with different compositional substituents; 2) object labels, relations and coordinates are used to supervise a set of special \"scene graph tokens\".\nThe learnable scene graph tokens possess a separate set of attention and feedforward-layer parameters. They are allowed to interact with regular patch tokens through self-attention, which can be later leveraged for predicting the text embedding of objects or relations.\nThe entire model is finetuned from CLIP/BLIP via LoRA and outperforms various baselines in hard VL benchmarks requiring compositional scene understanding.",
+      "reasons_to_accept": "This paper demonstrates that the standard contrastive language-image pretraining cannot sufficiently imbue a model with compositional understanding capabilities. Therefore, the authors propose to leverage information about relations and attributes from scene graphs. It's demonstrated that a small number of scene graph annotations could successfully compensate for the lack of compositional understanding. The results would encourage the community to adapt models for better compositional scene understanding with moderate effort.",
+      "reasons_to_reject": "The proposed method does not consistently improve performances. As mentioned in Line 485-496, zero-shot performance was degraded. Table 2&3 also show that the  proposed method harmed performances on certain partitions of the evaluation benchmark. I'm expecting more error analysis on the cause of such degradation. For example, is there a commonality of all tasks where performances were harmed by SGVL, such that during application, users could wisely choose when to adopt BLIP vs. BLIP-SGVL?",
+      "questions_for_the_authors": "Line 263: How do you represent locations for relationship tokens?",
+      "typos_grammar_style_and_presentation_improvements": "Line603 qualitative annotations --> high-quality annotations Line605-606: I don't think unsupervised training is a natural extension of this work. The main insight brought by this work is the necessity of a small amount of densely annotated data. Future directions might include generalizing this approach beyond the VL domain or using other types of dense structured data (e.g. segmentation masks, sketch)",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "iVwqiqnn9i",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper is about enhancing structural understanding of images by Vision Language Models(VLMs) using additional signals contained in scene graphs associated with the image. Since scene graph annotation is a costly process, the authors specifically look at whether small scene graph datasets can provide sufficient information to the VLMs during training/finetuning. The authors present a novel way to incorporate scene graph information into visual and textual representations by using adaptive scene graph tokens, positive and negative captions, modifications to the transformer architecture and introduce related losses. The authors try their methodology on various popular VLMs/Datasets and present encouraging results.",
+      "reasons_to_accept": "This paper is well written and the diagrams clearly capture what the authors intended to show in their architectural improvements. Utilizing small scene graph datasets to better enable VLMs to create more granular multimodal representations can benefit the research community immensely. The authors provide comprehensive ablation studies and test their methodology using popular VLMs/Datasets. The loss functions and the architectural changes introduced are uncomplicated and easy to follow/implement.",
+      "reasons_to_reject": "It would have been better if more scene graph datasets were considered other than VG and 1% of LAION.",
+      "questions_for_the_authors": "NA",
+      "missing_references": "NA",
+      "typos_grammar_style_and_presentation_improvements": "NA",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "jJF2yZ26kY",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes an interesting vision-language pre-training method, which leverages the scene graph pairs to jointly train the text and image encoder. \nTechnically, the impact of scene graph is reflected from the adaptive tokens and the prompts. \nIn the output stage, it can additional yield the scene graph output. \nThe framework is pre-trained on LAION, and benchmarked on four scene understanding datasets and one zero-shot classification dataset. \nCompared with conventional VLM, such as CLIP and BLIP, it achieves a better performance.",
+      "reasons_to_accept": "- Techniqually, the proposed framework is reasonable and effective.\n- Compared with conventional VLM such as CLIP, BLIP, it shows a significant improvement on the proposed task.\n- This paper is well-written and easy-to-follow.\n- The ablation studies are very extensive.",
+      "reasons_to_reject": "- The idea to leverage scene graph for vision-language model is not very enough now. In the past few years, there are already some references. Unfortunately, the authors do not discuss their diffference in the reference, which may in turn negatively impact the novelties of this work. For example: [1] Yu, Fei, et al. \"Ernie-vil: Knowledge enhanced vision-language representations through scene graphs.\" Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 35. No. 4. 2021.\n[2] Doveh, Sivan, et al. \"Teaching structured vision & language concepts to vision & language models.\" Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.\n[3] Ma, Zixian, et al. \"CREPE: Can Vision-Language Foundation Models Reason Compositionally?.\" Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.\n- Lack state-of-the-art comparison in the experimental section. Not only the above reference, but also some state-of-the-art VLM on the scene understanding task.\n- Another minor issue is the presentation of this paper: I noticed the visual prediction are all put into the supplementary materials. It would be better to put several in the main text, as this is one of the key results for this paper.",
+      "questions_for_the_authors": "I would appreciate it if the authors can address the questions below, in the rebuttal stage: **Q1:** Using scene graph, or more boardly structured information, is not a very novel idea now. The difference of the proposed method against some prior works need to be clarified.\n**Q2:** More state-of-the-art comparison, including these latest methods and more advanced VLM.",
+      "missing_references": "Yes, as I mentioned above, some key references on leveraging scene graph and using it to train VLM are missing. Not only the related work section but also the experimental comparison need to enrich them. For example: [1] Yu, Fei, et al. \"Ernie-vil: Knowledge enhanced vision-language representations through scene graphs.\" Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 35. No. 4. 2021.\n[2] Doveh, Sivan, et al. \"Teaching structured vision & language concepts to vision & language models.\" Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.\n[3] Ma, Zixian, et al. \"CREPE: Can Vision-Language Foundation Models Reason Compositionally?.\" Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.",
+      "typos_grammar_style_and_presentation_improvements": "Just one presentation issue: The visual prediction are all put into the supplementary materials. It would be better to put several in the main text, as this is one of the key results for this paper.",
+      "ethical_concerns": "No",
+      "justification_for_ethical_concerns": "No ethical issues."
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "vocEqkBxaX",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper aims to improve the compositional reasoning ability of vision-language models (VLMs). To address this problem, a coarse-to-fine contrastive learning framework (MosaiCLIP) is proposed, which has three major technical innovations: - **Scene graph guided text decomposition**: The image caption is converted into a graph structure using a text scene graph parser and the sub-graphs are extracted as positive samples in image-text contrastive learning. Specifically, the sub-graphs are converted to sentences based on a template before being fed to the VLM text encoder.\n- **Negative sub-graph creation**: Hard negative sub-graphs are created by three operations, i.e., (1) node swapping and replacement, (2) edge replacement and (3) Connecting sub-graphs.\n- **Curriculum and robust fine-tuning**: To bridge the gap in training objectives between conventional CLIP model and MosaiCLIP, a two-stage fine-tuning strategy is proposed. In the first stage, each image is only associated with a single positive sub-graph and a negative sub-graph. In the second stage, each image has multi-stage positive and negative sub-graphs.\nThe empirical studies demonstrate that MosaiCLIP outperforms existing CLIP-based VLMs in terms of visio-linguistic compositional reasoning. Moreover, MosaiCLIP is more robust when the image captions in the training data are noisy. The reason behind the improvement of MosaiCLIP is also explained based on the improved Tree-Score of the text encoder.",
+      "reasons_to_accept": "- The proposed coarse-to-fine contrastive learning framework, which targets the viso-linguistic compositional reasoning problem, is intuitive and each component of MosaiCLIP is well-designed.\n- The experiments are comprehensive and the results are convincing, which validate the superiority of MosaiCLIP in viso-linguistic compositional reasoning. The ablation studies suggest that every component of MosaiCLIP is conducive.\n- The analysis on the reason behind MosaiCLIP\u2019s improvement is instructive.\n- The limitations of this work are properly recognized and discussed.  - The paper is well-written and easy to follow.",
+      "reasons_to_reject": "- As discussed in the Limitation section, it is unclear whether the proposed method can bring improvement to more advanced VLMs like BLIP.\n- There is no evaluation on standard image-text retrieval tasks (e.g., on COCO), in addition to the evaluation on compositional reasoning benchmarks.",
+      "questions_for_the_authors": "What are the templates when there are multiple nodes in the sub-graphs? Could you provide some specific examples?",
+      "missing_references": "N/A",
+      "typos_grammar_style_and_presentation_improvements": "Some abbreviations are inconsistent, e.g., Fig.3 (line 452) and Figures 4 (line 467).",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "nVWkUP3FTG",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This article presents a scene graph-based image-text contrastive learning method. By incorporating scene graphs, the fine-grained control of contrastive learning is achieved, and experimental results demonstrate performance improvement compared to the baseline.",
+      "reasons_to_accept": "1. It is commendable that the experiments in this study were conducted in a thorough and reliable manner, providing substantial evidence for the model's performance. The validation of the motivation behind the proposed approach adds further credibility to the research findings.\n2. The method is indeed novel and inspiring, offering fresh perspectives in the field.",
+      "reasons_to_reject": "1. Indeed, the method's success heavily relies on the quality of scene graph generation. If errors occur during scene graph generation, it may lead to subsequent inaccuracies in the results. Ensuring a reliable and accurate scene graph generation process is crucial for the overall effectiveness of the approach.\n2.The process of extracting scene graphs may consume significant computational resources, and in situations where the scene is complex, it might not be possible to obtain complete or accurate scene graph information. This can potentially harm the model's performance.\n3.Compared to other state-of-the-art models in the same field, the performance of this method is not particularly outstanding.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "zjQZ0XO3Yu",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposed MosaiCLIP, a framework to decompose text into scene graphs for image-text contrastive learning. It incorporates hard-negative mining via text scene graph transformations and provides a coarse-to-fine contrastive learning strategy. The efficacy of MosaiCLIP is validated through comprehensive experiments across multiple architectures, datasets, training fashions, and compositional benchmarks.",
+      "reasons_to_accept": "1. They proposed to parse scene graphs from the text for contrastive Image-text pre-training. The text scene graphs enable multiple positive samples and hard negative mining, which facilitate contrastive training. The idea is interesting and novel to some degree. \n2. The experimental result is impressive, showing a decent gain of the proposed model over previous methods.",
+      "reasons_to_reject": "1. Lack of enough comparison with previous works. There are also other works utilizing more types of negative samples such as DeCLIP, etc, which is not compared in the experiments. \n2. I wonder if the performance improvement is brought by the proposed method or just a larger batch size brought by more negative samples. Are NegCLIP/CLIP and the proposed method in comparison using the same text batch size? If not so, it's a necessary comparison that adds more negative text samples in the original CLIP or NegCLIP so that the total text bz is the same as the proposed method. \n3. Evaluation on image-text retrieval is missed.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

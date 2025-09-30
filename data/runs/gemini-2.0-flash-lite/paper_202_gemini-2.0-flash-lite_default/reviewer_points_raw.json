@@ -1,0 +1,398 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper presents a zero-shot prompting setup for evaluating language models. The evaluation metric is accuracy, and the methodology follows established practices.",
+    "grounding": "Sec 4.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper references established prompting techniques.",
+    "grounding": "Sec 4.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The evaluation metric is accuracy, which may not fully capture the nuances of model performance.",
+    "grounding": "Sec 4.2",
+    "facet": "analysis"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of potential biases in the datasets used for evaluation.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the prompts used in the experiments available for reproducibility? (A 'yes' would increase the score)",
+    "grounding": "Insufficient evidence",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "Yes, the paper lacks a detailed discussion of limitations.",
+    "grounding": "Insufficient evidence",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "No.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics"
+  },
+  {
+    "kind": "provisional ratings",
+    "text": "Quality: 3, Clarity: 3, Significance: 2, Originality: 2, Overall: 3, Confidence: 3",
+    "grounding": "Based on the provided text.",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the behavior of LLMs under different linguistic properties, finding performance variations across models and tasks. It provides recommendations for robust evaluation practices and releases a set of prompts for further research.",
+    "grounding": "Conclusion section",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors clearly state the limitations of their study, such as the exclusion of certain models and experimental settings due to computational costs or API limitations.",
+    "grounding": "Conclusion section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of its findings, stating that prompt engineering recommendations are localized to specific models or datasets, but then advising on evaluation practices for sensitive applications.",
+    "grounding": "Ethics & broader impact section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on encoder-decoder models and multilingual models to broaden the scope of the research.",
+    "grounding": "Future work section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Investigate model behavior in languages with richer morphology.",
+    "grounding": "Future work section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How do the findings on performance variability translate to specific tasks, and what are the implications for real-world applications?",
+    "grounding": "Ethics & broader impact section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific measures of performance variability are recommended for evaluation reports?",
+    "grounding": "Ethics & broader impact section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of their study, including the models and settings they did not include.",
+    "grounding": "Conclusion section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": "Ethics & broader impact section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the impact of linguistic variations in prompts on the performance of LLMs. It conducts a controlled study using semantically equivalent prompts that differ in grammatical structure and lexico-semantic choices. The findings challenge common assumptions about prompt design and propose a more robust evaluation framework.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper addresses an important and under-explored area of LLM research: the impact of linguistic properties of prompts on model performance. The controlled study design, using systematically varied prompts, is a strength.",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing work on prompt robustness and linguistic analysis of LLMs. The delta compared to prior work is not clearly articulated.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a quantitative comparison with a state-of-the-art prompt optimization method, demonstrating the performance gains of the proposed approach.",
+    "grounding": "Sec 1, Sec 5",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the specific linguistic features that correlate with performance variations. This could involve statistical analysis or case studies.",
+    "grounding": "Sec 5, Sec 6",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance variation compare across different tasks and datasets? Are there any patterns?",
+    "grounding": "Sec 5",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What is the impact of the prompt variations on the instruction-tuned models compared to the pre-trained models?",
+    "grounding": "Sec 5.3",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The study's generalizability may be limited by the specific LLMs, tasks, and datasets used. The manual prompt creation process could introduce biases.",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "6",
+    "grounding": "Based on the current information, the paper has potential but needs more evidence to support its claims and demonstrate its impact.",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper details the prompting setup and evaluation metric (accuracy). However, it lacks information on seeds, variance, and code/environment details.",
+    "grounding": "Sections 4.2, Appendix A, and Appendix C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper mentions the use of zero-shot prompting and the evaluation metric (accuracy).",
+    "grounding": "Section 4.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not report the seeds used for experiments, making it impossible to assess the variance and reproducibility of the results.",
+    "grounding": "Section 4.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on the environment used for the experiments (e.g., libraries, versions, hardware).",
+    "grounding": "Section 4.2",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository (e.g., GitHub) with the code, data, and a detailed README file. Include the environment setup (e.g., Conda environment.yml or Dockerfile).",
+    "grounding": "Code/Data Availability",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the seeds used for all experiments and the variance (e.g., standard deviation) across multiple runs.",
+    "grounding": "Section 4.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the full test sample with answer options.",
+    "grounding": "Appendix A",
+    "facet": "data availability"
+  },
+  {
+    "kind": "question",
+    "text": "Are the prompts and the exact model configurations (e.g., model size, specific pre-trained model used) available?",
+    "grounding": "Section 4.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What is the variance of the results across multiple runs with different seeds?",
+    "grounding": "Section 4.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "What is the exact environment (libraries, versions, hardware) used for the experiments?",
+    "grounding": "Section 4.2",
+    "facet": "environment"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the information provided in the paper. Without access to the code, data, and environment details, a complete assessment of reproducibility is not possible.",
+    "grounding": "Paper Content",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "low",
+    "grounding": "Lack of seeds, variance, and environment details.",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Appendix D",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present accuracy and perplexity results across various datasets and models, focusing on the impact of different prompts. The tables vary in detail, with some providing aggregated results and others showing per-prompt performance. Statistical information is included, but the depth of analysis varies.",
+    "grounding": "Tables 1-20",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Tables 2, 3, and 4 clearly indicate the highest accuracy per category and dataset using bold font. Significant lower results are marked with an asterisk, indicating statistical comparison.",
+    "grounding": "Tables 2, 3, 4",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks any statistical information. Tables 9-14, while providing detailed per-prompt accuracy, do not include standard deviations or confidence intervals, making it difficult to assess the reliability of the results. Tables 15-20 only present perplexity scores without any statistical context.",
+    "grounding": "Table 1, Tables 9-20",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for the accuracy results in Tables 9-14 to provide a measure of result variability. Add p-values to Tables 2, 3, and 4 to clarify the significance of the differences. For Tables 15-20, provide context by including the mean and standard deviation of the perplexity scores.",
+    "grounding": "Tables 2-4, Tables 9-20",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the differences marked with asterisks in Tables 2, 3, and 4? How were the prompts in Tables 9-14 selected? What is the relationship between perplexity scores (Tables 15-20) and accuracy?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and prompts used in the experiments. Generalizability to other datasets or prompts is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the impact of linguistic properties of prompts on LLM performance. It examines how variations in grammatical structure and lexico-semantic choices affect the performance of different LLMs across various tasks. The findings challenge common assumptions about prompt design and propose a more robust evaluation standard for prompting research.",
+    "grounding": "Abstract, \u00a71, \u00a75",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly outlines the problem, research questions, and the paper's contributions.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'prompt' and 'instruction' and uses them interchangeably, which could lead to confusion.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a notation table, making it difficult to follow the different LLMs and datasets used.",
+    "grounding": "\u00a71, \u00a72",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define 'prompt' and 'instruction' early on and consistently use the terms.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Create a table or list to clarify the different LLMs, datasets, and tasks used in the experiments.",
+    "grounding": "\u00a71, \u00a72",
+    "facet": "organization"
+  },
+  {
+    "kind": "questions",
+    "text": "How are the semantically equivalent prompts constructed? What specific linguistic variations are explored?",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific evaluation metrics used to assess the LLM performance?",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the prompts and datasets released? If so, where?",
+    "grounding": "Abstract, \u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of prompt details and dataset specifics may hinder reproducibility.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-structured and addresses an important research question. However, improving the clarity of definitions and providing more details on the experimental setup would enhance its impact.",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's focus on the linguistic properties of prompts, such as grammatical variations and synonym usage, distinguishes it from prior work that primarily focuses on prompt selection methods or automatic prompt generation (Gonen et al., 2022; Sorensen et al., 2022; Liu et al., 2023; Shin et al., 2020).",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare its findings with the prompt optimization techniques proposed in [1] (Sanh et al., 2022). While the paper investigates the impact of linguistic variations, it does not evaluate whether these variations can be effectively incorporated into a multi-task prompted training framework.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the performance of the proposed linguistic variations of prompts with the multi-task prompted training approach of [1] (Sanh et al., 2022). This could involve evaluating both methods on the same set of tasks and datasets, and analyzing the performance differences.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

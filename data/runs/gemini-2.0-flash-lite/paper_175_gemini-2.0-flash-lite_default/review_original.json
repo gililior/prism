@@ -1,0 +1,138 @@
+{
+  "summary": "This paper introduces SeqXGPT for sentence-level AIGT detection. While the paper demonstrates promising performance with visual representations and macro-F1 scores, it lacks crucial details regarding dataset ethics, clarity in methodology, and statistical rigor.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The figures effectively support the claims by visually representing performance differences between detection methods, particularly SeqXGPT, using bar heights and ranges. (Figure 4)",
+      "grounding": "Figure 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 includes Macro-F1 scores, a good overall performance metric for multi-class classification. (Table 2)",
+      "grounding": "Table 2",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly establishes the problem of AIGT detection and motivates the need for sentence-level detection. (Intro §1)",
+      "grounding": "Intro §1",
+      "facet": "organization"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the limitations of existing methods for sentence-level AIGT detection. (Intro §1)",
+      "grounding": "Intro §1",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks information on dataset consent, privacy, usage terms, and ethical risk assessment.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_consent_privacy"
+    },
+    {
+      "kind": "weakness",
+      "text": "The axes in some figures lack clear labels and units, and legends are missing or unclear, hindering interpretation. (Figure 4)",
+      "grounding": "Figure 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "Some tables lack crucial statistical information such as standard deviations, confidence intervals, and p-values, making it difficult to assess the reliability and significance of the results. (Table 1, Table 3, Table 4, Table 5, Table 6)",
+      "grounding": "Table 1, Table 3, Table 4, Table 5, Table 6",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term \"SeqXGPT\" is introduced without a clear explanation of its components or the 'X' in the name, and the connection to speech processing needs further explanation. (Abstract, Intro §1)",
+      "grounding": "Abstract, Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of \"wave-like features\" and how they relate to log probability lists. (Intro §1)",
+      "grounding": "Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a clear explanation of the dataset construction process. (Abstract, Intro §1)",
+      "grounding": "Abstract, Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "No discussion of potential misuse or failure modes is provided.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Explicitly state the data sources and the licensing terms for the dataset.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section addressing potential ethical risks and mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_usage_terms_risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide details on how consent was obtained for the use of any human-written text in the dataset, or explain why consent was not required.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_consent_privacy"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add clear labels to the axes, including units where applicable, and include a comprehensive legend that clearly identifies the different sentence origins and detection methods. Consider using error bars to show confidence intervals in performance plots. (Figure 4)",
+      "grounding": "Figure 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals to provide a measure of result variability. Add p-values to indicate the statistical significance of the differences in performance between the different methods. Clearly define all acronyms and abbreviations used in the table headers and captions. (All tables)",
+      "grounding": "All tables",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the 'X' in SeqXGPT and its significance. (Abstract, Intro §1)",
+      "grounding": "Abstract, Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Elaborate on the connection between log probability lists and \"wave-like features,\" perhaps with a visual example. (Intro §1)",
+      "grounding": "Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section or subsection detailing the dataset creation process, including the LLMs used and the criteria for sentence selection. (Abstract, Intro §1)",
+      "grounding": "Abstract, Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Define all acronyms at first use. (Abstract, Intro §1)",
+      "grounding": "Abstract, Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies. (Conclusion)",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

@@ -1,0 +1,1814 @@
+{
+  "rebuttal_impact_details": [
+    {
+      "paper_id": "105",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": -4,
+      "weaknesses_reduction_rate": 0.25,
+      "suggestions_reduction_rate": 0.8,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 4,
+        "suggestions": 5
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 3,
+        "suggestions": 1
+      }
+    },
+    {
+      "paper_id": "30",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -3,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.2,
+      "original_counts": {
+        "strengths": 8,
+        "weaknesses": 12,
+        "suggestions": 15
+      },
+      "updated_counts": {
+        "strengths": 8,
+        "weaknesses": 12,
+        "suggestions": 12
+      }
+    },
+    {
+      "paper_id": "81",
+      "strengths_change": 0,
+      "weaknesses_change": -2,
+      "suggestions_change": -2,
+      "weaknesses_reduction_rate": 0.16666666666666666,
+      "suggestions_reduction_rate": 0.13333333333333333,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 12,
+        "suggestions": 15
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 10,
+        "suggestions": 13
+      }
+    },
+    {
+      "paper_id": "212",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 9
+      }
+    },
+    {
+      "paper_id": "21",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 8,
+        "weaknesses": 8,
+        "suggestions": 11
+      },
+      "updated_counts": {
+        "strengths": 8,
+        "weaknesses": 8,
+        "suggestions": 11
+      }
+    },
+    {
+      "paper_id": "64",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.05555555555555555,
+      "original_counts": {
+        "strengths": 9,
+        "weaknesses": 13,
+        "suggestions": 18
+      },
+      "updated_counts": {
+        "strengths": 9,
+        "weaknesses": 13,
+        "suggestions": 17
+      }
+    },
+    {
+      "paper_id": "41",
+      "strengths_change": 1,
+      "weaknesses_change": 0,
+      "suggestions_change": -3,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.375,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 7,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "2",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 5,
+        "suggestions": 5
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 5,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "174",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -2,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.25,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 6,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 6,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "131",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 12
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 12
+      }
+    },
+    {
+      "paper_id": "29",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -3,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.23076923076923078,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 13
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 10
+      }
+    },
+    {
+      "paper_id": "37",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.1,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 9,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 9,
+        "suggestions": 9
+      }
+    },
+    {
+      "paper_id": "196",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 11,
+        "suggestions": 12
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 11,
+        "suggestions": 12
+      }
+    },
+    {
+      "paper_id": "57",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -2,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.18181818181818182,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 11
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 9
+      }
+    },
+    {
+      "paper_id": "12",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "49",
+      "strengths_change": 0,
+      "weaknesses_change": -3,
+      "suggestions_change": -3,
+      "weaknesses_reduction_rate": 0.3333333333333333,
+      "suggestions_reduction_rate": 0.3333333333333333,
+      "original_counts": {
+        "strengths": 7,
+        "weaknesses": 9,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 6,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "162",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "156",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "187",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 11,
+        "suggestions": 12
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 11,
+        "suggestions": 12
+      }
+    },
+    {
+      "paper_id": "113",
+      "strengths_change": 1,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 0,
+        "weaknesses": 0,
+        "suggestions": 0
+      },
+      "updated_counts": {
+        "strengths": 1,
+        "weaknesses": 0,
+        "suggestions": 0
+      }
+    },
+    {
+      "paper_id": "148",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 5,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 5,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "38",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -3,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.5,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 3
+      }
+    },
+    {
+      "paper_id": "173",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 16,
+        "suggestions": 19
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 16,
+        "suggestions": 19
+      }
+    },
+    {
+      "paper_id": "89",
+      "strengths_change": 0,
+      "weaknesses_change": -4,
+      "suggestions_change": -5,
+      "weaknesses_reduction_rate": 0.36363636363636365,
+      "suggestions_reduction_rate": 0.4166666666666667,
+      "original_counts": {
+        "strengths": 7,
+        "weaknesses": 11,
+        "suggestions": 12
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 7,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "204",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -5,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.625,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 3
+      }
+    },
+    {
+      "paper_id": "46",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "175",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 10
+      }
+    },
+    {
+      "paper_id": "130",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 9
+      }
+    },
+    {
+      "paper_id": "202",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -9,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.8181818181818182,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 11
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 2
+      }
+    },
+    {
+      "paper_id": "181",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "65",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.125,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "14",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.1,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 11,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 11,
+        "suggestions": 9
+      }
+    },
+    {
+      "paper_id": "164",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.125,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 9,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 9,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "96",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.16666666666666666,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "47",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 11,
+        "suggestions": 14
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 11,
+        "suggestions": 14
+      }
+    },
+    {
+      "paper_id": "129",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.1111111111111111,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "137",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": -5,
+      "weaknesses_reduction_rate": 0.16666666666666666,
+      "suggestions_reduction_rate": 0.8333333333333334,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 5,
+        "suggestions": 1
+      }
+    },
+    {
+      "paper_id": "27",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": -3,
+      "weaknesses_reduction_rate": 0.16666666666666666,
+      "suggestions_reduction_rate": 0.3333333333333333,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 5,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "62",
+      "strengths_change": 2,
+      "weaknesses_change": 1,
+      "suggestions_change": 1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 0,
+        "weaknesses": 0,
+        "suggestions": 0
+      },
+      "updated_counts": {
+        "strengths": 2,
+        "weaknesses": 1,
+        "suggestions": 1
+      }
+    },
+    {
+      "paper_id": "138",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.09090909090909091,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 11,
+        "suggestions": 11
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 10,
+        "suggestions": 11
+      }
+    },
+    {
+      "paper_id": "13",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": -2,
+      "weaknesses_reduction_rate": 0.125,
+      "suggestions_reduction_rate": 0.2222222222222222,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "87",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.16666666666666666,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 6,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 6,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "99",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "48",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.2,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 5,
+        "suggestions": 5
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 5,
+        "suggestions": 4
+      }
+    },
+    {
+      "paper_id": "158",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.1111111111111111,
+      "suggestions_reduction_rate": 0.06666666666666667,
+      "original_counts": {
+        "strengths": 7,
+        "weaknesses": 9,
+        "suggestions": 15
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 8,
+        "suggestions": 14
+      }
+    },
+    {
+      "paper_id": "189",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.1111111111111111,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 9,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 9,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "197",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 6,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 6,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "28",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.16666666666666666,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "134",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -2,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.2,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 9,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 9,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "154",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.125,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "111",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "185",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -5,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.5,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "24",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "61",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 0,
+        "weaknesses": 0,
+        "suggestions": 0
+      },
+      "updated_counts": {
+        "strengths": 0,
+        "weaknesses": 0,
+        "suggestions": 0
+      }
+    },
+    {
+      "paper_id": "55",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.1111111111111111,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "84",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 2,
+        "weaknesses": 4,
+        "suggestions": 5
+      },
+      "updated_counts": {
+        "strengths": 2,
+        "weaknesses": 4,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "209",
+      "strengths_change": 1,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.1111111111111111,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 9,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 9,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "217",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -3,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.3333333333333333,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "8",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.09090909090909091,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 11
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 10
+      }
+    },
+    {
+      "paper_id": "70",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 9
+      }
+    },
+    {
+      "paper_id": "100",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 10
+      }
+    },
+    {
+      "paper_id": "201",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 0,
+        "weaknesses": 0,
+        "suggestions": 0
+      },
+      "updated_counts": {
+        "strengths": 0,
+        "weaknesses": 0,
+        "suggestions": 0
+      }
+    },
+    {
+      "paper_id": "18",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -3,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.375,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 8,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "176",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 12,
+        "suggestions": 12
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 12,
+        "suggestions": 12
+      }
+    },
+    {
+      "paper_id": "78",
+      "strengths_change": 0,
+      "weaknesses_change": -2,
+      "suggestions_change": -5,
+      "weaknesses_reduction_rate": 0.2222222222222222,
+      "suggestions_reduction_rate": 0.625,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 9,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 3
+      }
+    },
+    {
+      "paper_id": "153",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.16666666666666666,
+      "suggestions_reduction_rate": 0.1111111111111111,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 6,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 5,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "116",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "182",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.1,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 9
+      }
+    },
+    {
+      "paper_id": "179",
+      "strengths_change": 0,
+      "weaknesses_change": -2,
+      "suggestions_change": -4,
+      "weaknesses_reduction_rate": 0.2222222222222222,
+      "suggestions_reduction_rate": 0.4,
+      "original_counts": {
+        "strengths": 8,
+        "weaknesses": 9,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 8,
+        "weaknesses": 7,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "83",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.14285714285714285,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 7,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 7,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "210",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.2,
+      "suggestions_reduction_rate": 0.16666666666666666,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 5,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 4,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "144",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 7,
+        "weaknesses": 12,
+        "suggestions": 13
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 12,
+        "suggestions": 13
+      }
+    },
+    {
+      "paper_id": "71",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -2,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.18181818181818182,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 11,
+        "suggestions": 11
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 11,
+        "suggestions": 9
+      }
+    },
+    {
+      "paper_id": "9",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 0,
+        "weaknesses": 0,
+        "suggestions": 0
+      },
+      "updated_counts": {
+        "strengths": 0,
+        "weaknesses": 0,
+        "suggestions": 0
+      }
+    },
+    {
+      "paper_id": "124",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 5,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 5,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "161",
+      "strengths_change": 0,
+      "weaknesses_change": -4,
+      "suggestions_change": -5,
+      "weaknesses_reduction_rate": 0.5,
+      "suggestions_reduction_rate": 0.5555555555555556,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 4,
+        "suggestions": 4
+      }
+    },
+    {
+      "paper_id": "208",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -5,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.8333333333333334,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 1
+      }
+    },
+    {
+      "paper_id": "85",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 4,
+        "suggestions": 5
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 4,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "11",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -7,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.5384615384615384,
+      "original_counts": {
+        "strengths": 8,
+        "weaknesses": 10,
+        "suggestions": 13
+      },
+      "updated_counts": {
+        "strengths": 8,
+        "weaknesses": 10,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "216",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.2,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 5,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 4,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "25",
+      "strengths_change": 1,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.08333333333333333,
+      "original_counts": {
+        "strengths": 8,
+        "weaknesses": 9,
+        "suggestions": 12
+      },
+      "updated_counts": {
+        "strengths": 9,
+        "weaknesses": 9,
+        "suggestions": 11
+      }
+    },
+    {
+      "paper_id": "60",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 8,
+        "suggestions": 11
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 8,
+        "suggestions": 11
+      }
+    },
+    {
+      "paper_id": "155",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -8,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 1.0,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 7,
+        "suggestions": 0
+      }
+    },
+    {
+      "paper_id": "110",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 6,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "184",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -2,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.2857142857142857,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 6,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 6,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "94",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.14285714285714285,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 6,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 6,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "6",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -7,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.4117647058823529,
+      "original_counts": {
+        "strengths": 7,
+        "weaknesses": 11,
+        "suggestions": 17
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 11,
+        "suggestions": 10
+      }
+    },
+    {
+      "paper_id": "76",
+      "strengths_change": 1,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0625,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 10,
+        "suggestions": 16
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 10,
+        "suggestions": 15
+      }
+    },
+    {
+      "paper_id": "106",
+      "strengths_change": 0,
+      "weaknesses_change": -1,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.125,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 8,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 7,
+        "suggestions": 7
+      }
+    },
+    {
+      "paper_id": "53",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.1111111111111111,
+      "original_counts": {
+        "strengths": 7,
+        "weaknesses": 13,
+        "suggestions": 9
+      },
+      "updated_counts": {
+        "strengths": 7,
+        "weaknesses": 13,
+        "suggestions": 8
+      }
+    },
+    {
+      "paper_id": "82",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.2,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 4,
+        "suggestions": 5
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 4,
+        "suggestions": 4
+      }
+    },
+    {
+      "paper_id": "16",
+      "strengths_change": 0,
+      "weaknesses_change": -5,
+      "suggestions_change": -4,
+      "weaknesses_reduction_rate": 0.45454545454545453,
+      "suggestions_reduction_rate": 0.5,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 11,
+        "suggestions": 8
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 4
+      }
+    },
+    {
+      "paper_id": "211",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.25,
+      "original_counts": {
+        "strengths": 3,
+        "weaknesses": 7,
+        "suggestions": 4
+      },
+      "updated_counts": {
+        "strengths": 3,
+        "weaknesses": 7,
+        "suggestions": 3
+      }
+    },
+    {
+      "paper_id": "178",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 10,
+        "suggestions": 11
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 10,
+        "suggestions": 11
+      }
+    },
+    {
+      "paper_id": "117",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.14285714285714285,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 7,
+        "suggestions": 6
+      }
+    },
+    {
+      "paper_id": "67",
+      "strengths_change": 0,
+      "weaknesses_change": -4,
+      "suggestions_change": -9,
+      "weaknesses_reduction_rate": 0.6666666666666666,
+      "suggestions_reduction_rate": 0.9,
+      "original_counts": {
+        "strengths": 6,
+        "weaknesses": 6,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 6,
+        "weaknesses": 2,
+        "suggestions": 1
+      }
+    },
+    {
+      "paper_id": "79",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 9,
+        "suggestions": 10
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 9,
+        "suggestions": 10
+      }
+    },
+    {
+      "paper_id": "132",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -2,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.2857142857142857,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 7
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 8,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "19",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": -1,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.16666666666666666,
+      "original_counts": {
+        "strengths": 5,
+        "weaknesses": 6,
+        "suggestions": 6
+      },
+      "updated_counts": {
+        "strengths": 5,
+        "weaknesses": 6,
+        "suggestions": 5
+      }
+    },
+    {
+      "paper_id": "200",
+      "strengths_change": 0,
+      "weaknesses_change": 0,
+      "suggestions_change": 0,
+      "weaknesses_reduction_rate": 0.0,
+      "suggestions_reduction_rate": 0.0,
+      "original_counts": {
+        "strengths": 4,
+        "weaknesses": 5,
+        "suggestions": 5
+      },
+      "updated_counts": {
+        "strengths": 4,
+        "weaknesses": 5,
+        "suggestions": 5
+      }
+    }
+  ],
+  "rebuttal_impact_summary": {
+    "papers_with_rebuttal": 100,
+    "avg_strengths_change": 0.07,
+    "avg_weaknesses_change": -0.35,
+    "avg_suggestions_change": -1.54,
+    "avg_weaknesses_reduction_rate": 0.04531313131313132,
+    "avg_suggestions_reduction_rate": 0.17791222747840393,
+    "papers_with_weakness_reduction": 18,
+    "papers_with_suggestion_reduction": 59
+  }
+}

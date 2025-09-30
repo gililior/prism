@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "E7iy0aj33A",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents a novel approach for multilingual audio-visual speech recognition tasks by developing a single model on a multilingual dataset. The primary problem being addressed in the paper is the limited success of current audio-visual speech recognition models in multilingual datasets, as they are mostly focused on monolingual data, particularly English. The paper aims to design a single model capable of effectively distinguishing the language and properly recognizing the input speech in multiple languages.\nThe main contributions of the paper are as follows: 1. Propose a single model framework for multilingual audio-visual speech recognition, inspired by the intuitive human language understanding process. The model is designed to determine the language of the input speech and recognize the speech correctly.\n2. Introduce an audio-visual guiding linguistic representation extractor by fine-tuning a largely pre-trained audio-visual representation model using prompts to provide language information. This allows the model to extract comprehensive linguistic information from the audio and video inputs.\n3. Address the issue of imbalanced language distribution in multilingual datasets by employing a weighted objective function that balances the distribution of language data while updating the loss during training. This aims to improve the performance of speech recognition in low-resource languages and prevent the model from being biased toward dominant languages.\n4. Validate the effectiveness of the proposed model by conducting experiments on MuAViC, a multilingual audio-visual corpus containing 9 languages. The results show that the proposed model outperforms the previous multilingual model with an average 11% WER reduction in a clean environment and an average 13% WER reduction in a noisy environment.",
+      "reasons_to_accept": "1. Novelty: The approach of fine-tuning a largely pre-trained audio-visual representation model with language prompts is new and innovative, enabling the model to effectively recognize and transcribe speech in multiple languages.\n2. Robustness: The proposed model demonstrates performance improvements in low-resource languages and exhibits strong results in both clean and noisy environments. This has significant practical implications in real-world applications where speech recognition systems often face challenges in noisy conditions.\n3. Addressing Language Imbalance: The paper proposes an objective function weight to balance the distribution of language data, mitigating potential biases towards dominant languages while improving the recognition and transcription of low-resource languages.\n4. Comprehensive Experiments: The experiments are conducted on a recent and challenging dataset (MuAViC), consisting of 1200 hours of audio-visual speech data in 9 languages, providing a comprehensive evaluation of the model.\n5. Potential Impact: The proposed single model approach can reduce the need for language-specific models and improve the performance of speech recognition in low-resource languages. This would benefit the NLP community in developing more efficient and robust multilingual speech recognition systems.",
+      "reasons_to_reject": "1. One weakness is the lack of an in-depth ablation study on the proposed approach. Some questions remain unanswered, such as the effectiveness of prompt fine-tuning in various settings and the sensitivity of the model to the choice of hyperparameters. \n2. The paper does not provide results for a setting where the language is unknown during inference. Dealing with an unknown language is a crucial aspect in real-world scenarios. \n3. The authors mention the imbalance in the dataset, but the exact distribution is not provided. It is important to understand how each language is uniformly represented in experiments and the impact on the overall performance. \n4. Although the proposed approach performs better than existing models, it may still be interesting to investigate how this method can benefit from other recent advancements such as self-supervised learning or transformers in multimodal learning. \n5. The paper primarily focuses on the MuAViC dataset. It would be beneficial to consider other datasets to explore the generalization of the proposed method across diverse data sources.",
+      "questions_for_the_authors": "A. It is not clear in the methodology section how the trainable continuous embeddings (prompts) are generated and optimized during the fine-tuning process. Can such prompts be learned automatically, or do they require manual annotation? Please provide more details on this process to help readers better understand how these prompts contribute to the overall model.\nB. In the experiments, the proposed model is compared primarily with the work of Anwar et al. (2023). It would be beneficial to include comparisons with other relevant methods and show how the proposed approach performs in comparison to a broader range of existing methods in the field of multilingual AVSR. Are there other methods that could be included for comparison?\nC. The paper focuses on a dataset containing nine languages which may be considered heavily biased towards Indo-European languages or the languages with a relatively large amount of available data. How would the proposed method perform for languages with few data samples or for languages from very different linguistic families (e.g., tonal languages, agglutinative languages)? Are there plans to extend or validate the model on more diverse sets of languages in the future?\nD. The model has been tested in both clean and noisy environments. Although it shows improvement over the previous multilingual model, the performance seems to be lower in noisy environments. What are the possible reasons for the reduced performance, and could this be improved upon with further modifications to the model architecture or training strategy?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "kH1PQ9xgo2",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a single multilingual AVASR model for handling audio+visual input in multiple languages.  The model hypothesizes detected language in addition to transcript for spoken input.  It utilizes an encoder decoder architecture where the encoder is a pre-trained AV transformer model, and decoder is a multi-lingual transformer architecture.  A classifier is used for predicting the language of input speech.  Proposed model is trained/evaluated on the recently released MuAViC dataset.",
+      "reasons_to_accept": "- Formulation and empirical study of a single simple multi-lingual AVASR model",
+      "reasons_to_reject": "- In the results presented in Table 1, the baseline numbers from Anwar et al don\u2019t match those reported in Table 1.  Not sure which paper to look at for source of the reported Anwar et al. numbers.  Also, for a fair comparison of numbers in the Avg. column, especially to compare w/ Multilingual performance from Anwar et al, En results should not be included in Table 1.\n- The model includes a prompt, but the value of this component is not clear or empirically determined.  Are the prompts sometimes there and other times not?  What is the performance if the prompts are not included in the model training/test?\n- Paper lacks clarity / errors in places.  E.g.      + 013-014: \u201c \u2026 both label and nuance\u201d. Not clear what this means      + 014-016: \u201c \u2026 predict correct speech with correct label\u201d \u2026 is it predicting speech, or words? \n     + 054-057: \u201c \u2026 fine-tuning followed by pre-training\u201d or the other way around? \n     + 219: Does Eq (12) need a sum over all samples?  Otherwise \\gamma has no impact on the optimization. \n     + Table 1 caption mentions boldfaced or underlined letters, but there are no such letters/numbers in the table.",
+      "questions_for_the_authors": "Please identify which results from Anwar et al. are cited in the paper.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "mN83MWpa1z",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper deals with multilingual audio-visual speech recognition. The authors describe a method that extracts a set of audio-visual features and augments them with  embeddings which have been trained to optimize a language classification loss. Experiments are evaluated on a dataset of multilingual video recordings of TED speeches.",
+      "reasons_to_accept": "The paper describes experiments in the area of multi-lingual multimodal speech recognition and a publishes a dataset that can be used by others for that purpose.",
+      "reasons_to_reject": "Generally, I don't agree with the conclusions that the authors derive from their experimental results. For instance, the authors claim an average 11% WER reduction due to the proposed method compared to their previous model. However, this compares results on two different test sets - the proposed model has been evaluated on English data, too, while the previous model has no result for English test data. If you exclude the English test data from the comparison (apple to apple) the previous model achieves an Avg WER of 39.51% on clean data and the proposed model achieves an Avg. WER of 39.45% which is not really an improvement. Furthermore, I believe the proposed approach misses a comparison to a multi-task training baseline which includes a language classification loss.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  }
+]

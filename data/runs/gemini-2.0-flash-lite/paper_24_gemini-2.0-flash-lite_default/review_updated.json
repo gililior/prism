@@ -1,0 +1,132 @@
+{
+  "summary": "This paper introduces a novel joint modeling approach for Semantic Role Labeling (SRL) using SEMLINK constraints, demonstrating improved performance over existing multitask learning methods. The paper's strengths lie in its clear presentation of the problem and the demonstration of performance gains, particularly with the use of SEMLINK constraints during inference. The paper has addressed some of the weaknesses raised in the initial review, including providing more details on reproducibility and dataset licensing. However, the paper still lacks crucial details regarding model architecture and a thorough analysis of its limitations and potential biases.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper reports the mean and standard deviation of the results across multiple runs, providing a measure of result variability. (Table 2, Table 3)",
+      "grounding": "[seeds/variance]",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides a detailed comparison of different models and training strategies, including multitask learning, joint CRF, and constrained inference. (Table 2, Table 3)",
+      "grounding": "[methods]",
+      "facet": "methods"
+    },
+    {
+      "kind": "strength",
+      "text": "The use of SEMLINK constraints during decoding and the constrained marginal model for learning are novel contributions, and the paper demonstrates that using SEMLINK constraints during inference improves F1 scores. (Abstract, Intro, Table 3, Sec 6.3)",
+      "grounding": "[claims_vs_evidence]",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The tables are well-organized and present the results clearly. (Tables 2, 3)",
+      "grounding": "[figures]",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the problem of disjoint label sets in SRL and the limitations of existing multitask learning approaches, and explains the motivation for using SEMLINK and the benefits of joint modeling. (Abstract, §1)",
+      "grounding": "[clarity_presentation]",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly mention the random seeds used for the experiments, hindering reproducibility. (Sec 6.2, Sec 6.3)",
+      "grounding": "[seeds/variance]",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks details on the specific architectures used for the models, making it difficult to reproduce the results. (Sec 6)",
+      "grounding": "[environment reproducibility]",
+      "facet": "environment reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient information on the hyperparameter tuning process and lacks a clear definition of the 'joint CRF model' and 'constrained marginal model'. (Sec 3, Abstract, §2)",
+      "grounding": "[methods]",
+      "facet": "methods"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the benefits of semi-supervised learning without sufficient evidence.",
+      "grounding": "[claims_vs_evidence]",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset licensing and usage restrictions are not stated.",
+      "grounding": "[ethics_licensing]",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear explanation of the input constructions used to infer VerbNet arguments from PropBank arguments. (Abstract)",
+      "grounding": "[clarity_presentation]",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Table 1 is missing, and Table 3 does not explicitly report p-values for all comparisons. (Table 1, Table 3)",
+      "grounding": "[tables]",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly discuss potential risks associated with the proposed SRL model, fairness considerations, or broader impacts.",
+      "grounding": "[broader_impacts]",
+      "facet": "broader_impacts"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include the random seeds used for each experiment in the paper or supplementary material and provide a detailed description of the software environment to ensure reproducibility. (Sec 6.2, Sec 6.3)",
+      "grounding": "[seeds/variance]",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a more detailed description of the model architectures used in the experiments and provide a more thorough discussion of the hyperparameter tuning process.",
+      "grounding": "[methods]",
+      "facet": "methods"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an ablation study to evaluate the contribution of each component of the proposed method and analyze the performance of the model on different types of sentences and predicates. (Sec 4)",
+      "grounding": "[methods]",
+      "facet": "methods"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed analysis of the types of errors corrected by the SEMLINK constraints, including examples of the corrected and degraded predictions. (Sec 6.3)",
+      "grounding": "[claims_vs_evidence]",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used. (Insufficient evidence)",
+      "grounding": "[ethics_licensing]",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include figures to visualize the results, such as performance plots, and provide a more detailed explanation of the proposed models (joint CRF and constrained marginal model). (Abstract, §2)",
+      "grounding": "[clarity_presentation]",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include p-values or confidence intervals in Table 3 to clearly indicate the statistical significance of the improvements and include a section on potential misuse cases and mitigation strategies, addressing fairness considerations and broader impacts. (Table 3)",
+      "grounding": "[broader_impacts]",
+      "facet": "broader_impacts"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

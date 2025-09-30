@@ -1,0 +1,368 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Reproducible training setup described in detail.",
+    "grounding": "Sec 2.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "Lack of statistical analysis to support claims.",
+    "grounding": "Insufficient evidence",
+    "facet": "analysis"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals in Table 2.",
+    "grounding": "Table 2",
+    "facet": "analysis"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates syntactic training with pre-trained models. The evaluation is based on the UD-EWT corpus.",
+    "grounding": "Abstract, Sec 2.2, Table 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides details on the training tasks and the corpus used.",
+    "grounding": "Sec 2.2, Table 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not report seed usage or variance.",
+    "grounding": "Sec 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information about the environment is provided.",
+    "grounding": "Paper body",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide code, data, and environment details (e.g., Dockerfile, Conda environment).",
+    "grounding": "GitHub/CodeOcean/Zenodo",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the seeds used and the variance across multiple runs.",
+    "grounding": "Sec 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the training and evaluation scripts available?",
+    "grounding": "Code availability",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the pre-trained models used in the experiments publicly available?",
+    "grounding": "Model availability",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "questions",
+    "text": "What hardware was used for training and evaluation?",
+    "grounding": "Environment details",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The review is limited by the information provided in the paper.",
+    "grounding": "Paper content",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Data usage appears standard.",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the effects of syntactic pre-training on downstream tasks, particularly focusing on the use of GS and EWC optimization methods to prevent catastrophic forgetting. The results are presented on GLUE benchmark and a key phrase extraction task.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides evidence that GS and EWC optimization methods help retain semantic knowledge while learning syntactic information, as indicated by lower PPL scores compared to AdamW and SGD (Fig 2).",
+    "grounding": "Fig 2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper shows that models using GS and EWC achieved higher scores in CoLA and MRPC tasks compared to AdamW and SGD (Table 4).",
+    "grounding": "Table 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of the findings. The conclusion that additional syntactic training is beneficial for tasks involving syntactic knowledge is based on a subset of GLUE tasks (CoLA, RTE, MRPC) and may not generalize to all tasks.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient evidence to support the claim that the improvement in CoLA task is due to capturing coordination structures. While the paper mentions the importance of coordination in CoLA, it does not directly link the performance improvement to the model's ability to capture these structures.",
+    "grounding": "Table 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on a wider range of tasks to validate the generalizability of the findings.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the specific syntactic features learned by the models and how they contribute to the performance improvement on different tasks.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any limitations to the GLUE subset used for evaluation?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "How does the choice of hyperparameters affect the performance of the models?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations by focusing on a subset of GLUE tasks and mentioning that experiments on other tasks are shown in Appendix.",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally support the claims, but could benefit from improved labeling and visual clarity.",
+    "grounding": "Figure 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 effectively visualizes the relationship between F1 score and PPL, supporting the claims about the impact of different optimization functions.",
+    "grounding": "Figure 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 2 lacks clear axis labels and units. The legend is not described.",
+    "grounding": "Figure 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add axis labels (e.g., 'F1 Score (%)', 'PPL') and units where applicable. Provide a clear legend explaining the different lines/colors.",
+    "grounding": "Figure 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used for the F1 score and PPL?",
+    "grounding": "Figure 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualization scope is limited to the specific metrics presented.",
+    "grounding": "Figure 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper explores incorporating syntactic knowledge into pre-trained language models through additional training. It addresses catastrophic forgetting and proposes four pretraining tasks. The authors demonstrate performance gains on downstream tasks.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper is well-organized, with a clear introduction, methods, and contributions section.",
+    "grounding": "Abstract, Section 1, Section 2",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly states the problem, the proposed solution, and the key findings.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'additional syntactic training' is introduced without a clear, concise definition. The reader must infer its meaning from context.",
+    "grounding": "Section 1, Section 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear explanation of the notation used, especially in the methods section. This makes it difficult to understand the technical details.",
+    "grounding": "Section 2, Table 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'additional syntactic training' early in the introduction.",
+    "grounding": "Section 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table of notation to define all symbols and acronyms used in the methods section.",
+    "grounding": "Section 2, Table 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific optimization functions were used to prevent catastrophic forgetting? How were the four syntactic tasks designed? What are the specific downstream tasks and their evaluation metrics? How does the proposed method compare to other methods?",
+    "grounding": "Abstract, Section 1, Section 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed method descriptions and notation may hinder reproducibility.",
+    "grounding": "Section 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-structured and addresses an important problem. However, the lack of clear definitions and notation impacts clarity. The paper would benefit from more detailed explanations of the methods and experiments.",
+    "grounding": "All sections",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of experiments on syntactic pre-training and its impact on downstream tasks. The tables compare different optimization functions and syntactic tasks. The quality of the tables varies, with some lacking crucial statistical information.",
+    "grounding": "Tables 3, 4, 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 6 provides a clear comparison of model averages for each additional syntactic training task, aiding in the understanding of the impact of different syntactic information.",
+    "grounding": "Table 6",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack standard deviations, confidence intervals, or p-values, making it difficult to assess the statistical significance of the results. Headers are sometimes unclear.",
+    "grounding": "Tables 3, 4, 5, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to indicate statistical significance. Clarify headers to improve readability.",
+    "grounding": "Tables 3, 4, 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the differences in performance between different optimization functions and syntactic tasks? 2. What is the variance or standard deviation of the F1 scores reported in the tables? 3. How were the hyperparameters (learning rates, epochs) chosen for each experiment?",
+    "grounding": "Tables 3, 4, 5, 6, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited to the specific datasets and tasks used in the experiments (GLUE benchmark and key phrase extraction).",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of potential misuse scenarios or failure modes of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a comprehensive discussion on fairness, particularly regarding the potential for the model to perpetuate or amplify existing biases present in the training data.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not sufficiently address the broader societal impacts of the research, such as the potential for the model to be used for malicious purposes or to create biased outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section in the paper that explicitly addresses potential misuse cases, such as generating biased or harmful content, and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a discussion on fairness, including an analysis of potential biases in the training data and the model's outputs. Propose methods for mitigating these biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand the ethics statement to include a more detailed discussion of the potential societal impacts of the research, including both positive and negative consequences.",
+    "grounding": "Ethics Statement",
+    "facet": "broader_impacts"
+  }
+]

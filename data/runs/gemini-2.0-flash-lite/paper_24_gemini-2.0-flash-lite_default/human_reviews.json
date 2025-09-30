@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "ufHVWDcPw4",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper explores outputting multiple SRL label sequences with compatible labels, more specifically, jointly outputting PropBank (PB) and VerbNet (VN) labels. The authors propose a joint CRF model that outputs joint PB-VN labels, which is shown to be generally better than a multi-task baseline, especially on the out-of-domain Brown test set. Furthermore, semi-supervised learning with PB-only data and inferencing with SemLink constraints are explored, which could effectively bring benefits.",
+      "reasons_to_accept": "- I think the direction explored in this work is interesting and important for the future development of unifying semantic resources.\n- The paper is well-written and easy to follow, and the experiments are well-conducted.",
+      "reasons_to_reject": "- The experiments only involve joint prediction of PB and VN, where there are abundant joint data and high-coverage mapping resources. The paper could be much stronger and more interesting if it could be extended to scenarios where there are less such joint resources (like PropBank/VerbNet & FrameNet).\n- The performance gaps between different methods seem small. Though this is not quite surprising giving strong neural models, it would be more interesting to explore scenarios where the proposed methods could be more helpful (such as low-resource cases and less-frequent predicates).",
+      "questions_for_the_authors": "- A: Although the joint label space is pruned, it seems still pretty large, how would this affect training and testing efficiency? How slower would it be compared to the methods that predict separately?\n- B: How effective is CRF in these settings? With strong neural models, maybe simple token-wise labelers would obtain good results (maybe adding BIO constraint enforcing at testing time)?\n- C: The main experimenting dataset only covers 56% of the CoNLL05 predicates, are there any biases for these convertible predicates? For example, are they more frequent ones? Also, it would be better if more analysis can be provided based on predicate frequencies (my intuition is that probably low-frequent predicates would be the ones that benefit more from joint learning).",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "s1sxbnlOPT",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper explores various joint traiing decoding strategies for Propbank and VerbNet based semantic role labeling.",
+      "reasons_to_accept": "The results are state of the art, the methods sensible and the discussion useful.",
+      "reasons_to_reject": "The existence of compatible verbnet and PropBank labels is an accident of the history of the field There are not many situations parallel to this, so the result is probably of interest only to a small subset of ACL researchers. The authors make little attempt to draw general lessons from their work.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "gpvduTkDqT",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents a joint model that simultaneously addresses two distinct SRL tasks with different formats, namely VerbNet SRL and PropBank SRL. \n  By incorporating SEMLINK (Stowe et al. , 2021) during decoding, the authors successfully prevent the generation of conflicting argument labels.  The experimental results indicate that the method proposed by the authors outperforms previous multitasking learning approaches. \nAnd when provided with the gold standard PropBank SRL labels, this method achieves an F1 score of 99 for predicting VerbNet SRL labels.",
+      "reasons_to_accept": "Experiments conducted within this study are comprehensive, accompanied by a thorough analysis.\nThe proposed approach can be employed to facilitate mutual transformation between SRL data annotated under different standards, which holds significance for the automated construction of annotated datasets.",
+      "reasons_to_reject": "The writing of this paper requires a little improvement, as certain sections are difficult to comprehend. The foundational aspect of SEMLINK is inadequately introduced. For instance, in section 5, readers less familiar with SEMLINK might struggle to grasp concepts like \"SEML(u)\" and the associated inferences. I believe the authors could enhance understanding by incorporating more illustrative examples.\nAdditionally, as mentioned by the authors in the Limitation section, the model in this study relies on gold predicate positions and predicate attributes. This limitation diminishes the practicality of the model in real-world scenarios.",
+      "questions_for_the_authors": "Question A\uff1aWhen constructing \"x_wp,\"  did you predict the predicates and senses first or did you directly use the correct answers? If the predicted answers were used, does that imply that both \"x\" and \"x_wp\" underwent separate encoding, with the encoding result of \"x\" being utilized for predicting predicates?\nQuestion B: In line 406, you mentioned that correct VerbNet classes and PropBank senses were used during constrained decoding. Have you attempted using predicted answers?",
+      "typos_grammar_style_and_presentation_improvements": "There is a missing period at line 383.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

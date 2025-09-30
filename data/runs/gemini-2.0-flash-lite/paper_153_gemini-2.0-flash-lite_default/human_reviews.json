@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "5oKNfku6S9",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper focuses on spatial role extraction and spatial relation extraction. Its main contribution is to disentange the processes of spatial relation extraction to different stages. In details, it proposes three different models: a pipeline of extraction and symbolic reasoning, an end-to-end PLM in a QA format, and  an end-to-end neural model with explicit layers of extraction and reasoning. The experimental results on multiple datasets show the effectiveness of the proposed models.",
+      "reasons_to_accept": "1) This paper proposed three different model on spatial relation extraction.\n2) The proposed models achieve good performance on multiple datasets.\n3) This paper is well-written.",
+      "reasons_to_reject": "1) I mainly concern its novelty. The three proposed models are not new, because pipeline models and QA-style models are widely used in IE field.\n2) Which model is the best for a IE task? Pipeline model? Unified model? Joint model? or multitask model? I think this paper should compare   the proposed models with other framework, e.g., joint or multitask framework.\n3) The baselines are weak. This paper only compared the proposed models with some basic models (e.g., Majority, BERT,GPT3) and did not compare them with the SOTA models.\n4) PISTAQ is better than SREQA on SPART datasets, However, it performs worse than SREQA on RESQ. I would like to see the reason.\n5) The motivation is not clear. This paper did not answer the question: Why is disentangling extraction and reasoning better than joint  extraction and reasoning in multi-hop spatial reasoning?",
+      "questions_for_the_authors": "1)  PISTAQ is better than SREQA on SPART datasets, However, it performs worse than SREQA on RESQ. Why?\n2) The performance of entity coreference is still poor and most models are less than 70 in F1-score. Why can the accuracy of the proposed Coref module acheive 99? How about the Precision and Recall?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "9GwC7fonMJ",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes to disentangle the information extraction process with reasoning process for multihop spatial reasoning dataset, and design both symbolic pipeline disentangling and end-to-end neural disentangling to achieve the objective. To showcase the effect of the disentanglement, the authors compare with PLMs such as BERT and GPT-3 which produce direct inference given the story and question.\nExtensive experiments are conducted over different datasets, automatic or human-authored, with or without SPRL labels, to empirically verify the effect of different components, and analyze the models' generalization towards unseen datasets during training.",
+      "reasons_to_accept": "1. The paper raises an interesting and valuable problem of whether disentangling the extraction and reasoning process leads to improved spatial reasoning. \n2. Comprehensive model designs and comparisons are given to ablate specific functionalities with empirical results, including direct black-box inference, neural disentanglement, and symbolic disentanglement. \n3. The results indicate the potential of using specific reasoning models to replace LLMs in reasoning-intensive tasks.",
+      "reasons_to_reject": "1. The descriptions are intensive, but lack clearer organizations which makes it a bit challenging to follow. A running example could be added to make description much easier. \n2. The settings of different proposed models are not so clear, as well as some of the illustrations. For example: - What are logic rules used in the prolog for the reasoning part?  - Is BERT-EQ essentially similar to BERT but with data augmentations using SPRL labels?  - For SREQA, how is entity selection  (via BIO, similar to PISTAQ?) and the final answer produced given the predicted pairs? \n3. The proposed models still require SPRL labels for training the extraction module. The authors mention that it is beneficial to use LLMs to produce zero-shot or few-shot extractions, but is there any empirical results for the final performance?",
+      "questions_for_the_authors": "Refer to the above.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "7uLKGE3apI",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "To show benefits of segregating the processes of information extraction and reasoning in the task of spatial question answering, the paper proposes 3 models: PistaQ, BERT-EQ and SREQA. In brief, PistaQ is a model based on extracting relations and then perform symbolic reasoning. BERT-EQ is an end-to-end pre-trained language model that uses the same spatial information supervision but in question-answer format. Lastly, SREQA model is again an end-to-end neural model with explicit layers of extraction and reasoning. Various experiments are conducted over 3 datasets: SPARTQA, SPARTUN and RESQ, which show the efficacy of separating the processes information extraction and reasoning.",
+      "reasons_to_accept": "1. \tThis paper demonstrates the effectiveness of separating the process of information extraction from reasoning while performing spatial question answering. \n2. \tAlthough the quantitative and qualitative are strong against the baseline models, yet, they may lead a reader to a dilemma on which model, PISTA-Q or SREQA, to use for any use- case.",
+      "reasons_to_reject": "1. \tThe structure of the paper is not good. For instance,        a.\tText below section 3 should briefly introduce all the 3 models (with names of models) and should refer to subsections 3.1, 3.2 and 3.3 to provide the reader an idea of what to expect. \n      b.\tNames of the models should be easy to remember. For example, what is the purpose of EQ in BERT-EQ. As a reader, I don\u2019t understand it until I read section 3.2. \n      c.\tHeading of Section 3.1 should be PISTAQ: \u2026.. to make it evident that the section talks about first model. \n      d.\tHeading of Section 3.2 should be BERT-EQ: \u2026.. to make it evident that the section talks about second model. \n      e.\tHeading of Section 3.3 should be SREQA: \u2026.. to make it evident that the section talks about second model. \n      f.\tIs the section starting at Line 525 a subsection or something different?\n2. \tTable 2 does not help in dissecting the attributes of proposed models among each other and with the baselines. The authors are requested to make it easy for the readers to get an understanding of the various models. For instance, a suggestion is to make a table where every row is a model name and columns are 4 or 5 attributes which the authors feel critical to distinguish the various models. This will help in the ablation analysis aswell. Moreover, current Table 2 does not contain baselines: Majority Baseline and GT-PISTAQ. The purpose of this table is to give readers a quick glance about all the models discussed in the paper with their attributes.\n3. \tSections discussing results simply report the results without any interesting insights. My suggestion will be to discuss the results with respect to the new Table 2 mentioned in point 2. This will keep readers interested in reading the results with some insights about attributes of the proposed models.\n4. \tThe paper uses too many acronyms, and some acronyms have an unusual mention. For eg. SPARTUN where size of \u201cS\u201d is smaller than \u201cRTUN\u201d but bigger than \u201cPA\u201d.\n5. \tThe authors are requested to create separate sections for quantitative results which can have Table 3-6 at one place and a qualitative section which can have Figures 4 and 5.",
+      "typos_grammar_style_and_presentation_improvements": "1. \tIn Table 3, dataset MSPRL is mentioned. However, I don\u2019t see MSPRL described in section 4.1 2. \tLine140: Reasoning -> reasoning.\n3. \tInconsistent usage of reference to artifacts. For instance, \u201cFigure 1\u201d in Line 058 and \u201cFig 1\u201d in Line 156.\n4. \tFigure 2 and the text in section 3.1 should match to make the reader understand the model easily. For instance:         a.\tIn Figure 2, why is \u201cCoref Resolution\u201d missing in Question Processing? \n        b.\tWhat process does Spatial Reasoner follow to generate the answer? Currently, its not clear either from the Figure 2 or paragraph in Line222-229.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

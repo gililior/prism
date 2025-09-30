@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "0Ar4x1A9XF",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper performs video moment retrieval under the training of image-noun pairs and video-verb pairs. Transfer learning is applied to incorporate the alignment knowledge.",
+      "reasons_to_accept": "[+] Unsupervised setting for TSG [+] Sufficient experiments [+] Enhanced retrieval performances",
+      "reasons_to_reject": "[-] Although this paper is not the first paper to perform unsupervised TSG, the introduction is unnecessarily written as if it were the first time performing an unsupervised task. There are several citations about TSG and weakly-supervised TSG, but why did the author not cite the previous works about unsupervised TSG in Introduction. See below recent works of unsupervised TSG - Zero-shot natural language video localization. ICCV'21 - Prompt-based zero-shot video moment retrieval ACM MM'22 [-] This work is more closed to weakly-supervised training, the model trained with a video retrieval dataset and performing retrieval on the video is the process of weakly-supervised setting. Therefore this work has a fatal misunderstanding of contributions.\n[-] The figure is too complicated, which ruins the readability.\n[-] Many recent works about unsupervised TSG are not cited.\n- Zero-shot natural language video localization. ICCV'21 - Prompt-based zero-shot video moment retrieval ACM MM'22",
+      "questions_for_the_authors": "see weakness",
+      "missing_references": "see weakness",
+      "typos_grammar_style_and_presentation_improvements": "presentations are too complicated.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "1: Poor: This study is not yet sufficiently thorough to warrant publication or is not relevant to EMNLP.",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "wpeMlizB0Q",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes a novel approach for unsupervised temporal sentence grounding (TSG) without relying on expensive video-query annotations. The proposed Cross Modal Knowledge Transferring (CMKT) network leverages simple cross-modal alignment knowledge from other tasks to model appearance and action information in videos. The extracted knowledge is then fine-tuned and transferred to the TSG task for inference without further training. Extensive experiments on two challenging datasets demonstrate the effectiveness of the proposed approach, outperforming existing unsupervised methods and even competitively beating supervised methods.",
+      "reasons_to_accept": "1. The proposed approach leverages simple and cheap cross-modal alignment knowledge from other tasks to model appearance and action information in videos, which significantly reduces the reliance on expensive video-query annotations and the need for large-scale training data.\n2. The proposed approach introduces a novel copy-paste approach to synthesize various multi-action clips and improve the generalization ability of the model, which enables it to handle complicated videos with multiple action contexts.\n3. The proposed approach achieves state-of-the-art performance on two challenging datasets, outperforming existing unsupervised TSG methods and even competing with supervised methods, demonstrating its effectiveness and potential for practical applications.",
+      "reasons_to_reject": "1. The content of the model diagram is too complicated, and the font is too small, which greatly affects readability.\n2. It can be observed that the methodology section occupies a large portion of the paper, containing a significant amount of content with insufficient emphasis on key information. It might be worth considering highlighting the crucial information and moving some of the content to the appendix.\n3. The methodology involves a highly complex process, and the model lacks simplicity.\n4. There is a lack of organization and analysis of important references in the paper.",
+      "missing_references": "[1] Mun J, Cho M, Han B. Local-global video-text interactions for temporal grounding[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2020: 10810-10819.\n[2] Li M, Wang T, Zhang H, et al. End-to-End Modeling via Information Tree for One-Shot Natural Language Spatial Video Grounding[C]//Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2022: 8707-8717.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "lUVnb3CYFy",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper addresses the task of unsupervised temporal sentence grounding (TSG). The main contributions of this paper are as follows: 1. This work is the first attempt to use transfer learning knowledge to tackle the unsupervised temporal sentence grounding task. It eliminates the need for any annotations related to TSG data and simplifies the training process. \n2. The authors adopted carefully designed techniques to acquire and utilize cross-modal knowledge obtained through transfer learning, aiming to achieve better generalization performance. \n3. The model performs well on both datasets, especially in the unsupervised task setting. It also demonstrates competitive performance compared to some models that adopt weakly supervised approaches.",
+      "reasons_to_accept": "1. There has been limited research on unsupervised temporal sentence grounding in the past. Previous works often focused on meticulously designing models and dealing with complex training processes. However, this work takes a different approach by leveraging transfer learning, which directly eliminates the need for an extensive training process. \n2. This article\u2019s approach involves decomposing the original task, enabling the direct transfer of knowledge from other simpler tasks to the unsupervised Temporal Sentence Grounding (TSG) task. During the knowledge acquisition stage, the authors introduced several techniques to enhance the generalization of the acquired knowledge. In the knowledge inference stage, they also addressed the issue of knowledge applicability and proposed specific optimization measures to utilize the knowledge effectively. \n3. The experimental section of this work is comprehensive, and the model\u2019s performance shows significant improvements. Moreover, various ablation experiments conducted in the study demonstrate the effectiveness of each proposed design.",
+      "reasons_to_reject": "1. Although this work eliminates the complex training process for Temporal Sentence Grounding (TSG), there will still be some degree of training cost during the stages of acquiring transfer knowledge and improving knowledge applicability, both in terms of computational resources and time cost. So, compared to the original training process, does it show improvement? \n2. The model framework diagram presented in the paper is not sufficiently clear and aesthetically pleasing. There is an excessive use of symbols instead of explicit explanations, which significantly impacts the reading experience.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

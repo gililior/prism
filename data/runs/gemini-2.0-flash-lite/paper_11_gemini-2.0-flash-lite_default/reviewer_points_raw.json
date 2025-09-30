@@ -1,0 +1,368 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper presents experiments on sentiment analysis for African languages. The paper details the experimental setup, including the models, datasets, and hyperparameters used. However, the paper lacks information on seeds and the variance of the results.",
+    "grounding": "Sections 6.1, 6.2, Tables 7, 8, 9",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a detailed description of the experimental setup, including the models, datasets, and hyperparameters used.",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the random seeds used for the experiments. The variance of the results is not reported.",
+    "grounding": "Sections 6.1, 6.2, Tables 7, 8, 9",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information about the software environment is provided.",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments.",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the variance (e.g., standard deviation) of the results across multiple runs.",
+    "grounding": "Tables 7, 8, 9",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository and specify the software environment (e.g., using a requirements.txt or a Dockerfile).",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Were the experiments run on a specific hardware configuration? If so, please specify.",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used publicly available? If not, please provide information on how to access them.",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The lack of seed information and variance makes it difficult to assess the statistical significance of the results.",
+    "grounding": "Sections 6.1, 6.2, Tables 7, 8, 9",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "2",
+    "grounding": "Lack of seed, variance, and environment details.",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents AfriSenti, a sentiment analysis dataset for 14 African languages, and evaluates various multilingual models on this dataset. The results highlight the importance of domain-specific pre-training and the benefits of scaling for appropriately pre-trained models. The paper also explores zero-shot cross-lingual transfer performance.",
+    "grounding": "Sections 6.2, 7",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates the performance of different models on the AfriSenti dataset, showing the impact of language and domain-specific pre-training. XLM-T achieves the best performance among models with up to 270M parameters, highlighting the importance of domain-specific pre-training (Table 7).",
+    "grounding": "Table 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper shows the benefits of scaling for large PLMs. AfroXLMR-large achieves the best overall performance, improving over XLM-T (Table 7).",
+    "grounding": "Table 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides evidence for the effectiveness of zero-shot cross-lingual transfer. Hausa performs well for Oromo transfer, potentially due to language family and script similarity (Table 9).",
+    "grounding": "Table 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the reasons for Yor\u00f9b\u00e1's performance in zero-shot transfer to Tigrinya. While the paper hypothesizes, it lacks concrete evidence to explain why Yor\u00f9b\u00e1 performs well for tir despite the script difference.",
+    "grounding": "Table 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient evidence to support the claim that scaling is of limited use for XLM-R-large.",
+    "grounding": "Table 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct further analysis to determine the specific factors contributing to the success of Yor\u00f9b\u00e1 in zero-shot transfer to Tigrinya, such as feature analysis or comparison with other languages.",
+    "grounding": "Table 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more detailed analysis on why XLM-R-large does not benefit from scaling.",
+    "grounding": "Table 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific challenges faced during data collection and annotation?",
+    "grounding": "Section 7",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the models vary across different African language families?",
+    "grounding": "Table 7, Table 8, Table 9",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper acknowledges the limitations of the study by discussing the challenges faced during data collection and annotation.",
+    "grounding": "Section 7",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures provide a visual overview of the datasets and model performance. The figures are generally clear, but could benefit from improved labeling and visual clarity.",
+    "grounding": "Figures 1-3",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 1 clearly presents the countries and languages included in the AfriSenti dataset.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear labels for the axes, making it difficult to interpret the label distributions.",
+    "grounding": "Figure 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure 3, add axis labels (e.g., 'Number of Tweets' and 'Sentiment Label') and units where applicable. Consider using a bar chart for better readability.",
+    "grounding": "Figure 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the language families in Figure 2 clearly distinguishable visually? Is there a legend?",
+    "grounding": "Figure 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to dataset characteristics and high-level performance comparisons, lacking detailed analysis of model behavior.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Appendix D",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results and dataset details, with varying degrees of statistical rigor and clarity. Some tables lack crucial statistical information, while others are well-structured and informative.",
+    "grounding": "Tables 1-9",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 7 and 8 report average scores over multiple runs, which is a good practice for assessing model performance stability.",
+    "grounding": "Tables 7, 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack standard deviations, confidence intervals, or p-values, making it difficult to assess the statistical significance of the results. Table 1 lacks any statistical information.",
+    "grounding": "Tables 1, 3, 4, 9",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals in Tables 7, 8, and 9 to indicate the variability of the results. Add p-values to compare the performance of different models in Tables 7 and 8.",
+    "grounding": "Tables 7, 8, 9",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the performance differences between models in Tables 7 and 8? 2. What is the inter-annotator agreement for the English translations in Table 10? 3. What is the standard deviation of the scores reported in Tables 7 and 8?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the scope of the AfriSenti dataset and the specific models evaluated.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly introduces the problem, the proposed solution (AfriSenti), and the contributions of the paper.",
+    "grounding": "Abstract",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of the linguistic diversity of Africa and the need for NLP research in African languages.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"low-resource\" is used without a clear definition or reference to a specific metric (e.g., number of speakers, available data).",
+    "grounding": "Introduction \u00a71",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 1 lacks a clear caption explaining what is being represented (countries and languages).",
+    "grounding": "Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define \"low-resource\" languages with a specific metric or reference.",
+    "grounding": "Introduction \u00a71",
+    "facet": "terminology"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more descriptive caption for Figure 1, clarifying what is being visualized (countries and languages).",
+    "grounding": "Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider adding a table summarizing the key notations used throughout the paper (e.g., variables, acronyms).",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What specific criteria were used to select the 14 languages for the AfriSenti benchmark?",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "question",
+    "text": "How does the data collection methodology address the challenges of code-switching and dialectal variations in the African languages?",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific performance metrics used to evaluate the baseline experiments?",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's reproducibility depends on the availability of the AfriSenti dataset and the sentiment lexicons.",
+    "grounding": "Abstract, Introduction",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent in the provided text.",
+    "grounding": "Entire paper",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-structured and addresses an important problem. However, improvements in defining key terms and clarifying the methodology would enhance clarity.",
+    "grounding": "Entire paper",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a new sentiment analysis benchmark, AfriSenti, which is the largest multilingual dataset for sentiment analysis in African languages, addressing the gap in NLP research for these languages (Intro).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a detailed description of the data collection methodology, annotation process, and challenges encountered, offering valuable insights for future research (Sec 3).",
+    "grounding": "Sec 3",
+    "facet": "methodology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance against the state-of-the-art methods, particularly those using PLMs like AfriBERTa or AfroXLMR, which are mentioned in the related work.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of the performance differences across the 14 languages, which could highlight the challenges and opportunities for future research.",
+    "grounding": "Sec 4",
+    "facet": "evaluation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a head-to-head comparison with [1] using the same evaluation metrics and datasets to quantify the improvement achieved by AfriSenti.",
+    "grounding": "Sec 4",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate the performance of AfriSenti using different PLMs (e.g., XLM-R, mDeBERTaV3, AfriBERTa, AfroXLMR) to establish a strong baseline and identify the most suitable models for African languages.",
+    "grounding": "Sec 4",
+    "facet": "experiment"
+  }
+]

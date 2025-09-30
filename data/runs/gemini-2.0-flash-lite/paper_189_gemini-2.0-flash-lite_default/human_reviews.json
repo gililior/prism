@@ -1,0 +1,85 @@
+[
+  {
+    "rid": "0GKSZYu6FS",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper is about mental health analysis topic. The main contributions are: a publicly accessible Chinese Cognitive Distortion Dataset is constructed for the first time. The authors explore the association between cognitive distortions and various mental disorders on social media. The authors attempt to incorporate information about users\u2019 cognitive distortions into mental disorder detection models to illustrate the effectiveness of using cognitive distortion.",
+      "reasons_to_accept": "The C2D2 dataset is valuable for the mental health field. It is a publicly accessible resource within this domain that includes numerous texts recording individuals\u2019 thoughts in various scenes with cognitive distortion. This dataset provides a profound connection between cognitive distortions and mental disorders. Addressing these distortions could potentially enhance mental health interventions. The authors find that integrating cognitive distortions as an additional feature can augment the performance of existing mental disorder detection models. In addition, the overall structure is well-organised.",
+      "reasons_to_reject": "The motivation \"However, mental health issues in developing countries often receive limited attention\" described for not annotating the dataset in English is inaccurate. English has a broader applicability, and the authors could also consider incorporating English annotations. While developing countries are essential to consider, it is also worthwhile to focus on datasets in languages other than Chinese.\nFor the test datasets, do the authors consider post-level model tests? Because the C2D2 is also the post-level dataset. Additionally, some other datasets could be added, like SWMH, T-SID, etc. \nIn Sec 6.2, the authors should train the RoBERTa-based model because of the performance shown in Table 5. \nIn Fig.4, do all posts with depression or PTSD have cognitive distortions? Add Non-sd labels?\nThere is no human expert performance on this dataset.\nMany details need to be expressed clearly. What is the meaning of ppopularity in (4)?\nThe reasonable about \"extracting posts that contain cognitive distortions\" should be discussed.  Why not other methods?\nIf possible, it is suggested that the problem could be treated as a multi-label task when multiple cognitive distortions occur simultaneously.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "aExCY7CUuj",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, the authors propose a cognitive distortion dataset in Chinese, consisting of 7,500 examples with paired scenes, thoughts, and cognitive distortion labels. For the dataset construction, the authors do not take the traditional approach of annotating online posts, but instead recruit volunteers and use interviews to further select qualified volunteers. The volunteers are instructed to compose thoughts based on the given scene, and also label the thoughts composed by other volunteers. The quality of the dataset is further evaluated by experts.  The authors conduct experiments using various baseline models including fully-supervised training, as well as few-shot and zero-shot using ChatGPT, demonstrating the challenge of this dataset. The author also conducts experiments and comprehensive analysis using the cognitive detection model on datasets from social media, showing the correlations between cognitive distortions and various mental health disorders.",
+      "reasons_to_accept": "1. The proposed new dataset is very valuable, as currently, there is a lack of publically available datasets in the mental health domain. Such a dataset will greatly boost the research for NLP in assisting mental health treatment. \n2. The proposed dataset is the first one for Chinese. This is especially valuable since, in China, the scarcity of mental health professionals and resources is even more severe. There is an increasing demand for building automatic assistance for mental health support. \n3. The dataset shows good quality, verified by experts. \n4. The experiments and analysis demonstrate the great potential of the vast scope of future research that can be extended based on this dataset.",
+      "reasons_to_reject": "1. No evaluation regarding the human expert performance on this dataset. \n2. The dataset construction process involves asking the volunteers to \"compose\" distorted thoughts but not taking the thoughts from potential patients with mental disorders from online posts. Such a method, theoretically as a kind of proxy to the thoughts of real patients,  is further verified by experts, as stated in the paper. However, I'm wondering what the gap is between the thoughts from real patients and the composed thoughts.",
+      "questions_for_the_authors": "Do you pay the volunteers and the experts? If so, how do you pay them? This needs to be specified in the Ethics section.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "zmzlWjkI0i",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper discusses the creation of the Chinese Cognitive Distortion Dataset, a dataset based on Chinese tweets which were then translated into English. This dataset can be used to detect cognitive distortions (present or not) and the type of cognitive distortion (e.g., emotional reasoning, overgeneralization, etc) in text. It also examines its use in previously collected datasets with social media data from users with mental illnesses.",
+      "reasons_to_accept": "Presents an interesting tool to be used to detect cognitive distortions and has an interesting method that could be replicated to re-create a cognitive bias dataset with another language (e.g., English, French, etc.,).",
+      "reasons_to_reject": "By collecting data from volunteers with prompts and then correcting the volunteer's answers (as discussed in section 3.4), the dataset may include the researcher's biases and be less generalizable or naturalistic. Unclear of potential biases in the demographics of the volunteers who generated the data. The biases and limitations of the dataset due to it being generated by volunteers and then corrected should be discussed. As well, since the authors use social media datasets it's unverifiable if the users are formally diagnosed, thus the findings discussed on 449 to 453 and 465 to 471 as well of the rest of the section should emphasize how these findings are based on self-disclosure and potential self-diagnosis.",
+      "questions_for_the_authors": "1) Will the C2D2 dataset be available in Chinese, English, or both? \n2) What are the volunteer demographics? \n3) Where/how were the volunteers recruited from?",
+      "missing_references": "The findings discussed in section 6.2 are similar to research on cognitive bias types in psychology although its novel being found on social media. Could support findings with research from psychology, psychiatry and the medical field.",
+      "typos_grammar_style_and_presentation_improvements": "Figure 2, in the notes missing spaces between the \"&\" in the first line  line 203, missing spaces between the \"&\".\nLine 349, extra space before \"Table\"",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "HPXYIRgHgT",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper introduces a new dataset of examples of various cognitive distortions in the Chinese language. The authors then perform machine learning experiments to test whether cognitive distortions are possible to detect automatically from text, and also test their relation to mental disorders, based on some English datasets annotated for depression and PTSD.\nThe dataset is created through a complex and rigorous process: by first doing a selection for choosing the set of responders, then asking them to produce examples of cognitive distortions, which are then verified by experts for different criteria. The dataset is made public.\nIn the experiments, pretrained LLMs are used to detect cognitive distortions in the proposed dataset and in the English mental disorders dataset, using machine translation to make the datasets compatible (following two objectives: measuring the prevalence of cognitive distortions in mental health disorder data using the trained models, and trying to improve mental disorder detection using cognitive distortion information).\nAll the responders used for creating the dataset have agreed to participate in the study, and the ethical section contains a thorough discussion.",
+      "reasons_to_accept": "- An original topic and the introduction of a new dataset, created through a very thorough process - Interesting findings related to the specific cognitive distortions that occur in various mental health disorders (depression and PTSD)",
+      "reasons_to_reject": "- Some potential methodological problems or unclarities in the cross-lingual experiments. It would have been useful to see an analysis of the impact of translation on the dataset, since this might distort the annotations themselves - at least a reiteration of the cognitive distortion detection experiment but on the English version of the data",
+      "questions_for_the_authors": "Will the English version of the dataset also be made publicly available? It might widen the scope of its usefulness in other studies.",
+      "missing_references": "Not directly about cognitive distortions, but on the relation between the more general \"cognitive styles\" (including cognitive biases) and mental health disorders: Uban, A. S., Chulvi, B., & Rosso, P. (2021). An emotion and cognitive based analysis of mental health disorders from social media data. Future Generation Computer Systems, 124, 480-494.",
+      "typos_grammar_style_and_presentation_improvements": "- line 72: will contributes -> contribute - title of Section 4.2: \"Related dataset\" -> \"Related datasets\"?\n- line 324: preferable not to start the paragraph with \"And\" - lines 365-367: duplicate sentence (at least in meaning)?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

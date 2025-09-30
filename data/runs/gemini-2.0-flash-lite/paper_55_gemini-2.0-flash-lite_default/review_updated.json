@@ -1,0 +1,144 @@
+{
+  "summary": "This paper investigates the impact of different optimization methods on retaining semantic knowledge while learning syntactic information in language models. The paper demonstrates that methods like GS and EWC improve performance on tasks requiring syntactic understanding, as indicated by lower PPL scores and higher scores in CoLA and MRPC tasks. The claims lack sufficient statistical support and generalizability needs further validation. The authors have committed to addressing the weaknesses identified in the review, including adding statistical analysis, improving reproducibility, expanding the evaluation, and providing a more detailed analysis of syntactic features.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions the work relative to prior art, identifying gaps in existing research.",
+      "grounding": "Intro §1.2",
+      "facet": "positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "The training setup is described in detail, enhancing reproducibility.",
+      "grounding": "Sec 2.2, Table 2",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides evidence that GS and EWC optimization methods help retain semantic knowledge while learning syntactic information, as indicated by lower PPL scores and higher scores in CoLA and MRPC tasks.",
+      "grounding": "Fig 2, Table 4",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper is well-organized, with a clear introduction, methods, and contributions section.",
+      "grounding": "Abstract, Section 1, Section 2",
+      "facet": "organization"
+    },
+    {
+      "kind": "strength",
+      "text": "The abstract clearly states the problem, the proposed solution, and the key findings.",
+      "grounding": "Abstract",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 6 provides a clear comparison of model averages for each additional syntactic training task, aiding in the understanding of the impact of different syntactic information.",
+      "grounding": "Table 6",
+      "facet": "tables"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient statistical analysis to support its claims, including the absence of standard deviations, confidence intervals, or p-values in several tables.",
+      "grounding": "Tables 3, 4, 5, 7",
+      "facet": "analysis"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not report seed usage or variance, and lacks information about the environment, hindering reproducibility.",
+      "grounding": "Sec 3.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of its findings, as the conclusions are based on a limited set of GLUE tasks.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient evidence to support the claim that the improvement in CoLA task is due to capturing coordination structures.",
+      "grounding": "Table 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 2 lacks clear axis labels and units, and the legend is not described. The term 'additional syntactic training' is also introduced without a clear definition.",
+      "grounding": "Figure 2, Section 1, Section 2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear explanation of the notation used, especially in the methods section.",
+      "grounding": "Section 2, Table 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a detailed analysis of potential misuse scenarios, fairness considerations, or broader societal impacts.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address dataset licensing and usage restrictions.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals in tables and report the seeds used and the variance across multiple runs to improve reproducibility.",
+      "grounding": "Table 2, Sec 3.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide code, data, and environment details (e.g., Dockerfile, Conda environment) to enhance reproducibility.",
+      "grounding": "GitHub/CodeOcean/Zenodo",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments on a wider range of tasks to validate the generalizability of the findings.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed analysis of the specific syntactic features learned by the models and how they contribute to the performance improvement on different tasks.",
+      "grounding": "Sec 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add axis labels and units to figures, and provide a clear legend explaining the different lines/colors. Include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to indicate statistical significance. Clarify headers to improve readability.",
+      "grounding": "Figure 2, Tables 3, 4, 5, 6, 7",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a concise definition of 'additional syntactic training' early in the introduction and include a table of notation to define all symbols and acronyms used in the methods section.",
+      "grounding": "Section 1, Section 2, Table 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section in the paper that explicitly addresses potential misuse cases, such as generating biased or harmful content, and propose mitigation strategies. Add a discussion on fairness, including an analysis of potential biases in the training data and the model's outputs. Expand the ethics statement to include a more detailed discussion of the potential societal impacts of the research, including both positive and negative consequences.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

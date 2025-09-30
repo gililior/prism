@@ -1,0 +1,132 @@
+{
+  "summary": "This paper investigates the problem of added toxicity in machine translation across multiple languages, using a combination of existing toxicity detection methods, the HOLISTICBIAS dataset, and ALTI+ interpretability. The study provides quantitative results on false positive rates and insights into the causes of added toxicity, but lacks sufficient comparison to existing methods and clarity in some methodological aspects. The authors have provided clarifications regarding the methodology and addressed some of the weaknesses.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper presents a clear methodology for human evaluation, including language selection and criteria for identifying false positives and negatives (Sec 6).",
+      "grounding": "(Sec 6) [claims_vs_evidence]",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The study provides quantitative results on false positive rates for different languages, offering insights into the performance of the toxicity detection methodology (Table 1).",
+      "grounding": "(Table 1) [claims_vs_evidence]",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly defines 'added toxicity' and distinguishes it from broader categories of error (Abstract, Sec 2).",
+      "grounding": "(Abstract, Sec 2) [clarity_presentation]",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The figure provides a visual representation of the toxicity of descriptors in translation, supporting the claims about the relationship between source contribution, robustness, and toxicity rates (Figure 3).",
+      "grounding": "(Figure 3) [figures]",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The methodology, combining existing toxicity detection, the HOLISTICBIAS dataset, and ALTI+ interpretability, is clearly stated (Abstract, Sec 1).",
+      "grounding": "(Abstract, Sec 1) [clarity_presentation]",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a detailed explanation of the toxicity lists used, making it difficult to assess their completeness and quality (Sec 6).",
+      "grounding": "(Sec 2) [claims_vs_evidence]",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of the findings without sufficient evidence, particularly regarding the dataset's templated nature (Sec 6).",
+      "grounding": "(Sec 6) [claims_vs_evidence]",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear comparison to existing methods for detecting and mitigating toxicity in MT, including a quantitative comparison with NLLB Team et al. (2022) or other relevant baselines.",
+      "grounding": "(Related Work, Intro) [None]",
+      "facet": "None"
+    },
+    {
+      "kind": "weakness",
+      "text": "The tables lack crucial statistical information such as confidence intervals, standard deviations, and p-values to assess the significance of the observed differences (Table 1).",
+      "grounding": "(Table 1) [tables]",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The axes in Figure 3 lack clear labels and units, making it difficult to interpret the specific values and relationships being presented.",
+      "grounding": "(Figure 3) [figures]",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'source contribution' and its measurement using ALTI+ is not clearly explained, requiring more context (Abstract, Sec 1).",
+      "grounding": "(Abstract, Sec 1) [clarity_presentation]",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear explanation of the ALTI+ interpretability method; a brief overview or reference to the original paper is needed (Abstract, Sec 1).",
+      "grounding": "(Abstract, Sec 1) [clarity_presentation]",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "No discussion of potential misuse or failure modes.",
+      "grounding": "(Insufficient evidence) [societal_impact]",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed comparison of the results with other toxicity detection methods (Sec 6).",
+      "grounding": "(Sec 6) [claims_vs_evidence]",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a quantitative comparison with NLLB Team et al. (2022) or other relevant baselines, demonstrating the improvement in detecting or mitigating added toxicity (Related Work).",
+      "grounding": "(Related Work) [None]",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals for the false positive and false negative rates. Consider adding p-values to compare the performance differences between languages (Table 1).",
+      "grounding": "(Table 1) [tables]",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Improve Figure 3 by adding clear labels to the axes, including units where applicable, and ensure the color scheme is well-defined and explained in the caption or a legend (Figure 3).",
+      "grounding": "(Figure 3) [figures]",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of how 'source contribution' is measured and interpreted within the context of ALTI+ (Abstract, Sec 1).",
+      "grounding": "(Abstract, Sec 1) [clarity_presentation]",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a brief overview of the ALTI+ method or direct the reader to the original paper for a better understanding (Abstract, Sec 1).",
+      "grounding": "(Abstract, Sec 1) [clarity_presentation]",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies (Conclusion).",
+      "grounding": "(Conclusion) [societal_impact]",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

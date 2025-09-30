@@ -1,0 +1,162 @@
+{
+  "summary": "This paper introduces a novel 'tree topological probe' for understanding pretrained language models. The paper presents a potentially interesting approach, but still suffers from weaknesses in clarity, experimental rigor, and a lack of comprehensive evaluation, particularly regarding generalizability and potential societal impacts. The authors have provided rebuttals that clarify some aspects of the work and promise future improvements.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions its work relative to prior art, identifying gaps in existing methods.",
+      "grounding": "Intro §1.2",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "Experiments are focused on BERT-large and its submodules, with supplementary results on RoBERTa-large.",
+      "grounding": "Sec 4",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The abstract clearly outlines the paper's focus, approach, and contributions.",
+      "grounding": "Abstract",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel approach to constructing metrics for understanding pretrained language models, specifically focusing on a 'tree topological probe'.",
+      "grounding": "Intro",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient evidence to support the generalizability of its findings beyond BERT and RoBERTa.",
+      "grounding": "Insufficient evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The construction scheme for the topological probe lacks sufficient mathematical formalization.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset licensing and usage restrictions are not stated.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The axes in the figures lack clear labels and units, hindering result interpretation.",
+      "grounding": "Figures 1, 2, 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term 'tree topological probe' lacks a clear definition of what constitutes a 'tree' in this context.",
+      "grounding": "Abstract",
+      "facet": "terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential biases in the data or model, leading to unfair interpretations.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss the potential for misuse, such as manipulating model behavior or deceiving users.",
+      "grounding": "Insufficient evidence",
+      "facet": "misuse"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address the broader societal impacts of the work.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss potential failure modes or the limitations of the proposed method.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare the proposed 'tree topological probe' with existing probing methods.",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments on a wider range of models to substantiate the generalizability claims.",
+      "grounding": "Sec 4",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more rigorous mathematical formalization of the topological probe.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more descriptive axis labels, including units where applicable, to improve clarity.",
+      "grounding": "Figures 1, 2, 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations and/or confidence intervals for all reported values and add p-values to compare the performance of different methods or groups.",
+      "grounding": "Tables 1-5",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed discussion of potential risks associated with the proposed method, such as the possibility of misinterpreting model behavior or the potential for biased interpretations.",
+      "grounding": "Conclusion",
+      "facet": "risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Address potential misuse cases, such as the use of the method to manipulate or deceive users.",
+      "grounding": "Conclusion",
+      "facet": "misuse"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Discuss fairness considerations, including the potential for the method to amplify existing biases in the data or model.",
+      "grounding": "Conclusion",
+      "facet": "fairness"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section to discuss the societal implications of the work, including both positive and negative impacts.",
+      "grounding": "Conclusion",
+      "facet": "broader_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing the performance of the 'tree topological probe' against a standard probing method on a benchmark task.",
+      "grounding": "Sec X (Experimental Setup)",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section discussing the limitations of the 'tree topological probe', including its computational complexity and sensitivity to hyperparameter settings. Also, discuss the potential for the method to be applied to other model architectures.",
+      "grounding": "Discussion Section",
+      "facet": "future_work"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

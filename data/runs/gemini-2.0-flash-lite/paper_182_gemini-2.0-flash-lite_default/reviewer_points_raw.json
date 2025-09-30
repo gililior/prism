@@ -1,0 +1,338 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces POE, a two-step scoring method for multiple-choice reasoning. The method is evaluated on 8 reasoning tasks, showing improved performance compared to baselines. The authors acknowledge limitations regarding mask enforcement, prompt optimization, and the scope of experiments.",
+    "grounding": "Sec 4, Sec 6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "POE achieves the best or second-best performance on all 8 reasoning tasks compared to baselines.",
+    "grounding": "Table 1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "POE outperforms MCP on 5 tasks and is comparable on the remaining three, demonstrating the effectiveness of the method.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The claim that POE disentangles the two jobs (eliminating wrong options and choosing the right one) is an overstatement, as the paper does not provide direct evidence to support this claim.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims POE is exceptionally performant on CC, but the specific experiments and analysis are not detailed enough to fully support this claim.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct ablation studies to analyze the contribution of each component of POE.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand experiments to include few-shot settings and complex prompting methods.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Explore the application of POE to tasks involving other modalities.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What specific reasoning tasks benefit most from POE?",
+    "grounding": "Sec 4",
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "How does POE compare to other methods on the CC task?",
+    "grounding": "Sec 4",
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific prompts used in the experiments?",
+    "grounding": "Sec 6",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitation",
+    "text": "The authors adequately discuss the limitations of their work, including mask enforcement, prompt optimization, and the scope of experiments.",
+    "grounding": "Sec 6",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Ethics Statement",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces the Process of Elimination (POE), a two-step scoring method for multiple-choice reasoning in language models. POE first scores options and eliminates seemingly incorrect ones, then makes a final prediction from the remaining options. The authors demonstrate POE's effectiveness through zero-shot experiments on eight reasoning tasks and analyze its performance on logical reasoning tasks and its applicability to few-shot settings and LLMs.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions the proposed method, POE, within the context of existing in-context learning methods for multiple-choice reasoning, highlighting the limitations of treating all options equally. The introduction of a two-step process inspired by human problem-solving is a novel approach.",
+    "grounding": "Intro \u00a71.2, \u00a71.3",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison to the closest baseline methods, particularly those that might already incorporate some form of option filtering or ranking. The delta between POE and existing scoring methods needs to be more clearly articulated and supported by evidence.",
+    "grounding": "Related Work, Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with a strong scoring-based baseline, such as a method that uses likelihood scoring with option ranking or filtering. This comparison should include quantitative results and a discussion of the differences in performance and behavior.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the sensitivity of POE to the threshold used for eliminating options in the first step. Investigate how different thresholding strategies affect performance across different tasks.",
+    "grounding": "Sec 3.1",
+    "facet": "originality"
+  },
+  {
+    "kind": "questions",
+    "text": "How does POE's performance compare to other methods on tasks that require complex reasoning or multi-step inference? Does POE's two-step approach lead to more robust or explainable predictions compared to single-step methods? What is the computational cost of POE compared to other methods? How does the choice of language model affect POE's performance? Are there any failure cases or limitations of POE?",
+    "grounding": "Experiments, Analysis",
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of POE hinges on the specific implementation details of the two-step scoring and masking process. The effectiveness of POE may depend on the choice of scoring function and the threshold used for elimination.",
+    "grounding": "Methodology",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "The paper presents a novel approach to multiple-choice reasoning in language models. However, the lack of detailed comparisons and analysis of the method's sensitivity to hyperparameters raises concerns. Further experiments and analysis are needed to fully assess the method's effectiveness and generalizability.",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally illustrate the POE method and its performance, but could benefit from improved clarity in axes and legends.",
+    "grounding": "Figures 1-4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 effectively presents the impact of different scoring methods and elimination strategies.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the performance scores.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add error bars to the plots in Figures 2 and 3 to indicate the standard deviation or confidence intervals of the results.",
+    "grounding": "Fig 2, Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors and line styles represent in Figure 4?",
+    "grounding": "Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to performance metrics and do not provide in-depth analysis of the reasoning process.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present performance comparisons of the proposed method (POE) against baselines on various reasoning tasks. The tables include accuracy scores and standard deviations, but lack detailed statistical analysis.",
+    "grounding": "Tables 1, 2, 3, 4, 5, 6",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 1 and 5 include accuracy scores and standard deviations, which allows for a basic comparison of performance.",
+    "grounding": "Tables 1, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as p-values or confidence intervals to support the claims of significant performance differences. Table 4 lacks any performance metrics.",
+    "grounding": "Tables 2, 3, 4, 6",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include p-values or confidence intervals to indicate the statistical significance of the performance differences between POE and the baselines in all tables. Provide more details on the tasks in Table 4, including the datasets used.",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the performance differences? 2. What are the details of the datasets used for each task? 3. How were the standard deviations calculated? 4. What is the rationale behind selecting the specific tasks for evaluation?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the specific tasks and datasets used in the evaluation. Generalizability to other reasoning tasks is not fully addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces the Process of Elimination (POE), a two-step scoring method for multiple-choice reasoning tasks. POE first scores options and eliminates seemingly incorrect ones, then makes a final prediction from the remaining options. Experiments demonstrate POE's effectiveness, particularly on logical reasoning tasks, and its applicability to few-shot settings and LLMs.",
+    "grounding": null,
+    "facet": "organization_clarity_terminology"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper is well-organized, with a clear introduction, method description, and experimental results. The abstract effectively summarizes the key contributions and findings. The use of a motivating quote at the beginning of the introduction is engaging.",
+    "grounding": "Abstract, \u00a71, \u00a72",
+    "facet": "organization_clarity_terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'Y_wrong' in Equation 5 is ambiguous. It's not clear what 'arg' is supposed to be doing here. Is it the average? Also, the text cuts off mid-sentence.",
+    "grounding": "Equation 5, \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for notation. While the notation is relatively simple, a table summarizing the symbols used would improve readability and clarity, especially for readers unfamiliar with the specific notation.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Equation 5, replace 'arg' with a clear mathematical notation for the average (e.g., an overline). Complete the sentence that ends with 'Y_wrong'.",
+    "grounding": "Equation 5, \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a notation table in the appendix or a dedicated section to define all symbols used in the equations (e.g., x, y_i, s_i, Y).",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific scoring methods are used in the first step of POE? Are they the same as the 'commonly-used score' mentioned earlier?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the performance of POE compared to a baseline that uses a standard scoring method without elimination?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific 8 reasoning tasks used in the experiments?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a complete description of the experimental setup (e.g., specific datasets, model details) could hinder reproducibility.",
+    "grounding": null,
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent in the provided text.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Organization: 4/5, Clarity: 3/5, Terminology: 4/5",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential misuse scenarios or failure modes of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address fairness considerations or potential biases in the datasets or models.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of the broader societal impacts of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section discussing potential misuse cases, such as generating misleading information or manipulating multiple-choice assessments.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of fairness considerations, including potential biases in the datasets and models, and strategies to mitigate these biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand the discussion of broader societal impacts, considering the effects on education, testing, and information dissemination.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  }
+]

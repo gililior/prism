@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "iIWaKiaSpp",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper focuses on extractive QA. Specifically, the paper proposes an approach to",
+      "reasons_to_accept": "The idea of improving QA with three-option human feedback is nice, which shed lights on iteratively improving deployed QA systems. I am not an expert on reinforce learning, but the methodology is clear and able to follow. From the experimental results, the improvements are significant. The paper also provide comprehensive discussions on variants of experimental settings.",
+      "reasons_to_reject": "The motivation of improving extractive QA with human feedback is not clearly explained. By reading the introduction, I don't have a clear sense of why we need human feedback for QA.",
+      "questions_for_the_authors": "A. What is the advantage of improving using human feedback compared to using human labels to continuously train the model? It is easier and cheaper to collect? Or other advantages?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "jKrf1qJ0fZ",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors propose a method to continually improve extractive QA via human feedback. The method does have high practical value and may be applied in building other NLP application systems. Extensive and carefully designed experiments demonstrate that an extractive QA system can be improved via interaction with human users over time and further broaden our understanding about continual learning with user feedback.",
+      "reasons_to_accept": "1. The authors propose a method to continually improve extractive QA via human feedback. The proposed method does have high practical value and may be applied in building other NLP application systems.  2. Extensive and carefully designed experiments demonstrate that an extractive QA system can be improved via interaction with human users over time.",
+      "reasons_to_reject": "1. Uncertainties introduced by human interactions are likely to affect the results and need to be carefully controlled with a well-defined guideline.",
+      "questions_for_the_authors": "1. What's the possible performance upper bound of the proposed method? How many rounds of interactions are optimal in general?",
+      "typos_grammar_style_and_presentation_improvements": "Typos or grammar errors: 1. line 345, \"We are focused on ...\" 2. line 369, \"the systems sees\" 3. line 481, \"does not an explain ...\" 4. line 555, \"the that\" 5. line 620, \"out approach\"",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "hREKcOTq0t",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper is about a reinforcement learning for extractive QA. authors trained a model in different rounds using human feedback to improve the model. They also tested different version of the model with different initialization and on different dataset to ensure the performances on different domain. Authors relies on crowdworkers for the feedback. Performances show the effectiveness of the approach.",
+      "reasons_to_accept": "+ well written paper + novel approach to improve extractive QA + relevant results and a new interesting research for qa systems + good experiments and ablations",
+      "reasons_to_reject": "+ miss a proper evaluation of the quality of the crowdworkers to avoid misleading errors + no clear how ensure feedback quality",
+      "questions_for_the_authors": "1 Can you better clarify how you can ensure feedback quality? \n2 Why you did not perform an evaluation of the annotators job?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

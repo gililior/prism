@@ -1,0 +1,132 @@
+{
+  "summary": "This paper introduces a novel self-verification method to mitigate error accumulation in Chain of Thought (CoT) prompting for LLMs. The method's novelty lies in its self-verification approach, but the paper lacks crucial details regarding experimental setup, statistical analysis, and comprehensive comparisons with existing methods.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly describes the self-verification method, including forward reasoning and self-verification steps, and provides examples of the verification process.",
+      "grounding": "Section 3, Figure 8, and Table 3",
+      "facet": "methods"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper effectively positions the work relative to existing methods that use verifiers, highlighting the limitations of those methods.",
+      "grounding": "Intro, Related Work",
+      "facet": "positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "Figures 3 and 4 effectively visualize the self-verification ability of models with different sizes and the impact of different sample sizes.",
+      "grounding": "Figures 3, 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper proposes a novel self-verification approach, which is a key area of improvement over existing CoT methods.",
+      "grounding": "Answer Verification",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The experimental setup lacks crucial details, including the specific datasets used, evaluation metrics, and the use of seeds and variance reporting, hindering reproducibility.",
+      "grounding": "Sections 3 and A.4",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient information on the statistical significance of the results and a detailed comparison with the most relevant baselines, making it difficult to assess the method's effectiveness.",
+      "grounding": "Table 5, Table 6, Table 7, Related Work, Sec 4.1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper's claims of novelty hinge on the specific implementation of self-verification, but the exact prompting strategy and details of the backward verification process are not fully described.",
+      "grounding": "Sec 2.2",
+      "facet": "originality"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several figures lack clear axis labels, units, and legends, making it difficult to interpret the results.",
+      "grounding": "Figures 3, 5, 6, 7",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address ethical considerations, including dataset consent, privacy, usage terms for LLMs, potential risks, fairness, and broader societal impacts.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "weakness",
+      "text": "The terms \"Forward Reasoning\" and \"Backward Verification\" are introduced without clear definitions or formal notation, and the \"GLYPH\" notations are unexplained, hindering understanding.",
+      "grounding": "Intro §1, Figure 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a comprehensive discussion of broader societal impacts.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed section detailing the experimental setup, including the specific versions of libraries, the hardware used, and the random seeds. Report the variance of the results and provide a link to the code repository and data.",
+      "grounding": "Sections 3 and A.4",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a detailed description of the datasets used, including their size and characteristics.",
+      "grounding": "Insufficient evidence",
+      "facet": "experimental design"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Perform a statistical analysis (e.g., t-tests) to compare the performance of the proposed method with baseline methods and include a head-to-head comparison with a strong baseline that also addresses error correction in CoT.",
+      "grounding": "Table 5, Table 6, Table 7, Sec 4.1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide clear definitions and, if possible, mathematical formulations for \"Forward Reasoning\" and \"Backward Verification\" and replace or explain the \"GLYPH\" notations.",
+      "grounding": "Intro §1, Figure 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Ensure that all tables include standard deviations or confidence intervals to indicate the variability of the results and add p-values to indicate statistical significance of performance differences between methods.",
+      "grounding": "All tables",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed discussion of potential risks and misuse cases, address fairness considerations, and provide concrete mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a Broader Impact section that discusses the potential societal implications of the research, both positive and negative.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments comparing the proposed self-verification method with CoT prompting (Wei et al., 2022) and self-consistency decoding (Wang et al., 2023c) on a set of reasoning tasks.",
+      "grounding": "Related Work",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include an ablation study to isolate the impact of the self-verification component.",
+      "grounding": "Methods",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

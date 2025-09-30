@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "T9HlKDT9T5",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper studies how to improve the chain of thought (CoT) prompting to enhance the reasoning abilities of large language models (LLMs). The main contribution of this paper is the proposal and demonstration of the self-verification abilities of large language models. Specifically, the authors introduce a self-verification method that includes a forward reasoning generation and a backward verification. Forward Reasoning involves LLM reasoners generating candidate answers using CoT.  In Backward Verification, the original condition is masked, and its result is predicted using another CoT. Candidate conclusions are ranked based on a verification score that assesses the consistency between the predicted and original condition values. The paper also presents experimental results that demonstrate the effectiveness of the proposed method in solving arithmetic, commonsense, and logical reasoning tasks.",
+      "reasons_to_accept": "1) This paper improves the chain of thought (CoT) prompting by introducing backward verification. \n2) The proposed method allows LLMs to verify whether the generated CoTs are correct or not, simulating human thinking and verifying processes in solving complex reasoning problems. \n3) Experimental results demonstrate the effectiveness of the backward verification on arithmetic, commonsense, and logical reasoning tasks.",
+      "reasons_to_reject": "1) The improvement over CoT baselines, especially Self-Consistency Decoding CoTs, is not very significant. With Self-Consistency Decoding, the average improvement is usually around 0.5%, which may limit the real application of the proposed method considering the higher computing usage of backward verification. \n2) The method does not work very effectively on general reasoning tasks compared with mathematic reasoning. \n3) Lack of deep analysis on when back verification would work and when would not. From the current results, we can only conclude that the proposed method may work better in mathematical reasoning tasks. One possible reason is the masked conditions might be more effective than True-False Item Verification. Some deep qualitative analysis is needed here, which may also further help to know how to generalize similar verification approaches to other reasoning tasks beyond arithmetic reasoning.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "QgzXGxg7Cn",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work proposes to let LLMs self-verify through three steps: mask the values provided in the question; treat the answers generated in the forward inference as known conditions; ask the LLM to answer the backward question, that is, provide the masked value.",
+      "reasons_to_accept": "The self-verification method is novel, and verification results can improve performance.",
+      "reasons_to_reject": "Lack of analysis of self-verification accuracy, e.g. LLMs can return wrong answers to forward questions and also to generated backward questions; The proposed method proceeds in an iterative manner resulting in high cost of querying the LLM.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "oVmw6YM9rL",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper analyzes the problems that current LLMs is prone to in multi-step reasoning, that is, it is sensitive to a certain error and easy to cause error accumulation. The authors propose a method of backward verification after forward reasoning, which alleviates this phenomenon and verifies that LLMs itself has the ability to self-verify the generated results.\nThe main contributions of this paper are: (1) The ability of LLMs to self-verify results with the help of specific methods is verified; (2) The feasibility of the proposed method is verified on multiple LLMs and multiple mathematical, commonsense, and logical reasoning datasets. ( 3) Two methods of self-validation are proposed. True-False Item Verification for General Tasks in the backward verification stage and Condition Mask Verification based on the characteristics of Arithmetic Tasks.",
+      "reasons_to_accept": "1. The authors analyze the problem with the current method of inference using the prompting method, that is, LLMs may be sensitive to a certain error in multi-step inference and accumulate errors in subsequent inference.\n2. The authors propose a method to solve this problem by using the self-verification ability of the model to enhance the reasoning ability of the model, which includes two stages: forward reasoning and backward verification.\n3. The authors clearly show the process of their proposed method (Fig. 2).\n4. The author conduct a detailed analytical experiment (Sec.5).\n5. The method proposed by the author can be combined with some existing methods (CoT, self-consistency (SC) and PAL are demonstrated in the paper).",
+      "reasons_to_reject": "1. The benefits from backward process are not analyzed separately (after all, the forward reasoning process is like getting benefits from self-consistency).\n2. The models used in the experiment are slightly outdated, and the experiment lacks analysis of new models, such as text-davinci-003 and gpt-3.5-turbo, and even gpt-4",
+      "questions_for_the_authors": "Q1: The proposed method includes forward reasoning and backward verification, wherein K candidate answers are generated in the forward reasoning process, and P times of reverse verification will be performed for each answer. Is there any deduplication process in the process of obtaining K candidate answers?\nQ2: If the answer to Q1 is no, can it be understood that this process of forward reasoning is equivalent to a self-consistency? ( Equivalent to the effect shown by this method to a large extent with the strength of the idea of self-consistency, so this also explains why the effect is weak when SV and SC methods are combined)",
+      "typos_grammar_style_and_presentation_improvements": "Line 444: \"PoL\" should be \"PAL\"",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

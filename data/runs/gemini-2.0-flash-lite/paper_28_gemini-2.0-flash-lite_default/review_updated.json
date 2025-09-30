@@ -1,0 +1,102 @@
+{
+  "summary": "This paper introduces a novel application of continual learning from human feedback in extractive QA, demonstrating performance gains in a deployed system. The paper's strengths lie in its clear presentation of the iterative approach and its differentiation from RLHF methods. The paper has several ethical shortcomings and lacks sufficient comparative evidence.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions its work relative to prior art, highlighting gaps and novel application of continual learning for extractive QA.",
+      "grounding": "Intro §1.2",
+      "facet": "novelty_and_positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper demonstrates performance gains over time in a deployed extractive QA system, supported by deployment studies.",
+      "grounding": "Section 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the iterative approach and the components involved (user interaction, model prediction, feedback, and learning).",
+      "grounding": "Abstract, Figure 1, §1",
+      "facet": "organization_and_clarity"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2, which maps user feedback to reward values, is clearly structured and provides a direct mapping.",
+      "grounding": "Table 2",
+      "facet": "tables"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient evidence to distinguish its approach from the closest baselines.",
+      "grounding": "Related Work",
+      "facet": "comparative_evidence_and_claims"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient evidence to support claims about the impact of the update schedule or model design choices on performance.",
+      "grounding": "Section 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper has several ethical shortcomings, including a lack of detail on dataset licensing, consent procedures for crowdworkers, and privacy measures for user data. It also does not fully address the ethical risks associated with adversarial user behavior.",
+      "grounding": "Insufficient evidence, Section 7",
+      "facet": "ethics_and_risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figures 3, 4, and 5 lack clear axis labels, units, and legends, making it difficult to interpret the results. Tables 1, 3, 4, and 5 lack crucial statistical information and quantitative analysis.",
+      "grounding": "Fig 3, Fig 4, Fig 5, Tables 1, 3, 4, and 5",
+      "facet": "figures_and_tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a dedicated methodology section, hindering understanding of the approach, and introduces the term 'contextual bandit problem' without a clear definition.",
+      "grounding": "§1, §2",
+      "facet": "organization_and_clarity"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a discussion of potential misuse or failure modes.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Conduct a head-to-head comparison with a contemporaneous method.",
+      "grounding": "Sec 4.1, Related Work",
+      "facet": "comparative_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include explicit licenses and usage terms for all datasets used, provide details on the consent process for crowdworkers, and address privacy concerns by detailing data anonymization and storage practices.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_and_privacy"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add error bars to Figures 2, 4, and 5 to show variance or confidence intervals. Ensure all axes are clearly labeled with units where applicable. Provide a legend to clarify the meaning of different colors or line styles in Figures 4 and 5. Include standard deviations and confidence intervals in Table 3 and add p-values to Table 4. Provide the number of examples used for training in Table 4.",
+      "grounding": "Fig 2, Fig 4, Fig 5, Tables 3 and 4",
+      "facet": "figures_and_tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a concise definition of 'contextual bandit problem' or link to relevant resources and include a dedicated 'Methods' section detailing the model architecture, feedback mapping, and learning algorithm.",
+      "grounding": "§1",
+      "facet": "clarity_and_organization"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies and include an ablation study to analyze the impact of different feedback noise levels on the continual learning process.",
+      "grounding": "Conclusion, Related Work",
+      "facet": "societal_impact_and_experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

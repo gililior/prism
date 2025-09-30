@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "bhgJFUIOjq",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors present a series of improvements to the T5 language model architecture, focusing on both increased input context and improvements to speed for both training and inference. Specifically, they extend the LongT5 model with a routing mechanism that examines only a portion of the input sequence deemed importance by a learnable score with a 'heavy' component with more network resources and a lower-dimensional 'light' component that attends to the entire input sequence. Multi-query cross-attention is used instead of standard multi-head attention to improve inference speed and the UL2  (span corruption, prefix, causal LM) training objective is used in place of LongT5's PEGASUS sentence reconstruction objective.",
+      "reasons_to_accept": "The authors carefully set up experiments to show how their approaches both improve on training and inference time and how each of the algorithmic improvements compares to the LongT5 model presented as the baseline. Training speed increases of 35-75% and inference speed increases of 50-100% are shown as well as improvements in output quality when increasing input token sizes from 16k to 64k.",
+      "reasons_to_reject": "The improvements to the model architecture do increase speed and performance by using computational 'tricks', but do not address overall algorithm complexity (e.g. the transformer algorithm used still has overall quadric complexity.) However, the authors architecture choices do have concrete runtime improvements when considering potential real-world use cases.\nThe authors state this type of model needs to be trained from scratch, which may be prohibitive for some compute-constrained research organizations. This can be mitigated by providing a pretrained base model to serve as a starting point.",
+      "typos_grammar_style_and_presentation_improvements": "It would be nice to see the \"best\" scores for each column highlighted in Table 6 (similar to Table 3.)",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "PY6rAyg2TB",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors present a transformer model designed for handling long-input texts. They split the computational process into two branches: a light one that processes all tokens and a heavy one that focuses on important tokens selected by a trainable routing network. By incorporating multi-query cross-attention and pretraining with UL2, they showcase the model's performance and efficiency in both few-shot and fine-tuning scenarios.",
+      "reasons_to_accept": "- The paper has a clear and well-organized structure, with a concise statement of objectives and clear description of the methodology.\n- The idea of integrating both a light route and a heavy route using a dynamic routing mechanism is thoughtfully designed and appears to be an innovative approach, particularly for long-range sequence-to-sequence models.\n- The extensive range of experiments conducted across various NLP tasks convincingly demonstrates the model's superior performance.\n- The inclusion of a thorough ablation study and analysis on the routed tokens provides valuable insights into the design decisions and inner workings of the model.",
+      "reasons_to_reject": "My primary concern is that the selected important tokens ratio (m) in this mechanism remains static after pretraining. In some cases, particularly when training a multilingual version of this model, the ratio of important tokens could be dependent on the task/language. I wonder if it is possible to adjust this ratio during finetuning?",
+      "questions_for_the_authors": "A. In the computation of FLOPs for the FFds, it's mentioned in lines 231 and 231 that r_L and r_H represent the dimension ratios relative to the standard T5. Considering this, it appears that the formula on line 235 should include squares for both r_H and r_L since they are applied to \"d.\" If that adjustment is made, the entire FLOPs formulation and final FLOPs formulas would likely change, although this change should not affect the experimentation results.\nB: Is it possible for this architecture to accommodate a more customized setting where each layer has its own ratio? For instance, the model could have larger local attention windows \"w\" and lower ratios \"m\" for the early layers, while the higher layers could have smaller local attention windows and higher important token ratios, considering their increased contextualization.",
+      "typos_grammar_style_and_presentation_improvements": "A. It would be an improvement if some concepts have a brief description, like the UL2 objective and MQA.\nB. If PEGASUS is weaker in a few-shot setup (according to lines 474-475) better demonstrate in some experimental results.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "DdP7Ozq5lF",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "- This paper deals with the problem of handling longer inputs with Transformers. \u00a0 - Problem arises not only due to quadratic attention complexity but also because of\u00a0 feedforward and attention layer projection to every token - Authors build on top of LongT5 and suggest to divide each feedforward and attention layer into light branch and heavy branch and perform routing of tokens.\n- Consists of Light branch and heavy branch     * Light branch : caters to all tokens, has lower hidden dimension, performs local attention, has fewer heads than LongT5     * Heavy branch : caters to important tokens, has higher hidden dimension, performs global attention, has more heads than LongT5 - Authors suggest learning routing function using learned embeddings.\n- Apart from architectural change, authors also use a different objective for pre-training and add multi-query cross-attention to speed up inference - CoLT5 is faster when it comes to inference or fine-tuning as compared to LongT5. Does better on almost all the datasets as compared to LongT5 and achieves SOTA results on SCROLLS benchmark - As input length scales up, the model performance improves and it achieves faster speed than LongT5 (model scales well)",
+      "reasons_to_accept": "- Motivation and intuition behind the paper are explained really well.\n- Changes to the existing architecture of LongT5 are quite simple and novel.\n- CoLT5 is not just doing well when it comes to numbers but also efficient as compared to the baseline mentioned.\n- Conditional computing section is explained thoroughly except for Conditional Attention sub-section - Utilizes SCROLLS benchmark precisely made for the task at hand covering summarization, question answering, and natural language inference tasks.\n- Promising performance with extremely long inputs (~64k tokens). This is one of the main highlights of the paper for me.\n- Ablation study is done quite well serving as a foundation for upcoming models dealing with large input length",
+      "reasons_to_reject": "- Results look great, however, SCROLLS is limited to English only. Testing on benchmarks focusing on other languages as well could have been helpful.\n- Selection of light and heavy hidden dimensions (rL, rH) looks a bit hacky especially for calculating FLOPS for the CoLT5 attention layer\u00a0 (rL=\u00bc, rH=\u00be). An ideal scenario would have been to show trade off with different hidden dimensions, corresponding parameter count and show its effect on downstream tasks (apologies if it\u2019s already mentioned anywhere)",
+      "questions_for_the_authors": "A. Apologies if I\u2019ve missed that part but after going through the pre-training section (page 6) I realized the dataset on which CoLT5 is pre-trained isn\u2019t mentioned.\nB. Reproducibility - Numbers of CoLT5 -B in Table 6 and Table 3 are different. I wonder why that is happening. QAS F1 score is 42.1 v/s 38.3 in Table 3 and Table 6 respectively. Same for QMS and GovR Rgm scores have a difference of almost 5% which is a bit high. Let me know if I\u2019m missing something that\u2019s different in both these tables. \u00a0 C. Are all these experiments done on multiple seeds because I couldn\u2019t see that anywhere.\nD. In Table 5, when you say the number of Natural Questions or TriviaQA, the number stated is in decimals like 0.1. Is it % or in hundreds, thousands? It will be great if you can clear that.\nE. Why didn\u2019t you pre-train CoLT5 on input length equivalent to that of the dataset with the highest median input length in Table 4? Was it because there were no significant gains after a certain input length or did it take too long?\nF. I can\u2019t see the number of parameters for different versions of CoLT5. The paper only mentions that it has more overall parameters as compared to LongT5 but uses less compute (Update: The concerned numbers are mentioned in Appendix, I\u2019d recommend moving them in the main paper. Not the whole table but the parameter count)",
+      "typos_grammar_style_and_presentation_improvements": "- One minor correction: Page 6, \u201cSCROLLS contains question-answering datasets: Narrative QA \u2026, NLI dataset: ContractNLI.., and summarization datasets: SummScreenFD.. \u201d. Minor punctuation adjustments that can improve clarity and readability.\n- \u201cFeedforward and projection layer\u201d and \u201cfeedforward and attention layer\u201d have been used throughout the paper. I\u2019d recommend sticking to one of those preferably feedforward and attention projection layers.\n- Figure 2 doesn\u2019t mention the metric of average perf which is F1 score. Also, the caption should be: CoLT5 achieves faster performance than LongT5 for the same number of parameters instead of saying CoLT5 achieves stronger performance than LongT5 at any speed.\n- In Table 3 you have computed the average score under the Avg column, however, these metrics may not always be directly comparable, so averaging them might not accurately represent the overall performance. You should have averaged similar metrics like TQA, NQA, QAS under avg F1, QuAL, CNLI under avg EM, and arXiv, SumS, QMS, GovR under avg Rgm.\n- I feel the equation for calculating FLOPs (attn), the global projection part, can be explained a bit. It took me some time to understand that (this one is totally up to you, if you think readers can figure this out easily then don\u2019t)",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

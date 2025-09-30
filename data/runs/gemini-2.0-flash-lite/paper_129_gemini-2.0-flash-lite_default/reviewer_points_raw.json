@@ -1,0 +1,476 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces methods for handling annotator disagreements in datasets. The authors provide details on experimental setup, including datasets, models, and evaluation metrics. However, the paper lacks information on seeds and variance.",
+    "grounding": "Sections 3, 4, 6, Appendix C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper details the experimental setup, including datasets, models (BERT, RoBERTa, DeBERTa), and evaluation metrics (EM accuracy, macro F1).",
+    "grounding": "Section 6, Appendix C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments. The variance across multiple runs is reported (10 runs), but the specific seeds used are not provided.",
+    "grounding": "Tables 9, 10, 11, 12",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the software environment used for the experiments.",
+    "grounding": "Section 6, Appendix C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments. Specify the environment (e.g., using a requirements.txt or a Dockerfile).",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets publicly available, or can they be made available?",
+    "grounding": "Section 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What is the hardware configuration used for the experiments?",
+    "grounding": "Appendix C.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "Without code, seeds, and environment details, it is difficult to fully assess the reproducibility of the results.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "2",
+    "grounding": "Lack of seeds, environment details, and code availability.",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a method for incorporating annotation and annotator embeddings to improve model performance on datasets with annotator disagreement. The results show that integrating these embeddings helps the models learn significantly better from data with disagreements.",
+    "grounding": "Sec 7, 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates that annotation and annotator embeddings improve accuracy scores on Many Annotators Datasets in TID-8 up to 17% compared to the question-only baselines.",
+    "grounding": "Table 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper shows that the proposed methods consistently improve performance across different models and model sizes, which shows the effectiveness of annotator and annotation embeddings in helping models learn from crowd data that has disagreements.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The claim that scaling models up does not help models learn from disagreement is partially supported, but the evidence is limited to the Many Annotators Datasets in TID-8.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of the findings, as the results are primarily based on experiments on TID-8.",
+    "grounding": "Sec 7, 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on a wider range of datasets to substantiate the generalizability of the proposed method.",
+    "grounding": "Sec 7, 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more detailed analysis on why the larger models underperform in some cases.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How do the annotation and annotator embeddings interact with each other?",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific characteristics of the datasets in TID-8 that lead to the observed performance differences?",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations of their approach by discussing the performance differences across different datasets and model sizes.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel approach to handle annotator disagreement by creating annotator and annotation embeddings, which is a valuable contribution to the field.",
+    "grounding": "Intro, Sec 4",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The creation of the TID-8 benchmark dataset is a valuable contribution, providing a standardized evaluation platform for methods dealing with annotator disagreement.",
+    "grounding": "Intro, Sec 1",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing methods that also address annotator disagreement. The delta between the proposed method and the closest baseline is not clearly articulated.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient details on the specific datasets included in TID-8, making it difficult to assess the diversity and representativeness of the benchmark.",
+    "grounding": "Sec 1",
+    "facet": "positioning"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a head-to-head comparison with a state-of-the-art method that addresses annotator disagreement, such as methods that incorporate annotator reliability scores or Bayesian approaches.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the TID-8 dataset, including statistics on annotator agreement/disagreement for each dataset and task.",
+    "grounding": "Sec 1",
+    "facet": "positioning"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the proposed method compare to existing methods in terms of computational cost and training time?",
+    "grounding": "Sec 4",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the impact of the size of the annotator and annotation embeddings on the model's performance?",
+    "grounding": "Sec 4",
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of the approach may be limited if the proposed embeddings are similar to existing techniques for modeling annotator behavior.",
+    "grounding": "Sec 4",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "all",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present performance results, but could benefit from improved labeling and visual clarity.",
+    "grounding": "Figures 3, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 5, which is not included in the text, likely shows clusters emerging from annotation embedding, supporting the claim about group tendencies.",
+    "grounding": "Fig 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the results.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure 3, add labels to the x and y axes, including units where applicable. Clearly define what 'Embedding Only', 'Text Only', and 'Combination' represent.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are error bars included in the figures to show confidence intervals?",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to showing performance metrics, without providing insights into the underlying data distributions.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a method to model annotator disagreement in NLP tasks by creating annotator and annotation embeddings. It also proposes a new benchmark dataset, TID-8, consisting of eight datasets with inherent annotator disagreement. The results show that the proposed method improves model performance on several datasets.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly explains the problem of annotator disagreement and motivates the proposed approach.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The contributions are clearly stated in the summary.",
+    "grounding": "Conclusion",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'annotator embeddings' and 'annotation embeddings' in the introduction. The reader needs to understand what these are before reading the rest of the paper.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a notation table, making it difficult to follow the mathematical formulations.",
+    "grounding": "Methods Section (e.g., Section 4)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of how annotator and annotation embeddings are created and used in the model. Include equations and diagrams.",
+    "grounding": "Methods Section (e.g., Section 4)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table to define all symbols used in the equations.",
+    "grounding": "Methods Section (e.g., Section 4)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How are the annotator and annotation embeddings initialized?",
+    "grounding": "Methods Section (e.g., Section 4)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational complexity of the proposed method compared to the baseline methods?",
+    "grounding": "Experiments Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the embeddings learned from scratch or initialized with pre-trained embeddings?",
+    "grounding": "Methods Section (e.g., Section 4)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's writing may prevent reproduction if the details of the embeddings are not fully explained.",
+    "grounding": "Methods Section (e.g., Section 4)",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethics flag.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-organized and addresses an important problem. However, the clarity of the methods section needs improvement.",
+    "grounding": "All Sections",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated for TID-8 and constituent datasets.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "Consent from annotators and data subjects not explicitly addressed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "Privacy considerations for the datasets are not discussed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used in TID-8 and the original datasets.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Detail the process of obtaining consent from annotators and data subjects, including any privacy measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address potential privacy risks and mitigation strategies for the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "question",
+    "text": "What are the licenses of the datasets included in TID-8?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "question",
+    "text": "Were annotators informed about the use of their annotations in this research?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any privacy risks associated with the datasets used in TID-8?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results comparing the performance of different models and embedding techniques on various datasets. The tables include accuracy scores and macro F1 scores. The tables are referenced throughout the text to support the claims made about the effectiveness of the proposed methods. However, the provided text excerpts lack detailed information about the structure and content of all tables, making a comprehensive assessment difficult.",
+    "grounding": "Tables 4, 5, 6, 8, 9, 10, 11, 12",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 4 indicates the use of statistical significance testing (t-test, p \u2264 0.05) to identify the best results, which are shown in bold. This suggests a focus on statistically sound comparisons.",
+    "grounding": "Table 4, Table 9",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The text mentions the use of statistical tests (t-test) but does not consistently report p-values or confidence intervals across all tables. The description of the tables is also limited, making it hard to assess the completeness of the statistical information.",
+    "grounding": "Tables 4, 9",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Ensure all tables include p-values to indicate statistical significance. Provide clear headers and labels for all columns and rows. Include standard deviations or confidence intervals to show the variability of the results.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What specific baseline models are used in Table 4 and Table 9? 2. Are the results in all tables averaged across 10 runs, as stated for some? 3. What is the definition of 'annotation split' and 'annotator split' used in the tables? 4. Are the datasets used in the tables publicly available?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the datasets and models described in the paper. The generalizability of the findings to other datasets or models is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly discuss potential misuse scenarios or failure modes of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of potential biases in the annotator and annotation embeddings.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse cases and mitigation strategies. For example, discuss how the method could be used to generate biased or misleading results.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the potential for the annotator and annotation embeddings to reflect or amplify existing biases in the data or annotators. Propose mitigation strategies to reduce these biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss the broader societal impacts of the proposed method, including potential benefits and drawbacks in various real-world applications.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's approach of modeling annotator disagreement by creating annotator and annotation embeddings is novel compared to the common practice of aggregating labels or selecting high-agreement subsets, as discussed in the introduction and related work.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces TID-8, a benchmark dataset specifically designed to evaluate models on tasks with inherent annotator disagreement. This is a valuable contribution, as it provides a standardized testbed for future research in this area.",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should provide a more detailed comparison with [1] Jiang and de Marneffe (2022), which also investigates reasons for disagreement. While the paper mentions this work, it doesn't explicitly state how the proposed method differs in terms of assumptions, architecture, training, or evaluation.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should include a comparison with [2] Geva et al. (2019), which investigates annotator bias. The current paper's approach of using annotator embeddings seems related to the concept of modeling annotator bias, and a direct comparison would be beneficial.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the proposed method with [1] Jiang and de Marneffe (2022) on the TID-8 dataset. This experiment should evaluate the performance of both methods on the same tasks and metrics to highlight the advantages of the proposed approach.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study to isolate the impact of annotator and annotation embeddings. This could involve removing one or both types of embeddings and comparing the performance to the full model. This would help to understand the contribution of each component.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

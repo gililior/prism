@@ -1,0 +1,150 @@
+{
+  "summary": "This paper introduces INSTRUCTOR, a method for improving conversational retrieval. The paper demonstrates INSTRUCTOR's effectiveness on multiple datasets, but the claims of generalizability are not fully supported by the experimental setup. The paper would benefit from addressing limitations in statistical analysis, clarity of methods, and potential societal impacts.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions the work relative to prior art, identifying gaps and outlining the proposed solution within the introduction.",
+      "grounding": "Intro §1.2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper presents experimental results on multiple datasets (QReCC, TopiOCQA, CAsT-19, CAsT-20) demonstrating the effectiveness of INSTRUCTOR.",
+      "grounding": "Sec 4.1, Table 1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Figures 5-12 effectively support the claims by presenting performance metrics across different experimental settings.",
+      "grounding": "Figures 5-12",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Tables 5-10 provide clear examples of the data used, which aids in understanding the context and application of the model.",
+      "grounding": "Tables 5-10",
+      "facet": "tables"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient evidence to distinguish INSTRUCTOR from the closest baselines.",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of the method due to limitations in the experimental setup and datasets used.",
+      "grounding": "Sec 4.1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper's conclusion overstates the significance of the results without acknowledging the limitations of the experimental setup.",
+      "grounding": "Sec 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not report variance across multiple runs or specify the random seeds used.",
+      "grounding": "Section 3 & 4",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide information about the environment used for training and evaluation, hindering reproducibility.",
+      "grounding": "Sections 3 & 4",
+      "facet": "environment reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figures 1, 2, and 3 lack detailed labels and clear visual explanations of the methods. Axes in performance plots are not always clearly labeled with units.",
+      "grounding": "Figures 1, 2, 3, 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "Tables 1-4 lack detailed statistical information such as standard deviations or confidence intervals, making it difficult to assess the reliability of the results.",
+      "grounding": "Tables 1-4",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'instructing strategies' and their specific implementation lacks clarity.",
+      "grounding": "Methods Section",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential biases, risks, or misuse of the system.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a head-to-head comparison with a contemporaneous method.",
+      "grounding": "Sec 4.1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments on a wider range of datasets and retrieval models to validate the generalizability of INSTRUCTOR.",
+      "grounding": "Sec 4.1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a link to the code repository, including the training and evaluation scripts, and include a requirements.txt or equivalent for environment setup.",
+      "grounding": "Code repository",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Specify the random seeds used for all experiments and report the variance (e.g., standard deviation) across multiple runs.",
+      "grounding": "Section 3 & 4",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide details about the hardware and software environment used for training and evaluation.",
+      "grounding": "Section 3 & 4",
+      "facet": "environment reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Improve figures by adding descriptive labels, annotations, and axis labels with units. Include legends to clarify the meaning of different colors and line styles.",
+      "grounding": "Figures 1-12",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations, confidence intervals, and p-values in Tables 1-4 to provide a more complete statistical analysis.",
+      "grounding": "Tables 1-4",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the three instructing strategies (context, query, and response) and how they are implemented.",
+      "grounding": "Methods Section",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section or subsection that explicitly details the loss function or scoring mechanism used by the LLM to generate relevance scores.",
+      "grounding": "Methods Section",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a Broader Impact section addressing potential risks, fairness, and misuse, and discuss mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

@@ -1,0 +1,446 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper clearly defines the terms 'word type' and 'word instance' to avoid ambiguity.",
+    "grounding": "Section 2",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The methods section lacks details on the statistical tests used for comparing the two methods.",
+    "grounding": "Section 2",
+    "facet": "methods"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the evaluation metrics used, including their statistical properties.",
+    "grounding": "Section 4",
+    "facet": "methods"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces two methods for semantic difference detection and instance extraction. The reproducibility assessment focuses on code/data availability, seeds/variance, and environment reproducibility.",
+    "grounding": "Abstract and Section 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly defines the terms 'word type' and 'word instance' for clarity.",
+    "grounding": "Section 2",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks information on seeds and variance, making it difficult to assess the reproducibility of the results.",
+    "grounding": "Section 3.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the code and scripts used for the experiments. Include a requirements file (e.g., `requirements.txt` or `environment.yml`) to specify the necessary dependencies and their versions.",
+    "grounding": "GitHub link placeholder",
+    "facet": "code/data availability and environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the random seeds used for all experiments and the variance of the results (e.g., standard deviation) across multiple runs.",
+    "grounding": "Section 3.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used in the experiments publicly available, or can they be made available?",
+    "grounding": "Section 2",
+    "facet": "data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What hardware and software environment was used for the experiments? (e.g., CPU, GPU, operating system, and specific library versions).",
+    "grounding": "Section 3",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The assessment is limited by the lack of information on code, data, seeds, and experimental setup.",
+    "grounding": "Paper content",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Based on the provided text, there is no indication of ethical concerns.",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Overall, the reproducibility of the paper is currently unclear due to the lack of information on seeds, variance, and experimental setup.",
+    "grounding": "Paper content",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies limitations in existing methods for semantic difference detection, particularly those relying on non-contextualized word vectors and the need for corpus alignment. (Intro)",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The proposed method's ability to detect semantic differences without requiring corpus alignment or hyperparameter tuning is a notable advantage. (Intro)",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims to rival the best-performing system in SemEval-2020 Task 1, but the specific details of this comparison and the exact delta are not provided. (Intro)",
+    "grounding": "Intro",
+    "facet": "comparative_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed comparison with the best-performing system from SemEval-2020 Task 1, including quantitative results and a discussion of the differences in performance. (Sec 5)",
+    "grounding": "Intro",
+    "facet": "comparative_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more in-depth analysis of the computational efficiency of the proposed method compared to existing approaches, including specific runtime measurements. (Intro)",
+    "grounding": "Intro",
+    "facet": "comparative_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of the proposed method vary with different contextualized word embeddings (e.g., BERT, RoBERTa)?",
+    "grounding": "Sec 2",
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What is the impact of the dimension 'd' of the unit vector x on the performance?",
+    "grounding": "Sec 2.3",
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any limitations to the method's applicability based on corpus size or domain?",
+    "grounding": "Intro",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the assumption that the variance of contextualized word vectors is a good indicator of semantic differences, which may not hold true in all cases.",
+    "grounding": "Intro",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a method for detecting semantic differences between words using the concentration parameter of the von Mises-Fisher distribution applied to word vectors. The method is claimed to be effective, efficient, and applicable to various corpora. The paper presents experimental results and discusses limitations.",
+    "grounding": "Sec 4, 6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The evaluation results in Sect. 3 show that the concentration parameter is a good indicator of semantic differences, and the proposed method achieves the best detection accuracy (Subsect. 3.2).",
+    "grounding": "Sec 3, Subsect 3.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The method is computationally efficient and requires no training or fine-tuning (Sect. 5).",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The method's robustness for low-frequency words is supported by the use of contextualized word vectors from a large language model (LLM).",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The claim that the method is applicable to corpus pairs where previous methods' assumptions do not hold is not fully substantiated. While the paper mentions native and non-native English corpora, it lacks a direct comparison or analysis demonstrating this advantage.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overstates the generalizability of the method. The method's reliance on a well-trained LLM limits its applicability to languages or corpora where a suitable LLM is unavailable or poorly trained.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the types of semantic differences detected, including examples and interpretations.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on languages or corpora where the LLM is known to perform poorly to demonstrate the limitations of the method.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the proposed method compare to other state-of-the-art methods on the SemEval-2020 sub-task?",
+    "grounding": "Sec 4",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific types of semantic differences are most effectively detected by the proposed method?",
+    "grounding": "Sec 4",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive is the method to the choice of LLM?",
+    "grounding": "Sec 6",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of the method, including the assumption of a constant word form and the reliance on a well-trained LLM.",
+    "grounding": "Sec 6",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Ethical Statement",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures provide illustrations and relationships between different concepts. The clarity and effectiveness of the figures vary.",
+    "grounding": "Figures 1-3",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 effectively illustrates the difference of mean vectors.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the relationship between the number of word occurrences and norm differences.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 3, label the axes clearly, including units where applicable. Consider using different markers or line styles to distinguish between different datasets or conditions.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to calculate the norms in Figures 1 and 2?",
+    "grounding": "Figures 1, 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to illustrating concepts and relationships, without providing detailed quantitative analysis.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly introduces the problem of semantic difference detection and its applications.",
+    "grounding": "Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a good overview of the limitations of existing methods.",
+    "grounding": "Introduction",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'semantic difference' is broad and could benefit from further clarification, especially regarding the inclusion of 'contextual meanings, discourse functions, and grammatical functions'.",
+    "grounding": "Introduction, \u00a72",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The notation is introduced piecemeal, making it difficult to follow. For example, the meaning of 'x' and 'l' are introduced, but not in a single place.",
+    "grounding": "Methods, \u00a72.1",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a table of notation to define all symbols used (e.g., x, l, S, T, n) and their meanings.",
+    "grounding": "Methods, \u00a72.1",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the relationship between 'word type' and 'word instance' early on, perhaps with a brief example.",
+    "grounding": "Methods, \u00a72",
+    "facet": "clarity"
+  },
+  {
+    "kind": "question",
+    "text": "How does the method handle polysemous words with multiple distinct meanings?",
+    "grounding": "Methods, \u00a72.1",
+    "facet": "clarity"
+  },
+  {
+    "kind": "question",
+    "text": "What is the impact of the choice of contextualized word vectors on the performance of the proposed methods?",
+    "grounding": "Methods, \u00a72.1",
+    "facet": "clarity"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the method is sufficient for understanding the core idea, but the lack of detailed equations or pseudocode might hinder reproduction.",
+    "grounding": "Methods, \u00a72.1",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "None",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Overall, the paper presents a novel approach to semantic difference detection. The clarity can be improved by addressing the weaknesses.",
+    "grounding": "N/A",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results from various experiments, focusing on semantic analysis and comparison across different corpora and languages. The tables vary in completeness, with some lacking crucial statistical information.",
+    "grounding": "Tables 1-8",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 presents accuracy scores, which is a clear and understandable metric for evaluating the performance of semantic difference detection. The inclusion of sub-task information is helpful.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables 3-8 lack crucial statistical information such as standard deviation, confidence intervals, or p-values to assess the significance of the observed differences in word frequencies. Table 1 lacks any performance metrics.",
+    "grounding": "Tables 1, 3-8",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Tables 3-8, include standard deviations or confidence intervals for the word frequencies (fS and fT) to indicate the variability. Add p-values to indicate statistical significance of the frequency differences. For Table 1, include the number of tokens, types, and other relevant statistics.",
+    "grounding": "Tables 1, 3-8",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the differences in word frequencies in Tables 3-8? 2. What is the methodology used to calculate the accuracy scores in Table 2? 3. What are the specific criteria for determining if a word has a \"wider meaning\"?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific corpora and datasets used. Generalizability to other datasets or languages is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly address potential misuse scenarios or failure modes of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss fairness considerations, such as potential biases in the language models used or the impact on different languages and dialects.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section on broader societal impacts, including potential benefits and risks.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section discussing potential misuse cases, such as the possibility of misinterpreting semantic differences or using the method to manipulate language understanding.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of fairness considerations, such as potential biases in the language models used and their impact on different languages and dialects. Provide mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section detailing the broader societal impacts, including potential benefits (e.g., improved language learning) and risks (e.g., misuse for misinformation).",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "novelty",
+    "text": "The paper proposes a method for detecting semantic differences based on the variance of contextualized word vectors, which is different from the frequency-based methods used by linguists (Fujimura et al. (2013); McEnery et al. (2019)).",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "method_comparison",
+    "text": "Compared to Aida and Bollegala (2023), the proposed method avoids the computational cost and the need for similar instance counts by not using Gaussian distribution modeling and sampling.",
+    "grounding": "Related Work",
+    "facet": "method"
+  },
+  {
+    "kind": "missing_baseline",
+    "text": "The paper should include a comparison with the dynamic word embeddings approach of Yao et al. (2018) [1], which also aims to discover evolving semantics. A direct comparison would help to highlight the advantages of the proposed variance-based method.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "experiment_suggestion",
+    "text": "Conduct an experiment comparing the proposed method's performance on semantic difference detection with the method of Aida and Bollegala (2023) [2], using the same datasets and evaluation metrics. This would provide a direct comparison of the two variance-based approaches.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  },
+  {
+    "kind": "method_comparison",
+    "text": "Unlike methods that rely on word alignment (Takamura et al. (2017); Kawasaki et al. (2022)), the proposed method does not require a word-alignment dictionary, making it applicable to a wider range of corpora.",
+    "grounding": "Related Work",
+    "facet": "method"
+  }
+]

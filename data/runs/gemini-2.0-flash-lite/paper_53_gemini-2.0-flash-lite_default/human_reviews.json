@@ -1,0 +1,66 @@
+[
+  {
+    "rid": "34uvjucb98",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a normal-abnormal decoupling memory network for medical report generation. The proposed approach optimizes the visual extraction network only based on anomaly semantics but not normal semantics. The experiments show that the proposed method could outperform baselines.",
+      "reasons_to_accept": "1. It is interesting to separately model normal and abnormal reports. \n2. The proposed approach could outperform baselines on the benchmark MIMIC-CXR dataset. \n3. The ablation study shows that each of the component could help improve the performance.",
+      "reasons_to_reject": "1. The abnormal mode memory part is not quite clear, which is difficult to interpret. \n2. The proposed method is somewhat incremental. \n3. This paper only includes results of one dataset in the main text.",
+      "missing_references": "[1] Jing, Baoyu, Zeya Wang, and Eric Xing. \" Show, Describe and Conclude: On Exploiting the Structure Information of Chest X-ray Reports.\" Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. 2019.\n[1] is a prior work which also decomposes normal and abnormal reports.",
+      "typos_grammar_style_and_presentation_improvements": "1. Section 3.2 is not clear, which needs further presentation improvement. \n2. There are some notation issues. For example, there are some issues with $V_l$ and $V_g$. It is not clear what does $k$ mean in section",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "RHLG5RNoTb",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work aims to deal with the problem of medical report generation. The develop a visual encoder based on anomaly pattern memory to enhance anomaly perception. The performance shown on MIMIC-CXR is promising over multiple SOTA methods.",
+      "reasons_to_accept": "1. The idea of using the codebook in VQVAE to store various anomaly information seems to be a right way to go. \n2. The memory loss in the objective functions is novel and makes sense. \n3. The experimental results seem to be very promising. And the baselines are comprehensive.",
+      "reasons_to_reject": "I didn't find any obvous reason to reject the paper.",
+      "typos_grammar_style_and_presentation_improvements": "1. Line 203, \"Combined with global features $V_l$\" should be \"Combined with global features $V_g$\"",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "0NlaBNIzU4",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper introduces a novel concept to automatically generate radiology reports from radiographic images using normal-abnormal semantic decoupling network with abnormal pattern memory. The authors combine the concepts of abnormal semantics in reports with visual feature extraction to shape the decoder output. Their trained model achieves higher performance than state of the art models in all of the relevant metrics. In addition, the paper clearly analyses the model output by using model visualization which helps in understanding the model better. The writing is crisp, easy to understand and clearly explains the methodologies used in the paper without ambiguity.",
+      "reasons_to_accept": "1. The methodology achieves higher than state-of-the-art for MIMIC CXR report generation. \n2. The methodology is novel, and involves an understanding the structure of radiology report findings beyond just caption generation problem for radiographic images. In radiology reports, the radiologists tend to write more about the abnormalities than focus on the normal perceptions in the report, and this architecture utilizes that aspect in their modeling quite well. \n3. The analysis of the model is rigorous and gives us a clear understanding of the types of errors to expect.",
+      "reasons_to_reject": "1. Though one of the core concepts of the paper is normal-abnormal semantics in reports, the classification from the reports is largely dependent on keyword-based method, which, the authors accept is largely noisy. The definition of what is an abnormal semantics in a report varies depending on application, and there is no specification of any such definition followed in this paper. This makes the normal/abnormal semantic section a little weak compared to the other sections. \n-- After rebuttal: Even with the rebuttal, I think this portion could have been handled much better.",
+      "questions_for_the_authors": "1. What are the details of GPUs used in the experiment and the number of epochs for training, and GPU hours? \n2. The paper mentions in line 51 that the presence of noise in reports impacts network optimization, and similar mentions of noise has been repeated in the paper a few times. Please elucidate the type of noise being referred to, and how it impacts network optimization 3. Is the paper using only the Finding section of the radiology report throughout the experiment? It is a bit unclear from the description. \n4. Which language model has been used for embeddings for training this model?",
+      "missing_references": "Please cite Hungarian algorithm in line 221. Please cite the language model that has been used.",
+      "typos_grammar_style_and_presentation_improvements": "1. The paper focuses on generating the Findings in a radiology report, which is an important detail that is only mentioned in line 871 in the Appendix section of the paper. This can be mentioned in the beginning. \n2. Please correct spacing around period in line 240. \n3. In line 294, Att definition is missing. \n4. In line 326 Cancat needs to be changed to Concat, and defined. \n5. Correct typo : Abnaormal -> Abnormal in table 5",
+      "ethical_concerns": "Yes",
+      "justification_for_ethical_concerns": "The paper does not have an ethics section, and since this pertains to a medical application, it is prudent to include a section detailing failures and biases of the model."
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  }
+]

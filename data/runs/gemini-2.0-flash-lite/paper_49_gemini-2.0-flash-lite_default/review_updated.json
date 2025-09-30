@@ -1,0 +1,126 @@
+{
+  "summary": "This paper investigates the impact of translationese on cross-lingual summarization (CLS) model evaluation and performance, a relevant problem given the reliance on translated data in this field. The paper provides concrete suggestions for future dataset and model developments based on the findings. The paper has been updated to address several weaknesses, including the reporting of variance, statistical significance, and a more precise definition of translationese. The authors have also clarified existing content regarding the CLS models used and human evaluation metrics.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper leverages existing datasets and translation services to create a multilingual summarization dataset, which is clearly described.",
+      "grounding": "Sec 3.1",
+      "facet": "methods"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper systematically investigates the impact of translationese on CLS model evaluation and performance, considering both source documents and target summaries.",
+      "grounding": "Intro, Sec 3, Sec 4",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides concrete suggestions for future dataset and model developments based on the findings.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The figures effectively present the human evaluation setup and the different language pairs and models being compared.",
+      "grounding": "Figures showing the different language pairs and models.",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 6 includes t-test p-values to indicate statistical significance.",
+      "grounding": "Table 6",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The abstract clearly outlines the paper's focus, contributions, and findings.",
+      "grounding": "Abstract",
+      "facet": "organization"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper's focus on the impact of translationese in cross-lingual summarization (CLS) is novel.",
+      "grounding": "Intro/Related Work",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The human evaluation section relies on subjective judgments, potentially affecting the reliability of the results.",
+      "grounding": "Sec C",
+      "facet": "methods"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of its findings without sufficient evidence across diverse languages and datasets.",
+      "grounding": "Insufficient evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the results.",
+      "grounding": "Tables 1, 3, 4, 5, 7, 8, 9, 10",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'translationese' could be made more precise.",
+      "grounding": "Introduction, Sec 2.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "No discussion of potential misuse or failure modes.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper should include a more direct comparison with [1], which explores the influence of translationese on machine translation evaluation.",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Specify and report the seeds used for all experiments and report variance (e.g., standard deviation) across multiple runs.",
+      "grounding": "Section 3.1, Appendix B",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide details about the hardware and software environment used for the experiments, and consider using a Dockerfile or a similar tool to ensure environment reproducibility.",
+      "grounding": "Section 3.1, Appendix B",
+      "facet": "environment reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments on a wider range of languages and datasets to validate the generalizability of the findings and suggestions.",
+      "grounding": "Insufficient evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals for all reported metrics. Add p-values to indicate statistical significance of performance differences between models in all tables. Clarify the definition of 'Text Type' in Table 1.",
+      "grounding": "Tables 1-10",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Define all acronyms at first use.",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies.",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

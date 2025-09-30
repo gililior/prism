@@ -1,0 +1,120 @@
+{
+  "summary": "This paper introduces a novel Generative Spoken Language Model (GSLM) using continuous word-size embeddings, achieving comparable performance to discrete unit-based models while being more memory efficient. However, the paper lacks clarity in defining key components like the \"Lexical Embedder\" and requires more rigorous comparisons and statistical analysis to fully support its claims.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The model generates speech with similar diversity and accuracy as discrete unit-based models, as demonstrated in Section 6.",
+      "grounding": "Sec 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly identifies limitations of existing discrete unit-based models and proposes a novel approach using continuous word-size embeddings, well-grounded in NLP literature.",
+      "grounding": "Intro, Sec 1",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 includes both NED and ABX scores, providing a more complete picture of model performance, including scores for both acoustic and lexical tokens.",
+      "grounding": "Table 2",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 clearly illustrates the sampling procedure.",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper does not state dataset licensing and usage restrictions.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear explanation of the baseline models used for comparison, making it difficult to assess the significance of the results.",
+      "grounding": "Abstract, Sec 4",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term \"Lexical Embedder\" is introduced without a clear definition of its inputs, outputs, and internal workings, which is crucial for understanding the core contribution.",
+      "grounding": "Abstract, §1, §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the performance metrics.",
+      "grounding": "Fig 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the results.",
+      "grounding": "Tables 1, 3, 4, 5, 6, 7, 8, 9, 10, 11",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not include a dedicated section on societal impact, risks, or potential misuse.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a direct comparison with the most relevant and recent discrete unit-based GSLMs, such as those by Lakhotia et al. (2021) and Borsos et al. (2022), using the same datasets and evaluation metrics.",
+      "grounding": "Abstract, Sec 4",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the \"Lexical Embedder\" in the methods section, including its architecture and training procedure.",
+      "grounding": "Abstract, §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "In Figure 3, label the axes with clear descriptions and units (e.g., PPX, VERT) and include a legend.",
+      "grounding": "Fig 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals for all reported scores and add p-values to indicate statistical significance. Clearly define all acronyms and metrics in the table headers or captions.",
+      "grounding": "Tables 1-11",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a Broader Impact section that discusses potential risks, such as the generation of deepfakes or the spread of misinformation, and mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing the proposed GSLM with a baseline using the acoustic word embeddings from [1] (Jacobs et al., 2021), including a quantitative analysis of generation quality and memory efficiency.",
+      "grounding": "Sec 4.1",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include an ablation study to isolate the impact of the Lexical Embedding function, contrastive loss, and k-NN sampling.",
+      "grounding": "Sec 4.1",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

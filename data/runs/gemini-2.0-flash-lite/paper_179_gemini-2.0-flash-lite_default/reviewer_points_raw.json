@@ -1,0 +1,332 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper details the setup for human preference tests on Amazon Mechanical Turk, including worker restrictions and quality control measures.",
+    "grounding": "C.1",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient information on the statistical analysis performed on the human preference data.",
+    "grounding": "C.1",
+    "facet": "methods"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of inter-annotator agreement and its impact on the results.",
+    "grounding": "C.1",
+    "facet": "methods"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a CQ-based approach for handling AQs in ODQA, presenting a new dataset and evaluation metrics. The authors acknowledge limitations in evaluation methods and discuss ethical considerations.",
+    "grounding": "Conclusion section",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a new dataset for research in this area.",
+    "grounding": "Conclusion section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors provide a detailed analysis of test results, showing the stability of CQ across different interpretations.",
+    "grounding": "Figure 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the performance of the generated clarification questions due to various factors.",
+    "grounding": "Conclusion section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Further research is needed to improve evaluation methods for clarification question generation tasks.",
+    "grounding": "Conclusion section",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific evaluation metrics were designed for the pipeline of tasks?",
+    "grounding": "Conclusion section",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "Can the authors provide more details on the human validation process?",
+    "grounding": "Ethics Statement",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of the evaluation methods.",
+    "grounding": "Conclusion section",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Ethics Statement",
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "Details on human preference test setup are provided, including worker restrictions and quality control measures.",
+    "grounding": "Section C.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "No mention of seeds used for random selection of examples or batch creation.",
+    "grounding": "Section C.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on the environment used for the human preference test.",
+    "grounding": "Section C.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code used for the experiment, including the MTurk setup and data processing scripts.",
+    "grounding": "Code repository placeholder",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the random seeds used for example selection and batch creation.",
+    "grounding": "Section C.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Document the environment used for the human preference test, including the MTurk platform and any relevant libraries.",
+    "grounding": "Section C.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "questions",
+    "text": "Were the same workers used across all batches? If not, how was worker variability addressed?",
+    "grounding": "Section C.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "questions",
+    "text": "What was the inter-annotator agreement?",
+    "grounding": "Section C.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the exact MTurk setup (HITs, etc.)?",
+    "grounding": "Section C.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "Limited information on the computational resources used for the human preference test.",
+    "grounding": "Section C.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": "Section C.1",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present the results of the study, focusing on the clarity of the approach and the preference test results. Some figures lack detailed labels.",
+    "grounding": "Figures 1-9",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 provides a clear overview of the proposed approach with well-labeled blocks.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the results.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 3, add labels to the axes to clarify what is being measured and the units used. Consider adding a legend if different colors are used.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific metrics used to evaluate the performance in the preference test?",
+    "grounding": "Fig 9",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance and do not provide detailed breakdowns of individual components.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Paper is generally well organized with clear sectioning.",
+    "grounding": "Abstract, \u00a71, \u00a72",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly explains the problem of ambiguous questions and motivates the proposed clarification question approach.",
+    "grounding": "\u00a71",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'clarification question' (CQ) could be more precise. While the paper describes what a CQ *does*, a formal definition is missing.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation table, making it difficult to quickly understand the symbols and abbreviations used (e.g., AQ, DQ, CQ).",
+    "grounding": "Throughout",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'clarification question' early in the introduction.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table (or list of abbreviations) in the appendix or after the introduction.",
+    "grounding": "Throughout",
+    "facet": "clarity"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific criteria used to evaluate the quality of the clarification questions generated by InstructGPT and revised by human editors?",
+    "grounding": "Abstract, \u00a74",
+    "facet": "clarity"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the proposed CQ-based approach compare to other methods in terms of computational cost?",
+    "grounding": "\u00a71",
+    "facet": "clarity"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's reproducibility depends on the availability of the CAMBIGNQ dataset and the details of the InstructGPT prompting strategy.",
+    "grounding": "Abstract, \u00a74",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "None",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-structured and addresses an important problem. However, improving the clarity of definitions and providing a notation table would significantly enhance readability.",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of experiments on ambiguity detection and clarification question generation. The tables vary in the level of detail provided, with some lacking crucial statistical information.",
+    "grounding": "Tables 1-10",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides clear examples of manual revisions, aiding in understanding the process. Table 10 provides a clear overview of the most frequent categories.",
+    "grounding": "Tables 2, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the results. Table 1 lacks clear statistical measures.",
+    "grounding": "Tables 1, 3, 4, 5, 6, 7, 8, 9",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to indicate statistical significance of performance differences. Clearly define all acronyms and abbreviations used in table headers and captions. Provide more context for the metrics used, such as the number of samples or trials.",
+    "grounding": "Tables 1-9",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the results presented in the tables? What is the sample size for each experiment? How were the ground truth answers determined for the Clarification-based QA task? What is the definition of 'Acc.' in Table 7? What are the specific metrics used to evaluate the performance in each table?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets and models used in the experiments. The generalizability of the results to other datasets or models is not assessed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "Clearly distinguishes contributions and method differences from closely related approach [2].",
+    "grounding": "Intro \u00a71.2",
+    "facet": "related_work"
+  },
+  {
+    "kind": "weakness",
+    "text": "Missing head-to-head comparison with a top cited baseline.",
+    "grounding": "Related Work",
+    "facet": "related_work"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add ablation isolating the delta vs. cited method [1] (what the new module adds).",
+    "grounding": "Sec 4.1",
+    "facet": "related_work"
+  }
+]

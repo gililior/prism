@@ -1,0 +1,272 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel framework, proto-lm, based on prototypical networks to provide inherent interpretability to LLMs.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates proto-lm's applicability on three LLMs and shows competitive performance on a wide range of NLP tasks.",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper needs to provide a more detailed comparison with Das et al. (2022) and Van Aken et al. (2022), which are identified as the most closely related works. The delta is not clear.",
+    "grounding": "Related Works",
+    "facet": "novelty"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative analysis with Das et al. (2022) and Van Aken et al. (2022) on the same datasets, including quantitative metrics for interpretability.",
+    "grounding": "Related Works",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of the computational complexity of proto-lm compared to other interpretability methods.",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "question",
+    "text": "How does proto-lm's performance and interpretability scale with the size of the LLM used?",
+    "grounding": null,
+    "facet": "positioning"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of proto-lm in terms of the types of tasks it can handle?",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents figures to support the claims of the proposed method. The figures are generally readable, but some improvements are needed for clarity.",
+    "grounding": "Figures 7, 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 8 effectively visualizes the impact of different explanation types on human annotator accuracy, supporting the claims about the effectiveness of prototypical explanations.",
+    "grounding": "Figure 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 7 lacks clear axis labels and units, making it difficult to interpret the results quantitatively. The figure's legend is missing or unclear.",
+    "grounding": "Figure 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure 7, label the x-axis clearly (e.g., \"k % of Prototypes\") and the y-axis (e.g., \"Comprehensiveness\" and \"Sufficiency\"). Include units if applicable. Add a legend to distinguish the different datasets.",
+    "grounding": "Figure 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "How are the error bars calculated in Figure 8? What is the range of the y-axis in Figure 7?",
+    "grounding": "Figures 7, 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics and do not provide detailed insights into the model's internal workings.",
+    "grounding": "Figures 7, 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents experimental results in tables to evaluate the performance and interpretability of proto-lm. The tables include mean and standard deviation, but lack statistical significance measures.",
+    "grounding": "Tables 1, 2, and Figure 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 1 includes mean and standard deviation, providing a basic measure of performance and variability.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The tables lack confidence intervals or p-values to assess the statistical significance of the results. The headers could be more descriptive.",
+    "grounding": "Tables 1, 2, and Figure 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include p-values or confidence intervals to indicate the statistical significance of the performance differences between proto-lm and the baselines. Clarify the meaning of the metrics used in the tables.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the results in Table 1? 2. Are the results in Figure 8 statistically significant? If so, what tests were used? 3. What is the definition of the metrics used in the tables?",
+    "grounding": "Tables 1, 2, and Figure 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the specific datasets used in the experiments. Generalizability to other datasets is not assessed.",
+    "grounding": "Tables 1, 2, and Figure 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces proto-lm, a novel framework that integrates a prototypical network with a fine-tuned LLM to enhance interpretability in NLP tasks. The framework uses trainable prototypes to capture important features and provide explanations by projecting onto influential training examples. It incorporates a token-level attention layer for word-level importance attribution. The paper demonstrates proto-lm's performance on various NLP tasks, conducts ablation studies, and evaluates its interpretability.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the problem of LLM interpretability and motivates the proposed solution.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The use of figures (e.g., Fig. 1, Fig. 2) aids in understanding the architecture and decision-making process of proto-lm.",
+    "grounding": "Fig. 1, Fig. 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'faithfulness' is provided, but its application and measurement within the context of proto-lm could be more explicit.",
+    "grounding": "Footnote 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The notation in section 2.1 could be improved for clarity. For example, the meaning of each variable (e.g., \u03c5t, W\u03bd) should be explicitly defined when they are introduced.",
+    "grounding": "Sec 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a table of notation in the appendix or within the main text to clarify the symbols used in the equations.",
+    "grounding": "Sec 2.1, Appendix",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Elaborate on the specific NLP tasks used for evaluation and the metrics employed to assess performance and interpretability.",
+    "grounding": "Contributions, Results section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the token-level attention mechanism specifically improve interpretability compared to other attention mechanisms?",
+    "grounding": null,
+    "facet": "research_question"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the computational costs associated with the proposed framework compared to existing methods?",
+    "grounding": null,
+    "facet": "research_question"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive is the performance of proto-lm to the choice of LLM and hyperparameters?",
+    "grounding": null,
+    "facet": "research_question"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's reproducibility depends on the availability of the code and the specific LLMs used.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential misuse cases, such as the generation of biased or misleading information, or the use of the model for malicious purposes.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address fairness considerations, such as potential biases in the training data and their impact on model outputs. There is no discussion on how the model's performance varies across different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a comprehensive discussion of the broader societal impacts of the model, including its potential effects on employment, access to information, and social equity.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section on potential misuse cases and mitigation strategies. Discuss how the model could be used for malicious purposes and what safeguards are in place to prevent such misuse.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion on fairness considerations, such as potential biases in the training data and their impact on model outputs. Evaluate the model's performance across different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section on the broader societal impacts of the model, including its potential effects on employment, access to information, and social equity. Discuss the ethical implications of the model's use.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly differentiates its approach from existing methods, particularly [2], highlighting architectural and functional differences such as the use of multiple prototypes per class and token-level attention.",
+    "grounding": "Related Work, Das et al. (2022), Van Aken et al. (2022)",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance against the hierarchical attention prototypical networks described in [1], which is a relevant baseline for few-shot text classification and interpretability.",
+    "grounding": "Related Work, Sun et al. (2019)",
+    "facet": "missing_baselines"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study comparing the performance of the proposed method with and without the token-level attention mechanism, and also compare with the method in [1] on a few-shot text classification task. This will help quantify the contribution of the proposed modifications.",
+    "grounding": "Sec 4.1, Sun et al. (2019)",
+    "facet": "experiment_proposal"
+  }
+]

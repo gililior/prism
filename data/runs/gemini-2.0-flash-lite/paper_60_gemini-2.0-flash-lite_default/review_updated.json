@@ -1,0 +1,150 @@
+{
+  "summary": "This paper investigates the internal mechanisms of factual knowledge retrieval in Transformers, proposing a three-step process for attribute extraction. The paper provides evidence for the role of lower layers and MLP/MHSA sublayers in this process, but lacks sufficient quantitative comparisons and clarity in several areas. The authors have clarified some points in their rebuttal, particularly regarding novelty and the definition of the 'enrichment process'.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper investigates the internal mechanisms of factual attribute extraction in Transformer-based LMs, focusing on information flow during inference, which is a novel contribution compared to prior work. (Intro/Related Work) [novelty]",
+      "grounding": "Intro/Related Work",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides evidence for the claim that factual associations are stored in lower layers and extracted by MLP sublayers, supported by experiments using attention blocking and analysis of attribute rates. (Fig. 15, 16, 17) [claims_vs_evidence]",
+      "grounding": "Fig. 15, 16, 17",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 appears to be well-labeled and supports the claims about the impact of attention edges. (Fig 2) [figures]",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 provides per-example extraction statistics, offering a detailed view of the model's behavior. (Table 2) [tables]",
+      "grounding": "Table 2",
+      "facet": "tables"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks quantitative comparisons with existing methods for knowledge localization and editing, and the novelty needs to be more clearly articulated. (Abstract, Intro) [novelty]",
+      "grounding": "Abstract, Intro",
+      "facet": "novelty"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of its findings, without discussing limitations or testing on diverse models/tasks. (Insufficient evidence) [claims_vs_evidence]",
+      "grounding": "Insufficient evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several figures lack clear axis labels, units, and legends, making it difficult to interpret the results. (Figures 3, 4, 5, 6, 13, 14, 15, 16, 17, 18, 19) [figures]",
+      "grounding": "Figures 3, 4, 5, 6, 13, 14, 15, 16, 17, 18, 19",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "Tables 1, 3, 4, and 5 lack information about statistical significance and clear labels. (Tables 1, 3, 4, 5) [tables]",
+      "grounding": "Tables 1, 3, 4, 5",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term 'enrichment process' is used without a precise definition, making it difficult to understand. (Abstract, Introduction) [clarity_terminology]",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks information on dataset licenses, consent procedures, privacy considerations, and usage terms, raising ethical concerns. (Insufficient evidence) [ethics_licensing]",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential misuse or failure modes. (Insufficient evidence) [societal_impact]",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare its findings with related work on representation evolution and knowledge packing. (Related Work) [comparison]",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Conduct a comparative analysis with existing methods for knowledge localization to highlight the differences in the identified mechanisms. (Intro, Related Work) [comparative evidence]",
+      "grounding": "Intro, Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide quantitative results on the percentage of predictions where the identified mechanism is observed, and compare it with other methods. (Sec 2, Sec 3) [comparative evidence]",
+      "grounding": "Sec 2, Sec 3",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments on different model architectures and datasets to assess the generalizability of the findings. (Insufficient evidence) [claims_vs_evidence]",
+      "grounding": "Insufficient evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add clear labels to all axes, including units where applicable, and include legends and error bars in figures. (Figures 3, 4, 5, 6, 13, 14, 15, 16, 17, 18, 19) [figures]",
+      "grounding": "Figures 3, 4, 5, 6, 13, 14, 15, 16, 17, 18, 19",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "For Tables 1, 3, 4, and 5, include standard deviations or confidence intervals to quantify the variability in the results. Add p-values to indicate statistical significance. In Table 5, add clear labels for the columns. (Tables 1, 3, 4, 5) [tables]",
+      "grounding": "Tables 1, 3, 4, 5",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed definition of the 'enrichment process' and how it is measured or identified. (Introduction) [clarity_terminology]",
+      "grounding": "Introduction",
+      "facet": "clarity_terminology"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed section on the datasets used, including their licenses, any consent obtained, and privacy considerations. (Insufficient evidence) [ethics_licensing]",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies. (Conclusion) [societal_impact]",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment to compare the proposed method with the findings in [1]. (Related Work) [experiment]",
+      "grounding": "Related Work",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Compare the amount of factual knowledge retrieved using the proposed method with the knowledge packing capacity discussed in [2]. (Related Work) [experiment]",
+      "grounding": "Related Work",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Compare the proposed method with the knowledge crawling techniques described in [3]. (Related Work) [experiment]",
+      "grounding": "Related Work",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

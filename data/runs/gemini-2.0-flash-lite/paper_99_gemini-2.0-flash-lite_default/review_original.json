@@ -1,0 +1,138 @@
+{
+  "summary": "This paper introduces WICE, a novel fine-grained textual entailment dataset built on Wikipedia claims and evidence, and proposes a claim decomposition strategy. The paper's main contribution is the creation of a new dataset and a method for claim decomposition, but the experimental validation and comparison to existing methods are limited. The paper would benefit from more rigorous evaluation, clearer presentation, and a discussion of ethical considerations.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly states the goal of creating a new NLI dataset and provides details on its construction from Wikipedia (Sec 7). The proposed dataset, WICE, offers a novel contribution by providing fine-grained entailment judgments at the sub-sentence level and identifying the minimal evidence supporting each subclaim.",
+      "grounding": "Sec 7, Intro, Sec 1",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper acknowledges the limitations of the dataset, including the use of English Wikipedia articles and the potential for pre-training bias (Sec 7). The paper clearly outlines the motivation for the work, highlighting the limitations of existing NLI datasets in real-world applications (Intro §1).",
+      "grounding": "Sec 7, Intro §1",
+      "facet": "limitations"
+    },
+    {
+      "kind": "strength",
+      "text": "Tables 5, 6, and 7 include p-values to indicate statistical significance, which is crucial for comparing model performance.",
+      "grounding": "Tables 5, 6, 7",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The use of a figure to illustrate the WICE annotation process enhances understanding (Figure 1). Figure 9 provides clear instructions to annotators, aiding in understanding the evaluation process.",
+      "grounding": "Figure 1, Figure 9",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper introduces WICE, a new fine-grained textual entailment dataset built on natural claim and evidence pairs extracted from Wikipedia, which is a novel contribution compared to existing datasets like ContractNLI [1] and DocNLI, which are restricted to specific domains or use synthetic negative data.",
+      "grounding": "Intro, Related Work",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper proposes an automatic claim decomposition strategy using GPT3.5, which is shown to improve entailment models' performance. This is a novel method compared to existing approaches like the Pyramid method [Hypothesis Decomposition] and other frameworks that rely on supervised judgments or are too fine-grained for the annotation scheme.",
+      "grounding": "Intro, Hypothesis Decomposition",
+      "facet": "method"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper claims that decomposing complex claims into subclaims can be a valuable pre-processing step, but this is not fully substantiated experimentally (Sec 7). The paper overclaims the generalizability of the findings to open-domain settings, as the experiments are limited to cited evidence documents (Sec 5).",
+      "grounding": "Sec 7, Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear comparison with the closest baseline. The delta between WICE and existing datasets/methods is not clearly quantified (Related Work, Sec 4). The paper does not explicitly compare the performance of WICE with existing entailment datasets like FEVER [Fact-verification datasets] or VitaminC [Fact-verification datasets] (Related Work).",
+      "grounding": "Related Work, Sec 4",
+      "facet": "comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "The evaluation section needs more details. It is unclear which models are evaluated and the specific metrics used. The paper mentions that current systems perform below human level, but the gap is not quantified (Sec 4).",
+      "grounding": "Sec 4",
+      "facet": "evaluation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Some figures lack clear axis labels, units, and legends, making it difficult to interpret the results effectively (Figures 3, 6, 7). Table 1 lacks essential statistical information, such as standard deviations or confidence intervals, making it difficult to assess the variability of the data. Some tables lack clear headers and descriptions (Table 1, Table 4).",
+      "grounding": "Figures 3, 6, 7, Table 1, Table 4",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly state the license for the WICE dataset or the terms of use for the data. The paper does not address consent related to the use of Wikipedia data or the application of GPT-3.5. The paper does not discuss privacy considerations related to the use of Wikipedia data.",
+      "grounding": "Insufficient evidence",
+      "facet": "dataset_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term 'Claim-Split' is introduced without a clear, concise definition. The method's specifics are not immediately clear (Intro §1). The paper lacks a dedicated section for notation, making it difficult to follow the mathematical or algorithmic aspects of Claim-Split (Methods §2.1 (if applicable)).",
+      "grounding": "Intro §1, Methods §2.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "No discussion of potential misuse or failure modes.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments on the impact of claim decomposition on entailment prediction performance (Sec 7). Perform experiments in open-domain settings to evaluate the generalizability of the findings (Sec 5).",
+      "grounding": "Sec 7, Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a head-to-head comparison with a state-of-the-art document-level entailment model, such as DocNLI, or a retrieval-augmented NLI model. This would strengthen the claims of novelty and demonstrate the advantages of WICE (Sec 4).",
+      "grounding": "Sec 4",
+      "facet": "comparison"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Quantify the performance gap between the proposed method and human performance (Sec 4). Clarify the evaluation metrics used to assess model performance on the WICE dataset (Results).",
+      "grounding": "Sec 4, Results",
+      "facet": "evaluation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add more descriptive axis labels and legends to improve clarity (Figures 3, 6, 7). Include standard deviations or confidence intervals in Table 1 to provide a measure of data variability. Ensure all tables have clear and descriptive headers for each column and row. Provide a brief description of the metrics used in each table (Table 1, Table 4).",
+      "grounding": "Figures 3, 6, 7, Table 1, Table 4",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a clear statement about the dataset's license, usage terms, and any relevant consent or privacy considerations. Address consent related to the use of Wikipedia data and the application of GPT-3.5. Address privacy considerations related to the use of Wikipedia data.",
+      "grounding": "Insufficient evidence",
+      "facet": "dataset_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the Claim-Split method, including the prompt used with GPT-3.5 and the criteria for subclaim generation (Intro §1, Methods §2.1). Include a table of notation to define all symbols and abbreviations used, especially those related to Claim-Split and the entailment process (Methods §2.1, Results).",
+      "grounding": "Intro §1, Methods §2.1, Results",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies (Conclusion).",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments comparing the performance of models trained on WICE with models trained on FEVER and VitaminC, using the same evaluation metrics. This will help to quantify the improvement of WICE over existing datasets (Related Work).",
+      "grounding": "Related Work",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

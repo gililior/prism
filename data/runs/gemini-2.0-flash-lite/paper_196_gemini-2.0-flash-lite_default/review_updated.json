@@ -1,0 +1,186 @@
+{
+  "summary": "This paper introduces a novel approach to code-to-code translation using self-generated explanations, demonstrating improved translation quality and addressing limitations in existing benchmarks. The paper presents promising results, particularly in zero-shot settings. The authors have clarified the novelty of their approach and addressed some of the weaknesses raised in the initial review. However, some weaknesses remain, particularly regarding the generalizability of the findings and the need for more detailed comparisons.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper demonstrates improvements in translation quality using self-generated explanations, supported by experimental results.",
+      "grounding": "Sec 3.1, 3.2, 3.3",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper identifies and addresses errors in existing program translation benchmarks, improving the evaluation process.",
+      "grounding": "Apx A, Table 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper systematically evaluates the 'Explain-then-Translate' approach on a broader set of programming languages, addressing a gap in the existing literature.",
+      "grounding": "Intro §1.2",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper releases a new dataset (MultiPL-C2C) and evaluation system, which will aid future research in code-to-code translation.",
+      "grounding": "Intro §1.3",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly explains the motivation and context of the research.",
+      "grounding": "Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly distinguishes its contribution by focusing on code-to-code translation using self-generated natural language explanations, particularly in the zero-shot setting.",
+      "grounding": "Intro, Related Work",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of its findings, and the claim about the usefulness of natural language explanations in the few-shot setting is weakened by the findings.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper's novelty hinges on the application of 'Explain-then-Translate' to code translation; the delta from Chen et al. (2023b) needs to be more clearly articulated and supported by comparative evidence.",
+      "grounding": "Intro §1.1, Related Work",
+      "facet": "novelty"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide enough detail on the types of explanations used, making it difficult to assess their novelty or effectiveness.",
+      "grounding": "Abstract, Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "weakness",
+      "text": "Axes lack clear labels and units in some figures, and legends are missing or unclear.",
+      "grounding": "Figures with performance plots",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'exp', 'exp-lbl', and 'exp-lbl-d' in Section 2.1 is not entirely clear; more details on how these explanations are generated would be helpful.",
+      "grounding": "Sec 2.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear notation section or table, making it difficult to quickly understand the symbols and abbreviations used.",
+      "grounding": "Throughout the paper",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly address potential misuse scenarios, such as the generation of malicious code or the automation of software vulnerabilities.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss fairness considerations, such as potential biases in the training data or the performance of the translation approach across different programming languages and resource levels.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss the broader impacts of the technology, such as its potential to exacerbate existing inequalities in access to software development skills.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare its approach with the methods described in [2] (Starcoder) which is a relevant baseline for code generation and translation.",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss the limitations of the self-generated explanations, such as the potential for the explanations to be incorrect or misleading.",
+      "grounding": "Related Work",
+      "facet": "limitations"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments to evaluate the impact of different types of self-generated explanations on translation quality and provide more details on the heuristics used to improve explanation quality.",
+      "grounding": "Sec 3.4, 3.6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct a head-to-head comparison with Chen et al. (2023b) on a subset of the same languages to quantify the improvements and provide a detailed analysis of the different explanation types and their impact on performance, especially in low-resource languages.",
+      "grounding": "Intro §1.1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Compare the proposed approach with other prompting techniques, such as those using BNF grammars (Wang et al., 2023a), especially for low-resource languages.",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add error bars to performance plots to indicate confidence intervals, ensure all axes are clearly labeled with units, and provide clear and concise legends for all figures.",
+      "grounding": "Figures with performance metrics",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the prompt variations (exp, exp-lbl, exp-lbl-d) in Section 2.1 and explain the specific instructions given to the language models for each type of explanation.",
+      "grounding": "Sec 2.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a notation table in the appendix or within the main text to define all symbols and abbreviations used.",
+      "grounding": "Appendix E",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a section on potential misuse scenarios and mitigation strategies, such as incorporating safety mechanisms to prevent the generation of harmful code.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a discussion of fairness considerations, such as potential biases in the training data and the performance of the translation approach across different programming languages and resource levels.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Discuss the broader impacts of the technology, such as its potential to exacerbate existing inequalities in access to software development skills, and propose mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include an ablation study to isolate the impact of self-generated explanations, comparing the performance of the model with and without the explanation generation step.",
+      "grounding": "Related Work",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Evaluate the quality of the generated explanations using metrics like faithfulness and alignment with the code and compare the performance of the model with different types of explanations (e.g., BNF grammars).",
+      "grounding": "Related Work",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

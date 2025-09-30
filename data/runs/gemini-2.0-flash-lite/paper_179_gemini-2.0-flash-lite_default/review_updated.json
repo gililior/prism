@@ -1,0 +1,138 @@
+{
+  "summary": "This paper introduces a new dataset and approach for generating clarification questions to address ambiguity in questions. The paper demonstrates the stability of the proposed approach through detailed analysis. The authors have addressed several weaknesses in their rebuttal, including clarifying the statistical analysis, dataset licensing, and providing more detail on the experimental setup. The paper would benefit from improved clarity, more comprehensive statistical analysis, and a discussion of potential societal impacts.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper provides a detailed description of the human preference test setup, including worker restrictions and quality control measures.",
+      "grounding": "Section C.1",
+      "facet": "methods"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper introduces a new dataset for research in this area.",
+      "grounding": "Conclusion section",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The authors provide a detailed analysis of test results, showing the stability of CQ across different interpretations (Figure 9).",
+      "grounding": "Figure 9",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear overview of the proposed approach with well-labeled blocks.",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper is generally well organized with clear sectioning.",
+      "grounding": "Abstract, §1, §2",
+      "facet": "organization"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly explains the problem of ambiguous questions and motivates the proposed clarification question approach.",
+      "grounding": "Section 1",
+      "facet": "clarity"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 provides clear examples of manual revisions, aiding in understanding the process, and Table 10 provides a clear overview of the most frequent categories.",
+      "grounding": "Tables 2, 10",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly distinguishes contributions and method differences from a closely related approach [2].",
+      "grounding": "Intro §1.2",
+      "facet": "related_work"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the performance of the generated clarification questions due to various factors.",
+      "grounding": "Conclusion section",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks crucial information regarding the seeds used for random selection of examples or batch creation.",
+      "grounding": "Section C.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the results.",
+      "grounding": "Fig 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear notation table.",
+      "grounding": "Abstract, §1",
+      "facet": "clarity"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the results.",
+      "grounding": "Tables 1, 3, 4, 5, 6, 7, 8, 9",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a discussion of potential misuse or failure modes.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper is missing a head-to-head comparison with a top cited baseline.",
+      "grounding": "Related Work",
+      "facet": "related_work"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code used for the experiment, including the MTurk setup and data processing scripts, and specify the random seeds used for example selection and batch creation.",
+      "grounding": "Section C.1",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Document the environment used for the human preference test, including the MTurk platform and any relevant libraries.",
+      "grounding": "Section C.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a concise definition of 'clarification question' early in the introduction.",
+      "grounding": "Abstract, §1",
+      "facet": "clarity"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies.",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add ablation isolating the delta vs. cited method [1] (what the new module adds).",
+      "grounding": "Sec 4.1",
+      "facet": "related_work"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

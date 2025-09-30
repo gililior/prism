@@ -1,0 +1,362 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the limitations of existing opinion summarization methods, particularly their inability to handle large review sets and multi-perspective summarization (Intro).",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "strength",
+    "text": "The proposed SUBSUMM framework is well-defined, with a clear description of its components: review sampling strategies and a two-stage training scheme (Intro).",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with Bra\u017einskas et al. (2021), which also addresses multi-perspective summarization. The delta between the proposed method and this baseline is not clearly articulated.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with Bra\u017einskas et al. (2021) and other relevant baselines, quantifying the performance gains of SUBSUMM on various metrics.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to demonstrate the individual contributions of the review sampling strategies and the two-stage training scheme.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "How does the contrastive information valuation in the review sampling strategy work? Is it a novel approach?",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific sentiment analysis techniques used in the review sampling strategy?",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What are the evaluation metrics used to assess the quality of the summaries, and how do they capture the multi-perspective nature of the summaries?",
+    "grounding": "Abstract",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of the work hinges on the effectiveness of the review sampling strategy and the two-stage training scheme, which need to be validated through rigorous experiments.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces SUBSUMM, a supervised summarization framework. It claims superiority over state-of-the-art models and LLM-related systems on two datasets. Human evaluations and comparisons with ChatGPT are presented. The paper also discusses limitations and ethical considerations.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "SUBSUMM demonstrates superior performance compared to other supervised methods (Sec 4.2).",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Human evaluation (BWS) shows SUBSUMM summaries are comparable or better than gold summaries in Informativeness and have good Coherence (Table 3).",
+    "grounding": "Table 3, Appendix E",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Head-to-head tests show users prefer SUBSUMM summaries over ChatGPT (Table 4).",
+    "grounding": "Table 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the superiority of SUBSUMM without providing sufficient evidence for all aspects. For example, the claim that SUBSUMM comprehensively utilizes annotations is not fully substantiated.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper acknowledges limitations, but the discussion could be more detailed. For example, the reasons for underperforming SELSUM on ROUGE-2 are speculative.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more detailed ablation studies to isolate the impact of each component of SUBSUMM.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct more extensive error analysis to understand the types of errors made by SUBSUMM and compare them to other models.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does SUBSUMM's performance vary across different types of reviews (e.g., positive vs. negative)?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific review sampling strategies used in SUBSUMM, and how do they contribute to the performance?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What is the impact of the two-stage training scheme?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge limitations in ROUGE scores and potential for improvement in language modeling (Sec 5).",
+    "grounding": "Sec 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the problem of opinion summarization and the limitations of existing solutions.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The contributions are clearly stated in the introduction.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"contrastive information valuation\" is introduced without a clear definition or explanation. It's unclear what this entails.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The two-stage training scheme is mentioned but not fully explained in the abstract or introduction. More detail is needed.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of \"contrastive information valuation\" in the methods section.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand on the two-stage training scheme in the methods section, including details on the loss functions used.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents results using tables to compare different summarization methods. The figures are not explicitly described in the provided text, but the tables are mentioned as supporting the claims.",
+    "grounding": "Tables 3, 4, 9, 10",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Tables are used to present quantitative results, which is appropriate for comparing different summarization methods.",
+    "grounding": "Tables 3, 4, 9",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The text does not provide enough information to assess the quality of the figures. The description of the tables is limited.",
+    "grounding": "Tables 3, 4, 9, 10",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details about the figures, including axes labels, legends, and visual design choices. Describe the content of the tables.",
+    "grounding": "Tables 3, 4, 9, 10",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What metrics are used in the tables?",
+    "grounding": "Tables 3, 4, 9",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The assessment is limited by the lack of detailed descriptions of the figures.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on consent or privacy related to the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for bias in the datasets or the model.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_bias"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper acknowledges the potential for generating fabricated and harmful content but does not provide detailed mitigation strategies.",
+    "grounding": "Ethics Statement",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the dataset licenses, consent procedures, and privacy measures taken.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing_consent_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Describe the steps taken to mitigate the risk of generating fabricated or harmful content.",
+    "grounding": "Ethics Statement",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss potential biases in the datasets and the model, and how these biases are addressed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_bias"
+  },
+  {
+    "kind": "weakness",
+    "text": "Usage terms are not explicitly stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clearly define the usage terms for the model and the generated summaries.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables presented in the paper show a mixed quality. Some tables provide clear comparisons and results, while others lack crucial statistical information and clarity in presentation.",
+    "grounding": "Tables 3, 4, 9, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 3 presents human evaluation results with clear criteria (Informativeness, Coherence, Non-Redundancy).",
+    "grounding": "Table 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 4 lacks details on the statistical significance of the head-to-head comparisons. Table 10 is a qualitative example table, not a quantitative one.",
+    "grounding": "Tables 4, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include p-values or confidence intervals in Table 3 and Table 4 to indicate the statistical significance of the observed differences. Provide more context for the example summaries in Table 10.",
+    "grounding": "Tables 3, 4, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to compare the results in Table 3 and Table 4? 2. What is the sample size for the human evaluation in Table 3? 3. How were the example summaries in Table 10 selected?",
+    "grounding": "Tables 3, 4, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets (AmaSum, RT) and the chosen evaluation metrics.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly address potential biases in the datasets or model outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the model to be used to spread misinformation or manipulate public opinion.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed discussion of the broader societal impacts of the proposed framework.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential biases in the datasets and their impact on different groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss the potential for the model to be used to spread misinformation or manipulate public opinion and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section to discuss the potential societal benefits and drawbacks of the proposed framework.",
+    "grounding": "Conclusion",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's introduction clearly distinguishes its contributions and methodological differences from Optimus [2], a VAE-based model for organizing sentences. The paper highlights that VAE-based models suffer performance drops when processing numerous reviews, a problem SUBSUMM aims to address.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance with TransSum [1], a synthetic-dataset-based method. TransSum is a relevant baseline as it also addresses opinion summarization. The paper should include a comparison with TransSum to demonstrate the effectiveness of its review sampling strategy and two-stage training scheme.",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the impact of the review sampling strategy set and the two-stage training scheme. Compare the performance of SUBSUMM with and without these components, and also compare with TransSum [1] to show the effectiveness of each component.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

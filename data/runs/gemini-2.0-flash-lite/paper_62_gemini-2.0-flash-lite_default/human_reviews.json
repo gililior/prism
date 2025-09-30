@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "7O79QSFAVH",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes context aware OOD intent detection (caro) framework to model multi-turn contexts in OOD intent detection tasks. Moreover, Caro introduces a two-stage self-training scheme to mine OOD samples from unlabeled data. The main contribution of this paper is to show the better performance of Caro compared with other models on variants of STAR dataset.",
+      "reasons_to_accept": "We can see Caro (a context ware OOD intent detection ) works well on the new evaluation dataset created from STAR dataset.",
+      "reasons_to_reject": "We cannot confirm whether the issue set here has been solved with the evaluation dataset used in the experiment.",
+      "questions_for_the_authors": "Question 1: This paper try to solve OOD intent detection in the case where  \"the testing distribution is subject to change and out-of-domain (OOD) intentions that are not seen in the training process may emerge in testing\". How is the situation in which the testing distribution has changed replicated in the evaluation data created manually?\nQuestion 2: In Section 3.2, it seems arbitrary that 30% should be added. In order to make Du, the labels of OOD and IND are used, but since it is originally an unlabeled dataset, it seems unnatural that the ratio of IND and OOD is known. If you want to combine IND and OOD to make an unlabeled dataset, I think it might be better to make a few patterns with the ratio changed from 0% to 100% to see its robustness.\nQuestion 3: In this paper, experimental results are shown only for STAR data, but Chen and Yu (2021) also showed the results on FLOW and ROSTD. With only one data set, it is difficult to know whether the method works for a particular data set or works generally. I think it\u2019s better to show the results on other datasets too.\nQuestion 4: Although it seems that there is no table showing the number of IND/OOD data, it is better to show the statistics.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "o8r4KkSIhM",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a novel context-aware OOD intent detection (Caro) framework for multi-turn dialogue contexts, by tackling two main challenges: (1) How to alleviate the long distance obstacle and learn robust representations? ( 2) How to utilize unlabeled data? For the first challenge, by following the information bottleneck principle, Caro extracts robust representations from these contexts and removes irrelevant information using a multi-view information bottleneck loss. For the second one, Caro introduces a two-stage  self-training scheme to mine OOD samples. Specificalluy, the first stage builds a preliminary OOD detector with OOD samples synthesized from IND data, while the second stage refine it based on the real-world OOD samples selected from the unlabeled data. The author have conducted extensive experiments and analysis, showing that Caro is effective in OOD intent detection for multi-turn dialogue.",
+      "reasons_to_accept": "1.The proposed method is clear and simple; It extracts robust intent representations from multi-turn dialogue contexts by combining the features from diverse views following the information bottleneck principle, which is novel and intuitive. \n2.The analysis and experiments are somewhat comprehensive. The performance on multi-turn OOD detection tasks is quite impressive, with a significant improvement in F1-OOD score of over 29% compared to the previous top-performing method. \n3.The task is interesting and the paper is well written.",
+      "reasons_to_reject": "1.There is a lack of theoretical analysis of the feasibility of the information bottleneck principle in OOD intent detection from multi-turn dialogue contexts, especially why it is more suitable for the dialogues with longer turns. \n2.The proposed method has not been verified on other datasets with different distributions/domains, and it only focused on STAR with two versions (small/large), thus the universality needs to be further verified.",
+      "questions_for_the_authors": "1. Which feature is used to generate the pesudo OOD samples in the first stage, the aggregated features or the single-view features? \n2. What is the difference between the Adaptive Reception Field and the Attetion mechanism or convolution kernel? \n3. Is the performance of the OOD intent detection positively correlated with the turns of the dialogue? Is the longer the round of the dialogue, the better the OOD detection? Can you give a fine-grained analysis?",
+      "ethical_concerns": "Yes"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "ak9bQxbSHe",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a novel framework called Caro for addressing the challenging and relatively unexplored problem of Out-of-Domain (OOD) intent detection in the context of multi-turn dialogues. Traditional OOD intent detection approaches often focus on single-turn interactions, but real-world dialogue systems often involve multi-turn conversations. Caro aims to accurately detect OOD intents while considering the complexities of multi-turn contexts.",
+      "reasons_to_accept": "1) The paper introduces a novel framework called \"Caro\" that addresses a challenging and under-explored problem in the field of intent detection. \n2) By constructing diverse views of input data and optimizing an unsupervised multi-view loss, Caro retains predictive information relevant to intent detection while discarding irrelevant information. \n3)Caro introduces a two-stage self-training process to mine OOD samples from unlabeled data. This addresses the challenge of refining OOD detection without access to labeled OOD samples during training.",
+      "reasons_to_reject": "I'm not very familiar with this area anymore. please getting the opinions of other reviewers.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  }
+]

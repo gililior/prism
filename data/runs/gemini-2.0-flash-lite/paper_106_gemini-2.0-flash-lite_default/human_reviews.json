@@ -1,0 +1,87 @@
+[
+  {
+    "rid": "umVjrSPuCP",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper focuses on the combination of LLMs and CRSs in the context of product recommendations. Authors approach the topic from two viewpoints --- either \"LLMs assisting CRSs\", or \"CRSs assisting LLMs\" --- and across four sub-tasks implied in recommendation-making: intent understanding, preference elicitation, product recommendation, and response generation. Evaluation measures depend on the sub-task: precision, recall, and F1 for intent understanding and preference elicitation; accuracy, hit@5 and MRR@5 for product recommendation; and distinct@1, informativeness, and relevance for response generation. \nAuthors rely on the U-NEED dataset, which comprises 1135-1748 dialogues organized across five product categories: Beauty, Phones, Fashion, Shoes, and Eletronics. More simple baselines vary for each sub-task, but more complex baselines generally include both CRSs (variations of UniMIND) and LLMs (ChatGLM-6B and Chinese-Alpaca) in isolation, as well as the proposed methods: LLMs combined into CRSs (ChatGLM/Alpaca combined into UniMIND), or CRSs combined into LLMs (UniMIND combined into ChatGLM/Alpaca). Findings are somewhat unclear when comparing the proposed methods against the more complex baselines, with marginal gains associated to either \"LLMs assisting CRSs\" or \"CRSs assisting LLMs\" depending on the sub-task.",
+      "reasons_to_accept": "1. The paper focuses on a relevant topic with direct, real-world applicability. \n2. Experiments contemplate five product categories, and include sub-tasks that are consensually important to conversational recommendations. The product recommendation sub-task has received increasing attention from the NLP community, particularly in how to leverage LLMs for the task. \n3. Interestingly, it is for the product recommendation sub-task that authors report the most promising gains (as seen in aggregated accuracy of ALLM-CCRS, Table 3). A paper focused on \"LLMs assisting CRSs\" applied to the product recommendation sub-task could lead to potentially helpful findings to the community.",
+      "reasons_to_reject": "1. Since there are smaller LMs behind UniMIND (e.g., BART) and larger LMs representing LLMs, the experimental set up makes it hard to understand if the gains are due to the proposed methods or simply due to increased model capacity. Comparing the combination of LLMs + CRSs to the LLMs alone shows small gains (e.g., on Tables 1 and 4), so one conclusion can be that these marginal gains are due to the additional parameters introduced by the CRS --- in this case, would a slightly larger LLM be enough to achieve similar gains? \n2. Methodology aside, I am not sure how novel and practically helpful the findings are. Essentially, the main takeaway is that it depends on the nature of the sub-task how to combine LLMs and CRSs. This takeaway has already been contributed by various previous works, for example: a) \"What does BERT know about books, movies and music? Probing BERT for conversational recommendation\" (Penha et al., 2020) shows how LLMs can be helpful in recommendation-making; b) \"'It doesn't look good for a date': Transforming Critiques into Preferences for Conversational Recommendation Systems\" (Bursztyn et al., 2021) shows how LLMs can be helpful in preference interpretation; c) \"ReXPlug: Explainable Recommendation using Plug-and-Play Language Model\" (Hada and Shevade, 2021) shows how LLMs can be helpful in recommendation explanation. \nHowever, these previous contributions are not properly acknowledged in the paper. \n3. The paper makes too big of a claim in that it is the first to investigate the combination of LLMs + CRSs (e.g., line 14, lines 97-100). Lines 135-137 are not accurate (see #2 above). \n4. The majority of the Appendices is copied *verbatim* from \"U-NEED: A Fine-grained Dataset for User Needs-Centric E-Commerce Conversational Recommendation\" (Liu et al., 2023), even duplicated in lines 979-994.",
+      "questions_for_the_authors": "1. Given the observations in Reasons to Reject (#1), how do you view the difference in model capacity between the proposed methods and the baselines? \n2. Lines 473-474 claim that \"CRSs assisting LLMs\" can improve the \"robustness\" of the LLMs alone. Are CRSs improving LLMs' robustness or are they improving their domain knowledge?",
+      "missing_references": "As described in Reasons to Reject: \"What does BERT know about books, movies and music? Probing BERT for conversational recommendation\" (Penha et al., RecSys 2020); \"'It doesn't look good for a date': Transforming Critiques into Preferences for Conversational Recommendation Systems\" (Bursztyn et al., EMNLP 2021); \"ReXPlug: Explainable Recommendation using Plug-and-Play Language Model\" (Hada and Shevade, SIGIR 2021).",
+      "typos_grammar_style_and_presentation_improvements": "1. In Table 4, Dist-1 for Chinese-Alpaca should be marked in bold --- not CCRS-ALLM. \n2. Duplicated information in lines 309-313 and lines 979-994. \n3. Verb \"guess\" used twice in lines 407 and 485 --- less colloquial verbs like \"hypothesize\" would be more appropriate. \n4. Distinct-1 should be supported by a citation.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "FaymUJy3en",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper explores the collaboration of conversational recommender systems (CRSs) and large language models (LLMs) in E-commerce pre-sales dialogues. The paper proposes two methods of collaboration: CRS assisting LLM and LLM assisting CRS. The paper evaluates the effectiveness of these methods on a real-world dataset of pre-sales dialogues, involving four tasks: dialogue understanding, needs elicitation, recommendation, and dialogue generation. The paper shows that the collaboration of CRS and LLM can improve the performance of these tasks.",
+      "reasons_to_accept": "1. Using LLMs to assist in recommendation tasks is an interesting problem. \n2. The authors' proposal to combine LLMs with traditional CRS models is well-motivated.",
+      "reasons_to_reject": "1. The paper's writing needs improvement. Four different tasks are defined in the paper, but the details of each task are not clearly explained. For specifics, see the Typos, Grammar, Style, and Presentation Improvements section. \n2. The proposed method only achieves improvements on some specific CRS tasks. \n3. There is a lack of explanation for instances where no improvement is observed. For example, in line 406, \"In contrast, the performance in task 1 across all categories declines.\" \n4. The authors only conducted experiments on a single dataset, which could be a limitation. \n5. No analysis of computational overhead is provided.",
+      "typos_grammar_style_and_presentation_improvements": "The paper's writing and the content of the corresponding figures need revision to make them easier to understand. For example, 1. Section 3.3 does not introduce each task in multi-task training, and there is no specific explanation or example for the design of prompts. Figure 3 and the Figures in the Appendix are also difficult to understand. \n2. The variable name definitions in Section 3.3 are problematic. $X_S$ is defined but not used. $X_R$ and $Z_R$ are not defined. The user needs-based recommendation task corresponding to Eq. 2 and Eq. 3 is not defined. Section 3.5 has similar issues. \n3. In the experimental analysis section, the author uses tasks 1, 2, 3, and 4 to represent the tasks. Using task in Table 1, 2, 3, 4 or directly using the task name are more suitable.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "Lq9nCsXTw3",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work proposes to combine a large language model (LLM) and a conversational recommender system (CRS) for precise recommendation. Experiments show the effectiveness of this kind of collaboration.",
+      "reasons_to_accept": "1. The authors explore a novel setting in conversational recommendation, i.e., LLM collaborating with CRS.",
+      "reasons_to_reject": "1. The motivation for using CRSs for recommendation is not clear. The authors should justify why it is not sufficient to fine-tune an LLM on the recommendation task. The setting **no collaboration** in Table 1,2,3,4 shows that the proposed method has only a marginal advantage over the single LLM, despite the incorporation of the collaboration mechanism. \n2. The combination of the CRSs and the LLM is kind of simple and ad hoc. The authors should explain whether there are any alternatives or ablations to the proposed interaction mechanism. \n3. The term **task 3** in Line 401 is undefined and confusing. The authors should clarify what it refers to and how it relates to the previous tasks or sections of the paper. \n4. It might be inappropriate to move part of the analysis of the **main** result into the appendix. The authors should include the most important findings and insights in the main paper. Moreover, the figure/table referred in Appendix A is missing or mislabeled. \n5. The writing of the experiment section is messy and hard to follow. The authors should improve the clarity and coherence of their presentation, and avoid grammatical errors and typos.",
+      "questions_for_the_authors": "Please refer to **Reasons To Reject**.",
+      "missing_references": "None.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "UEu3QA18iD",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, the authors study the effectiveness of combing large language model with conversational recommendation system in e-commerce pre-sales dialogues. They propose two collaboration methods, i.e., conversational recommender systems assisting large language model and large language model assisting conversational recommender systems. The authors have performed extensive experiments on real datasets to demonstrate the effectiveness of the proposed methods.",
+      "reasons_to_accept": "1. The authors propose to study the combination of large language model and conversational recommendation system in pre-sales dialogue in e-commerce. This idea seems novel.\n2. The authors propose two collaboration methods: 1) conversational recommendation system assisting large language model, and 2) large language model assisting conversational recommendation system.\n3. The authors have performed extensive experiments on a real-world pre-sale dialogue dataset in e-commerce.\n4. This paper is well-structured and clearly written.",
+      "reasons_to_reject": "1. The main objective of this work is to explore the integration of conversational recommendation system with large language model in e-commerce pre-sale dialogues. However, in the proposed models, the specific properties of e-commerce pre-sales dialogues are not explored.\n2. According to my understanding, the proposed two collaboration models can also be applied to other conversational recommendation scenarios, e.g., movie recommendation. However, in this work, the authors only study the performance of the proposed methods on one e-commerce pre-sale dialogue dataset. Thus, the experimental analysis is not sufficient.",
+      "questions_for_the_authors": "1. What are the specific properties of e-commerce pre-sale dialogues have been explored by the proposed model?\n2. Why using different evaluation metrics in Table 1, 2, and 3?",
+      "missing_references": "N.A.",
+      "typos_grammar_style_and_presentation_improvements": "N.A.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

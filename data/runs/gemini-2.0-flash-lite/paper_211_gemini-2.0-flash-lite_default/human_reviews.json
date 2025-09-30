@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "XHyptIkTNP",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents a framework, Prompt Optimization with Textual Gradients (ProTeGi), for automatic LLM prompt optimization. Starting from an initial prompt, it iteratively applies LLM with predefined meta-prompt over randomly sampled minibatch of examples to generate feedbacks as gradients. It then uses another meta-prompt with the initial prompt and gradients to produce improved prompts. Finally, it uses Bandit Selection algorithms to prune the size of candidate prompts (beam search). Empirical studies show the proposed method outperforms baselines like Monte Carlo search, reinforcement learning, and AutoGPT. Further studies also revealed the impact from beam search and bandit algorithms.",
+      "reasons_to_accept": "1. The task discussed in this paper has high impact in both academic and industry. \n2. The paper presents a framework that is generally applicable to many LLM based methods. The analyses also shows interesting properties of the proposed method, which might lead to more followup studies. \n3. The paper is well-organized and easy to read.",
+      "reasons_to_reject": "Some important details are not clearly revealed in the paper. For example, it would be interesting to see what the feedback prompt and editing prompt are, and how they impact the whole framework.",
+      "questions_for_the_authors": "1. Table 1: it would also be good to show how beam size impact the performance. \n2. Line 322, although it states the log-likelihood does not help the proposed method, it is still be interesting to show how the log-likelihood change with iterations.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "aU6dK1o5Zp",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "- This paper proposes a new framework to generate, then edit, and then paraphrase and score new candidate prompts for large language models. It first generates reasoning for the wrong labeling for the model errors. This reasoning has been interpreted as textual gradients. Then it receives these reasons to perform edits over the initial prompt. Later, the candidate prompts are paraphrased to include more diverse alternatives. Throughout the search, the method keeps a beam of candidate prompts and evaluates them efficiently for the next beam iteration. It successfully uses USB bandits to evaluate the candidate prompts within a beam over a training dataset efficiently.",
+      "reasons_to_accept": "- The paper has a novel interpretation as the \"textual gradient\" and \"moving in the opposite direction of the textual gradient\" to make local edits in the semantic space. This has been explained well enough and the method clearly outperforms previous baselines on their 4 datasets.\n- As shown by the examples in the paper (Table 4), the generated prompts by this method are more understandable and contains more information about the expected context/output and outperforms the optimized prompts given another baselines.",
+      "reasons_to_reject": "- The proposed method to find better performing prompts is applicable only on truly large language models as they are capable of generating the textual gradients or reasoning steps for wrong generation by just prompting the LLM. The technique might not be useful for medium-size LMs such as T5-large or BERT-large, however previous discrete gradient-free prompt optimization techniques such as GrIPs or RLPrompt can be applied generally to any LM and they have been tested with medium-size LMs. It would be great to see how your concept of textual gradients can be extracted or applied from/to medium-size LMs.",
+      "questions_for_the_authors": "- Is it OK to interpret your textual gradients as kind of chain-of-thoughts to generate new prompts using the $LLM_{\\delta}(p, g_i, e)$?\n- Can the authors expand the details of hyper-parameters for some of the baselines? The following paragraph (Line 300) in your paper seems a bit concerning regarding the experimental results: \"As the focus of this paper is non-parametric algorithms with broad applicability, we did not conduct any hyper-parameter search for the baseline or proposed algorithms, instead adopting default values and then using the same parameters throughout.\" \nYou are selecting 150 examples as your internal validation. Why is it not possible to tune the hyper-parameters of the baselines? What is the \"compelling\" reason to stay fully non-parametric while tuning few hyper-parameters might impact the results significantly?\n- What would be the performance of your models using just $LLM_{mc}$ without generating textual gradients + edits and just purely relying on another prompted LLM to rephrase the initial $P_0$?",
+      "typos_grammar_style_and_presentation_improvements": "- Fix typo in Algorithm 1 $z$b, what is z?\n- The mention of GrIPS within an RL technique for prompt optimization is not correct! The technique is purely an edit based method and then selection of new candidate prompts on a search set based on the final task performance + entropy of predictions. Regarding the phrase chunking of GrIPS, it does not use pure NLTK! They use phrase chunking based on another CRF-based constituency parser. Please modify the description of the method correctly.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "mZyHDkEUvT",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes an automatic prompt optimization method by iteratively prompting an LM to improve upon previous prompts. \nUsing a set of labeled examples, the method starts with an initial prompt and iteratively query the language model for new prompts when errors occur. An upper confidence bound (UCB)-based algorithm is proposed to select new prompts. \nThe authors evaluate their method on 4 benchmarks using GPT3.5 and show the efficacy of their method.",
+      "reasons_to_accept": "The proposed method provides a flexible way to optimize prompts in a gradient-free manner using discrete feedback. It's effective and potentially useful for many other tasks that require manual prompt engineering.",
+      "reasons_to_reject": "Gradient-free iterative prompt search has been explored in previous work (e.g., RLPrompt, GRIPS, TEMPERA). It is important to emphasize the novelty and contributions of this work and provide both qualitative and quantitative comparisons with previous work. However, such comparisons are missing from the paper. I.e., what kind of errors can be fixed by the proposed method but not by previous work? What are some example optimization sequences of GRIPS and the proposed method on the same inputs?",
+      "questions_for_the_authors": "- Line 351, GRIPS (Prasad et al. 2022) does not use reinforcement learning. Thus it should not be posited in that paragraph.\nA. How does the proposed method compare to GRIPS in terms of performance?\nB. In Figure 4, the performance on Ethos and Sarcasm drops after ~4 optimization steps. What is the reason for this?",
+      "typos_grammar_style_and_presentation_improvements": "1. In Figure 2, where is $\\Delta$ mentioned in the caption? \n2. Line 183, engadge -> engage",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

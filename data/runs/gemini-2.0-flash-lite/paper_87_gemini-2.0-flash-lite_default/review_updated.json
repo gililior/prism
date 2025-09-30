@@ -1,0 +1,96 @@
+{
+  "summary": "This paper introduces proto-lm, a novel framework for enhancing the interpretability of LLMs using prototypical networks. The paper demonstrates competitive performance on various NLP tasks, but requires improvements in clarity, ethical considerations, and more detailed comparisons to related work.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel framework, proto-lm, based on prototypical networks, providing inherent interpretability to LLMs. The architecture and decision-making process are well-explained with figures.",
+      "grounding": "Intro, Fig. 1, Fig. 2",
+      "facet": "originality_clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "Proto-lm demonstrates competitive performance on a wide range of NLP tasks, as shown in Table 1, and effectively visualizes the impact of different explanation types on human annotator accuracy (Figure 8).",
+      "grounding": "Intro, Table 1, Figure 8",
+      "facet": "positioning_figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly differentiates its approach from existing methods, particularly Das et al. (2022) and Van Aken et al. (2022), highlighting architectural and functional differences.",
+      "grounding": "Related Work, Das et al. (2022), Van Aken et al. (2022)",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper needs a more detailed comparison with Das et al. (2022) and Van Aken et al. (2022), including quantitative metrics for interpretability, to clarify the advantages of proto-lm.",
+      "grounding": "Related Works",
+      "facet": "novelty"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks explicit statements regarding dataset licensing and usage restrictions, raising ethical concerns.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 7 lacks clear axis labels, units, and a legend, hindering quantitative interpretation. Tables lack confidence intervals or p-values to assess statistical significance.",
+      "grounding": "Figure 7, Tables 1, 2, and Figure 8",
+      "facet": "figures_tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential misuse cases, fairness considerations, or broader societal impacts, representing significant omissions.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks_fairness_broader_impacts"
+    },
+    {
+      "kind": "weakness",
+      "text": "The notation in section 2.1 could be improved for clarity, and the definition and measurement of 'faithfulness' should be more explicit.",
+      "grounding": "Sec 2.1, Footnote 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare its performance against the hierarchical attention prototypical networks described in [1], which is a relevant baseline.",
+      "grounding": "Related Work, Sun et al. (2019)",
+      "facet": "missing_baselines"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Improve Figure 7 by labeling axes clearly and including units and a legend. Include p-values or confidence intervals in tables to indicate statistical significance.",
+      "grounding": "Figure 7, Table 1",
+      "facet": "figures_tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a table of notation in the appendix or within the main text to clarify the symbols used in the equations.",
+      "grounding": "Sec 2.1, Appendix",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a section on potential misuse cases and mitigation strategies, fairness considerations, and broader societal impacts.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks_fairness_broader_impacts"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an ablation study comparing the performance of the proposed method with and without the token-level attention mechanism, and also compare with the method in [1] on a few-shot text classification task.",
+      "grounding": "Sec 4.1, Sun et al. (2019)",
+      "facet": "experiment_proposal"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

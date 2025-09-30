@@ -1,0 +1,90 @@
+{
+  "summary": "This paper investigates the impact of linguistic properties of prompts on LLM performance, a valuable but under-explored area. The study design is a strength. The authors have addressed some of the weaknesses in the original review, particularly regarding clarity and reproducibility. However, the paper still needs to address statistical rigor and dataset licensing.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper's controlled study design, systematically varying prompts to analyze their impact on model performance, is a key strength, addressing an important area of LLM research.",
+      "grounding": "Intro, Sec 1",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The authors clearly state the limitations of their study, such as the exclusion of certain models and experimental settings.",
+      "grounding": "Conclusion section",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Tables 2, 3, and 4 clearly indicate the highest accuracy per category and dataset using bold font, with statistical comparisons indicated by asterisks.",
+      "grounding": "Tables 2, 3, 4",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly outlines the problem, research questions, and the paper's contributions.",
+      "grounding": "Abstract, §1",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of its findings, particularly in the Ethics & broader impact section, where prompt engineering recommendations are given despite the localized nature of the results.",
+      "grounding": "Ethics & broader impact section. The authors state that recommendations are localized.",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks crucial information for reproducibility, including the seeds used for experiments and the environment details (libraries, versions, hardware).",
+      "grounding": "Section 4.2. Authors will include seeds and a link to a code repository.",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'prompt' and 'instruction' and uses them interchangeably, which could lead to confusion.",
+      "grounding": "Abstract, §1. Authors will define these terms.",
+      "facet": "terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a notation table, making it difficult to follow the different LLMs and datasets used.",
+      "grounding": "§1, §2. Authors will create a table.",
+      "facet": "organization"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks statistical rigor in result presentation; Table 1 lacks statistical information, and Tables 9-20 lack standard deviations or confidence intervals.",
+      "grounding": "Table 1, Tables 9-20. Authors will add p-values, standard deviations, and confidence intervals.",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset licensing and usage restrictions are not stated.",
+      "grounding": "Insufficient evidence. Authors will add explicit license and consent statements.",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss potential misuse or failure modes.",
+      "grounding": "Insufficient evidence. Authors will add a Broader Impact section.",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed analysis of the specific linguistic features that correlate with performance variations, potentially involving statistical analysis or case studies.",
+      "grounding": "Sec 5, Sec 6. Authors will expand Section 6.",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a discussion of potential biases in the datasets used for evaluation.",
+      "grounding": "Insufficient evidence. Authors will include a discussion.",
+      "facet": "ethics"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

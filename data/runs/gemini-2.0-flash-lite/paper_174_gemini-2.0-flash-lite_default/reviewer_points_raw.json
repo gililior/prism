@@ -1,0 +1,314 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper introduces AutoTrial, which is positioned as the first model utilizing LLMs for automating clinical trial design, addressing a significant problem in the field.",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims high performance (precision, recall, F1, Jaccard) compared to baselines, but the specific baselines and their architectures are not clearly described, making it difficult to assess the delta.",
+    "grounding": "Sec 4",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed comparison with the GPT-3.5 baseline, providing more specifics on the evaluation setup and the rationale behind the human evaluation.",
+    "grounding": "Sec 4",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper mentions instruction tuning, knowledge expansion, and rationale generation, but the specific implementation details and their novelty compared to existing LLM techniques are not fully elaborated.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the 'instruction prompting' and 'knowledge expansion' techniques, and how they differ from existing methods.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces AutoTrial, a method using language models to assist in clinical trial design. It evaluates the quality of generated criteria using NLG metrics, clinical accuracy, and human evaluation. The method aims to generate high-quality criteria texts and reduce the risk of clinical trial failure.",
+    "grounding": "Sec 4.2, 5",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper employs established NLG metrics (CIDEr, ROUGE-L, METEOR, BLEU) to evaluate the fluency and coherence of generated criteria.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Clinical accuracy is evaluated using Clinical Trial Parser, comparing extracted medical relations with ground truth, and reporting precision, recall, F1-score, and Jaccard similarity.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Human evaluation is performed to compare the method's output with a general LLM, using domain experts to assess and calculate the winning rate.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the ability to reduce the risk of clinical trial failure without providing direct evidence of this impact on real-world trials.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper acknowledges limitations related to data quality and the inability to account for unexpected side effects, but these limitations are not thoroughly addressed in the evaluation.",
+    "grounding": "Sec 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide evidence of the impact of AutoTrial on real-world clinical trial outcomes or simulations to support the claim of reducing the risk of clinical trial failure.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a more detailed analysis of the limitations related to data quality and unexpected side effects, potentially including sensitivity analyses or error analysis.",
+    "grounding": "Sec 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of AutoTrial compare to other state-of-the-art methods for clinical trial design?",
+    "grounding": "N/A",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific types of biases or inaccuracies in the training data are most likely to impact the generated criteria texts?",
+    "grounding": "Sec 5",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of the method, including data quality dependence and the inability to account for unexpected side effects.",
+    "grounding": "Sec 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present the results of the proposed method, but some figures lack clear labels and could benefit from improved visual clarity.",
+    "grounding": "Figures 1-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 is readable and effectively presents the winning rate comparison.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure axes lack clear labels and units in some figures, making it difficult to interpret the results.",
+    "grounding": "Fig 3, Fig 4, Fig 5, Fig 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add error bars to the plots in Figure 2 and other relevant figures to show confidence intervals. Ensure all axes are clearly labeled with units where applicable. Improve the color contrast and legend clarity in Figure 4.",
+    "grounding": "Fig 2, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What metrics are used in Figure 3 and Figure 6? What do the different colors represent in the visualizations? What is the scale of the axes in Figure 4 and Figure 5?",
+    "grounding": "Fig 3, Fig 4, Fig 5, Fig 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to overall performance metrics and do not provide in-depth analysis of specific criteria generation.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present evaluation results using various metrics, but the completeness of statistical information varies across tables.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 4 provides precision, recall, F1-score, and Jaccard similarity, offering a good overview of clinical accuracy.",
+    "grounding": "Table 4",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks details about the data, such as the number of trials or criteria.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals in Tables 2, 3, and 4 to show the variability of the results.",
+    "grounding": "Tables 2, 3, 4",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What is the size of the test set used in the evaluations? 2. Are the differences in performance between methods statistically significant? 3. What are the definitions of the abbreviations used in the tables?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the specific datasets and evaluation metrics used.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly address the ethical implications of using an LLM for clinical trial design, including potential biases, misuse, and the importance of human oversight.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on the ethical considerations of using LLMs in clinical trial design, including the potential for misuse and the importance of human oversight.",
+    "grounding": "\u00a75",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient information on the data sources used for training the LLM, making it difficult to assess potential privacy risks.",
+    "grounding": "Insufficient evidence",
+    "facet": "privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details on the data sources used for training the LLM, including information on data collection and storage practices.",
+    "grounding": "Insufficient evidence",
+    "facet": "privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly state whether the model's outputs are intended for commercial use, which could have implications for licensing and usage terms.",
+    "grounding": "Insufficient evidence",
+    "facet": "usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the intended use of the model's outputs, including whether they are intended for commercial use, and specify the applicable licensing and usage terms.",
+    "grounding": "Insufficient evidence",
+    "facet": "usage_terms"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the problem of clinical trial design and the motivation for using LLMs.",
+    "grounding": "Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a clear overview of the proposed method, AutoTrial, and its key features.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'instruction tuning' is used without a clear definition or reference to the specific techniques employed.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for notation, making it difficult to understand the mathematical formulations or symbols used in the method.",
+    "grounding": "Methods \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'instruction tuning' in the introduction or related work section.",
+    "grounding": "Introduction, \u00a72.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table or a section explaining the symbols and variables used in the method.",
+    "grounding": "Methods \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand on the 'explicit supervision for generating grounding rationales' in the method section, detailing the specific approach.",
+    "grounding": "Introduction, \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What specific LLM architecture is used in AutoTrial (e.g., Transformer)?",
+    "grounding": "Methods \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How is the 'external memory' implemented in the 'scalable and efficient knowledge expansion' feature?",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific instructions used to prompt the LLM?",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the method is not detailed enough to reproduce the results.",
+    "grounding": "Methods \u00a73",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent in the provided text.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-structured and addresses an important problem. However, the lack of detailed explanations and notation hinders understanding and reproducibility.",
+    "grounding": "N/A",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  }
+]

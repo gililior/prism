@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "FvDY2GU1EB",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper addresses the task of \"meme captioning\" which involves understanding memes and their visual metaphors while interpreting the text associated with the meme. The authors release a new dataset called MemeCap. The authors conduct extensive experiments using state-of-the-art Vision and Language (VL) models to evaluate their performance on the meme captioning task.",
+      "reasons_to_accept": "This paper introduces an innovative dataset and conducts exhaustive experiments to meticulously evaluate the performance of cutting-edge models, rendering it immensely valuable for future research endeavors.",
+      "reasons_to_reject": "After reading this paper, it reminded me of one of ACL23's best paper: 'Do Androids Laugh at Electric Sheep? Humor \u201cUnderstanding\u201d Benchmarks from The New Yorker Caption Contest.' The MemeCap dataset shares a similar concept with this influential ACL paper. However, a notable concern is that this paper fails to cite the aforementioned ACL paper, which is considered unacceptable in scholarly practices. Furthermore, the passage does not delve into the distinctions between these two works, leaving an important aspect unaddressed.",
+      "missing_references": "*Do Androids Laugh at Electric Sheep? Humor \u201cUnderstanding\u201d Benchmarks from The New Yorker Caption Contest* ACL23 best paper",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "9or1vL6qm2",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposed a new vision-language dataset of meme pictures and corresponding captions. The scale of the dataset is 6.3K. For each sample, a meme picture, literal image captions, visual metaphors and meme captions are provided. In addition, the authors tested a series of SOTA vision-language and language models on the dataset, showing the lack of meme understanding ability of SOTA models.",
+      "reasons_to_accept": "An novel meme caption dataset to help improve the humorous understanding ability of downstream large models.",
+      "reasons_to_reject": "There's only the MiniGPT4 model be tested under fine-tuning setting. The other two models, Flamingo and Llama, are not tested under fine-tuning setting.",
+      "questions_for_the_authors": "A: Why not provide full-training setting on all models? \nB: It is interesting to see that Llama, a pure language model, can achieve similar or even better performance than VL models, shown in Table 2. Is there any further explorations on this part?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "Qwc59hPK6e",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work proposes a task of meme captioning and release a new dataset, MEMECAP. The dataset contains memes along with the title, the meme captions, the literal image captions, and the visual metaphors. It utilizes recent Visual-and-Language models to this dataset to analyze their performances on the task of meme captioning.",
+      "reasons_to_accept": "1. An interesting dataset with meme, title, literal image caption, visual metaphors, and meme caption.  2. Both automatic evaluation and human evaluations on the task of meme captioning are provided.",
+      "reasons_to_reject": "1. As a dataset collected by crowdsourcing, there is almost no quality analysis on the collected data (only in the part of human evaluation, using 30 memes, in Section 5.2, the results of \"human\").  2. There are about 6.3K memes in the datasets, but the authors only utilize 28 memes for the dataset analysis in Section 3.4, and 30 memes for the baseline evaluations in Section 5.2. The numbers of memes used in these evaluations are too small. The evaluations are not convincing enough.  3. The dataset is somewhat similar to (and somewhat different from) the dataset proposed in \"Do Androids Laugh at Electric Sheep? Humor \u201cUnderstanding\u201d Benchmarks from The New Yorker Caption Contest\", which gives an explanation (can be regarded as a caption) to a cartoon to understand the humor (potential meaning, similar to metaphor) of the cartoon (similar to meme). Although there are some differences, e.g., one is metaphor and the other is humor, it makes this work less exciting to me.  Other minor comments: 4. In the experiments, this paper uses MiniGPT4 based on LLaMa-13B (L288), but also uses LLaMA-7B (L302). Because the authors want to compare the settings of \"without accessing to image, LLaMa\" and \"with accessing to image, MiniGPT4\", it's better to utilize the same model size.",
+      "questions_for_the_authors": "1. The performance of \"MiniGPT4 fine-tuned\" is worse than \"MiniGPT4 zero-shot\". In L437~439, the authors think that it is because \"the frozen language and vision model may not have enough information about memes\". This claim is not exactly rational. This claim is more proper if the observation is that \"MiniGPT4 zero-shot\" is bad and \"MiniGPT4 fine-tuned\" is slightly better than \"MiniGPT4 zero-shot\".  2. The most important contribution of this work is the dataset with both meme caption and visual metaphor, while there are already existing datasets for visual metaphor. I am still not so clear that whether the task of meme captioning is strongly required, it seems that there is a large overlap on the task of meme captioning and visual metaphor.  3 (Minor, not important). The results/values with \"+\" in Table 3 (i.e., removing part of input can improve the performance) are not discussed.",
+      "missing_references": "1. Do Androids Laugh at Electric Sheep? Humor \u201cUnderstanding\u201d Benchmarks from The New Yorker Caption Contest, ACL 2023.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

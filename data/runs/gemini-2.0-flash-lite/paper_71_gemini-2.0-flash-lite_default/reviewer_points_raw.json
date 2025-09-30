@@ -1,0 +1,386 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper proposes a hybrid method for predicting the winning stance in professional argumentative debates by combining argumentation theory concepts with Transformer-based architectures and neural graph networks. The method aims to address the lack of research in evaluating complete argumentative debates using NLP-based algorithms.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper identifies a gap in the research regarding the automatic evaluation of complete argumentative debates, particularly those involving professional debaters and human evaluations. The proposed hybrid approach is novel.",
+    "grounding": "Intro, Related Work",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing methods that address argument evaluation, especially those using NLP techniques. The delta between the proposed method and the closest baseline is not clearly established.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with methods that use only NLP algorithms and methods that use only argumentation theory concepts, as mentioned in the introduction. Also, compare with recent methods in argument mining and stance detection.",
+    "grounding": "Intro, Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What specific argumentation frameworks and semantics are used? 2. What are the details of the Transformer-based architectures and neural graph networks? 3. How is the hybrid approach implemented? 4. What is the dataset used for evaluation? 5. What metrics are used to evaluate the performance?",
+    "grounding": "Methodology, Experiments",
+    "facet": "clarity"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of the approach may be limited by the specific implementation details of the hybrid method and the dataset used. The generalizability of the method to different debate formats and topics is unclear.",
+    "grounding": "Methodology, Experiments",
+    "facet": "novelty"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": "Based on the current information, the paper shows promise but requires more evidence and clarity.",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a hybrid method for predicting the winning stance in natural language argumentative debates using a Graph Network (GN) architecture. The method combines Transformer-based sentence embeddings with a GN to analyze arguments. The results, presented in Table 1, show that the NaiveGN approach obtained the best results across all evaluation metrics.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly describes the GN architecture and its components, including node, edge, and global features, and the update functions (\u03d5 and \u03c1).",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a detailed explanation of how the GN model is initialized and how the features are defined for edges, nodes, and global information.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper presents results in Table 1, comparing the proposed NaiveGN approach with other baselines, including Argumentation Theory Baselines (ATBs) and NLP baselines, demonstrating the best performance of the NaiveGN.",
+    "grounding": "Table 1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the novelty of the method, as it builds upon existing GN architectures and Transformer-based embeddings.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a thorough analysis of the limitations of the proposed method, such as the reliance on the size of the corpus.",
+    "grounding": "Sec 5.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to demonstrate the contribution of each component of the proposed method (e.g., GN, Transformer embeddings).",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more in-depth analysis of the errors made by the model and the reasons behind them.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive are the results to the choice of Transformer-based sentence embeddings?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the impact of the size and quality of the training data on the performance of the model?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the proposed method compare to other state-of-the-art methods for debate outcome estimation?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations related to the size of the corpus and the reliance on existing NLP techniques.",
+    "grounding": "Sec 5.4",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented provide a visual representation of the proposed method and results. The clarity and effectiveness of the figures vary.",
+    "grounding": "Figures 1-2",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2, the aggregated confusion matrices, is well-labeled and supports the claims effectively.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure axes lack clear labels and units, potentially hindering comprehension.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add error bars to the confusion matrices in Figure 2 to show confidence intervals.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors represent in the confusion matrices?",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to overall performance metrics and do not provide detailed insights into the inner workings of the models.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on consent or privacy measures for the data used in the experiments.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on usage terms or ethical risks associated with the dataset.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a detailed description of the data sources, including any relevant licenses or terms of use.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "If the data involves human subjects, describe the consent process and any privacy measures taken.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly states the problem, the proposed solution, and the expected results.",
+    "grounding": "Abstract",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of the field and motivates the research.",
+    "grounding": "Introduction \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"hybrid method\" is used without a clear definition of what constitutes the hybridity. What specific components are combined and how?",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "clarity_terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'complete argumentative debates'. What are the characteristics that define a debate as 'complete'?",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "clarity_terminology"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the argumentation frameworks and semantics used in the hybrid method. Explain how they are integrated with the Transformer-based architectures and neural graph networks.",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the specific Transformer-based architectures and neural graph networks used. Specify the input and output of each component.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section or subsection dedicated to the methodology, detailing the specific steps of the proposed hybrid method.",
+    "grounding": "Introduction \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific argumentation frameworks and semantics are used?",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific Transformer-based architectures and neural graph networks used?",
+    "grounding": "Introduction \u00a71",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the 'winning stance' determined and evaluated?",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed methodology and specific model descriptions may hinder reproducibility.",
+    "grounding": "Methodology Section (missing)",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "summary",
+    "text": "Table 1 presents results for the automatic debate evaluation task. The table includes precision, recall, and weighted-F1 scores. However, the table lacks detailed statistical information.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The table reports averaged results from multiple runs, which is a good practice for reducing the impact of random initialization.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks information on standard deviations or confidence intervals, making it difficult to assess the reliability of the reported results. The table also does not specify the number of samples or trials.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to provide a measure of result variability. Add a column for the number of trials or samples used to generate the results.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the number of samples used for each evaluation metric? What statistical tests were used to compare the performance of different methods? What is the variance or standard deviation of the results?",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from Table 1 are limited by the absence of detailed statistical analysis.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential risks associated with the model's deployment, such as the spread of misinformation or the reinforcement of existing biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address fairness concerns, such as the potential for the model to discriminate against certain viewpoints or debaters.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for misuse of the model, such as its use to manipulate public opinion or to unfairly judge debates.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the broader societal impacts of the model, such as its potential effects on debate culture or education.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section discussing the potential for the model to be used to spread misinformation or to reinforce existing biases. Propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section discussing fairness considerations, such as the potential for the model to discriminate against certain viewpoints or debaters. Propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section discussing the potential for misuse of the model, such as its use to manipulate public opinion or to unfairly judge debates. Propose safeguards.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section discussing the broader societal impacts of the model, such as its potential effects on debate culture or education.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly highlights the gap in the literature regarding the automatic evaluation of professional argumentative debates, distinguishing its focus from existing work on online debates and individual argument evaluation (Intro, Related Work).",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper proposes a hybrid method combining argumentation theory (argumentation frameworks and semantics) with Transformer-based architectures and neural graph networks, which is a novel approach compared to methods relying solely on natural language features or abstract argumentation frameworks (Intro).",
+    "grounding": "Intro",
+    "facet": "method"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its method with existing approaches like those presented in [1] (DebateSum) or [2] (Disputool 2.0), which also address argument mining and analysis. A direct comparison, potentially using the same dataset or a subset, would strengthen the paper.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed discussion of the specific architectural choices within the Transformer-based and neural graph network components. It is unclear how the argumentation framework is integrated with these neural components. More details are needed to understand the novelty of the method.",
+    "grounding": "Methods Section",
+    "facet": "method"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments comparing the proposed method with the methods in [1] and [2]. This could involve evaluating the performance on a shared dataset (e.g., DebateSum) or a new dataset of professional debates. The evaluation should include metrics like accuracy in predicting the winning stance and potentially argument mining performance.",
+    "grounding": "Evaluation Section",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study to analyze the contribution of each component of the hybrid method (argumentation theory, Transformer, and graph networks). This would help to understand the impact of each component on the overall performance and demonstrate the effectiveness of the hybrid approach.",
+    "grounding": "Methods/Results Section",
+    "facet": "experiment"
+  }
+]

@@ -1,0 +1,224 @@
+[
+  {
+    "kind": "weakness",
+    "text": "No information on dataset consent or privacy is provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "Usage terms and ethical risk assessment are missing.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Explicitly state the data sources and the licensing terms for the dataset.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section addressing potential ethical risks and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details on how consent was obtained for the use of any human-written text in the dataset, or explain why consent was not required.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent_privacy"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented aim to visualize the performance of different AI-generated text detection methods. The figures include bar charts and range plots to compare the performance of various models and detection techniques across different datasets and scenarios.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The figures effectively support the claims made in the text by visually representing the performance differences between various detection methods. The use of different bar heights and ranges helps to illustrate the effectiveness of the proposed SeqXGPT method.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes in some figures lack clear labels and units, making it difficult to interpret the exact values being represented. The legends are missing or unclear, making it difficult to distinguish between different sentence origins and detection methods.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to the axes, including units where applicable. Include a comprehensive legend that clearly identifies the different sentence origins and detection methods. Consider using error bars to show confidence intervals in performance plots.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors or bar patterns represent in the visualization? What specific metrics are used to evaluate the performance of each method? How are the ranges in the plots determined?",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to overall performance metrics and do not provide detailed insights into the specific types of errors or the underlying reasons for the performance differences.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of various AIGT detection methods across different datasets and settings. The tables include performance metrics like Macro-F1, precision, and recall. However, the completeness of statistical information varies across tables.",
+    "grounding": "Tables 1-6",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 includes Macro-F1 scores, which is a good overall performance metric for multi-class classification.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Some tables lack crucial statistical information such as standard deviations or confidence intervals, making it difficult to assess the reliability of the results. The absence of p-values hinders the ability to determine the statistical significance of the observed differences between methods.",
+    "grounding": "Table 1, Table 3, Table 4, Table 5, Table 6",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to provide a measure of result variability. Add p-values to indicate the statistical significance of the differences in performance between the different methods. Clearly define all acronyms and abbreviations used in the table headers and captions.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific datasets used in each table, and what are their characteristics? What statistical tests were used to compare the performance of different methods and derive p-values? How were the confidence intervals calculated? Are the datasets balanced in terms of the number of AI-generated and human-written sentences/documents?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets used. The generalizability of the findings to other datasets or domains is not fully addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a sentence-level AI-generated text (AIGT) detection challenge, proposing a novel method called SeqXGPT. The method utilizes log probability lists from white-box LLMs as features and employs convolution and self-attention networks. The paper presents a new dataset and evaluates SeqXGPT against existing methods, demonstrating improved performance in both sentence and document-level detection.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the problem of AIGT detection and motivates the need for sentence-level detection.",
+    "grounding": "Intro \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the limitations of existing methods for sentence-level AIGT detection.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"SeqXGPT\" is introduced without a clear explanation of its components or the 'X' in the name. The connection to speech processing needs further explanation.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of \"wave-like features\" and how they relate to log probability lists.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a clear explanation of the dataset construction process.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the 'X' in SeqXGPT and its significance.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Elaborate on the connection between log probability lists and \"wave-like features,\" perhaps with a visual example.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section or subsection detailing the dataset creation process, including the LLMs used and the criteria for sentence selection.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define all acronyms at first use.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific white-box LLMs were used to generate the log probability lists?",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the sentence category determined from the word-wise categories?",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific architectures of the convolution and self-attention networks used in SeqXGPT?",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed architectural specifications and dataset construction details may hinder reproducibility.",
+    "grounding": "Methods, Dataset",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent in the provided text.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-structured, but requires improvements in clarity, especially regarding the methodology and dataset details. The introduction and motivation are strong.",
+    "grounding": "Abstract, Intro \u00a71",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "summary": "This paper introduces a novel task of empathic similarity and presents a new dataset, EMPATHICSTORIES, along with a model fine-tuned on this dataset. The user study provides compelling evidence of the model's ability to improve empathy compared to a semantic similarity baseline. However, the paper lacks crucial details for reproducibility and needs to address potential biases and limitations.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel task of empathic similarity and creates a new dataset, EMPATHICSTORIES, which is a valuable contribution to the field.",
+      "grounding": "Intro, Abstract",
+      "facet": "novelty, dataset"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper demonstrates performance gains across multiple metrics (Kendall's Tau, Spearman's correlation) when fine-tuning SBERT and BART with the EMPATHICSTORIES dataset, and validates the real-world efficacy of the model in a user study.",
+      "grounding": "Table 4, Sec 9",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear overview of the annotation pipeline, and Table 4 includes a variety of metrics to evaluate model performance, providing a comprehensive view of the results.",
+      "grounding": "Fig 2, Table 4",
+      "facet": "figures, tables"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks crucial details for reproducibility, including the use of seeds, variance across runs, and a dedicated section for model architecture and training details.",
+      "grounding": "Section 6, Sec 3.1",
+      "facet": "reproducibility, organization"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of the learned story representations and lacks a detailed comparison with relevant existing work on story similarity, especially those that consider emotional aspects.",
+      "grounding": "Sec 9, Related Work",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack crucial statistical information (standard deviations, confidence intervals, p-values), and figures lack clear axis labels and units, making it difficult to assess the significance of the findings.",
+      "grounding": "Tables 1, 2, 5, 6, 7, 8, 9, 10, Figs 3, 4",
+      "facet": "tables, figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not adequately address potential biases in the dataset or model, and the potential for misuse, including creating echo chambers or manipulating emotions.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness, risks, misuse"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code, data, and a detailed description of the experimental setup, including random seeds and variance across multiple runs.",
+      "grounding": "Code repository, data repository, Appendix",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a more detailed comparison with existing methods for story similarity, especially those that consider emotional aspects, and conduct ablation studies to analyze the contribution of each feature.",
+      "grounding": "Related Work, Sec 3.2, Sec 4",
+      "facet": "methodology"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details about the model architecture, training process, and hyperparameters used, and include a dedicated section or subsection detailing these aspects.",
+      "grounding": "Sec 3.1, §1",
+      "facet": "organization"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations and confidence intervals for all reported metrics, and add p-values to indicate statistical significance of performance differences. Add clear labels to the axes of Figures 3 and 4, including units where applicable.",
+      "grounding": "Tables 1-10, Figs 3, 4",
+      "facet": "tables, figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Address potential biases in the dataset and model, and discuss mitigation strategies to ensure fairness. Include a detailed discussion of potential misuse cases.",
+      "grounding": "Conclusion",
+      "facet": "fairness, misuse"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

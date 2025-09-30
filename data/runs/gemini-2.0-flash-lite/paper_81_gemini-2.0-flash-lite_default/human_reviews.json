@@ -1,0 +1,81 @@
+[
+  {
+    "rid": "LChcaDLGVm",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes FLATS, a principled method for OOD detection based on likelihood ratio. FLATS is shown to enhance other OOD detection methods by incorporating out-distribution density estimation.",
+      "reasons_to_accept": "1. Backed by theoretical analysis, this paper introduce a novel principled OOD detection method FLATS that measures OOD-ness of an input through the likelihood ratio between OOD distribution and IND distribution.\n2. Moreover, FLATS can serve as a general framework which is able to enhance other OOD detection methods by considering OOD density estimation.\n3. A new SOTA on popular benchmarks is established. And the experiments and analysis are comprehensive and convincing.",
+      "reasons_to_reject": "1. The relation between this work and \"Likelihood Ratios for Out-of-Distribution Detection\" should be discussed. Likelihood ratio is used in both of these works.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "A7GhRxaWJY",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "topic: detecting out-of-distribution (OOD) instances in NLP models main contribution: they think the Sota feather-based OOD detection methods such as MAha, and KNN is suboptimal since they only estimate in-distribution density, to address this issue, they propose FLATS, which can incorporate out-distribution density.",
+      "reasons_to_accept": "they propose FLATS, which can incorporate out-distribution density.",
+      "reasons_to_reject": "1) The rationale behind opting for RoBERTa, as opposed to other language models with varying parameters like T5-3b, 11b, llama-3b, and 7b. It is crucial to present a comprehensive comparison with these different language models. \n2) In Section 5, it is recommended to provide a short explanation for the superiority of this method.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "YLAuVQWLr8",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "OOD detection is an important topic but most of the previous works are empirical. This paper demonstrates a theoretical understanding that uses the likelihood ratio between out-distribution and in-distribution to measure the extent of OOD. Based on this, the authors claim that SOTA methods are suboptimal because they only estimate the in-distribution density. The authors propose a method named FLATS, which outperform previous methods on several OOD detection benchmark.",
+      "reasons_to_accept": "1. This paper is well-written and organized. \n2. This paper has contributions from both theoretical and empirical perspectives: Not only provides a theoretical understanding and analyses of previous methods but also proposes a novel method that outperforms previous methods.",
+      "reasons_to_reject": "1. Experimental validation is weak, only considering Roberta as the backbone.",
+      "questions_for_the_authors": "1. Have you conducted experiments on other backbones or other than NLP classification tasks?",
+      "missing_references": "no",
+      "typos_grammar_style_and_presentation_improvements": "no",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "UYRIg2cONc",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper addresses the issue of detecting out-of-distribution (OOD) instances within the realm of Natural Language Processing (NLP) models. The paper's primary contributions are centered around the introduction of a novel methodology designed to assess the \"OOD-ness\" of a given test case. This is achieved through the application of a likelihood ratio, which juxtaposes the probabilities associated with out-of-distribution and in-distribution contexts. The paper posits that current state-of-the-art (SOTA) methods exhibit suboptimal performance due to their exclusive focus on estimating in-distribution density. In response, the paper presents a principled solution for OOD detection rooted in the concept of a likelihood ratio, denoted as FLATS. This framework holds the potential to serve as a versatile foundational structure, effectively bolstering various other OOD detection methodologies through the incorporation of out-distribution density.",
+      "reasons_to_accept": "1. The paper's strength lies in its rigorous approach to addressing out-of-distribution (OOD) detection, introducing the well-grounded feature-based likelihood ratio score substantiated by Theorem 1. The extension of FLATS to diverse feature-based OOD scores highlights its versatility and departure from existing methods, showing potential for real-world applications.\n2. The experimental results underscore its contributions, as FLATS establishes itself as the new OOD detection state-of-the-art (SOTA), surpassing benchmarks like KNN and Maha. Experiments with various Pin and Pout estimation approaches further emphasize FLATS' adaptability and robustness, significantly boosting the paper's impact on the NLP community.",
+      "reasons_to_reject": "1. The method's reliance on likelihood ratio-based OOD scores, as justified by Theorem 1, warrants closer scrutiny. The application of energy-based models (EBMs) for parameterization introduces an inherent complexity, raising questions about the scalability and efficiency of the proposed framework, particularly in real-world applications.\n2. The presented comparison with the KNN and Maha approaches is indicative, but a more detailed analysis of the strengths and weaknesses of FLATS in comparison to a broader spectrum of methods, including both traditional and contemporary alternatives, would contribute to a more nuanced understanding of its efficacy.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

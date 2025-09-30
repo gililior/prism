@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "olmWcRRdVR",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper studies generative language models for designing clinical trials, focusing on inclusive and exclusive criteria generation. The authors propose a novel prompting-based framework that they train from scratch using existing clinical trial announcements.  The model outputs both clinical trial criteria and the reasoning steps used to generate the criteria.",
+      "reasons_to_accept": "- important medical application - good performance - several analyses are performed to give insight into the results",
+      "reasons_to_reject": "- The paper is quite dense and hard to follow (for instance, the neural prompt section is quite difficult for readers who aren't prompting experts) - It's not clear if the data and code will be made available - There are no details about the implementation and experimental setup: nb of runs, hyperparameters,...",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "1: Could not reproduce the results here no matter how hard they tried."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "1: Not my area, or paper was hard for me to understand. My evaluation is just an educated guess."
+    }
+  },
+  {
+    "rid": "0heuaY41cg",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes a method named AutoTrial to aid the design of clinical eligibility criteria using language models. The method contains three main technical features: instruction prompt tuning for controllable generation, scalable and efficient knowledge incorporation via in-context learning and multi-step reasoning. Extensive experiments show that this method outperforms many strong baselines by a large margin, and the generated criteria texts are fluent, coherent, clinically accurate and of high-quality.",
+      "reasons_to_accept": "1. This work shows the retrieved criteria from relevant trails as the exemplars could be used to improve the quality of generation. Ane the in-context exemplar serves as a good template for the model's multi-step reasoning outputs. \n2. A discrete and neural prompting approach is proposed to better solve the clinical trial design problem and the method outperforms many strong baselines. \n3. Ablation has been shown to justify the importance of RAG and Prompt module, and the MSR is shown to contribute in the model interpretability.",
+      "reasons_to_reject": "In the clinical trial setting, the coverage of the external knowledge base may not be great enough for all the possible queries. If the retrieval confidence is not good enough, how to facilitate the in-context learning abilities of language models?",
+      "typos_grammar_style_and_presentation_improvements": "sec 4.3 baseline methods",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "xWz8sukBka",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper introduces a novel task: the automation of clinical trial design, with a specific focus on eligibility criteria. The objective is to potentially aid the design of clinical trial protocols. The authors systematically address this task by defining the problem, creating a dedicated dataset, introducing a model termed \"AutoTrial,\" and rigorously assessing its performance.",
+      "reasons_to_accept": "The paper demonstrates novelty through the introduction of a new task: the automation of clinical trial design through the creation of a language model. This has the potential to aid clinical trial design, thus contributing to the advancement of drug development by increasing the likelihood of successful trials. The motivation for clinical trial protocol design, which is a challenging task, is effectively communicated. Overall, the paper is readable and understandable.  In terms of assessment, the authors evaluated their proposed model, considering a comprehensive array of baseline models and employing various metrics to portray its effectiveness. Given the novelty of this task, it is worth considering whether the chosen metrics provide the most optimal evaluation for this specific context, although seemed reasonable.",
+      "reasons_to_reject": "While the authors have motivated the need for a clinical trial automation process, the authors should be more careful in their word choice. A significant example to this end: it was mentioned in the first paragraph of the introduction, \"one area where generative LLMs have shown significant potential is in clinical trial protocol design\" without any reference which contradicts the paper's main claim that they are \"first to develop LLMs focusing on trial design\". The authors also pointed out that the models often lack the capability of \"ability to adapt expert instructions\" in the introduction without any reference or evidence to it. It is crucial to demonstrate how the generic models fail or at least provide a reference to this claim.\nThe authors are missing a number of key details in Section 3 , making it difficult to reproduce the paper's results. An example of this is in the pre-training of AutoTrial,  the authors used title, disease, treatment, etc. as the input (i.e. trial setup), however, did not mention the maximum length considered for the input. Generally, clinical trial documents are lengthy documents, and it is of utmost importance in this scenario.  While the importance of the \"maximum acceptable length\" parameter is acknowledged in Section 4.4, attributing potential performance discrepancies between exclusion and inclusion criteria to truncation, no discussion is presented on the length selected. Additionally, the paper lacks in-depth details about the model used, describing it merely as a \"decoder-based causal language modeling architecture.\"\nThe problem setup in Section 3.1 is not as clearly demonstrated as it could be. It would be highly beneficial if the different input attributes, such as 'targeting instruction,' 'reasoning steps,' and 'textual description of the given instruction,' were illustrated with a sample input. Given that the paper's primary focus revolves around 'the criteria of trials,' a list of potential criteria (e.g., age, gender, BMI, etc) for the eligibility section (inclusion/exclusion) would greatly aid the reader in comprehending the core concepts.\nIn summary, while the authors have effectively emphasized the need for clinical trial automation, they should revise the article providing missing details, particularly regarding model parameters, model specifications, and sample input demonstrations, which would greatly enhance the clarity and reproducibility of the paper.",
+      "questions_for_the_authors": "It would be interesting to see further clarification about the choice of evaluation metrics from the authors.",
+      "typos_grammar_style_and_presentation_improvements": "There are a few grammatical mistakes and reference issues. For example, in section 3.3 the authors referred to the dataset as section 3.1 which will 4.1. There is a spelling mistake in the title of section 4.3 ( 'mehtods'). There are styling issues throughout the paper while referring to different sections.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

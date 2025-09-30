@@ -1,0 +1,452 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the use of nine open-source offensive language identification models and the datasets used for training.",
+    "grounding": "Sec 3.1",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide details on the specific seeds used for training the models, which impacts reproducibility.",
+    "grounding": "Sec 3.1",
+    "facet": "methods"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the computational resources used for training and evaluation, including hardware and software versions.",
+    "grounding": "Sec 3.1",
+    "facet": "methods"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the challenges of offensive content moderation in political discourse, highlighting disagreements between machine and human moderators. It introduces a dataset and analyzes the interplay between style and content in potentially offensive posts.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a dataset for studying offensive content moderation in political discourse.",
+    "grounding": "Introduction, Table 2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The study highlights the disagreement between machine and human moderators on offensive content.",
+    "grounding": "Table 2, Figure 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the novelty of including independent political identities, as it is presented as one of the earliest attempts, but lacks a comparative analysis with existing work.",
+    "grounding": "Limitations",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper's claim that the dataset will open gates for modeling ideas is an overstatement without providing specific modeling ideas or preliminary results.",
+    "grounding": "Introduction",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the specific issues discussed in the dataset and their impact on the disagreement between moderators.",
+    "grounding": "Section 5.5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative analysis with existing work on political polarization to substantiate the claim of including independent political identities.",
+    "grounding": "Limitations",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the dataset compare to existing datasets in terms of size, diversity, and annotation quality?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific modeling ideas are envisioned for the dataset, and what preliminary results can be presented?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific criteria used by machine moderators to identify offensive content?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of their work, including the fine-grained political identities and the potential for malicious use of content filtering systems.",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates disagreement in offensive speech detection, focusing on political discourse. It conducts a large-scale noise audit of machine moderators and introduces a dataset on 'vicarious offense' to analyze the impact of political leanings on human moderation.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces the concept of 'vicarious offense' and a corresponding dataset, which appears to be a novel contribution to the field.",
+    "grounding": "Intro \u00a71.2, Related Work",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The study conducts a large-scale noise audit, which is a valuable approach to understanding the variability in machine and human moderation.",
+    "grounding": "Intro \u00a71.2, Related Work",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper needs to clarify the specific novelty of its noise audit approach compared to Kahneman et al. (2021) and other prior work on offensive speech classification.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should provide more details on the machine moderators used in the noise audit and the specific metrics used to evaluate their performance.",
+    "grounding": "Intro \u00a71.2, Sec 3",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with Sap et al. (2021) to highlight the specific advantages of the proposed approach, especially regarding the 'vicarious offense' perspective.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the dataset of 'vicarious offense', including its size, annotation guidelines, and inter-annotator agreement.",
+    "grounding": "Intro \u00a71.2",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does the introduction of 'vicarious offense' significantly improve the understanding of offensive speech compared to existing approaches?",
+    "grounding": "Intro, Related Work",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific implications of the findings for content moderation policies and practices?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "Are the machine moderators used in the noise audit representative of the current state-of-the-art in offensive speech detection?",
+    "grounding": "Intro \u00a71.2, Sec 3",
+    "facet": null
+  },
+  {
+    "kind": "limitation",
+    "text": "The novelty of the work hinges on the definition and impact of 'vicarious offense', which needs to be clearly defined and demonstrated.",
+    "grounding": "Intro, Related Work",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "6",
+    "grounding": "Based on the strengths and weaknesses identified. The novelty is present but needs further clarification and evidence.",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper details the use of nine offensive language identification models, trained on various datasets. The methodology includes dataset transformations and the use of BERT-LARGECASED and ROBERTA-BASE models. The paper lacks information on seeds and variance.",
+    "grounding": "Sec 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper specifies the datasets used for training, including their sources (Twitter, Facebook, Gab, Reddit, and YouTube) and the models employed (BERT-LARGECASED and ROBERTA-BASE).",
+    "grounding": "Sec 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the training of the models, making it impossible to assess the variance across multiple runs.",
+    "grounding": "Sec 3.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the computational environment used for training and evaluation, making it difficult to reproduce the results.",
+    "grounding": "Sec 3.1",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository with the training scripts, including the specific versions of the libraries used, and a requirements.txt or equivalent for environment setup. Specify the hardware used for training (e.g., GPU type, memory).",
+    "grounding": "Code/Data Availability",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the seed used for each experiment and the variance of the results (e.g., standard deviation) across multiple runs.",
+    "grounding": "Sec 3.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used publicly available, and if not, can the authors provide access or explain the process of obtaining them?",
+    "grounding": "Sec 3.1",
+    "facet": "data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What specific versions of the libraries (e.g., transformers, PyTorch, TensorFlow) were used for training and evaluation?",
+    "grounding": "Sec 3.1",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Were any specific pre-processing steps applied to the datasets, and if so, can the authors provide details and code?",
+    "grounding": "Sec 3.1",
+    "facet": "data availability"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the lack of information regarding the code, data, and environment used for the experiments.",
+    "grounding": "Sec 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": "Sec 3.1",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ethics_details",
+    "text": "The use of offensive language datasets raises ethical concerns regarding potential biases and the privacy of individuals whose data is included. The authors should address these concerns.",
+    "grounding": "Sec 3.1",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present a variety of visualizations, including agreement matrices, word clouds, temporal trends, distributions, and confusion matrices. The clarity and effectiveness of these figures vary.",
+    "grounding": "Figures 1-17",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 provides a clear representation of agreement between machine moderators using Cohen's kappa.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several figures lack clear axis labels, legends, and units, making it difficult to interpret the data. The use of colors is not always explained.",
+    "grounding": "Figures 3, 5-7, 9, 11-14",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to all axes, including units where applicable. Provide legends to explain the meaning of colors, symbols, and abbreviations used in the figures. Consider using more descriptive titles.",
+    "grounding": "Figures 3, 5-7, 9, 11-14",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to measure agreement in the agreement matrices (Figures 2-4)? What do the colors represent in Figures 11, 12, 13, and 14? What is the time unit used in Figure 8 and 9? What are the specific datasets used for the word clouds in Figures 5-7? What are the specific categories used in the confusion matrix in Figure 15?",
+    "grounding": "Figures 2-4, 5-7, 8, 9, 11-15",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on presenting aggregated results and do not provide detailed insights into individual comment analysis or the reasoning behind the models' decisions.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results on disagreement and performance across different annotation datasets and models. The quality varies across tables, with some lacking crucial statistical information.",
+    "grounding": "Tables 1-9",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 4 provides a clear overview of the datasets used, including instance counts, offensive percentages, and data sources.",
+    "grounding": "Table 4",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables, such as Tables 1 and 2, appear to be illustrative examples and lack quantitative statistical analysis. Tables 6, 7, and 8 present confusion matrices, but it is unclear if they include statistical significance.",
+    "grounding": "Tables 1, 2, 6, 7, 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations, confidence intervals, and p-values in Tables 1, 2, 6, 7, and 8 to quantify the significance of the observed differences and performance.",
+    "grounding": "Tables 1, 2, 6, 7, 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to compare the performance of machine moderators and human moderators? 2. How were the confidence intervals calculated for the reported metrics? 3. Are the differences in disagreement rates across datasets statistically significant (Table 5)? 4. What is the definition of 'OFF %' in Table 4?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets and models used in the study.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "This paper investigates disagreements between machine and human moderators on offensive speech in political discourse. It introduces a noise audit and the concept of 'vicarious offense' to analyze how political leanings affect perceptions of offensiveness.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly defines 'noise audit' and 'vicarious offense'.",
+    "grounding": "1.1 Definitions",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'vicarious offense' could be more precise. It's introduced but not fully defined in terms of the methodology.",
+    "grounding": "1.1 Definitions",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 1's caption is dense and could be clarified. The relationship between the example comment, the annotators, and the machine moderators needs better explanation.",
+    "grounding": "Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the methodology used for the noise audit, including the specific machine moderators and the criteria used for assessing offensiveness.",
+    "grounding": "1.1 Definitions, 3.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the role of political leanings in the analysis. How are political leanings measured or determined for human annotators?",
+    "grounding": "Abstract, 1.1 Definitions",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand on the limitations of the study. What factors might limit the generalizability of the findings?",
+    "grounding": "Conclusion",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How were the machine moderators selected, and what are their key characteristics?",
+    "grounding": "3.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What specific metrics are used to quantify the disagreement between moderators?",
+    "grounding": "Abstract, 1.1 Definitions",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the study account for the potential for annotator bias?",
+    "grounding": "1.1 Definitions",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's methodology, particularly the noise audit and the selection of machine moderators, is not fully described, which could hinder reproducibility.",
+    "grounding": "1.1 Definitions, 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "Yes. The paper discusses offensive content. The authors should ensure that the data and analysis are handled responsibly to avoid perpetuating harm or bias.",
+    "grounding": "Abstract",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Overall, the paper presents an interesting problem. The clarity can be improved by providing more details on the methodology and clarifying the role of political leanings.",
+    "grounding": "All",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's introduction of 'vicarious offense' as a novel perspective on offense is a key contribution, differentiating it from prior work like Sap et al. (2021).",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's comprehensive performance evaluation of offensive speech classifiers on political discourse in-the-wild is a significant contribution, as it addresses a gap in the existing literature.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should explicitly compare its findings with those of [1] Dallas Card et al. (2022), which analyzes political speeches. A direct comparison of the offensive speech detection performance on similar datasets would strengthen the paper.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "While the paper mentions using existing datasets, it does not explicitly compare its results with the state-of-the-art results on these datasets. A comparison with [2] Ranasinghe and Zampieri (2020) or other relevant papers on offensive language identification would be beneficial.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the performance of the proposed method with the methods used in [1] on a shared dataset of political discourse. This would provide a direct comparison of the methods.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate the performance of the proposed method on the dataset from [3] Chen et al. (2021) and compare it with existing offensive language identification methods. This would provide a comparison on a different dataset.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  }
+]

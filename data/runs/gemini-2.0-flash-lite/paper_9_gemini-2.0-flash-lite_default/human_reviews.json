@@ -1,0 +1,84 @@
+[
+  {
+    "rid": "SkuYMZFEYl",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper focuses on the task of multi-intent detection for dialogue systems applications. The authors expand upon prior work that utilizes two BERT networks to capture the semantics of utterances and intent labels to calculate the similarity between them for multi-intent detection. The authors argue that prior work ignores the complexity of the intent label embedding space thus failing to capture the semantic relation between individual utterance tokens and the intent labels. To address, this limitation the authors propose Multi-Intent Detection through Supervised Prototypical Contrastive Learning (PCMID) which utilizes a single BERT Encoder for constructing utterance and label embeddings. Additionally, PCMID utilizes conservative learning to optimize the representation of both intent labels and the utterance samples in the embedding space.",
+      "reasons_to_accept": "- PCMID outperforms existing approaches - The topic area is interesting and relevant to the dialogue systems community - Paper is easy to read and follow. Experiment settings are clearly defined and analysis is sufficient.",
+      "reasons_to_reject": "- Contribution is incremental and relies heavily upon the initialized base encoder. BERT out-of-the-box is terrible at producing sentence embeddings and as such needs to be pre-trained.",
+      "questions_for_the_authors": "- Are utterances and labels encoded jointly or separately? If jointly then this means that label representations cannot be re-used for new utterances.\n- Are MAB and the utterance encoder the same model?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "ZX90wMzgy3",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes PCMID, a novel Multi-Intent Detection framework enabled by Prototypical Contrastive Learning under a supervised setting. The PCMID model can learn multiple semantic representations of a given user utterance under the context of different intent labels in an optimized semantic space.",
+      "reasons_to_accept": "1. The paper conducts experiments on a real-word dataset. \n2. The paper is easy to follow. \n3. The paper provides the url of datasets. \n4. The paper provides introduction of baselines.",
+      "reasons_to_reject": "1. You should compare your model with more recent models [1-5]. \n2. Contrastive learning has been widely used in Intent Detection [6-9], although the tasks are not identical. I think the novelty of this simple modification is not suitable for EMNLP. \n3. You should provide more details about the formula in the text, e.g. $\\ell_{BCE}$ ,even if it is simple, give specific details. \n4. You don't provide the value of some hyper-parameters, such as \u03c4. \n5. The Figure 1 is blurry, which affects reading.\n[1] Qin L, Wei F, Xie T, et al. GL-GIN: Fast and Accurate Non-Autoregressive Model for Joint Multiple Intent Detection and Slot Filling[C]//Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). 2021: 178-188.\n[2] Xing B, Tsang I. Co-guiding Net: Achieving Mutual Guidances between Multiple Intent Detection and Slot Filling via Heterogeneous Semantics-Label Graphs[C]//Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. 2022: 159-169.\n[3] Xing B, Tsang I. Group is better than individual: Exploiting Label Topologies and Label Relations for Joint Multiple Intent Detection and Slot Filling[C]//Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. 2022: 3964-3975.  [4] Song M, Yu B, Quangang L, et al. Enhancing Joint Multiple Intent Detection and Slot Filling with Global Intent-Slot Co-occurrence[C]//Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. 2022: 7967-7977.\n[5] Cheng L, Yang W, Jia W. A Scope Sensitive and Result Attentive Model for Multi-Intent Spoken Language Understanding[J]. arXiv e-prints, 2022: arXiv: 2211.12220.\n[6] Liu H, Zhang F, Zhang X, et al. An Explicit-Joint and Supervised-Contrastive Learning Framework for Few-Shot Intent Classification and Slot Filling[C]//Findings of the Association for Computational Linguistics: EMNLP 2021. 2021: 1945-1955.\n[7] Qin L, Chen Q, Xie T, et al. GL-CLeF: A Global\u2013Local Contrastive Learning Framework for Cross-lingual Spoken Language Understanding[C]//Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2022: 2677-2686.\n[8] Liang S, Shou L, Pei J, et al. Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding[C]//Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing. 2022: 9903-9918.\n[9] Chang Y H, Chen Y N. Contrastive Learning for Improving ASR Robustness in Spoken Language Understanding[J]. arXiv preprint arXiv:2205.00693, 2022.",
+      "questions_for_the_authors": "Can you provide more analysis about figure 2? \nYou should compare your work with more recent SOTA to improve Soundness.",
+      "missing_references": "-",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "60E8WXFHcE",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Multi-intent detection is closer to the reality of complex situations and is more challenging than single-intent detection. This work proposes PCMID to model the semantics between individual utterance tokens and the intent label words, and achieves state-of-the-art performance on four datasets. In addition, this work constructs a multi-intent detection dataset",
+      "reasons_to_accept": "1.The structure of the paper is clear and easy to read; 2.The results of the experiment are detailed and the results have been analyzed in detail in various ways.",
+      "reasons_to_reject": "1. Failed to write about the shortcomings of previous multi-intent detection work in the abstract, simply stating that multi-intent detection missions are closer to the real world, the abstract failed to excite me; 2. The introduction does not summarize the work of the thesis well enough to indicate the innovative nature of the thesis; 3. The paper is redundant, with large parts of previous work (e.g. 3.3, etc.) in the introduction to the methodology, which should focus on the problem to be solved and how it was solved; 4. The introduction mentions that PCMID is lighter than previous frameworks, which should be reflected in the later paper by reporting the number of different model parameters and highlighting the advantages of PCMID; 5. There are some errors in detail, such as: spelling of words, formulas without punctuation, and full names that appeared in the previous text do not need to be repeated and explained when abbreviations are used in the later text. It is recommended that you read the entire text carefully and check it thoroughly.",
+      "ethical_concerns": "No",
+      "questions_for_the_authors": "When selecting the baseline, you chose a number of models that do joint training for intent detection and slot filling, so why not a few more models that only do multiple intent detection?"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "PDhXnojEYM",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper talks about an important issue of real-world dialog systems, where the utterances can be crafted with multi-intent which may or may not be nested. This paper showcases a new way of doing multi-intent detection \u2013 PCMID that is a novel Multi-Intent Detection framework enabled by Prototypical Contrastive Learning under a supervised setting. The authors have clearly showcased their approach and explained the architecture. This work has been tested on 3 public datasets \u2013 MixATIS, MixSNIPS, and FSPS; and one private dataset CREDIT16. The authors have demonstrated slight to moderate improvement across all the datasets using this approach.",
+      "reasons_to_accept": "\u2022\tThe authors did a good job explaining the approach in detail, and the paper is written cleanly with very few minor typos \u2013 such as different types of double quotations.\n\u2022\tThis is a very important problem statement and the conversational agents getting more complex day by day and the utterances becoming trickier.  \u2022\tThe method is novel.",
+      "reasons_to_reject": "\u2022\tIt\u2019s better to have a dataflow diagram with examples from any of the datasets used, which helps to follow the paper better.\n\u2022\tIt\u2019s a supervised method, which is very specific to the tasks. It will be very hard to use it in any other tasks, as it requires an extensive amount of data-collection and annotation. No comparison is given with LLMs performance on these datasets or even zeroshot comparisons across the datasets (e.g., trained on mixATIS and tested on MixSNIPS). It helps to understand the robustness of this approach.   \u2022\tPerformance improvements are very slight on all the datasets except MixATIS.",
+      "questions_for_the_authors": "Please address the points under weakness along with the following questions: \u2022\tCould you please explain how the slots are processed? as I found most of the discussions are based on intents. The examples from table-3 are also only intents. So curious to know, how slots are extracted.\n\u2022\tQualitative studies over predicted outputs with examples (not only on numbers) will be better to understand",
+      "typos_grammar_style_and_presentation_improvements": "- double quotation marks are not consistent - Many concepts can be moved from section 3 to a separate Background section, such as SCL.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

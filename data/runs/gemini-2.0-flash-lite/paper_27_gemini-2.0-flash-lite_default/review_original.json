@@ -1,0 +1,126 @@
+{
+  "summary": "This paper introduces LEAP, a novel system for multi-step logical reasoning that incorporates explicit planning into the inference procedure. The paper demonstrates competitive performance against GPT-3 and other methods on standard datasets, but lacks clarity in articulating performance gains and addressing potential limitations.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "LEAP introduces a novel approach to multi-step logical reasoning by integrating explicit planning into the inference procedure, addressing a gap in existing LM-based systems.",
+      "grounding": "Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "System-B significantly outperforms the base system and T5 model on Entailment Bank Version-I, as shown by ROC curves and AUROC values.",
+      "grounding": "Figure 5a, Table 1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides details on hyperparameter tuning and data statistics in Appendix C, and includes 95% bootstrap confidence intervals in the tables, indicating an attempt to provide a measure of statistical uncertainty.",
+      "grounding": "Appendix C, Table 1, Figure 5, Figure 6, Figure 8",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly outlines the problem, the proposed solution (LEAP), and the contributions of the paper.",
+      "grounding": "Abstract, §1",
+      "facet": "organization"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks clear articulation of the specific baselines and the magnitude of performance improvements, making it difficult to assess the significance of the results. The paper also lacks details on the effectiveness of the training strategy to mitigate model exploitation.",
+      "grounding": "Abstract, Sec 3.3",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The axes in figures (5b, 5c, 6b, 6c) lack clear labels and units, hindering result interpretation.",
+      "grounding": "Figures 5b, 5c, 6b, 6c",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide information on dataset licensing, usage terms, consent, or privacy considerations.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'model exploitation', potentially leading to ambiguity.",
+      "grounding": "§1, 'Why is it challenging?'",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential misuse cases, fairness considerations, or broader impacts.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not mention the use of seeds for the experiments and the variance across multiple runs is not reported.",
+      "grounding": "Section 6.1, Appendix C",
+      "facet": "reproducibility"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include the random seeds used for all experiments and report the variance (e.g., standard deviation) across multiple runs.",
+      "grounding": "Section 6.1, Appendix C",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a link to the code repository and include a requirements.txt or a similar file to specify the environment.",
+      "grounding": "Code/Data Availability",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more in-depth analysis of the training strategy, including ablation studies to demonstrate its effectiveness in mitigating model exploitation and its impact on overall performance.",
+      "grounding": "Sec 3.3",
+      "facet": "originality"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Ensure all axes are clearly labeled with units and what they represent.",
+      "grounding": "Figures 5, 6",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section detailing the datasets used, their licenses, and any usage restrictions.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a clear description of the table structure, including column headers and the specific metrics presented. Include standard deviations, confidence intervals, and p-values to indicate statistical significance of the results.",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a concise definition of 'model exploitation' early in the introduction.",
+      "grounding": "§1, 'Why is it challenging?'",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section to discuss potential misuse, fairness considerations, and broader impacts. Detail mitigation strategies for identified risks.",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an ablation study to isolate the impact of explicit planning and the proposed training method compared to Creswell et al. (2023) by removing the planning component and/or the training strategy.",
+      "grounding": "Sec 6.3",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

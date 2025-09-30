@@ -1,0 +1,434 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper presents experiments on the Entailment Bank dataset, evaluating different systems for logical reasoning. The paper provides some details on training and evaluation, including hyperparameter tuning and data statistics. However, the paper lacks details on seeds and variance.",
+    "grounding": "Sections 6.1, Appendix C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides details on hyperparameter tuning and data statistics in Appendix C.",
+    "grounding": "Appendix C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments. The variance across multiple runs is not reported.",
+    "grounding": "Section 6.1, Appendix C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments. Report the variance (e.g., standard deviation) across multiple runs.",
+    "grounding": "Section 6.1, Appendix C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository. Include a requirements.txt or a similar file to specify the environment.",
+    "grounding": "Code/Data Availability",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Were the experiments repeated multiple times with different random seeds? If so, what were the results?",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used publicly available? If not, can the authors provide access to the datasets?",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of information about the random seeds and the variance across multiple runs makes it difficult to assess the reproducibility of the results.",
+    "grounding": "Section 6.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper evaluates SLM models on the Entailment Bank dataset, comparing them against baseline models and other methods. The results are presented with ROC curves and accuracy metrics, with System-B showing the best performance. The paper also includes analyses on robustness to training data size and the impact of regularization.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "System-B significantly outperforms the base system and T5 model on Entailment Bank Version-I, as shown by ROC curves and AUROC values (Fig 5a, Table 1).",
+    "grounding": "Figure 5a, Table 1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "System-B performs as well as GPT-3-davinci (F1 of 0.89) on Entailment Bank Version-I (Table 1).",
+    "grounding": "Table 1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that explicit planning is helpful for text-based multi-step logical reasoning, but the results of other methods are orthogonal to this finding (Sec 6.1).",
+    "grounding": "Sec 6.1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that the regularization term helps the verification model, but the evidence is limited to the MNLI dataset (Sec 6.1).",
+    "grounding": "Sec 6.1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the adversarial selection of non-provable goals to ensure the robustness of the evaluation.",
+    "grounding": "Evaluation-I",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a more detailed comparison of the performance of System-B with and without the regularization term on the Entailment Bank dataset.",
+    "grounding": "Analysis-II",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does System-B's performance vary with different sizes of the training data on Entailment Bank Version-II?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific hyperparameter settings used for the T5 model?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper acknowledges the limitations of System-A due to its high proof scores, leading to a high rate of false positives (Sec 6.1).",
+    "grounding": "Sec 6.1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces LEAP, a novel system for multi-step logical reasoning that incorporates explicit planning into the inference procedure, addressing a gap in existing LM-based systems.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions LEAP within the context of existing LM-based logical reasoning systems, highlighting the novelty of incorporating explicit planning.",
+    "grounding": "Intro, Sec 5",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims significant performance improvements, but the specific baselines and the delta in performance are not clearly articulated. The paper mentions outperforming 'other competing methods' but lacks specific details on which methods are being compared against and the magnitude of the improvements.",
+    "grounding": "Abstract",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper mentions a training strategy to mitigate model exploitation, but the details and effectiveness of this strategy are not fully explained, and the comparative advantage over other training methods is unclear.",
+    "grounding": "Abstract, Sec 3.3",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed comparison with the most relevant and recent LM-based logical reasoning systems, quantifying the performance gains of LEAP.",
+    "grounding": "Related Work, Sec 5",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more in-depth analysis of the training strategy, including ablation studies to demonstrate its effectiveness in mitigating model exploitation and its impact on overall performance.",
+    "grounding": "Sec 3.3",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative analysis of LEAP's performance with and without the planning component to highlight the contribution of explicit planning.",
+    "grounding": "Sec 3.2",
+    "facet": "originality"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific baselines used for comparison, and what are the exact performance metrics (e.g., accuracy, F1-score) on each dataset?",
+    "grounding": "Abstract",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the proposed training strategy compare to other adversarial training methods or regularization techniques used in LM-based reasoning?",
+    "grounding": "Sec 3.3",
+    "facet": "originality"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost of the planning process, and how does it scale with the complexity of the reasoning tasks?",
+    "grounding": "Sec 3.2",
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the effectiveness of the planning and the training strategy, which needs to be validated with more detailed experiments and comparisons.",
+    "grounding": "Sec 3",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented appear to be relevant to the claims, but lack detailed descriptions and clear labeling.",
+    "grounding": "Figures 5, 6, 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The figures (5a, 6a) include ROC curves, which are appropriate for the evaluation.",
+    "grounding": "Figures 5a, 6a",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes in the figures (5b, 5c, 6b, 6c) lack clear labels and units, making it difficult to interpret the results.",
+    "grounding": "Figures 5b, 5c, 6b, 6c",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Ensure all axes are clearly labeled with units and what they represent (e.g., 'Accuracy' or 'False Positive Rate').",
+    "grounding": "Figures 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different lines or markers represent in the ROC and Acc curves?",
+    "grounding": "Figures 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to performance metrics and do not provide insights into the reasoning process.",
+    "grounding": "Figures 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on dataset licensing or usage terms is provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on consent or privacy considerations is provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the datasets used, their licenses, and any usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address privacy considerations and consent mechanisms if applicable.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results of different systems on the Entailment Bank dataset. The tables include performance metrics such as AUROC, AUACC, and F1 scores. However, the provided text lacks detailed information about the structure and content of the tables, making a thorough assessment difficult.",
+    "grounding": "Table 1, Figure 5, Figure 6, Figure 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The text mentions the use of 95% bootstrap confidence intervals (CFs) in the tables, which indicates an attempt to provide a measure of statistical uncertainty.",
+    "grounding": "Table 1, Figure 5, Figure 6, Figure 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The text does not provide enough information about the structure and content of the tables. It is unclear what metrics are presented in each table, and whether all necessary statistical information (e.g., standard deviations, confidence intervals, p-values) is included. The text only mentions AUROC, AUACC, and F1 scores.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a clear description of the table structure, including column headers and the specific metrics presented. Include standard deviations, confidence intervals, and p-values to indicate statistical significance of the results.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What are the exact metrics presented in Table 1? 2. What statistical tests were used to compare the performance of different systems? 3. Are the confidence intervals in the tables based on bootstrapping or other methods? 4. Are the F1 scores presented with confidence intervals or standard deviations? 5. How were the optimal thresholds for F1 score calculation determined?",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the Entailment Bank dataset and the specific experimental setup described in the paper. The generalizability of the results to other datasets or tasks is not addressed.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces LEAP, a novel language model-based system for multi-step logical reasoning that incorporates explicit planning during inference. It addresses the challenge of model exploitation in planning and proposes a training strategy to mitigate it. The system is evaluated on standard datasets, demonstrating competitive performance compared to larger models.",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly outlines the problem, the proposed solution (LEAP), and the contributions of the paper.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a good overview of the motivation behind using planning in logical reasoning, drawing parallels to other AI fields.",
+    "grounding": "\u00a71, 'Why planning?'",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'model exploitation' is introduced without a precise definition, potentially leading to ambiguity. Clarification is needed.",
+    "grounding": "\u00a71, 'Why is it challenging?'",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation table, which would improve readability, especially for the inference algorithm and training strategy.",
+    "grounding": "Throughout the paper",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'model exploitation' early in the introduction.",
+    "grounding": "\u00a71, 'Why is it challenging?'",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table in the appendix or within the relevant sections to define key variables and symbols used in the algorithms.",
+    "grounding": "\u00a73.1, \u00a73.2, \u00a73.3",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does LEAP's beam-search-style inference algorithm (section 3.1) specifically incorporate the planning process?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific architectural biases that lead to model mistakes?",
+    "grounding": "\u00a71, 'Why is it challenging?'",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "Can you provide more details on the adversarial training strategy (section 3.3)?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the inference algorithm and training strategy is not detailed enough to reproduce the results without further information.",
+    "grounding": "\u00a73.1, \u00a73.2, \u00a73.3",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential misuse cases, such as generating misleading information or automating biased decision-making.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss fairness considerations, such as potential biases in the training data or model.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss broader impacts, such as the impact on education or the automation of complex tasks.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section to discuss potential misuse, fairness considerations, and broader impacts. Detail mitigation strategies for identified risks.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly distinguishes its contributions by integrating explicit planning into LM-based reasoning systems and designing a training method to mitigate model exploitation, which is complementary to prior work.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explicitly states that it significantly outperforms other competing methods on multiple standard datasets and performs competitively compared to GPT-3 despite having a much smaller parameter size.",
+    "grounding": "Intro",
+    "facet": "performance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper mentions comparison with Creswell et al. (2023) in section 6.3, but it would be beneficial to have a more detailed comparison, possibly including an ablation study to isolate the impact of the proposed planning and training methods.",
+    "grounding": "Sec 6.3",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper mentions that it tried the approach of translating natural language statements into formal logic expressions and then using a formal logic inference engine, but the details are in Appendix C.3. It would be beneficial to have a more detailed comparison with this approach.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the impact of explicit planning and the proposed training method compared to Creswell et al. (2023) by removing the planning component and/or the training strategy.",
+    "grounding": "Sec 6.3",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the proposed method with the approach of translating natural language statements into formal logic expressions and then using a formal logic inference engine in more detail, including quantitative results.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  }
+]

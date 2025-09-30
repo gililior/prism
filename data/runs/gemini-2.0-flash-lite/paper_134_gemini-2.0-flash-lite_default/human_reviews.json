@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "frWd8cEKmp",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes an annotation tool and protocal to annotate program semantics with natural language.",
+      "reasons_to_accept": "The authors contributed a dataset and an annotation protocol.",
+      "reasons_to_reject": "- The motivation is unclear to me, at least from a practical engineering perspective (e.g., to build an actually useable system). As the authors pointed out in L120, it was actually unclear how such a system would scale to more general general applications that have external libraries, which are very common in real-life applications.  - There might be computational linguistic/cognitive science motivations, though, and I am not qualified to judge. I am a bit worried that, by restricting our attention to a closed environment, we are missing the opportunity of collecting data on how language can be used to describe program semantics in a wider range of context.",
+      "questions_for_the_authors": "A. The annotation in Figure 2 looks like pseudo code instead of natural language. Have you found any linguistically interesting annotations that do not look like templates?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "N/A: Doesn't apply, since the paper does not include empirical results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "Y0fJXCe7y6",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper's main contribution is a dataset containing fragments of standalone Python programs annotated with natural language preconditions and postconditions in a manner analogous to Hoare triples. The authors also contribute their annotation tool.\nThis resource is intended to support the development of programming assistants with improved understanding of code semantics. From the structure of the data, it appears the authors envision a system with the ability to infer an informal \"mental model\" of the behavior of a piece of code, and interrogate that model at various levels of granularity to provide improved consistency and/or explainability.",
+      "reasons_to_accept": "As the authors note in their motivation, scraping open-source repositories for comments leads to a few issues with the resulting data: comments don't cover all semantic levels of detail, and open-source projects often have complex dependencies that make it difficult to execute them in order to obtain ground-truth semantics. The proposed annotation scheme addresses the former, and the latter problem is addressed (at least in the authors' HTL dataset) by choosing to annotate standalone programs. In principle, addressing these issues should make the resulting resource useful to the community.",
+      "reasons_to_reject": "I don't see any issues in the proposed annotation scheme fundamental enough to merit rejection. However, the dataset (from what I can tell) appears to cover only 20 programs of the source dataset's ~400 (Schuster et al., 2021). Based on the histogram in Figure 3, the dataset as a whole contains 209 annotated triples. This restricted scale limits the usefulness of the primary contribution.",
+      "questions_for_the_authors": "A: In your annotation tool, is it possible to select previous annotations (by span) and revise them?",
+      "typos_grammar_style_and_presentation_improvements": "There are two orphans (single trailing lines across a page boundary): one on line 131 and one on line 270.\nPlease include some data statistics - at least the number of annotated triples + programs. The distribution of annotated code span lengths would be nice to see.\nIt's a little annoying to have to download the files individually from the Zenodo interface - it would be good to also provide them as a single archive!",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "NDeU2Vh4gE",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents a new dataset of **natural-language annotations** of program semantics (in the forms of pre- and post-conditions).",
+      "reasons_to_accept": "+ A new bi-modal dataset that fills in the gap between informal annotations (e.g., code comments) and formal annotations (e.g., programmatic predicates)",
+      "reasons_to_reject": "- Lack of clear motivation for building the dataset (HTL): What are the downstream impacts of this dataset?  - No validation of annotation quality: How reliable are the annotations?\n- No in-depth descriptions of the annotated dataset: What are the distributions of these annotations? Are there any patterns and categories? Any artifacts or shortcuts?",
+      "questions_for_the_authors": "A. Why 'self-contained' and 'reason locally' should be desiderata if they fundamentally limit what types of programs to annotate? As the authors claimed, \"Consequently our derived HTL dataset is subject to the same limitations and as such its instances are not representative of many real-world programs.\". If that is the case, what are the downstream impacts of this dataset?\nB. How can HTL augment existing large-scale bi-modal datasets scraped from GitHub? The paper conjectures that a language model can be fine-tuned with HTL but does not provide even preliminary results of how such fine-tuning can lead to a better LM.\nC. What are the main benefits of using natural language to annotate pre- and post-conditions if many can be easily translated to programmatic predicates? For example, in Figure 2, \" 'f' is a string\" can be easily translated to `type(f) == str`.\nD. Could you provide more in-depth qualitative and quantitative descriptions of HTL dataset?",
+      "typos_grammar_style_and_presentation_improvements": "- Section 2, Dataset construction: The narrative can be straight to the point. Explain why you chose \"Programming Puzzles\" first and then exclude other alternatives.\n- Figure 3: Using a pie chart would be clearer.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "N/A: Doesn't apply, since the paper does not include empirical results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

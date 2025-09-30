@@ -1,0 +1,120 @@
+{
+  "summary": "This paper introduces a novel, large-scale, human-annotated dataset for hallucination and omission detection in machine translation, addressing a critical gap in the field. The authors re-evaluate existing methods on this new dataset, revealing limitations of previous conclusions and establishing new baselines. The paper will be improved by addressing the lack of crucial details regarding reproducibility, thoroughness of analysis, and comparison to state-of-the-art methods, as well as providing more details on annotation and societal impact.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper provides a detailed comparison of different detection techniques using established methods, with experimental results on detection scores for hallucinations and omissions.",
+      "grounding": "Section 4.1, Figure 5",
+      "facet": "methodology_and_results"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel, large-scale, human-annotated dataset for hallucination and omission detection in machine translation, covering 18 translation directions with varying resource levels, which is a valuable resource for future research.",
+      "grounding": "Intro, Abstract",
+      "facet": "dataset_contribution"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides valuable observations and insights into the performance of existing hallucination and omission detection methods, demonstrating that conclusions drawn from single-language pair evaluations may not generalize.",
+      "grounding": "Intro",
+      "facet": "insights_and_analysis"
+    },
+    {
+      "kind": "strength",
+      "text": "Figures 5, 6, and 7 appear to be well-labeled and support the claims made in the text regarding the performance of different methods for detecting hallucinations and omissions.",
+      "grounding": "Figures 5, 6, 7",
+      "facet": "figures"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly mention the use of seeds for experiments, making it difficult to assess the reproducibility of the results, and lacks information about the computational resources used.",
+      "grounding": "Sections 4.1, 4.2",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the performance of the proposed methods without providing detailed analysis and lacks sufficient evidence to support some claims, such as the complementarity of detectors.",
+      "grounding": "Figure 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear comparison with the most recent state-of-the-art methods for hallucination and omission detection and does not provide sufficient details on the annotation guidelines and inter-annotator agreement.",
+      "grounding": "Related Work, Sec 6",
+      "facet": "comparison_and_annotation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'internal methods' and 'external methods' and 'resource levels'.",
+      "grounding": "Introduction §1, Sec 2.1",
+      "facet": "terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a dedicated section discussing potential risks, misuse scenarios, or fairness considerations related to the dataset and the developed methods, including a Broader Impacts section.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The absence of tables makes it impossible to assess the completeness of data presentation, statistical rigor, or the clarity of the results. The descriptions lack specific statistical measures like standard deviations or confidence intervals. The axes in the figures lack clear labels and units.",
+      "grounding": "Figures 5, 6, 7, and 8",
+      "facet": "tables_and_figures"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code, data, and environment details (e.g., Dockerfile, Conda environment) to ensure reproducibility, and specify the random seeds used for all experiments and report the variance of the results across multiple runs.",
+      "grounding": "All sections",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct more detailed analysis to explain why certain methods perform better in specific resource settings and provide more examples and analysis to support the claim that the detectors are complementary.",
+      "grounding": "Sec 4.2, Figure 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a head-to-head comparison with a recent, relevant method for hallucination and omission detection to demonstrate the improvements offered by the new dataset and baselines.",
+      "grounding": "Related Work, Sec 6",
+      "facet": "comparison"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the annotation process, including the annotation guidelines, inter-annotator agreement, and the qualifications of the annotators.",
+      "grounding": "Intro, Sec 1",
+      "facet": "annotation_details"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used and add a Broader Impact section to discuss potential misuse cases, fairness considerations, and the impact on different language communities.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "When tables are included, ensure they contain clear headers, concise descriptions of the methods, and complete statistical information (mean, standard deviation, confidence intervals, and p-values). Add clear labels to the axes, including units where applicable. Include a comprehensive legend to identify the different methods and their corresponding colors/markers. Consider using error bars to show confidence intervals in the performance plots.",
+      "grounding": "Figures 5, 6, 7, and 8",
+      "facet": "tables_and_figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Define 'internal methods' and 'external methods' when they are first introduced and provide a table summarizing the language pairs, their resource levels, and scripts in Section 2.1.",
+      "grounding": "Introduction §1, Sec 2.1",
+      "facet": "terminology"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing the proposed method with COMET on the new dataset, evaluating the performance using metrics like precision, recall, and F1-score for both hallucination and omission detection.",
+      "grounding": "Sec 6",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

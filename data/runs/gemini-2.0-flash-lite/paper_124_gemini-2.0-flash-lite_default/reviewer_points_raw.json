@@ -1,0 +1,398 @@
+[
+  {
+    "kind": "strength",
+    "text": "The authors ensure reproducibility by setting the temperature to 0 for GPT models.",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks information on the statistical significance of the results.",
+    "grounding": "Insufficient evidence",
+    "facet": "analysis"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details on the variance of the results, such as standard deviations or confidence intervals.",
+    "grounding": "Insufficient evidence",
+    "facet": "analysis"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates factors influencing human preferences in summarization, evaluating GPT models. Replicability is addressed by setting the temperature to 0 for GPT models.",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper states that the temperature was set to 0 for GPT models, which aids reproducibility.",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds, making the results not fully reproducible.",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention variance across runs.",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide code, data, and a detailed description of the experimental setup, including the versions of the libraries used.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the seeds used for all experiments.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the variance across multiple runs.",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Were seeds used for the experiments? If so, please provide them.",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "How many runs were performed for each experiment, and what was the variance?",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code and data available? If so, please provide a link.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the lack of information about the experimental setup and the availability of code and data.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper's reproducibility is questionable due to the lack of information about seeds and variance.",
+    "grounding": "Section 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies a gap in understanding the factors influencing human judgments in LLM evaluations and summarization, positioning the work within the context of existing research on human preference evaluations and automatic metrics (Intro).",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing work that also analyzes human preference judgments using the Bradley-Terry-Luce (BTL) model or similar techniques. While the paper mentions prior applications of BTL, it doesn't explicitly differentiate its approach or findings from these existing studies.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a quantitative comparison of the proposed method against a strong baseline, such as a state-of-the-art summarization model evaluated using existing automatic metrics and human evaluations. This would provide evidence of the method's effectiveness in identifying influential factors.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to determine the relative importance of different factors identified by the analysis. This would help to understand which factors have the most significant impact on human judgments.",
+    "grounding": "Sec 3.2",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the dataset used in this study compare to other publicly available datasets of human preference judgments? Are there any unique characteristics of the OpenAI dataset that make it particularly suitable for this analysis?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific criteria used to assess fluency, clarity, coverage, and alignment with the original text's intent and style? Are these criteria clearly defined and consistently applied?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational complexity of the proposed method, and how does it scale with the size of the dataset?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The findings are limited to the specific dataset and tasks analyzed. Generalization to other domains or evaluation scenarios may require further investigation.",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": null,
+    "facet": "rating"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present prompts and results related to LLM performance in summarization tasks. The clarity of the figures varies, with some lacking detailed labels or explanations.",
+    "grounding": "Figures 1-7",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figures 1-5 clearly illustrate the prompts used for GPT-4, aiding in understanding the experimental setup. Figure 7 effectively visualizes factor correlations.",
+    "grounding": "Figures 1, 2, 3, 4, 5, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figures 6 and 7 lack clear axis labels and units, making it difficult to interpret the results quantitatively. The legends in some figures are missing or unclear.",
+    "grounding": "Figures 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 6, add labels to the axes to clarify what is being measured (e.g., summarization length, content coverage). In Figure 7, specify the units or scales used for the correlation values.",
+    "grounding": "Figures 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to measure 'lengthier summaries' or 'comprehensive coverage' in Figure 6? What is the range of values for Kendall's Tau in Figure 7?",
+    "grounding": "Figures 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on prompt examples and correlation analysis, limiting the ability to assess the nuances of model behavior or the impact of specific factors.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present accuracy results for GPT models on pairwise summary judgments across different datasets. The tables are generally clear but lack detailed statistical analysis.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Tables 2 and 3 present accuracy results for different GPT models on pairwise summary judgments, which is a clear and direct presentation of the data.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables lack crucial statistical information such as confidence intervals, standard deviations, and p-values to assess the significance of the results.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations, confidence intervals, and p-values to indicate the statistical significance of the observed differences in accuracy between the GPT models. Also, clarify the number of samples used for each accuracy calculation.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What is the number of pairwise comparisons used to calculate the accuracy in each split/gap? 2. What statistical tests were used to compare the performance of different GPT models? 3. Are the differences in accuracy statistically significant?",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets (comparisons-reddit, axis-eval-reddit) and the GPT models evaluated. Generalizability to other datasets or models is not addressed.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates factors influencing human judgments in LLM output evaluation, using pairwise comparisons from OpenAI. It employs the Bradley-Terry-Luce model to analyze these judgments, focusing on summarization tasks. The study aims to identify key factors and their relative importance, with implications for dataset construction and LLM behavior.",
+    "grounding": null,
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the importance of human preference judgments and the paper's motivation. The use of examples (e.g., stock price drop) effectively illustrates the impact of factual errors.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'factors' and how they are operationalized. It's unclear if these are pre-defined categories or emergent from the analysis. The relationship between the factors and the BTL model needs clarification.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a clear explanation of the Bradley-Terry-Luce (BTL) model. A brief overview of the model's assumptions and how it's applied to the data would improve understanding.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the factors considered in the analysis. Define each factor and how it is measured or assessed (e.g., output length, factual consistency).",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a brief section explaining the BTL model, its parameters, and how it is used to analyze the pairwise comparisons. Consider including a simple equation or example.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the role of GPT-4 in the analysis. Specify which aspects of the analysis are performed by GPT-4 and how its capabilities are leveraged.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How are the factors identified and categorized? Are they pre-defined or derived from the data?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics or methods are used to quantify each factor (e.g., fluency, factuality)?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the limitations of using the BTL model in this context?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a detailed methods section, including the BTL model's implementation and factor definitions, may hinder reproducibility.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address the potential for the research to be used to create biased or misleading summaries.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss fairness considerations, such as how the identified factors might disproportionately affect different demographic groups or topics.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section on broader societal impacts.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse, such as the generation of misleading summaries or the amplification of biases present in the training data.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss fairness considerations, such as how the identified factors might disproportionately affect different demographic groups or topics.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section outlining the potential societal consequences of the research and the proposed mitigations.",
+    "grounding": "Conclusion",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's focus on identifying key factors influencing human preferences in pairwise comparisons of LLM outputs aligns with the broader trend of improving LLM alignment and understanding human values, as discussed in the introduction and related work.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper utilizes the Bradley-Terry-Luce (BTL) model to analyze pairwise human judgments, which is a well-established method for preference modeling. This provides a solid methodological foundation for the study.",
+    "grounding": "Methods",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its findings with the results of [2], which also focuses on estimating summary quality with pairwise preferences. A direct comparison of the factors identified and their relative importance would strengthen the paper.",
+    "grounding": "Related Work, [2]",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss how its findings relate to the methods used in [1], which explores learning to write abstractive summaries. A comparison of the factors considered in human evaluation and the impact of these factors on the summarization process would be beneficial.",
+    "grounding": "Related Work, [1]",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the performance of the BTL model used in this paper with the methods described in [2] on a shared dataset of pairwise human judgments. Evaluate the models based on their ability to predict human preferences and identify the most influential factors.",
+    "grounding": "Methods, [2]",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the impact of output length, informativeness, fluency, and factual consistency (as mentioned in the introduction) on the preference judgments, and compare the results with the findings of [1] and other related works that focus on summarization.",
+    "grounding": "Intro, Related Work, [1]",
+    "facet": "experiment"
+  }
+]

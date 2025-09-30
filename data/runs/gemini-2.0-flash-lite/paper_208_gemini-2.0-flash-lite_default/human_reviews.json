@@ -1,0 +1,59 @@
+[
+  {
+    "rid": "8RJ4kyanAD",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "I'm not sure whether my understanding is correct because the methodology section of this study is a little bit hard to follow. It seems this study proposed a two-phase model. In the first phase, the author adopted a large language model (LLM, Flan-T5-XXL) to extract a series of preset features in a zero-shot manner. Then,  they trained a simple linear model to generate labels via the extracted features in a supervised manner. As the simple linear model is intrinsically interpretable, the classification result can be regarded as interpretable.",
+      "reasons_to_accept": "From the point of my view, the main contribution of this study is that the author and their clinical collaborator derived a detailed, hand-crafted prompt set to extract features from Chest X-ray Dataset (Supplementary A, B). I believe these prompts can significantly help the community to establish a structured dataset from unstructured medical text.",
+      "reasons_to_reject": "The main drawback of this study is that the authors did not prove their model is better than the TF-IDF-based BoW model or other traditional models.\nOf note, Medical text classification basically does not require a model to understand the language. The task performance basically relies on the existence of several key-word. Therefore, we can observe that the BERT-based model did not obtain significantly better performance than TF-IDF (BoW) model, and the performance of proposed model even obtained worse performance than the TF-IDF model (Figure 4, 8). Although the author claimed performance is not their primary objective, it is disappointing that such a computationally expensive model only obtained a worse performance than a model proposed several decades ago. Meanwhile, there is also a topic model (i.e., LDA) or neural network-based topic model that can extract interpretable features and be applied to downstream tasks. It will be better if the author can include them as baselines.\nMeanwhile, the author does not prove the proposed model is more interpretable. In Figure 5, the author claimed that the proposed model is interpretable because coefficient magnitude mass is concentrated on the very top of features, while the TF-IDF masses are distributed uniformly and are hard to interpret. However, we can find that the most positive high-level feature is hypertensive chronic kidney disease, and this finding is also obvious in the TF-IDF model. We can find that ESRD (end stage renal disease), dialysis, and hemodialysis are also on the top of the TF-IDF mass distribution. If we directly use TF-IDF to analyze the data, we can also obtain the conclusion that chronic kidney disease is the most important factor in readmission prediction. Meanwhile, the proposed model claims that the coronary atherosclerotic is a protective factor of readmission, which is unintuitive, but the author does not explain it. Therefore, it seems not inappropriate to claim that the TF-IDF is hard to interpret and the proposed model is more interpretable.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "hZx9fe2s0f",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, the authors utilize the power of LLM for feature extraction in the medical domain. Plus, they investigate how the alignment of simple models' weights affects the prediction. They conduct experiments on medical datasets and provide discussion based on the results.",
+      "reasons_to_accept": "1, The task is an interesting task, especially in the medical domain. \n2, They provide comprehensive experiment results and discussion. \n3, This paper is well-written and easy to follow.",
+      "reasons_to_reject": "1, I do concern about the novelty of this work. To my best knowledge, most of the methods in this work are existing techniques. \n2, I am wondering if this approach would raise the privacy issue. In the real-world setting, sensitive data would be strictly constrained to be fed into LLMs.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "gqbm67DNLE",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes to use LLM to extract information from the raw patient notes, which could serve as the interpretable features for training a simple classifier. This kind of method could achieve compatible results with other methods, while maintaining the interpretability which might be useful for real applications.",
+      "reasons_to_accept": "1. The idea to use LLM to generate examples for training is somewhat interesting;  2. The experiments are comprehensive and illustrate the effectiveness of this idea.",
+      "reasons_to_reject": "1. I may doubt the necessity of the linear classifier. What if we just let the LLM give the prediction according to the classified results from the templates? Maybe we could give the model several examples to see the few-shot classification performance;  2. From Table2, it seems that the large language models are not so good at prediction these diseases. AUC > 0.5 does not seem to be a good guarantee that the returned features are reasonable.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

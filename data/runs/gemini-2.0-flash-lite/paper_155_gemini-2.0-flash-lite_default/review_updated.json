@@ -1,0 +1,83 @@
+{
+  "summary": "This paper offers a novel perspective on automated fact-checking by analyzing the epistemic elements (stakeholders, means, ends) within existing research. The paper identifies vagueness and lack of clarity in current narratives and provides recommendations for improvement. The paper's claims are partially grounded in content analysis, and the methodology is partially explained. The authors have committed to addressing several weaknesses and suggestions in the revised version.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper identifies areas of concern in fact-checking papers based on content analysis, specifically addressing vagueness in narratives. (Section 6) [claims_vs_evidence]",
+      "grounding": "Section 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides concrete recommendations for improving the clarity of future research and avoiding vagueness. (Introduction, Recommendations) [clarity_presentation]",
+      "grounding": "Introduction, Recommendations",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The focus on the epistemic aspects of automated fact-checking, including means, ends, and stakeholder considerations, offers a novel perspective. (Intro, Sec 1, Sec 2) [novelty]",
+      "grounding": "Intro, Sec 1, Sec 2",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear diagram of epistemic elements, aiding in understanding the narrative structure. (Fig 2) [figures]",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 clearly presents percentages for each epistemic narrative. (Table 2) [tables]",
+      "grounding": "Table 2",
+      "facet": "tables"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper's claims about the limitations of current fact-checking narratives are broad and lack specific empirical grounding beyond the content analysis. (Sections 6, 8) [claims_vs_evidence]",
+      "grounding": "Sections 6, 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'overclaiming' and could benefit from a more detailed explanation of the methodology used for annotating the epistemic elements. (Introduction, Methods) [clarity_presentation]",
+      "grounding": "Introduction, Methods",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a detailed comparison with existing literature on the responsible design and deployment of AI systems or existing fact-checking systems. (Intro, Related Work) [positioning]",
+      "grounding": "Intro, Related Work",
+      "facet": "positioning"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset licensing, usage terms, consent, and privacy considerations for data subjects are not explicitly addressed. (Insufficient evidence) [ethics_licensing]",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several figures lack clear axis labels, units, and legends, making it difficult to interpret the data accurately. (Fig 3, Fig 4) [figures]",
+      "grounding": "Fig 3, Fig 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "Table 1 lacks statistical measures, and Table 2 lacks a measure of variance or statistical significance. (Tables 1 and 2) [tables]",
+      "grounding": "Tables 1 and 2",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly discuss the potential risks, misuse scenarios, or fairness considerations associated with automated fact-checking technologies, nor does it analyze broader societal impacts. (Insufficient evidence) [risks]",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    }
+  ],
+  "suggestions": [],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

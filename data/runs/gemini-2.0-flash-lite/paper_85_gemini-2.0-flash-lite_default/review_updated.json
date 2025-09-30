@@ -1,0 +1,84 @@
+{
+  "summary": "This paper introduces a novel task of empathic similarity and presents a new dataset, EMPATHICSTORIES, along with a model fine-tuned on this dataset. The user study provides compelling evidence of the model's ability to improve empathy compared to a semantic similarity baseline. The paper addresses some of the initial weaknesses, but still needs to address potential biases and limitations.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel task of empathic similarity and creates a new dataset, EMPATHICSTORIES, which is a valuable contribution to the field.",
+      "grounding": "Intro, Abstract",
+      "facet": "novelty, dataset"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper demonstrates performance gains across multiple metrics (Kendall's Tau, Spearman's correlation) when fine-tuning SBERT and BART with the EMPATHICSTORIES dataset, and validates the real-world efficacy of the model in a user study.",
+      "grounding": "Table 4, Sec 9",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear overview of the annotation pipeline, and Table 4 includes a variety of metrics to evaluate model performance, providing a comprehensive view of the results.",
+      "grounding": "Fig 2, Table 4",
+      "facet": "figures, tables"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks crucial details for reproducibility, including the use of seeds and variance across runs.",
+      "grounding": "Section 6, Sec 3.1. The authors state that they will add a sentence to Appendix C clarifying that they used a fixed random seed for all experiments and that they ran each experiment three times and report the average results.",
+      "facet": "reproducibility, organization"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of the learned story representations.",
+      "grounding": "Sec 9, Related Work. The authors state that they will add a sentence to the conclusion emphasizing the novelty of their approach.",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack crucial statistical information (standard deviations, confidence intervals, p-values), and figures lack clear axis labels and units, making it difficult to assess the significance of the findings.",
+      "grounding": "Tables 1, 2, 5, 6, 7, 8, 9, 10, Figs 3, 4. The authors state that they will add standard deviations and confidence intervals to Tables 1, 3, 4, 5, 6, and 10, and p-values to Table 4. They will also add axis labels and units to Figures 3 and 4.",
+      "facet": "tables, figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not adequately address potential biases in the dataset or model, and the potential for misuse, including creating echo chambers or manipulating emotions.",
+      "grounding": "Insufficient evidence. The authors state that they will expand the Ethics Statement section to include a more detailed discussion of potential misuse cases and add a sentence to the conclusion reiterating the importance of addressing bias and misuse.",
+      "facet": "fairness, risks, misuse"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code and data upon publication.",
+      "grounding": "Code repository, data repository. The authors state that they plan to release the code and data upon publication.",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a more detailed comparison with existing methods for story similarity, especially those that consider emotional aspects.",
+      "grounding": "Related Work, Sec 3.2, Sec 4. The authors state that they believe the current analysis of the features in Section 3.2 and Appendix A provides sufficient insight into the contribution of each feature.",
+      "facet": "methodology"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details about the model architecture, training process, and hyperparameters used.",
+      "grounding": "Sec 3.1, §1. The authors state that these details are already provided in Section 5.2 and Appendix C and will add a sentence to Section 5.2 cross-referencing Appendix C.",
+      "facet": "organization"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations and confidence intervals for all reported metrics, and add p-values to indicate statistical significance of performance differences. Add clear labels to the axes of Figures 3 and 4, including units where applicable.",
+      "grounding": "Tables 1-10, Figs 3, 4. The authors state that they will address this suggestion.",
+      "facet": "tables, figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Address potential biases in the dataset and model, and discuss mitigation strategies to ensure fairness. Include a detailed discussion of potential misuse cases.",
+      "grounding": "Conclusion. The authors state that they will address this suggestion.",
+      "facet": "fairness, misuse"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

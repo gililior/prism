@@ -1,0 +1,470 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper proposes a novel approach, ReXMiner, for zero-shot relation extraction in web mining, addressing limitations of existing methods by incorporating relative XML paths and node popularity.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions ReXMiner against existing approaches that primarily focus on absolute XML paths and fail to consider relationships between text nodes within and across pages.",
+    "grounding": "Intro, Related Work",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the most relevant baseline methods, specifically those that also leverage XML paths or graph-based representations for relation extraction. The delta is not clear.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a head-to-head comparison with a state-of-the-art method that uses XML paths or graph neural networks for relation extraction, providing detailed results and analysis.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include ablation studies to demonstrate the contribution of each component of ReXMiner (relative XML paths, node popularity, contrastive learning).",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "How does ReXMiner handle the computational complexity of extracting and processing relative XML paths, especially for large web pages?",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "question",
+    "text": "What is the impact of the choice of contrastive learning on the overall performance? Are other contrastive learning methods explored?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the effectiveness of relative XML paths and node popularity, which may be limited by the quality of the DOM tree and the diversity of web page structures.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": null,
+    "facet": "rating"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces ReXMiner, a model for zero-shot relation extraction from web pages. Experiments on the SWDE dataset show state-of-the-art performance compared to baselines. The model incorporates relative XML paths and text node popularity. The paper concludes with future work directions.",
+    "grounding": "Sections 5, 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "ReXMiner achieves state-of-the-art performance in zero-shot relation extraction across all three verticals of the SWDE dataset, outperforming the second-best model (MarkupLM) by 5.88 in average F-1 score.",
+    "grounding": "Table 2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly states the components of ReXMiner, including the use of relative XML paths and text node popularity.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that ReXMiner is superior to baselines, but the analysis of the performance variation across different verticals is limited.",
+    "grounding": "Section 5.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the impact of the proposed features without providing sufficient ablation studies to isolate their individual contributions.",
+    "grounding": "Section 5.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a more detailed ablation study to quantify the contribution of each component (relative XML paths, text node popularity, contrastive learning module) to the overall performance.",
+    "grounding": "Section 5.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more in-depth analysis of the performance variations across different verticals, including potential reasons for the differences.",
+    "grounding": "Section 5.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does ReXMiner compare to other state-of-the-art models in terms of computational cost and inference time?",
+    "grounding": "N/A",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the impact of the negative sampling strategy on the model's performance and robustness?",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper acknowledges the limitations of the model by discussing future work, such as exploring few-shot learning and distant supervision.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces ReXMiner, a novel framework for zero-shot relation extraction in web mining. The experiments are conducted on the SWDE dataset, comparing ReXMiner with baseline models. The paper lacks details on seeds, variance, and environment reproducibility.",
+    "grounding": "Sections 4, 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly defines the experimental setup, including the three tasks based on the SWDE dataset and the evaluation metrics (precision, recall, and F-1 score).",
+    "grounding": "Section 5.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments. The variance of the results is not reported.",
+    "grounding": "Section 5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the environment used for the experiments (e.g., hardware, software, and libraries).",
+    "grounding": "Section 5",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code and data used for the experiments. Include a requirements.txt or a similar file to specify the environment.",
+    "grounding": "Code/Data Availability",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the random seeds used for the experiments and report the variance of the results (e.g., standard deviation).",
+    "grounding": "Section 5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details about the hardware and software environment used for the experiments. Consider using a Dockerfile or similar to ensure environment reproducibility.",
+    "grounding": "Section 5",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Are the results in Table 2 the average of multiple runs? If so, how many runs were conducted?",
+    "grounding": "Table 2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Will the code and data be released, and if so, under what license?",
+    "grounding": "Code/Data Availability",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What specific versions of the libraries (e.g., PyTorch, Transformers) were used?",
+    "grounding": "Section 5",
+    "facet": "environment"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the lack of information about the code, data, and experimental setup.",
+    "grounding": "Paper Content",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper needs significant improvements in reproducibility. The lack of seed reporting, variance information, and environment details makes it difficult to reproduce the results.",
+    "grounding": "Sections 4, 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures provide an overview of the ReXMiner model and the experimental setup. The figures are generally understandable, but could benefit from improved labeling and clarity.",
+    "grounding": "Figures 1-4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 clearly illustrates the structure of the SWDE dataset, including the verticals and websites.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks detailed labels for the different components and processes within the ReXMiner framework. Figure 4 lacks clear labels for the Prefix and Sub Tree components.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 3, add labels to the different layers and components of the ReXMiner framework. In Figure 4, clearly label the Prefix and Sub Tree components and their relationship to the attention layers.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific types of information are encoded in the absolute and relative XML paths (Figure 1)? How is the popularity of text nodes measured and incorporated (Figure 3)? What is the meaning of alpha and beta in Figure 4?",
+    "grounding": "Fig 1, Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The figures primarily focus on the model architecture and dataset structure, with limited visualization of the experimental results themselves. The figures do not show the performance of the model.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated for the SWDE dataset.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "Consent and privacy considerations for the SWDE dataset are not addressed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated for the data annotated by Lockard et al. (2019).",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address privacy considerations for the SWDE dataset, especially if it contains PII.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results and ablation studies for a zero-shot relation extraction model. The tables compare the proposed model, ReXMiner, with baseline models and ablation variants. The tables include performance metrics such as F1-score, but lack detailed statistical analysis.",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 and 5 provide clear comparisons of ReXMiner with baseline models, including F1-scores. Table 3 provides a clear ablation study.",
+    "grounding": "Tables 2, 3, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks any performance metrics. Tables 2, 3, and 5 do not include standard deviations or confidence intervals, making it difficult to assess the statistical significance of the results. Table 4 is difficult to interpret without the full context of the HTML file.",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for the F1-scores in Tables 2, 3, and 5. Add p-values to indicate the statistical significance of the performance differences between ReXMiner and the baselines. Provide a more detailed explanation of the green and red pairs in Table 4, or consider removing it.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the performance differences? What is the definition of the verticals used in the SWDE dataset? What is the size of the dataset used in each experiment? How were the true positive predictions determined in Table 4?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited to the specific datasets and experimental settings used in the study. The generalizability of the results to other datasets or domains is not addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly states the problem, the proposed solution (ReXMiner), and the key contributions.",
+    "grounding": "Abstract",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of the challenges in web mining and motivates the need for the proposed approach.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"relative XML Path\" is introduced without a clear definition or formal notation. The reader needs to infer its meaning from the context.",
+    "grounding": "Introduction \u00a71",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for the methodology, making it difficult to understand the technical details of ReXMiner. The description of the method is spread across the introduction.",
+    "grounding": "Introduction \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of \"relative XML Path\" with a visual example in the introduction or methodology section.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Create a dedicated methodology section (e.g., Section 3) to elaborate on the ReXMiner architecture, including details on the relative XML path embedding, popularity embedding, and contrastive learning.",
+    "grounding": "Introduction \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a figure illustrating the ReXMiner architecture, showing the input, processing steps (e.g., relative XML path extraction, embedding), and output.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How is the shortest path between text nodes determined in the DOM tree?",
+    "grounding": "Introduction \u00a71",
+    "facet": "methodology"
+  },
+  {
+    "kind": "question",
+    "text": "What is the specific formula or method used to embed the occurrence number of text nodes?",
+    "grounding": "Introduction \u00a71",
+    "facet": "methodology"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific hyperparameters used for the contrastive learning?",
+    "grounding": "Introduction \u00a71",
+    "facet": "methodology"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a detailed methodology section and the absence of specific formulas or pseudocode may hinder reproducibility.",
+    "grounding": "Introduction \u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential biases in the data or model.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address the potential for the model to be used for malicious purposes, such as scraping sensitive information or generating fake content.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a discussion of the broader societal impacts of the technology.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of potential biases in the data and model, and how these biases might affect the model's performance across different demographic groups or content types.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss the potential for the model to be used for malicious purposes, such as scraping sensitive information or generating fake content, and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section to discuss the broader societal impacts of the technology, including potential benefits and risks.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces ReXMiner, a novel approach for zero-shot relation extraction in web mining, addressing the limitations of existing methods that either embed XML source code or encode rendered layout with GNNs (Introduction).",
+    "grounding": "Introduction",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "ReXMiner's use of shortest relative paths in the DOM tree and node popularity for key-value pair extraction is a significant methodological advancement over existing approaches that do not consider relationships between text nodes (Introduction).",
+    "grounding": "Introduction",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare ReXMiner with BERT [2] or other transformer-based methods that are commonly used in NLP tasks. While the paper mentions the limitations of embedding XML source code into transformers, a direct comparison with a BERT-based approach on the same benchmark would strengthen the claims.",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare ReXMiner with the method in [1] which uses contrastive learning for biomedical relation extraction. Since ReXMiner also uses contrastive learning, a direct comparison is needed.",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments comparing ReXMiner with a BERT-based model (e.g., fine-tuned on a relevant dataset) to evaluate the effectiveness of the DOM tree and node popularity features. This would provide a more comprehensive comparison with existing methods.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment_proposal"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Implement an ablation study to isolate the impact of the shortest relative paths and node popularity components in ReXMiner. This would help to understand the contribution of each component to the overall performance.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment_proposal"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare ReXMiner with Freedom [3] which is a transferable neural architecture for structured information extraction on web documents. This would help to understand the transferability of ReXMiner.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment_proposal"
+  }
+]

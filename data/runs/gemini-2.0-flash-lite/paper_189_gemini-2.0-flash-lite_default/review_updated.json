@@ -1,0 +1,132 @@
+{
+  "summary": "This paper introduces the C2D2 dataset, a novel Chinese dataset for cognitive distortion analysis, and explores its potential for mental health applications. The dataset and baseline experiments are promising. The authors have clarified some methodological details and addressed some ethical considerations, but further improvements are needed to strengthen the paper's contribution, particularly regarding comparative analysis, ethical considerations, and real-world impact.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces the C2D2 dataset, the first expert-supervised Chinese dataset focused on cognitive distortions, addressing a gap in available resources.",
+      "grounding": "Intro, Sec 7",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides experimental results of baseline models on the C2D2 dataset, with well-organized and understandable tables presenting performance metrics.",
+      "grounding": "Table 5, 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the motivation, contributions, and structure in the abstract and introduction, and provides a clear example of a cognitive distortion.",
+      "grounding": "Abstract, Section 1",
+      "facet": "organization"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks details on the number of experts, but the authors point to Section 3.4 which discusses expert evaluation, and Section 3.5 details data quality assurance, including inter-annotator agreement (Kappa score of 0.67).",
+      "grounding": "Sec 3.4, 3.5, Intro",
+      "facet": "methods"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient comparative evidence to demonstrate the superiority of the proposed method, nor does it fully address the use of pre-trained models or compare its approach with existing methods. The authors point to Section 5.1 and Table 5, which present the performance of baseline models, including pre-trained models, but further comparison is needed.",
+      "grounding": "Intro, Related Work, Sec 5.1, Table 5",
+      "facet": "comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the impact of the dataset on mental health interventions and lacks sufficient evidence to support its claims, particularly regarding real-world effectiveness. The authors acknowledge this concern and will revise the language.",
+      "grounding": "Sec 7, 9.2",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks essential statistical measures (standard deviation, confidence intervals, p-values) in several tables, making it difficult to assess the significance of the results.",
+      "grounding": "Tables 3, 5, 8",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not fully address critical ethical considerations, including consent, privacy, usage terms, and potential risks associated with the C2D2 dataset. The authors point to Section 9.1, which discusses ethical considerations, including IRB approval and informed consent, but further expansion is needed.",
+      "grounding": "Sec 9.1, Insufficient evidence",
+      "facet": "ethics_consent"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not specify the source of the data, usage terms, or address potential biases and fairness concerns.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential ethical risks associated with the use of the C2D2 dataset, such as the risk of misdiagnosis or the potential for the dataset to be used for discriminatory purposes.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_ethical_risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address the potential for the technology to be used for harmful purposes, such as surveillance or discriminatory purposes.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks details on code or data availability, and does not mention the use of seeds or the variance of the results.",
+      "grounding": "Entire paper",
+      "facet": "code/data availability"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide a link to the code repository and data, and specify the seeds used for all experiments, reporting the variance across multiple runs.",
+      "grounding": "N/A",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct a comparative analysis with existing mental disorder detection models, incorporating cognitive distortion features, and evaluate the performance of the proposed model with and without incorporating user cognitive distortion information for mental disorder detection.",
+      "grounding": "Sec 1.3, Sec 4.1",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more detailed analysis of the baseline models' performance, including error analysis and comparison with other existing datasets, and conduct experiments to evaluate the effectiveness of the dataset in real-world mental health interventions.",
+      "grounding": "Table 5, Sec 7, 9.2",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations and confidence intervals for all reported metrics, and add p-values to indicate statistical significance when comparing different models or settings.",
+      "grounding": "Tables 3, 5, 8",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Obtain informed consent from all participants whose data is included in the C2D2 dataset, implement appropriate privacy measures, and clearly define the usage terms.",
+      "grounding": "Appendix B, C, D",
+      "facet": "ethics_consent"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Address potential ethical risks associated with the use of the C2D2 dataset, such as the risk of misdiagnosis or the potential for the dataset to be used for discriminatory purposes, and provide mitigations for these risks.",
+      "grounding": "Appendix E",
+      "facet": "ethics_ethical_risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed discussion of potential misuse cases, such as the use of the technology for surveillance or discriminatory purposes, and address potential biases in the C2D2 dataset and the models trained on it, and propose mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section that explicitly addresses the potential societal consequences of the research, both positive and negative, and proposes mitigation strategies for potential harms.",
+      "grounding": "Conclusion",
+      "facet": "broader_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

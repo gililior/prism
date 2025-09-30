@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "fPkXoEJGeO",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a framework for leveraging pure textual data as a way to improve the modeling capability of speech tasks that originally required paired audio-text pairs. This makes it possible to grow the representation capability and accuracy of models by leveraging linguistic information proyected into the acoustic latents. This, the authors hypothesize that promotes cross-modal (linguistic->acoustic) knowledge transfer. Results are demonstrated on both speech recognition and spoken natural language understanding tasks, improving over baselines and meeting state of the art performance on smaller models and (paired) datasets.",
+      "reasons_to_accept": "This paper proposes an interesting formulation to include unpaired data to speech models. While there has been an abundant recent amount of work to incorporate unscripted audio (audio without text pairs) there has been limited recent work on the 'other side of the coin'. This has been mostly carried out by leveraging pre-trained Language Models, so in this paper the authors propose a lighter approach to use linguistic information in a cross-modal way. This is demonstrated to have a positive impact across multiple downstream tasks, which reinforces the value of linguistic information in multiple speech-related tasks beyond the conventional domains.",
+      "reasons_to_reject": "Not a strong reason to reject, but I am left wondering if the impact of the proposed approach happens because the latent acoustic representation trained with the datasets is incomplete (in terms, for example, of linguistic coverage). As there is an abundance of speech-text paired datasets in the public domain, it could be that the benefits of the approach are restricted to lower-resource languages in which the technique was untested, leading to a lower impact of the proposed knowledge.",
+      "missing_references": "I believe the paper would benefit from covering the problem also from the point of view of acoustic->linguistic cross-modal training, such as https://arxiv.org/pdf/2302.03540.pdf. Even if the focus is not on how to properly develop and train speech latent encoders, there is potential interaction and extended impact in covering both literatures.\nI also miss references to the recent trends such as SpeechGPT models that are potential competitors (or beneficiaries?) of this approach https://arxiv.org/pdf/2305.11000.pdf",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "KHWRlK3vI0",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents a novel data augmentation framework aimed at enhancing low-resource automatic speech recognition (ASR) and spoken language understanding (SLU) by leveraging unpaired text data. The authors introduce latent synthesizers, which generate continuous latent features from text. These latents correspond to the output features of the speech encoder, enabling the latent synthesizer to produce simplified representations compared to traditional mel-spectrogram and waveform approaches. The study investigates fixed-projection and diffusion-based models as potential latent synthesizers. Experimental evaluations demonstrate that the proposed augmentation technique leads to substantial improvements in both ASR and SLU quality.",
+      "reasons_to_accept": "The proposed method is novel to some extent. If the authors conducted more experiments in the speech translation task, the claims would be stronger.",
+      "reasons_to_reject": "\u30fbA comparison with data augmentation methods utilizing discrete acoustic units like SpeechUT is absent. These discrete units simplify speech by emphasizing phonetic and semantic information. An alternative to latent synthesizers involves training Transformer models to generate these discrete units from text [Popuri+ 2022]. While this approach necessitates an additional module to map discrete units to the continuous space, prior research has demonstrated quality enhancements through this technique.\n\u30fbComparisons with TTS augmentation are unfair due to the encoder architectures (Transformer vs Conformer). Consequently, the results don't definitively indicate the superior data augmentation method.\n\u30fbThe investigation into the efficacy of external language model fusion is lacking. Since the text data employed in data augmentation originates from the same source as LM training data (specifically Librispeech 960h in this study), we seek clarification on two aspects: 1) the relative effectiveness of the proposed method compared to shallow fusion, and 2) whether the proposed method complements shallow fusion.\n\u30fbThe results in Section 4.2.1 highlight the dependence of data augmentation effectiveness on the domains of training data used for latent synthesizers. This restriction confines the applicability of the proposed method. To investigate domain transferability, employing an ASR model trained on an out-of-domain dataset for initializing the Guiding Net would be desirable.",
+      "missing_references": "\u30fbPopuri et al., Enhanced Direct Speech-to-Speech Translation Using Self-supervised Pre-training and Data Augmentation, INTERSPEECH, 2022.\n\u30fbSiuzdak et al., WavThruVec: Latent speech representation as intermediate features for neural speech synthesis, INTERSPEECH, 2022.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "NCkwmCINrz",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The researchers introduce a framework called LaSyn, designed to efficiently utilize textual data for end-to-end (E2E) speech processing models. This framework facilitates the transfer of cross-modal knowledge from text to E2E speech processing models through latent synthesis. Two implementations of the latent synthesizer are designed as the core of LaSyn: a fixed-projection latent synthesizer and a diffusion latent synthesizer, which incorporates recent advancements in diffusion models. By leveraging LaSyn to enhance E2E speech models with textual data, the researchers achieve competitive results multiple ASR/SLU tasks.",
+      "reasons_to_accept": "1. Two novel designs of latent synthesizer are tailored to the end goal of text-to-speech representation simulation. \n2. The effectiveness of the approach is empirically proven by promising results on multiple tasks/datasets. \n3. Good paper writing and clear presentation.",
+      "reasons_to_reject": "1. The ASR experiments are limited. Librispeech is a widely used dataset, but there are various more competitive models (e.g. Wave2Vec2, HuBERT etc) than the baselines in the paper. Moreover, since Librispeech is clean read speech data and not a very challenging dataset, experimenting on it alone may not reflect the ASR performance comprehensively. \n2. When targeting low-resource languages/domains, the availability of G2P are also be limited (section 3.2.2).",
+      "missing_references": "Relevant papers on improving/adapting latent speech representation with text only data.\n1. Text-Only Domain Adaptation Based on Intermediate CTC. https://www.isca-speech.org/archive/pdfs/interspeech_2022/sato22_interspeech.pdf 2. Integrating Text Inputs For Training and Adapting RNN Transducer ASR Models. https://arxiv.org/pdf/2202.13155.pdf",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

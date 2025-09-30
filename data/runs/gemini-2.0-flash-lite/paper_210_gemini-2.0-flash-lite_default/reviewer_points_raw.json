@@ -1,0 +1,380 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "novelty"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper evaluates adaptive gating in MoE models on NLP tasks, claiming improved training efficiency and flexibility. The evaluation includes experiments on six NLP tasks.",
+    "grounding": "Sec 4, Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates the effectiveness of adaptive gating in MoE models for a range of NLP tasks.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The claim of improved training efficiency is not fully substantiated without detailed analysis of computational costs.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the computational cost savings achieved by the proposed method.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the proposed method compare to other MoE gating strategies in terms of efficiency and performance?",
+    "grounding": "Sec 4, Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper does not explicitly discuss the limitations of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Ethics Statement",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper evaluates adaptive gating in Mixture of Experts (MoE) models across six NLP tasks. The evaluation includes analysis of gating decisions to understand the effectiveness of the proposed method.",
+    "grounding": null,
+    "facet": "evaluation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper evaluates the proposed method on six NLP tasks.",
+    "grounding": "Sec 4",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient details on the statistical analysis performed.",
+    "grounding": "Sec 4",
+    "facet": "analysis"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of the variance observed across multiple runs with different random seeds.",
+    "grounding": "Sec 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the experiments repeated with different random seeds? If so, what is the variance?",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What statistical tests were used to compare the performance of adaptive gating with baseline methods?",
+    "grounding": null,
+    "facet": "analysis"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code and data available for reproducing the experiments? If so, where?",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "Yes. The paper does not discuss the limitations of the proposed method.",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "No.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper evaluates adaptive gating in MoE on NLP tasks. The evaluation includes multiple tasks and models, with analysis of gating decisions.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper details the evaluation setup, including tasks and models.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds or the reporting of variance.",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the training and evaluation scripts, and a requirements file to ensure environment reproducibility.",
+    "grounding": "Code/Data Availability",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the random seeds used for all experiments and the variance (e.g., standard deviation) across multiple runs.",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the datasets used publicly available, or can they be made available? If not, what are the licensing restrictions?",
+    "grounding": "Section 4",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "questions",
+    "text": "How many runs were performed for each experiment, and what metrics were used to assess variance?",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "limitations",
+    "text": "The review is limited by the lack of information regarding code, data, seeds, and variance.",
+    "grounding": "Paper Content",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about dataset licensing, consent, privacy, or usage terms.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should explicitly state the licenses and usage terms for all datasets used. They should also address consent and privacy considerations, especially if the datasets contain personal information.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the problem, the proposed solution, and the key findings.",
+    "grounding": "Abstract",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of the background and motivates the research problem.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'linguistic complexity' and how it relates to the number of experts needed.",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a clear mathematical formulation of the adaptive gating mechanism.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define 'linguistic complexity' and provide examples.",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a mathematical formulation of the adaptive gating mechanism, including equations and variable definitions.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a table summarizing the notation used in the paper.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the threshold value in adaptive gating determined?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific NLP tasks used in the experiments?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific encoder and decoder models used in the experiments?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's reproducibility is limited without a detailed mathematical formulation and specific experimental details.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented evaluate adaptive gating in MoE models across NLP tasks. The figures aim to visualize expert probability and token distribution.",
+    "grounding": "Figures 1-2",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 effectively visualizes the percentage of tokens computed by top-2 experts across layers, supporting the claims about adaptive gating.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 1 lacks clear axis labels and units, potentially hindering interpretation. The caption could be more descriptive.",
+    "grounding": "Fig 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure 1, label the x and y axes clearly, specifying what is being measured (e.g., 'Token ID' and 'Normalized Expert Probability'). Include units if applicable. Improve the caption to describe the figure's purpose more clearly.",
+    "grounding": "Fig 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the specific range of the x-axis in Figure 1 (e.g., number of tokens)? What do the different colors or lines represent in Figure 2?",
+    "grounding": "Figures 1-2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to expert probability and token distribution, not providing insights into other aspects of model behavior or performance.",
+    "grounding": "Figures 1-2",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present performance evaluations of adaptive gating in MoE models across various NLP tasks. The tables vary in the level of detail and statistical rigor, with some lacking crucial statistical measures.",
+    "grounding": "Tables 1, 2, 3, 4, 5, 6",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 and 3 provide overall performance comparisons, which is a good starting point for evaluating the proposed method.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as confidence intervals or p-values to assess the significance of the results. Table 1 lacks clarity on how the tokens are selected.",
+    "grounding": "Tables 1, 2, 3, 5, 6",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals in all tables to indicate result variability. Add p-values to indicate statistical significance of performance differences between methods. Clarify the method of token selection in Table 1.",
+    "grounding": "Tables 1, 2, 3, 5, 6",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the performance differences reported in the tables? How were the 40 runs averaged in Table 1? What is the definition of 'same loss value' in Table 2 and 3? What is the range of threshold T in Table 5?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific NLP tasks and model configurations evaluated.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential misuse cases, such as the generation of biased or misleading content.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss fairness considerations or analyze the model's performance across different demographic groups or data distributions.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper omits a detailed discussion of broader societal impacts, such as the effects on employment, misinformation, and accessibility.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse cases and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address fairness concerns by analyzing the model's performance across different demographic groups or data distributions, and propose mitigation strategies if necessary.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand the discussion of broader societal impacts, considering the potential effects on areas such as employment, misinformation, and accessibility.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed ethics statement, justifying the absence of ethical concerns or addressing any potential ethical implications.",
+    "grounding": "Ethics Statement",
+    "facet": "ethics"
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "rebuttal": [
+    {
+      "reviewer_feedback": "Weaknesses (8 points): The paper does not report the random seeds used for the experiments and lacks discussion of variance across multiple runs. (Sections 4, 5)",
+      "response": "We acknowledge the reviewer's concern regarding the lack of reported random seeds and variance analysis. While we did not explicitly detail the random seeds used for each experiment in the initial submission, we understand the importance of reproducibility. We will include the random seeds used for all experiments in the revised version of the paper. Due to computational constraints, we were unable to run multiple trials to assess variance. However, we will add a statement in Section 4 and 5 acknowledging this limitation and suggesting future work to address it."
+    },
+    {
+      "reviewer_feedback": "The paper does not provide details about the computational resources used for training and evaluation. (Sections 4, 5)",
+      "response": "We agree with the reviewer that providing details about computational resources is crucial for transparency. We will add a paragraph to Section 4, detailing the GPU type (e.g., NVIDIA A100), memory, and the approximate training time for each model. This will enhance the reproducibility of our experiments."
+    },
+    {
+      "reviewer_feedback": "The paper lacks detailed comparisons with existing methods that address visual metaphor understanding, providing no clear delta or comparative analysis. (Related Work)",
+      "response": "We respectfully disagree with the reviewer's assessment. While our primary focus is on meme captioning, which is a novel task, we do discuss existing work on visual metaphors in Section 2.1. We acknowledge that a direct comparison with existing methods is difficult because MEMECAP is a new dataset and task. However, we believe that our comprehensive baseline experiments with state-of-the-art VL models (Section 4 and 5) provide a strong foundation for future comparative analysis. We will clarify this point in the revised version and emphasize the novelty of our task."
+    },
+    {
+      "reviewer_feedback": "Axes labels are missing or unclear in some figures, making it difficult to interpret the data. (Figure 5)",
+      "response": "The reviewer is correct; Figure 5 could be improved. We will ensure that all axes in Figure 5 are clearly labeled with appropriate units and add a legend to clarify the different data series. This will improve the clarity and interpretability of our results."
+    },
+    {
+      "reviewer_feedback": "Table 2 lacks information on standard deviations or confidence intervals, making it difficult to assess the reliability of the results. The absence of p-values makes it hard to determine the statistical significance. (Table 2)",
+      "response": "We acknowledge the reviewer's point regarding the lack of statistical significance in Table 2. Due to the computational resources and time constraints, we were unable to perform multiple runs to calculate standard deviations and p-values. We will add a statement in the revised version acknowledging this limitation. We will also include a note in the caption of Table 2 explaining the limitations of the current statistical analysis and suggesting future work to address this."
+    },
+    {
+      "reviewer_feedback": "The paper lacks a clear explanation of the evaluation metrics used to assess the performance of the VL models. (Abstract, Introduction)",
+      "response": "We believe the evaluation metrics are explained, but we will improve the clarity. The abstract mentions the use of automatic metrics and human evaluation. Section 5.1 details the automatic metrics (BLEU, ROUGE, BertScore), and Section 5.2 describes the human evaluation criteria. We will add a sentence in the abstract and introduction explicitly stating the evaluation metrics used and briefly explaining them."
+    },
+    {
+      "reviewer_feedback": "The paper lacks a clear statement about the licensing of the MEMECAP dataset, specifying the terms of use and any restrictions. (Insufficient evidence)",
+      "response": "We agree with the reviewer. We will include a clear statement about the licensing of the MEMECAP dataset in the Ethics Statement section, specifying the terms of use and any restrictions. We will also make the dataset publicly available under a suitable license."
+    },
+    {
+      "reviewer_feedback": "The paper does not discuss potential misuse cases or failure modes of the model, nor does it address fairness concerns or broader societal impacts. (Insufficient evidence)",
+      "response": "We acknowledge the reviewer's concern about the lack of discussion on potential misuse, fairness, and societal impacts. We will add a Broader Impact section to the revised version of the paper. This section will discuss potential misuse cases (e.g., generating misinformation), fairness concerns (e.g., biases in the dataset), and mitigation strategies. We will also analyze potential biases in the dataset and their impact on the generated captions, as suggested by the reviewer."
+    },
+    {
+      "reviewer_feedback": "Suggestions (9 points): Provide the random seeds used for all experiments and report the variance (e.g., standard deviation) across multiple runs. (Sections 4, 5)",
+      "response": "Addressed in response to Weakness 1."
+    },
+    {
+      "reviewer_feedback": "Include a section detailing the computational resources (e.g., GPU type, memory) used for training and evaluation. (Sections 4, 5)",
+      "response": "Addressed in response to Weakness 2."
+    },
+    {
+      "reviewer_feedback": "Conduct a comparative experiment with a state-of-the-art VL model, fine-tuned on a dataset that includes visual metaphor understanding, to better demonstrate the challenges of the MEMECAP task. (Sec 4.1)",
+      "response": "We acknowledge the suggestion. However, finding a suitable dataset for fine-tuning a VL model on visual metaphor understanding that is directly comparable to our meme captioning task is challenging. The existing datasets, such as MultiMET and Met-Meme, have different annotation schemes and focus on different aspects of visual metaphors. We will, however, add a discussion in Section 4.1 about the challenges of finding a directly comparable dataset and suggest this as future work."
+    },
+    {
+      "reviewer_feedback": "Ensure all axes are clearly labeled with units where applicable and add legends to clarify different data series. (Figure 5)",
+      "response": "Addressed in response to Weakness 4."
+    },
+    {
+      "reviewer_feedback": "Include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to show the statistical significance of the differences between models and setups. (Table 2)",
+      "response": "Addressed in response to Weakness 5."
+    },
+    {
+      "reviewer_feedback": "Include a clear statement about the licensing of the MEMECAP dataset, specifying the terms of use and any restrictions. (Ethics Statement)",
+      "response": "Addressed in response to Weakness 7."
+    },
+    {
+      "reviewer_feedback": "Add a Broader Impact section to discuss potential misuse, fairness concerns, and mitigation strategies. (Insufficient evidence)",
+      "response": "Addressed in response to Weakness 8."
+    },
+    {
+      "reviewer_feedback": "Analyze potential biases in the dataset and their impact on the generated captions. (Ethics Statement, Data)",
+      "response": "Addressed in response to Weakness 8."
+    },
+    {
+      "reviewer_feedback": "Discuss how the model's ability to generate meme captions could be exploited (e.g., for spreading misinformation or creating offensive content). (Insufficient evidence)",
+      "response": "Addressed in response to Weakness 8."
+    }
+  ]
+}

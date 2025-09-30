@@ -1,0 +1,65 @@
+[
+  {
+    "rid": "oqVy0moOXf",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper investigates the impact of influence-functions in the context of identifying self-influential examples (i.e. examples that are difficult to predict from other examples and are thus hypothesised to be memorised). The paper investigates properties of such self-influential examples, suggesting that they are properties of data rather than dependant on model architecture and initialisation. Finally, the paper shows how knowledge about such examples can be used to improve training and out-of-distribution generalisation of models.",
+      "reasons_to_accept": "The contribution seems novel, the experiments are (for the most part) well executed and motivated, the research questions are clear and the results support the findings.\nI appreciate the fact that some of the less well-known techniques, metrics, etc by examples.",
+      "reasons_to_reject": "I have two concerns with this paper.\nFirstly, I don't think the results regarding the stability of influence functions would withstand a statistical test - only two results are being compared here (although for different settings). Perhaps the chosen different initialisation/model happened to produce a similar result by chance. I believe for more robust conclusions, the sample set of observations should be more than a pair. I appreciate that these experiments are computationally expensive, perhaps a bigger sample could be investigated for a subset of the investigated settings (e.g. 'first' only in Table 2) Secondly, I find the paper's content arrangement rather odd, see my comments in the presentation section. But this is only a minor concern and could be addressed by an additional page of content, should the paper be accepted.",
+      "questions_for_the_authors": "Question 1: Are you going to release the experimental setup to the public?",
+      "missing_references": "None that I'm aware of.",
+      "typos_grammar_style_and_presentation_improvements": "I find it odd to move the related work section into the appendix, while spending a whole page on Sections 2 and 3 and 4.1, which are essentially background. Sections 3 and 4.1 could definitely be moved to the appendix, since they're already summarised in Table 1.\nFurthermore, the introduction set's the scene rather awkwardly. I believe the concept of self-influence should be (at least intuitively) introduced earlier and followed up by the research questions this paper is addressing. I am not sure why the paragraphs in lines 64 to 96 are so prominent.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "Hosf0hdEW6",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper studied whether self-influence scores based on Arnoldi-based In\ufb02uence Function (ABIF) can be used to filter out low-quality data (outliers, e.g. noises) so as to improve the test performance. Specifically, the authors explored 1) the stability of computed self-influence scores against different a) model states (i.e. initialization, data ordering, and batch size) and b) model size and architecture, 2) whether self-influence scores can be used to select noises, and 3) whether one can use self-influence scores to divide datasets into different subsets, and then use Automated Curriculum Learning (AutoCL) to improve training performance. The results show that 1) self-influence scores are more robust against model states than sizes and architectures, 2) self-influence scores are better at capturing synthetic data noises than natural noises, and 3) AutoCL help learning better than filtering, based on self-influence scores.",
+      "reasons_to_accept": "- It is an interesting idea to use self-influence score to filter data.  - Understanding instability is important for such filtering to put into practice.  - Using AutoCL instead of filtering is intriging, and the performance shown is encouraging.",
+      "reasons_to_reject": "- The experiment setups are not well-explained, and thus not reproducible/convincing     * Lines 360-362 should be more specific: what are the specific choices of hyper-parameters (for reproducibility)? How would that change performance (to better ground the stability)? \n    * In table 4, how did the authors choose different percentage of data to filter out?  - The writing of the background/methods is hard to follow, important points include:      * Is the IF approximation method proposed by Koh and Liang (2017)? I think the HVP method was proposed quite early. \n    * Without reading Section 7, it is hard to understand what are the different subsets of data in AutoCL     * Math notation system in AutoCL is used without introduction: what are y/Y? Also, in pgnorm (I think \\mathcal L is loss?), on which data the loss should be computed; and what are the gradient and reward batch?   - The results of synthetic noises vs. natural noises detection confuse me: on the one hand, data filtering based on self-influence improved OOD performance (Table 4); however, on the other hand, such filtering failed to filter out natural noises (Figure 1) \u2014 what are the implications then? Reading the full results, I feel some pieces of evidence are missing here: self-influence scores can help filter out noisy data and help with AutoCL, however, it cannot really detect natural noises, which is a bit puzzling.",
+      "questions_for_the_authors": "- Do you think high self-influence data instances always harmful for models? I am thinking of large language models --- one would need LLMs to memorize certain facts to give correct answers; in this case, such memorization/high self-influence can become an advantage?  - Do you have any hypothesis why it is this case, that first/all are less sensitive to size/attention, but more sensitive to model states?\n- What are the fundamental difference between synthetic and natural noises that leads to the successful filtering only on synthetic data?",
+      "missing_references": "Second-Order Stochastic Optimization for Machine Learning in Linear Time, Agarwal et al., 2017.",
+      "typos_grammar_style_and_presentation_improvements": "A bit strange to mention a section (5.3) and put everything in the appendix. It would be better give some more information in the main text for the purpose of being self-contained.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "6wH6pSCrmE",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper focuses on identifying noisy data/outliers and filtering out harmful instances to improve model performance. The author proposes using self-influence scores for data filtering and incorporating bandit curriculum learning to automate the filtering process instead of using a fixed filtering threshold. The stability and effectiveness of the self-influence scores are analyzed.",
+      "reasons_to_accept": "1. The idea of using a self-influence score to identify outliers or harmful samples is inspiring. If removing a sample deteriorates the loss value on itself, then this sample should be different enough from the rest of the training data. Such samples could be mislabeled, ambiguous, or difficult samples, or out-of-distribution samples. \n2. Automated filtering using bandit curriculum learning seems effective and avoids manually tuning the hyperparameters of the previous fixed threshold. \n3. Both the stability and efficacy of self-influence are analyzed on diverse datasets, tasks, and models, demonstrating the generality of the proposed method.",
+      "reasons_to_reject": "1. The claim that the proposed self-influence score is stable with respect to training and model hyperparameters across architecture variations is not actually supported by the evidence in Table 2 and Table 3. It can be observed that the self-influence score varies greatly for different model architectures and training hyperparameters. \n2. The effectiveness of the proposed self-influence score is doubtful. When demonstrating the efficacy of the self-influence score in Table 4, nearly half of the results are missing and replaced with '-'. This may raise doubts that only favorable results are picked, especially for the out-of-distribution test. It would be appreciated if the author could provide those missing results and justify why they were missed in the original table. \n3. There is no comparison with other data filtering techniques, such as AUM, Data Cartography, or PVI. How does the performance compare with those existing data filtering techniques? \n4. I agree with the other two reviewers that the paper is hard to read. A better presentation style and more clarity would be appreciated. Specific suggestions were well given by the other two reviewers.\nR[1] Pleiss, Geoff, Tianyi Zhang, Ethan Elenberg, and Kilian Q. Weinberger. \" Identifying mislabeled data using the area under the margin ranking.\" \u00a0*Advances in Neural Information Processing Systems*\u00a033 (2020): 17044-17056.\nR[2] Swayamdipta, Swabha, Roy Schwartz, Nicholas Lourie, Yizhong Wang, Hannaneh Hajishirzi, Noah A. Smith, and Yejin Choi. \" Dataset Cartography: Mapping and Diagnosing Datasets with Training Dynamics.\" In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 9275-9293. 2020.\nR[3] Ethayarajh, Kawin, Yejin Choi, and Swabha Swayamdipta. \" Understanding Dataset Difficulty with $\\mathcalV $-Usable Information.\" In International Conference on Machine Learning, pp. 5988-6008. PMLR, 2022.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  }
+]

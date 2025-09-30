@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "6q5ZO12zR0",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper reports the procedure for training mLongT5, a transformer model to handle long input sequences with an extensive evaluation of its abilities across a number of languages. The main contribution is in making a publicly available pre-trained model.",
+      "reasons_to_accept": "1. Practically useful multilingual language model which can handle long input sequences   2. Extensive evaluation with respect to the number of languages and evaluation scenarios.",
+      "reasons_to_reject": "1. Using Rouge for evaluation is not warranted. It has been shown that it is far less reliable with respect to evaluation of neural models as it relies on exact lexical matches. BertScore is more reliable and there is no inherent danger in using BertScore to evaluate mBERT as both use different mechanisms. \n 2. There is little innovation in the pipeline, but having a reporting paper published in a peer-reviewed conference is better than merely an Arxiv publication.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "3ouymsqaFd",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents a Multilingual LongT5 model (mLongT5), derived and extended from mT5, LongT5 and and UL2 by using a multilingual corpora. The mLongT5 model has been evaluated on  a variety of multilingual summarization and question-answering tasks, where the performance outperforms the existing multilingual models like mBERT and mT5.",
+      "reasons_to_accept": "1. This paper integrates and extends the methods from mT5, Long T5 and UL2, and proposes several multilingual versions of LongT5 (base large xl), which achieve improvements on several multilingual downstream tasks.  2. The experiments are elaborated. Not only the model size is discussed, but also the input token length is compared (Table 4).  3. The code and datasets are open, which is good for the community.\n4. Stable improvements are achieved during increasing the model size of mLongT5, as shown in the experiments, showing great potential and insights for larger language models.",
+      "reasons_to_reject": "1. Although the experiments are conducted well, there still lack some explanation for some experimental results. Such as, in Table 1, mLongT5(base) is not as good as mBERT(base) on FR evaluation; besides, as for the RU, the author just claims that Russian is the hardest language for language models for its sparsity. The explanation seems simple and even subjective. You could set a ablation study that mLongT5 is tasked to pre-trained on the same datasets that mBERT uses to issue this question.\n2. As for the Table 4, the author compare the mT5 model and the mLongT5 model with the same token lengths to prove the statement that mLongT5 processes long text better. More datasets and existing models like XLM-Roberta should be discussed to extend the generalization.",
+      "questions_for_the_authors": "1. In line 168 \"As noted in the original paper, Russian was the hardest language for language models, due to having a much smaller dataset when compared to the other languages\", cannot explain the results in a straight line. It seems like to display the unfairness between the datasets that mBERT and mLongT5 used. May you use the pre-training datasets that mBERT used to pre-train mLongT5 (or use the Russian part) to issue this problem?\n2. In Table 2, mT5(base) outperforms mLongT5(base) on almost all languages. How you describe this phenomena?\n3. All the experiments are less a discussion of computational cost. May you add a paragraph to compare the costs of pre-training for these models?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "kYl11koC9M",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes mLongT5, which extends LongT5 to the multilingual scenario. The paper provides detailed information of model pre-training, and conducts extensive experiments on MLSUM, XL-Sum, Wikilingua, and TyDi QA. The checkpoints will be open-sourced, which will facilitate the research on long text processing in NLP.",
+      "reasons_to_accept": "Training a multilingual LM that handles long input sequences is an important topic for multilingual research.\nThe open-sourced models will facilitate the research on long text processing in NLP, espcially for low-resource languages.\nExtensive experiments on multiple datasets. The results in Table 4 shows that mLongT5 is good at handling long input sequences.",
+      "reasons_to_reject": "Directly extending LongT5 to the multilingual one is somewhat lacking in novelty.",
+      "questions_for_the_authors": "Would you please provide detailed hyperparameters of mLongT5 and mT5 for fine-tuning?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

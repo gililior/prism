@@ -1,0 +1,332 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper presents a human evaluation of a toxicity detection methodology in machine translation, focusing on false positives and false negatives across various languages. The evaluation analyzes the rates of false positives and false negatives in different languages, highlighting the impact of context and morphological variations on toxicity detection.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a clear methodology for human evaluation, including the selection of languages and the criteria for identifying false positives and false negatives. (Sec 6)",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The study presents quantitative results on false positive rates for different languages, providing insights into the performance of the toxicity detection methodology. (Table 1)",
+    "grounding": "Table 1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed explanation of the toxicity lists used, making it difficult to assess the completeness and quality of the lists. (Sec 6)",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of the findings without providing sufficient evidence to support the claim that the observed patterns are not solely due to the templated nature of the dataset. (Sec 6)",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a more in-depth analysis of the toxicity lists, including their coverage and the types of errors they are prone to. (Sec 6)",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed comparison of the results with other toxicity detection methods. (Sec 6)",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific criteria were used to select the languages for evaluation?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How were the human evaluators trained and what were their qualifications?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper acknowledges the limitations of the study, such as the potential impact of the dataset's templated nature. (Sec 6)",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates added toxicity in machine translation across 164 languages using the HOLISTICBIAS dataset. It analyzes the prevalence of added toxicity, identifies problematic language pairs and demographic axes, and explores the relationship between source contribution, hallucination, and toxicity. The study proposes recommendations for mitigating added toxicity.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper addresses an important and under-explored problem of added toxicity in machine translation.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The study uses a large-scale evaluation dataset (HOLISTICBIAS) and covers a wide range of languages, providing a comprehensive analysis.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides insights into the causes of added toxicity, linking it to mistranslations and hallucination.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear comparison to existing methods for detecting and mitigating toxicity in MT. The delta compared to NLLB Team et al. (2022) is not clearly articulated.",
+    "grounding": "Related Work, Intro",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper's novelty hinges on the scale and specific combination of methods (HOLISTICBIAS, ALTI+). The individual components are not novel.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a quantitative comparison with NLLB Team et al. (2022) or other relevant baselines, demonstrating the improvement in detecting or mitigating added toxicity.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the specific metrics used for evaluating toxicity and the methodology for human evaluation.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the proposed method compare to other state-of-the-art methods for toxicity detection and mitigation in MT?",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "What are the limitations of the ALTI+ interpretability method in this context?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "Are the findings generalizable to other datasets and domains?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty is limited by the use of existing methods (toxicity detection, HOLISTICBIAS, ALTI+).",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": "Abstract (WARNING)",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": "Overall",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present human evaluation results for toxicity detection in machine translation, focusing on false positives and false negatives across different languages. The tables provide key metrics such as false positive rates, but lack detailed statistical analysis.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The tables clearly present false positive rates for different languages, providing a direct comparison of performance.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The tables lack crucial statistical information such as confidence intervals, standard deviations, and p-values to assess the significance of the observed differences.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for the false positive and false negative rates. Consider adding p-values to compare the performance differences between languages.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the inter-annotator agreement for the human evaluations? What statistical tests were used to determine the significance of the differences in false positive/negative rates? How were the samples for false negative analysis selected?",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited to the specific datasets and languages evaluated. Generalizability to other datasets and language pairs is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented in the text are assessed for legibility, caption quality, visual correctness, and their effectiveness in supporting the claims made in the paper. The evaluation focuses on the clarity of axes, labels, legends, and overall readability.",
+    "grounding": "Figure 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The figure provides a visual representation of the toxicity of descriptors in translation, supporting the claims about the relationship between source contribution, robustness, and toxicity rates.",
+    "grounding": "Figure 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes in Figure 3 lack clear labels and units, making it difficult to interpret the specific values and relationships being presented. The caption mentions the axes, but the figure itself needs to be more explicit.",
+    "grounding": "Figure 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Improve Figure 3 by adding clear labels to the axes, including units where applicable. Also, ensure that the color scheme is well-defined and explained in the caption or a legend.",
+    "grounding": "Figure 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used for 'source contribution' and 'robustness' in Figure 3? How are these metrics quantified and measured?",
+    "grounding": "Figure 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualization in Figure 3 is limited to showing the distribution and rates of toxicity, without providing detailed insights into the specific words or phrases contributing to the toxicity.",
+    "grounding": "Figure 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "This paper investigates added toxicity in machine translation across 164 languages, using the HOLISTICBIAS dataset. It analyzes the prevalence of added toxicity, identifies problematic language directions and demographic axes, and explores the relationship between source contribution, hallucination, and toxicity. The authors propose recommendations for mitigating added toxicity, including data curation and checking unstable translations.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly defines 'added toxicity' and distinguishes it from broader categories of error.",
+    "grounding": "Abstract, Sec 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The methodology, combining existing toxicity detection, the HOLISTICBIAS dataset, and ALTI+ interpretability, is clearly stated.",
+    "grounding": "Abstract, Sec 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'source contribution' and its measurement using ALTI+ is not clearly explained. The reader needs more context.",
+    "grounding": "Abstract, Sec 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear explanation of the ALTI+ interpretability method. A brief overview or reference to the original paper is needed.",
+    "grounding": "Abstract, Sec 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of how 'source contribution' is measured and interpreted within the context of ALTI+.",
+    "grounding": "Abstract, Sec 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a brief overview of the ALTI+ method or direct the reader to the original paper for a better understanding.",
+    "grounding": "Abstract, Sec 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define all abbreviations (e.g., AT) at first use.",
+    "grounding": "Sec 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the choice of toxicity detection methodology impact the results, and what are its limitations?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific types of mistranslations contribute most to added toxicity?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the Gini impurity measure relate to the concept of 'unstable translations'?",
+    "grounding": "Sec 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed explanation of ALTI+ and source contribution may hinder reproducibility.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethics flag needed.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Organization: Good; Clarity: Needs Improvement; Terminology: Needs Improvement",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  }
+]

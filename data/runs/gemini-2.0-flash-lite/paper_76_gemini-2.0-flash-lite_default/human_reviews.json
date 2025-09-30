@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "MgtMmeNwBz",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a system for automatic narrative detection with an application of characterizing the use of narrative in health misinformation on Twitter. The authors manually annotated an existing misinformation tweet dataset for the presence of narrative. They then built text classifiers to predict narrative style, and found that a fine-tuned RoBERTa model performed the best. Using that classifier to label the rest of the dataset, they explore different properties of the relationship between narrative style and misinformation. They find that narrative style is related to higher engagement and that for one of their datasets, narrative is associated with higher engagement with misinformation.",
+      "reasons_to_accept": "The paper provides a good motivation that narrative is an issue that needs to be addressed with misinformation and takes first steps toward a computational and quantitative analysis.",
+      "reasons_to_reject": "Since the RoBERTa classifier chosen to annotate the reset of the dataset surely has some systematic errors, it would be more convincing to present results with respect to engagement (section 5) also just for the subset of manually annotated tweets to verify that there is no significant difference between those and the tweets that were annotated for narrative with the classifier.\nOtherwise, this paper would benefit most from a more thorough discussion and interpretation of all the results, which as it currently stand are difficult to tie together and so lack coherent findings that could benefit future work.\nThe results from the GLM seem inconclusive on the relationship between misinformation and narrative. As noted, there is a positive relationship for misinfo x narrative for ANTiVax but not CMU-MisCov19. The paper says that this indicates that false narratives about getting the vaccine get more engagement than other misinformation narratives (lines 433-435). Examples of those other types of misinformation narratives would be informative. I assume false narratives about getting the vaccine would be narratives about people getting the vaccine and then terrible things happening to them? Examples here would be valuable as well.\nEffect sizes or something else may help readers interpret the strength of these relationships, which is currently lacking. There is a positive relationship for both datasets for narrative x misinfo x follower count, but with very small coefficient values. The range of coefficient values varies dramatically overall (the -3.5 coefficient for misinfo x narrative for CMU-MisCov19 has a particularly large absolute value, which may be worth talking about).\nA more in-depth discussion of the results is needed to properly interpret and contextualize all of the results given. For example, it seems counterintuitive and interesting that there is more narrativity with informed tweets (if I'm reading section 5.1 right). What might be evidence from the tweets to explain this? Are people just sharing stories of getting the vaccine? In general, more interpretation of main themes coming from results in each subsection of section 5 would be helpful.\nThe LIWC analysis in section 5.3.3 seems to yield unsurprising results when it comes to what terms narratives would use more. More informative would be differences between narrative info and narrative misinfo, but the only difference detected is a focus on death terms. Unsurprising results are okay in general, and maybe the focus on death can contribute to what is not known about COVID misinformation (it is perhaps interesting that the informed tweets are not talking about avoiding death through taking the vaccine, for example), but more interpretation and discussion would be needed. The narrative arc analysis in section 5.3.2 doesn't seem to add any value, since as noted, tweets just seem too short for this tool to work properly and it seems like most of the results are statistically insignificant.",
+      "typos_grammar_style_and_presentation_improvements": "- What does the Hydrated % row refer to in Table 1?\n- Figure 1 text is too small to easily read, other figures like Fig 2 and tables too - Line 338 , instead of .\n- Line 417: model -> models - Line 632: authentic used -> authentic, used",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "WBYXSNHZjo",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper explores the relationship between narrative communication and health misinformation on social media, focusing on Twitter. The authors manually labeled a subset of tweets from misinformation datasets to identify narratives and then used the best model (their case RoBERTa) to extend these labels to the entire datasets. They found that narrativity can increase engagement with misinformation, especially for users with many followers.",
+      "reasons_to_accept": "The analysis part of the paper where the authors used statistical modeling to find out the relationship among narrativity, misinformation, follower count, and user engagement.",
+      "reasons_to_reject": "1. Line 327, 14.5k tweets were labeled by the annotators and the best RoBERTa model. If the annotators did 3k annotation,  It is not clear how the rest of the tweets are labeled by the model. Does it mean around 11.5k tweets were used as test data?\n2. As data annotation was mentioned as one of the contributions, the authors could show some examples of annotated data and annotation procedures.\n3. Authors could include a thematic analysis of the data.",
+      "missing_references": "Authors should explore the stance, morality, and reason detection task on COVID-19 by Pacheco et al 2022 (A holistic framework for analyzing the covid-19 vaccine debate).  Also for COVID-19 moral foundation and theme, authors could look into work by Islam and Goldwasser 2022 (Understanding COVID-19 Vaccine Campaign on Facebook using Minimal Supervision).",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "KoZECf8FdT",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, the authors annotate an existing misinformation tweet dataset for the presence of narratives. The authors selected two existing medical datasets. They then followed the annotation process through an iterative process involving discussion and revision. They first annotated some samples, and then the rest of the samples were automatically annotated using machine learning techniques.\nThe conclusions that the authors made are: 1. narratives involve higher user engagement than misinformation 2. narratives may help increase engagement of misinformation The key contribution of the work is the dataset and the follow-up conclusions that the paper makes.",
+      "reasons_to_accept": "A new dataset that might help modelling user narratives online especially related to misinformation. \nThe studies that the paper presents are interesting and useful to understand the importance of user narratives.",
+      "reasons_to_reject": "One of the key concerns is the quality of the automatically annotated samples. How much control we have to maintain the quality of the automatically generated samples is something that needs to be mentioned in the paper. While the authors have used different machine learning models, these models have their own pros and cons. \nBesides that, how do we know that the number of instances that have been manually annotated are enough for the computational model to learn reliably?",
+      "questions_for_the_authors": "Questions are mentioned above.\nThere is an assumption that the dataset would be available for free use later.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

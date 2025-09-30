@@ -1,0 +1,126 @@
+{
+  "summary": "This paper introduces a novel approach for clinical predictive tasks using LLM-extracted features. The paper demonstrates comparable performance to reference high-level features, and highlights the interpretability of the model. However, the paper needs to strengthen its claims regarding interpretability, address reproducibility concerns, and provide more detail on ethical considerations.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions the work relative to prior art, identifying gaps in the existing research.",
+      "grounding": "Intro §1.2",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The approach shows strong predictive performance on clinical predictive tasks, comparable to reference high-level features and radiologist-defined features.",
+      "grounding": "Section 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper highlights the interpretability of the model, with coefficients aligning with clinical expectations.",
+      "grounding": "Section 5, Figure 7",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper specifies the LLM used (FLAN-T5-XXL) and hardware (Quadro RTX 8000), contributing to reproducibility.",
+      "grounding": "Sec 3.3",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides a clear explanation of the CHiLL approach, including the use of LLMs for feature extraction and the training of linear classifiers.",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the interpretability benefits, as the features extracted by LLMs may not always aid in interpretability and can sometimes simply paraphrase the original downstream task.",
+      "grounding": "Section 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper acknowledges the opacity of the LLM-based feature extraction process, which limits the verifiability of the extracted features.",
+      "grounding": "Section 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks information on data privacy measures or how patient data is protected, and does not address potential biases in the EHR data or how they might affect the model's performance and fairness.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not report seeds for the experiments, and variance across runs is not discussed, hindering reproducibility.",
+      "grounding": "Sec 3.1, Sec 3.2, Sec 3.3",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not mention the availability of code or data.",
+      "grounding": "Abstract, Sec 2, Sec 3",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'interpretable features' is not consistently clear throughout the paper.",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The notation used in the Methods section (Equation 1) could be clarified.",
+      "grounding": "Methods, Equation 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss the potential for misuse of the model, such as using it to discriminate against certain patient groups.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a head-to-head comparison with a contemporaneous method.",
+      "grounding": "Sec 4.1",
+      "facet": "novelty"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments to assess the trade-off between interpretability and predictive power when designing queries and develop methods to verify the faithfulness of predicted features to their queries.",
+      "grounding": "Section 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide the code and data used in the experiments, including a requirements.txt or equivalent for environment setup, and report the random seeds used for all experiments and provide the variance or confidence intervals of the results.",
+      "grounding": "Sec 3.1, Sec 3.2, Sec 3.3",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed section on data privacy, including data anonymization techniques and security measures, and address potential biases in the EHR data and discuss how they might affect the model's performance and fairness.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a concise definition of 'interpretable features' early in the introduction.",
+      "grounding": "Introduction",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Create a table of notation to define all symbols used in the equations, especially in the Methods section.",
+      "grounding": "Methods, Equation 1",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

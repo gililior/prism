@@ -1,0 +1,362 @@
+[
+  {
+    "kind": "weakness",
+    "text": "No information on data privacy measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on consent from annotators.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on usage terms or ethical risks.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces HTL, a new dataset for program understanding based on Hoare triples. It discusses limitations of current approaches and proposes a new annotation protocol. The authors conjecture the dataset can be used to train language models and explore automatic labeling. The paper acknowledges limitations related to the dataset's scope and annotation quality.",
+    "grounding": "Sec 4",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper presents a new dataset (HTL) and annotation protocol for program understanding.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The conjecture about training language models with HTL lacks experimental evidence.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The claim about leveraging language models' world knowledge and language proficiency is a conjecture without supporting evidence.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments to validate the effectiveness of training language models with HTL.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate the performance of language models trained on HTL in tasks related to program understanding.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What specific tasks or metrics will be used to evaluate the performance of language models trained on HTL?",
+    "grounding": "Sec 4",
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed annotation protocol address the limitations of existing approaches?",
+    "grounding": "Sec 4",
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific challenges in automatically labeling program fragments using language models?",
+    "grounding": "Sec 4",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge limitations regarding the dataset's scope (programs without side effects, no external libraries) and annotation quality (human-written, potential noise).",
+    "grounding": "Sec 4",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Ethics Statement",
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper is well-structured, with a clear introduction, dataset description, and contributions section.",
+    "grounding": "Abstract, Section 1, Section 2",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly states the research questions and the proposed approach.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'intuitive theories' is used without a precise definition, potentially leading to ambiguity.",
+    "grounding": "Section 1",
+    "facet": "clarity_terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section or clear explanation of the notation used, which could hinder understanding.",
+    "grounding": "Throughout the paper, especially Figure 1 and 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'intuitive theories' or rephrase the sentence to improve clarity.",
+    "grounding": "Section 1",
+    "facet": "clarity_terminology"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table or a dedicated section to explain the symbols and abbreviations used, especially for Hoare triples.",
+    "grounding": "Throughout the paper, especially Figure 1 and 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What specific criteria were used to select the programming language fragment for the dataset?",
+    "grounding": "Section 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the annotation protocol ensure consistency and address potential disagreements among annotators?",
+    "grounding": "Section 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the annotation protocol and dataset creation process is not detailed enough to fully reproduce the work.",
+    "grounding": "Section 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper presents a novel dataset and addresses an interesting research question. However, improving the clarity of key definitions and notation would significantly enhance the paper's impact.",
+    "grounding": "Abstract, Section 1, Section 2",
+    "facet": "overall"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel dataset (HTL) and annotation protocol for fine-grained natural language annotations of program behavior, addressing a gap between code comments and formal methods.",
+    "grounding": "Intro, Sec 1.3",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions the work within the context of program understanding, semantic parsing, and program summarization, citing relevant prior work in the field.",
+    "grounding": "Related Work",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing datasets and methods in program understanding and natural language inference over code. It is unclear how HTL improves upon existing approaches.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient details on the annotation protocol and tool, making it difficult to assess the quality and reproducibility of the dataset.",
+    "grounding": "Intro, Sec 1.4",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative evaluation of HTL against existing datasets (e.g., those mentioned in Related Work) using standard metrics for program understanding and natural language inference.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed description of the annotation protocol, including inter-annotator agreement and examples of challenging cases.",
+    "grounding": "Sec 2",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of potential limitations of the HTL dataset, such as biases in the annotation process or the types of programs that can be effectively annotated.",
+    "grounding": "Intro",
+    "facet": "limitations"
+  },
+  {
+    "kind": "question",
+    "text": "How does the granularity of the HTL annotations compare to existing code comment practices?",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific challenges in reasoning about programs with natural language that HTL aims to address?",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What are the plans for releasing the dataset and the annotation tool?",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the quality and usefulness of the HTL dataset, which is not fully assessed in the current paper.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present a user interface, code snippets, and annotation coverage, with varying degrees of clarity.",
+    "grounding": "Figures 1-5",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 4 effectively illustrates the user interface and its functionalities.",
+    "grounding": "Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks specific details about the annotation coverage, such as what is being covered.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 3, clarify what the annotation coverage represents (e.g., lines of code, variables, etc.) and provide labels for the axes.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the scale or metric used in Figure 3 to represent annotation coverage?",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The figures primarily focus on the interface and data annotation, limiting the scope of performance analysis.",
+    "grounding": "Figures 1-5",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "Table 1 presents annotation length statistics. The table's quality is limited by the lack of statistical measures.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "N/A",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 is missing key statistical information such as standard deviation, confidence intervals, or p-values.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviation and other descriptive statistics to provide a more complete picture of the data distribution in Table 1.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the sample size for the annotation length statistics in Table 1?",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The scope of Table 1 is limited to annotation length statistics, which may not fully represent the overall quality of the annotations.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the dataset or the annotation process.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential misuse of the dataset, such as for malicious code generation.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section on potential biases and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss potential misuse cases and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel dataset and protocol (HTL) for annotating programs with natural language predicates at a finer granularity than code comments, differentiating itself from existing datasets that often rely on coarser annotations and automatic web scraping [1, 2, 3].",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare the proposed HTL dataset and protocol with existing datasets like DS1000 [1], Spider [2], and CoDesc [3] in terms of annotation quality, granularity, or the types of reasoning tasks they enable. A quantitative comparison of model performance on tasks using HTL versus these datasets is missing.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments comparing the performance of models trained on HTL with models trained on DS1000 [1], Spider [2], and CoDesc [3] for tasks like code summarization, code generation, or program understanding. Evaluate the models on metrics relevant to the task, such as accuracy, F1-score, or BLEU score. This would provide a direct comparison of the effectiveness of the proposed dataset and protocol.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss how the proposed approach addresses the limitations of existing methods, such as the reliance on first-order logic formulas and WordNet [Bos and Markert, 2005] or the need for explicitly stated premises and rules [Clark et al., 2021].",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of how the HTL dataset and protocol can be used to overcome the limitations of existing approaches, such as by enabling more flexible and nuanced reasoning or by allowing for the discovery of implicit rules and premises. This could involve experiments that compare the performance of models trained on HTL with models trained on datasets that use first-order logic or require explicit rules.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

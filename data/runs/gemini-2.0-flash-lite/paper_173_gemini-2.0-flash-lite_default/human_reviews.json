@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "6CzNgmsIqj",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors propose a knowledge graph enhanced language model (KAPALM) that fuses coarse- and fine-grained representations of entity knowledge from knowledge graphs to conduct fake news detection. They design a method to prune subgraphs, and then use attention mechanism to obtain knowledge representation. By combining it with a textual representation, KAPALM could further improve the detection performance.",
+      "reasons_to_accept": "\u2022This work copes with the fake news classification task, which is useful in practice.  \u2022The author proposed an effective model for the fake news detection task and verified its effectiveness on the public test set",
+      "reasons_to_reject": "\u2022The motivation stated in the abstract is not solid enough, and the method proposed in the paper is not novel enough. For the statement \" majority of these methods focus on news entity information and ignore the structured knowledge among news entities\" in the abstract, some existing methods already do this, like CompareNet[1].\n\u2022The comparison of the proposed method with the baseline is not fair enough. The Bert-base-with-adapter used in the article is inconsistent with the Roberta used by KPL, and it is difficult to prove that KAPALM is more effective than KPL. What is the motivation for Bert-base-with-adapter?\n\u2022The coarse-grained and fine-grained knowledge mentioned in the article is not clear enough. The knowledge pruning method proposed in the article is intuitive.\n[1]. Hu L, Yang T, Zhang L, et al. Compare to the knowledge: Graph neural fake news detection with external knowledge[C], in ACL2021.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "1: Poor: I cannot identify the contributions of this paper, or I believe the claims are not sufficiently backed up by evidence. I would fight to have it rejected.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "UT8FMj1NCh",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Identifying fake news is a highly relevant topic and one that is at the core of NLP given the importance that written text contributes to solving the task. As such it presents a great topical match for EMNLP.  The authors argue that identifying entities in some text and incorporating relationships between entities drawn from some external knowledge graphs might help in this classification task. The architecture that is being proposed is one that generates embeddings from three different angles: the actual text, an entity graph based on entities in the text and related entities in some external graph, a pruned version of this graph. The three embeddings resulting from this process are concatenated before being fed into a binary classifier.\nExperiments on the FakeNewsNet dataset are reported.",
+      "reasons_to_accept": "- This is a highly relevant research area, and any work that pushes our understanding as to how to identify misinformation of any form is a step forward.\n- The work is conducted on a well-known benchmark dataset and is therefore easily contextualisable with other work in the field.  - Conducting an ablation study is a strong aspect of the experimental work as it offers more nuanced insights into what components of the architecture contribute how much  to the overall performance.",
+      "reasons_to_reject": "There are a number of weaknesses in this work. Among the biggest issues I consider the following:  - Weak baselines: Given the chosen dataset contains much more information than the textual content I would want to see the results of this work compared to the state of the art reported in the literature that looks at the same dataset. To pick just one recent example [1], the results reported (such as F1) appear to be way higher than anything in Table 2 (and that is also true for the baselines reported in [1]). What is needed is a comparison against what the current state of the art is as reported in the literature (ideally reproduced to conduct significance tests where appropriate).  - Only a single dataset is used to explore the problem (well, it is two different parts but in the end it is one fairly specific dataset). There are many more benchmark datasets for text classification (including fake news detection) that could be included to provide more confidence in the findings.  - There are many missing details (and no supplementary material such as code) making it impossible to replicate the work. For example, unless I have overlooked it I cannot see what knowledge graphs are actually being used.  - There are no statistical significance tests (and terms such as \"outperform\" should therefore not be used)  [1] Donabauer \"Exploring Fake News Detection with Heterogeneous Social Media Context Graphs\". ECIR 2023.",
+      "questions_for_the_authors": "(1) It is unclear to me that text properties alone (together with what text properties of external sources add to that) would be sufficient to distinguish fabricated news from real news. This may be true for some datasets but I imagine that with more effort put into creating stories (and more sophisticated tools such as those from the GPT family) it would be impossible to distinguish the two classes without incorporating more signals (such as contextual features). What is the underlying intuition in your work? Do you argue that even with the widepread adoption of ChatGPT et al. it will be possible to distinguish fake news from real news based on text (+ entities) alone?   (2) Given you adopt a dataset that includes many more signals I wonder why you do not include all these and THEN try to push forward the state of the art by going beyond what you can achieve. What is the reason to only try to improve on the text classification alone?  (3) Is there a need to include all the baselines? I have the impression that none of 1 - 7 are actually needed as we can assume for BERT to be a stronger baseline (it is also not a surprise that the results demonstrate yet again that traditional methods do not appear to be competitive with neural methods).\n(4) Why did you not include a discussion of ethical issues? Given the topic this would have been a helpful addition.",
+      "missing_references": "You should include references that represent the state of the art in respect to whatever dataset(s) you have chosen.\nMake sure you include peer-reviewed versions of a paper where this is appropriate (e.g. the BERT paper).",
+      "typos_grammar_style_and_presentation_improvements": "The paper needs to be properly proofread. It has many language problems throughout.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "m18NpFwGiw",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper investigate to integrate structured knowledge among entities in the news article to enhance the fake news detection. The proposed method outperforms previous KG related approaches that do not utilise structured information. It also shows promising results in the few-shot setting.",
+      "reasons_to_accept": "The approach is novel and achieves SOTA on two datasets with full scale training, and show promising performance in the few-shot setting.",
+      "reasons_to_reject": "Lack statistical significance tests.",
+      "questions_for_the_authors": "Did you conduct error analysis to explore the reason why your proposed method is worse than KPL in the few shot setting on Politifact, but better than KPL on Gossipcop?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

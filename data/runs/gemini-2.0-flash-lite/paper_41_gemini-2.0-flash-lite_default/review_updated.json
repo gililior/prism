@@ -1,0 +1,126 @@
+{
+  "summary": "This paper introduces the VivesDebate-Speech corpus and explores the use of audio features for argument mining. The experiments show promising results in audio-based segmentation. The paper has been updated to address concerns about clarity, reproducibility, and societal impact. The authors have clarified existing content and committed to future improvements.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The experiments demonstrate improved performance using audio segmentation compared to text-based segmentation, as shown in Table 2.",
+      "grounding": "(Table 2)",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper introduces the VivesDebate-Speech corpus, which is positioned as a valuable resource for argument mining research, particularly for integrating audio features.",
+      "grounding": "(Abstract, Intro)",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides details on the experimental setup, including the architecture, hyperparameters, and hardware used for training.",
+      "grounding": "(Appendix A.2)",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 reports both accuracy and Macro-F1 scores, providing a more complete picture of model performance.",
+      "grounding": "(Table 2)",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly outlines the problem of argument mining and the limitations of existing resources, setting the context for the paper's contribution.",
+      "grounding": "(Introduction §1)",
+      "facet": "organization"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly describes the creation of the VivesDebate-Speech corpus and its advantages over existing resources.",
+      "grounding": "(Section 2)",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides details on the audio features and the pipeline in Section 2.2 and Appendix A.1.",
+      "grounding": "(Section 2.2, Appendix A.1)",
+      "facet": "originality"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of the findings without considering the limitations of the oracle ASR system used in the experiments.",
+      "grounding": "(Sec 6)",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient detail on the specific audio features used and the argument mining pipeline, making it difficult to assess the novelty and impact of the proposed approach.",
+      "grounding": "(Abstract, Intro)",
+      "facet": "originality"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide enough detail on the experimental setup, including the specific audio features used, the models employed, and the evaluation metrics.",
+      "grounding": "(Section 4)",
+      "facet": "organization"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not mention the use of seeds for the experiments, making it difficult to reproduce the results, and the variance across multiple runs is not reported.",
+      "grounding": "(Section 4 and Appendix A)",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure axes lack clear labels and units, and figures lack legends (Fig 2). Table 1 lacks specific statistical measures beyond set-level statistics, and Table 3 lacks crucial information like standard deviation or confidence intervals (Tables 1 and 3).",
+      "grounding": "(Fig 2, Tables 1 and 3)",
+      "facet": "figures, tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset license and usage restrictions are not stated.",
+      "grounding": "(Insufficient evidence)",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential biases in the data or the system's outputs, potential misuse scenarios, or broader societal impacts.",
+      "grounding": "(Insufficient evidence)",
+      "facet": "risks, fairness, misuse, broader_impacts"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include the seed values used for all experiments and report the variance (e.g., standard deviation) of the results across multiple runs with different seeds.",
+      "grounding": "(All sections)",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add axis labels with units to Figure 2 and include a legend to clarify the different components or configurations being compared. Include standard deviations and/or confidence intervals for all reported metrics in all tables. Add p-values to Table 2 to indicate statistical significance of performance differences between models.",
+      "grounding": "(Fig 2, Tables 1, 2, and 3)",
+      "facet": "figures, tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "(Insufficient evidence)",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a dedicated section or subsection detailing the experimental methodology, including the specific audio features used, the models employed, and the evaluation metrics.",
+      "grounding": "(Section 4)",
+      "facet": "organization"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies.",
+      "grounding": "(Conclusion)",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

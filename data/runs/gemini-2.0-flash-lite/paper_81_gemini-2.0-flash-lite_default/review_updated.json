@@ -1,0 +1,180 @@
+{
+  "summary": "This paper introduces FLatS, a novel framework for Out-of-Distribution (OOD) detection, claiming state-of-the-art performance by leveraging likelihood ratios. The paper demonstrates promising results and a clear framework. The authors have addressed several methodological and ethical concerns raised in the initial review, including dataset licensing, clarity of figures, and comparisons to prior work. However, the paper still needs to provide more detailed experimental results and address the generalizability of the method.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "FLatS establishes a new state-of-the-art (SOTA) in OOD detection, supported by results in the results section.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper's core idea of using likelihood ratios for OOD detection is novel and well-motivated, differentiating itself from methods that only estimate in-distribution density.",
+      "grounding": "Intro, Related Work",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 1 provides a clear overview of the proposed FLatS framework.",
+      "grounding": "Fig 1",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly defines OOD detection within the context of supervised multi-class classification.",
+      "grounding": "Definition 1, §2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper explicitly highlights the differences between FLatS and prior work using likelihood ratios.",
+      "grounding": "Related Work",
+      "facet": "method"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The claims of simplicity and effectiveness are not fully supported by the experimental results; the definition of these terms is also unclear.",
+      "grounding": "Sec 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overstates the generalizability of FLatS, as it only demonstrates improvements over post-hoc OOD detection baselines.",
+      "grounding": "Sec 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper needs to provide more specific details on how FLatS differs from the likelihood ratio methods of Ren et al. (2019) and Xiao et al. (2020).",
+      "grounding": "Related Work",
+      "facet": "originality"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term 'OOD-ness' is used without a clear definition, potentially leading to ambiguity.",
+      "grounding": "Abstract, §1",
+      "facet": "terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The notation used in equations (1) and (2) could be clarified, with explicit definitions for all symbols.",
+      "grounding": "Equations (1) and (2), §2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The table only provides averaged values and does not include standard deviations or confidence intervals.",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential misuse scenarios, ethical implications, or potential biases in the datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not include a detailed discussion of the broader societal impacts of the proposed method.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not include a detailed discussion of potential failure modes and their consequences.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare FLatS with the method described in [1] or methods that leverage auxiliary OOD data.",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide more detailed experimental results to support the claim of simplicity and effectiveness, including quantifying the performance improvement of FLatS on various OOD detection methods.",
+      "grounding": "Sec 5, 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments to show the performance of FLatS with different OOD datasets to demonstrate its generalizability.",
+      "grounding": "Sec 7",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a legend to Figures 2 and 3 to clarify the baselines and methods used, and include error bars to indicate variance.",
+      "grounding": "Figs 2, 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a direct comparison with Ren et al. (2019) and Xiao et al. (2020), or a similar method, to highlight the advantages of FLatS.",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Define all symbols used in equations (1) and (2) explicitly.",
+      "grounding": "Equations (1) and (2), §2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals to quantify the variability of the results and consider adding p-values to compare the performance of different methods.",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section on potential misuse cases, such as the use of FLatS in malicious text generation or filtering, and discuss mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Analyze the datasets used for potential biases and their impact on model performance and discuss strategies to mitigate bias and ensure fairness.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Expand the discussion of broader societal impacts, including potential benefits and risks, and consider the impact on different user groups.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a section detailing the limitations of the proposed method and potential failure modes.",
+      "grounding": "Conclusion",
+      "facet": "limitations"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a discussion on the ethical implications of the research, including potential biases and fairness concerns.",
+      "grounding": "Ethics Statement",
+      "facet": "ethics"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing FLatS with the method in [1] on the same benchmark datasets.",
+      "grounding": "Experiments",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Compare FLatS with methods that use auxiliary OOD data to evaluate the effectiveness of FLatS in utilizing auxiliary data for P_out estimation.",
+      "grounding": "Experiments",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

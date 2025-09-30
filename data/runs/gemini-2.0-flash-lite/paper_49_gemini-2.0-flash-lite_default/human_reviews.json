@@ -1,0 +1,86 @@
+[
+  {
+    "rid": "UsE4zEGlq9",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In the authors' words, the aim of the work is to confirm that different approaches of constructing cross-lingual summarization (CLS) datasets will lead to different degrees of translationese. Then they study how such translationese affects CLS model evaluation and performance when it appears in source documents or target summaries.",
+      "reasons_to_accept": "The impact of translationese in the domain of NLP is a critical issue. Here it is important to take into account its growing dependence on ML techniques, a reality associated with the need for training corpus in different fields of knowledge and languages. This has led to the application of TM tools to its generation and, consequently, the generalization of all kinds of phenomena related to the concept of \"translationese\". In turn, given the popularization of NLP-based tools, this could even affect language on a longer term. The recent irruption of GPT-like models delves into the importance of studying this type of problems, particularly in relation to summarization.\nIn this context, the work is interesting. Regardless of the fact that the authors' conclusions coincide with those intuitively expected, the truth is that the evidence corroborates them and seems to dispel any possible doubts.",
+      "reasons_to_reject": "A. I wonder if the fact of considering only m-BART-based MT models for testing does not introduce some kind of bias in the results.\nB. I also wonder if the best way to address the impact of translationese in the field of cross-lingual technologies would not be by focusing our attention on the basic MT technologies... and not on each of their possible practical applications (summatization, ...). In this regard, it should be remembered that there are already works published in this line as, for example: Eva Vanmassenhove, Dimitar Shterionov, and Matthew Gwilliam. 2021. Machine Translationese: Effects of Algorithmic Bias on Linguistic Complexity in Machine Translation. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 2203\u20132213, Online. Association for Computational Linguistics.\nSicheng Yu, Qianru Sun, Hao Zhang, and Jing Jiang. 2022. Translate-Train Embracing Translationese Artifacts. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 362\u2013370, Dublin, Ireland. Association for Computational Linguistics.\nthe latter of which is one of the references included in this work.",
+      "questions_for_the_authors": "The authors' responses seem conditioned by the size limitations of the text, both in my case and in that of the rest of the reviewers.\nCertainly some of the modifications required imply a significant investment of time and work, but it is no less true that if this is the case, it is because it refers to aspects that should have been considered before writing the text. More precisely, we have that: A. Please, justify the authors' position in relation to the reviewer's item A in the previous section \"Reasons to reject\".\nRegarding the authors' responses, it is not clear whether or not some type of comparison with other operating models will be included in the reviewed paper, given that the authors limit themselves to stating that: \"We would like to add this discussion in Limitation section\" when I have no doubt that it is an issue that must be addressed in one way or another in an eventual final review, if only to warn of the possibility of biases associated with the use of a certain type of modeling, given that this would condition the entire experimental part of the work.\nB. Please, justify the authors' position in relation to the reviewer's item B in the previous section \"Reasons to reject\".\nRegarding the authors' answers at this point, indeed most existing translationese-relevant studies typically focus on MT, which would have precisely facilitated a comparison like the one we have just commented on. In any case, we are talking about a decision of the authors who have adequately justified.",
+      "typos_grammar_style_and_presentation_improvements": "Is such a display of bibliographic references really necessary ? Their presence is overwhelming and makes it difficult to understand the text (see for example Lines 040 or 058). Such display does not at all favor the reading and comprehension of the text.\nPlease, avoid redirects in the text, particularly in the Introduction (see Line 063, 083, 084). Instead, include a \"road-map\" of the paper at the end of Section 1, including a brief look of all the other Sections.\nMost of the last paragraph (Contributions) of Section 1 retake the same contents included in the previous one as well in the Abstract. Is this really necessary.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "aFZZzDoQta",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper the authors explore the effect of translationese on the cross-lingual summarization (CLS). Since in the cross-lingual summarization task the data is often obtained via translation (often MT) this leads to a question of whether the translationese, likely introduced during this process, affects the task itself (CLS) The authors investigate how translationese, when present in source documents or target summaries, affects the modeling and evaluation of CLS. The author explore this problem through a series of experiments and give suggestions on how one may deal with this issue in the future. These include controlling translationese in test sets, developing translationese-aware models, and building mixed-quality CLS datasets.\nThe authors also include a partial human evaluation, though details are missing.",
+      "reasons_to_accept": "- The problem addressed in this study is very timely and likely to be an issue in the current systems; - The experiment choice is motivated by the RQs.",
+      "reasons_to_reject": "- I am not sure about the human evaluation employed, as there are no sufficient details in the paper raising ethical and methodological questions. For instance, I believe that the ratings should not be displayed as means as the scale employed is likely ordinal (or at least a distribution of scores should be added. This further raises a question about the IAA analysis, as the reported Fleiss Kappa should be employed to categorical data. In other words, the IAA is done for categorical data, the means are reported as if the data was interval/numerical, while most likely the data is ordinal, though it is impossible to say as the details are not reported (or somehow I have missed that).",
+      "questions_for_the_authors": "Question A: How were the human evaluators selected? Were they compensated for this task?  Question B: What is the 3-point scale? What instructions were given to the annotators?",
+      "typos_grammar_style_and_presentation_improvements": "Apart from Fleiss Kappa, it would be also good to report the percentage agreement. If the data is not categorical, Krippendorff's alpha should be employed. Preferably CI should be reported.",
+      "ethical_concerns": "Yes",
+      "justification_for_ethical_concerns": "Details on human evaluation are missing, it is not stated how much the evaluators were paid or whether the study design was reviewed by IRB."
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "sp4old3SET",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Paper is a comprehensive look at the impact of translationese in cross-lingual summarization.  authors motivate the work based on the shortage of cross-lingual summarization resources.  After introducing some metrics to estimate translationese, they look at their impact when present in the source text, target summaries and also their impact on summarization models.  Results indicate their presence and motivates some suggestions about containing their presence with automatic and manual efforts.",
+      "reasons_to_accept": "1. Interesting topic (cross-language summarization).\n2. Fairly comprehensive look at the impact of translationese in source, target, eval and models.  The comprehensive work just requires some substantial polishing and restructuring.",
+      "reasons_to_reject": "1. Paper has a poor writing and it is difficult to follow.  Moreover it is not organized well (long sentences, latex mistakes, many accronyms, long repetitions of table results in the text body). Even some basic concepts like translationese are not defined well.  There's not a single example in the entire paper.\n2. poor replicability of the work.  so much details are missing in computing various translationese metrics for different languages and cls models.\n3. The conclusion and macro level impact of the work does not seem significant.",
+      "questions_for_the_authors": "1. where are details of the wide range of linguistic analysis to compute translationese metrics (parse, pos, entropy, etc).  how do factor varying levels of quality for such analysis in different languages?\n2. section 3.3 is quite confusing:  here the direction is en2x and one would expect the summaries to be in the x languages and annotation is conducted in those 4-5 languages?  also any explanation for the fair/weak agreement for fluency and also the fact that overal agreement is higher than the individual factors?\n3. Re: Table 8, the MT data is always kept at 100% in the ablation study.  do you think using a cleaner subset of the MT data (using your translationese metrics) can make the impact of that data stronger?",
+      "typos_grammar_style_and_presentation_improvements": "1.  latex errors: line 057 (long referencing at the middle of sentence),  2. Table 9 & 10 in page 8.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "f6KqcDTVzC",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "1. This paper explores the impact of translationese on the evaluation and performance of cross-lingual summarization models. \n2. The paper outlines the process of creating different cross-lingual summarization datasets and highlights potential disparities between automated and human evaluations. \n3. A comprehensive overview of the development of current cross-lingual summarization datasets is provided. \n4. The paper also delves into the factors within translated text that contribute to the phenomenon known as 'translationese'. \n5. Experiments were conducted to measure the influence of translationese on both documents and summaries, and the resulting analysis is presented in a clear and easily understandable manner.",
+      "reasons_to_accept": "1. This paper is the first attempt to analyze the impact of translationese in cross-lingual summarization tasks. \n2. The authors provided a detailed analysis of the impact of translationese concerning source documents and Target summaries for various languages and datasets. \n3. The authors highlight findings, such as the potential promise in constructing mixed-quality or semi-supervised cross-lingual summarization datasets, which could be a valuable direction for further research. \n4. This paper emphasizes how important it is to use human-translated documents and summaries to create strong cross-lingual summarization models. \n5. The analysis process used to identify the impact of translationese allows other groups to reproduce for different language families.",
+      "reasons_to_reject": "1. In section 3.3, the human evaluation part isn't clear. \n         a. Were the evaluators native speakers? What was their expertise level?\n      b. What guidelines were given for human evaluation? The specifics of the 3-point scale breakdown for metrics like Informativeness,            Fluency, and Overall are missing.                                                           c.  On line 363, what does \"overall quality\" mean? \n       d. The authors mentioned selected 100 samples from the XSAMSUM test set randomly. How many of these belonged to mBART-HT             and mBART-MT? However, Table 4 indicates separate human evaluation for these subsets.\n     e. If human evaluation was done separately, I would expect additional Fleiss' kappa scores for Informativeness, Fluency, and Overall.\n     f. On line 369, mentioned that  \"good agreement between evaluators.\" But according to Fleiss' kappa score interpretation             (https://en.wikipedia.org/wiki/Fleiss%27_kappa), the scores show fair to moderate agreement. It's important to explain the reasons            for the lower agreement scores.                                                                                                                                           g. Opting for human evaluation on two different datasets would be preferable.\n2. The above raised issue apply to section 4.3 also, where Fleiss' kappa scores and metric ratings are missing.\n3. As stated in Appendix B, all reported experimental scores are averages of 3 runs. However, the corresponding standard deviation scores are absent.\n4. Regarding lines 022-023, there's no evidence or empirical study provided on how translationese might negatively affect CLS model performance in real-world applications.",
+      "typos_grammar_style_and_presentation_improvements": "Minor issue: 1. line183 --> check the spacing",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

@@ -1,0 +1,446 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel approach to multilingual machine translation by utilizing pixel representations, addressing limitations of traditional vocabulary-based methods.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions its work within the context of existing research on multilingual machine translation and pixel representations, highlighting the novelty of multilingual training with pixel representations.",
+    "grounding": "Intro, Related Work",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a direct comparison with the most relevant prior work on pixel-based machine translation, making it difficult to assess the delta.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with Rust et al. (2023) or Salesky et al. (2021) to quantify the improvements gained from multilingual training.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the specific architectures and training methodologies used for the pixel-based models, including the size of the datasets and the computational resources used.",
+    "grounding": "Methods",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of the proposed method compare to other multilingual models using character-level or byte-level representations?",
+    "grounding": null,
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What are the computational costs associated with training and inference using pixel representations compared to subword embeddings?",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the effectiveness of multilingual training with pixel representations, which may be limited by the quality and diversity of the training data.",
+    "grounding": null,
+    "facet": "novelty"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces and evaluates multilingual pixel representations for machine translation. It demonstrates improved performance compared to subword approaches, analyzes properties of pixel representations, and discusses rendering parameter choices.",
+    "grounding": "Abstract, Sec 7",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates improved performance compared to traditional subword approaches.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper analyzes various properties of pixel representations.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the benefits of pixel representations without sufficient evidence.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed analysis of the impact of different scripts and data representation on pixel representations.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct more detailed experiments to analyze the impact of different scripts and data representation.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more detailed analysis of the properties of pixel representations.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What specific properties of pixel representations enable cross-lingual transfer to unseen scripts?",
+    "grounding": "Sec 7",
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "How do the rendering parameter choices affect the performance of the model?",
+    "grounding": "Appendix C",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper discusses rendering parameter choices but does not adequately discuss the limitations of the proposed approach.",
+    "grounding": "Appendix C",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper describes the reparameterization of models, providing details on layer depth and feed-forward width.",
+    "grounding": "Section 2, Table 7",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds or the reporting of variance.",
+    "grounding": "Section 2, Section 3.1, Table 7",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the environment used for the experiments.",
+    "grounding": "Section 2, Section 3.1, Table 7",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the code and scripts used for the experiments.",
+    "grounding": "GitHub link placeholder",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the seeds used for all experiments and the variance across multiple runs.",
+    "grounding": "Section 2, Section 3.1, Table 7",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include details about the software and hardware environment used for the experiments, such as the operating system, the versions of the libraries, and the type of hardware.",
+    "grounding": "Section 2, Section 3.1, Table 7",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used in the experiments publicly available?",
+    "grounding": "Section 2, Table 7",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What is the number of runs performed for each experiment?",
+    "grounding": "Section 3.1, Table 7",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Can the authors provide a Dockerfile or a similar environment description to ensure reproducibility?",
+    "grounding": "Section 2, Section 3.1, Table 7",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The paper lacks information about the computational resources used for the experiments.",
+    "grounding": "Section 2, Section 3.1, Table 7",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper provides some details about the experimental setup, but lacks crucial information for reproducibility, such as seed reporting, variance, and environment details.",
+    "grounding": "Section 2, Section 3.1, Table 7",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally aim to support the claims made in the text, but some could benefit from improved clarity and labeling.",
+    "grounding": "Figures 1-13",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 clearly explains the pixel-based encoding process with a well-labeled diagram.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several figures lack clear axis labels and units, making it difficult to interpret the results quantitatively (e.g., Figure 3).",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In performance plots (e.g., Figures 3, 4, 5), add error bars or shaded regions to indicate confidence intervals or variance.",
+    "grounding": "Figures 3, 4, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors and markers represent in the visualizations, especially in Figures 4, 7, and 12?",
+    "grounding": "Figures 4, 7, 12",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics and do not delve into the nuances of individual language pairs or specific linguistic phenomena.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results from various experiments, focusing on model performance across different datasets and language pairs. The quality varies, with some tables providing more detailed statistical information than others.",
+    "grounding": "Tables 1-8",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 appears to present results for high-resource (HR) and low-resource (LR) language pairs, which is a good approach for comparing model performance across different resource settings.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1, which reports model performance across datasets, does not specify the statistical measures used to determine the average metric scores. It also lacks information on variance or confidence intervals.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include p-values or other statistical significance indicators in all tables, especially when comparing different models or settings. Add standard deviations or confidence intervals to quantify the variability of the results.",
+    "grounding": "Tables 1, 3, 7, 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the performance differences reported in the tables? 2. Are the results in Tables 5 and 6 (TED-7 and TED-59) presented with standard deviations or confidence intervals? 3. How were the language pairs selected for Table 2?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets and language pairs used in the experiments. Generalizability to other datasets and languages is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Lack of information on dataset licensing and usage terms.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide explicit statements about dataset licenses and usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces and evaluates multilingual machine translation models using pixel representations. It demonstrates improved performance compared to subword embeddings across various languages and scripts. The authors explore properties of pixel representations, such as parameter sharing, and show their data efficiency and ability to transfer to unseen scripts.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper is well-structured, with a clear introduction, methods, and results section. The abstract clearly outlines the paper's contributions and findings.",
+    "grounding": "Abstract, \u00a71, \u00a72",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The rendering process is explained with references to existing work, and the use of PangoCairo is justified.",
+    "grounding": "Sec 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'pixel representations' is used without a clear, concise definition early on. While the rendering process is described, a formal definition of what constitutes a 'pixel representation' in the context of the model is missing.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation section or table. Variables like 'h', 'w', and 's' are introduced without a central reference point.",
+    "grounding": "Sec 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'pixel representations' early in the introduction, perhaps in the first paragraph.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table or section to define all symbols used, especially those in the methods section (e.g., h, w, s).",
+    "grounding": "Sec 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Incorporate a figure or diagram to illustrate the architecture of the pixel-based multilingual translation model, clarifying how pixel representations are integrated.",
+    "grounding": "\u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the choice of font size and DPI impact the performance of the pixel-based models? Is there an ablation study on these parameters?",
+    "grounding": "Sec 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost (e.g., training time, memory usage) of using pixel representations compared to subword embeddings?",
+    "grounding": "\u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "Are there any limitations to the approach, such as handling very long sentences or specific language characteristics?",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a clear model architecture diagram and the absence of a notation table could hinder reproducibility.",
+    "grounding": "Sec 2.1, \u00a72",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "7",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential misuse scenarios, such as the generation of biased or offensive translations.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address fairness considerations, including potential biases in the training data and their impact on different languages and scripts.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed discussion of the broader societal impacts of the proposed model.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section on potential risks and misuse, including mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of fairness considerations and potential biases, along with mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand the discussion of broader societal impacts, including positive and negative consequences.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel approach to multilingual machine translation by utilizing pixel representations, which is a vocabulary-free alternative, as highlighted in the introduction and related work.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explores the properties of pixel representations, such as parameter sharing within and across scripts, and their impact on cross-lingual transfer and data efficiency, providing insights into their effectiveness.",
+    "grounding": "Sec X",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance against the transliteration-based approach [1] or vocabulary expansion methods [2], which are relevant baselines for multilingual and cross-lingual transfer.",
+    "grounding": "Related Work",
+    "facet": "missing_baselines"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments comparing the proposed pixel representation approach with the transliteration method [1] on a shared set of languages and scripts to quantify the performance difference. Also, compare with vocabulary expansion methods [2].",
+    "grounding": "Sec 4.1",
+    "facet": "experiments"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of the computational cost (e.g., training time, inference time) of using pixel representations compared to subword embeddings or other baselines.",
+    "grounding": "Methods",
+    "facet": "missing_comparisons"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section in the paper that analyzes the computational efficiency of the proposed method compared to subword embeddings and other baselines, including training and inference time.",
+    "grounding": "Sec X",
+    "facet": "experiments"
+  }
+]

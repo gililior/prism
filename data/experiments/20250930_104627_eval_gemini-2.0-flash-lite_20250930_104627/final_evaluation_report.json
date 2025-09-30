@@ -1,0 +1,2817 @@
+{
+  "experiment_metadata": {
+    "timestamp": "20250930_104627",
+    "experiment_name": "eval_gemini-2.0-flash-lite_20250930_104627",
+    "paper_ids": [
+      "2",
+      "6",
+      "8",
+      "9",
+      "11",
+      "12",
+      "13",
+      "14",
+      "16",
+      "18",
+      "19",
+      "21",
+      "24",
+      "25",
+      "27",
+      "28",
+      "29",
+      "30",
+      "37",
+      "38",
+      "41",
+      "46",
+      "47",
+      "48",
+      "49",
+      "53",
+      "55",
+      "57",
+      "60",
+      "61",
+      "62",
+      "64",
+      "65",
+      "67",
+      "70",
+      "71",
+      "76",
+      "78",
+      "79",
+      "81",
+      "82",
+      "83",
+      "84",
+      "85",
+      "87",
+      "89",
+      "94",
+      "96",
+      "99",
+      "100",
+      "105",
+      "106",
+      "110",
+      "111",
+      "113",
+      "116",
+      "117",
+      "124",
+      "129",
+      "130",
+      "131",
+      "132",
+      "134",
+      "137",
+      "138",
+      "144",
+      "148",
+      "153",
+      "154",
+      "155",
+      "156",
+      "158",
+      "161",
+      "162",
+      "164",
+      "173",
+      "174",
+      "175",
+      "176",
+      "178",
+      "179",
+      "181",
+      "182",
+      "184",
+      "185",
+      "187",
+      "189",
+      "196",
+      "197",
+      "200",
+      "201",
+      "202",
+      "204",
+      "208",
+      "209",
+      "210",
+      "211",
+      "212",
+      "216",
+      "217"
+    ],
+    "model": "gemini-2.0-flash-lite",
+    "experiment_dir": "evaluation/results/experiments/20250930_104627_eval_gemini-2.0-flash-lite_20250930_104627",
+    "runs_dir": "evaluation/results/runs"
+  },
+  "generation_results": [
+    {
+      "paper_id": "2",
+      "status": "skipped",
+      "message": "Review already exists for paper 2"
+    },
+    {
+      "paper_id": "6",
+      "status": "skipped",
+      "message": "Review already exists for paper 6"
+    },
+    {
+      "paper_id": "8",
+      "status": "skipped",
+      "message": "Review already exists for paper 8"
+    },
+    {
+      "paper_id": "9",
+      "status": "skipped",
+      "message": "Review already exists for paper 9"
+    },
+    {
+      "paper_id": "11",
+      "status": "skipped",
+      "message": "Review already exists for paper 11"
+    },
+    {
+      "paper_id": "12",
+      "status": "skipped",
+      "message": "Review already exists for paper 12"
+    },
+    {
+      "paper_id": "13",
+      "status": "skipped",
+      "message": "Review already exists for paper 13"
+    },
+    {
+      "paper_id": "14",
+      "status": "skipped",
+      "message": "Review already exists for paper 14"
+    },
+    {
+      "paper_id": "16",
+      "status": "skipped",
+      "message": "Review already exists for paper 16"
+    },
+    {
+      "paper_id": "18",
+      "status": "skipped",
+      "message": "Review already exists for paper 18"
+    },
+    {
+      "paper_id": "19",
+      "status": "skipped",
+      "message": "Review already exists for paper 19"
+    },
+    {
+      "paper_id": "21",
+      "status": "skipped",
+      "message": "Review already exists for paper 21"
+    },
+    {
+      "paper_id": "24",
+      "status": "skipped",
+      "message": "Review already exists for paper 24"
+    },
+    {
+      "paper_id": "25",
+      "status": "skipped",
+      "message": "Review already exists for paper 25"
+    },
+    {
+      "paper_id": "27",
+      "status": "skipped",
+      "message": "Review already exists for paper 27"
+    },
+    {
+      "paper_id": "28",
+      "status": "skipped",
+      "message": "Review already exists for paper 28"
+    },
+    {
+      "paper_id": "29",
+      "status": "skipped",
+      "message": "Review already exists for paper 29"
+    },
+    {
+      "paper_id": "30",
+      "status": "skipped",
+      "message": "Review already exists for paper 30"
+    },
+    {
+      "paper_id": "37",
+      "status": "skipped",
+      "message": "Review already exists for paper 37"
+    },
+    {
+      "paper_id": "38",
+      "status": "skipped",
+      "message": "Review already exists for paper 38"
+    },
+    {
+      "paper_id": "41",
+      "status": "skipped",
+      "message": "Review already exists for paper 41"
+    },
+    {
+      "paper_id": "46",
+      "status": "skipped",
+      "message": "Review already exists for paper 46"
+    },
+    {
+      "paper_id": "47",
+      "status": "skipped",
+      "message": "Review already exists for paper 47"
+    },
+    {
+      "paper_id": "48",
+      "status": "skipped",
+      "message": "Review already exists for paper 48"
+    },
+    {
+      "paper_id": "49",
+      "status": "skipped",
+      "message": "Review already exists for paper 49"
+    },
+    {
+      "paper_id": "53",
+      "status": "skipped",
+      "message": "Review already exists for paper 53"
+    },
+    {
+      "paper_id": "55",
+      "status": "skipped",
+      "message": "Review already exists for paper 55"
+    },
+    {
+      "paper_id": "57",
+      "status": "skipped",
+      "message": "Review already exists for paper 57"
+    },
+    {
+      "paper_id": "60",
+      "status": "skipped",
+      "message": "Review already exists for paper 60"
+    },
+    {
+      "paper_id": "61",
+      "status": "skipped",
+      "message": "Review already exists for paper 61"
+    },
+    {
+      "paper_id": "62",
+      "status": "skipped",
+      "message": "Review already exists for paper 62"
+    },
+    {
+      "paper_id": "64",
+      "status": "skipped",
+      "message": "Review already exists for paper 64"
+    },
+    {
+      "paper_id": "65",
+      "status": "skipped",
+      "message": "Review already exists for paper 65"
+    },
+    {
+      "paper_id": "67",
+      "status": "skipped",
+      "message": "Review already exists for paper 67"
+    },
+    {
+      "paper_id": "70",
+      "status": "skipped",
+      "message": "Review already exists for paper 70"
+    },
+    {
+      "paper_id": "71",
+      "status": "skipped",
+      "message": "Review already exists for paper 71"
+    },
+    {
+      "paper_id": "76",
+      "status": "skipped",
+      "message": "Review already exists for paper 76"
+    },
+    {
+      "paper_id": "78",
+      "status": "skipped",
+      "message": "Review already exists for paper 78"
+    },
+    {
+      "paper_id": "79",
+      "status": "skipped",
+      "message": "Review already exists for paper 79"
+    },
+    {
+      "paper_id": "81",
+      "status": "skipped",
+      "message": "Review already exists for paper 81"
+    },
+    {
+      "paper_id": "82",
+      "status": "skipped",
+      "message": "Review already exists for paper 82"
+    },
+    {
+      "paper_id": "83",
+      "status": "skipped",
+      "message": "Review already exists for paper 83"
+    },
+    {
+      "paper_id": "84",
+      "status": "skipped",
+      "message": "Review already exists for paper 84"
+    },
+    {
+      "paper_id": "85",
+      "status": "skipped",
+      "message": "Review already exists for paper 85"
+    },
+    {
+      "paper_id": "87",
+      "status": "skipped",
+      "message": "Review already exists for paper 87"
+    },
+    {
+      "paper_id": "89",
+      "status": "skipped",
+      "message": "Review already exists for paper 89"
+    },
+    {
+      "paper_id": "94",
+      "status": "skipped",
+      "message": "Review already exists for paper 94"
+    },
+    {
+      "paper_id": "96",
+      "status": "skipped",
+      "message": "Review already exists for paper 96"
+    },
+    {
+      "paper_id": "99",
+      "status": "skipped",
+      "message": "Review already exists for paper 99"
+    },
+    {
+      "paper_id": "100",
+      "status": "skipped",
+      "message": "Review already exists for paper 100"
+    },
+    {
+      "paper_id": "105",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "106",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "110",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "111",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "113",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "116",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "117",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "124",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "129",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "130",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "131",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "132",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "134",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "137",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "138",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "144",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "148",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "153",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "154",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "155",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "156",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "158",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "161",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "162",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "164",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "173",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "174",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "175",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "176",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "178",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "179",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "181",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "182",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "184",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "185",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "187",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "189",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "196",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "197",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "200",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "201",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "202",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "204",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "208",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "209",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "210",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "211",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "212",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "216",
+      "status": "success",
+      "message": "Review generated successfully"
+    },
+    {
+      "paper_id": "217",
+      "status": "success",
+      "message": "Review generated successfully"
+    }
+  ],
+  "generation_summary_path": "evaluation/results/experiments/20250930_104627_eval_gemini-2.0-flash-lite_20250930_104627/generation_summary.json",
+  "comparison_results": [
+    {
+      "paper_id": "105_original",
+      "avg_similarity": 0.7526999999999999,
+      "max_similarity": 0.7719,
+      "avg_coverage": 0.3411666666666667,
+      "max_coverage": 0.5263,
+      "generated_length": 293,
+      "strengths_count": 3,
+      "weaknesses_count": 4,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "105_updated",
+      "avg_similarity": 0.7392666666666668,
+      "max_similarity": 0.7596,
+      "avg_coverage": 0.27463333333333334,
+      "max_coverage": 0.4211,
+      "generated_length": 200,
+      "strengths_count": 3,
+      "weaknesses_count": 3,
+      "suggestions_count": 1
+    },
+    {
+      "paper_id": "30_original",
+      "avg_similarity": 0.7077666666666667,
+      "max_similarity": 0.7158,
+      "avg_coverage": 0.7631666666666667,
+      "max_coverage": 0.8333,
+      "generated_length": 866,
+      "strengths_count": 8,
+      "weaknesses_count": 12,
+      "suggestions_count": 15
+    },
+    {
+      "paper_id": "30_updated",
+      "avg_similarity": 0.7102,
+      "max_similarity": 0.7165,
+      "avg_coverage": 0.7826333333333334,
+      "max_coverage": 0.8333,
+      "generated_length": 841,
+      "strengths_count": 8,
+      "weaknesses_count": 12,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "81_original",
+      "avg_similarity": 0.7178,
+      "max_similarity": 0.7312,
+      "avg_coverage": 0.727775,
+      "max_coverage": 0.7778,
+      "generated_length": 612,
+      "strengths_count": 5,
+      "weaknesses_count": 12,
+      "suggestions_count": 15
+    },
+    {
+      "paper_id": "81_updated",
+      "avg_similarity": 0.7234,
+      "max_similarity": 0.7364,
+      "avg_coverage": 0.727775,
+      "max_coverage": 0.7778,
+      "generated_length": 581,
+      "strengths_count": 5,
+      "weaknesses_count": 10,
+      "suggestions_count": 13
+    },
+    {
+      "paper_id": "212_original",
+      "avg_similarity": 0.7250500000000001,
+      "max_similarity": 0.7393,
+      "avg_coverage": 0.519875,
+      "max_coverage": 0.68,
+      "generated_length": 816,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "212_updated",
+      "avg_similarity": 0.7248,
+      "max_similarity": 0.7395,
+      "avg_coverage": 0.519875,
+      "max_coverage": 0.68,
+      "generated_length": 803,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "21_original",
+      "avg_similarity": 0.7086666666666667,
+      "max_similarity": 0.7135,
+      "avg_coverage": 0.7241666666666667,
+      "max_coverage": 0.8182,
+      "generated_length": 748,
+      "strengths_count": 8,
+      "weaknesses_count": 8,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "21_updated",
+      "avg_similarity": 0.7066333333333334,
+      "max_similarity": 0.7104,
+      "avg_coverage": 0.6816333333333334,
+      "max_coverage": 0.8182,
+      "generated_length": 821,
+      "strengths_count": 8,
+      "weaknesses_count": 8,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "64_original",
+      "avg_similarity": 0.7025,
+      "max_similarity": 0.7443,
+      "avg_coverage": 0.6077666666666667,
+      "max_coverage": 0.8182,
+      "generated_length": 846,
+      "strengths_count": 9,
+      "weaknesses_count": 13,
+      "suggestions_count": 18
+    },
+    {
+      "paper_id": "64_updated",
+      "avg_similarity": 0.7040333333333333,
+      "max_similarity": 0.7462,
+      "avg_coverage": 0.6077666666666667,
+      "max_coverage": 0.8182,
+      "generated_length": 871,
+      "strengths_count": 9,
+      "weaknesses_count": 13,
+      "suggestions_count": 17
+    },
+    {
+      "paper_id": "41_original",
+      "avg_similarity": 0.7307666666666668,
+      "max_similarity": 0.7449,
+      "avg_coverage": 0.528,
+      "max_coverage": 0.5455,
+      "generated_length": 557,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "41_updated",
+      "avg_similarity": 0.7256666666666667,
+      "max_similarity": 0.7392,
+      "avg_coverage": 0.5919333333333333,
+      "max_coverage": 0.6364,
+      "generated_length": 457,
+      "strengths_count": 7,
+      "weaknesses_count": 7,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "2_original",
+      "avg_similarity": 0.7357999999999999,
+      "max_similarity": 0.7439,
+      "avg_coverage": 0.2874333333333333,
+      "max_coverage": 0.3571,
+      "generated_length": 275,
+      "strengths_count": 4,
+      "weaknesses_count": 5,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "2_updated",
+      "avg_similarity": 0.7369333333333333,
+      "max_similarity": 0.7458,
+      "avg_coverage": 0.2936,
+      "max_coverage": 0.3571,
+      "generated_length": 271,
+      "strengths_count": 4,
+      "weaknesses_count": 5,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "174_original",
+      "avg_similarity": 0.7063,
+      "max_similarity": 0.7305,
+      "avg_coverage": 0.6108333333333333,
+      "max_coverage": 0.875,
+      "generated_length": 517,
+      "strengths_count": 3,
+      "weaknesses_count": 6,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "174_updated",
+      "avg_similarity": 0.7060666666666666,
+      "max_similarity": 0.729,
+      "avg_coverage": 0.6108333333333333,
+      "max_coverage": 0.875,
+      "generated_length": 458,
+      "strengths_count": 3,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "131_original",
+      "avg_similarity": 0.7334999999999999,
+      "max_similarity": 0.7497,
+      "avg_coverage": 0.49756666666666666,
+      "max_coverage": 0.5789,
+      "generated_length": 419,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "131_updated",
+      "avg_similarity": 0.7334999999999999,
+      "max_similarity": 0.7497,
+      "avg_coverage": 0.49756666666666666,
+      "max_coverage": 0.5789,
+      "generated_length": 419,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "29_original",
+      "avg_similarity": 0.7372333333333333,
+      "max_similarity": 0.761,
+      "avg_coverage": 0.7056666666666667,
+      "max_coverage": 0.8462,
+      "generated_length": 571,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 13
+    },
+    {
+      "paper_id": "29_updated",
+      "avg_similarity": 0.7337333333333333,
+      "max_similarity": 0.7531,
+      "avg_coverage": 0.7521333333333334,
+      "max_coverage": 0.9231,
+      "generated_length": 582,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "37_original",
+      "avg_similarity": 0.707125,
+      "max_similarity": 0.7212,
+      "avg_coverage": 0.34845,
+      "max_coverage": 0.4333,
+      "generated_length": 445,
+      "strengths_count": 4,
+      "weaknesses_count": 9,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "37_updated",
+      "avg_similarity": 0.70375,
+      "max_similarity": 0.7207,
+      "avg_coverage": 0.337175,
+      "max_coverage": 0.4138,
+      "generated_length": 443,
+      "strengths_count": 4,
+      "weaknesses_count": 9,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "196_original",
+      "avg_similarity": 0.73,
+      "max_similarity": 0.759,
+      "avg_coverage": 0.6260666666666667,
+      "max_coverage": 0.875,
+      "generated_length": 716,
+      "strengths_count": 6,
+      "weaknesses_count": 11,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "196_updated",
+      "avg_similarity": 0.7277999999999999,
+      "max_similarity": 0.7551,
+      "avg_coverage": 0.6260666666666667,
+      "max_coverage": 0.875,
+      "generated_length": 733,
+      "strengths_count": 6,
+      "weaknesses_count": 11,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "57_original",
+      "avg_similarity": 0.707875,
+      "max_similarity": 0.7226,
+      "avg_coverage": 0.411375,
+      "max_coverage": 0.5455,
+      "generated_length": 480,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "57_updated",
+      "avg_similarity": 0.705325,
+      "max_similarity": 0.7217,
+      "avg_coverage": 0.404225,
+      "max_coverage": 0.5455,
+      "generated_length": 451,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "12_original",
+      "avg_similarity": 0.7059249999999999,
+      "max_similarity": 0.7392,
+      "avg_coverage": 0.40645,
+      "max_coverage": 0.5417,
+      "generated_length": 414,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "12_updated",
+      "avg_similarity": 0.7063999999999999,
+      "max_similarity": 0.7383,
+      "avg_coverage": 0.40645,
+      "max_coverage": 0.5417,
+      "generated_length": 427,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "49_original",
+      "avg_similarity": 0.7487750000000001,
+      "max_similarity": 0.7761,
+      "avg_coverage": 0.39692500000000003,
+      "max_coverage": 0.5714,
+      "generated_length": 490,
+      "strengths_count": 7,
+      "weaknesses_count": 9,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "49_updated",
+      "avg_similarity": 0.750625,
+      "max_similarity": 0.7814,
+      "avg_coverage": 0.37735,
+      "max_coverage": 0.5714,
+      "generated_length": 381,
+      "strengths_count": 7,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "162_original",
+      "avg_similarity": 0.7461333333333333,
+      "max_similarity": 0.7543,
+      "avg_coverage": 0.5046333333333334,
+      "max_coverage": 0.75,
+      "generated_length": 475,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "162_updated",
+      "avg_similarity": 0.7485666666666667,
+      "max_similarity": 0.7567,
+      "avg_coverage": 0.5046333333333334,
+      "max_coverage": 0.75,
+      "generated_length": 472,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "156_original",
+      "avg_similarity": 0.7382333333333334,
+      "max_similarity": 0.7435,
+      "avg_coverage": 0.4859333333333334,
+      "max_coverage": 0.6316,
+      "generated_length": 593,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "156_updated",
+      "avg_similarity": 0.7364333333333334,
+      "max_similarity": 0.7416,
+      "avg_coverage": 0.4859333333333334,
+      "max_coverage": 0.6316,
+      "generated_length": 610,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "187_original",
+      "avg_similarity": 0.7208333333333333,
+      "max_similarity": 0.7563,
+      "avg_coverage": 0.5657666666666666,
+      "max_coverage": 0.6111,
+      "generated_length": 537,
+      "strengths_count": 4,
+      "weaknesses_count": 11,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "187_updated",
+      "avg_similarity": 0.7207666666666667,
+      "max_similarity": 0.754,
+      "avg_coverage": 0.5657666666666666,
+      "max_coverage": 0.6111,
+      "generated_length": 541,
+      "strengths_count": 4,
+      "weaknesses_count": 11,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "113_original",
+      "avg_similarity": 0.6857333333333333,
+      "max_similarity": 0.7416,
+      "avg_coverage": 0.07266666666666666,
+      "max_coverage": 0.1538,
+      "generated_length": 30,
+      "strengths_count": 0,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "113_updated",
+      "avg_similarity": 0.6883333333333334,
+      "max_similarity": 0.7398,
+      "avg_coverage": 0.13406666666666664,
+      "max_coverage": 0.3077,
+      "generated_length": 85,
+      "strengths_count": 1,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "148_original",
+      "avg_similarity": 0.7322333333333334,
+      "max_similarity": 0.7446,
+      "avg_coverage": 0.29843333333333333,
+      "max_coverage": 0.3684,
+      "generated_length": 342,
+      "strengths_count": 5,
+      "weaknesses_count": 5,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "148_updated",
+      "avg_similarity": 0.7308333333333333,
+      "max_similarity": 0.7427,
+      "avg_coverage": 0.29843333333333333,
+      "max_coverage": 0.3684,
+      "generated_length": 344,
+      "strengths_count": 5,
+      "weaknesses_count": 5,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "38_original",
+      "avg_similarity": 0.7084,
+      "max_similarity": 0.727,
+      "avg_coverage": 0.42893333333333333,
+      "max_coverage": 0.7333,
+      "generated_length": 393,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "38_updated",
+      "avg_similarity": 0.7097333333333333,
+      "max_similarity": 0.7316,
+      "avg_coverage": 0.43166666666666664,
+      "max_coverage": 0.6667,
+      "generated_length": 359,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 3
+    },
+    {
+      "paper_id": "173_original",
+      "avg_similarity": 0.7064333333333334,
+      "max_similarity": 0.7318,
+      "avg_coverage": 0.6915999999999999,
+      "max_coverage": 0.8,
+      "generated_length": 861,
+      "strengths_count": 6,
+      "weaknesses_count": 16,
+      "suggestions_count": 19
+    },
+    {
+      "paper_id": "173_updated",
+      "avg_similarity": 0.7059000000000001,
+      "max_similarity": 0.7307,
+      "avg_coverage": 0.7425,
+      "max_coverage": 0.9,
+      "generated_length": 910,
+      "strengths_count": 6,
+      "weaknesses_count": 16,
+      "suggestions_count": 19
+    },
+    {
+      "paper_id": "89_original",
+      "avg_similarity": 0.7289333333333333,
+      "max_similarity": 0.7387,
+      "avg_coverage": 0.5890666666666666,
+      "max_coverage": 0.6667,
+      "generated_length": 774,
+      "strengths_count": 7,
+      "weaknesses_count": 11,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "89_updated",
+      "avg_similarity": 0.7266333333333334,
+      "max_similarity": 0.7363,
+      "avg_coverage": 0.6075666666666667,
+      "max_coverage": 0.7222,
+      "generated_length": 650,
+      "strengths_count": 7,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "204_original",
+      "avg_similarity": 0.7248,
+      "max_similarity": 0.7334,
+      "avg_coverage": 0.543,
+      "max_coverage": 0.6207,
+      "generated_length": 524,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "204_updated",
+      "avg_similarity": 0.7260666666666666,
+      "max_similarity": 0.7338,
+      "avg_coverage": 0.4807333333333334,
+      "max_coverage": 0.5172,
+      "generated_length": 427,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 3
+    },
+    {
+      "paper_id": "46_original",
+      "avg_similarity": 0.7361666666666666,
+      "max_similarity": 0.7482,
+      "avg_coverage": 0.49990000000000007,
+      "max_coverage": 0.6429,
+      "generated_length": 601,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "46_updated",
+      "avg_similarity": 0.7307,
+      "max_similarity": 0.7451,
+      "avg_coverage": 0.5557333333333333,
+      "max_coverage": 0.7143,
+      "generated_length": 661,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "175_original",
+      "avg_similarity": 0.6995666666666667,
+      "max_similarity": 0.7256,
+      "avg_coverage": 0.5234333333333333,
+      "max_coverage": 0.5625,
+      "generated_length": 452,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "175_updated",
+      "avg_similarity": 0.7005,
+      "max_similarity": 0.7264,
+      "avg_coverage": 0.5618,
+      "max_coverage": 0.625,
+      "generated_length": 464,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "130_original",
+      "avg_similarity": 0.7147666666666667,
+      "max_similarity": 0.7302,
+      "avg_coverage": 0.5931666666666667,
+      "max_coverage": 0.8333,
+      "generated_length": 566,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "130_updated",
+      "avg_similarity": 0.7131,
+      "max_similarity": 0.7268,
+      "avg_coverage": 0.5709333333333334,
+      "max_coverage": 0.8333,
+      "generated_length": 689,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "202_original",
+      "avg_similarity": 0.7091,
+      "max_similarity": 0.7288,
+      "avg_coverage": 0.5219,
+      "max_coverage": 0.6,
+      "generated_length": 466,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "202_updated",
+      "avg_similarity": 0.7204666666666667,
+      "max_similarity": 0.7396,
+      "avg_coverage": 0.4504666666666666,
+      "max_coverage": 0.5333,
+      "generated_length": 294,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 2
+    },
+    {
+      "paper_id": "181_original",
+      "avg_similarity": 0.7339333333333333,
+      "max_similarity": 0.756,
+      "avg_coverage": 0.4973,
+      "max_coverage": 0.5833,
+      "generated_length": 869,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "181_updated",
+      "avg_similarity": 0.7344666666666667,
+      "max_similarity": 0.7558,
+      "avg_coverage": 0.4895333333333334,
+      "max_coverage": 0.5833,
+      "generated_length": 901,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "65_original",
+      "avg_similarity": 0.7298666666666667,
+      "max_similarity": 0.7408,
+      "avg_coverage": 0.46340000000000003,
+      "max_coverage": 0.6667,
+      "generated_length": 421,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "65_updated",
+      "avg_similarity": 0.7319999999999999,
+      "max_similarity": 0.749,
+      "avg_coverage": 0.44329999999999997,
+      "max_coverage": 0.6667,
+      "generated_length": 473,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "14_original",
+      "avg_similarity": 0.7176999999999999,
+      "max_similarity": 0.7372,
+      "avg_coverage": 0.43776666666666664,
+      "max_coverage": 0.5417,
+      "generated_length": 663,
+      "strengths_count": 5,
+      "weaknesses_count": 11,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "14_updated",
+      "avg_similarity": 0.7193999999999999,
+      "max_similarity": 0.7382,
+      "avg_coverage": 0.4444333333333333,
+      "max_coverage": 0.5417,
+      "generated_length": 653,
+      "strengths_count": 5,
+      "weaknesses_count": 11,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "164_original",
+      "avg_similarity": 0.7067333333333333,
+      "max_similarity": 0.7198,
+      "avg_coverage": 0.4641,
+      "max_coverage": 0.7273,
+      "generated_length": 590,
+      "strengths_count": 3,
+      "weaknesses_count": 9,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "164_updated",
+      "avg_similarity": 0.7068666666666666,
+      "max_similarity": 0.7207,
+      "avg_coverage": 0.47013333333333335,
+      "max_coverage": 0.7273,
+      "generated_length": 560,
+      "strengths_count": 3,
+      "weaknesses_count": 9,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "96_original",
+      "avg_similarity": 0.7148333333333333,
+      "max_similarity": 0.7233,
+      "avg_coverage": 0.40149999999999997,
+      "max_coverage": 0.4783,
+      "generated_length": 349,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "96_updated",
+      "avg_similarity": 0.7074333333333334,
+      "max_similarity": 0.7121,
+      "avg_coverage": 0.40903333333333336,
+      "max_coverage": 0.5238,
+      "generated_length": 419,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "47_original",
+      "avg_similarity": 0.7081,
+      "max_similarity": 0.7181,
+      "avg_coverage": 0.6721,
+      "max_coverage": 0.7647,
+      "generated_length": 750,
+      "strengths_count": 6,
+      "weaknesses_count": 11,
+      "suggestions_count": 14
+    },
+    {
+      "paper_id": "47_updated",
+      "avg_similarity": 0.7078333333333333,
+      "max_similarity": 0.7177,
+      "avg_coverage": 0.6721,
+      "max_coverage": 0.7647,
+      "generated_length": 773,
+      "strengths_count": 6,
+      "weaknesses_count": 11,
+      "suggestions_count": 14
+    },
+    {
+      "paper_id": "129_original",
+      "avg_similarity": 0.751825,
+      "max_similarity": 0.7693,
+      "avg_coverage": 0.4625,
+      "max_coverage": 0.5455,
+      "generated_length": 548,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "129_updated",
+      "avg_similarity": 0.75005,
+      "max_similarity": 0.7649,
+      "avg_coverage": 0.473075,
+      "max_coverage": 0.5909,
+      "generated_length": 531,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "137_original",
+      "avg_similarity": 0.7091,
+      "max_similarity": 0.7233,
+      "avg_coverage": 0.7652333333333333,
+      "max_coverage": 1.0,
+      "generated_length": 457,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "137_updated",
+      "avg_similarity": 0.7401333333333334,
+      "max_similarity": 0.753,
+      "avg_coverage": 0.6143333333333333,
+      "max_coverage": 0.7778,
+      "generated_length": 343,
+      "strengths_count": 6,
+      "weaknesses_count": 5,
+      "suggestions_count": 1
+    },
+    {
+      "paper_id": "27_original",
+      "avg_similarity": 0.7101999999999999,
+      "max_similarity": 0.7127,
+      "avg_coverage": 0.4293,
+      "max_coverage": 0.5417,
+      "generated_length": 435,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "27_updated",
+      "avg_similarity": 0.7266333333333334,
+      "max_similarity": 0.7303,
+      "avg_coverage": 0.3737333333333333,
+      "max_coverage": 0.4545,
+      "generated_length": 439,
+      "strengths_count": 4,
+      "weaknesses_count": 5,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "62_original",
+      "avg_similarity": 0.7311666666666666,
+      "max_similarity": 0.7381,
+      "avg_coverage": 0.09756666666666665,
+      "max_coverage": 0.1538,
+      "generated_length": 38,
+      "strengths_count": 0,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "62_updated",
+      "avg_similarity": 0.7091333333333334,
+      "max_similarity": 0.7147,
+      "avg_coverage": 0.20656666666666668,
+      "max_coverage": 0.2308,
+      "generated_length": 83,
+      "strengths_count": 2,
+      "weaknesses_count": 1,
+      "suggestions_count": 1
+    },
+    {
+      "paper_id": "138_original",
+      "avg_similarity": 0.6928333333333333,
+      "max_similarity": 0.7159,
+      "avg_coverage": 0.5273,
+      "max_coverage": 0.7692,
+      "generated_length": 568,
+      "strengths_count": 5,
+      "weaknesses_count": 11,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "138_updated",
+      "avg_similarity": 0.6919,
+      "max_similarity": 0.7172,
+      "avg_coverage": 0.5070333333333333,
+      "max_coverage": 0.6923,
+      "generated_length": 579,
+      "strengths_count": 5,
+      "weaknesses_count": 10,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "13_original",
+      "avg_similarity": 0.7288,
+      "max_similarity": 0.7372,
+      "avg_coverage": 0.5730000000000001,
+      "max_coverage": 0.8333,
+      "generated_length": 488,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "13_updated",
+      "avg_similarity": 0.7275999999999999,
+      "max_similarity": 0.7392,
+      "avg_coverage": 0.5730000000000001,
+      "max_coverage": 0.8333,
+      "generated_length": 469,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "87_original",
+      "avg_similarity": 0.6933333333333334,
+      "max_similarity": 0.7066,
+      "avg_coverage": 0.514,
+      "max_coverage": 0.6087,
+      "generated_length": 375,
+      "strengths_count": 3,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "87_updated",
+      "avg_similarity": 0.6946666666666667,
+      "max_similarity": 0.7068,
+      "avg_coverage": 0.514,
+      "max_coverage": 0.6087,
+      "generated_length": 348,
+      "strengths_count": 3,
+      "weaknesses_count": 6,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "99_original",
+      "avg_similarity": 0.7269,
+      "max_similarity": 0.7517,
+      "avg_coverage": 0.6617000000000001,
+      "max_coverage": 0.875,
+      "generated_length": 867,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "99_updated",
+      "avg_similarity": 0.7269333333333333,
+      "max_similarity": 0.7506,
+      "avg_coverage": 0.6895000000000001,
+      "max_coverage": 0.875,
+      "generated_length": 991,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "48_original",
+      "avg_similarity": 0.7344333333333334,
+      "max_similarity": 0.7623,
+      "avg_coverage": 0.43293333333333334,
+      "max_coverage": 0.5,
+      "generated_length": 455,
+      "strengths_count": 5,
+      "weaknesses_count": 5,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "48_updated",
+      "avg_similarity": 0.7397,
+      "max_similarity": 0.7662,
+      "avg_coverage": 0.45953333333333335,
+      "max_coverage": 0.5238,
+      "generated_length": 431,
+      "strengths_count": 5,
+      "weaknesses_count": 5,
+      "suggestions_count": 4
+    },
+    {
+      "paper_id": "158_original",
+      "avg_similarity": 0.7301666666666667,
+      "max_similarity": 0.7466,
+      "avg_coverage": 0.6162666666666666,
+      "max_coverage": 0.7059,
+      "generated_length": 848,
+      "strengths_count": 7,
+      "weaknesses_count": 9,
+      "suggestions_count": 15
+    },
+    {
+      "paper_id": "158_updated",
+      "avg_similarity": 0.7300333333333334,
+      "max_similarity": 0.7473,
+      "avg_coverage": 0.6978,
+      "max_coverage": 0.8235,
+      "generated_length": 904,
+      "strengths_count": 7,
+      "weaknesses_count": 8,
+      "suggestions_count": 14
+    },
+    {
+      "paper_id": "189_original",
+      "avg_similarity": 0.745225,
+      "max_similarity": 0.7653,
+      "avg_coverage": 0.474675,
+      "max_coverage": 0.5556,
+      "generated_length": 613,
+      "strengths_count": 3,
+      "weaknesses_count": 9,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "189_updated",
+      "avg_similarity": 0.7449,
+      "max_similarity": 0.7623,
+      "avg_coverage": 0.478025,
+      "max_coverage": 0.55,
+      "generated_length": 651,
+      "strengths_count": 3,
+      "weaknesses_count": 9,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "197_original",
+      "avg_similarity": 0.7048333333333333,
+      "max_similarity": 0.7202,
+      "avg_coverage": 0.5386000000000001,
+      "max_coverage": 0.6471,
+      "generated_length": 462,
+      "strengths_count": 3,
+      "weaknesses_count": 6,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "197_updated",
+      "avg_similarity": 0.7079333333333334,
+      "max_similarity": 0.724,
+      "avg_coverage": 0.5689333333333334,
+      "max_coverage": 0.7059,
+      "generated_length": 509,
+      "strengths_count": 3,
+      "weaknesses_count": 6,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "28_original",
+      "avg_similarity": 0.6842333333333334,
+      "max_similarity": 0.6972,
+      "avg_coverage": 0.6317666666666667,
+      "max_coverage": 0.8,
+      "generated_length": 500,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "28_updated",
+      "avg_similarity": 0.6837666666666666,
+      "max_similarity": 0.7045,
+      "avg_coverage": 0.6079666666666667,
+      "max_coverage": 0.8,
+      "generated_length": 425,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "134_original",
+      "avg_similarity": 0.7396333333333334,
+      "max_similarity": 0.7627,
+      "avg_coverage": 0.5022333333333333,
+      "max_coverage": 0.6667,
+      "generated_length": 471,
+      "strengths_count": 3,
+      "weaknesses_count": 9,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "134_updated",
+      "avg_similarity": 0.7404999999999999,
+      "max_similarity": 0.7603,
+      "avg_coverage": 0.5022333333333333,
+      "max_coverage": 0.6667,
+      "generated_length": 417,
+      "strengths_count": 3,
+      "weaknesses_count": 9,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "154_original",
+      "avg_similarity": 0.7394999999999999,
+      "max_similarity": 0.7514,
+      "avg_coverage": 0.5022000000000001,
+      "max_coverage": 0.5238,
+      "generated_length": 512,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "154_updated",
+      "avg_similarity": 0.7383333333333333,
+      "max_similarity": 0.7512,
+      "avg_coverage": 0.5022000000000001,
+      "max_coverage": 0.5238,
+      "generated_length": 503,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "111_original",
+      "avg_similarity": 0.7202000000000001,
+      "max_similarity": 0.7301,
+      "avg_coverage": 0.4647666666666667,
+      "max_coverage": 0.6471,
+      "generated_length": 449,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "111_updated",
+      "avg_similarity": 0.7225666666666667,
+      "max_similarity": 0.7362,
+      "avg_coverage": 0.4647666666666667,
+      "max_coverage": 0.6471,
+      "generated_length": 471,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "185_original",
+      "avg_similarity": 0.7451666666666666,
+      "max_similarity": 0.7547,
+      "avg_coverage": 0.40420000000000006,
+      "max_coverage": 0.4333,
+      "generated_length": 449,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "185_updated",
+      "avg_similarity": 0.7451333333333334,
+      "max_similarity": 0.7571,
+      "avg_coverage": 0.4605333333333333,
+      "max_coverage": 0.5,
+      "generated_length": 391,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "24_original",
+      "avg_similarity": 0.6964,
+      "max_similarity": 0.7123,
+      "avg_coverage": 0.4848333333333333,
+      "max_coverage": 0.5,
+      "generated_length": 510,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "24_updated",
+      "avg_similarity": 0.6941333333333333,
+      "max_similarity": 0.7097,
+      "avg_coverage": 0.5666666666666667,
+      "max_coverage": 0.75,
+      "generated_length": 554,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "61_original",
+      "avg_similarity": 0.6865666666666668,
+      "max_similarity": 0.7084,
+      "avg_coverage": 0.05256666666666667,
+      "max_coverage": 0.0625,
+      "generated_length": 30,
+      "strengths_count": 0,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "61_updated",
+      "avg_similarity": 0.7404666666666667,
+      "max_similarity": 0.7528,
+      "avg_coverage": 0.05256666666666667,
+      "max_coverage": 0.0625,
+      "generated_length": 30,
+      "strengths_count": 0,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "55_original",
+      "avg_similarity": 0.7008333333333333,
+      "max_similarity": 0.719,
+      "avg_coverage": 0.5583333333333333,
+      "max_coverage": 0.8,
+      "generated_length": 534,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "55_updated",
+      "avg_similarity": 0.7028666666666666,
+      "max_similarity": 0.7214,
+      "avg_coverage": 0.5583333333333333,
+      "max_coverage": 0.8,
+      "generated_length": 569,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "84_original",
+      "avg_similarity": 0.7776333333333333,
+      "max_similarity": 0.7954,
+      "avg_coverage": 0.5109666666666667,
+      "max_coverage": 0.7,
+      "generated_length": 271,
+      "strengths_count": 2,
+      "weaknesses_count": 4,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "84_updated",
+      "avg_similarity": 0.7705333333333333,
+      "max_similarity": 0.7807,
+      "avg_coverage": 0.5443,
+      "max_coverage": 0.8,
+      "generated_length": 300,
+      "strengths_count": 2,
+      "weaknesses_count": 4,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "209_original",
+      "avg_similarity": 0.7461333333333333,
+      "max_similarity": 0.7695,
+      "avg_coverage": 0.5269666666666667,
+      "max_coverage": 0.7143,
+      "generated_length": 543,
+      "strengths_count": 6,
+      "weaknesses_count": 9,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "209_updated",
+      "avg_similarity": 0.7422666666666666,
+      "max_similarity": 0.7679,
+      "avg_coverage": 0.5492,
+      "max_coverage": 0.7143,
+      "generated_length": 598,
+      "strengths_count": 7,
+      "weaknesses_count": 9,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "217_original",
+      "avg_similarity": 0.745375,
+      "max_similarity": 0.7671,
+      "avg_coverage": 0.513825,
+      "max_coverage": 0.6667,
+      "generated_length": 535,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "217_updated",
+      "avg_similarity": 0.74405,
+      "max_similarity": 0.7653,
+      "avg_coverage": 0.472,
+      "max_coverage": 0.6,
+      "generated_length": 488,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "8_original",
+      "avg_similarity": 0.7052,
+      "max_similarity": 0.7182,
+      "avg_coverage": 0.5103666666666666,
+      "max_coverage": 0.6,
+      "generated_length": 603,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "8_updated",
+      "avg_similarity": 0.7071000000000001,
+      "max_similarity": 0.7195,
+      "avg_coverage": 0.4988666666666666,
+      "max_coverage": 0.6,
+      "generated_length": 586,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "70_original",
+      "avg_similarity": 0.7330666666666666,
+      "max_similarity": 0.7451,
+      "avg_coverage": 0.525,
+      "max_coverage": 0.8571,
+      "generated_length": 481,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "70_updated",
+      "avg_similarity": 0.7313666666666667,
+      "max_similarity": 0.7435,
+      "avg_coverage": 0.525,
+      "max_coverage": 0.8571,
+      "generated_length": 488,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "100_original",
+      "avg_similarity": 0.7101666666666667,
+      "max_similarity": 0.7237,
+      "avg_coverage": 0.6337,
+      "max_coverage": 0.7143,
+      "generated_length": 659,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "100_updated",
+      "avg_similarity": 0.7091,
+      "max_similarity": 0.725,
+      "avg_coverage": 0.6575333333333333,
+      "max_coverage": 0.7143,
+      "generated_length": 666,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "201_original",
+      "avg_similarity": 0.7012666666666667,
+      "max_similarity": 0.7214,
+      "avg_coverage": 0.11193333333333333,
+      "max_coverage": 0.1429,
+      "generated_length": 16,
+      "strengths_count": 0,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "201_updated",
+      "avg_similarity": 0.6988666666666666,
+      "max_similarity": 0.7126,
+      "avg_coverage": 0.11193333333333333,
+      "max_coverage": 0.1429,
+      "generated_length": 21,
+      "strengths_count": 0,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "18_original",
+      "avg_similarity": 0.7247666666666666,
+      "max_similarity": 0.7311,
+      "avg_coverage": 0.6164666666666667,
+      "max_coverage": 0.8333,
+      "generated_length": 804,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "18_updated",
+      "avg_similarity": 0.7252333333333333,
+      "max_similarity": 0.7326,
+      "avg_coverage": 0.5741999999999999,
+      "max_coverage": 0.75,
+      "generated_length": 758,
+      "strengths_count": 6,
+      "weaknesses_count": 8,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "176_original",
+      "avg_similarity": 0.7087,
+      "max_similarity": 0.7186,
+      "avg_coverage": 0.5573,
+      "max_coverage": 0.6667,
+      "generated_length": 639,
+      "strengths_count": 5,
+      "weaknesses_count": 12,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "176_updated",
+      "avg_similarity": 0.7089666666666666,
+      "max_similarity": 0.7182,
+      "avg_coverage": 0.5573,
+      "max_coverage": 0.6667,
+      "generated_length": 648,
+      "strengths_count": 5,
+      "weaknesses_count": 12,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "78_original",
+      "avg_similarity": 0.7072333333333333,
+      "max_similarity": 0.7244,
+      "avg_coverage": 0.6084,
+      "max_coverage": 0.6471,
+      "generated_length": 546,
+      "strengths_count": 6,
+      "weaknesses_count": 9,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "78_updated",
+      "avg_similarity": 0.7223333333333333,
+      "max_similarity": 0.7424,
+      "avg_coverage": 0.5294,
+      "max_coverage": 0.5882,
+      "generated_length": 439,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 3
+    },
+    {
+      "paper_id": "153_original",
+      "avg_similarity": 0.7491,
+      "max_similarity": 0.7607,
+      "avg_coverage": 0.3854,
+      "max_coverage": 0.5,
+      "generated_length": 385,
+      "strengths_count": 5,
+      "weaknesses_count": 6,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "153_updated",
+      "avg_similarity": 0.7538999999999999,
+      "max_similarity": 0.7666,
+      "avg_coverage": 0.3520666666666667,
+      "max_coverage": 0.5,
+      "generated_length": 430,
+      "strengths_count": 5,
+      "weaknesses_count": 5,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "116_original",
+      "avg_similarity": 0.7149,
+      "max_similarity": 0.7233,
+      "avg_coverage": 0.4889333333333334,
+      "max_coverage": 0.5238,
+      "generated_length": 463,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "116_updated",
+      "avg_similarity": 0.7287666666666667,
+      "max_similarity": 0.7341,
+      "avg_coverage": 0.4677666666666667,
+      "max_coverage": 0.5714,
+      "generated_length": 539,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "182_original",
+      "avg_similarity": 0.6623666666666667,
+      "max_similarity": 0.6977,
+      "avg_coverage": 0.6801666666666666,
+      "max_coverage": 0.8182,
+      "generated_length": 510,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "182_updated",
+      "avg_similarity": 0.6667333333333333,
+      "max_similarity": 0.7028,
+      "avg_coverage": 0.7104666666666667,
+      "max_coverage": 0.9091,
+      "generated_length": 517,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "179_original",
+      "avg_similarity": 0.7103,
+      "max_similarity": 0.7155,
+      "avg_coverage": 0.5306666666666667,
+      "max_coverage": 0.6522,
+      "generated_length": 547,
+      "strengths_count": 8,
+      "weaknesses_count": 9,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "179_updated",
+      "avg_similarity": 0.7172999999999999,
+      "max_similarity": 0.724,
+      "avg_coverage": 0.48069999999999996,
+      "max_coverage": 0.6087,
+      "generated_length": 383,
+      "strengths_count": 8,
+      "weaknesses_count": 7,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "83_original",
+      "avg_similarity": 0.7059000000000001,
+      "max_similarity": 0.7403,
+      "avg_coverage": 0.4545333333333333,
+      "max_coverage": 0.5152,
+      "generated_length": 476,
+      "strengths_count": 3,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "83_updated",
+      "avg_similarity": 0.7075999999999999,
+      "max_similarity": 0.7377,
+      "avg_coverage": 0.45713333333333334,
+      "max_coverage": 0.5152,
+      "generated_length": 528,
+      "strengths_count": 3,
+      "weaknesses_count": 7,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "210_original",
+      "avg_similarity": 0.7159000000000001,
+      "max_similarity": 0.7306,
+      "avg_coverage": 0.49639999999999995,
+      "max_coverage": 0.7692,
+      "generated_length": 394,
+      "strengths_count": 3,
+      "weaknesses_count": 5,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "210_updated",
+      "avg_similarity": 0.7193999999999999,
+      "max_similarity": 0.7367,
+      "avg_coverage": 0.4441,
+      "max_coverage": 0.6923,
+      "generated_length": 333,
+      "strengths_count": 3,
+      "weaknesses_count": 4,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "144_original",
+      "avg_similarity": 0.7581000000000001,
+      "max_similarity": 0.7774,
+      "avg_coverage": 0.47619999999999996,
+      "max_coverage": 0.5,
+      "generated_length": 731,
+      "strengths_count": 7,
+      "weaknesses_count": 12,
+      "suggestions_count": 13
+    },
+    {
+      "paper_id": "144_updated",
+      "avg_similarity": 0.7562666666666668,
+      "max_similarity": 0.7724,
+      "avg_coverage": 0.5687666666666666,
+      "max_coverage": 0.6154,
+      "generated_length": 806,
+      "strengths_count": 7,
+      "weaknesses_count": 12,
+      "suggestions_count": 13
+    },
+    {
+      "paper_id": "71_original",
+      "avg_similarity": 0.7080333333333334,
+      "max_similarity": 0.7139,
+      "avg_coverage": 0.5461666666666667,
+      "max_coverage": 0.7143,
+      "generated_length": 770,
+      "strengths_count": 6,
+      "weaknesses_count": 11,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "71_updated",
+      "avg_similarity": 0.7098,
+      "max_similarity": 0.716,
+      "avg_coverage": 0.5357666666666666,
+      "max_coverage": 0.7143,
+      "generated_length": 700,
+      "strengths_count": 6,
+      "weaknesses_count": 11,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "9_original",
+      "avg_similarity": 0.68265,
+      "max_similarity": 0.7046,
+      "avg_coverage": 0.092575,
+      "max_coverage": 0.125,
+      "generated_length": 24,
+      "strengths_count": 0,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "9_updated",
+      "avg_similarity": 0.690475,
+      "max_similarity": 0.698,
+      "avg_coverage": 0.092575,
+      "max_coverage": 0.125,
+      "generated_length": 29,
+      "strengths_count": 0,
+      "weaknesses_count": 0,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "124_original",
+      "avg_similarity": 0.7298666666666667,
+      "max_similarity": 0.7471,
+      "avg_coverage": 0.3782666666666667,
+      "max_coverage": 0.4348,
+      "generated_length": 378,
+      "strengths_count": 4,
+      "weaknesses_count": 5,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "124_updated",
+      "avg_similarity": 0.7315333333333335,
+      "max_similarity": 0.7457,
+      "avg_coverage": 0.3782666666666667,
+      "max_coverage": 0.4348,
+      "generated_length": 432,
+      "strengths_count": 4,
+      "weaknesses_count": 5,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "161_original",
+      "avg_similarity": 0.7151666666666667,
+      "max_similarity": 0.7339,
+      "avg_coverage": 0.6690333333333333,
+      "max_coverage": 0.75,
+      "generated_length": 540,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "161_updated",
+      "avg_similarity": 0.7372333333333335,
+      "max_similarity": 0.7569,
+      "avg_coverage": 0.5095333333333333,
+      "max_coverage": 0.6,
+      "generated_length": 335,
+      "strengths_count": 5,
+      "weaknesses_count": 4,
+      "suggestions_count": 4
+    },
+    {
+      "paper_id": "208_original",
+      "avg_similarity": 0.7102666666666666,
+      "max_similarity": 0.7131,
+      "avg_coverage": 0.5473333333333333,
+      "max_coverage": 0.7333,
+      "generated_length": 424,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "208_updated",
+      "avg_similarity": 0.7193999999999999,
+      "max_similarity": 0.7278,
+      "avg_coverage": 0.447,
+      "max_coverage": 0.5333,
+      "generated_length": 318,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 1
+    },
+    {
+      "paper_id": "85_original",
+      "avg_similarity": 0.736325,
+      "max_similarity": 0.767,
+      "avg_coverage": 0.36557500000000004,
+      "max_coverage": 0.5,
+      "generated_length": 378,
+      "strengths_count": 3,
+      "weaknesses_count": 4,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "85_updated",
+      "avg_similarity": 0.731775,
+      "max_similarity": 0.7644,
+      "avg_coverage": 0.433675,
+      "max_coverage": 0.5652,
+      "generated_length": 318,
+      "strengths_count": 3,
+      "weaknesses_count": 4,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "11_original",
+      "avg_similarity": 0.6970666666666667,
+      "max_similarity": 0.7102,
+      "avg_coverage": 0.5277333333333333,
+      "max_coverage": 0.8571,
+      "generated_length": 746,
+      "strengths_count": 8,
+      "weaknesses_count": 10,
+      "suggestions_count": 13
+    },
+    {
+      "paper_id": "11_updated",
+      "avg_similarity": 0.7053666666666666,
+      "max_similarity": 0.7186,
+      "avg_coverage": 0.48619999999999997,
+      "max_coverage": 0.8571,
+      "generated_length": 599,
+      "strengths_count": 8,
+      "weaknesses_count": 10,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "216_original",
+      "avg_similarity": 0.6958666666666667,
+      "max_similarity": 0.7317,
+      "avg_coverage": 0.49760000000000004,
+      "max_coverage": 0.6667,
+      "generated_length": 382,
+      "strengths_count": 5,
+      "weaknesses_count": 5,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "216_updated",
+      "avg_similarity": 0.6974666666666667,
+      "max_similarity": 0.7327,
+      "avg_coverage": 0.4322333333333333,
+      "max_coverage": 0.5833,
+      "generated_length": 365,
+      "strengths_count": 5,
+      "weaknesses_count": 4,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "25_original",
+      "avg_similarity": 0.7326,
+      "max_similarity": 0.7469,
+      "avg_coverage": 0.5944333333333334,
+      "max_coverage": 0.75,
+      "generated_length": 727,
+      "strengths_count": 8,
+      "weaknesses_count": 9,
+      "suggestions_count": 12
+    },
+    {
+      "paper_id": "25_updated",
+      "avg_similarity": 0.7333333333333334,
+      "max_similarity": 0.751,
+      "avg_coverage": 0.5944333333333334,
+      "max_coverage": 0.75,
+      "generated_length": 761,
+      "strengths_count": 9,
+      "weaknesses_count": 9,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "60_original",
+      "avg_similarity": 0.6996666666666668,
+      "max_similarity": 0.7195,
+      "avg_coverage": 0.7686333333333334,
+      "max_coverage": 0.9231,
+      "generated_length": 452,
+      "strengths_count": 4,
+      "weaknesses_count": 8,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "60_updated",
+      "avg_similarity": 0.7090333333333333,
+      "max_similarity": 0.7197,
+      "avg_coverage": 0.7211333333333333,
+      "max_coverage": 0.8462,
+      "generated_length": 571,
+      "strengths_count": 4,
+      "weaknesses_count": 8,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "155_original",
+      "avg_similarity": 0.7481333333333334,
+      "max_similarity": 0.7653,
+      "avg_coverage": 0.41473333333333334,
+      "max_coverage": 0.4783,
+      "generated_length": 491,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "155_updated",
+      "avg_similarity": 0.7618,
+      "max_similarity": 0.7779,
+      "avg_coverage": 0.3164666666666666,
+      "max_coverage": 0.3478,
+      "generated_length": 330,
+      "strengths_count": 5,
+      "weaknesses_count": 7,
+      "suggestions_count": 0
+    },
+    {
+      "paper_id": "110_original",
+      "avg_similarity": 0.6934999999999999,
+      "max_similarity": 0.7144,
+      "avg_coverage": 0.4421,
+      "max_coverage": 0.6111,
+      "generated_length": 417,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "110_updated",
+      "avg_similarity": 0.6926666666666667,
+      "max_similarity": 0.7084,
+      "avg_coverage": 0.4475,
+      "max_coverage": 0.6111,
+      "generated_length": 417,
+      "strengths_count": 4,
+      "weaknesses_count": 6,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "184_original",
+      "avg_similarity": 0.7233333333333333,
+      "max_similarity": 0.7322,
+      "avg_coverage": 0.35546666666666665,
+      "max_coverage": 0.4231,
+      "generated_length": 507,
+      "strengths_count": 5,
+      "weaknesses_count": 6,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "184_updated",
+      "avg_similarity": 0.7282333333333334,
+      "max_similarity": 0.7344,
+      "avg_coverage": 0.2975333333333333,
+      "max_coverage": 0.4231,
+      "generated_length": 510,
+      "strengths_count": 5,
+      "weaknesses_count": 6,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "94_original",
+      "avg_similarity": 0.7206,
+      "max_similarity": 0.7491,
+      "avg_coverage": 0.4705,
+      "max_coverage": 0.5217,
+      "generated_length": 470,
+      "strengths_count": 5,
+      "weaknesses_count": 6,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "94_updated",
+      "avg_similarity": 0.7210666666666666,
+      "max_similarity": 0.7422,
+      "avg_coverage": 0.4833,
+      "max_coverage": 0.5217,
+      "generated_length": 569,
+      "strengths_count": 5,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "6_original",
+      "avg_similarity": 0.7110333333333334,
+      "max_similarity": 0.7165,
+      "avg_coverage": 0.6311,
+      "max_coverage": 0.7333,
+      "generated_length": 888,
+      "strengths_count": 7,
+      "weaknesses_count": 11,
+      "suggestions_count": 17
+    },
+    {
+      "paper_id": "6_updated",
+      "avg_similarity": 0.7224,
+      "max_similarity": 0.7243,
+      "avg_coverage": 0.6021,
+      "max_coverage": 0.7333,
+      "generated_length": 801,
+      "strengths_count": 7,
+      "weaknesses_count": 11,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "76_original",
+      "avg_similarity": 0.7057000000000001,
+      "max_similarity": 0.7133,
+      "avg_coverage": 0.6228000000000001,
+      "max_coverage": 0.6842,
+      "generated_length": 655,
+      "strengths_count": 6,
+      "weaknesses_count": 10,
+      "suggestions_count": 16
+    },
+    {
+      "paper_id": "76_updated",
+      "avg_similarity": 0.7091,
+      "max_similarity": 0.7164,
+      "avg_coverage": 0.6787000000000001,
+      "max_coverage": 0.7368,
+      "generated_length": 743,
+      "strengths_count": 7,
+      "weaknesses_count": 10,
+      "suggestions_count": 15
+    },
+    {
+      "paper_id": "106_original",
+      "avg_similarity": 0.743675,
+      "max_similarity": 0.7802,
+      "avg_coverage": 0.3374,
+      "max_coverage": 0.4074,
+      "generated_length": 585,
+      "strengths_count": 4,
+      "weaknesses_count": 8,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "106_updated",
+      "avg_similarity": 0.7499,
+      "max_similarity": 0.7844,
+      "avg_coverage": 0.352775,
+      "max_coverage": 0.4444,
+      "generated_length": 650,
+      "strengths_count": 4,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "53_original",
+      "avg_similarity": 0.7077666666666667,
+      "max_similarity": 0.7176,
+      "avg_coverage": 0.5222666666666667,
+      "max_coverage": 0.6667,
+      "generated_length": 701,
+      "strengths_count": 7,
+      "weaknesses_count": 13,
+      "suggestions_count": 9
+    },
+    {
+      "paper_id": "53_updated",
+      "avg_similarity": 0.7113333333333333,
+      "max_similarity": 0.7222,
+      "avg_coverage": 0.5000333333333333,
+      "max_coverage": 0.6,
+      "generated_length": 693,
+      "strengths_count": 7,
+      "weaknesses_count": 13,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "82_original",
+      "avg_similarity": 0.74905,
+      "max_similarity": 0.7938,
+      "avg_coverage": 0.368625,
+      "max_coverage": 0.5,
+      "generated_length": 373,
+      "strengths_count": 4,
+      "weaknesses_count": 4,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "82_updated",
+      "avg_similarity": 0.7549499999999999,
+      "max_similarity": 0.786,
+      "avg_coverage": 0.421925,
+      "max_coverage": 0.6,
+      "generated_length": 379,
+      "strengths_count": 4,
+      "weaknesses_count": 4,
+      "suggestions_count": 4
+    },
+    {
+      "paper_id": "16_original",
+      "avg_similarity": 0.7050666666666667,
+      "max_similarity": 0.7183,
+      "avg_coverage": 0.5508000000000001,
+      "max_coverage": 0.7143,
+      "generated_length": 564,
+      "strengths_count": 6,
+      "weaknesses_count": 11,
+      "suggestions_count": 8
+    },
+    {
+      "paper_id": "16_updated",
+      "avg_similarity": 0.7166333333333332,
+      "max_similarity": 0.7282,
+      "avg_coverage": 0.5,
+      "max_coverage": 0.6429,
+      "generated_length": 381,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 4
+    },
+    {
+      "paper_id": "211_original",
+      "avg_similarity": 0.7151,
+      "max_similarity": 0.7331,
+      "avg_coverage": 0.5036666666666667,
+      "max_coverage": 0.5652,
+      "generated_length": 496,
+      "strengths_count": 3,
+      "weaknesses_count": 7,
+      "suggestions_count": 4
+    },
+    {
+      "paper_id": "211_updated",
+      "avg_similarity": 0.7186666666666666,
+      "max_similarity": 0.733,
+      "avg_coverage": 0.47469999999999996,
+      "max_coverage": 0.4815,
+      "generated_length": 536,
+      "strengths_count": 3,
+      "weaknesses_count": 7,
+      "suggestions_count": 3
+    },
+    {
+      "paper_id": "178_original",
+      "avg_similarity": 0.7307,
+      "max_similarity": 0.7485,
+      "avg_coverage": 0.37873333333333337,
+      "max_coverage": 0.5789,
+      "generated_length": 487,
+      "strengths_count": 4,
+      "weaknesses_count": 10,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "178_updated",
+      "avg_similarity": 0.7255666666666666,
+      "max_similarity": 0.7392,
+      "avg_coverage": 0.4389,
+      "max_coverage": 0.6316,
+      "generated_length": 456,
+      "strengths_count": 4,
+      "weaknesses_count": 10,
+      "suggestions_count": 11
+    },
+    {
+      "paper_id": "117_original",
+      "avg_similarity": 0.7478333333333333,
+      "max_similarity": 0.7531,
+      "avg_coverage": 0.4820333333333333,
+      "max_coverage": 0.5333,
+      "generated_length": 493,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "117_updated",
+      "avg_similarity": 0.7403333333333334,
+      "max_similarity": 0.7469,
+      "avg_coverage": 0.49593333333333334,
+      "max_coverage": 0.5333,
+      "generated_length": 492,
+      "strengths_count": 6,
+      "weaknesses_count": 7,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "67_original",
+      "avg_similarity": 0.7115666666666667,
+      "max_similarity": 0.7206,
+      "avg_coverage": 0.45386666666666664,
+      "max_coverage": 0.4571,
+      "generated_length": 433,
+      "strengths_count": 6,
+      "weaknesses_count": 6,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "67_updated",
+      "avg_similarity": 0.7481333333333334,
+      "max_similarity": 0.758,
+      "avg_coverage": 0.32356666666666667,
+      "max_coverage": 0.3636,
+      "generated_length": 254,
+      "strengths_count": 6,
+      "weaknesses_count": 2,
+      "suggestions_count": 1
+    },
+    {
+      "paper_id": "79_original",
+      "avg_similarity": 0.7451333333333334,
+      "max_similarity": 0.7625,
+      "avg_coverage": 0.36916666666666664,
+      "max_coverage": 0.4333,
+      "generated_length": 531,
+      "strengths_count": 4,
+      "weaknesses_count": 9,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "79_updated",
+      "avg_similarity": 0.7504,
+      "max_similarity": 0.7653,
+      "avg_coverage": 0.37553333333333333,
+      "max_coverage": 0.4667,
+      "generated_length": 626,
+      "strengths_count": 4,
+      "weaknesses_count": 9,
+      "suggestions_count": 10
+    },
+    {
+      "paper_id": "132_original",
+      "avg_similarity": 0.7066333333333334,
+      "max_similarity": 0.7124,
+      "avg_coverage": 0.5022000000000001,
+      "max_coverage": 0.5714,
+      "generated_length": 584,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 7
+    },
+    {
+      "paper_id": "132_updated",
+      "avg_similarity": 0.7051,
+      "max_similarity": 0.7138,
+      "avg_coverage": 0.5484333333333333,
+      "max_coverage": 0.619,
+      "generated_length": 497,
+      "strengths_count": 5,
+      "weaknesses_count": 8,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "19_original",
+      "avg_similarity": 0.7437333333333332,
+      "max_similarity": 0.7565,
+      "avg_coverage": 0.32316666666666666,
+      "max_coverage": 0.4286,
+      "generated_length": 385,
+      "strengths_count": 5,
+      "weaknesses_count": 6,
+      "suggestions_count": 6
+    },
+    {
+      "paper_id": "19_updated",
+      "avg_similarity": 0.7411666666666666,
+      "max_similarity": 0.7504,
+      "avg_coverage": 0.3156,
+      "max_coverage": 0.4286,
+      "generated_length": 370,
+      "strengths_count": 5,
+      "weaknesses_count": 6,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "200_original",
+      "avg_similarity": 0.716225,
+      "max_similarity": 0.7343,
+      "avg_coverage": 0.437925,
+      "max_coverage": 0.5,
+      "generated_length": 331,
+      "strengths_count": 4,
+      "weaknesses_count": 5,
+      "suggestions_count": 5
+    },
+    {
+      "paper_id": "200_updated",
+      "avg_similarity": 0.71395,
+      "max_similarity": 0.7368,
+      "avg_coverage": 0.474,
+      "max_coverage": 0.5455,
+      "generated_length": 349,
+      "strengths_count": 4,
+      "weaknesses_count": 5,
+      "suggestions_count": 5
+    }
+  ],
+  "metrics_dir": "evaluation/results/experiments/20250930_104627_eval_gemini-2.0-flash-lite_20250930_104627"
+}

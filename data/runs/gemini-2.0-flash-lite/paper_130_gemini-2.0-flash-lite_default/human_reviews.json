@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "S24OOltABM",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "- This paper proposes a pipeline that automatically generates a multi-turn chat corpus using ChatGPT.\n- Based on collected dataset, the authors present a chatting model named Baize, trained with parameter-efficient tuning based on LLaMA.\n- They additionally apply reinforcement learning with self-feedback to improve the performance of Baize.",
+      "reasons_to_accept": "This paper presents valuable resources (e.g. dataset and model) for research community.",
+      "reasons_to_reject": "- The novelty of the proposed pipeline is limited, which has been already explored in several works [1], [2]. It is popular approach to generate dataset using LLMs and train smaller LMs on the collected dataset nowadays, and there is no other contributions to be considered in the proposed framework.\n- There is no quality control (e.g. filtering) or manual evaluation on the quality of data, which is collected through automatic model-based approach.\n- It is unclear which chatting model the authors aim to develop, and the motivation for developing such model is also unclear.\n[1] Symbolic Knowledge Distillation: from General Language Models to Commonsense Models (NAACL 2022) [2] SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization (ACL 2023 Findings)",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "DxCQOcNH1q",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a framework for efficiently performing Instruction-tuning on large language models (LLMs), utilizing ChatGPT. The framework involves conducting Self-chat using ChatGPT for collecting dialogues for the first stage of training. Subsequently, the obtained model is further trained using ChatGPT's Feedback as an alternative to RLHF, successfully enhancing the model's performance.",
+      "reasons_to_accept": "- The paper proposes an efficient and practical method for training high-quality LLM without the intervention of actual humans. It is considered an efficient and reproducible method compared to Vicuna, which is learned from actual human interactions with ShareGPT.\n- The evaluation has been conducted at each step of the proposed method, clearly demonstrating the utility of each part.\n- The paper is written clearly throughout, making it easy for readers to understand.",
+      "reasons_to_reject": "- The evaluation is limited to automated assessments, including those based on GPT, and lacks human evaluations.\n- As the learning is based on ChatGPT, the experimental conditions seem to favor the proposed method that uses the same model for training data; however, there is no discussion regarding this aspect.\n- Although multiple generation examples are shown, a detailed analysis of the model's performance is lacking, and the differences compared to other models like Vicuna are not clearly illustrated.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "R5XA0LJ0lb",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposed an efficient pipeline (low cost, low compute) to imitate proprietary chat models. The paper utilized self-chat and self-distill techniques to generate chat data and human feedback data, in comparision with SFT and RLHF proposed by OpenAI's InstructGPT. Self-chat avoids human annotation, and self-distill avoids human feedback. Authors then trained a series of models based on such pipeline, such as (Baize v1, Baize v1.5 Baize v2) with (7B, 13B) parameters.  The self-distill process further added an extra LoRA module to the base model. The paper evaluate Baize using LM Evaluation Harness library and GPT-4 evaluator. The pipeline highlights efficency.",
+      "reasons_to_accept": "The paper proposed an efficient pipeline to imitate state-of-the-art proprietary chat models such as ChatGPT.\nThe paper proposed a novel self-chat technique, which avoids human annotation.\nThe paper proposed a novel self-distill technique, which avoids human feedback.\nThe pipeline highlights efficency.",
+      "reasons_to_reject": "I noticed that author stated that \"Different from these attempts, our work focuses on developing an affordable and reproducible pipeline to efficiently tune a general-purpose language model for multi-turn chat.\" Despite this, Baize's current results are not competitive on leaderboards like Huggingface OpenLLM. Considering running Baize requires the same resource as other high-ranking Llama-13B models, and the author failed to point out any directions to further make Baize competitive with other 13B models. So I suspect that the proposed pipeline not work. I think authors should further improve the proposed pipeline to get a competitive result.\nThe generated data may contain hallucination, finetuning on such data seems to cause model generate random response.",
+      "questions_for_the_authors": "Have you ever tried using full parameter finetuning, what is the difference between full-parameter finetuning and LoRA on your data?  The generated data may contain hallucination, finetuning on such data seems to cause model generate random response. Have you ever tried some methods to avoid that?\nDo you have any future plan to improve Baize's pipeline?\nDo you think if you have a base model of ChatGPT (gpt-3.5), using self-chat and self-distill can yield a similar model with ChatGPT? If not, what is the reason?\nAre you confident on your proposed pipeline?",
+      "missing_references": "N/A",
+      "typos_grammar_style_and_presentation_improvements": "N/A",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

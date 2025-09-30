@@ -1,0 +1,114 @@
+{
+  "summary": "This paper introduces a novel dataset and the concept of 'vicarious offense' to study offensive content moderation in political discourse. The study highlights disagreements between machine and human moderators and conducts a noise audit. The paper has been updated to address concerns about reproducibility, figure clarity, and statistical analysis. However, the paper still requires more rigorous comparisons with existing work and a more precise definition of 'vicarious offense'.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the use of nine open-source offensive language identification models and the datasets used for training (Twitter, Facebook, Gab, Reddit, and YouTube). (Sec 3.1)",
+      "grounding": "methods",
+      "facet": "methods"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper introduces a dataset for studying offensive content moderation in political discourse, including the novel concept of 'vicarious offense'. (Introduction, Table 2)",
+      "grounding": "claims_vs_evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The study highlights the disagreement between machine and human moderators on offensive content, visualized with Cohen's kappa (Figure 2). (Table 2, Figure 4, Fig 2)",
+      "grounding": "claims_vs_evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 4 provides a clear overview of the datasets used, including instance counts, offensive percentages, and data sources. (Table 4)",
+      "grounding": "tables",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly defines 'noise audit' and 'vicarious offense'. (1.1 Definitions)",
+      "grounding": "clarity_presentation",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper's comprehensive performance evaluation of offensive speech classifiers on political discourse in-the-wild is a significant contribution. (Related Work)",
+      "grounding": "novelty",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide details on the specific seeds used for training the models, impacting reproducibility. (Sec 3.1)",
+      "grounding": "methods",
+      "facet": "methods"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the novelty of including independent political identities without a comparative analysis. (Limitations)",
+      "grounding": "claims_vs_evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper's claim that the dataset will open gates for modeling ideas is an overstatement without providing specific modeling ideas or preliminary results. (Introduction)",
+      "grounding": "claims_vs_evidence",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several figures lack clear axis labels, legends, and units, making it difficult to interpret the data. (Figures 3, 5-7, 9, 11-14)",
+      "grounding": "figures",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack quantitative statistical analysis, and it is unclear if confusion matrices include statistical significance. (Tables 1, 2, 6, 7, 8)",
+      "grounding": "tables",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'vicarious offense' could be more precise. (1.1 Definitions)",
+      "grounding": "clarity_presentation",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "No discussion of potential misuse or failure modes. (Insufficient evidence)",
+      "grounding": "societal_impact",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper should explicitly compare its findings with those of [1] Dallas Card et al. (2022) and [2] Ranasinghe and Zampieri (2020). (Related Work)",
+      "grounding": "comparison",
+      "facet": "comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a section detailing the computational resources used for training and evaluation, including hardware and software versions. (Sec 3.1)",
+      "grounding": "methods",
+      "facet": "methods"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a link to the code repository with the training scripts, including the specific versions of the libraries used, and a requirements.txt or equivalent for environment setup. Specify the hardware used for training (e.g., GPU type, memory). Report the seed used for each experiment and the variance of the results (e.g., standard deviation) across multiple runs. (Code/Data Availability, Sec 3.1)",
+      "grounding": "reproducibility",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies. (Conclusion)",
+      "grounding": "societal_impact",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

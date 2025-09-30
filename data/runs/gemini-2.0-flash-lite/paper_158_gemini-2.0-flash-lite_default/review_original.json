@@ -1,0 +1,198 @@
+{
+  "summary": "This paper introduces Vocabulary Trimming (VT) as a method to reduce the size of multilingual language models while maintaining performance. The authors demonstrate that VT can achieve comparable or better results than the original models, but the paper lacks sufficient detail on the VT method itself and requires more rigorous evaluation and comparison with existing model compression techniques.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly describes the datasets, evaluation metrics, and models used (Sec 4.1, Sec 6.1), and provides code/data availability.",
+      "grounding": "Sec 4.1, Sec 6.1",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "strength",
+      "text": "VT models retain the high performance of the original multilingual LM while reducing model size (Sec 8).",
+      "grounding": "Sec 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Experiments show that VT models can achieve better results than the original larger model when trimmed before fine-tuning (Sec 8).",
+      "grounding": "Sec 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper shows that monolingual models exhibit larger social biases than VT-induced multilingual LMs (Sec 6).",
+      "grounding": "Sec 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 3 provides a clear comparison of pre/post-FT VT models against original monolingual and multilingual models across multiple benchmarks, with helpful color-coding for social bias scores (Table 3).",
+      "grounding": "Table 3",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly differentiates its approach (Vocabulary Trimming - VT) from prior work by Abdaoui et al. (2020), highlighting the novel contributions of exploring VT strategies before and after fine-tuning, and extending the evaluation to generation tasks and more recent multilingual language models (LMs) like mBART and mT5 (Intro/Related Work).",
+      "grounding": "Intro/Related Work",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear illustration of vocabulary trimming (Fig 2).",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks information about the variance of the results and the random seeds used for experiments (Sec 4, Sec 6).",
+      "grounding": "Sec 4, Sec 6",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "weakness",
+      "text": "The novelty is limited as the core idea of vocabulary trimming has been explored before, and the paper needs to better highlight the delta compared to Abdaoui et al. (2020) (Related Work).",
+      "grounding": "Related Work",
+      "facet": "None"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a detailed comparison with other model compression techniques beyond vocabulary trimming (Intro, Sec 2).",
+      "grounding": "Intro, Sec 2",
+      "facet": "None"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figures lack clear axis labels and units, making it difficult to interpret the results (Fig 3, Fig 4, Fig 5, Fig 6).",
+      "grounding": "Fig 3, Fig 4, Fig 5, Fig 6",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'irrelevant tokens' in the context of VT is not explicitly defined (Abstract, Section 1).",
+      "grounding": "Abstract, Section 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a dedicated section or detailed explanation of the VT method itself (Section 3).",
+      "grounding": "Section 3",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the reported results. Some tables also lack clear headers and descriptions (Tables 1, 2, 4, 5).",
+      "grounding": "Tables 1, 2, 4, 5",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss potential misuse scenarios, such as generating biased or harmful content, nor does it adequately address fairness concerns related to the VT method, particularly its impact on low-resource languages or underrepresented groups.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare the performance of VT against the original multilingual LMs on the same tasks and datasets used in the evaluation (Experiments).",
+      "grounding": "Experiments",
+      "facet": "missing_comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include the random seeds used for all experiments and report the variance (e.g., standard deviation) of the results, or at least the number of runs (Sec 4, Sec 6).",
+      "grounding": "Sec 4, Sec 6",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a link to the code repository and the data used, and specify the software environment (e.g., Python packages, versions) used for the experiments (Sec 4, Sec 6).",
+      "grounding": "Sec 4, Sec 6",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Further analysis is needed to explore the behavior of VT in low-resource languages (Sec 8).",
+      "grounding": "Sec 8",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "More comprehensive social bias evaluations across different languages are needed (Sec 7).",
+      "grounding": "Sec 7",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a direct comparison with Abdaoui et al. (2020) on the same tasks and datasets to quantify the improvements of the proposed method (Related Work).",
+      "grounding": "Related Work",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Compare the proposed VT method with other model compression techniques such as pruning, quantization, or knowledge distillation to establish its relative advantages and disadvantages (Intro, Sec 2).",
+      "grounding": "Intro, Sec 2",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the methodology used to identify and remove irrelevant tokens from the vocabulary (Intro).",
+      "grounding": "Intro",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add clear labels to the axes, including units where applicable, and include a legend to clarify the different lines or bars (Fig 3, Fig 4, Fig 5, Fig 6).",
+      "grounding": "Fig 3, Fig 4, Fig 5, Fig 6",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section detailing the datasets used, their licenses, and any relevant privacy policies or consent mechanisms, and explicitly state the usage terms for the models created using the VT method.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the VT method, including the criteria for token selection and the process of removing tokens, and include a table summarizing the notation used throughout the paper (Section 3).",
+      "grounding": "Section 3",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations and/or confidence intervals for all reported metrics. Add p-values to indicate statistical significance of performance differences between models and configurations. Ensure all table headers are clear and concise. Provide a brief description for each table (Tables 1-7).",
+      "grounding": "Tables 1-7",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a discussion of potential biases introduced or amplified by the VT method and propose mitigation strategies (Section 6, 7).",
+      "grounding": "Section 6, 7",
+      "facet": "fairness"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Expand the discussion of broader impacts to include potential negative societal consequences and mitigation strategies (Section 1, 7, 8).",
+      "grounding": "Section 1, 7, 8",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a section on potential misuse cases and propose mitigation strategies, such as content moderation and bias detection (Insufficient evidence).",
+      "grounding": "Insufficient evidence",
+      "facet": "misuse"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing the proposed VT method with the original multilingual LMs (e.g., mBERT, mBART, mT5) on the same four NLP tasks (two generative and two classification) and seven languages. Evaluate the performance using the same metrics as in the paper. This will provide a direct comparison of the performance and size reduction achieved by VT (Experiments).",
+      "grounding": "Experiments",
+      "facet": "experiment_suggestion"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

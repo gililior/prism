@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "Mcn5t83XtZ",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper describes and evaluates an *NLP engineering experiment*. The authors try to predict the personality  of an author based on text written by the author. Their approach is to use a Large Language Model in an instructive way to rate an authors personality in a multi-turn dialog (following the chain-of-thoughts approach). The LLM, here GPT3.5, is gets first the text in question, some instructions on the answering format and finally multiple request about the authors personality. The rating request are based on psychological questionnaires (i.e., MBTI and Big 5). Finally, the LLM is asked to rate the text authors's personality on different dimensions.\nFrom my point of view, the paper provides two main contributions. First, it evaluates the usage LLMs in order to predict the personality of a person on the basis of text written by that person. Second, it compares two approaches of prompt engineering, one using single-turn instructions and another one using multi-turn instructions.\nFinally, both approaches as well as several other are compared in a formative evaluation.",
+      "reasons_to_accept": "- The paper describes in a reproducible way an interesting approach to predict aspect of an author's personality from text they have written.\n- The approach is validated in a feasible evaluation.\n- An ablation study shows the effectiveness go the multi-turn approach.\n- The work not only shows the technical possibility to predict personality (i.e., traits) using LLMs, but also the (relative) simplicity, which is in turn a warning for potential misuse.",
+      "reasons_to_reject": "- In the results section the best two (alternative!) approaches which works best for Kaggle are not show for Essays. Thus the results are not complete.\n- A specific discussion is missing and the limitations are very short. Obvious limitations like application to only one language (which is fine, but should be named) or the rather artificial datasets are not mentioned.\n- The description of the two used data sets is very short. I would aspect at least additional information on the mean length of the texts to get a feeling for the needed amount of data per text author.",
+      "questions_for_the_authors": "Question A: Why do you not give the results for TrigNet and DDGCN in Table 1 for the Essays dataset, as they work best on the Kaggle dataset?",
+      "typos_grammar_style_and_presentation_improvements": "- Line 118-121: The sentence sounds somehow incomplete.\n- Line 167: the ChatGPT -> remove the - Line 356: Implementation",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "Nopuj64i7i",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a method to use item-based psychology questionnaires as a way to improve personality detection capabilities of LLMs in a CoT framework. They prompt the model to rate individual items from the questionnaire at each turn and leverage the historical rating results to determine the underlying personality trait.",
+      "reasons_to_accept": "This paper proposes the first use of item-based personality related questionnaires to establish personality traits exhibited in text. Their method works better than simple standard prompting.",
+      "reasons_to_reject": "CoT does not just guide LLMs through arbitrary reasoning steps, but through a definitive order of reasoning steps. Furthermore, the abstract nature of the personality detection task render the step-by-step nature of the chain-of-thought problem solving approach challenging even for humans.\nHow can high and low be defined for the Big 5 traits? In its original form, this is a regression task, not a classification one.\nThere are no statistical significance tests b/w PsyCot and Standard baseline, and PsyCoT and RoBERTa.\nThe best model for these tasks is a simple regression model - Park et al (mentioned in missing references). However, the paper does not compare to that model and neither does it compare to Lynn et al 2020, which is another strong performing model. It is hard to contextualize the results in this paper and pit them against what the community knows.",
+      "questions_for_the_authors": "A: The Big 5 personality traits elicit outcomes in a dimensional form. When this method elicits the outcome in the most dimensional form, why do you reduce it back to 2 classes?\nB: Post order matters (missing ref: Nelson Liu et al., 2023) matters for these LLMs, given that some messages have more information than others for Personality estimation (missing ref: Lynn et al 2020). How do you account for bias introduced due to order of posts in your prompting setup?\nC: Missing row in results table: Item informed high/low classification score (What is the performance when you aggregate the scores for each item) D: 10 vs 44 item scale is expected to have a big drop. Performance of 20 items scale would be more interesting to see since the 20 item scale has shown convergent validity (ref: Table 1 in Park et al., 2015)",
+      "missing_references": "The following papers are critically missing: Automatic Personality Assessment Through Social Media Language - Park et al VERY similar baseline - Systematic Evaluation of GPT-3 for Zero-Shot Personality Estimation - Ganesan et al",
+      "typos_grammar_style_and_presentation_improvements": "Line 256: By-Produce -> Byproduct",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "s90JGpvPSG",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes PsyCoT, a chain-of-thought method specialized in personality detection tasks. The methodology uses chain-of-thought reasoning in the form of answering psychological questionnaires. The authors investigate the correlation between the trait score and the chosen personality and explore the patterns of score distributions in terms of different traits.",
+      "reasons_to_accept": "The methodology is interesting enough to understand the ability of LLMs for personality detection, and the explanations about details are clear. The authors analyze the correlation between scores and traits to predict some patterns between the personality traits and the LLM's behaviors. Overall, it is easy to follow and good enough to inspire researchers in a similar field to analyze or predict authors' personalities.",
+      "reasons_to_reject": "PsyCoT is basically coming from a popular method, Chain-of-Thought. It is weak to say the proposed method is innovative and original though the application to personality detection has been yet underexplored.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

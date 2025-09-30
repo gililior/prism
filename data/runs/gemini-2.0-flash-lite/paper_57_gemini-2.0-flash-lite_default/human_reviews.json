@@ -1,0 +1,86 @@
+[
+  {
+    "rid": "UbfUI9GJBf",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper addresses the problem of (untyped) relation extraction (i.e. extracted pairs are not labeled) from web pages and in a zero-shot setting (i.e. testing is done on web pages from a vertical/domain not seen during training). The difficulty is obviously in the generalization to documents that can be different not only in their textual and semantic content, but also in their HTML/XML structure and layout.    The proposed solution follows existing multimodal methods that embed both text and document structure information. More specifically, and as stated in the paper, it is strongly inspired by the MarkupLM model (Li et al., 2021), which embeds absolute XML Paths along with textual elements within a transformer encoder.  The main contribution of the paper is the extension of the MarkupLM model (Li et al., 2021) with 2 features: popularity of text nodes (i.e. number of web pages where a text element occurs) and relative XML Path between text elements. The first feature is encoded in the input sequence embeddings (of text nodes), and the second is encoded as a bias term in the self-attention components. The experiments and ablation study show that the two features improve performance.",
+      "reasons_to_accept": "- The proposed extension of the MarkupLM model, with the encoding of text node \"popularity\" and relative XML paths between text nodes, is relatively simple and improves performance in zero-shot relation extraction setting, as shown by the experiments and the ablation study.",
+      "reasons_to_reject": "- Two important technical aspects of the proposed method are missing or are not clear:  \t- (1) Regarding the representation of model input: from section 4 and in particular lines 280-284, the model input is defined as the sequence of \"text nodes\" (w_i, xpath_i) from the XML/HTML document, which is confusing, as text nodes can be phrases, sentences or even paragraphs... In Figure 3 though, it seems that the model input is a sequence of tokens, not text nodes, which would make more sense, but the paper does not mention tokenization at all. \n\t- (2) Regarding the extractions: from the provided examples (Table 4), the model extracts pairs of text nodes, such as \"(Color type, Technicolor prints)\". If, as it is probably the case, model input is a sequence of tokens (from tokenized text nodes), then h_i and h_j in the Biaffine component (equation at line 383) are representations of tokens, not text nodes and hence, P(x_i, x_j) is about tokens x_i and x_j. Therefore, the paper lacks a description of how tokens are grouped in order to produce pairs of text nodes from the predicted pairs of tokens.",
+      "questions_for_the_authors": "A. There seems to be a confusion in the use of the notions of text nodes, words and tokens. A text node is an element from the DOM tree and can be a token or word, a phrase, a sentence or even a paragraph. Could you please clarify what is the nature of the elements in the input sequence for the model, i.e. what w_i means in the (w_i, xpath_i) notation? Is it a text node or a token? If they are tokens, are the text nodes tokenized with a BPE tokenizer?  B. If the input of the model is a sequence of tokens (with their xpaths), then h_i and h_j in the Biafine equation (line 383) are representations of tokens, and x_i and x_j (line 384) are tokens, not text nodes. So how does the system group tokens to produce pairs of text nodes, such as \"(Color type, Technicolor prints)\" ?\nC. It is claimed that \"contrastive learning\" is used to train the model (section 4.4) but I am not sure if that's correct: the loss as defined in lines 377-393 seems to be a normal supervised cross-entropy loss (prediction vs true label on a single sample) and not a contrastive loss.  So it seems that the negative sampling is used simply to alleviate the problem of class imbalance and not for a contrastive loss. Could you please clarify?",
+      "missing_references": "IMO, the following paper should be cited and discussed. Although their experiments with the SWDE dataset are not comparable due to different settings, the main contribution of the paper is multimodal (text + XML structure) representation learning, where various structural features are encoded along with text elements: Deng, Xiang, Prashant Shiralkar, Colin Lockard, Binxuan Huang, and Huan Sun. \u2018 DOM-LM: Learning Generalizable Representations for HTML Documents\u2019. arXiv, 25 January 2022. [https://doi.org/10.48550/arXiv.2201.10608](https://doi.org/10.48550/arXiv.2201.10608).",
+      "typos_grammar_style_and_presentation_improvements": "Typos: line 143: gathering --> gather figure 2 caption: hundreds web pages --> hundreds of web pages Throughout the paper: the definite article \"the\" is sometimes used in plural noun phrases where it should not be, e.g. \"which rely on the syntactic constraints\" --> \"which rely on syntactic constraints\". Proofreading is probably needed to fix all the cases.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "lNA6p0cMoJ",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper studies the approach to understand semi-structured web pages utilizing the relation between text nodes within and across pages. \nIt proposes a framework ReXMiner to encode the shortest relative paths in document object model and the popularity info of text node. \nIt also uses the contrastive learning approach to facilitate the training. \nExperiments conducted on SWDE dataset shows the model achieves or outperforms the SOTA performance.",
+      "reasons_to_accept": "Paper is well structured and clear to follow. \nPaper tackles one important problem in web text mining field. \nPaper shows the proposed solution can outperform the state of art models. \nPaper show cases the gained benefits by combining more structural or popularity information.",
+      "reasons_to_reject": "Authors can consider to test more on other datasets. \nIt will be even better to compare the inference/training time.",
+      "questions_for_the_authors": "I am wondering if the author has considered IDF as the popularity of text node has been considered.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "qW1hcix7Au",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, a new method called ReXMiner is proposed for zero-shot relation extraction in web mining. It encodes the shortest relative paths in the DOM tree of the web page and counts the occurrence of the same text node across different web pages. Experiments on public benchmarks show that this method outperforms the state-of-the-art baselines in the task of zero-shot relation extraction in web mining.",
+      "reasons_to_accept": "This paper proposes a kind of novel and effective feature fomulation for web pages by encoding the shortest relative paths in the DOM tree and counting the occurrence of the text node.\nThe transformer-based model ReXMiner using the above features reaches the state-of-the-art in the task of zero-shot relation extraction for web mining, which is hopeful to facilitate the exploitation of the unlabelled web corpus.",
+      "reasons_to_reject": "The contribution of this paper seems somewhat insufficient as a long paper. As a considerable part of ReXMiner comes from the existing work of the model MarkupLM, the adding part including relative path bias and popularity embeddings are more like an incremental work. I believe this paper should be enriched in breadth or depth to fully demonstrate the advantages and importance of the new approach. For example, more experiments on other datasets and tasks about web pages, like what MarkupLM does, or more analytical experiments illustrating the principles of the new method.",
+      "questions_for_the_authors": "A. The relative path sequences seem to be simply put together so information about direction and lowest common ancestor is not fed into the model. Does this information have any effect on the model?\nB. In this model, path prefixes are added to the first several layers of attention weight as bias and relative paths are added to the next layers of attention weight as bias. How do they interact with each other and ultimately affect the model?\nC. The number of these layers is controlled by hyperparameters, how are these hyperparameters determined and do they have a significant effect on the model?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "ZTu82cIymT",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper addresses the challenge of understanding semi-structured web pages in web mining, particularly when little is known about the subject or template of a new page. The authors note that current methods, which involve embedding XML source code into the transformer or encoding the rendered layout with graph neural networks, do not adequately account for the relationships between text nodes within and across pages.\nThe main contributions of this paper are the development and implementation of ReXMiner, which offers a more accurate and efficient method for key-value pair extraction within a web page. ReXMiner achieves this by encoding the shortest relative paths in the Document Object Model (DOM) tree of the web page. It also incorporates the popularity of each text node by counting the occurrence of the same text node across different web pages. \nThe authors use contrastive learning to address the issue of sparsity in relation extraction.",
+      "reasons_to_accept": "1. easy to follow 2. The technical details are solid and reasonable.",
+      "reasons_to_reject": "1. lack comparison to existing PLM-based methods, such as [1,2] and openai-gpt based methods. \n2. The components in the paper are popular approaches, I suggest that the authors give more insight and example on how each component (e.g. contrasive loss) works on each scenario. \n3. poor reproducibility, without any code available for evaluation.\nReferences (see missing references)",
+      "questions_for_the_authors": "1. What are the zero-shot results of recent LLMs, e.g., gpt4, on the task?    2. This point may worth discussion: in industrial practice, few shot may always be acceptable, so why do authors insist on zero-shot as the paper position?",
+      "missing_references": "[1] Li, Zimeng, et al. \"WIERT: Web Information Extraction via Render Tree.\" Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 11. 2023.\n[2] Xie, Chenhao, et al. \"Webke: Knowledge extraction from semi-structured web with pre-trained markup language model.\" Proceedings of the 30th ACM International Conference on Information & Knowledge Management. 2021.",
+      "ethical_concerns": "No",
+      "typos_grammar_style_and_presentation_improvements": "Too many arxiv references, some of which may already have a conference version"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

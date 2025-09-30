@@ -1,0 +1,422 @@
+[
+  {
+    "kind": "strength",
+    "text": "Hyperparameters and training recipe are enumerated.",
+    "grounding": "Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "No seed reporting; variance across runs unknown.",
+    "grounding": "Sec 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Release code and scripts with a reproducible environment file.",
+    "grounding": "GitHub link placeholder",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper addresses the important problem of model robustness in NLP, which is a relevant and timely topic.",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks specific details on the 'previous methods' used for discrete perturbation measuring, making it difficult to assess the improvement.",
+    "grounding": "Abstract",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a detailed comparison with existing methods for measuring discrete perturbations, including quantitative results and analysis of the differences.",
+    "grounding": "Abstract",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed PerturbScore compare to existing methods in terms of computational efficiency?",
+    "grounding": null,
+    "facet": "novelty"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of the proposed method, and under what conditions does it fail?",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper explores model robustness in NLP by connecting discrete and continuous perturbations. It introduces a PerturbScorer to correlate these perturbations. The paper acknowledges limitations and suggests future directions.",
+    "grounding": "Introduction, Conclusion",
+    "facet": "ethics_overview"
+  },
+  {
+    "kind": "strengths",
+    "text": "The paper acknowledges limitations of the approach and suggests future research directions, demonstrating transparency.",
+    "grounding": "Conclusion",
+    "facet": "ethics_transparency"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on dataset licensing, consent, privacy, or usage terms.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential ethical risks associated with the use of the PerturbScorer or the implications of its findings.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the datasets used, their licenses, and any relevant usage restrictions. If the datasets contain personal data, provide details on consent and privacy measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss potential ethical risks associated with the PerturbScorer, such as its potential misuse for generating adversarial examples or manipulating NLP models. Outline mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "questions",
+    "text": "What datasets were used in the experiments?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the licenses and usage terms for the datasets?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "questions",
+    "text": "Were any privacy measures implemented if the datasets contained personal data?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "limitations",
+    "text": "The analysis is limited by the lack of information on datasets and potential ethical implications. The paper's focus on technical aspects overshadows ethical considerations.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_coverage"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "yes - The paper lacks crucial information on dataset licensing, consent, privacy, and potential ethical risks, requiring further review.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_review"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a PerturbScorer to connect discrete and continuous perturbations in NLP robustness studies. The authors claim the PerturbScorer can learn the correlation between these perturbations and generalize across datasets and perturbation methods.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates that the PerturbScorer can learn the connection between discrete and continuous perturbations, as evidenced by significant correlation scores (Table 3).",
+    "grounding": "Table 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors acknowledge limitations, such as the assumption that discrete and continuous perturbations have similar effects, and suggest future work to address these limitations.",
+    "grounding": "Section 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of the PerturbScorer without providing sufficient evidence for all datasets and perturbation methods mentioned.",
+    "grounding": "Section 4.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explore further applications based on the connections between discrete and continuous perturbations and the proposed PerturbScorer, which is a limitation.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on a wider range of datasets and perturbation methods to strengthen the claim of generalizability.",
+    "grounding": "Section 4.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Explore potential applications of the PerturbScorer, such as recognizing differences between sentences or measuring distribution shifts, to demonstrate its practical utility.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific datasets and perturbation methods were used to evaluate the PerturbScorer?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the PerturbScorer compare to other methods for measuring the damage to neural models?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific limitations of the assumption that discrete perturbations show similar effects to neural networks compared with continuous perturbations?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of their assumptions and the scope of their work.",
+    "grounding": "Section 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures aim to compare the effects of discrete and continuous perturbations on model behavior, but the descriptions lack detail.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The figures appear to present the results described in the text, showing the relationship between perturbation methods and model shift.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes labels are not fully described, making it difficult to understand what is being measured. The figure lacks a clear legend.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide clear labels for all axes, including units. Add a legend to identify the different curves and data points.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to measure the model shift in each figure? What do the different curves represent (e.g., different models, perturbation methods)?",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations appear to focus on overall performance metrics, without providing insights into the specific types of errors or the impact on individual data points.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the connection between discrete and continuous perturbations in NLP models to improve robustness. It proposes a method to quantify the correlation between these perturbations using a regression task and a neural network called PerturbScorer. Experiments on IMDB and AG's News datasets demonstrate the effectiveness of the proposed approach.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the problem of model robustness in NLP and the challenges associated with discrete perturbations. The introduction provides a good overview of the existing literature and motivates the research question.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'PerturbScore' and its specific function is not clear. The paper mentions it is a regression task but lacks details on the loss function, architecture, and training procedure.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation section. The meaning of variables and symbols used in the methods is not explicitly defined, making it difficult to follow the technical details.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the 'PerturbScore' method, including the loss function, architecture, and training procedure. Include a diagram illustrating the process.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table to define all variables and symbols used in the paper, especially those related to the perturbation methods and the 'PerturbScore'.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the assumptions made about the relationship between discrete and continuous perturbations. Explain why these assumptions are reasonable and how they are validated.",
+    "grounding": "Introduction, Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How is the 'gradient-projection descent method' applied in the context of discrete perturbations?",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What specific metrics are used to measure the correlation between discrete and continuous perturbations?",
+    "grounding": "Methods Section, Results Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed method compare to existing methods for measuring discrete perturbations?",
+    "grounding": "Introduction, Results Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitation",
+    "text": "The lack of detailed information on the 'PerturbScore' method and the absence of a notation table may hinder the reproducibility of the results.",
+    "grounding": "Methods Section",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Overall, the paper presents an interesting approach to address the problem of model robustness in NLP. However, improving the clarity of the methods and providing more details on the experimental setup would significantly strengthen the paper.",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of correlation analysis and generalization tests for the PerturbScorer, but lack detailed statistical information in some cases.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides statistics on the number of constructed correlations, which is a good starting point for understanding the data.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables 1, 3, 4, and 5 lack crucial statistical measures such as confidence intervals and p-values, making it difficult to assess the significance of the results. Table 1 lacks clarity on the metrics used.",
+    "grounding": "Tables 1, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations, confidence intervals, and p-values in Tables 3, 4, and 5 to indicate the statistical significance of the correlation results and generalization performance. Clearly define all metrics used in Table 1.",
+    "grounding": "Tables 1, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the correlation coefficients in Table 3? 2. What are the specific datasets, perturbation types, and models used in the generalization tests in Table 4? 3. How were the 'model output shifts' quantified in Table 1?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets, perturbation methods, and models used in the experiments. Generalizability to other settings is not fully assessed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a method to connect discrete and continuous perturbations in NLP robustness studies using a PerturbScorer. It aims to leverage the well-studied nature of continuous perturbations to understand and improve the robustness of NLP models against discrete perturbations. The paper acknowledges limitations and suggests future research directions.",
+    "grounding": "Introduction, Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper focuses on a fundamental problem in NLP robustness, which is a critical area for the trustworthy development of NLP applications.",
+    "grounding": "Introduction, Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section on societal impact, including potential risks, misuse cases, fairness considerations, and broader impacts. The discussion is limited to technical aspects of robustness.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section discussing potential misuse scenarios (e.g., adversarial attacks, generating misleading content) and mitigation strategies. Address fairness concerns related to the datasets and models used.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss the limitations of the PerturbScorer and its potential for unintended consequences. Consider the impact on different user groups.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "question",
+    "text": "What are the potential biases in the datasets used for training and evaluating the PerturbScorer, and how might these biases affect the robustness of the model across different demographics or user groups?",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "question",
+    "text": "How might the proposed method be used to create more effective adversarial attacks, and what defenses are being considered?",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "question",
+    "text": "What are the potential societal impacts of improved NLP robustness, both positive and negative?",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "limitation",
+    "text": "The societal scope is limited by the lack of discussion on potential misuse, fairness, and broader impacts. The focus is primarily on the technical aspects of robustness.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": null,
+    "facet": null
+  }
+]

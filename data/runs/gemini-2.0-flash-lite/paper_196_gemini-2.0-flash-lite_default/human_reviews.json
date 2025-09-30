@@ -1,0 +1,66 @@
+[
+  {
+    "rid": "SdD9HBjyTc",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper investigates whether or not self-generated natural language explanations can improve code-to-code translation performance. The paper proposes an explain-then-translate method and analyzes its effectiveness across 19 different programming languages and 3 types of explanations. It also proposes 5 different heuristics to select better explanations to improve the performance of its explain-then-translate method. Finally, it conducts multiple ablation studies comparing the robustness and effectiveness of natural language explanations to programming language examples, commonly seen in few shot learning.",
+      "reasons_to_accept": "1. This paper is to my knowledge the first highly detailed study into how self-generated natural language explanations can improve code-to-code translation performance. \n2. This paper provides detailed examples of the various prompts used in the study, which will be helpful for the future reproduction of the results in the study as well as future research in this area.   3. This paper provides novel heuristic selection strategies that improve the performance of its explain-then-translate method, as well as showcase the potential for growth and, thus, can be used as a blueprint for future research in the area of code-to-code translation. \n4. This paper provides results of novel ablation experiments that demonstrate how natural language explanations can be more robust and offer better performance when compared to automatically generated programming examples that are used in one-shot learning.",
+      "reasons_to_reject": "1. The authors claim to release their code and dataset that they used for this paper, however I cannot find any links to these resources in the paper. \n2. Section 3, where the authors explain some of their methodology on how they are prompting the LLM, is quite vague, as it does not mention what LLM they are using nor does it clearly outline how they are using their explain-then-translate method to prompt the LLM, both of which may make reproducibility more difficult.",
+      "questions_for_the_authors": "Question A: In Section 4.3, why were 0-shot explanations used for exp, while 4-shot explanations were used for exp-lbl and exp-lbl-d? I don\u2019t see a good reason for being inconsistent here. \nQuestion B: Is there any mention in the paper of the compute resources used to run the inference performed in the experiments? Since all of the inference was performed on ChatGPT, perhaps information on the number of API keys used, as well as the time it took to run all the inference would be helpful as well. \nQuestion C: Why were only a subset of all the possible translation directions used when experimenting with alternative translation directions in Section 4.2? \nQuestion D: Why was ChatGPT mentioned as the LLM model used for inference only until the conclusion? I believe that is a relevant detail that could be included much earlier.",
+      "missing_references": "N/A",
+      "typos_grammar_style_and_presentation_improvements": "Lines 050-051, \u20260-shot setting\u2026 \u2192 \u20260-shot performance\u2026 Line 094, \u2026code generation prompt\u2026 \u2192 \u2026code generation prompts\u2026 Line 111-115, \u2026over CodeXGLUE\u2026 \u2192 \u2026over CodeXGLUE and TransCoder\u2026 Line 491, \u2026Python-Java++-PHP\u2026 \u2192 \u2026Python-Java-PHP\u2026",
+      "ethical_concerns": "No",
+      "justification_for_ethical_concerns": "N/A"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "Ap6PHpYGbi",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper experimented with chain-of-thought prompting in the case of programming language translation. With the aid of zero-shot and few-shot prompting, the authors came across important insights such as, adding simpler explanations turning out more useful in case of low-resourced ones and using simpler heuristics to perform better explanation selection.",
+      "reasons_to_accept": "- Detailed study and adequate explanations regarding the reasonings - Detailed ablation study",
+      "reasons_to_reject": "- this study is based on only chatgpt without any room of comparative evaluation. There needs to be some analysis comprising other llm so that the behaviors and finds could be confidently described as general.",
+      "questions_for_the_authors": "- could you add some comparative analysis comprising multiple LLMs focusing on the key findings?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "sJCXwTa4uK",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper is concerned with chain-of-thought prompting as applied to program source code translation. More in particular, it applies this method (originally from Chen et al., Teaching large language models to self-debug, 2023 ) extending the number of languages to 19, across low- and high-resource ones.",
+      "reasons_to_accept": "This paper presents a battery of translation pairs and prompt variations. Most importantly, it summarizes the vast experimental evidence into nuggets that hopefully will be valuable to theorists. As such, it's a sound empirical work and well suited for EMNLP.",
+      "reasons_to_reject": "To me, using a black-box, proprietary model like ChatGPT which periodically changes under the hood is a major scientific liability. This paper as a whole won't likely be reproducible in a few weeks' to months' time.  It is really unfortunate that the authors chose this and not a \"weaker\" but reproducible model, especially considering the wealth of OSS code LMs we have nowadays (CodeT5, StarCoder, etc.). I get it, ChatGPT is apparently \"strong\" in a number of areas, very convenient to use etc., but this is not what good science is about.    If the paper used an open-source model instead, or at the very least made a comparison to an OSS LM, I would be much more inclined to recommend it for acceptance.\n---  ## Rebuttal acknowlegement I appreciate the authors' response and I gladly increase my score.",
+      "questions_for_the_authors": "A The 3.3. Metrics section is very brief; could you elaborate on that comment \"n, k\" often dependent of sampling temperature k ? What does this dependency look like?",
+      "typos_grammar_style_and_presentation_improvements": "Only in the Conclusions section we learn that the model under test is ChatGPT. This fact should be made clear in the beginning of the work, or at least in the Experiments section.\nIt is really hard to see a linear fit in Figure 2, seeing the data. I wonder if that correlation could be faceted by controlling for e.g. language dataset size.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

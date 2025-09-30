@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "BYtwUIEEVU",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper studied the problem of dense retrieval. It aims at improving the document embedding for clustering as well as accelerate the retrieval process. To this end, the authors proposed a hybrid inverted index which combines the advantage of dense retrieval and lexical matching. The authors also proposed learning techniques for term and cluster selection with a joint optimization solution. Experiments are conducted on several popular datasets and the results look promising.",
+      "reasons_to_accept": "- The research topic is important.\n- The paper is well written.\n- The proposed techniques are solid.",
+      "reasons_to_reject": "- Some latest related works from the field of high dimensional similarity search are ignored such as [1]. They have been proved to have better performance than graph based methods such as HNSW compared here.\n- The comparison with some inverted list based sparse retrieval methods are missing. There are some works about compression over inverted lists and perfrom similarity search on them such as [2] [3]. They could also be extended as baseline methods. Since they are optimized, they should perform better than the selected sparse method here.\n- There is no result about space overhead.",
+      "questions_for_the_authors": "What is the space overhead or memory consumption of propose techniques?",
+      "missing_references": "[1] MQH: Locality Sensitive Hashing on Multi-level Quantization Errors for Point-to-Hyperplane Distances. PVLDB 2022. https://www.vldb.org/pvldb/vol16/p864-lu.pdf [2] Highly Efficient String Similarity Search and Join over Compressed Indexes. ICDE 2022. https://ieeexplore.ieee.org/document/9835221 [3] MILC: Inverted List Compression in Memory. VLDB 2017. http://www.vldb.org/pvldb/vol10/p853-wang.pdf",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "yH8CEQtwVL",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper deals with the retrieval quality of dense retrieval and proposes a Hybrid Inverted Index that uses the embedding clusters and salient terms collaboratively to accelerate dense retrieval. It achieves lossless retrieval quality with competitive efficiency across a variety of index settings. The source code is provided.",
+      "reasons_to_accept": "1. The idea to combine embedding clusters and salient terms is interesting. \n2. The paper is well organized. The description of the method design and implementation is clear and easy to follow. \n3. The experimental results prove the effectiveness and efficiency of the proposed method on two popular benchmark datasets.",
+      "reasons_to_reject": "1. In the experiments, only the query latency is given. The setup latency should also be given. \n2. The usage of \u201clossless retrieval quality\u201d is easy to be confusing.",
+      "typos_grammar_style_and_presentation_improvements": "There are some typos such as \u201cIVF-Flat and DistillIVF-Flat achieves recall\u201d ([pdf](zotero://open-pdf/library/items/WJ33MJVQ?page=2)) , \u201c2) Natural Questions (Kwiatkowski et al., 2019).\u201d",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "7szchI4gAO",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The manuscript describes a hybrid lexical and semantic inverted index for dense retrieval. The lexical component provides speed and precision due to terms; the semantic component allows to connect concepts beyond words. The semantic component works by clustering documents and creating meta-words that can be used to accumulate entries in the posting lists of the index. The approach includes a score function and a strategy to optimize lexical and semantic \"words\" selection.",
+      "reasons_to_accept": "- The hybrid inverted index that it is fast and precise.\n- It provides a way to combine lexical and semantic scores smoothly - It introduces a way to distill the data to become smaller, and faster, while maintaining precise",
+      "reasons_to_reject": "Methodology weaknesses: It is not clear if they are seeing the same information as the hybrid index. If they are seeing the same, it is fair and it is a matter of speed the comparison, if they are seeing differences it is a matter of the score but speed is not necessarily comparable, at least as how the manuscript presents results as compared with IVFPQ and HNSW.",
+      "questions_for_the_authors": "A. I recommend measuring with brute force and the lexical+semantic score proposed, or some variation, to know how much precision/recall is missing due to the index approximation.\nB. Please mention what kind of input receives each ANN and what kind of similarity/metric is used in each case. \n  C. Discuss the implications of using different representations for different ANN.\nD. HNSW and IVFPQ are sensitive to their hyper-parameters. Did you optimize their hyper-parameters?",
+      "typos_grammar_style_and_presentation_improvements": "Table 1, Fig 3, Fig 4, Line 145. Natual -> Natural",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "S4vOnRTkdK",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Authors study an important direction of use of mixture of experts (MoE) / switch layers at the FF layers and try to optimize the use of top-2 experts (MoE) vs only top-1 expert (switch). As expected, using top-2 experts leads to better performance than top-1 at the expense of twice as many FLOPs and longer runtime. In this work authors, propose to use top-2 experts only when the difference between the highest expert probability and the second highest expert probability is smaller than a pre-decided threshold saving them compute and retaining the performance of top-2 experts. Unfortunately, to gain full computational speedups they also require a sophisticated curriculum learning schedule.",
+      "reasons_to_accept": "1. MoE/ switch layers is a useful technique and optimizing it is important - the proposed solution is simple and intuitive. \n2. I liked the analysis of complexity of various tokens. \n3. The speedups over top-2 are decent, albeit with the use of curriculum.",
+      "reasons_to_reject": "1. Require sophisticated curriculum making the training pipeline complex and not plug-n-play. \n2. The decision of training top-1 baseline for longer is not convincing given that all results are in same ballpark.",
+      "questions_for_the_authors": "1) line 365: it was not clear how you initialize the experts. As you say use runs use same parameters, I am assuming the effective FF dimension of each expert is original FF dimension/ 16. If yes, this raises the question how do you split the parameters of original FF layer among these 16 experts. Do you initialize them based by splitting the original init across this in order or do you init the params of new expert FFs randomly. I'd be surprised that you match the performance of original dense model even after throwing away most of the original weights.\n2) Table 3: it is not convincing that you train top-1 for longer as the numbers are so close that maybe, if you would have kept a long enough wallclock time for all runs, top-1 would have been comparable to the rest irrespective of the loss.",
+      "typos_grammar_style_and_presentation_improvements": "line 124-125  table1 : top-1 missing x line 216: what do you mean 55% - is this w.r.t. to a threshhold",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "YD3RBw1kfI",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposed an adaptive gating mechanism in a Mixture of Experts (MoE) training scheme, which enables tokens to be processed by a flexible number of experts. The proposed training strategy allows tokens to be processed by a variable number of experts based on expert probability distribution. Overall the results show that the method often achieves improved training efficiency without compromising inference performance, with the integration of curriculum learning to be beneficial for reducing training costs. The authors present an interesting analysis where they explain how the gating mechanism adjusts to each NLP task. For instance, for sentiment analysis the tokens expressing neutral opinion are routed to two experts, while this happens in QA for both questions and context text snippets.",
+      "reasons_to_accept": "- The paper is clear and easy to follow. The experimental setup seems solid, with multiple NLP tasks evaluated.\n- The proposed approach looks promising, as it usually outperforms baselines in terms of training time, inference FLOPs and performance. The analysis and ablation study nicely explains model design choices and provides insights on how the method works in each NLP task.",
+      "reasons_to_reject": "- I am skeptical about the novelty of this paper. Despite its potential impact and value, it looks like a combination of existing techniques.\n- The performance improvement (training, inference and test performance) over the baseline is quite small.",
+      "questions_for_the_authors": "- How are findings in Section 3.1 / Figure 1 drawn? How are these experiments performed in detail?",
+      "typos_grammar_style_and_presentation_improvements": "- The authors could use 1-2 sentences in the intro to briefly explain what top-1 and top-2 gating is (L67).\n- Section 2 should be changed structure-wise. It has only a single subsection (2.1), while Related Work is just a \\paragraph{}. - Section 4 is also lacking structure. 4.1 is only one sentence.\n- The words 'significantly' should be used more carefully (e.g. L 583), only if a significance test is performed.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "mb6Q475JV7",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces adaptive gating in MoE, a flexible training strategy that allows tokens to be processed by a variable number of experts based on expert probability distribution.  Extensive experiments on diverse NLP tasks show that adaptive gating reduces at most 22.5% training time while maintaining inference quality.",
+      "reasons_to_accept": "The paper is well-written and easy to follow. The illustration of motivation and method is clear. \nThe design of adaptive gating in MoE is intuitive and technically novel.",
+      "reasons_to_reject": "This paper uses an existing method and does not mention or lack description of its own. \nInsufficient experiments, as many figures as possible should be used to illustrate the author's point of view. \nMore baseline models are encouraged to be used to evaluate Training Time, FLOPs and Inference Performance.",
+      "typos_grammar_style_and_presentation_improvements": "\"Figures 1 depict the normalized activation values of four sampled tokens across 16 experts.\" See line 209, page3. \nFigure 2 is not clear.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  }
+]

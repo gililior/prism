@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "vEZrAdu2Ds",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This submission introduces an audio alignment for an argumentation corpus. The authors use the aligned audio for experimenting with non-textual features for argument labeling.  They find that using audio features improves segmentation for text-based classification, yielding (slightly) better annotations than when using text-based segmentation.\nThe two contributions (resources & experiments) are both interesting, but each of them lacking certain aspects.\nFor the resources, I would have liked to see a more detailed description, for example:  - how many speakers are there? how long are the continuous segments per speaker (if you have speaker change)? \n - is the speaker identity annotated in the data? \n - how did you deal with incorrect alignments from the automatic alignment process? For resource papers, it is always important to me to give information about the data gathering process, because this information cannot be recovered later on by other researchers (in contrast to e.g. new experiments). \nSome of this information can be found in the actual data, but it is in my opinion still good to directly report it.\nFor the experiments, there are two aspects:  - the authors report accuracy and F1 score.  Their baseline model has the highest accuracy, but only the F1 score is discussed in the paper (where their own model has higher scores). It is not clear to me why a metric is reported but then completely ignored. As the accuracy paints a different picture than F1, it would be good to at least have a succinct explanation for this decision  - it is not clear to me why the authors chose to report the accuracy of a pure text-based classifier and a pure audio-based classifier but not a classifier using both as input. I am not claiming that it needs to be in the paper but using all available features is probably what most people think about first and I would add a short explanation (could very well be \"we are not interested in it\", but better formulated) I wrote these topics here instead of in \"reasons to reject\" because these are aspects where I would like to see more but at the same recognize that this is a focused short paper. If anything, it seems to me that the page restrictions are a bit too small for this content; I am e.g. also missing a more in-depth description of the classifiers you used in your experiments. Other than that, I enjoyed reading this submission.",
+      "reasons_to_accept": "- Provides a valuable resource  - has an interesting experiment set, given the space restrictions",
+      "reasons_to_reject": "- the classification systems used in the experiments are not described, as far as I can see. There is only Fig 1 showing the data flow.",
+      "questions_for_the_authors": "A) Why did you not discuss the accuracy / why do think that F1 is the relevant metric?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "JbAUrnqFYZ",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The papers presents a novel corpus of *spoken* argumentation from argument mining. It also presents results from an experiment using this corpus and showing that including speech features improves the predictive performance.",
+      "reasons_to_accept": "The paper presents an interesting and useful corpus. It is well-written and overall it looks sound in technical terms.",
+      "reasons_to_reject": "No reason to reject.",
+      "questions_for_the_authors": "I enjoyed reading the paper very much. I have no question for the authors. I apologize to the authors if this is not valuable feedback.",
+      "missing_references": "None",
+      "typos_grammar_style_and_presentation_improvements": "None",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "MHxgT9MA4d",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes VivesDebate-Speech, which augments the VivesDebate corpus with spoken argumentation in an attempt to leverage audio features for argument mining tasks. VivesDebate-Speech represents a significant leap forward for the research community in terms of size and versatility. Compared to the few previously available audio-based argumentative corpora, VivesDebate-Speech provides more than 12 hours of spoken argumentation, which doubles the size of the existing largest audio-based corpus. The paper also highlights the advantages of integrating audio information into the argumentation pipeline, and provides a baseline for future research in this area The authors point out that human argumentation presents a linguistically heterogeneous nature that requires careful investigation, which makes it reasonable to incorporate audio features into argumentative corpora. The creation of this corpus represents an important contribution to the intersection of speech processing and argument mining communities.",
+      "reasons_to_accept": "1) The creation of a comprehensive and versatile corpus of spoken argumentation, which provides a valuable resource for researchers in the field of audio-based argument mining, as well as the potential for new insights and advancements in this field.\n2) This paper highlights the advantages of integrating audio information into the argumentation pipeline, and provides a baseline for future research in this area.",
+      "reasons_to_reject": "1) The lack of comprehensive results from experiments performed using VivesDebate-Speech, such as using models of different structures and of various sizes.",
+      "questions_for_the_authors": "1) How do you deal with possible noise in audio, for example, mispronunciation or repeated words?\n2) How does VivesDebate-Speech compare to other publicly available resources for audio-based argument mining, and what are the unique contributions of this corpus besides its size?\n3) Why does the incorporation of audio features hurt the accuracy compared with E2E BIO (Table 2)?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

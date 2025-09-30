@@ -1,0 +1,65 @@
+[
+  {
+    "rid": "RgLkzPfsqW",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a method called SeqXGPT for detecting AI-generated text (AIGT) at the sentence level. The method utilizes log probability lists from white-box language models as features for detection. Experimental results show that SeqXGPT outperforms baseline methods in both sentence and document-level detection challenges and exhibits strong generalization capabilities.",
+      "reasons_to_accept": "1. Novel Contribution: The paper addresses the important and challenging task of fine-grained AI-generated text (AIGT) detection at the sentence level, which is a significant advancement over existing document-level AIGT detection methods. The authors propose a new approach called SeqXGPT, which demonstrates promising results in both sentence and document-level AIGT detection challenges. This novel contribution fills a gap in the literature and provides valuable insights into fine-grained AIGT detection.\n2. Performance and Generalization: The experimental results show that SeqXGPT outperforms existing methods, such as DetectGPT and Sniffer, in sentence-level AIGT detection. SeqXGPT exhibits excellent performance not only in discriminating human-generated sentences but also in detecting AI-generated sentences. Furthermore, SeqXGPT demonstrates strong generalization capabilities on out-of-distribution datasets, indicating its robustness and potential for real-world applications.\n3. Dataset Construction: The authors synthesize a sentence-level AIGT detection dataset, which is crucial for studying fine-grained AIGT detection",
+      "reasons_to_reject": "1. Lack of Novelty: The paper does not present a significant advancement or novel contribution to the field of fine-grained AI-generated text (AIGT) detection. The proposed approach, SeqXGPT, is similar to existing methods such as DetectGPT and Sniffer. The paper fails to demonstrate how SeqXGPT significantly outperforms or improves upon these existing methods.\n2. Insufficient Experimental Evaluation: The experimental results provided in the paper are limited and do not provide a comprehensive evaluation of the proposed approach. The paper lacks a thorough comparison with state-of-the-art methods and fails to provide statistical significance tests to support the claimed performance improvements. Additionally, the evaluation is primarily focused on synthetic datasets, which may not accurately reflect real-world scenarios.\n3. Incomplete Analysis and Discussion: The paper lacks a thorough analysis and discussion of the limitations and potential drawbacks of the proposed approach. For example, the authors do not explore the impact of incorporating semantic features or investigate the influence of diversified instructions on AIGT detection. The paper also does not address more complex scenarios where a document contains sentences.",
+      "questions_for_the_authors": "Please address the concerns in \"reasons to reject\"",
+      "missing_references": "N/A",
+      "typos_grammar_style_and_presentation_improvements": "N/A",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "1: Could not reproduce the results here no matter how hard they tried."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "1T77OByRWS",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Different from the document-level Artificial Intelligence Generated Text (AIGT) detection considered by current workers, this paper introduces the sentence-level AIGT detection challenge and proposes a method SeqXGPT based on convolutional neural networks and self-attention networks by utilizing log probability lists of white-box Large Language Models (LLMs). This paper also constructs a sentence-level AIGT detection dataset. The experimental results show that the proposed method achieves SOTA in sentence and document-levels detection.",
+      "reasons_to_accept": "1) The method proposed in this paper can effectively solve the difficulties of sentence-level AIGT detection. \n2) The experiments designed in this paper cover 3 different sentence-level AIGT detection settings, all of which achieve SOTA. \n3) This article is written smoothly and helps readers understand.",
+      "reasons_to_reject": "1. In the setting of Particular-Model Binary AIGT Detection, the table of experimental results only includes the results of GPT-2 and GPT-Neo, lacking test results on other LLMs.",
+      "questions_for_the_authors": "Question A: For each model, the author sets the maximum sequence length given the maximum GPU allowance. What is the maximum sequence length for each model in the experiment? Will the difference in maximum sequence length have a significant impact on the performance of each model? Why not set the same maximum sequence length for each model?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "pHSePBU55u",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper addreses sentence-level AI-generated text detection task. The proposed solution for this task is to utilize a collection of (L)LMs to produce a collection of per-token likelihood, and use CNN-transformer-FCN structure to determine per-token label whether the token is AI-generated or not. The paper also provides a reasonable set of empirical evidences of the proposed model being effective in solving the addressed task.",
+      "reasons_to_accept": "This paper will provide a practical guide to construct an AI-generated text detection software. In particular, this method can be generally applied to any collection of LMs (already or to-be available), which makes the method presented in this paper a nice addition to the practical armory of any NLP researcher or industrial programmer.",
+      "reasons_to_reject": "The dataset used to train and test the proposed method appears to be somewhat narrow in how it is produced. As bootstrapping is the first-step for any new task, so OOD test results the authors provided are a must-and-nice addition, but the intensity of the OOD test should have been greater in my opinion (as, once the paper published, interested people will be doing their own OOD tests by implementing their own versions).",
+      "questions_for_the_authors": "A. Would there be any other ways to create the dataset, other than seeding the human-generated sentence in the beginning and then using different LMs to fill up the rest?  My worries are related to possible systematic bias of the dataset due to how the dataset is created --- monotonically increasing tendency to be more likely to be AI-generated as more sentences appear? Would you consider your proposed SeqXGPT-Bench is guarded against this kind of bias?  B. From a similar vein, how wide or extensive does the currently evaluated OOD dataset cover the possibilities of AI-generated texts? This may be topic-wise or format-wise. I raise this point from the perspective of a potentially interested human being to implement this type of detector for a similar use case, and I would be greatly appreciative if this approach would work like a charm in my use case.",
+      "typos_grammar_style_and_presentation_improvements": "- line 360: wihte -> white - line 869: trivaQA -> triviaQA",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

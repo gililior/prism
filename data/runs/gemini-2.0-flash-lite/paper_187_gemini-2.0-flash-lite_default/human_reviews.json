@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "8zUinYzpEb",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a new method for semi-supervised entity alignment based on Teacher-Student architecture, termed MixTEA. The main contribution of this paper is that the proposed method trains alignment learning with both manually labeled mappings and probabilistic pseudo mappings to alleviate the negative influence of noisy or uncertain pseudo mappings.",
+      "reasons_to_accept": "This paper studies the entity alignment problem in a semi-supervised scenario which is a practical and challenging task. Existing methods mainly suffer from two problems: uncertainty of pseudo mappings and noisy pseudo-mapping learning. To alleviate the negative influence of these two problems, the author proposed a novel method that guides model learning with an end-to-end mixture teaching of manually labeled mappings and probabilistic pseudo mappings. In this part of the experiment, the author conducts extensive experiments to demonstrate the effectiveness of this method.\n-  author conducts extensive experiments to demonstrate the effectiveness of this method.\n-  The structure of the paper is reasonable and the content is sufficient.  -  The schematic diagram is concise. Readers can fully understand the method proposed in the article through the schematic diagram",
+      "reasons_to_reject": "- Paper proposes a bi-directional voting (BDV) strategy and a matching diversity-based rectification (MDR) module to assist the probabilistic pseudo-mapping learning but lacks the theoretical demonstration of the effectiveness of the BDV strategy and MDR model.  - I would like to see how the BDV strategy improves conventional alignment strategies.  - In addition, the effectiveness of the MDR module shown in Table 2 is not obvious, this component may be not critical.\n- Experiments do not concretely show the effectiveness of your method on alleviating the negative impact of uncertainty of pseudo mappings and noisy pseudo mapping learning.",
+      "questions_for_the_authors": "See my review.",
+      "missing_references": "No",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "HLZpLyWNx7",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a semi-supervised EA method, which guides the model learning with an end-to-end mix-ture teaching of manually labeled mappings and probabilistic pseudo mappings.",
+      "reasons_to_accept": "1. This authors introduce a bi-directional voting (BDV) strategy which utilizes the alignment decisions in different directions to estimate the uncertainty of pseudo mappings. \n2. This authors design a matching diversity-based rectification (MDR) module to adjust the pseudo mapping learning. \n3. Experimental results seem good.",
+      "reasons_to_reject": "1. This paper is not well motivated 2. The proposed BDV and MDR are not clearly explained",
+      "questions_for_the_authors": "1. Why BSD works? \n2. Why MDR works? What is the meaning of Equation (12)?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "npmguiJVca",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors propose a new end-to-end method MixTEA for a semi-supervised entity alignment task. MixTEA has a teacher-student architecture, where both student and teacher models are knowledge graph encoders. The method is claimed to overcome two significant issues of semi-supervised EA methods: uncertainty of pseudo mapping (by switching a binary pseudo mapping to a probabilistic one and estimating the matching uncertainty via confidence score) and an increased impact of noisy pseudo mappings (by a matching diversity-based rectification).",
+      "reasons_to_accept": "- The paper addresses the challenging problem of using unlabeled data for entity alignment. It is well-motivated and clearly written.   - The paper proposes several novel and interesting approaches, such as BDV (bi-directional voting for more comprehensive pseudo mappings) and MDR (matching diversity-based rectification for dynamic mitigating the influence of noisy mappings).  - The authors provide an extensive and detailed ablation study and results discussion.",
+      "reasons_to_reject": "- Some inaccuracies in mathematical notation (e.g., line 278 - what is \"l\" in \"l-1\"?).  - In Section 4, the authors claim that the end-to-end training \"...gradually improves the quality of pseudo mapping\". It would be useful to add some example/analysis/proof that this is indeed happening and the mappings are becoming more and more accurate (e.g., the results of the model after every n-th iteration?).   - Lines 329-333: being an important part of the algorithm, this MixTEA part is not reflected in Figure 1.  - The experimental setup remains unclear to me. Was any additional unlabeled data used? How were the hyperparameters tuned? What was the search range?\n- No standard deviation for the baselines. Note that most of the baseline values are taken directly from the previous work, and some models have been trained in other settings. Therefore, a comparison of MixTEA with the baseline models should be done more carefully.  - Figure 3 is not quite clear.  - Section 6.1: the threshold values are mentioned here for the first time and are not discussed elsewhere. I guess the whole setting could be strengthened by adding more sophisticated methods for threshold tuning (e.g., a recent ACL paper [1]); apart from that, at least some discussion of the threshold values is required.  [1] Sedova and Roth. 2023. \" ACTC: Active Threshold Calibration for Cold-Start Knowledge Graph Completion\"",
+      "typos_grammar_style_and_presentation_improvements": "- line 61, 64, 418, 545.. - unnecessary brackets in citations - line 533: \"enough\" should be removed -> \"the lack of training data\"",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "FTKjkahon6",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work proposes a framework named proto-lm to address the interpretability in large language models. For each category, several sentences are selected as prototypes. They estimate a similarity score for each input token with those tokens selected as prototypes and use the score as the attribution weights of tokens.",
+      "reasons_to_accept": "This paper studies a prototypical network approach to attribute the importance of words.",
+      "reasons_to_reject": "The approach this work proposes actually is more similar to the concept bottleneck models(https://arxiv.org/abs/2007.04612) . However, the approach proposed in the concept bottleneck is more elegant and neat. For example, in this paper, there is no clear explanation about how these prototype sentences are selected.  Prototypical Networks are initially proposed to address few-shot learning problems. So the problem of prototype selection is simple enough, which could be done by selecting samples from new classes.  In this work, these prototypes are selected automatically or by humans? Does it require different prototypes for different datasets? How about the completeness of the chosen prototypes? These concerns reflect the flexibility of the model but are not addressed in the experiments. The experiments are not strong as there are no other interpretable models as baselines to compare.  Meanwhile,  I suggest some comparison with other interpretable models could be conducted, e.g. concept bottleneck,  integrated-gradient(https://arxiv.org/abs/1703.01365). Experiments based on human annotation are hard to reproduce. I suggest the authors could try some faithfulness metrics proposed in this paper(https://arxiv.org/pdf/2204.05514.pdf). And clearly explain how to select prototypes.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "iRxOPpnJB6",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a new approach to enhance the interpretability of language models by incorporating prototypical networks. The authors suggest using a pre-trained language model as a backbone and then learning a set of prototypes associated with the classification classes for a given task. These prototypes are then leveraged during inference to produce interpretable predictions. Importantly, this framework retains competitive performance compared to the original language model, making it possible to achieve explainable decisions with minimal computational overhead and without compromising efficacy.",
+      "reasons_to_accept": "The authors extensively evaluate the performance of the proposed methodology through a diverse set of experiments. They assess the effectiveness of the approach along with the quality of the explanations it generates. These explanations are further evaluated regarding their usefulness in identifying misclassifications and their alignment with human reasoning.\nFurthermore, the authors conduct a comprehensive ablation study, which delves into various aspects of tuning hyper-parameters and practical implementation of the framework. This study offers an intuitive understanding of how the method operates internally, shedding light on its inner workings and potential areas of improvement.",
+      "reasons_to_reject": "The authors primarily focus their experiments on sentiment classification and natural language inference (NLI) tasks. This emphasis prompts an important question concerning the method's generalizability and applicability across a broader spectrum of potential use cases. While the results for sentiment classification and NLI tasks are likely valuable, the effectiveness of the proposed approach in other domains and tasks remains to be explored. Therefore, further investigation into its adaptability to diverse applications is warranted to fully understand its scope and potential impact in various fields.",
+      "questions_for_the_authors": "Question A: You mentioned the necessity of tuning the hyper-parameters such as $\\lambda$, $N$, and $K$ for each task. If we were to consider limited access to examples from a new task, have you observed the robustness of the hyper-parameters derived from the most relevant scenario? Is there a significant impact on performance if you were to employ the same set of hyper-parameters for all NLI tasks, for instance?\nQuestion B: In the main text, your focus seems to be on encoder/encoder-decoder architectures. I'm curious about the method's performance with decoder-only language models. Have you conducted any experiments to explore this aspect?",
+      "typos_grammar_style_and_presentation_improvements": "Line 126: which **is** the Line 156: $Wc$ -> $w_c$ (since you are referring to the column-vector of $W_h$) Line 291: On the other **hand** Lines 473 / 478: \\citet Line 750: thsi -> this",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "mB9XuxV9nL",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes a prototype-based method that adds a layer of interpretability to language models, and show its viability in a multi-class classification setting. The authors add an addition layer (dubbed the prototypical layer) on top of a pretriained LLM that learns representative examples of a particular class. They alter the standard cross-entropy loss function to include terms that make tighten a particular prototype group while placing it away from a group it doesn't belong to but is close in the embedded space. The modified loss function is comparable in performance with the original LLM, but can point to examples in the representative space that explain the model's choices.",
+      "reasons_to_accept": "1. The authors extend current work  jointly learning prototypes representative of a class and making the final prediction of the model go through a calculation of similarities with representative protypical spaces. \n2. Experiments varying the size and uniqueness of prototypical space and its effect on model accuracy. \n3. Experiments to judge faithfulness with Comprehensiveness and Sufficiency scores, and a human study for simulatability.",
+      "reasons_to_reject": "1. The framework proposed in the method is very similar in spirit to the proposed in Friedrich et. al. 2021 [Interactively Providing Explanations for Transformer Language Models], who use a modified loss function, although using two different networks for word and sentence level interpretability. The similarities in the modification of the loss function [Equation (1-2), https://arxiv.org/pdf/2110.02058.pdf] might be a bit too similar for the work to meet the criteria of novelty.",
+      "questions_for_the_authors": "A. While choosing the size of the prototypical space, class imbalance, which is a major artifact of many NLP datasets, is never discussed. Could you add a discussion of how that interferes with choosing the size of the prototypical space ?",
+      "missing_references": "The paper seems to miss two major related work -  1. Friedrich et al 2021: Interactively Providing Explanations for Transformer Language Models. The version I am referring to is https://arxiv.org/pdf/2110.02058.pdf.  2. Luo et. al. 2023, ACL: Prototype-Based Interpretability for Legal Citation Prediction. Although I can understand if the authors missed this one.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

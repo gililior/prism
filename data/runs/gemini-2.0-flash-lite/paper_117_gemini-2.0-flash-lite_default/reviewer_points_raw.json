@@ -1,0 +1,338 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "Lacks specific details on the zero-shot classification approach and how it differs from existing methods.",
+    "grounding": "Intro, Sec 3",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a detailed comparison with existing zero-shot intent classification methods, including quantitative results.",
+    "grounding": "Sec 3",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents a zero-shot intent classification pipeline. The paper details the architecture, baselines, and evaluation metrics.",
+    "grounding": "Sections 4, 7",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper describes the use of specific models and libraries, including spaCy, NLTK, and Hugging Face Transformers.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds or provide any information about variance.",
+    "grounding": "Sections 4, 7",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a link to the code or data.",
+    "grounding": "Sections 4, 7",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the code, data, and a requirements file to ensure environment reproducibility.",
+    "grounding": "Sections 4, 7",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the random seeds used for all experiments and report the variance of the results.",
+    "grounding": "Sections 4, 7",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the prompts used for the LLMs available?",
+    "grounding": "Section 7",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the hyperparameter settings for the BERT-A model available?",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The paper does not provide sufficient information to reproduce the experiments.",
+    "grounding": "Sections 4, 7",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper evaluates a BERT-A component for Natural Language Inference (NLI) and zero-shot intent classification tasks. It compares BERT-A against several baselines, including BART, Zero-Shot DDN, and various LLMs. The evaluation includes accuracy, precision, and recall metrics across different datasets and languages.",
+    "grounding": "Sec 7, Table 2, Table 3, Table 4, Table 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The BERT-A module demonstrates improved results over baselines in zero-shot intent classification, particularly when fine-tuned on Banking77-OOS-NLI. (Table 3)",
+    "grounding": "Table 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides results on Italian and German fine-tuned models, highlighting the adaptability of the approach to different languages. (Table 2, Table 3)",
+    "grounding": "Table 2, Table 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient evidence to support the claim that the proposed module is the sole reason for the observed improvements. The paper lacks ablation studies to isolate the impact of specific components.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of the approach without providing sufficient evidence on diverse datasets or tasks.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct ablation studies to isolate the impact of the BERT-A module and other components of the proposed pipeline.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate the approach on a wider range of datasets and tasks to demonstrate generalizability.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive are the results to the choice of hyperparameters, such as the threshold (t) in equation 1a? ",
+    "grounding": "Equation 1a",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the impact of the dependency parsing method on the overall performance, especially when using LLMs?",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper acknowledges the limitations of the approach by discussing the performance differences across languages and the need for further evaluation on diverse datasets.",
+    "grounding": "Sec 8",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on data privacy or consent is provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on usage terms or ethical risks is provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details on data sources, including licenses, consent procedures, and privacy measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section discussing potential ethical risks and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures are not explicitly described in the text, but the tables are mentioned. The tables are referenced to show performance metrics of the proposed model and baselines.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 and 3 are well-described in the text and the results are clearly presented.",
+    "grounding": "Tables 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The text does not provide enough information to assess the quality of the figures. It is not clear what the axes represent.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details about the figures, including axes labels, units, and what the different elements represent.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are there any visualizations of the model's performance over different datasets or settings?",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The evaluation is limited to the reported metrics in the tables.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present performance evaluations of the BERT-A component and compare it with baseline models on NLI and zero-shot classification tasks. The tables include accuracy, precision, and recall metrics. However, the descriptions lack detail on statistical rigor.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 includes accuracy, precision, and recall, which provides a more complete picture of model performance.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The tables lack information on confidence intervals or statistical significance tests (e.g., p-values).",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to show result variability. Add p-values to indicate statistical significance of performance differences between models and datasets.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the performance differences reported in the tables? 2. Are the reported results averages over multiple runs? If so, what is the standard deviation or confidence interval? 3. How were the thresholds in the semantic similarity metric determined?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the specific datasets (SNLI, Banking77) and the baselines used.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a multi-language system, Zero-Shot-BERT-Adapters (Z-BERT-A), for novel intent discovery in dialogue systems. It combines dependency parsing and a zero-shot classification approach using a BERT Transformer backbone fine-tuned for Natural Language Inference (NLI) with Adapters. The system is evaluated in English, Italian, and German, and aims to address limitations of existing intent classification models in handling unseen intents and multilingual settings.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the problem of intent detection in dialogue systems, highlighting the limitations of existing approaches and the need for a system that can handle unseen intents and multiple languages.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a good overview of related work, discussing various approaches to novel intent discovery and zero-shot classification, including those using Transformers, RNNs, and Large Language Models.",
+    "grounding": "Related Literature \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'intent' and 'novel intent' at the beginning. Providing a precise definition would improve understanding.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper could benefit from a more detailed explanation of the dependency parsing and NLI components, especially for readers unfamiliar with these techniques.",
+    "grounding": "Intro \u00a71, Methods \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define key terms like 'intent', 'novel intent', and 'utterance' early in the introduction.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the NLI fine-tuning process and the role of Adapters.",
+    "grounding": "Intro \u00a71, Methods \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table of notation to clarify the symbols used in the equations and the overall methodology.",
+    "grounding": "Methods \u00a73, Equations (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific dependency parsing techniques are used?",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the set of potential novel intents 'y_i' extracted from a single utterance 'x'?",
+    "grounding": "Methods \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific advantages of using Adapters in this context?",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the methodology might not be sufficient for complete reproduction without access to the code and specific implementation details.",
+    "grounding": "Methods \u00a73",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "3",
+    "grounding": "overall",
+    "facet": "clarity_presentation"
+  }
+]

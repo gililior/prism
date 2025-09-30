@@ -1,0 +1,392 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel graph-based text decomposition and augmentation framework, along with a coarse-to-fine contrastive learning objective, which is a clear contribution to the field.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's approach to hard-negative mining techniques using graph transformations is a novel contribution.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should provide a more detailed comparison with existing scene graph-based methods, highlighting the specific advantages of the proposed approach.",
+    "grounding": "Related Work",
+    "facet": "relation to prior work"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a quantitative comparison with a state-of-the-art scene graph-based VLM to better demonstrate the advantages of the proposed approach.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of MosaiCLIP vary with different scene graph parsing methods?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost of the proposed graph decomposition and augmentation framework compared to existing methods?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The performance of the model may be limited by the quality of the scene graphs derived from the text.",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper evaluates MosaiCLIP and baselines on several compositional reasoning benchmarks. The paper details the datasets, fine-tuning, and pre-training procedures. However, the paper lacks information on seeds and variance.",
+    "grounding": "Abstract, Sections 3, 4, and Appendix E",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides details on the datasets used for evaluation, including CREPE, ARO, SVO, and VL-Checklist, and the fine-tuning and pre-training datasets used.",
+    "grounding": "Sections 3, 4, and Appendix E",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments. The variance across multiple runs is not reported.",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide details on the software environment used for the experiments.",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments. Report the variance (e.g., standard deviation) across multiple runs.",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository. Include a requirements.txt or a similar file to specify the software environment.",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used in the experiments publicly available? If not, what are the licensing restrictions?",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the pre-trained models used in the experiments publicly available?",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The review is limited by the information provided in the text. The absence of code, seeds, and environment details hinders a complete assessment of reproducibility.",
+    "grounding": "Sections 3 and 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present experimental results comparing MosaiCLIP with baseline methods. The figures include performance comparisons on various benchmarks.",
+    "grounding": "Figures 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The figures support the claims of improved performance of MosaiCLIP over baselines.",
+    "grounding": "Figures 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Some figures lack clear axis labels and legends, making it difficult to interpret the results.",
+    "grounding": "Figures 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to the axes (e.g., 'Dataset', 'Performance Metric') and include legends to identify different methods or experimental settings. Consider using error bars to indicate variance.",
+    "grounding": "Figures 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to evaluate performance in each figure? What do the different colors or line styles represent in the visualizations? Are the results statistically significant?",
+    "grounding": "Figures 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics and do not provide detailed insights into the underlying mechanisms or failure cases.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on consent or privacy related to the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on usage terms for the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a detailed description of the datasets, including their sources, licenses, and any relevant usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address consent and privacy considerations, especially if the datasets contain personal data. Describe how privacy was protected.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Detail the usage terms for the datasets, including any limitations on commercial use or redistribution.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results comparing MosaiCLIP with baseline methods across various benchmarks. The tables generally include performance metrics but lack detailed statistical analysis.",
+    "grounding": "Tables 1, 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 compares MosaiCLIP with contemporary works, providing clear comparisons.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables lack crucial statistical information such as confidence intervals, p-values, and standard deviations for all results, making it difficult to assess the significance of the reported improvements. Table 1 and 3 have unclear abbreviations.",
+    "grounding": "Tables 1, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations, confidence intervals, and p-values to quantify the statistical significance of the results. Clarify all abbreviations used in the tables.",
+    "grounding": "Tables 1, 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the observed differences in performance? 2. What are the standard deviations for the reported results? 3. How were the datasets split for training and evaluation, and what is the size of each split?",
+    "grounding": "Tables 1, 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the specific datasets and benchmarks used for evaluation.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces MosaiCLIP, a method to improve compositional reasoning in vision-language models (VLMs). It uses scene graphs derived from text, decomposes them into sub-graphs, and employs a coarse-to-fine contrastive learning objective. The approach includes novel negative mining techniques and demonstrates improved performance on benchmarks for attribute binding, relation understanding, and systematic generalization.",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the problem of compositional reasoning limitations in VLMs and motivates the use of scene graphs as a solution. The introduction provides a good overview of the approach and contributions.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The contributions are clearly enumerated in the introduction.",
+    "grounding": "Intro \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"scene graph\" is introduced without a formal definition. While the context provides some understanding, a precise definition is needed, especially regarding how it's derived from text.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation section or table. This makes it difficult to follow the mathematical formulations and understand the variables used in the methods.",
+    "grounding": "Methods \u00a73 (assumed)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a formal definition of \"scene graph\" and clarify how it is constructed from text. Include examples.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Create a notation table in the appendix or within the methods section to define all symbols and variables used in equations and algorithms.",
+    "grounding": "Methods \u00a73 (assumed), Appendix E",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 1, clarify the baseline used for comparison. Specify which baseline is considered \"strong\".",
+    "grounding": "Fig 1, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the text scene graph constructed from the input text? What tools or methods are used?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific graph transformations used for hard negative mining?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the details of the \"coarse-to-fine contrastive learning objective\"? How is it implemented?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a notation section and the absence of detailed method descriptions may hinder reproducibility.",
+    "grounding": null,
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly address potential biases in the training data or their impact on model performance.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential negative societal impacts, such as the spread of misinformation or job displacement.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential misuse cases of the technology.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of potential biases in the training data and their impact on model performance.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section on potential negative societal impacts, such as the spread of misinformation or job displacement.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of potential misuse cases of the technology.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss any mitigation strategies for the identified risks.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include mitigation strategies for the identified risks.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's introduction clearly highlights the limitations of existing contrastive vision-language models in compositional reasoning, setting the stage for the proposed approach. It explicitly mentions the challenges these models face in understanding attributes, relations, and word order, which is a key focus of the paper (Intro).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper proposes a novel graph decomposition and augmentation framework along with a coarse-to-fine contrastive learning objective. This is a significant departure from existing methods that often rely on rule-based or LLM-guided hard negative sentences or synthetic datasets (Related Work).",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction of novel negative mining techniques in the scene graph space is a key contribution, specifically designed to improve attribute binding and relation understanding. This addresses a core weakness of existing models (Intro).",
+    "grounding": "Intro",
+    "facet": "method"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should include a more direct comparison with [2] (CREPE). While the paper mentions CREPE, a quantitative comparison on the same benchmarks would strengthen the claims of improved compositional reasoning. Specifically, the paper should report results on the CREPE benchmark.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should discuss the architectural differences compared to [1]. The paper should clarify how the proposed framework differs from the fine-tuning approach discussed in [1], and how the proposed method avoids the feature distortion issues highlighted in [1].",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the impact of the graph decomposition and augmentation framework. This could involve comparing the performance of the proposed method with and without the graph-based components, to quantify their individual contributions.",
+    "grounding": "Sec X (Experiments)",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the proposed negative mining techniques with the hard negative mining strategies used in [2] and [3]. This comparison should include quantitative results on the same datasets.",
+    "grounding": "Sec X (Experiments)",
+    "facet": "experiment"
+  }
+]

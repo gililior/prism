@@ -1,0 +1,126 @@
+{
+  "summary": "This paper introduces a novel architecture for improving compositional scene understanding in VLMs by integrating scene graph information. The method demonstrates improved performance on fine-grained datasets. The paper has been updated to address concerns about experimental setup, architectural details, and comparisons to existing methods, but still needs further improvements.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper applies the proposed method to multiple VLMs (CLIP, BLIP, BLIP2) and evaluates on standard datasets, showing improved performance on fine-grained Winoground, VLC, and VSR splits compared to pretrained models. (Sec 4, Table 2, Table 3) [experimental_design_and_results]",
+      "grounding": "Sec 4, Table 2, Table 3",
+      "facet": "experimental_design_and_results"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel architecture that integrates SG information into both visual and textual representations, specifically through an 'SG Component' in the image transformer and fine-grained caption generation. (Figure 2) [novelty_and_methods]",
+      "grounding": "Figure 2",
+      "facet": "novelty_and_methods"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly differentiates itself from prior work by focusing on enhancing structured understanding in VLMs using small SG datasets, a novel approach compared to methods that rely on large-scale structured annotations or focus solely on zero-shot capabilities. (Intro) [novelty]",
+      "grounding": "Intro",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The tables report gains and losses relative to the base models, which is a clear and effective way to present the performance improvements or degradations of the proposed method. Table 4 includes multiple metrics (WG, ZS, mAP) which allows for a more comprehensive evaluation of the method. (Tables 1, 4, 7, 8, 9, 10) [tables]",
+      "grounding": "Tables 1, 4, 7, 8, 9, 10",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 1 provides a clear overview of the proposed approach, illustrating the key components and their interactions. (Figure 1) [figures]",
+      "grounding": "Figure 1",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly outlines the problem of compositional scene understanding in VLMs and motivates the use of scene graphs to address this issue. The paper clearly states the research questions and the proposed approach. (Abstract, Introduction) [clarity_presentation]",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks details about the experimental setup, including specific datasets, evaluation metrics, and baseline comparisons. No information on seeds or variance, or the environment is provided. (Sec 4, Appendix A)",
+      "grounding": "Sec 4, Appendix A",
+      "facet": "experimental_design"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the benefits of the approach by stating that it improves multiple architectures (CLIP, BLIP, and BLIP2) on a variety of VL datasets without providing sufficient evidence for all claims. The paper does not provide sufficient evidence to support the claim that only a small amount of high-quality annotations may be sufficient to improve models. (Sec 5)",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear comparison with existing methods that also utilize scene graphs or structured information to improve VLMs. The delta compared to the closest baseline is not clearly articulated, and a direct comparison with BLIP-2 [1] is missing. (Related Work)",
+      "grounding": "Related Work",
+      "facet": "missing_comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient details on the architecture of the 'SG Component' and the generation of hard-negative captions. The term 'Adaptive Scene Graph Tokens' is introduced without a clear definition of its function and how it interacts with other components of the model. (Sec 1, Abstract, Introduction, Figure 1)",
+      "grounding": "Sec 1, Abstract, Introduction, Figure 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a dedicated section for notation, making it difficult to understand the mathematical formulations and the meaning of symbols used in the method. (Methods section (if any))",
+      "grounding": "Methods section (if any)",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly mention the licenses for the datasets used, nor does it address consent related to the use of images in the Visual Genome dataset, or discuss privacy considerations, usage terms, or potential misuse. (Insufficient evidence)",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_and_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The descriptions of the tables are sometimes vague, making it difficult to understand the exact content and the specific metrics reported. Some tables lack detailed statistical information, such as standard deviations or confidence intervals, which limits the ability to assess the reliability of the results. (Tables 1-10)",
+      "grounding": "Tables 1-10",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 4 is mentioned but not described, making it difficult to assess its quality. The text mentions tables more than figures. (Figure 4)",
+      "grounding": "Figure 4",
+      "facet": "figures"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code, including training and evaluation scripts, and a requirements file to specify the environment. (Code/Data Availability)",
+      "grounding": "Code/Data Availability",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct a head-to-head comparison with a state-of-the-art VLM that incorporates scene graph information, including quantitative results on the same datasets. (Sec 4.1)",
+      "grounding": "Sec 4.1",
+      "facet": "comparative_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Ensure all axes are clearly labeled with units in all figures. Provide a detailed caption for Figure 4, explaining the different components and results. (Figures 2, 3, 4)",
+      "grounding": "Figures 2, 3, 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used. Include a section on ethical considerations, discussing potential biases and privacy implications. Clarify the usage terms of the model and datasets. Add a Broader Impact section with mitigation strategies. (Insufficient evidence, Conclusion)",
+      "grounding": "Insufficient evidence, Conclusion",
+      "facet": "ethics_and_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide clear and concise table titles and column headers. Include standard deviations or confidence intervals to quantify the variability of the results. Add p-values to indicate the statistical significance of the performance differences between the proposed method and the baselines. Specify the exact experimental setup, including the number of trials or repetitions, to ensure reproducibility. (Tables 1-10)",
+      "grounding": "Tables 1-10",
+      "facet": "tables"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

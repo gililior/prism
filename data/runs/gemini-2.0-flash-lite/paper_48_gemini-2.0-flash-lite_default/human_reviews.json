@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "ZlFFZiAbte",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "- This paper explores the diagnosis and treatment of False Behavior in the Patches generation process within the Program Repair Model.\n- This paper proposes a highly compatible framework for diagnosing and treating False Behavior and accordingly introduces the Behavior Vector for diagnosis. Additionally, two methods for treatment are proposed: abortion and masked bypassing.\n- Experimental results on numerous datasets show that simply adding the modules proposed in this paper can effectively increase the number of correctly repaired programs, without changing the baseline.",
+      "reasons_to_accept": "This paper enhances the performance of the program repair model by analyzing its internal generation process from a novel perspective. This direction of improvement represents a promising path worth exploring.",
+      "reasons_to_reject": "- The writing and readability of this paper leave room for improvement. Some key points in the article lack detailed descriptions and explanations, making the content unclear and difficult for readers to comprehend. \n    - The paper fails to clearly explain the difference between the Attention MASK introduced in section 3.2. There is a lack of example illustrations. \n    - The meanings of each row and column in the results tables are not clearly explained, and the purposes of some experiments are not explicitly stated. Furthermore, it is unclear whether the parameters of the models remain consistent across different experimental results. It would be beneficial to clarify whether the observed improvements result from parameter variations or methodological enhancements. \n    - The distinctions between Balanced Accuracy and the F1 score are not clearly explained, nor are the respective functions of these two metrics.",
+      "questions_for_the_authors": "- Is the \"Intended Tolerance for Search\" in Table 5 derived under the same parameter settings as the \"Intended Tolerance for Search\" in Table 3?",
+      "typos_grammar_style_and_presentation_improvements": "In line 12 of section 2.1, \"wight\" should be corrected to \"weight\".",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "JjFp24TQD4",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "**Summary:** Current Automatic Program Repair (APR) studies mainly focus on improving these models to generate correct patches for the faulty program. However, investigating the false behavior of these models was not addressed in the previous works. To address this, the paper proposes a methodology for diagnosing and treating the false behaviors of the transformer-based program repair models. The paper mainly proposes a behavior vector together with a behavior discriminator to quantify the behavior of the models and employ them to improve the general APR models\u2019 performance.\n**Contributions:** -The paper introduces a novel perspective to improve program repair tasks by diagnosing and treating the false behaviors of transformer-based program repair models. \n-The paper proposes a behavior vector based on transformer-based models to diagnose and mitigate false behaviors of the model in generating the patches for the given buggy program. \n-The evaluation results for 55,562 instances of different datasets showed the effectiveness of the approach in identifying correct and incorrect patches (It correctly classified 86.9% of correct and 86.4% of incorrect patches).",
+      "reasons_to_accept": "- The paper proposed a novel perspective to improve program repair tasks by considering the false behavior of the models.\n- It provides extensive experimental results on three different models and four different datasets.\n- It shows the effectiveness of the approach in identifying correct and incorrect patches. Furthermore, it employs false behavior diagnoses to improve the APR models.  - The paper is well-written and easy to follow.",
+      "reasons_to_reject": "- The novelty of the behavior vector is questionable and it is not clear if it works better than using the model itself to classify the patches (e.g., using a specific token like [CLS] as the classification vector representation, see the \u201cQuestions For The Authors\u201d) .\n- The training details of the CodeGen model are not provided. E.g., the input size, learning rate, etc.",
+      "questions_for_the_authors": "- It is not clear if the proposed behavior vector is the best option to provide representation for classifying the patches. Could you please justify why we can not use the model itself to classify the patches? Or adding a special token (e.g., [CLS] token) to the inputs and employing that as the behavior vector representation?\n- It is not clear how the CodeGen model was trained (fine-tuned). Could you please provide the training details, including the learning rate, input structure, and input size?\n- Do you think the output of BeDisc can be used as an implicit uncertainty estimation?  - Table 6 is a bit vague. What does T2 stand for (I know it refers to the treatments. However, it would be better to provide the details)? Why does the 7th pair cause the computational capacity issue?",
+      "typos_grammar_style_and_presentation_improvements": "- At 2.1 add what is d_k (Eq 2)? I suggest to provide one or two sentences about that.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "MnlrLApm1G",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Automated program repair is an widely discussed topic and has potential to reduce costs associated with bug fixing in software development and maintenance procedure. This paper proposes some novel techniques to improve performance of such program repairs. \nAuthors proposed a method to diagnose and treat false behaviors of transformer-based program repair models with the help of a behavior vector, a behavior discriminator (BeDisc) that identifies false behaviors, and two methods for false behavior treatment. \nTheir novelty is in improving program repair tasks by analyzing the internal behaviors of transformer-based models by demonstrating internal behavior of a transformer-based program repair model.",
+      "reasons_to_accept": "Along with a good overall presentation of the paper it has some strengths. Treatment 1, Abortions has good potential false behavior diagnosis. Also Treatment 2, masked Bypassing eliminates suspicious target tokens responsible for false behaviour while producing patches. \nOverall improvements seem to be significant. Qualitative and quantitatively significant datasets are used.",
+      "reasons_to_reject": "One of the weakness is that as per table 2. still there are some false negatives. It is not clear how significant can such false negatives be for such systems. \nAnother weak point is overall the paper is not easy to read for general audience.",
+      "questions_for_the_authors": "A. Can you please clarify impact of false negatives on the system?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

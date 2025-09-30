@@ -1,0 +1,120 @@
+{
+  "summary": "This paper introduces xDial-Eval, a multilingual dialogue evaluation benchmark, and assesses the performance of various discriminative and generative metrics. While the paper presents a valuable contribution to multilingual dialogue evaluation, it lacks crucial details regarding reproducibility, statistical rigor, and a thorough discussion of potential risks and societal impacts.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces xDial-Eval, a multilingual open-domain dialogue evaluation benchmark, addressing the limited focus on languages other than English in automatic dialogue evaluation research.",
+      "grounding": "Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper details the LLMs used, including their backbones and instruction-tuned variants, which aids reproducibility.",
+      "grounding": "Sec 5",
+      "facet": "methods"
+    },
+    {
+      "kind": "strength",
+      "text": "The figures generally support the claims made in the results section.",
+      "grounding": "Figures 1, 2, 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Tables 5 and 17 highlight the best scores for each language, which aids in quick comparison. The use of bolding and symbols to denote specific model characteristics is helpful.",
+      "grounding": "Tables 5, 17",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly outlines the problem, the proposed solution, and the paper's contributions.",
+      "grounding": "Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly distinguishes contributions and method differences from closely related approaches.",
+      "grounding": "Intro §1.2",
+      "facet": "related_work"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks details on the specific datasets used for finetuning, the translation process, and the seeds used for training and evaluation, hindering reproducibility.",
+      "grounding": "Sec 5",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient details on the selection of existing discriminative metrics and the rationale behind their choice for comparison.",
+      "grounding": "Related Work",
+      "facet": "relation to prior work"
+    },
+    {
+      "kind": "weakness",
+      "text": "The axes in the figures lack clear labels and units, and legends are missing or unclear. Several tables lack standard statistical measures such as standard deviation, confidence intervals, and p-values, making it difficult to assess the significance of the results.",
+      "grounding": "Figures 1, 2, 3, Tables 1, 3, 6-14",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a discussion of potential risks, fairness considerations, and broader societal impacts associated with the proposed evaluation metrics.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'discriminative category' and 'generative category' could be clarified.",
+      "grounding": "Intro §1",
+      "facet": "terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "Missing head-to-head comparison with a top cited baseline.",
+      "grounding": "Related Work",
+      "facet": "related_work"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed description of the synthetic multilingual dialogue data, including its creation process and characteristics.",
+      "grounding": "Sec 5",
+      "facet": "methods"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Report the seeds used for all experiments and conduct multiple runs to report the variance (e.g., standard deviation) of the results. Specify the hardware and software environment used for training and evaluation.",
+      "grounding": "Section 5",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add axis labels with units to all figures. Include a clear legend to identify the different models or metrics.",
+      "grounding": "Figures 1, 2, 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations and confidence intervals for all reported scores. Add p-values to indicate statistical significance of performance differences. Ensure all tables have clear and descriptive headers and captions.",
+      "grounding": "Tables 2, 4, 5, 15-17",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section on potential risks, such as the misuse of dialogue evaluation metrics for generating biased or misleading content. Discuss mitigation strategies. Address fairness considerations, such as ensuring that the evaluation metrics are not biased towards any particular language or culture. Discuss mitigation strategies. Address the broader societal impacts of the research, such as the potential for dialogue evaluation to be used to improve the quality of online conversations and interactions. Discuss mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add ablation isolating the delta vs. cited method.",
+      "grounding": "Sec 4.1",
+      "facet": "related_work"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

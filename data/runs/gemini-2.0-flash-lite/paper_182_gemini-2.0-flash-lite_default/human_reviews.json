@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "VUu0JTUExK",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper contributes a strategy to boost multiple-choice QA accuracy for language models by first eliminating low-score answers then rescoring the top-scoring answers. They also provide an analysis of different design choices for this procedure.\nThe authors hypothesize that the MCQA requires two skills: eliminating choices and choosing the correct choice. Their results give evidence for the claim by showing PoE usually performs comparably with MCP for most tasks, but for some tasks beats MCP by a large margin.",
+      "reasons_to_accept": "This paper is clearly written and shows promising results for their method. Their contribution seems fairly scoped for a short paper. I appreciate their thoroughness in considering the space of design decisions for their method.",
+      "reasons_to_reject": "What would make this paper interesting to me would be to have some idea of *when* PoE can be expected to dramatically outperform MCP (i.e., what makes LD and CC tasks unique). Why does the scoring order change after masking? Without answering, analyzing, or addressing this question the contribution seems uninformative. For instance, in Holtzman et al. (2021) the authors provide a hypothesis for a mechanism for exactly how their method works (surface form competition).\nA more easily resolved criticism I have is that, since MCP is the closest method to the paper's method, the authors should show a clear advantage to using PoE over MCP in some cases. Therefore, in Table 2 I would be more interested in seeing the results for LD or CC to see if the large gains from using PoE for these tasks persists in the few-shot setting. This should be easily addressable with an added experiment.",
+      "questions_for_the_authors": "1. Why do you mask the incorrect answers rather than simply removing them from the prompt? \n2. Do you have any idea why the top-choice ordering changes in some cases after elimination?",
+      "typos_grammar_style_and_presentation_improvements": "133: What does \"$T$ to 1\" mean?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "57QMIMpP1t",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes an approach to improve LLM's accuracy for multiple choice questions. The approach divides the LLM reasoning process into two steps, first eliminates unlikely choices, then choose the best option among the remaining items.",
+      "reasons_to_accept": "The motivation of the paper, namely dividing the multiple-choice solution process into two steps, makes a lot of sense.",
+      "reasons_to_reject": "The scope of the proposed approach is very limited (only fits multiple-choice questions). What is more, it remains unclear how effective this approach is, compared with the straightforward multiple choice prompting.",
+      "questions_for_the_authors": "1. For a question with N choices, instead of simply decompose the solution process into two steps, what if you decompose it into N-1 steps (first remove most unlikely solution, then remove the 2nd unlikely solution etc.)? \n2. How does the option elimination process compare with directly picking the top k scores as candidates (i.e. si >= top_k(s1, ..., si) in Eq. 5)? \n3. It remains unclear why the approach needs to replace eliminated option with the token \"[MASK]\". Does it matter if we use a different token to indicate invalid options?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "kMN9C8oEML",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes a simple trick for multi-choice QA: eliminate some choices first, then re-answer the question with eliminated choices masked. It is shown with both ChatGPT and FLAN-T5-XL on multiple datasets to work (somehow).",
+      "reasons_to_accept": "the technique is well motivated and reasonable, and multiple benchmarks and design choices are considered for FLAN-T5-XL.",
+      "reasons_to_reject": "- ChatGPT (which model, gpt-3.5-turbo?) experiment is too simple, just two datasets, and on one of them it doesn't really work well. I feel ChatGPT should be (obviously) more important than FLAN-T5-XL?\n- FLAN-T5-XL across many datasets, seems some show bigger improvements, while others show very little improvement, any intuition?\n- few-shot performance gain seems small overall, not sure if added computation step is worthy.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

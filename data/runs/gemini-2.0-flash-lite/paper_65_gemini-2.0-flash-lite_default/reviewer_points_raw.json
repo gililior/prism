@@ -1,0 +1,374 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper investigates word-level operations in SiMT systems, proposing word-level latency calculation and LM-fused attention. Experimental results are presented to demonstrate the effectiveness of word-level policies and LM integration.",
+    "grounding": "Sections 4.3, 6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "Word-level policies show superior performance compared to token-level policies across different latency levels and datasets, with the exception of En-Fr ITST models.",
+    "grounding": "Figure 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The integration of LM-fused attention further enhances the performance for all word-level configurations.",
+    "grounding": "Figure 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Word-level policies outperform or compete with token-level policies in token-level latency.",
+    "grounding": "Figure 11",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the general superiority of word-level policies without acknowledging the exception in En-Fr ITST models.",
+    "grounding": "Figure 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of why word-level policies are superior in certain cases and not in others.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed error analysis to understand the specific scenarios where word-level policies excel or fail.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study to isolate the impact of LM-fused attention.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific characteristics of the En-Fr ITST models that lead to similar performance between word-level and token-level policies?",
+    "grounding": "Figure 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the proposed word-level latency calculation method compare to existing methods?",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper acknowledges the limitations of the study by mentioning the exception in En-Fr ITST models.",
+    "grounding": "Figure 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a word-level approach to Simultaneous Machine Translation (SiMT) to address inconsistencies in tokenization and improve performance. It introduces a word-level latency metric and demonstrates that word-level policies outperform token-level policies. The authors also integrate a pre-trained language model (LM) into the SiMT system using the word-level policy.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies and addresses two key issues in SiMT: inconsistent tokenization and inefficient use of subwords. The introduction of a word-level latency metric and word-level policies is a novel approach to improve SiMT systems.",
+    "grounding": "Intro, Sec 1.2",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the closest baseline SiMT models. The delta between the proposed word-level approach and existing state-of-the-art methods needs to be more clearly articulated and supported by comparative evidence.",
+    "grounding": "Related Work, Sec 4.1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a head-to-head comparison with a strong, contemporaneous SiMT model (e.g., a recent Transformer-based model) to demonstrate the advantages of the word-level approach. Include a detailed ablation study to show the impact of each component (word-level metric, word-level policy, LM integration).",
+    "grounding": "Sec 4.1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the implementation of the word-level policy transformation and the integration of the pre-trained LM. Include the specific LM used and its impact on performance.",
+    "grounding": "Sec 3, Sec 4.2",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "1. How does the word-level approach handle out-of-vocabulary (OOV) words? 2. What is the computational cost of the word-level approach compared to token-level methods? 3. How sensitive is the performance to the choice of word segmentation method?",
+    "grounding": "Sec 3, Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty may be limited if the word-level policy transformation is straightforward and the performance gains are marginal compared to existing methods. The effectiveness of the approach may depend on the quality of word segmentation.",
+    "grounding": "Sec 3, Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces word-level latency metrics for simultaneous machine translation (SiMT) and evaluates several models. The paper details experimental settings, including model architectures, training procedures, and evaluation metrics. However, the paper lacks details on seeds, variance, and environment reproducibility.",
+    "grounding": "Sections 3, 4.2, and Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides details on the experimental setup, including model architectures (Transformer), training details, and evaluation metrics (BLEU).",
+    "grounding": "Section 4.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments. The variance across multiple runs is not reported.",
+    "grounding": "Section 4.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the software environment used for the experiments, making it difficult to reproduce the results.",
+    "grounding": "Section 4.2",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code and training scripts used for the experiments. Include a requirements file (e.g., `environment.yml` or `requirements.txt`) to specify the software dependencies and their versions.",
+    "grounding": "Section 4.2",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the random seeds used for all experiments and report the variance (e.g., standard deviation) of the results across multiple runs.",
+    "grounding": "Section 4.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the official implementations used for the token-level models.",
+    "grounding": "Section 4.2",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "Are the official implementations publicly available?",
+    "grounding": "Section 4.2",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What is the variance of the reported results?",
+    "grounding": "Section 4.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "What is the exact software environment used for the experiments (e.g., Python version, library versions)?",
+    "grounding": "Section 4.2",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used for training and evaluation publicly available?",
+    "grounding": "Section 4.2",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the information provided in the paper. Without access to the code, data, and environment details, a complete assessment of reproducibility is not possible.",
+    "grounding": "Entire paper",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper needs significant improvement in reproducibility. The lack of seed information, variance reporting, and environment details are major concerns.",
+    "grounding": "Sections 3, 4.2, and Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally aim to illustrate the performance of different SiMT systems and the impact of various policies and configurations. The figures vary in complexity, with some providing clear illustrations of concepts and others presenting performance results.",
+    "grounding": "Figures 1-11",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figures 1, 2, 3, and 4 are well-designed illustrations that effectively explain the concepts of token-level and word-level policies, LM-fused attention, and masking techniques. Figure 5, 10, and 11 support claims about translation quality versus AL.",
+    "grounding": "Figures 1, 2, 3, 4, 5, 10, 11",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figures 5, 6, 7, 8, 9, 10, and 11 lack clear axis labels, units, and potentially missing legends. The visual design could be improved for better clarity and comparison.",
+    "grounding": "Figures 5, 6, 7, 8, 9, 10, 11",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add error bars to the performance plots (Figures 5, 6, 7, 8, 10, and 11) to show confidence intervals. Clearly label all axes with units. Provide legends to explain the different lines and colors used in the plots.",
+    "grounding": "Figures 5, 6, 7, 8, 10, 11",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors and line styles represent in Figures 5, 6, 7, 8, 10, and 11? What are the units for the axes in Figures 5, 6, 7, 8, 9, 10, and 11? How were the AL scores calculated?",
+    "grounding": "Figures 5, 6, 7, 8, 9, 10, 11",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics and do not provide detailed insights into the internal workings of the models or the specific errors made.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results for different transformer models across various datasets. The tables include examples, hyperparameters, and main results. However, the provided text lacks detailed information about the content and structure of the tables, making a comprehensive assessment difficult.",
+    "grounding": "Tables 1-12",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The tables present results for different transformer models across various datasets. The tables include examples, hyperparameters, and main results. However, the provided text lacks detailed information about the content and structure of the tables, making a comprehensive assessment difficult.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The text does not provide enough information to assess the completeness of the tables. It is unclear if the tables include all relevant statistical measures (e.g., standard deviation, confidence intervals, p-values).",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations, confidence intervals, and p-values to provide a more complete statistical analysis of the results. Clearly label all columns and rows to enhance readability.",
+    "grounding": "Table 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What specific metrics are used to evaluate the performance of the models in each table? 2. Are the differences in performance between the models statistically significant? If so, what statistical tests were used? 3. What is the definition of 'Wait-1' and 'AL' in the context of these tables? 4. Are the hyperparameters in Table 1 described in detail elsewhere in the paper? 5. What is the range of values for the metrics presented in the tables?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the datasets and models presented. The generalizability of the findings to other datasets or model architectures is not clear.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces word-level simultaneous machine translation (SiMT) as a solution to address issues related to subword-level processing in existing SiMT systems. It proposes a word-level latency metric and demonstrates that word-level policies can improve performance and facilitate the integration of language models.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly explains the motivation for the work and the problems with existing subword-level SiMT systems.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides concrete examples and figures to illustrate the differences between token-level and word-level policies.",
+    "grounding": "Figures 1, 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'fixed policy' in Section 2.1 could be more precise. What constitutes a 'pre-defined sequence'?",
+    "grounding": "Sec 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation table, making it difficult to quickly understand the meaning of all symbols and variables used.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the word-level latency metric calculation, including formulas and examples.",
+    "grounding": "Introduction, Methods",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table summarizing the key differences between token-level and word-level policies.",
+    "grounding": "Introduction, Results",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand on the experimental setup, including details on the datasets, evaluation metrics, and baseline models used.",
+    "grounding": "Methods, Results",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the proposed word-level policy handle out-of-vocabulary words?",
+    "grounding": "Methods, Results",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the computational costs associated with converting token-level policies to word-level policies?",
+    "grounding": "Methods, Results",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive are the results to the choice of word segmentation method?",
+    "grounding": "Methods, Results",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's clarity could be improved with more detailed explanations of the methods and experimental setup, which might hinder reproducibility.",
+    "grounding": "Methods, Results",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "clarity_presentation"
+  }
+]

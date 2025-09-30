@@ -1,0 +1,66 @@
+[
+  {
+    "rid": "zOZSw6ikVP",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper investigates the added toxicity (introduced by MT systems) in a large-scale multilingual MT setting. The authors evaluate and analyze added toxicity when translating a large test set, translating from English into 164 languages.  They find that low-resource languages are more likely have added toxicity. \nThey use source contribution and robustness to interpret what causes toxicity, and find that toxic target words lean to have lower source attention weights and are less robust.",
+      "reasons_to_accept": "- The authors conducted experiments on a large set of language pairs.  - The authors have done a lot of evaluations and analyses.  - They provide three suggestions to reduce toxicity, including curating training data, mitigating hallucinations, and improving translation robustness.",
+      "reasons_to_reject": "- The findings are not convincing enough, the statistical numbers are not conclusive. Such as 40.1%, 40.7% in line 391; 45.6%, 54.8% in lines 392-393; 45.7%,54.3% in lines 401-402, etc.   - The authors also point out that the results vary across languages.  - Some experiments lack some motivations such as using translation robustness to interpret added toxicity.  - the organization can be further improved, such as section 3, the methodology and experimental settings are mixed toghether.  - some parts are not clear to me, such as: added toxicity varies from 0 to 5% in line 12 but the authors mentioned that they remove languages with over 5% toxicity in line 303.  - some assumptions are not strong enough, such as the relation between hallucination and low source contribution. Using attention weights to present contribution is also debatable.",
+      "questions_for_the_authors": "- line 303 why you remove languages with over 5% toxicity?\n- line 418: what's the motivation of using robustness of translations?\n- figure 3, the right figure, do you have any explainations for the space with Gini 80-90%, source contribution 70-80%, outliers?  How many examples in the cyan box?",
+      "typos_grammar_style_and_presentation_improvements": "Title: Maybe \"Added toxicity\" is better than toxicity as you only investigate added toxicity.   - section 2: change the section name to background, there is no need to put dffinitions in the title. You can just give a term (in bold) and its definition in the following text. It would be clearer to readers instead of letting readers searching for terms.  - line 259: change to Experiments?",
+      "ethical_concerns": "Yes",
+      "justification_for_ethical_concerns": "this paper works on toxity in MT."
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "0Dubo9Gcqc",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper studies the error of \"added toxicity\" in Machine Translation both quantitatively through automatic detection and qualitatively through human evaluation.",
+      "reasons_to_accept": "The authors use a measurement for input attribution to explore the cause and source of added toxicity.",
+      "reasons_to_reject": "This paper lacks relevant citations and sufficient details to support the claims made: - Key citations on human evaluation are missing despite criticism and discussion of human evaluation in Lines 41-46 and an attempted human evaluation in Section 6.\n- Experimental decisions are not explained or justified; see Questions E and F.  - The results are presented in an imprecise way: no statistics are given for the claim in Line 341; terms used when reporting results are not explained (see Questions A, B, and C); The top graph in Figure 2 is trying to show because the axis labels are confusing (see Question J)",
+      "questions_for_the_authors": "-QA: What is the \"nonce (non-sense)\" axis? \n-QB: What does it mean for a noun to be the \"most toxic?\" Does that mean the noun in the source text frequently contributes to a toxic token? \n-QC: Do you have any insight into why the parental nouns are the \"most toxic?\" \n-QD: Where in Section 4 do you explain how the percentages are calculated as mentioned in Line 148? \n-QE: How did you choose your thresholds for high-, mid-, and low-toxicity? \n-QF: Why did you decide to exclude languages with more than 5% detected toxicity as opposed to another threshold? \n-QG: Did you filter the datasets for toxicity that already exists in the source language before translating them? \n-QH: Which model output the examples in Figure 1? \n-QI: Can you provide more context for the HolisticBias dataset? What was it designed for? \n-QJ: Figure 2 questions: Why do the y-ticks on the graph in Figure 2 seem like log scale? What does the x-axis label (Index of languages ordered by toxicity) mean? Since you have already sorted the languages by toxicity, we would expect the fraction of toxic-labeled examples to decrease as languages get \"less\" toxic, so what interesting phenomenon is this graph depicting?",
+      "missing_references": "-Multidimensional Quality Metrics, Lommel et al. 2013 https://aclanthology.org/2013.tc-1.6.pdf -Experts, Errors, and Context: A Large-Scale Study of Human Evaluation for Machine Translation, Freitag et al. 2021 https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00437/108866",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "LkQlB34W81",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper investigates the concept of \"added toxicity\" to translations (i.e., hallucinated or mistranslated sentences that add toxicity from source to target). They translate the HolisticBias dataset, which uses templates to point out toxic translations of a model. Then, measure the layer-wise attention weight contributions of each translated token to possible toxic translations. The analysis consists of 164 languages on 13 axes of toxicity. The paper investigates the robustness of translations with the automatic Gini impurity measure. Last, the paper conducts a human evaluation of the HolisticBias translations for 8 languages.",
+      "reasons_to_accept": "- A large and detailed empirical study of \"added toxicity\" in translations of a comprehensive set of languages. Strong fit for EMNLP.  - A well-written, easy-to-read paper (even for researchers not in the field), with good takeaways in the conclusion section.\n- Strong analysis of the human evaluation part of the automatic translations.",
+      "reasons_to_reject": "- Not any strong reasons to reject, only that the research has been conducted with 1 large model (results of one other model put in the appendix). Initially given the title, I expected a study with multiple models from a small # of params to large and whether the findings would hold at scale.",
+      "questions_for_the_authors": "- L326--331: I might be missing something: How do you read the bottom of Figure 2? Isn't nonce sharing an almost 10% part of the overall distribution of toxic translations? What about body type (magenta), this also seems to take a large share, but not mentioned in the text.",
+      "typos_grammar_style_and_presentation_improvements": "- The abbreviation AT Level in Table 1 is \"Added Toxicity\" right? Wasn't mentioned in the text as far as I know.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  }
+]

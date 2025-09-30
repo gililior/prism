@@ -1,0 +1,326 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper presents a study on meme captioning using various models and input settings. The evaluation includes both automatic and human evaluations. The paper lacks details on seeds and variance.",
+    "grounding": "Sections 4, 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper describes the experimental setup, including the models, inputs, and learning setups.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not report the random seeds used for the experiments. Variance across multiple runs is not discussed.",
+    "grounding": "Sections 4, 5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide details about the computational resources used for training and evaluation.",
+    "grounding": "Sections 4, 5",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the random seeds used for all experiments. Report the variance (e.g., standard deviation) across multiple runs.",
+    "grounding": "Sections 4, 5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the computational resources (e.g., GPU type, memory) used for training and evaluation.",
+    "grounding": "Sections 4, 5",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Were multiple runs performed to assess variance? If so, what were the results?",
+    "grounding": "Sections 4, 5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "What specific hardware (GPU, CPU, RAM) was used for training and evaluation?",
+    "grounding": "Sections 4, 5",
+    "facet": "environment"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper lacks information on the random seeds and variance, making it difficult to assess the reproducibility of the results. The computational resources are not specified.",
+    "grounding": "Sections 4, 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel dataset, MEMECAP, for meme captioning, a task that addresses the challenge of understanding visual metaphors in memes. (Intro)",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions the work by highlighting the limitations of existing Vision and Language (VL) models in understanding visual metaphors, which is a key aspect of meme comprehension. (Intro)",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks detailed comparisons with existing methods that address visual metaphor understanding. While it mentions related work (Zhang et al., 2021; Chakrabarty et al., 2023), it does not provide a clear delta or comparative analysis.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative experiment with a state-of-the-art VL model, fine-tuned on a dataset that includes visual metaphor understanding, to better demonstrate the challenges of the MEMECAP task.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a qualitative analysis of the failure cases of the VL models to provide insights into the specific challenges of meme captioning.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the size and diversity of the MEMECAP dataset compare to existing image captioning datasets, and how does this impact the generalizability of the findings?",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What specific metrics are used to evaluate the performance of the VL models, and how do these metrics capture the nuances of meme understanding?",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any limitations to the MEMECAP dataset, such as biases in the meme selection or annotation process?",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the dataset's quality and the ability of the task to expose limitations in existing VL models.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures are generally readable, but lack detailed labels and could benefit from improved visual clarity.",
+    "grounding": "Figures 4 and 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figures support claims effectively by presenting performance metrics and comparisons between models and setups.",
+    "grounding": "Figure 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Axes labels are missing or unclear in some figures, making it difficult to interpret the data.",
+    "grounding": "Figure 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Ensure all axes are clearly labeled with units where applicable. Add legends to clarify different data series.",
+    "grounding": "Figure 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used in the human evaluation shown in Figure 5?",
+    "grounding": "Figure 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The scope of the visualizations is limited to performance metrics, and does not provide insights into the qualitative aspects of the generated captions.",
+    "grounding": "Figures 4 and 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present model performance across different metrics and setups. The tables are well-structured, but lack some statistical information.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides a clear comparison of model performance across different metrics and learning setups.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 2 lacks information on standard deviations or confidence intervals, making it difficult to assess the reliability of the results. The absence of p-values makes it hard to determine the statistical significance of the differences between models and setups.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to show the statistical significance of the differences between models and setups.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the sample size used for each model and setup? What statistical tests were used to compare the performance of different models and setups? Are the differences in performance statistically significant?",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and metrics used in the evaluation.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly introduces the task of meme captioning and its challenges.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a good overview of existing work on visual metaphors.",
+    "grounding": "Section 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'visual metaphor' in Section 2.1 could be more precise. The provided definition is a bit vague.",
+    "grounding": "Section 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear explanation of the evaluation metrics used to assess the performance of the VL models.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the MEMECAP dataset, including examples of the different annotation types (captions, literal image descriptions, visual metaphors).",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the specific VL models used in the experiments and their configurations (e.g., pretraining, fine-tuning details).",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table summarizing the key notations used throughout the paper.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What evaluation metrics were used to assess the performance of the VL models?",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific challenges that VL models face when captioning memes, as opposed to general image captioning?",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the MEMECAP dataset compare to existing datasets in terms of size and annotation quality?",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's reproducibility depends on the availability of the code and data.",
+    "grounding": "Code and data availability statement",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "No explicit mention of dataset licensing or usage terms for the MEMECAP dataset or the Reddit data.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a clear statement about the licensing of the MEMECAP dataset, specifying the terms of use and any restrictions.",
+    "grounding": "Ethics Statement",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential misuse cases or failure modes of the model.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address fairness concerns related to the dataset or model outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a comprehensive discussion of the broader societal impacts of the research.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section to discuss potential misuse, fairness concerns, and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze potential biases in the dataset and their impact on the generated captions.",
+    "grounding": "Ethics Statement, Data",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss how the model's ability to generate meme captions could be exploited (e.g., for spreading misinformation or creating offensive content).",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  }
+]

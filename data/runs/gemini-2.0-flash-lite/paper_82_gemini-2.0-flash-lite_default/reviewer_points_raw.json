@@ -1,0 +1,446 @@
+[
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper provides details on model architectures, hyperparameters, and training procedures. However, it lacks information on seeds and variance.",
+    "grounding": "Appendix A, Section B",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides detailed descriptions of model architectures and hyperparameters for each model, including specific values for optimizers, batch sizes, and layer configurations. The code for baselines and the corpus are released.",
+    "grounding": "Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for random number generators, making it difficult to assess the variance of the results. No information on the variance of the results is provided.",
+    "grounding": "Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the seeds used for all experiments. Report the variance (e.g., standard deviation) of the results across multiple runs with different seeds. Provide a link to the code repository and the environment file.",
+    "grounding": "Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the code and data publicly available?",
+    "grounding": "Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the specific versions of the libraries used in the experiments documented?",
+    "grounding": "Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the hardware specifications used for training and evaluation provided?",
+    "grounding": "Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the lack of information on seeds, variance, and the availability of the code and data.",
+    "grounding": "Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Partially reproducible",
+    "grounding": "Based on the information provided.",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel dataset, RoCliCo, for Romanian clickbait detection, addressing a gap in low-resource language research.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper proposes a novel BERT-based contrastive learning model for clickbait detection, which is a novel approach.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions the work within the context of clickbait detection and related corpora, highlighting the novelty of the Romanian dataset.",
+    "grounding": "Related Work",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing state-of-the-art clickbait detection models, especially those using BERT or similar architectures. The delta of the proposed method is not clear.",
+    "grounding": "Intro, Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide enough information about the annotation process of the dataset. Details about inter-annotator agreement and annotation guidelines are missing.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a comparison with a strong baseline model that uses a similar architecture (e.g., another BERT-based model) on the RoCliCo dataset.",
+    "grounding": "Sec 1.3",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to demonstrate the effectiveness of the contrastive learning approach compared to standard BERT fine-tuning.",
+    "grounding": "Sec 1.3",
+    "facet": "novelty"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the dataset characteristics (e.g., clickbait patterns, linguistic features) to provide insights into the challenges of Romanian clickbait detection.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of the proposed model compare to other BERT-based models on other clickbait datasets?",
+    "grounding": null,
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What is the inter-annotator agreement for the RoCliCo dataset?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "Are the news articles in RoCliCo from diverse sources, or are they concentrated in a few domains?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of the model hinges on the performance on the new dataset, and the dataset's representativeness of Romanian clickbait.",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a new corpus for Romanian clickbait detection and evaluates several models, including a contrastive learning approach based on Ro-BERT. The results show that the contrastive Ro-BERT model achieves the highest F1 score on clickbait articles and a statistically significant improvement over fine-tuned Ro-BERT. The paper also highlights the challenges of Romanian clickbait detection.",
+    "grounding": "Sec 5, 6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The contrastive Ro-BERT model achieves the highest F1 score on clickbait articles (0.8852) and the highest F1 score on non-clickbait articles (0.9546).",
+    "grounding": "Table 2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The performance improvement of the contrastive Ro-BERT model over the fine-tuned Ro-BERT is statistically significant (p-value = 0.001).",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the novelty of the approach by stating it is the first public corpus for Romanian clickbait detection without comparing it to other potential datasets.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of the specific features or characteristics that contribute to the performance of the contrastive learning approach.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed error analysis to understand the types of clickbait articles that the model struggles with.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the performance of the proposed model with other state-of-the-art clickbait detection models on other languages.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific differences between the title and content representations used in the contrastive learning approach?",
+    "grounding": "Sec 5",
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "How does the model handle the semantic differences between the title and content, as highlighted in the example of 'The trip to India made Dan Negru very rich'?",
+    "grounding": "Appendix B",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper acknowledges that Romanian clickbait detection is a challenging task and that there is room for future research.",
+    "grounding": "Sec 5, 6",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper includes a precision-recall curve (Figure 1) to visualize model performance. The caption provides context, but improvements in axis labeling and visual clarity could enhance understanding.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The caption in Figure 1 clearly states what the figure represents (precision-recall curves) and includes the Average Precision (AP) for each model in the legend.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 1 could benefit from clearer axis labels (e.g., 'Precision' and 'Recall' with units if applicable).",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider adding a visual indicator (e.g., a highlighted point) to emphasize the 'sweetest spot' or the best trade-off between precision and recall, as described in the text for Figure 1.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the models' names in the legend of Figure 1 clearly distinguishable? Are there enough data points to make the curves smooth and interpretable?",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualization in Figure 1 focuses on overall performance metrics (precision, recall, AP) and does not provide insights into the specific types of clickbait or non-clickbait articles that the models struggle with.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of classification experiments, focusing on precision, recall, and F1 scores. The tables vary in completeness, with some lacking crucial statistical information.",
+    "grounding": "Tables 1-4",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides a clear presentation of precision, recall, and F1 scores for different models and classes, allowing for a detailed class-based assessment.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 is missing crucial statistical information such as standard deviation or confidence intervals, making it difficult to assess the reliability of the data distribution.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include p-values or other statistical significance measures in Table 2 to indicate the significance of the performance differences between the models. For Tables 3 and 4, consider adding a column for standard deviation or confidence intervals for the hyperparameter values.",
+    "grounding": "Tables 2, 3, 4",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the differences in performance reported in Table 2? 2. What is the standard deviation of the reported metrics in Table 2? 3. How were the optimal hyperparameters in Tables 3 and 4 determined, and what is the range of values explored?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and models evaluated. Generalizability to other datasets or tasks is not addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the model to be used to censor or manipulate information.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the dataset or model.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a novel Romanian clickbait detection corpus (RoCliCo) and a new clickbait detection model based on contrastive learning. The corpus is manually annotated and the model leverages the similarity between news titles and content as a clickbait indicator. The paper is well-structured and provides a good overview of the problem and the proposed solution.",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly defines the problem of clickbait detection and its importance, providing context and motivation for the research. The paper also clearly states the contributions.",
+    "grounding": "Introduction \u00a71, Summary \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a good overview of related work, including existing corpora for clickbait detection in various languages.",
+    "grounding": "Related Work \u00a72",
+    "facet": "organization"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'deep metric space' in the context of the proposed model could be more explicit. What are the specific properties of this space?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper could benefit from a more detailed explanation of the handcrafted features used in the baseline models.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a table summarizing the key characteristics of RoCliCo (e.g., number of samples, annotation method, source websites).",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Elaborate on the evaluation metrics used to assess the performance of the models.",
+    "grounding": "Methods \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section or subsection detailing the specific architecture and training details of the proposed BERT-based contrastive learning model.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What specific criteria were used to manually annotate the news samples in RoCliCo?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed model handle the cases where the content of a news article is also clickbait?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What is the rationale behind choosing the six specific news websites for collecting the data?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitation",
+    "text": "The paper does not provide enough detail to fully reproduce the proposed BERT-based contrastive learning model.",
+    "grounding": "Introduction \u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Overall, the paper is well-written and presents a valuable contribution to the field of clickbait detection. The clarity can be improved by addressing the weaknesses and implementing the suggestions.",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel Romanian Clickbait Corpus (RoCliCo), addressing the lack of annotated resources for the low-resource Romanian language, which is a significant contribution.",
+    "grounding": "Intro/Related",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper highlights the differences between RoCliCo and existing corpora, particularly in terms of annotation methodology (manual vs. distant supervision).",
+    "grounding": "Related corpora",
+    "facet": "method"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper proposes a novel contrastive learning objective based on title and content pairs, which is a departure from existing methods that primarily focus on title-title comparisons.",
+    "grounding": "Related methods",
+    "facet": "method"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance with the state-of-the-art methods on other languages, such as Indonesian [1], which uses M-BERT.",
+    "grounding": "Related methods",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed comparison of the proposed method with the methods used in [1] and [2], in terms of architecture, training, and evaluation.",
+    "grounding": "Related methods",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments comparing the proposed method with [1] using the same dataset (if possible) or a comparable dataset. This should include a comparison of the architectures, training procedures, and evaluation metrics.",
+    "grounding": "Related methods",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Implement the method described in [1] and compare its performance with the proposed method on the RoCliCo dataset. This will provide a direct comparison of the effectiveness of the two approaches.",
+    "grounding": "Related methods",
+    "facet": "experiment"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "rid": "wmNTaI1J1h",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Human preference judgments act as training data for reward models, and as such are key ingredients for training more aligned language models with RLHF. The authors analyse which concrete factors (e.g. length and factuality) influence one-dimensional human preference judgments over pairs of summaries. For this purpose, the authors use a Bradley-Terry-Luce model. For Reddit and News summaries from a dataset collected by OpenAI, they find that the most favoured factors vary by task and genre, whereas the least-favoured factors such as excessive off-focus content and hallucinated facts, tend to be consistent.",
+      "reasons_to_accept": "1. Explaining human preference judgments is an open challenge that is extremely relevant to the current LLM development paradigm. \n2. The use of the BTL model is a clever and novel idea that seems to work well. Since it is an ex-post method it can be applied to many existing datasets. \n3. The chosen factors appear well-motivated and comprehensive.",
+      "reasons_to_reject": "I do not see any major issues with this paper. However, there are some things that I would like to see addressed in the final version.\n1. The framing (human preference judgments) is perhaps a bit more general than the analysis (human preference judgments over summaries in data from one particular paper). It would be nice to be more clear and open about this. \n2. I would also appreciate more discussion about whose preferences are analysed here: for example, what is known about the evaluators who made these judgments? I know that for other preference datasets, a very small number of US-based crowdworkers was responsible for the vast majority of preference judgments. This is important to delineate the generalisabilty of the findings. \n3. Lastly, it would be great to see some more discussion of the emerging literature on more fine-grained preference feedback like https://arxiv.org/abs/2306.01693 or natural language feedback like https://arxiv.org/abs/2204.14146, since they offer an alternative to having to explain one-dimensional feedback.",
+      "questions_for_the_authors": "1. Have you considered including nonsensical factors to evaluate the robustness of your approach? For example, something like \u201ccount of letter t\u2019s in the summary\u201d. This should not be a most- or least-favoured factor if the method is robust. \n2. Is there any way for you to quantify the goodness-of-fit of your model, akin to an R-squared that would quantify the amount of variance explained by a regression model? \n3. Relatedly, can you say anything about the significance of the factors estimates you obtain?",
+      "typos_grammar_style_and_presentation_improvements": "Since you are using GPT API models throughout the article, please indicate somewhere when exactly and what version exactly you used.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "FV4WJSCQAJ",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper does an in depth analysis of the factors that influence human preference judgment. A lot of LLM work recently has been using human preferences but there is limited research probing the preferences in detail. \nThe main contributions are: - Using gpt4 the authors asses system outputs based on a set of predefined factors - fluency, clarity, coverage, alignment etc - Using the factors above, they analyze how the factors influence human preferences and show which factors are most favored vs which are least favored - this can possible help in data curation for preference modeling going forward  - Dataset with an analysis of the factors and estimates",
+      "reasons_to_accept": "There is a lot of work recently that builds on human preferences, if humans prefer A over B but unfortunately generally datasets do not extend into knowing *why* a human prefers A to B. This paper is a step into that direction and they do an in depth analysis of which factors play an important role and how to get an estimate of their importance from the preferences already marked by humans. \nHaving a more fine grained analysis like this can help the community come up with better datasets/guidelines/think more about how to better collect preference data.",
+      "reasons_to_reject": "- Human evaluation of the factors is missing - it would be nice to see if the BTL weighting of the factors is similar to how the humans weigh these factors/if humans agree with the estimates - An example, maybe in the appendix of what the values look like for a pair of examples would have been nice to visualize this in practice - In section 3, authors say that they aim to establish a robust sample collection practise for reward models but don\u2019t explicitly address this point in the paper again",
+      "questions_for_the_authors": "a. In the BTL modeling step, the authors say they do not consider factors if the same factor is present in the outputs being compared. \nFor a pair of output, with the same factor, is it possible for the two to still have noticeable difference in the factor? Mostly because it is possible that the two lie on the opposite ends of that quartile range? Eg: for output a and b if they both have \u201csrc-cov-medium\u201d it is possible that output a lies to the lower end of the range and output b lies to the upper end of the range.  b. For pairs with a gap of only one or two splits in the axis-evals-reddit dataset, do you see a lot of factors being canceled out? I'm wondering if the estimates of factors are primarily because of the pairs with a higher gap between them while the lower gap samples [which are similar to each other] contribute less.\nc. What is the range of some of the factors that get divided into quantiles?\nd. why do you think gpt-4 doesn't do well on \"similar\" summaries? do you think this can be improved by incorporating the factors in some way?\ne. what was the coverage of ACU extraction by GPT4?",
+      "missing_references": "NA",
+      "typos_grammar_style_and_presentation_improvements": "NA",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "tQN315Xh2C",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The contributions in this paper are:  - the authors conducted comprehensive analyses of a collection of human comparisons to identify key factors that may influence human judgment.  - They used GPT models assess system outputs both qualitatively and quantitatively.  - They examined  fluency, clarity, coverage, alignment with the original text\u2019s intent and style, and detect hallucinations based on atomic facts. \n-The study could enhance the reliability of human evaluations.",
+      "reasons_to_accept": "This paper provides a comprehensive framework to study how different key factors may influence human judgment that was used to assess and sometime train generative models. The framework could contribute to other area as well given the rising interesting in generative models",
+      "reasons_to_reject": "This study is more on the qualitative analysis side and not very technical. But it should be fine for the EMNLP community.",
+      "questions_for_the_authors": "This reviewer actually would like to see how the human judger themselves impact the results, for example, female judger vs. male judger, low-educated judger vs. high-educated judger. Authors could discuss it probably.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

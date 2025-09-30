@@ -1,0 +1,90 @@
+{
+  "summary": "This paper introduces ProTeGi, a novel method for automatic prompt optimization using textual gradients, demonstrating significant performance improvements over existing baselines. The authors have addressed some of the initial concerns regarding clarity and reproducibility by clarifying existing content and promising future additions. However, the paper still lacks sufficient detail in several areas, including statistical rigor and ethical considerations, which limits the reproducibility and impact of the work.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel approach to prompt optimization using textual gradients, differentiating itself from prior work by operating without access to internal model parameters, making it applicable to LLMs accessed via API. (Abstract, Intro/Related Work) [originality]",
+      "grounding": "Abstract, Intro/Related Work",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "ProTeGi outperforms baselines on all four datasets, with significant improvements over MC and RL baselines (3.9% and 8.2% margin, respectively) and over the original prompt p0 and AutoGPT (15.3% and 15.2%, respectively). Beam search algorithm outperforms flat and greedy baselines on all tasks. (Sec 3.4, Fig 3, Table 1) [claims_vs_evidence]",
+      "grounding": "Sec 3.4, Fig 3, Table 1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides detailed descriptions of the experimental setup, including the LLM API used, temperature settings, and hyperparameter values. The figures and tables are well-organized and present clear results. (Section 3.2, Figure 3, Table 1, Table 2) [reproducibility]",
+      "grounding": "Section 3.2, Figure 3, Table 1, Table 2",
+      "facet": "reproducibility"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks details on the specific LLM API used, hindering reproducibility and a full understanding of the results. (Sec 2, Sec 3)",
+      "grounding": "Sec 2, Sec 3",
+      "facet": "limitations"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the benefits of ProTeGi, and the results lack sufficient statistical measures to support the claims. The paper does not provide enough evidence to support the claim that RLHF-tuned models dramatically outperform GPT-3. (Sec 3.4, Table 1, Table 3)",
+      "grounding": "Sec 3.4, Table 1, Table 3",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not mention the use of seeds for the experiments, making it difficult to reproduce the results. Figure 4 lacks clear axis labels and units, hindering interpretation. (Section 3.2, 3.4, Figure 4)",
+      "grounding": "Section 3.2, 3.4, Figure 4",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks information on code availability, data privacy measures, adherence to LLM API terms of service, consent for data involving human subjects, and usage terms for the algorithm. (N/A, Insufficient evidence)",
+      "grounding": "N/A, Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term 'gradient' is used in a non-standard way, which may confuse readers. The paper lacks a clear definition of the metric function 'm' used for prompt evaluation. (Abstract, Sec 2.1, Sec 2)",
+      "grounding": "Abstract, Sec 2.1, Sec 2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss potential misuse cases or failure modes, fairness considerations, or broader societal impacts of the proposed technology. (Insufficient evidence)",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare its performance against the parameter-efficient prompt tuning methods described in [1] (Lester et al., 2021) or methods that use LLM-based feedback for prompt improvement. (Related Work)",
+      "grounding": "Related Work",
+      "facet": "missing_comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Conduct a head-to-head comparison with [1] (Lester et al., 2021) on the same benchmark tasks, including a comparison of performance, computational cost, and the number of parameters tuned. Compare ProTeGi with a baseline that uses LLM-based feedback. (Sec 4.1, Related Work) [experiment]",
+      "grounding": "Sec 4.1, Related Work",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the 'textual gradient' generation process. Define the notation used in the paper more explicitly. Include standard deviations or confidence intervals to quantify the variability of the results in all tables. (Sec 2.1, Sec 2, Tables 1, 2, 3) [clarity_presentation]",
+      "grounding": "Sec 2.1, Sec 2, Tables 1, 2, 3",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies for potential misuse and bias. Detail the privacy measures taken to protect user data, especially when using LLM APIs. Specify the usage terms for the developed algorithm. (Conclusion, Insufficient evidence) [societal_impact]",
+      "grounding": "Conclusion, Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

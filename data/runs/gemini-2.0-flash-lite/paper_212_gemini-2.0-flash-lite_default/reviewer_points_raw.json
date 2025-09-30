@@ -1,0 +1,482 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper introduces a new benchmark, USB, addressing multiple aspects of summarization including factuality and controllability, which are not comprehensively evaluated in existing benchmarks. (Intro)",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The benchmark includes eight interrelated tasks, offering a comprehensive evaluation of summarization models. (Intro)",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides human-labeled datasets for tasks like evidence extraction and identifying unsupported spans, which are crucial aspects of summarization. (Intro)",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide enough information about the specific differences between USB and existing benchmarks like those mentioned in the introduction (Radev et al., 2002; Nenkova et al., 2011; El-Kassas et al., 2021; Nallapati et al., 2016; Narayan et al., 2018; Wang and Ling, 2016; Gliwa et al., 2019).",
+    "grounding": "Intro",
+    "facet": "relation to prior work"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison of the proposed benchmark with existing benchmarks in terms of annotation quality, task coverage, and dataset size.",
+    "grounding": "Intro",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table comparing USB with existing benchmarks, highlighting the key differences in terms of tasks, annotations, and dataset size.",
+    "grounding": "Intro",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the performance of different models on the proposed tasks, including a discussion of the limitations of each model.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct ablation studies to analyze the impact of different annotation types on model performance.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the performance of models trained on human-labeled data with models trained on heuristically generated data across different tasks and domains.",
+    "grounding": "Sec 1.3",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents human evaluation of model outputs for several summarization tasks. It details the methodology, including annotator selection, interface design, and evaluation criteria. The paper provides information on hyperparameters and training recipes.",
+    "grounding": "A.4 Human evaluation of model outputs",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides detailed descriptions of the prompts used for different models (Flan-T5, Llama-13B, Vicuna-13B, GPT-3.5-turbo) in Tables 6, 7, 8, and 9.",
+    "grounding": "Tables 6, 7, 8, 9",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides detailed hyperparameter settings for training and inference in Table 10.",
+    "grounding": "Table 10",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments, making it difficult to assess the variance and reproducibility of the results.",
+    "grounding": "Sec 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the computational resources used for training and inference.",
+    "grounding": "Throughout the paper",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments. Report the variance of the results across multiple runs with different seeds.",
+    "grounding": "Sec 3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the training and evaluation scripts, and the environment setup (e.g., Dockerfile, conda environment file).",
+    "grounding": "Throughout the paper",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the hardware used for training and inference (e.g., GPU type, memory).",
+    "grounding": "Throughout the paper",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the human annotation guidelines and interface publicly available?",
+    "grounding": "A.4 Human evaluation of model outputs",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used for training and evaluation publicly available or can they be shared?",
+    "grounding": "Throughout the paper",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the specific versions of the LLMs (e.g., GPT-3.5-turbo) used in the experiments specified?",
+    "grounding": "A.4 Human evaluation of model outputs",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The paper lacks information on computational resources and the variance of the results.",
+    "grounding": "Throughout the paper",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper provides sufficient details on the prompts and hyperparameters, but lacks information on seeds and variance. Code availability is missing.",
+    "grounding": "Throughout the paper",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented provide some insights into the data, but improvements are needed for clarity and completeness.",
+    "grounding": "Figures 3-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 4 provides a clear screenshot of the annotation interface, aiding in understanding the human evaluation process.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the distributions. Figures 5 and 6 lack descriptive captions.",
+    "grounding": "Figures 3, 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure 3, label the axes clearly and include units where applicable. Provide descriptive captions for Figures 5 and 6, explaining the content of the input-output pairs.",
+    "grounding": "Figures 3, 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are visualized in Figures 5 and 6? What is the purpose of the scratchpad in the interface shown in Figure 4? What do the different colors represent in Figure 3?",
+    "grounding": "Figures 3, 4, 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited in scope, focusing primarily on distributions and example input-output pairs, without in-depth analysis.",
+    "grounding": "Figures 3-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a new summarization benchmark (USB) with rich annotations for eight interrelated tasks, including factuality and controllability. The authors compare various models, finding that fine-tuned models outperform few-shot prompted language models. They also evaluate the use of heuristics for training data, showing that human-labeled data yields better performance. The benchmark uses Wikipedia articles across six domains, facilitating cross-domain analysis.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly outlines the limitations of existing benchmarks and motivates the need for a new benchmark addressing factuality and controllability.",
+    "grounding": "Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly states the eight tasks supported by the benchmark.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'moderately-sized' models. Provide a parameter range.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not define the specific heuristics used for generating synthetic training data.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a table summarizing the eight tasks, including a brief description and the type of annotation used.",
+    "grounding": "Abstract, Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Explicitly state the evaluation metrics used for each task.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific model architectures were used for fine-tuning and few-shot prompting?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the size of the 'moderately-sized' models in terms of parameters?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How was the quality of the human annotations assessed?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper does not provide enough detail to reproduce the benchmark or the experiments.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-structured and addresses an important problem. However, it needs more clarity regarding model sizes, evaluation metrics, and the specific heuristics used.",
+    "grounding": null,
+    "facet": "overall_rating"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present instructions, hyperparameters, and comparisons of model outputs. The structure varies, with some tables focusing on instructions and others on performance comparisons. The completeness of statistical information is inconsistent across tables.",
+    "grounding": "Tables 3, 6-11",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 10 provides a clear overview of hyperparameters used for training and inference, which is crucial for reproducibility.",
+    "grounding": "Table 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 3 lacks clear statistical measures such as inter-annotator agreement scores or confidence intervals, making it difficult to assess the reliability of human evaluations. Tables 6-9 do not include any statistical information.",
+    "grounding": "Table 3, 6-9",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Table 3, include inter-annotator agreement metrics (e.g., Cohen's Kappa or Krippendorff's alpha) to quantify the reliability of human judgments. For Tables 6-9, consider adding a column to indicate the purpose of each instruction.",
+    "grounding": "Table 3, 6-9",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What is the inter-annotator agreement for the human evaluations in Table 3? 2. How were the instructions in Tables 6-9 designed and validated? 3. What are the specific metrics used to evaluate the performance in Table 11?",
+    "grounding": "Tables 3, 6-9, 11",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific tasks and datasets used in the experiments.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage terms are not specified.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "Consent from Wikipedia article authors is not addressed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "Privacy considerations for Wikipedia article subjects are not discussed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a clear statement of the dataset license (e.g., CC BY-SA for Wikipedia content) and usage terms.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Acknowledge the source of the data (Wikipedia) and its licensing terms.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address the privacy implications of using Wikipedia articles, especially if they contain information about living persons.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider anonymization or other privacy-preserving techniques if the benchmark includes PII.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a clear statement about the intended use of the benchmark and any potential risks.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "If applicable, include a section on the ethical considerations of the benchmark, including potential biases and limitations.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "question",
+    "text": "What is the licensing for the USB benchmark and the included datasets?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any usage restrictions for the benchmark?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "question",
+    "text": "How is the privacy of the Wikipedia article authors and subjects protected?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any plans to expand the benchmark with data from other sources, and if so, how will licensing and consent be handled?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "question",
+    "text": "What are the potential biases or limitations of the benchmark?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential risks or harms associated with the benchmark or the models trained on it.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential misuse cases of the benchmark or the models trained on it.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss fairness considerations related to the benchmark or the models trained on it.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a discussion of broader societal impacts, including potential benefits and harms.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential risks, such as the generation of misleading or biased summaries. Discuss mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address potential misuse cases, such as generating deceptive content. Provide guidelines for responsible use.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider fairness implications, such as biases in the data or models. Discuss how to mitigate these biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section to discuss potential benefits and harms, including the impact on information access and the spread of misinformation.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a new benchmark with a rich set of crowd-sourced annotations for 8 interrelated summarization tasks, including extractive and abstractive summarization, topic-based summarization, compression, evidence surfacing, factual accuracy prediction, identifying unsubstantiated spans, and correcting factual errors. This is a significant contribution over existing benchmarks, which often lack the comprehensive annotations needed to address these diverse tasks (Intro).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates that moderately-sized fine-tuned models consistently outperform much larger few-shot prompted language models on multiple tasks within the new benchmark. This finding provides valuable insights into model selection and training strategies for summarization (Sec 4.1).",
+    "grounding": "Sec 4.1",
+    "facet": "methodology"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper evaluates existing heuristics for creating training data for factuality-related tasks and finds that training on human-labeled data (20x less) results in better performance. This highlights the importance of high-quality, manually annotated data for factuality tasks (Sec 4.2).",
+    "grounding": "Sec 4.2",
+    "facet": "methodology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance on the factuality-related tasks with the QA-based factual consistency evaluation method presented in [2]. While the paper mentions [2], it does not provide a direct comparison of the proposed method's performance against this baseline.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare the robustness of the proposed summarization models against input noise, as investigated in [1]. While the paper mentions [1], it does not provide a direct comparison of the proposed method's performance against this baseline.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a head-to-head comparison with [2] (QAFactEval) on the factual accuracy prediction and error correction tasks. Evaluate the performance of the proposed method and [2] using the same evaluation metrics on the new benchmark. This will provide a clear understanding of the relative strengths and weaknesses of the two approaches.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate the robustness of the proposed models against input noise, as investigated in [1]. Introduce noise to the input documents and compare the performance degradation of the proposed models with the methods in [1]. This will help to understand the robustness of the proposed models.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "mZanr9TnY2",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper propose to improve the SimCSE method from two perspectives, namely handling dropout noise and addressing feature corruption. They propose two strategies, namely off-dropout and dimension-wise contrastive learning, to alleviate the dropout noise and feature corruption. \nExperiment results on several benchmark datasets verify the effectiveness of this method. \nThis work also provides in-detail analysis for the proposed strategies.",
+      "reasons_to_accept": "1. This work propose two important issues which have long existed in the Contrastive Learning-based representation but ignored by previous work. \n2. The proposed two strategies are simple yet effective, leading to improvement on several benchmark datasets; 3. The authors provide in-detail analysis for their methods which are insightful and inspirational;",
+      "reasons_to_reject": "Only experimenting on 1 million randomly sampled sentences and BERT-base/large architecture. In the context of large-language model, the scalability of the proposed method are not mentioned.",
+      "questions_for_the_authors": "Can you make a comparison with the text embedding APIs provided by OpenAI?( https://platform.openai.com/docs/api-reference/embeddings)",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "5jVJKq06xe",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper identifies two issues with SimCSE and proposes two solutions.\nFirst, the application of dropout has not been thoroughly investigated. SimCSE only investigated the use of standard dropout as noise and only examined the influence of dropout rate. This paper further investigates the effect of dropout noise level by adding different amounts of noise to the positive and negative samples. They find that while adding some level of noise to the positive samples is beneficial, adding dropout noise to negative samples is purely harmful to performance. Therefore, they propose using off-sample for dropout noise. They avoid adding noise to the negative samples and maintain the standard dropout noise for positive samples.\nSecond, the authors argue that SimCSE has an issue with feature corruption. They describe the issue as the high similarities in dimensions of a model's representation. They propose addressing this issue by applying the recently proposed Barlow Twins method.\nBy combining these two methods, they are able to significantly increase the performance of SimCSE. The two methods are also compatible with newer SimCSE-based methods, such as DiffCSE.",
+      "reasons_to_accept": "I would like to extend my congratulations to the authors for successfully identifying two commonly overlooked aspects of SimCSE and for providing compelling solutions to address these issues. The authors have effectively presented the two main problems of SimCSE along with empirical evidence to support their arguments. Moreover, the suggested solutions are meticulously explained in great detail. Undoubtedly, the findings of this study will greatly benefit the research community.",
+      "reasons_to_reject": "Unfortunately, this paper is not well written, as there are numerous typos and grammatical errors throughout. Additionally, there is an unfinished sentence present (caption of table 1). Consequently, reading and comprehending the paper becomes quite challenging.\nMoreover, there are also numerous imprecise uses of terminology. These misuses create confusion while reading and can hinder future work.\n- [241] Eq. (2) involves 2xN _BERT structures_.  ---> BERT representations - [249] we respectively add more noise (+Noise) or reduce some noise (-Noise) from z... -> we respectively add **more** noise (+Noise) or **less** noise (-Noise) **to** z... - Is _feature corruption_ the commonly used name for the issue?  This name of the issue is not mentioned by Zbontar et al. (2021).\nThe authors also did not mention whether the source code will be released publicly.  This will make the reproduction process much more difficult.",
+      "questions_for_the_authors": "Is _feature corruption_ the commonly used name for the issue?  This name of the issue is not mentioned by Zbontar et al. (2021).\nWill you release the source code upon acceptance?",
+      "typos_grammar_style_and_presentation_improvements": "This paper has several grammatical mistakes.  Here are some common ones: - Typically a comma is placed after an in-sentence equation, and the following clause explaining the equation should start with the lower case.  Take equation (3) as an example: $$ \\ell = ... (3), $$ **w**here $s$... - A space should be added between a bracket and its preceding word: Just to name a few occurrences: [503] as previous studies(Gao et al., 2021; ... [510] 2021-2016(Agirre et al., 2012) - Please double check capitalisation.  The first letter of each sentence should be capitalised.\n[286] ... performance. 2) **t**he model... [264] variable $\\xi$. and thus... -> the period should be a comma.\nOne-off typos: - [266] missing . in ... Eq (2) ... - [259] extra . after footnote mark 1.\n- [083] Need a space after the bracket in \"...learning (DCL)to break\" - [265+] Missing period in the sentence in footnote 1.\nPlease proof read the paper more carefully upon acceptance.  The aforementioned typos and mistakes are by no means exhaustive.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "3VSBq7FvdX",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work first investigates the potential weaknesses in the common practices used in the self-supervised sentence embedding framework, SimCSE. First, they point to the dropout used in the contrastive loss. Through empirical investigation, the paper finds the noise to be useful mostly for positive pairs. Secondly, the paper addresses the \"Corruption Issue\" where the components of the representations become highly correlated. Typically, BarlowTwins objective is added to mitigate this issue. However, the paper finds an intrinsic issue (rank bottleneck) with the this method. For both of these problems, the paper proposes simple solutions that is shown to be effective in improving the SOTA. The training is done a subset of wikipedia sentences (typical in this field) and the evaluation is done on sentence similarity tasks (STS).",
+      "reasons_to_accept": "A1. The paper shed light on the potential issues with a common sentence embedding representation algorithm. This itself will allow future work to improve the framework or design better algorithms. Also, the investigation done by the paper provide valuable insights into the inner working of such algorithms.\nA2. Although I'm more excited about the empirical investigation part of the paper, the proposed solutions achieve improve upon the original SimCSE, moreover the these solutions seem to be general and can be applied as an auxiliary objectives on top other algorithms.\nA3. The evaluation setup includes many baselines which helps to put the results in the context.",
+      "reasons_to_reject": "I didn't find any major weakness with this paper. But the following could be used to improve the work. * though this is not my main area of expertise and I'm not very familiar with all the work in this line.*\nR1. The paper does not provide any runtime efficiency metrics for SimCSE++. It seems there are many reduction operation happening in the DCL objective. It's not clear if training with DCL objective is slower or not. If it's slower then one could argue that the time spend on computing DCL objective can be instead used to train on more data/iteration which can further improve the performance.  R1. One limitation of the evaluation setup could be the limited size of the training and model sizes. It's convincible that with enough compute and data the issue tackled by the paper be mitigated or not be contributing to much.\nR2. The clarity of presentation in the paper can be improved. The mathematical notation is hard to follow especially in lines 262 and 468.",
+      "questions_for_the_authors": "Refer to the weaknesses section.",
+      "typos_grammar_style_and_presentation_improvements": "Line 254 second $z_i^{1,+}$ -> $z_i^{2,+}$ Line 267: $\\langle z_i^1, z_i^1 \\rangle$ -> $\\langle z_i^1, z_i^2 \\rangle$",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "rid": "1YqlJFHjZM",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a novel method called INSTRUCTOR for unsupervised conversational dense retrieval. The key idea is to leverage large language models (LLMs) to provide supervised signals to guide the training of retrievers, without requiring any labeled data. The main contributions are: 1. An unsupervised training framework where LLMs generate soft session-passage relevance scores to instruct the retrievers.\n2. Three strategies to accurately estimate relevance from different perspectives: conversational retrieval as conversation generation, question rewrite as latent variable, and question response as posterior guide.\nThe paper addresses the lack of labeled data for conversational retrieval, and demonstrates how large pretrained models can be leveraged for unsupervised learning in this setting.",
+      "reasons_to_accept": "1. The paper tackles an important problem of unsupervised conversational retrieval training. The way using LLMs to provide training signals is a novel in the conversational context (although it has been validated in ad-hoc search), and the three strategies provide nice ways to leverage LLMs from different perspectives of the conversation. This can enable building conversational retrievers without labeled data.\n2. Thorough ablation studies analyzing the effect of different proposed strategies.\n3. Strong empirical results, surpassing supervised approaches on two datasets.\n4. Well-written paper with sufficient details to reproduce the approach.",
+      "reasons_to_reject": "1. Limited analysis on how different types of conversations/questions affect the quality of LLM supervision.\n2. Unclear how the approach scales as the dataset size increases. Memory and compute costs?",
+      "questions_for_the_authors": "Can you provide more analysis into how the quality of LLM-generated supervision signals varies across different types of conversations or questions? Any patterns in where it works better/worse?",
+      "typos_grammar_style_and_presentation_improvements": "Line 143: \"discover\" -> \"discovering\" Line 289: Extra space before period Section 3.2: Consider using sub-section headings for each strategy Figure 1: Increase font size of text in the boxes Figure 3: Improve spacing around \"+\" symbols",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "tbXSUJZoMg",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a new unsupervised method \u201cInstructor\u201d for training conversational dense retrieval models. Instructor leverages the knowledge from large language models (LLMs) to generate supervision signals to instruct the retriever. To distill the knowledge from the LLMs to the retriever, the authors design three methods to calculate the relevance score more precisely. Sufficient experimental results on four datasets under various settings demonstrate the effectiveness of the proposed method. Overall, the paper is well-written and easy to understand. The experiments look very solid. Though the technical depth is not so deep, and the distillation idea is not very novel, I suggest a weak accept on this paper.",
+      "reasons_to_accept": "1. The proposed method leverages LLMs for knowledge distillation, which is a good application of LLMs on real research. \n2. The experiments are sufficient and solid. The results show significant improvement over existing studies. \n3. The paper is well-written and easy to understand.",
+      "reasons_to_reject": "1. Distilling knowledge from LLM to retriever, or more generally, distilling knowledge from reranker to retriever is not a new idea [1, 2]. \n2. Missing some recent literature in the related work part.\nReference: 1. Is ChatGPT Good at Search? Investigating Large Language Models as Re-Ranking Agent, Sun et al. 2023 2. Large language models are effective text rankers with pairwise ranking prompting, Qin et al., 2023",
+      "questions_for_the_authors": "Q1: How do you compute the confidence $\\log p(r|I^{r}_{c,q},c,q)$ by ChatGPT? It seems that it cannot return the generation probability through API. Even if it is text-davinci, it can only provide the probability of the first five tokens. How do you deal with this problem?\nQ2: The proposed method is applied to several ad-hoc dense retriever. Is it also possible to apply it for conversational dense retrieval model?",
+      "missing_references": "[1] Large Language Models Know Your Contextual Search Intent: A Prompting Framework for Conversational Search, Mao et al., 2023 [2] ConvGQR: Generative Query Reformulation for Conversational Search, Mo et al., 2023 [3] Learning to Relate to Previous Turns in Conversational Search, Mo et al., 2023",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "6VbSd6EedP",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a new method called INSTRUCTOR for training conversational dense retrievers in an unsupervised manner, without needing labeled session-passage pairs. The key problem it addresses is the lack of training data for conversational retrieval, where annotating session-passage relevance is difficult. Most existing methods rely on supervised fine-tuning.\nThe main contributions are: 1. An unsupervised training framework where large language models estimate session-passage relevance scores to guide retriever training.\n2. Three strategies to more accurately calculate relevance using the language model: modeling retrieval as conversation generation, question rewriting as a latent variable, and using question responses as a posterior guide.\n3. Experiments showing INSTRUCTOR significantly improves various ad-hoc retrievers like DPR and ANCE, even surpassing supervised methods.\nIn summary, the paper proposes a novel unsupervised approach for training conversational retrievers by instructing them with large language models. The method and thorough experiments are the key contributions.",
+      "reasons_to_accept": "1. Addresses an important practical problem that lacking of conversational retrieval training data and proposes a creative method for leveraging large language models to provide training signal without any data annotation.\n2. Thorough and rigorous experiments across diverse settings like low-resource and zero-shot. Surpassing supervised methods is a notable result.\nOverall, the novel unsupervised learning approach, thorough experiments, and analyses make this a valuable contribution.",
+      "reasons_to_reject": "1. The approach relies heavily on large proprietary language models, which have limitations like bias and lack of transparency and there are limited error analysis to understand cases where the method fails. This could be important since the LLM is used as a black-box model and the quality of generated results are without guarantee. Meanwhile, the workflow details (e.g. the concrete prompt and the reformulated query) for the proposed three strategies should be much clearer.\n2. There is no detailed analysis on how the unsupervised training objectives affect the retriever representations and no comparison with query reformulation methods. Besides, the cost and the latency of using LLM should also be indicated.\n3. Lack of control of injecting noise (bring by the generated text from LLM) and the analysis of how these expansion terms will influence the retrieval results. This is important in terms of the query analysis and avoid the harmful terms generation.\nThe main risks relate to overselling the generality of the approach and glossing over potential issues with language models. But the paper seems reasonably cautious about limitations. Overall the methodology appears solid despite some aspects needing deeper analysis.",
+      "questions_for_the_authors": "1. Can this framework designed without LLM? ( i.e. How should we think is this method flexible/feasible or not) and how can we ensure the reproduction as the current LLM normally with fast version iteration. If not, is it still a flexible framework?\n2. What is the cost and the latency of using LLM, especially on the two big QReCC and TopiOCQA datasets? Please show statistic information.\n3. How can we control the generated text by LLM will not bring noise to the query encoder training and how can we analysis via experiments? In other words, how to evaluate the quality of the generated text by LLM for IR evaluation.  4. How to consider the comparison with the manually rewritten query and the query reformulation approaches, especially on the cast datasets.\n5. For Eq. 7, why we can assume log p(z), log p(c) and log p(q | c) as instants and what is the relation between eq. 7 and the quality of the generated text?",
+      "missing_references": "1. Open-retrieval conversational question answering. Chen Qu, Liu Yang, Cen Chen, Minghui Qiu, W Bruce Croft, Mohit Iyyer. ( SIGIR 2020) 2. Explicit Query Rewriting for Conversational Dense Retrieval. Hongjin Qian, Zhicheng Dou. ( EMNLP 2022) 3. ConvGQR: Generative Query Reformulation for Conversational Search. Fengran Mo, Kelong Mao, Yutao Zhu, Yihong Wu, Kaiyu Huang, Jian-Yun Nie (ACL 2023) 4. Learning to Relate to Previous Turns in Conversational Search. Fengran Mo, Jian-Yun Nie, Kaiyu Huang, Kelong Mao, Yutao Zhu, Peng Li, Yang Liu (SIGKDD 2023) 5. CoSPLADE: Contextualizing SPLADE for Conversational Information Retrieval. Nam Hai Le, Thomas Gerald, Thibault Formal, Jian-Yun Nie, Benjamin Piwowarski, Laure Soulier. ( ECIR 2023) The query reformulation methods could be included to be discussed and some recent publications could be added to the related work later to make the literature review more complete.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "ce66DuSrBw",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper addresses the problem of conversational passage retrieval. The authors propose a method, named Instructor, to use frozen LLMs to provide retriever training signals. Specifically, the relevance score between a passage and a conversational query (i.e., conversation history + current user question) is calculated as the generation probability of the passage by a LLM, conditioning on the conversational query. The authors propose three ways to calculate such generation probabilities. Then they train the retriever with the KL loss between LM generation probabilities and passage-query similarities from the retriever.\nThey conduct experiments on three conversational retrieval benchmarks and achiever significant improvements with such training guidance from LLMs.",
+      "reasons_to_accept": "1. The paper is well-written and easy to follow. \n2. They propose a novel framework to fine-tune the retriever model to handle conversational queries. \n3. They did extensive experiments to show improvements of their approach on three different benchmarks.",
+      "reasons_to_reject": "1. My major concern is that you might be able to achieve impressive results with weak retrieval supervision from the conversation data, without the need to query LLMs as instructors. The training data used, namely QReCC and TopiOCQA, comes with both question and answer turns. You can apply the same method used in CONQRR (Wu et al., 2022) to derive \"gold\" passages and fine-tune retrievers with those weak labels. My guess is that the performance can already be good enough, which may also explain why QRPG gives the highest score as it uses the next answer turns. Also, you'll need to use hard negatives in retriever training as that's widely acknowledged to boost performance.\n2. I don't agree with claim that \"annotating session-passage pairs is much more difficult than collecting conversation data\". The datasets you use are collected by having annotators search for passages first before writing agent utterances. How could annotating passages more difficult than labeling conversation data?\n3. You are using LLM generation probability to calculate the document relevance, which is then used as training signals for retrievers. Why don't you simply use LLM generation prob to rank passages? You may get even better results than fine-tuning the retriever.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

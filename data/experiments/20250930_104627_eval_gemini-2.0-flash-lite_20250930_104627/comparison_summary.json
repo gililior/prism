@@ -1,0 +1,29 @@
+{
+  "total_papers": 200,
+  "avg_similarity": 0.7212409166666666,
+  "avg_max_similarity": 0.738047,
+  "avg_coverage": 0.49046075,
+  "avg_max_coverage": 0.616346,
+  "avg_genericity": 0.0,
+  "structural_completeness": {
+    "has_summary": 1.0,
+    "has_strengths": 0.96,
+    "has_weaknesses": 0.955,
+    "has_suggestions": 0.95
+  },
+  "content_count_averages": {
+    "avg_strengths_count": 4.895,
+    "avg_weaknesses_count": 7.285,
+    "avg_suggestions_count": 7.84
+  },
+  "rebuttal_impact": {
+    "papers_with_rebuttal": 100,
+    "avg_strengths_change": 0.07,
+    "avg_weaknesses_change": -0.35,
+    "avg_suggestions_change": -1.54,
+    "avg_weaknesses_reduction_rate": 0.04531313131313132,
+    "avg_suggestions_reduction_rate": 0.17791222747840393,
+    "papers_with_weakness_reduction": 18,
+    "papers_with_suggestion_reduction": 59
+  }
+}

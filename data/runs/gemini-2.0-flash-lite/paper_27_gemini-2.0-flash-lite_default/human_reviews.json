@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "VO4x9DK0Pr",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper combines language model and explicit planning for multiple-step logical reasoning. For logical reasoning, planning offers two benefits: lowering the number of reasoning steps and interpretability. There is also a challenge of planning in models: model exploitation, which causes the model to be overconfident about some wrong reasoning paths. This paper presents a framework for logical reasoning that combines language models and planning. The framework is based on a base model and two improvements. The base model consists of models for deduction using beam search; the first improvement introduces planning by modifying scores in the base model; the second improvement adds a contrastive loss and KL-divergence to the original loss function. The method applies to both small models like T5 and LLMs like GPT-3.5. Experiments and analysis shows that planning does help deduction.",
+      "reasons_to_accept": "1. The idea of combining LM and planning is novel and meaningful. \n2. The idea is supported by detailed description of the method and extensive experiments and analysis. \n3. The method applies to both small models and large models, which is a practical advantage (although the cost may be higher than other methods).",
+      "reasons_to_reject": "1. This paper is not well-organized. Much important information is presented in the appendix, like figures of models (fig. 6) and the results of analysis (fig. 8, 9). There also seems to be two sections for related work (sec 3.4 and 5). \n2. The baselines methods are limited. For small models, the method is based on tuning, so comparing to prompted GPT-3.5 is not convincing. Instead, the paper may include some tuning baselines for deductive reasoning like RuleTaker [1] and Neural Unification [2].",
+      "questions_for_the_authors": "A. In analysis-II, what is the data that supports the claim that \u201cwithout \u2126, System-B 602 performs worse than System-A\u201d?\nB. Figure 1:Can you explain why each deduction step (e.g., x2x3->x5) is valid? It seems none of these are actually deductions.  C. Compared to baseline methods, how much more computation does this method cost?",
+      "missing_references": "[1] Peter Clark, Oyvind Tafjord, and Kyle Richardson. 2021. Transformers as soft reasoners over language. In Proceedings of the Twenty-Ninth International Joint Conference on Artificial Intelligence (IJCAI'20). Article 537, 3882\u20133890.\n[2] Gabriele Picco, Thanh Lam Hoang, Marco Luca Sbodio, and Vanessa Lopez. 2021. Neural Unification for Logic Reasoning over Natural Language. In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 3939\u20133950, Punta Cana, Dominican Republic. Association for Computational Linguistics.",
+      "typos_grammar_style_and_presentation_improvements": "1. Analysis-IV: Since this analysis does not produce results, it could be abbreviated as a footnote or moved to appendix. \n2. Some sentences may be informal and redundant, like line 266-267 and line 292-293.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "kggjBSDaju",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a method that perform multi-step logical reasoning by employing explicit planning into its inference procedure. The system significantly outperforms other competing methods on EntailmentBank and QASC. The authors also propose a training strategy that safeguards the planning process from being led astray by spurious features. Extensive empirical studies demonstrate that explicit planning plays an important role in the system's performance.",
+      "reasons_to_accept": "1. The method makes an interesting connection between logical reasoning and planning / contrastive learning 2. The empirical results are pretty strong - small models can match the performance of GPT-3",
+      "reasons_to_reject": "1. The writing and presentation of the paper can be improved.  I didn't have any idea of the method until I really read through the method section.  The paper would benefit from first giving a high-level overview of the method at the beginning of the paper than just saying they do planning. \n2. The method is quite complex, making people question whether this can really be deployed in the real-world. However, I still think there is value in studying this.  Not too much of a concern for me.",
+      "questions_for_the_authors": "1. the authors should consider improving figure 1.  The figure basically looks the same as the selection-inference paper. Personally, I didn't get anything out from figure 1.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "Nx2W4ShVJk",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper presents a method for performing multi-step logical reasoning via planning. The method uses language models to construct and evaluate reasoning paths. The models are trained using a planning strategy that looks at future predictions and integrates the results into the score of past predictions to teach them to look ahead. Contrastive training is used to learn to score good and bad reasoning paths. The proposed method outperforms the baselines and achieves similar results to larger models.",
+      "reasons_to_accept": "The work presented is of high quality. The paper is easy to read and the ideas are explained in a clear way. All the necessary information to understand the method is provided.\nThe proposed method is particularly interesting and promising for tackling challenging planning and reasoning tasks, in particular the fact that the algorithm is model-agnostic and can be integrated with other LMs. The authors provide very extensive experiments demonstrating the quality of their method. The various ablation studies also clearly identify the proposed systems A and B as the reasons for the improved performance, highlighting precisely the contributions of each system.",
+      "reasons_to_reject": "The paper contains many references to the appendix as it contains important results that should be in the main paper, including a part of the conclusion. The back and forth while reading can be detrimental to comprehension. Fortunately, the information needed to understand the method and assess the claim is in the main content.\nWhile the experiments are extensive, there is little comparison with existing methods. It would be great to include a comparison with the state-of-the-art for each dataset beyond the single GPT-3.5. Further comparison with other planning methods, such as those mentioned in the related work, might be interesting (as far as I understand, the only comparison is with the work of [Creswell et al., 2023]).",
+      "questions_for_the_authors": "Question A: Have you compared your method with the state-of-the-art of each dataset? with other planning strategies?\nQuestion B: How did you choose the buffer size B for beam search? Does the number of ongoing paths has an impact on the performance?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

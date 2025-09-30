@@ -1,0 +1,132 @@
+{
+  "summary": "This paper introduces a hybrid inverted index (HI) to accelerate dense retrieval by combining embedding clusters and salient terms. While the paper demonstrates the effectiveness of HI, the lack of detailed experimental settings, comparisons to other hybrid methods, and clarity in the methodology and evaluation significantly weakens the claims.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper effectively verifies the performance of the hybrid inverted index through comprehensive experiments, as detailed in Section 6.",
+      "grounding": "Section 6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly establishes the context, motivation, and contributions of the work, providing a good overview of the problem and the proposed solution.",
+      "grounding": "Introduction",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear framework of the proposed method, illustrating the hybrid inverted index.",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 includes results for different embedding models, which allows for a more comprehensive evaluation of the proposed method's robustness.",
+      "grounding": "Table 2",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly distinguishes its contributions and method differences from related work, particularly in the context of VQ index optimization and hybrid indexing.",
+      "grounding": "Intro/Related Work",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks crucial details on experimental settings, including baselines, making it difficult to assess the validity of the claims (Section 5).",
+      "grounding": "Section 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a thorough comparison with existing hybrid retrieval methods, despite mentioning the complementary effect of combining lexical and semantic matching (Related Work).",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient detail on the neural network implementation of the cluster and term selectors, including architecture, training details, and hyperparameter settings (Sec 3.2).",
+      "grounding": "Sec 3.2",
+      "facet": "clarity"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'salient terms' and how they are identified or extracted, which is crucial for understanding the HI approach (Introduction, §1).",
+      "grounding": "Introduction, §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figures 1, 3, and 4 lack detailed axis labels and units, making it difficult to interpret the results quantitatively, and legends are missing or unclear.",
+      "grounding": "Figures 1, 3, 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address dataset privacy considerations, consent for data usage, or usage terms for the datasets.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "weakness",
+      "text": "Table 1 indicates statistical significance with asterisks but lacks the actual p-values or confidence intervals, making it difficult to assess the reliability of the results. The table also lacks standard deviations.",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare its performance against the methods presented in [1] (Lee Xiong et al., 2021) and [2] (Yingqi Qu et al., 2021), which are highly cited in the field of dense retrieval and negative contrastive learning.",
+      "grounding": "Related Work",
+      "facet": "missing_comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the experimental setup, including datasets, evaluation metrics, and baseline methods (Section 5).",
+      "grounding": "Section 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct a head-to-head comparison with a state-of-the-art hybrid retrieval method to demonstrate the effectiveness of the proposed HI method (Related Work).",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide ablation studies to analyze the contribution of each component of the HI method, such as the cluster selector, term selector, and the combination strategy (Sec 3).",
+      "grounding": "Sec 3",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add axis labels with units (e.g., recall, latency, effectiveness, efficiency) to all figures. Include legends to clarify the different methods and variants. Consider using different markers or line styles to distinguish between different methods in the plots (Figures 1, 3, 4).",
+      "grounding": "Figures 1, 3, 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include p-values and confidence intervals in all tables to clearly indicate the statistical significance of the results. Add standard deviations to all tables (Tables 1, 2, and 3).",
+      "grounding": "Tables 1, 2, and 3",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Address consent and privacy considerations, especially if the datasets contain personal information. Include a section detailing the licenses of the datasets used (MSMARCO, Natural Questions). If the datasets are publicly available, cite the sources and licenses.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an ablation study to isolate the impact of the proposed hybrid inverted index. Specifically, compare the performance of the proposed method with and without the hybrid index, using the same training and evaluation setup as in [1] and [2]. This will help to quantify the contribution of the hybrid index (Sec 4.1).",
+      "grounding": "Sec 4.1",
+      "facet": "experiment_suggestion"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "Y1KYBcpFCw",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "1. The authors demonstrate the effectiveness of their approach in affective reasoning 2. They curate a synthetic dataset with implicit causes to visualize the latent variable in our implementation. \n3. They exhibit a significant reduction in false predictions for negative samples across three causal discrimination scenarios. \n4. They formulate the dialogue process and analyze the cogn skeleton with encoder-decoder structure, GNN, and graph attention.",
+      "reasons_to_accept": "1. This paper is well-organized, clearly describing the task and problem.\n2. The proposed method is based on a high level of understanding of existing research and includes the definition of a valid hypothesis with technical descriptions.\n3. It clearly describes the limitations and provides appropriate analysis through experiments.",
+      "reasons_to_reject": "1. The authors have partly addressed this in the limitations section, but considering confounding-bias and the backdoor problem is relatively weak compared to previous studies on causality.\n2. Isn't the proposed method also not a fundamental solution to the challenge of affective reasoning? If there are labels and structures that can represent causality in a given conversation situation, I think it is natural to see the effect of investing more layers and resources.",
+      "typos_grammar_style_and_presentation_improvements": "Figure 3. The description of the colors and shading is missing and hard to see, which is confusing.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "5: Transformative: This paper is likely to change its subfield or computational linguistics broadly. It should be considered for a best paper award. This paper changes the current understanding of some phenomenon, shows a widely held practice to be erroneous in someway, enables a promising direction of research for a (broad or narrow) topic, or creates an exciting new technique.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "bflEv1doWI",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes an approach to \"affective reasoning in conversation\" formulated as a \"causal discrimination\" task, which essentially aims to classify whether a pair of conversation turns has a causal relationship (and if so, in what directionality).\nThe underlying premise of this work (which is assumed but not formally or empirically demonstrated) is that this particular task formulation of emotional causal relation classification in a pair of conversation turns is important.\nThe key thesis of this paper is that handling of i.i.d. noise is important in reasoning about such structural causal relationships, and the paper thus proposes an autoencoder architecture that can incorporate such i.i.d. noise, which presumably corresponds to the \"implicit causes\".",
+      "reasons_to_accept": "- the paper addresses causal reasoning, an important and open research challenge in today's AI literature and proposes an approach for structural causal reasoning, demonstrating stronger performance over baselines",
+      "reasons_to_reject": "- I wish the paper provided a better description of the task itself. Based just on Figure 1 example, I couldn't help but wonder if the correct answer has a trivial pattern --- that there's a causal relationship between the most recent utterance of between two speakers (100% cases?), and also that there's a causal relationship between two most recent utterances of each speaker (the vast majority of the cases?), which makes me wonder whether simple majority baselines of some sorts could've worked surprisingly well. Detecting when the causality misses between two adjacent utterances (which can happen, though less frequently) seems relatively easy due to the abrupt change of the topic. Fundamentally, I came away with the suspicion --- whether the classification formulation experimented in this paper justifies the relatively complex method proposed in this work, and I wish there was a more convincing benchmark explored in this paper.  - Concurrently, I'm not convinced if the relatively simplistic classification of causal relationship explored in this paper helps advancing the field in terms of affective understanding in conversation, especially in the context of the currently powerful LLMs that can carry about an amazing level of conversation. While causal reasoning is generally an interesting and open research question, I wonder if the particular task formulation explored in this paper is rather too narrow to be relevant in the current AI SOTA capabilities.\n- I wish the authors provided more intuition about why \"implicit causes\" correspond to \"i.i.d. noise\". While I understand to some degree that implicit causes may seem like \"noise\", various statements around this don't seem well justified or even precisely stated.  - The lack of clarity of writing is among the weakest points of this paper. At least for me, of the couple dozen papers across NLP and ML venues that I have reviewed in recent years, this one by far was the most opaque to unpack. As one of the many such examples, I found the following sentence hard to parse and hard to fully understand [line 073 - line 079]: \"In order to discriminate different causal relationships between two similar embeddings, we construct the dialogue process as a Structural Causal Model (SCM) stemming from many endeavors supporting that i.i.d. noise of SCM could facilitate the discrimination of causal relationships when finning two variables.\" In fact, I found almost half of the remaining sentences of the introduction section somewhat troublesome, sometimes because the sentences make claims that are not yet defined or justified.\n- In the same vein, the technical writing seems a bit sloppy at times. For example in Table 3, DD and IE were never defined, and the caption talks about ECPE-MLL, while it doesn't even appear in the rows of the methods listed in that Table. Moreover, the boldfaced numbers seem inconsistent. For example, GPT-4's IE score is higher than that of ECPE-2D, but not boldfaced.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "gUgIvYrh7E",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This study concentrates on the challenge of causal discrimination, specifically on the task of affective reasoning in *conversations*. The paper reveals that almost all existing models excel at capturing semantic relatedness within utterance embeddings but fall short in determining the specific causal relationship underlying the association between two utterances on the task of causal discrimination. To overcome this limitation, the authors constructed a SCM with i.i.d. noise terms, and proposed the *cogn* framework to address the unstructured nature of conversation data. Experimental results show that the proposed approaches significantly outperform existing methods on two affective reasoning tasks including Emotion-Cause Pair Extraction (ECPE) and Emotion-Cause Span Recognition (ECSR) and one emotion recognition task (ERC), demonstrating its effectiveness in affective reasoning.\nThe main contributions are as follows: 1) The authors incorporated i.i.d. noise terms, and formulated the dialogue process as a structural causal model (SCM); 2) The authors devised the *cogn* skeleton to address the problems of variable-length and unstructured dialogue samples; 3) The authors adopted an autoencoder architecture to overcome the unobservability of implicit causes and make it learnable; and 4) The authors constructed a synthetic dataset with implicit causes and conducted extensive evaluations of the proposed method.",
+      "reasons_to_accept": "1. The study reveals that when it comes to more specific causal relationships within semantically similar sentences (such as reasoning tasks), both unsupervised and supervised methods may not exhibit the same level of \u201cintelligence\u201d and output some \u201cpseudo-correlation\u201d. \n2. The discussion of the methods proposed in this work is thorough and detailed. \n3. The authors propose new methods to address the problem of causal discrimination in affective reasoning. Their approaches significantly outperform other state-of-the-art methods, including GPT-3.5 and GPT-4.",
+      "reasons_to_reject": "There are too many abbreviations throughout the paper (e.g., ECP, ERC, ECPE, ECSR), which can be a bit confusing sometimes. Otherwise, I see no reasons to reject this paper.",
+      "typos_grammar_style_and_presentation_improvements": "There are too many abbreviations throughout the paper (e.g., ECP, ERC, ECPE, ECSR), which can be a bit confusing sometimes.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

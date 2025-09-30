@@ -1,0 +1,108 @@
+{
+  "summary": "This paper introduces a novel pre-training technique, 'query-as-context pre-training,' to address the issue of weakly correlated passages in context-supervised pre-training methods. The approach demonstrates improved performance on multiple datasets, but the paper lacks sufficient detail on experimental setup and statistical rigor.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions its work relative to prior art, identifying gaps and introducing a novel pre-training technique.",
+      "grounding": "Intro §1.2, Intro, Related Work",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper evaluates models on 14 publicly available datasets from the BEIR benchmark and demonstrates improved performance on MS-MARCO and TREC DL datasets.",
+      "grounding": "Sec 4.5, Table 1, Table 2",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The use of bold font to highlight the better scores in each comparison enhances readability and quickly identifies the superior performance.",
+      "grounding": "Tables 1, 2, 3, 5",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper is generally well organized with clear sectioning.",
+      "grounding": "Intro §1",
+      "facet": "organization"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient details on the pretraining and fine-tuning processes, including the environment used for experiments.",
+      "grounding": "Sec 4, Section 4",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper claims effectiveness and efficiency, but evidence for efficiency is missing. Also, the paper does not report seeds, variance, or statistical significance (e.g., standard deviations, p-values).",
+      "grounding": "Sec 7, Section 4.5, Tables 1, 2, 3, 4, 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'query-as-context pre-training' could be more precise, and the paper lacks a clear notation section.",
+      "grounding": "Abstract, Intro, Methods section (if any)",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare its performance against the methods described in [1] and [3].",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset license and usage restrictions are not stated for MS-MARCO and TREC Deep Learning datasets, and there is no discussion of potential misuse or failure modes.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 3 lacks detailed axis labels, making it difficult to interpret the fine-tuning pipeline.",
+      "grounding": "Fig 3",
+      "facet": "figures"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed description of the experimental setup, including the specific datasets used, evaluation metrics, and a link to the code repository with environment details.",
+      "grounding": "Sec 4.5, All sections",
+      "facet": "experimental design"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Report the seed used for all experiments and the variance across multiple runs, including standard deviations or confidence intervals and p-values.",
+      "grounding": "Section 4.5, Tables 1, 2, 3, 4, 5",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used and a Broader Impact section with mitigation strategies.",
+      "grounding": "Insufficient evidence, Conclusion",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing the proposed 'query-as-context pre-training' with the method in [1] and [3] using the same datasets and evaluation metrics.",
+      "grounding": "Experimental Setup, Evaluation",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the query generation process and include a notation table to define all symbols used in equations.",
+      "grounding": "Methods section (if any)",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "In Figure 2, add error bars to indicate the variance in performance.",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

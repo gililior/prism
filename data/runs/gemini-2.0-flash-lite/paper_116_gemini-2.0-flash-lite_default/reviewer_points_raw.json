@@ -1,0 +1,362 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel approach to affective reasoning in conversation by formulating the dialogue process as a Structural Causal Model (SCM). This is a novel perspective.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies limitations in existing methods, particularly LLMs, in discriminating causal relationships in conversations. The paper then proposes a solution to address these limitations.",
+    "grounding": "Intro, Sec 2.3",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient detail on the specific baselines used for comparison. The delta between the proposed method and the baselines is not clear.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a more detailed comparison with the SOTA methods in the field, including a discussion of their limitations and how the proposed method overcomes them.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to demonstrate the contribution of each component of the proposed method (e.g., the cogn skeleton, the autoencoder architecture).",
+    "grounding": "Sec 4.1",
+    "facet": "originality"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents a method for affective reasoning, evaluated through experiments on multiple datasets. The experiments address research questions related to the effectiveness of the method, causal discriminability, and the relationship between latent variables and implicit causes.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates the effectiveness of the proposed method in affective reasoning tasks by reporting results in ECPE and ECSR tasks with p < 0.01 in the t-test.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper shows that the proposed method can more freely explore the relationship between different utterances via adjacent matrices shifting rather than being limited to a fixed structure.",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the impact of the ablation study. The study lacks evidence tying improvement to the proposed module.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide enough evidence to support the claim that the global distribution of the latent variable E should be approximately equal to the one of implicit causes.",
+    "grounding": "Sec 4.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct additional experiments to compare the proposed method with more baselines.",
+    "grounding": "Sec 4.1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details about the datasets used in the experiments, including the size and characteristics of each dataset.",
+    "grounding": "Sec 4.1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of the proposed method compare to other state-of-the-art methods in terms of computational efficiency?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of the proposed method, and how can they be addressed in future research?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitation",
+    "text": "The authors acknowledge the limitations of human evaluation for implicit causes and use a synthetic dataset instead.",
+    "grounding": "Sec 4.4",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a causal model for dialogue understanding. The paper lacks details on seeds and variance, but provides some implementation details.",
+    "grounding": "Sections 3, 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper mentions the use of standard benchmarks and SOTA methods, which aids in reproducibility.",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly state the use of seeds for the experiments. The variance across multiple runs is not discussed.",
+    "grounding": "Section 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a link to the code or data.",
+    "grounding": "N/A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code, data, and a detailed description of the experimental setup, including the random seeds used for all experiments. Report the variance across multiple runs.",
+    "grounding": "Sections 3, 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository.",
+    "grounding": "N/A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used publicly available, or can they be made available?",
+    "grounding": "Section 4.1",
+    "facet": "data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What is the variance of the results across multiple runs with different random seeds?",
+    "grounding": "Section 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Can the authors provide the environment details (e.g., a requirements.txt file or a Dockerfile) to ensure the reproducibility of the experiments?",
+    "grounding": "Section 4.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the lack of access to the code and data.",
+    "grounding": "N/A",
+    "facet": "resource constraints"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset privacy and consent details are missing.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "Usage terms for the synthetic dataset are not provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include details on data collection, consent procedures, and privacy measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Detail the usage terms for the synthetic dataset.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented in the paper aim to visualize the performance of the proposed method and analyze the learned representations. The figures include visualizations of performance metrics, and distributions of latent variables.",
+    "grounding": "Figures 2, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 4 effectively visualizes the distribution of latent variables and implicit causes, supporting the claims about their relationship. The use of t-SNE helps in visualizing the clusters.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes in Figure 4 lack clear labels and units, making it difficult to interpret the scale and meaning of the visualizations. The caption could be more descriptive.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 4, add axis labels to clarify what is being plotted (e.g., t-SNE dimensions). Include a legend to explain the color coding of the clusters (gray, blue, red).",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive are the t-SNE visualizations in Figure 4 to the choice of hyperparameters?",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to the specific datasets and tasks used in the experiments, and may not generalize to other scenarios.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results, ablation studies, and comparisons of different methods. The tables generally lack detailed statistical information, such as confidence intervals and p-values, which limits the ability to assess the significance of the findings.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides dataset statistics, which is a good starting point for understanding the data used in the experiments.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables 3, 4, and 5 lack crucial statistical information such as standard deviations, confidence intervals, and p-values, making it difficult to assess the significance of the results. The headers could be clearer and more descriptive.",
+    "grounding": "Tables 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations, confidence intervals, and p-values in Tables 3, 4, and 5 to quantify the statistical significance of the results. Clearly define all abbreviations and acronyms used in the table headers and captions. Consider adding a column to indicate the statistical significance of the differences between the proposed method and the baselines.",
+    "grounding": "Tables 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to compare the performance of different methods in Tables 3, 4, and 5? 2. What are the confidence intervals for the reported results? 3. How were the datasets split for training, validation, and testing? 4. Are the results in Table 3 averaged over multiple runs?",
+    "grounding": "Tables 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and experimental setups used in the study. Generalizability to other datasets or tasks is not directly addressed.",
+    "grounding": "Tables 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a method for affective reasoning in conversation, framed as a Structural Causal Model (SCM). It addresses the limitations of existing methods in discriminating causal relationships between utterances, particularly in tasks like Emotion-Cause Pair Extraction (ECPE) and Emotion-Cause Span Recognition (ECSR). The approach involves a 'cogn' skeleton and an autoencoder architecture to handle variable-length dialogues and unobservable implicit causes. The method is evaluated against existing methods, including LLMs, demonstrating improved performance in affective reasoning and causal discrimination.",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly outlines the problem, motivation, and proposed solution, providing a good overview of the paper's contributions. The structure is logical, progressing from background to the proposed method and experimental results.",
+    "grounding": "Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly defines the tasks and terminology used, such as ERC, ECPE, and ECSR, in Section 2.1, which aids in understanding.",
+    "grounding": "Section 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'cogn skeleton' is introduced without a clear definition of what 'cogn' stands for or its specific function beyond addressing variable-length dialogues. This lack of clarity hinders understanding.",
+    "grounding": "Introduction",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a comprehensive notation table. While some notation is defined, a centralized table would improve readability and make it easier to follow the mathematical formulations.",
+    "grounding": "Throughout the paper",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'cogn' when introducing the 'cogn skeleton'.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table in the appendix or within the main text to define all symbols and abbreviations used.",
+    "grounding": "Throughout the paper",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In the introduction, clarify the specific metrics used for evaluating the resemblance of embeddings (e.g., cosine similarity).",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific advantages of using a GAT for encoding the implicit causes compared to other graph neural network architectures?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive is the model's performance to the quality of the synthetic dataset used for visualizing implicit causes?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "Can the proposed method be extended to other types of causal relationships beyond those considered in the ARC task?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a notation table and the unclear definition of 'cogn' may hinder the reproducibility of the method.",
+    "grounding": null,
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  }
+]

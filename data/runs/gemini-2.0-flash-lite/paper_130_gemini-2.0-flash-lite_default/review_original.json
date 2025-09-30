@@ -1,0 +1,138 @@
+{
+  "summary": "This paper introduces Baize, an open-source chat model created using a novel pipeline that leverages ChatGPT for multi-turn dialogue corpus generation and parameter-efficient tuning with Self-Distillation with Feedback (SDF). While the paper demonstrates a promising approach, it lacks crucial details regarding reproducibility, comprehensive comparisons, and thorough evaluation of the SDF technique.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper reports the carbon footprint of training, including emissions for different model sizes and versions.",
+      "grounding": "Carbon Footprint section",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper proposes a novel pipeline for generating a multi-turn chat corpus using ChatGPT and introduces Self-Distillation with Feedback (SDF) to enhance the LLaMA model, resulting in the creation of Baize, an open-source chat model.",
+      "grounding": "Intro, §1.2, §1.3",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions itself in relation to prior work on language models for chat and leverages parameter-efficient tuning (LoRA) to enhance LLaMA, which is a common and effective approach.",
+      "grounding": "Related Work, Intro, Parameter-Efficient Tuning",
+      "facet": "positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear overview of the self-distillation process and Table 2 provides statistics on the dataset.",
+      "grounding": "Fig 2, Table 2",
+      "facet": "figures_tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper releases the Baize models and data for research purposes, which promotes reproducibility and further research in the field.",
+      "grounding": "Abstract",
+      "facet": "impact"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks information on seeds used for training and evaluation, and the environment used, making it impossible to assess the variance of the results and reproduce the experiments.",
+      "grounding": "Sec 6, Sec 7, Sec 8",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a detailed comparison with concurrent work like Stanford Alpaca and other chat models, making it difficult to assess the delta and the effectiveness of the proposed pipeline.",
+      "grounding": "Related Work, Parameter-Efficient Tuning",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The novelty of Self-Distillation with Feedback (SDF) needs more clarification and comparative evidence, and the paper lacks a dedicated section or detailed explanation of the SDF technique.",
+      "grounding": "Intro, §1.3, Abstract, Introduction",
+      "facet": "novelty_clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset license and usage restrictions are not stated.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 3 lacks clear axis labels and units, and Tables 1, 4, 5, 6, 8, and 9 are example-based and lack quantitative analysis or statistical measures.",
+      "grounding": "Fig 3, Tables 1, 4, 5, 6, 7, 8, 9",
+      "facet": "figures_tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term \"parameter-efficient tuning\" is used without a clear definition or explanation of the specific techniques employed.",
+      "grounding": "Abstract, Introduction, Section 2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a detailed analysis of potential biases present in the generated chat corpus or the model itself, nor does it discuss the potential for the model to be used to spread misinformation or generate harmful content.",
+      "grounding": "Insufficient evidence, Safety and Access Control",
+      "facet": "fairness_risks"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code, data, and training scripts used to generate the models, including the specific versions of all dependencies.",
+      "grounding": "Code/Data Availability",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Specify the random seeds used for all experiments and report the variance of the results.",
+      "grounding": "Sec 6, Sec 7, Sec 8",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide details about the hardware and software environment used for training and evaluation, and include a head-to-head comparison with Stanford Alpaca and other open-source chat models, evaluating performance on standard benchmarks.",
+      "grounding": "Environment, Related Work",
+      "facet": "comparative evidence_reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide ablation studies to demonstrate the effectiveness of Self-Distillation with Feedback (SDF) compared to other fine-tuning methods and analyze the quality of the generated chat corpus.",
+      "grounding": "Intro, §1.3, Intro, §1.2",
+      "facet": "novelty_originality"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used and add labels to the axes in Figure 3 and include a legend.",
+      "grounding": "Appendix D, Fig 3",
+      "facet": "ethics_licensing_figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "For Table 7, include standard deviations or confidence intervals to show the variability of the results and for Tables 4, 5, 6, 8, and 9, consider adding a quantitative evaluation of the responses.",
+      "grounding": "Tables 4, 5, 6, 7, 8, 9",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the parameter-efficient tuning methods used and include a dedicated section or subsection that thoroughly explains the Self-Distillation with Feedback (SDF) technique.",
+      "grounding": "Introduction, Section 2, Abstract, Introduction",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section on potential biases and mitigation strategies and a section discussing potential misuse scenarios and mitigation strategies.",
+      "grounding": "Insufficient evidence, Safety and Access Control",
+      "facet": "fairness_risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an ablation study to isolate the impact of the Self-Distill with Feedback technique and compare the performance of Baize against Alpaca-LoRA on a common evaluation dataset.",
+      "grounding": "Sec 3.3, Parameter-Efficient Tuning",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

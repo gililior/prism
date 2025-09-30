@@ -1,0 +1,60 @@
+[
+  {
+    "rid": "PD7VubKiWD",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper studies how transformer-based language models retrieve information to predict for subject-relation queries. The authors designed methods to study the effects on prediction by blocking updates in certain components (e.g., attention edges, MLP layers), and present some interesting and useful results (e.g., information flows through certain critical points to prediction, attribute information was gradually built up in the representation at the last subject position through layers).",
+      "reasons_to_accept": "Overall the paper is well written and easy to understand. It presents interesting and useful findings for better understanding how a transformer-based LM predicts for subject-relation query. For example, they found that early layers are important in propagating information for predicting the attribute. Another example is the attribute information is aggregated gradually through layers. These findings could not only help understand the models but also inspire new methods that better aggregate information for subject-relation queries.  The experiments are comprehensive and provide answers for questions at different levels.",
+      "reasons_to_reject": "The study is only on subject-relation query. It might not be easy to apply the proposed methods to understand the information flow in other research tasks, where important words in query are not known beforehand (just as the subject and relation word in the subject-relation query task), such as reading comprehension.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "7wNpNpGd6M",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper explores the how factual information is retrieved from transformer-based LMs. The authors perform a number of experiments to reveal some unexpected results regarding the location of factual associations. The work suggests further research directions in the form of knowledge localization and model editing.",
+      "reasons_to_accept": "With the rise of the desire for explainability of LMs works which identify (or go some way towards identifying) important locations are of great potential value.  The paper uses figures to advantage, illustrating complex concepts and results.",
+      "reasons_to_reject": "This is a fairly technical paper, presumably a stepping stone on an incremental path.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "1: Not my area, or paper was hard for me to understand. My evaluation is just an educated guess."
+    }
+  },
+  {
+    "rid": "Qu2g97TNk9",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes to use subject-relation queries to investigate how Transformer-based auto-regressive language models (GPT-2 and GPT-J) aggregate information about the subject and relation to predict the correct attribute.  The attention \"knockout\" method is applied to identify critical information flow points in factual predictions. The authors argue that critical information from the subject positions moves directly to the last position at middle-upper layers.\n\"Attributes Rate\" is used to investigate the position of subject representation. The authors find that the model constructs attribute-rich subject representations at the last subject-position. Attribute rates of token embeddings (from the embedding layer?) are also studied, and it reveals that while static subject-token embeddings encode some factual associations, other model components are needed for extraction of subject-related attributes. It is also found that canceling the early MLP sublayers has a destructive effect on the subject representation\u2019s attributes rate, while canceling early MHSA sublayers does not have such a strong effect.\n\"Extraction Rate\" is used to investigate how and where attributes are extracted. The authors suggest that both the MHSA and MLP implement attribute extraction, but MHSA is the prominent mechanism for factual queries. It is also indicated that subject enrichment, through which the model constructs a representation at the last subject-position that encodes many subject-related attributes, has a big impact. Overall, factual associations are encoded in the MHSA parameters, acting as \u201cknowledge hubs\u201d.",
+      "reasons_to_accept": "1. The study of internal representations of Transformer-based models is still an evolving domain, which needs more contributions. Particularly, little is known about how factual predictions are built. \n2. This paper proposes an automatic approximation of the subject-attribute relatedness, namely the attribute rate. It is a reasonable and novel idea. \n3. The experiments are well designed and the results are well presented. There are some interesting findings.",
+      "reasons_to_reject": "1. Although we should start with simple experiments in order to study a complex system, it is often unclear whether conclusions drawn from simple experiments can extend to general, complicated cases. It is difficult to tell whether other NLP tasks follow the same pattern. \nThe authors suggest that \"these findings open new research directions for knowledge localization and model editing\", but it is unclear whether the localization depends on training tasks, or model size, among other things.",
+      "typos_grammar_style_and_presentation_improvements": "L327 Attributes Rate --> Attribute Rate",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

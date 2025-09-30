@@ -1,0 +1,350 @@
+[
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces LaSyn, a framework for utilizing textual data to improve end-to-end (E2E) speech processing models. LaSyn uses a latent synthesizer to convert text into a latent representation of a pre-trained speech model, augmenting training data. The authors evaluate LaSyn on low-resource ASR and SLU tasks, demonstrating improved performance compared to baseline E2E models and competitive results against state-of-the-art models.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly outlines the problem of limited labeled speech data and motivates the need for methods to leverage textual data. The paper clearly explains the challenges of E2E models and the advantages of the proposed LaSyn approach.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of the 'latent representation' and how it is derived from the pre-trained speech model. The specific architecture and training details of the latent synthesizer are not fully described, which affects reproducibility.",
+    "grounding": "Abstract, Introduction, Methods",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the latent representation, including its dimensionality and how it is extracted from the pre-trained speech model. Include a diagram illustrating the LaSyn framework.",
+    "grounding": "Methods",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table of notation to define all symbols used in the equations and throughout the paper.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What is the architecture of the pre-trained speech model used to generate the latent representation? 2. How sensitive is LaSyn's performance to the choice of the pre-trained speech model? 3. What are the computational costs associated with training the latent synthesizer?",
+    "grounding": "Methods, Experiments",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed architectural and training information for the latent synthesizer may hinder reproducibility.",
+    "grounding": "Methods",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Organization: Good; Clarity: Good; Terminology: Good",
+    "grounding": "Overall",
+    "facet": "ratings"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the problem of limited labeled speech data for end-to-end (E2E) speech processing models and proposes a novel approach to address it using textual data.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The proposed Latent Synthesis (LaSyn) framework is well-motivated and explained, positioning itself as an improvement over existing methods like modality conversion and unified representation learning.",
+    "grounding": "Intro, Sec 1.2",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the most relevant prior work, specifically those using text data augmentation for E2E speech models. The delta and advantages of LaSyn are not fully clear.",
+    "grounding": "Related Work, Sec 4",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a direct comparison with a strong baseline that also utilizes textual data for augmentation, such as a method using TTS or unified representation learning, to highlight the advantages of LaSyn.",
+    "grounding": "Sec 4.1, Sec 4.2",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to analyze the impact of different components of the LaSyn framework (e.g., fixed-projection vs. diffusion latent synthesizer) and the contribution of the latent representation.",
+    "grounding": "Sec 3",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "How does the choice of the pre-trained speech model affect the performance of LaSyn? Does the framework generalize well to different pre-trained models?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost of training the latent synthesizer, and how does it compare to the cost of training the E2E speech model?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any limitations on the type or domain of textual data that can be used with LaSyn? Does the framework require the text to be related to the speech domain?",
+    "grounding": null,
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The performance of LaSyn may depend on the quality of the pre-trained speech model and the availability of suitable textual data.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces LaSyn, a framework for end-to-end speech processing that utilizes textual data by converting text into pseudo-acoustic latent representations. Experiments on ASR and SLU tasks show improvements over baselines and competitive performance compared to existing methods.",
+    "grounding": "Sec 4.3, 6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "LaSyn models achieve relative WER reductions on Librispeech test sets compared to the E2E baseline (40.5% and 22.3%).",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "LaSyn models show improvements on SLURP dataset for IC accuracy and SF SLU-F1 compared to the E2E baseline.",
+    "grounding": "Table 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that LaSyn models perform better without an external language model (LM) compared to published supervised ASR models that utilize text data through external language models, but this is not directly compared.",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that the improvement on test-clean is more significant than test-other, but does not provide a statistical analysis to support this claim.",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide statistical significance tests (e.g., t-tests) to compare the performance differences between LaSyn models and baselines, and between different LaSyn variants.",
+    "grounding": "Sec 4.3, Table 3, Table 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct ablation studies to isolate the impact of the latent synthesizer and other components of the LaSyn framework.",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of LaSyn models compare to other state-of-the-art methods that do not use external LMs?",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific hyperparameter settings used for the diffusion latent synthesizer?",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the lack of subjective evaluation methods for the generated pseudo acoustic representation and the need for further investigation on tonal languages.",
+    "grounding": "Sec 6",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Ethics Statement",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present the architecture and training processes of the proposed LaSyn framework. The figures are mostly diagrams illustrating the different components and their interactions.",
+    "grounding": "Figures 1-8",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 7 clearly illustrates the dual-modality training process for SLU with LaSyn, showing the conversion of output labels to text sequences.",
+    "grounding": "Fig 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Some figures lack detailed labels on axes and clear legends to explain the different components or stages of the processes.",
+    "grounding": "Figures 1, 3, 4, 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In figures showing training processes (e.g., Fig 3, 4), add labels to indicate which components are frozen and which are being updated. Use consistent color-coding for different components across figures.",
+    "grounding": "Figures 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the different frame rates in Figure 5 clearly defined? What are the specific roles of the 'Meta values' in Figure 7 and 8?",
+    "grounding": "Figures 5, 7, 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are primarily architectural diagrams and do not provide detailed performance comparisons or statistical analyses.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results for various tasks, including ASR and SLU, using the proposed LaSyn models. The tables generally report performance metrics such as WER, accuracy, and F1-score. However, the completeness of statistical information varies across tables.",
+    "grounding": "Tables 1-8",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 3 provides WER (%) on dev/test sets, which is a standard metric for ASR performance. The table compares LaSyn models with a baseline and published supervised methods, offering a clear comparison.",
+    "grounding": "Table 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the reported results. The headers could be more descriptive.",
+    "grounding": "Tables 1, 4, 5, 6, 7, 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to quantify the variability of the results. Add p-values to indicate statistical significance when comparing different methods or configurations. Clarify the meaning of abbreviations in table headers.",
+    "grounding": "Tables 3, 4, 5, 6, 7, 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to compare the performance of different models? 2. Are the reported results averages over multiple runs? If so, what is the standard deviation or confidence interval? 3. What is the definition of the abbreviations used in the tables (e.g., IC, SF, EM, EM-Tree)? 4. How were the hyper-parameters in Table 2 selected and tuned?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the datasets used in the experiments (Librispeech, SLURP, STOP). Generalization to other datasets or real-world scenarios is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the training data or the implications of the technology.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a discussion of potential misuse cases, such as the generation of synthetic speech for malicious purposes.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse cases, such as the generation of synthetic speech for malicious purposes (e.g., impersonation, spreading misinformation).",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss potential biases in the training data and how they might affect the model's performance across different demographics.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Explore the fairness implications of the model, considering its potential impact on different user groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly differentiates itself from prior work in modality conversion by generating pseudo acoustic representations directly from text, eliminating the need for a vocoder, as highlighted in the introduction and related work section.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare with the Transformer Transducer [1], a top-cited paper in the field, in terms of ASR performance. While the paper mentions the use of E2E models, a direct comparison on the same dataset and evaluation metrics is missing.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing LaSyn with the Transformer Transducer [1] on the LibriSpeech dataset, using the same training and evaluation setup. This would provide a direct comparison of the proposed method against a strong baseline.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates improvements on both ASR and SLU tasks, showing the versatility of the proposed LaSyn framework. The results on SLURP and STOP datasets, as described in the abstract, highlight the effectiveness of the approach.",
+    "grounding": "Abstract",
+    "facet": "evaluation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the computational cost of LaSyn compared to other methods, such as those using TTS for data augmentation. A comparison of training time and inference time would strengthen the paper.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section in the experimental results that compares the computational cost (training and inference time) of LaSyn with other data augmentation techniques, such as those using TTS, to provide a more comprehensive evaluation.",
+    "grounding": "Sec 4.2",
+    "facet": "experiment"
+  }
+]

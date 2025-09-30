@@ -1,0 +1,362 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "novelty"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes using large language models (LLMs) to extract high-level features from unstructured Electronic Health Records (EHRs) for use in small linear models. The approach is evaluated on clinical predictive tasks and X-ray report classification, aiming for interpretability and predictive performance.",
+    "grounding": "Sections 3, 4, 5, 6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates comparable performance to reference high-level features (ICD codes) on three clinical predictive tasks.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The approach shows strong predictive performance on X-ray report classification using features defined by a radiologist.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper highlights the interpretability of the model, with coefficients aligning with clinical expectations.",
+    "grounding": "Section 5, Figure 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the interpretability benefits, as the features extracted by LLMs may not always aid in interpretability and can sometimes simply paraphrase the original downstream task.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper acknowledges the opacity of the LLM-based feature extraction process, which limits the verifiability of the extracted features.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments to assess the trade-off between interpretability and predictive power when designing queries.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Develop methods to verify the faithfulness of predicted features to their queries.",
+    "grounding": "Section 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive is the model's performance to the specific wording of the natural language queries?",
+    "grounding": "N/A",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost of using LLMs for feature extraction compared to traditional methods?",
+    "grounding": "N/A",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the proposed approach vary across different patient populations or clinical settings?",
+    "grounding": "N/A",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of using LLMs for feature extraction, including the opacity of the process and the potential for features to not aid interpretability.",
+    "grounding": "Section 6",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a method for zero-shot inference of intermediate features using instruction-tuned LLMs for clinical tasks. The evaluation is performed on MIMIC datasets. The paper lacks details on seeds and variance.",
+    "grounding": "Abstract, Sec 2, Sec 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper specifies the LLM used (FLAN-T5-XXL) and hardware (Quadro RTX 8000).",
+    "grounding": "Sec 3.3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "No seeds are reported for the experiments. Variance across runs is not discussed.",
+    "grounding": "Sec 3.1, Sec 3.2, Sec 3.3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the availability of code or data.",
+    "grounding": "Abstract, Sec 2, Sec 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code and data used in the experiments. Include a requirements.txt or equivalent for environment setup.",
+    "grounding": "Sec 3.1, Sec 3.2, Sec 3.3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the random seeds used for all experiments and provide the variance or confidence intervals of the results.",
+    "grounding": "Sec 3.1, Sec 3.2, Sec 3.3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the prompts used for feature extraction available?",
+    "grounding": "Sec 2, Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code for the linear model and feature extraction publicly available?",
+    "grounding": "Sec 2, Sec 3.3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the specific versions of the libraries used (e.g., sklearn) specified?",
+    "grounding": "Sec 3.3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The paper does not provide information on compute constraints or resource limitations.",
+    "grounding": "Sec 3.3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": "MIMIC data usage",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on data privacy measures or how patient data is protected.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the EHR data or how they might affect the model's performance and fairness.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed section on data privacy, including data anonymization techniques and security measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address potential biases in the EHR data and discuss how they might affect the model's performance and fairness.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_fairness"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures presented aim to visualize the performance of the proposed approach in clinical predictive tasks. The clarity and effectiveness of the figures vary.",
+    "grounding": "Figures C.1, C.2",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure C.2 provides a qualitative example of feature influence, which is helpful for understanding the model's behavior.",
+    "grounding": "Figure C.2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure C.1 lacks clear axis labels and units, making it difficult to interpret the results. The purpose of the plot is unclear.",
+    "grounding": "Figure C.1",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure C.1, clearly label the axes (e.g., 'AUROC' and 'Feature') and provide a concise title. Explain what the coefficient values represent.",
+    "grounding": "Figure C.1",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific features are being evaluated in Figure C.1? What is the range of the coefficient values used in the plot?",
+    "grounding": "Figure C.1",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited in their ability to show the performance of the feature extraction component.",
+    "grounding": "Figures C.1, C.2",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The provided text references tables (C.3 and C.4) but does not include their content. Therefore, a comprehensive assessment of table quality is impossible. The text mentions the use of AUC (Area Under the Curve) as a performance metric.",
+    "grounding": "Tables C.3, C.4",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The text mentions the use of AUC, which is a standard metric for evaluating classification performance. The tables are likely intended to present classification results, which is a common and well-understood format.",
+    "grounding": "Tables C.3, C.4",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Without the actual tables, it's impossible to assess weaknesses. However, potential weaknesses could include missing standard deviations, confidence intervals, or p-values to indicate statistical significance.",
+    "grounding": "Tables C.3, C.4",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations, confidence intervals, and p-values in the tables to provide a more complete statistical picture of the results. Clearly label all axes and column headers.",
+    "grounding": "Tables C.3, C.4",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What are the specific classification tasks addressed in Tables C.3 and C.4? 2. What is the sample size for each task? 3. What statistical tests were used to compare the performance of different models?",
+    "grounding": "Tables C.3, C.4",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The scope of the conclusions drawn from the tables is limited by the datasets used (MIMIC-III and MIMIC-CXR). The generalizability of the findings to other clinical settings is not addressed.",
+    "grounding": "Tables C.3, C.4",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces CHiLL, a method for generating interpretable features for linear models from natural language specifications using LLMs. It focuses on the application of this method to healthcare, specifically risk prediction using EHR data. The paper evaluates the performance of the proposed approach, comparing it to models using reference features and Bag-of-Words representations, and assesses the interpretability of the resulting models.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the motivation, approach, and contributions. The structure is logical, progressing from the problem statement to the proposed solution and evaluation.",
+    "grounding": "Abstract, Introduction, Methods",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a clear explanation of the CHiLL approach, including the use of LLMs for feature extraction and the training of linear classifiers.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'interpretable features' is not consistently clear throughout the paper. It's mentioned in the abstract and introduction, but a precise definition or operationalization is missing.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The notation used in the Methods section (Equation 1) could be clarified. The meaning of some symbols (e.g., 'x', 'E_[CLS]') is not immediately obvious without referring back to the text.",
+    "grounding": "Methods, Equation 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a concise definition of 'interpretable features' early in the introduction, perhaps in the context of the advantages of linear models.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Create a table of notation to define all symbols used in the equations, especially in the Methods section.",
+    "grounding": "Methods, Equation 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How are the expert-crafted queries for the LLMs designed and validated?",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to evaluate the alignment of learned feature weights with clinical expectations?",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "Can you provide more details on the types of clinical notes used and the specific tasks performed?",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the method is sufficient for understanding the approach, but the lack of specific details on query design and feature extraction might hinder complete reproducibility without further information.",
+    "grounding": "Methods",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper presents a novel approach with clear potential. Addressing the weaknesses will significantly improve clarity and impact.",
+    "grounding": "N/A",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential biases in the LLMs or the data used for training, which could lead to unfair outcomes.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for misuse of the model, such as using it to discriminate against certain patient groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  }
+]

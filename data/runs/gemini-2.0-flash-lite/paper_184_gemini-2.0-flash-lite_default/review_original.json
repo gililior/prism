@@ -1,0 +1,120 @@
+{
+  "summary": "This paper introduces SUBSUMM, a framework for opinion summarization designed to handle large review sets and multi-perspective summarization. The framework demonstrates superior performance compared to other supervised methods and shows user preference over ChatGPT, but the paper lacks sufficient detail in several areas, particularly regarding comparisons to existing baselines and ethical considerations.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly identifies limitations of existing opinion summarization methods and introduces a well-defined framework, SUBSUMM, with a clear description of its components.",
+      "grounding": "Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "SUBSUMM demonstrates superior performance compared to other supervised methods, and human evaluation shows its summaries are comparable or better than gold summaries in Informativeness and Coherence.",
+      "grounding": "Sec 4.2, Table 3",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Head-to-head tests show users prefer SUBSUMM summaries over ChatGPT.",
+      "grounding": "Table 4",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper's introduction clearly distinguishes its contributions and methodological differences from Optimus [2], highlighting the problem SUBSUMM aims to address.",
+      "grounding": "Intro/Related Work",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "Tables are used to present quantitative results, which is appropriate for comparing different summarization methods, and Table 3 presents human evaluation results with clear criteria.",
+      "grounding": "Tables 3, 4, 9",
+      "facet": "figures"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a detailed comparison with Bražinskas et al. (2021) and TransSum [1], and the delta between the proposed method and these baselines is not clearly articulated.",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the superiority of SUBSUMM without providing sufficient evidence for all aspects, and the reasons for underperforming SELSUM on ROUGE-2 are speculative.",
+      "grounding": "Sec 4.2, Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term \"contrastive information valuation\" is introduced without a clear definition or explanation, and the two-stage training scheme is mentioned but not fully explained.",
+      "grounding": "Abstract, Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide enough information to assess the quality of the figures, and lacks details on the statistical significance of the head-to-head comparisons.",
+      "grounding": "Tables 3, 4, 9, 10",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide information on consent or privacy related to the datasets used, and does not discuss the potential for bias in the datasets or the model.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_consent_privacy"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss the potential for the model to be used to spread misinformation or manipulate public opinion, and lacks a detailed discussion of the broader societal impacts of the proposed framework.",
+      "grounding": "Insufficient evidence",
+      "facet": "misuse"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a direct comparison with Bražinskas et al. (2021) and TransSum [1], quantifying the performance gains of SUBSUMM on various metrics.",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more detailed ablation studies to isolate the impact of each component of SUBSUMM, including the review sampling strategies and the two-stage training scheme.",
+      "grounding": "Sec 4.2",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of \"contrastive information valuation\" and expand on the two-stage training scheme in the methods section.",
+      "grounding": "Abstract, Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details about the figures, including axes labels, legends, and visual design choices, and include p-values or confidence intervals in Table 3 and Table 4.",
+      "grounding": "Tables 3, 4, 9, 10",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section detailing the dataset licenses, consent procedures, and privacy measures taken, and describe the steps taken to mitigate the risk of generating fabricated or harmful content.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing_consent_privacy"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Discuss potential biases in the datasets and the model, and how these biases are addressed, and include a section on potential biases in the datasets and their impact on different groups.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_bias"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Discuss the potential for the model to be used to spread misinformation or manipulate public opinion and propose mitigation strategies, and add a Broader Impact section to discuss the potential societal benefits and drawbacks of the proposed framework.",
+      "grounding": "Conclusion",
+      "facet": "misuse"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

@@ -1,0 +1,356 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces STBridge, a method for grounding objects verbally using speech. The paper presents ablation studies to evaluate the impact of different modules, semantic jitter types, and design choices. The paper lacks details on seeds, variance, and environment reproducibility.",
+    "grounding": "Sections 3, 4.5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides detailed ablation studies, which helps in understanding the contribution of each component of the proposed method.",
+    "grounding": "Section 4.5, Tables 3, 4, 5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments. The variance across multiple runs is not reported.",
+    "grounding": "Section 4.5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the environment used for the experiments, such as the specific versions of the software libraries and hardware.",
+    "grounding": "Section 4.5",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments. Report the variance (e.g., standard deviation) across multiple runs for key results.",
+    "grounding": "Section 4.5, Tables 3, 4, 5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository. Include a requirements.txt or a similar file to specify the software dependencies and their versions. Specify the hardware used for the experiments.",
+    "grounding": "Section 3, 4.5",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Were multiple runs conducted for each experiment to assess variance? If so, what were the results?",
+    "grounding": "Section 4.5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "What specific versions of the software libraries (e.g., PyTorch, TensorFlow) were used?",
+    "grounding": "Section 3",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code publicly available? If so, please provide a link.",
+    "grounding": "Section 3",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the lack of information on seeds, variance, and environment details.",
+    "grounding": "Sections 3, 4.5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper needs significant improvements in reproducibility. The lack of seed reporting and variance analysis is a major concern. The absence of environment details further hinders reproducibility.",
+    "grounding": "Sections 3, 4.5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies a gap in the literature by addressing the underexplored area of speech-referring video object segmentation (RVOS) compared to text-based RVOS.",
+    "grounding": "Abstract, Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "strength",
+    "text": "The proposed STBridge method, with its Noise-Aware Semantic Adjustment (NSA) and Semantic Jitter Suppression (SJS) modules, offers a novel approach to bridge the gap between speech and text inputs for RVOS.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing speech enhancement techniques or methods that address noisy speech input in related tasks. The delta from these baselines is not clearly articulated.",
+    "grounding": "Intro, Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient detail on the specific architecture of the NSA and SJS modules, making it difficult to assess the novelty of their design and implementation.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative analysis with a state-of-the-art speech enhancement method to demonstrate the advantages of the proposed NSA module.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the performance of STBridge with a baseline that uses ASR followed by a standard text-based R-VOS model.",
+    "grounding": "Intro",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to demonstrate the contribution of each component (NSA and SJS) to the overall performance of STBridge.",
+    "grounding": "Sec 4.2",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does STBridge handle different types and levels of noise in speech input?",
+    "grounding": "Intro",
+    "facet": "limitations"
+  },
+  {
+    "kind": "question",
+    "text": "What are the computational costs of the NSA and SJS modules?",
+    "grounding": "Sec 3",
+    "facet": "limitations"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any limitations to the types of R-VOS models that STBridge can be applied to?",
+    "grounding": "Intro",
+    "facet": "limitations"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty may be limited by the specific implementation details of the NSA and SJS modules, which are not fully described.",
+    "grounding": "Sec 3",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces STBridge, a novel approach to bridge speech input to referring video object segmentation (RVOS) models. It addresses the challenges of noisy speech input by incorporating Noise-Aware Semantic Adjustment (NSA) and Semantic Jitter Suppression (SJS) modules. The paper positions itself well by identifying a gap in the literature, but needs to strengthen its comparative evidence and provide more details on the proposed modules.",
+    "grounding": "Abstract, Intro",
+    "facet": "summary"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present quantitative results related to the performance of the proposed STBridge model and ablation studies. The figures are mostly tables, with one figure showing the impact of noise categories.",
+    "grounding": "Figures 1-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2, 3, 4, and 5 are well-organized and clearly present quantitative results, supporting the claims made in the text. Figure 6 effectively visualizes the impact of different noise categories.",
+    "grounding": "Tables 2, 3, 4, 5; Figure 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes of the plots in Figure 6 lack clear labels and units, making it difficult to interpret the results without referring to the text. The tables could benefit from more descriptive captions.",
+    "grounding": "Figure 6, Tables 2-5",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to the axes of Figure 6, including units where applicable. Provide more descriptive captions for the tables, summarizing the key findings.",
+    "grounding": "Figure 6, Tables 2-5",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to evaluate the performance in Figure 6? What do the different colors or markers represent in Figure 6?",
+    "grounding": "Figure 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to overall performance metrics and do not provide insights into the qualitative aspects of the segmentation results.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present quantitative results of the proposed method and ablation studies. The tables compare the proposed method with baseline methods and analyze the impact of different modules, jitter types, and design choices. The tables generally lack detailed statistical analysis.",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides a clear comparison of the proposed method with baseline methods. The table includes both J and F scores, which are standard metrics for object segmentation.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values. The headers in some tables could be more descriptive.",
+    "grounding": "Tables 1, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to indicate statistical significance of performance differences between methods or configurations.",
+    "grounding": "Tables 1, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the standard deviations for the reported J and F scores in each table? What statistical tests were used to determine the significance of the differences observed in the ablation studies? How were the SNR values chosen for the noisy speech experiments? Are the results in Table 5 statistically significant?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and experimental setups used in the study. Generalization to other datasets or real-world scenarios is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces STBridge, a method to adapt text-based Referring Video Object Segmentation (R-VOS) models to handle noisy speech input. It proposes two key modules: Noise-Aware Semantic Adjustment (NSA) for robust speech understanding and Semantic Jitter Suppression (SJS) to handle noisy queries. The approach aims to bridge the gap between speech and text in R-VOS tasks, with experiments on AVOS benchmarks.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the problem of speech input in R-VOS and motivates the need for the proposed STBridge method.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the contributions and the overall approach.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'semantic jitter' is introduced without a clear definition or formalization. The reader needs to understand what 'jitter' means in the context of semantics.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear explanation of the architecture of the STBridge module. A diagram or more detailed description of how NSA and SJS interact would improve understanding.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the NSA and SJS modules, including their specific functions and how they contribute to the overall goal.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a diagram illustrating the STBridge architecture and the interaction between its components (NSA, SJS, and the R-VOS model).",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define 'semantic jitter' more precisely, possibly with a mathematical formulation or illustrative examples.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the slack semantic alignment work, and what is its specific role in integrating speech input?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific types of noise considered in the NSA module, and how does it adapt to them?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific R-VOS models that STBridge is compatible with?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed architectural descriptions and formal definitions may hinder reproducibility.",
+    "grounding": "Introduction \u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly addresses the gap in R-VOS for speech input, a less explored area compared to text input, as highlighted in the introduction (Intro).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The proposed method introduces two key modules, Noise-Aware Semantic Adjustment (NSA) and Semantic Jitter Suppression (SJS), to address the challenges of noisy speech input (Intro).",
+    "grounding": "Intro",
+    "facet": "method"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare with the methods in [1] and [3], which are highly cited in the field of video object segmentation. While the paper mentions R-VOS methods like ReferFormer and MTTR, it does not directly compare with Sipmask [1] or Urvos [3].",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the performance gain of the NSA and SJS modules, comparing them against a baseline R-VOS model (e.g., ReferFormer or MTTR) without these modules. This will quantify the contribution of each module. Also, compare with [1] and [3] by implementing the proposed modules on top of their architectures.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the limitations of the proposed approach, such as its performance on different types of noise or accents in speech.",
+    "grounding": "Related Work",
+    "facet": "limitations"
+  }
+]

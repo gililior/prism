@@ -1,0 +1,162 @@
+{
+  "summary": "This paper introduces a novel Cross-Modal Knowledge Transferring (CMKT) network for unsupervised temporal sentence grounding (TSG). While the CMKT framework shows promise in predicting segment boundaries, the paper lacks sufficient experimental details and rigorous analysis to fully substantiate its claims and demonstrate its advantages over existing unsupervised methods.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly defines the datasets (ActivityNet Captions, Charades-STA) and evaluation metrics (IoU, mIoU) used, allowing for direct comparison with existing methods.",
+      "grounding": "Sec 4.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "The qualitative results in Figure 4 visually demonstrate CMKT's ability to predict more precise segment boundaries compared to baseline methods.",
+      "grounding": "Sec 4.5, Fig 4",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The CMKT framework's modular design (appearance, action, and knowledge transfer) is well-explained, and the paper addresses the challenging unsupervised TSG task.",
+      "grounding": "Abstract, Introduction, Figure 1",
+      "facet": "organization_clarity"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper proposes a novel cross-modal knowledge transfer (CMKT) framework to transfer knowledge from simpler cross-modal tasks (Image-Noun and Video-Verb) to unsupervised TSG.",
+      "grounding": "Sec 3",
+      "facet": "method"
+    },
+    {
+      "kind": "strength",
+      "text": "The tables include clear headers and labels, making it easy to understand the experimental setup.",
+      "grounding": "Tables 1-6",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear overview of the CMKT framework, breaking down the modules and their functions.",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks crucial information regarding reproducibility, including the random seeds used, the computational environment, and the variance of results across multiple runs.",
+      "grounding": "Entire paper",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The claim of outperforming existing unsupervised methods is not fully substantiated without specific quantitative results and a thorough comparative analysis with relevant baselines.",
+      "grounding": "Conclusion, Sec 4.1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not clearly articulate the specific architectural or algorithmic innovations of CMKT compared to existing unsupervised methods, and overclaims the novelty of knowledge transfer without detailing the specific knowledge being transferred or the mechanism of transfer.",
+      "grounding": "Related Work, Conclusion",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a thorough statistical analysis of the results, including confidence intervals, p-values, and standard deviations, which limits the reliability of the conclusions.",
+      "grounding": "Tables 1-6",
+      "facet": "analysis"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the effect of parameters.",
+      "grounding": "Fig 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'appearance knowledge' and 'action knowledge' in the context of the CMKT network, and the specific mechanisms of knowledge transfer are not detailed enough.",
+      "grounding": "Abstract, Figure 1(b), Introduction",
+      "facet": "clarity_terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a notation table, making it difficult to follow the equations and understand the variables used.",
+      "grounding": "Methods section (if present)",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare with the weakly-supervised methods like [1] and the unsupervised method [2].",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include the random seeds used for all experiments and report the variance (e.g., standard deviation) of the results across multiple runs with different seeds.",
+      "grounding": "Appendix, Section 3.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide details of the computational environment (hardware, software, and libraries) used for the experiments, ideally with a Dockerfile or environment.yml file.",
+      "grounding": "Appendix",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include quantitative results comparing CMKT with all baselines on both datasets, including IoU scores, and conduct a head-to-head comparison with a state-of-the-art unsupervised TSG method.",
+      "grounding": "Sec 4.1, 4.5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a detailed ablation study to isolate the contribution of each component of CMKT (appearance knowledge, action knowledge, and the copy-paste approach) and validate the knowledge transfer mechanism.",
+      "grounding": "Sec 3",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Report the standard deviation or confidence intervals for the reported results to assess the statistical significance of the findings, and include standard deviations and p-values in the tables.",
+      "grounding": "Table 2, Tables 1-6",
+      "facet": "analysis"
+    },
+    {
+      "kind": "suggestion",
+      "text": "In Figure 3, label the axes clearly (e.g., \"Parameter Value\" and \"Performance Metric\") and specify the units if applicable, and consider adding a legend.",
+      "grounding": "Fig 3",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the 'copy-paste approach' used in the action knowledge module and include a dedicated section or subsection to formally define the terms 'appearance knowledge' and 'action knowledge'.",
+      "grounding": "Abstract, Introduction, Figure 1(b)",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a notation table to define all symbols and abbreviations used in the equations and throughout the paper.",
+      "grounding": "Methods section (if present)",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing the proposed CMKT framework with the method in [1] and [2] on the same dataset.",
+      "grounding": "Sec 4",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Ablate the appearance and action knowledge transfer modules separately to analyze their individual contributions to the overall performance.",
+      "grounding": "Sec 4",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies.",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

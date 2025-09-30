@@ -1,0 +1,84 @@
+[
+  {
+    "rid": "groniG3mHd",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper addresses empathic resonance between people, by utilizing their personalized narratives.  They compare empathy similarity through people's stories by using three components of the stories: main event, emotional reaction, and moral. The authors introduce a new dataset, which contains empathic similarity annotations between pairs of stories. Moreover, they introduce two tasks: empathic similarity prediction and empathy reasoning. The main models that they utilize are SBERT, BART (with fine-tuning), and GPT3, ChatGPT (with few-shot learning). In addition, to the automatic evaluation, the authors also conduct a user study where the main goal is to evaluate the models for story retrieval.\nThe main contributions of the paper are as follows: - They introduce a framework to model empathic similarity, which focuses on the relationship between the narratives of a pair of people.  - They release \u201cEmpathaticStories\u201d  a corpus of 1500 stories with data from three different sources.\n- A user study that involves personalized human evaluation of the models predictions",
+      "reasons_to_accept": "1. The collected dataset, is a resource that might prove valuable for future work on empathic analysis by utilizing personalized narratives of the users 2. A user study that conducts a personalized evaluation of the model's ability to retrieve similar stories that the user can empathize. I found this user study particularly interesting.",
+      "reasons_to_reject": "1. The paper mentions that it summarizes stories before presenting the pairs to the annotators. However, valuable information might be lost in the process. For example, the individual annotations of the first part of the annotation, like main events, emotional reaction, or moral, which are an important part of the framework defined for empathy similarity 2. In addition, there is a very low agreement between the annotators, and it is not stated how the annotations are aggregated, or how the disagreements are solved 3. Analysis for the empathy reasoning task is vague. It does not include any human evaluation and no further analysis except reporting automated metrics.",
+      "typos_grammar_style_and_presentation_improvements": "I would suggest that in the introduction, you include a paragraph where you clearly state your contributions.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "3PrODBjAKV",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper introduces a new task of similarity detection in personal stories based on the extend of empathy people have to each other stories instead of using raw semantic similarity.",
+      "reasons_to_accept": "The paper introduces a new and interesting task in conjunction of NLP and Social Psychology to identify the similarity of two texts, specifically two personal stories, based on the extend of their narrator empathy to the other story.  The paper introduces a new dataset for this task., which is carefully analyzed and they also provide the first benchmark on this dataset.\nThe author(s) formulated the task with mathematical notations which helps in understanding the task and further development of the task by new research teams.\nThey did human evaluations to asses their model performance.",
+      "reasons_to_reject": "My concerns have been addressed in the rebuttal.",
+      "typos_grammar_style_and_presentation_improvements": "In section 7, further relation work, in paragraph 2, line 3, you used two usings.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "s632myiXtI",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents an empathic similarity dataset with pairwise annotations for 2000 pairs of stories from a pool of 1500 stories. The authors show that their finetuned model is better aligned with human interpretations of empathic similarity than previous models.",
+      "reasons_to_accept": "The methodology is overall sound and some of the concepts introduced in this paper are fairly novel as well useful and interesting. The authors also manage to discuss the matter from an interdisciplinary perspective bringing in psychology and social studies work.\nThe dataset is also likely to be useful to other researchers specifically in empathy and intimacy-related projects, but also sentiment analysis and summarization projects.\nAdditionally, to the delight of CS people everywhere, the authors evaluate their model using BLEU, ROUGE, and METEOR.",
+      "reasons_to_reject": "This paper is a little confused about what it wants to be and is in some ways two papers merged into one as exemplified by section 6 which is a standalone study with its own hypothesis, previous work, data, and method as well as results section and is followed by section 7 \"Further related work\" just before the \"Conclusions\" section. Although these issues are structural they confound the core message of the paper which should be the pairwise empathic dataset.\nI am also not entirely convinced of the results and their significance. At the very least, the improvements of the model presented here should be discussed more in-depth in the text. As it currently stands the link between the results in table 3-5 and figures 3 and 4 are confusing at best.",
+      "questions_for_the_authors": "Will you make the code available online? \nWill the dataset be available online? \nAlthough you list many different similarity scores and model performance metrics (tables 3, 4, 5) I'm unconvinced these are very significant. Of course, fine-tuning will make the model more domain-specific and this is where I think you should bring the results from section 6 to show that these are not just generic domain-adaptation improvements but actually useful from a real-world perspective where your model is the best at detecting empathic similarity (which I do believe it probably is). Could you present this disconnect better somehow to improve the narrative of your paper?",
+      "missing_references": "One glaring omission in the reference list is work done by David Jurgens et al. on sympathy and empathy in online fora.\nZhou, N. and Jurgens, D., 2020, November. Condolence and empathy in online communities. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP) (pp. 609-626).\nLahnala, A., Welch, C., Jurgens, D. and Flek, L., 2022. A critical reflection and forward perspective on empathy and natural language processing. arXiv preprint arXiv:2210.16604.\nBao, J., Wu, J., Zhang, Y., Chandrasekharan, E. and Jurgens, D., 2021, April. Conversations gone alright: Quantifying and predicting prosocial outcomes in online conversations. In Proceedings of the Web Conference 2021 (pp. 1134-1145).\nOther more NLP-focused work could also be added to strengthen the arguments made by the authors: Lahnala, A., Welch, C. and Flek, L., 2022, May. CAISA at WASSA 2022: Adapter-tuning for empathy prediction. In Proceedings of the 12th Workshop on Computational Approaches to Subjectivity, Sentiment & Social Media Analysis (pp. 280-285).\nKumano, S., Ishii, R. and Otsuka, K., 2017, October. Comparing empathy perceived by interlocutors in multiparty conversation and external observers. In 2017 Seventh International Conference on Affective Computing and Intelligent Interaction (ACII) (pp. 50-57). IEEE.\nBoukricha, H., Wachsmuth, I., Carminati, M.N. and Knoeferle, P., 2013, September. A computational model of empathy: Empirical evaluation. In 2013 Humaine Association Conference on Affective Computing and Intelligent Interaction (pp. 1-6). IEEE.",
+      "typos_grammar_style_and_presentation_improvements": "I'm not entirely certain that the flow of the paper is the best. I understand the choice to place section 6 where it is, but it could very well be merged into previous sections as another hypothesis. Currently, section 6 reads like its own short paper so perhaps the authors could consider redistributing the information of section 6 into the other sections (intro, previous work, data & method, results etc).\nSimilarly, it is strange to see section 7 \"Further related work\" as the next to last chapter just before \"conclusions\". I suggest that baking section 6 into the whole paper includes moving section 7 as a subsection to section 2. Otherwise, the paper is just too disjointed and reads as if trying to cram two papers into one. If your paper is not accepted, you could consider resubmitting it elsewhere as two short papers rather than one long paper.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "qTOgV9vA0R",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper is a good attempt to enable social-emotional correlation between people based on their stories.  The dataset of 2000 stories is constructed. 150 participants feedback on the story is also created and compared with the model. The stories are classified into main, empathy and moral events.",
+      "reasons_to_accept": "The paper is a good attempt to enable social-emotional correlation between people based on their stories.  The dataset of 2000 stories is constructed. 150 participants feedback on the story is also created and compared with the model. The stories are classified into main, empathy and moral events.",
+      "reasons_to_reject": "The concerns are addressed in the revision.",
+      "questions_for_the_authors": "The impact of a personal story and its similarity is useful to get some valid conclusion ?? though it is not in the scope, the impact needs to be calculated in order to find the success of the method.  Please write a paragraph about this point in a paper.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

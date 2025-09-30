@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "vu8vU7YCdJ",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes an attention prompt tuning method for parameter-efficient tuning PLMs. This paper has proved that existing prompt tuning can be considered as a special case of attention prompt tuning. The main contributions lie in that extensive experiments has verified the effectiveness of this kind of prompt tuning.",
+      "reasons_to_accept": "1. Novel method. The proposed attention prompt tuning is novel compared to previous method and can be considered as a unified form. \n2. Insightful analysis. The empirical study is useful to build a connection between the proposed tuning and previous tuning. \n3.  Extensive experiments. The authors conduct many experiments to validate the proposed method. \n4. Good writing.",
+      "reasons_to_reject": "1. Missing some detailed comparison with previous methods. \n2. Missing some important baselines.",
+      "questions_for_the_authors": "1. You should make a comparison among prompt tuning methods including their detailed trainable parameters and training time. \n2. LoRA [1] is an important parameter-efficient tuning method for large language models. You should compare with it. \n[1] LoRA: Low-Rank Adaptation of Large Language Models",
+      "missing_references": "[1] LoRA: Low-Rank Adaptation of Large Language Models. \n[2] A Survey of Large Language Models. \n[3] Challenges and Applications of Large Language Models",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "J6qUJiyFen",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes another parameter efficient fine-tuning method of large language models: attention prompt tuning. APROMPT incorporates three sets of learnable prompts: query, key, and value prompts. These prompts are prepended to the respective matrices in the self-attention block within the Transformer layer. During model tuning, these attention prompts are learned alongside the original input prompts. Comprehensive experiments on various tasks in the SuperGLUE benchmark show the effectiveness of the proposed method.",
+      "reasons_to_accept": "1. Clear writing. \n2. Thorough analysis and discussion.",
+      "reasons_to_reject": "My main concern of the paper is on the baselines. As newly-proposed parameter efficient fine-tuning method, it should not only be compared with prompt tuning approaches, but also other methods such as Adaptor (https://arxiv.org/pdf/1902.00751.pdf) and LoRA (https://arxiv.org/abs/2106.09685), since they are more widely used.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "7HnEmyXrb0",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper presents Attention Prompt tuning (APrompt), an innovative method for adapting large pre-trained language models. Unlike traditional tuning that focuses on input layers, APrompt incorporates prompts into the attention layer. Tested on the SuperGLUE benchmark, APrompt outperforms standard approaches across different model scales, with additional studies confirming its effectiveness and efficiency.",
+      "reasons_to_accept": "1. Views the existing prompt tuning method as a specialized form of attention prompts.  2. Proposes a novel prompting method where the prompts are applied to the attention directly.  3. Extensive experiments on three different model size and SuperGLUE benchmark shows the effectiveness of the proposed method.  4. The paper is well-written and the figures help the understanding.",
+      "reasons_to_reject": "1. I have a hard time understanding why in line 213, Q is not calculated using $X_{new}$. It seems like the authors argue this because only the original text tokens X are updated. However, to the best of my knowledge, the features of the prompts are also updated as it goes through the transformer layers.  2. In Table 8, the authors report the training time of APrompt on the SuperGLUE dataset. But I feel its necessary to report the training time of other baselines as well.",
+      "questions_for_the_authors": "Please refer to [reasons to reject].",
+      "typos_grammar_style_and_presentation_improvements": "In Figure 3 (c), Matmul -> MatMul",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  }
+]

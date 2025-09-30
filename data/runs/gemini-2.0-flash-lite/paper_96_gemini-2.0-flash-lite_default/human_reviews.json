@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "Rt0IRRyYM0",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a new method for context-supervised pre-training for dense passage retrieval. The main idea is to use generated pseudo queries as context for pre-training. It can be combined with existing frameworks like coCondenser or CoT-MAE. The proposed method is evaluated on the MS-MARCO passage retrieval dataset and out-of-domain zero-shot BEIR benchmarks. Experimental results show that the proposed method is effective compared to baselines.",
+      "reasons_to_accept": "1. The paper is well written and easy to follow. The idea of using pseudo queries as context for pre-training is simple and clear. \n2. Experiments on popular passage retrieval datasets show that the proposed method is effective and outperforms other competitive methods.",
+      "reasons_to_reject": "1. The technical contribution is not much. Generated pseudo queries have been widely used in the context of passage retrieval, including doc2query style sparse retrieval, zero-shot and few-shot dense retrieval. I acknowledge that this is the first paper to combine pseudo queries with coCondenser / CoT-MAE framework, but it is quite straightforward, and the overall contribution is limited. \n2. The proposed method requires training a query generator with labeled data, while methods like coCondenser work with unlabeled data only. This will limit the applicability of the proposed method.",
+      "questions_for_the_authors": "A. Why are some numbers on TREC DL for your own model implementations missing?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "6qmm0B8S7i",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes the use of a pair of query-passage for pretraining the dense retrieval, referred to as query-as-context pretraining, motivated by criticizing that a pair of passage-passage in the same document, which is used on the previous context-supervised pretraining, is weakly related or not relevant. The proposed query-as-context pretraining is applied to coCondenser and CoT-MAE, which shows improvements on the standard datasets.",
+      "reasons_to_accept": "While query generation for pretraining has been widely used in DSI, the paper extensively applies the query generation on two existing models (i.e., coCondenser and CoT-MAE) in the dense passage retrieval, which makes meaningful and novel contribution in the literature. Different from the existing doc2query that focuses on document expansion, this work applies the query generation for the contrastive learning. In the experiment results, although the proposed method does not achieve the SOTA performance without improving CoT-MAE-v2, the performances are consistently improved on the standard datasets.",
+      "reasons_to_reject": "- The proposed query generation and its resulting pretraining is quite similar to the works introduced in DSI (i.e., NCI and DSI-QG), which makes the technical part less novel. Comparing to the existing NCI (or DSI-QG), the novelty and value of this work needs be clearly presented.  - The authors criticize that the use of a passage-passage pair in the same document is not optimal for pretraining the dense retrieval, and propose the query-as-context as an alternative approach. However, rather than the proposed alternative view, the proposed query-passage and the existing passage-passage pairs can be integrated in a complementary manner, based on the multi-task learning. Not all passage-passage pairs are problematic in pretraining, as some of the pairs would be relevant. The authors\u2019 critic on the usefulness of the existing passage-passage pair is largely unvalidated. In particular, the experiments in Section 5.2, without mixing two types of pairs, the results of only passage-passage pair need to be presented. Experiments for the effect of combining two pretraining losses derived from passage-passage and passage-query pairs may be required.",
+      "questions_for_the_authors": "1) Query generation has been widely used in DSI as below. Comparing the case of DSI, what distinguishable effects are expected by applying the query generation for pretraining dense retrieval?  - Yujing Wang, Yingyan Hou, Haonan Wang, Ziming Miao, Shibin Wu, Hao Sun, Qi Chen, Yuqing Xia, Chengmin Chi, Guoshuai Zhao, Zheng Liu, Xing Xie, Hao Allen Sun, Weiwei Deng, Qi Zhang, and Mao Yang. 2022. A neural corpus indexer for document retrieval. CoRR, abs/2206.02743.\n- Shengyao Zhuang, Houxing Ren, Linjun Shou, Jian Pei, Ming Gong, Guido Zuccon, and Daxin Jiang. 2022. Bridging the gap between indexing and retrieval for differentiable search index with query generation. CoRR, abs/2206.10128 2) The last version of CoT-MAE is CoT-MAE-v2 that uses multi-view representation and decoding. Similar improvements could be made over CoT-MAE-v2 too?  3) In Table 3, the use of single query is most dominant, and increasing number of queries does not so make substantial difference. Can you check the diversity across generated queries? How to control the diversity of the generated queries?  4) In Table 3, it would help us to check the effect of single query when providing the case of the zero query number.",
+      "missing_references": "- Yujing Wang, Yingyan Hou, Haonan Wang, Ziming Miao, Shibin Wu, Hao Sun, Qi Chen, Yuqing Xia, Chengmin Chi, Guoshuai Zhao, Zheng Liu, Xing Xie, Hao Allen Sun, Weiwei Deng, Qi Zhang, and Mao Yang. 2022. A neural corpus indexer for document retrieval. CoRR, abs/2206.02743.\n- Shengyao Zhuang, Houxing Ren, Linjun Shou, Jian Pei, Ming Gong, Guido Zuccon, and Daxin Jiang. 2022. Bridging the gap between indexing and retrieval for differentiable search index with query generation. CoRR, abs/2206.10128 - Xing Wu, Guangyuan Ma, Peng Wang, Meng Lin, Zijia Lin, Fuzheng Zhang, Songlin Hu, CoT-MAE v2: Contextual Masked Auto-Encoder with Multi-view Modeling for Passage Retrieval, arXiv:2304.03158, 2023",
+      "typos_grammar_style_and_presentation_improvements": "In Section 3.1, in Appendix, it would be helpful to present the generated query samples for some passages.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "ok7Anvt2CM",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a pre-training technique designed to address the problem of weakly correlated pairs of passages within the same document. The proposed method assumes that a query derived from a passage is likely to be more relevant to that passage, thereby forming a passage-query pair. \nThe experimental results demonstrate that the method yields substantial improvements, thereby showcasing its effectiveness and efficiency.",
+      "reasons_to_accept": "Strongness  1. They proposed a simple context-supervised pretraining technique by utilizing query-passage pairs. \n2. The results of the experiment show that the method delivers significant enhancements. \n3. They also examined the impact of the number of generated queries and the mixed context.",
+      "reasons_to_reject": "Weakness 1. The criteria for dividing passages need to be more accurate. Instead of simply dividing by token length, shouldn't the division be based on semantic units?",
+      "questions_for_the_authors": "1. How were the values of topp and topk determined for T5 fine-tuning? \n2. The performance could vary depending on how the T5 model is pre-trained. Additionally, what about exploring the use of other generation models besides T5?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

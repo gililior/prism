@@ -1,0 +1,108 @@
+{
+  "summary": "This paper introduces CACAO, a novel two-stage approach for Open-Vocabulary NER, demonstrating state-of-the-art performance on several benchmarks. While the method shows promising results, the paper lacks sufficient evidence to support some claims and needs improvements in reproducibility and clarity.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "CACAO achieves state-of-the-art performance on OV-OntoNotes, OV-NERD-INTRA, and OV-NERD-INTER benchmarks, as shown in Table 1.",
+      "grounding": "Sec 4.3, Table 1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Ablation studies in Table 2 effectively demonstrate the impact of alignment pre-training on generalization to unseen entity types.",
+      "grounding": "Sec 4.4, Table 2",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly defines the OVNER problem and positions CACAO within the context of existing NER approaches.",
+      "grounding": "Introduction",
+      "facet": "clarity"
+    },
+    {
+      "kind": "strength",
+      "text": "The two-stage framework of CACAO is clearly illustrated in Figure 2.",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper's claim of CACAO learning a rich and complete context-type semantic space lacks direct evaluation and supporting evidence.",
+      "grounding": "Sec 4.3",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient information on the datasets used for pre-training and fine-tuning, including details about the context-type pairs.",
+      "grounding": "Abstract",
+      "facet": "None"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a detailed comparison with the most relevant and recent baselines in the OVNER or related fields, and the delta between CACAO and the closest performing method is not clearly explained.",
+      "grounding": "Related Work, Sec 4.1",
+      "facet": "None"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly state the random seeds used for experiments, nor does it provide information on the variance across the random seeds, hindering reproducibility.",
+      "grounding": "Section 4.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figures 3 and 4 lack clear axis labels, units, and legends, making it difficult to interpret the results. Table 1 and 5 lack information on the variance of the results and statistical significance tests.",
+      "grounding": "Fig 3, Fig 4, Table 1, Table 5",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential biases in the training data or the model's outputs, nor does it discuss potential misuse cases.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the specific random seeds used for all experiments and report the variance (e.g., standard deviation) across the seeds to improve reproducibility.",
+      "grounding": "Section 4.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Release the code and the environment setup (e.g., a Dockerfile or a requirements.txt file) to ensure reproducibility.",
+      "grounding": "Appendix B",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a head-to-head comparison with a state-of-the-art method that addresses a similar problem, such as a recent zero-shot or few-shot NER approach, and analyze the performance differences.",
+      "grounding": "Sec 4.1",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details about the pre-training data, including its source, size, and characteristics.",
+      "grounding": "Abstract",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add axis labels and a legend to Figures 3 and 4, and include standard deviations or confidence intervals in Tables 1-5. Add p-values to indicate statistical significance.",
+      "grounding": "Fig 3, Fig 4, Tables 1-5",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a discussion of potential biases in the training data and their impact on the model's performance across different demographic groups, and add a section on potential misuse cases and mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "OT1Ki3DHJg",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The study proposes a method for solving the problem of the limited lexicon of multiligual language models by replacing subword embeddings with image embeddings for the individual script.",
+      "reasons_to_accept": "That's a well designed study which shows how multilingual models can avoid the lexical bottleneck for lesser-resourced languages.",
+      "reasons_to_reject": "1. It is suprising that you haven't experimented with different image conversion parameters, such as different fonts, font sizes and resolutions. Google Noto Sans 10pt at 120 dpi is a very specific setting. The question in Lines 218-220 implies that these variations need to be studied. \n 2. Similarly the statement on the source of improvements as in Lines 244-250 should have been studied. Does performance for \"ja\" improves when you add \"zh\"?",
+      "typos_grammar_style_and_presentation_improvements": "1. The claim of \"up to 9 BLEU\" is misleading. Report the mean. And also chrF is more robust for neural models, so it's better to provide your main reporting for it. \n  2. Conneau et al 2020 present a very concise way to describe the contribution of individual properties of their architecture on the overall performance. \n 3. The reasons for choosing the specific languages in Table 2 are not clear. I think the pairing in this table is good as it includes related languages with different scripts  as well as unrelated languages with similar scripts. Please add an explanation.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "l4TWuxfp8v",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, they proposed a novel approach to train NMT model with pixel representations. They evaluated the model on TED dataset with 7 and 49 languages with a variety of languages and script coverage, and improved the perforamnce compared to previous subword-based studies. Further analysis showed that pixel representation helps better cross-lingual transfer to unseen scripts and is more data efficient.",
+      "reasons_to_accept": "1. A novel approach to train NMT model with pixel representation 2. Better performance compared to traditional subword-style tokenization 3. The approach also helps better cross-lingual transfer to unseen scripts and is more data efficient",
+      "reasons_to_reject": "1. The technical difference between their approach and Rust et al, 2023 is not clear 2. Experiment with better multilingual model e.g. NLLB (https://arxiv.org/abs/2207.04672), M2M-100 (https://arxiv.org/abs/2010.11125), and SMaLL100 (https://arxiv.org/abs/2210.11621)?",
+      "questions_for_the_authors": "QA: Can you please explain the difference of your approach compared to Rust et al, 2023?\nQB: Is it possible to check the approach with better multilingual NMT models?",
+      "ethical_concerns": "Yes",
+      "justification_for_ethical_concerns": "please check section 9"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "HMkqcEYLLT",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Evaluating the use of pixel input representations in many-to-one multilingual machine translation. \nWhile pixel representations are not novel, their interaction with multilingual training has not been studied previously. \nText is rendered as an image using a particular font, and then fed into a convolutional network that transforms it into embedding vectors suitable for a transformer network.",
+      "reasons_to_accept": "The proposed pixel representations improve the crosslingual transfer between languages sharing a script, as well as enabling transfer between historically related but distinct scripts encoded with different unicode codepoints. \nThe proposed method is thus especially beneficial for low-resource languages using non-Latin scripts, a disadvantaged group of languages in NLP.\nModels using pixel representations are more robust when scaling the model size.",
+      "reasons_to_reject": "None",
+      "questions_for_the_authors": "A: 101 On the target side, you decode subword tokens. What is the vocabulary size and construction method for the target subword vocabulary?",
+      "typos_grammar_style_and_presentation_improvements": "121 Please clarify that Table 4 is found in the appendices.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  }
+]

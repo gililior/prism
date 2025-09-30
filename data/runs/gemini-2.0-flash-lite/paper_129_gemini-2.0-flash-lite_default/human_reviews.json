@@ -1,0 +1,87 @@
+[
+  {
+    "rid": "qmu1nK9e8C",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper tackles an important issue in crowdsourced data, which is the handling of disagreements. They suggest that representing annotators and data instances as embeddings helps models learn better without additional computing resources.",
+      "reasons_to_accept": "The idea of representing annotators and annotations with embeddings is interesting and could potentially be used in other tasks as well.",
+      "reasons_to_reject": "It's not entirely clear to me what is being done here. Perhaps more organization and a diagram of the experimental setup would help.  If my understanding is correct, I'm also not convinced that the way the annotator embeddings were created is appropriate. Unless we are dealing with a very dense matrix, embeddings based on what the annotator has labeled most likely are more influenced by what the annotator has labeled and not necessarily by the annotator's preferences. For example, if an annotator is only given negative sentences to label in a sentiment analysis task, it doesn't make sense to say that that annotator has a tendency to label things as negative. ( You mention this issue in the limitations section and argue that it isn't the main focus of the paper, but I argue that how you deal with missing information is crucial in your work if you're proposing a new method)",
+      "questions_for_the_authors": "A. How dependent is your method on what instances the annotators were assigned to label? If we were to recreate the dataset but switch up who annotates what, would you still get similar embeddings and results?\nB. Besides quality, what requirements did you have for your dataset?\nC. What are you trying to tell us through the TSNE plots?",
+      "typos_grammar_style_and_presentation_improvements": "Make sure all the figures are referred to in the paper. For example, for Figure 3, you refer to Figure 3a, but never mention Figure 3b. In that case, do you really need that plot?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "1: Poor: I cannot identify the contributions of this paper, or I believe the claims are not sufficiently backed up by evidence. I would fight to have it rejected.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "CTjNKKxOT0",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors discuss about improving new methods for modeling annotators. They have introduced those methods by adding in an extra set of layers for embedding the annotators and their annotations. The authors have field tested their methods with publicly available datasets in the domain of modeling annotations. The authors have also evaluated the methods across different methods/metrics which is useful for understanding the limits of their work.",
+      "reasons_to_accept": "1. The paper introduces an important direction in the domain of modeling annotators. \n2. The authors have extensively stress tested their methods across different datasets and different methods (more in the long appendix).",
+      "reasons_to_reject": "The reasons to reject are in the questions and improvements. Open to hear feedback from the authors on these aspects.",
+      "questions_for_the_authors": "A The method Dawid & Skyene is not considered as a baseline. Any specific reason as to why? \nB The datasets SBIC/Toxic Ratings (Kumar et al.) is also not included for experiments. They consist of large amounts of data points with annotations and annotator information that can be essential. \nC The datasets as a whole other than GOE is relatively small. Does this impact the generalization of your work?",
+      "missing_references": "A baseline -> https://www.jstor.org/stable/2346806 Dataset -> https://kumarde.com/papers/designing.pdf",
+      "typos_grammar_style_and_presentation_improvements": "This paper is 22 pages long with all the appendix and extra results but the main 8 pages are missing key elements that is crucial for an EMNLP submission. The language aspect of it, the authors have done a good job of having lot of tables and numbers on the readers but they should think about how to include the empirical results on how their methods perform better (or not) than other baselines. The #s on tables is one thing, but a challenge in this domain is that numbers are not the full story, and individual data points do tell a different interesting story.  For sharing/uploading code for papers https://anonymous.4open.science/",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "wyjsvIcsM8",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper reports on experiments focusing on the integration of annotator characteristics in modeling some subjective NLP tasks through creating annotator and annotation embeddings which are incorporated into the model. The evaluation on six NLP datasets revealed that the inclusion thereof leads to significant performance gains when learning from annotation disagreements.",
+      "reasons_to_accept": "- the paper is clearly written and provides sufficient level of detail to understand the carried-out research - a novel method of integration of annotator idiosyncracies into the modelling task is presented - experiments are thorough in terms of the number of models and datasets explored, which make the findings relatively generic - a very thorough interpretation of the results and findings is provided",
+      "reasons_to_reject": "- the paper is somewhat wrongly balanced, i.e. the annex is longer than the main body of the paper and includes some relevant results, e.g., the results of the experiments on the \"few annotators\" datasets, which would better fit to be placed in the main body of the article",
+      "questions_for_the_authors": "- why did you put the results and the findings for the \"few annotators\" datasets in the annex?\n- in 42-44 you mention \"under-represented\" groups whose opinions may not agree with the majority. I am very puzzled by this wording since a given annotator can be in one case in the majority, and in another case in the minority. So, what does this concept of \"under-represented\" group mean here? Wouldn't  it make sense to speak more of subjective tasks and opinions that might emerge from many factors?",
+      "typos_grammar_style_and_presentation_improvements": "- the datasets are referenced sometimes with full names, sometimes with the acronyms introduced earlier. Therefore, it would be better to use a consistent naming convention - Table 4 and Table 9 are partially redundant - maybe enumerating the main contributions in the introduction would improve the presentation",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "oanWLPgRmU",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "While the general practice is to force annotators\u2019 agreement through aggregation strategies (e.g., majority voting), many tasks are legitimately subjective, so the disagreement among annotators can be due to their different points of view rather than, e.g. noise or bad guidelines.  This paper proposes a method to leverage and study annotators\u2019 disagreement by embedding annotators and their annotations.  Experiments are performed on a large set of diverse datasets, and the results are analyzed from a wide variety of points of view.",
+      "reasons_to_accept": "The paper addresses an interesting and, in my opinion, very important problem clearly.  It has two main focuses: on the one hand, it shows that performance improves when adding annotators and annotations embedding to a simple transformer model (interestingly, the method increases the number of parameters by 1% only).  On the other hand, the paper performs a deep analysis of what the embeddings convey, their contributions to the performance, and many other interesting aspects.  Many different datasets are explored (different tasks, number of annotators, number of instances, etc). References to previous work are clear and frame the problem well.",
+      "reasons_to_reject": "In my opinion, the paper's contribution comes more from the performed analysis than from the increase in performance per se.  This is because the paper assumes a closed set of annotators for which classification will be performed. This is far from most practical scenarios, where models are trained once and then used by different target users.",
+      "questions_for_the_authors": "Question A: How are unknown annotators (e.g., last paragraph of section 8) modeled? Is a zeroed embedding vector produced? Is there an embedding for all unknown annotators? \n  Question B: In section 3, the problem is framed as that of maximizing the annotator-specific correct label. Am I correct that this is how the models are evaluated in Section 6?  Question C: While I understand the paper's focus is on the analyses rather than on improving performance per se (a focus that I appreciate), I think the experiment considering unknown annotators should be given more relevance. This is because the paper still emphasizes \u201cpractical\u201d aspects, e.g., performance improvement and model efficiency. While it is nice to show that the performance improves when knowing the specific annotator\u2019s ID, in the majority of practical use cases, the set of annotators of the training set and those of the model target \u201cusers\u201d are disjoint; however, it might be possible to collect the user\u2019s opinion on a subset of instances, similarly to a cold start scenario in a recommender system. I would give more relevance to this experiment, for which results are currently relegated to the Appendix. I would also be interested in knowing the relationship between the number of available annotations for unknown annotators and the performance.",
+      "typos_grammar_style_and_presentation_improvements": "I think that adding a picture depicting the architecture and how the embedding and the matrices described in section 4 fit in it would make the understanding of the sections much more intuitive.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

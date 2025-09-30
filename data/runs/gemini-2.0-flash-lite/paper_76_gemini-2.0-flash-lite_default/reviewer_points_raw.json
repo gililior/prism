@@ -1,0 +1,398 @@
+[
+  {
+    "kind": "strength",
+    "text": "Models are trained with different random seeds, and the average results are presented.",
+    "grounding": "Section 4.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on the specific seeds used is provided.",
+    "grounding": "Section 4.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on the environment used is provided.",
+    "grounding": "Section 4.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the specific seeds used for each experiment.",
+    "grounding": "Section 4.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the environment used (e.g., Python version, library versions, hardware).",
+    "grounding": "Section 4.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository.",
+    "grounding": "All sections",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific versions of the OpenAI API used?",
+    "grounding": "Section 4.1",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets and prompts available?",
+    "grounding": "Section 4.1",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "limitations",
+    "text": "No mention of compute resources used.",
+    "grounding": "All sections",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "All sections",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates narrative detection in tweets related to health misinformation, comparing GPT models and RoBERTa. It finds that narrativity is linked to user engagement and misinformation, and that narrativity may help increase engagement of misinformation in some contexts. The study uses manual labeling, model training, and statistical analysis.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The GPT-3 text-davinci-003 model's performance is compared against gpt-3.5-turbo and other models, with results presented in tables (Table 2, Table 3, Table 9, Table 10).",
+    "grounding": "Sec 4.2, Appendix C",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The study finds that narrativity is connected to higher user engagement and misinformation to less engagement, supported by statistical modeling.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of its findings without sufficient evidence. The study focuses on Twitter data, and the conclusions may not apply to other social media platforms or contexts.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of the limitations of the GPT models, such as their sensitivity to prompt engineering or the potential for biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on different datasets or platforms to validate the generalizability of the findings.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the limitations of the GPT models, including their sensitivity to prompt engineering and potential biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How do the findings change when using different datasets or platforms?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific prompt engineering techniques used for the GPT models?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the fine-tuned RoBERTa model compare to other state-of-the-art models for narrative detection?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the focus on Twitter data, but a more detailed discussion of the limitations of the GPT models and the potential for biases would strengthen the paper.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "yes",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present experimental results, model components, and data distributions. The clarity of the figures varies, with some lacking essential labels.",
+    "grounding": "Figures 1-2",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 1 provides a clear visual representation of the prompt components used for the GPT models.",
+    "grounding": "Fig 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 2 lacks clear axis labels and units, making it difficult to interpret the data.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Figure 2, add axis labels (e.g., 'Favorite Count', 'Retweet Count') and units (if applicable). Include a legend to clarify the categories.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the box plots in Figure 2 represent? What are the specific datasets and categories being compared?",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to the specific metrics and datasets described in the paper, potentially limiting the scope of the conclusions.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on consent from Twitter users whose data is used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on privacy measures taken to protect user data.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on usage terms for the datasets created.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "weakness",
+    "text": "No explicit discussion of potential ethical risks.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_ethical_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the data collection process, including how consent was obtained or if data was publicly available and how it was handled. Detail any privacy-preserving measures.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a clear statement on data usage terms, including any restrictions on redistribution or commercial use.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section discussing potential ethical risks (e.g., spread of misinformation, privacy violations) and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_ethical_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "If the data is from Twitter, clarify adherence to Twitter's terms of service and developer policies.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results for different models and configurations, focusing on performance metrics like F1-score, precision, and recall. Some tables include statistical tests and ratios, while others lack crucial statistical information.",
+    "grounding": "Tables 1-10, 12",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Tables 6, 7, and 12 include statistical testing (Mann-Whitney U test) and provide ratios (R) to compare means, along with color-coding to highlight significant differences.",
+    "grounding": "Tables 6, 7, 12",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables 1, 2, 3, 9, and 10 lack standard deviations, confidence intervals, or p-values, making it difficult to assess the statistical significance of the results. Table 8 lacks any statistical information.",
+    "grounding": "Tables 1, 2, 3, 8, 9, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to show the statistical significance of the differences between models or configurations. For Table 8, include counts and percentages.",
+    "grounding": "Tables 2, 3, 9, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What are the confidence intervals for the reported F1 scores, precision, and recall in Tables 2, 3, 9, and 10? 2. What statistical tests were used to compare the performance of different models in Tables 2 and 3? 3. How was the threshold for significance (alpha) determined in Tables 6, 7, and 12? 4. What is the sample size for the thematic analysis in Table 8?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets and models used in the experiments. Generalizability to other datasets or models is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the interplay between narrative communication style and health misinformation on user engagement on Twitter. It annotates tweets for narrative style, trains text classifiers for narrative detection, analyzes the relationship between narrative style, misinformation, and user engagement, and examines the language used in narratives and misinformation.",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the research question, methodology, findings, and contributions.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of the importance of narrative communication and the problem of misinformation.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'narrative' is provided, but the operationalization of this definition for tweet classification is not immediately clear. More detail is needed on how the definition translates into annotation guidelines.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of \"user engagement\". It is mentioned in the abstract and introduction, but the specific metrics used to measure engagement are not defined.",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the annotation process, including the guidelines used to identify narrative style in tweets.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define 'user engagement' and specify the metrics used to measure it (e.g., retweets, likes, replies).",
+    "grounding": "Abstract, Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider adding a table summarizing the key notations used throughout the paper for clarity.",
+    "grounding": "Throughout",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific features of narrative style were annotated?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How was the subset of data (n=3000) chosen for annotation?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific metrics used to measure user engagement?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's methodology section is not included, so it is difficult to assess the reproducibility of the study.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly discuss potential biases in the datasets or models, nor does it address fairness considerations.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the findings to be used to amplify misinformation or manipulate user engagement.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's focus on the interplay between narrative style and misinformation on Twitter engagement is novel, building upon the existing literature on narrative communication and health information [Intro]. It moves beyond simply identifying misinformation or narrative style to investigate their combined effect on user engagement.",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's methodology, including the annotation of a subset of tweets for narrative style and the use of text classifiers (supervised fine-tuning and in-context learning), is a clear advancement over prior work that often relied on manual annotations [Related Work].",
+    "grounding": "Related Work",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its text classification models with the TweetEval benchmark [1]. A comparison with this benchmark would provide a more robust evaluation of the model's performance.",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the specific features or architectures used in the text classifiers in detail. It would be beneficial to provide more information about the model choices and their rationale.",
+    "grounding": "Methods",
+    "facet": "missing_details"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative experiment using the TweetEval benchmark [1] to evaluate the performance of the proposed text classifiers against existing state-of-the-art models. This would provide a more comprehensive evaluation of the model's performance.",
+    "grounding": "Sec 3.1",
+    "facet": "experiment_suggestion"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a baseline comparison with bag-of-words models with ngram features, as used in Dirkson et al. (2019) and Verberne et al. (2019), to demonstrate the effectiveness of the deep learning models.",
+    "grounding": "Related Work",
+    "facet": "experiment_suggestion"
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "SAJc5m2bYe",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes an approach to document-level sentiment classification task based on LLMs and in-context learning, using prompting with examples which enables reasoning to get correct labels. \nThe prompt asks the model to generate clue keywords related to positive or negative sentiments, and reasoning process that support the decision of labels, in addition to the final answer.  Also examples of (input, clues, reasoning and label) are added to the prompt for one-short and few-shot settings which can be automatically generated from the subset of training data. \nThe experimental results show the SotA scores in 4 out of 5 tasks, and they outperformed the supervised fine-tuned results.  Also this paper provides extensive discussion including ablation studies, alternative labels and consideration of low-resource scenario.",
+      "reasons_to_accept": "- Good design of prompt including examples.  The difference from the Chain-of-Thought method is clear.\n- The experimental results show the SotA scores in 4 out of 5 tasks, and they outperformed the supervised fine-tuned results.\n- The proposed method addresses the low-resource settings and domain adaptability.\n- The discussion of alternative labels is interesting.",
+      "reasons_to_reject": "- The notion of in-context learning has been already proposed.\n- The document-level classification task is too popular and simple and its application is limited.",
+      "questions_for_the_authors": "A. The ablation study shows that it works even without the gold label in the example.  How does the examples help without gold labels?",
+      "typos_grammar_style_and_presentation_improvements": "- Figure 2 should be placed on the top of the column.\n- Numbers in Table 1 and 2 are too small.  Since they are key results they should be displayed with larger letters.\n- CRAP->CARP in Table 2",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "5grt4Tp9Z6",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a framework to use LLMs for text classification task. It first guide the LLMs to extract the key clues from the input and use the clues to get the final decision. To improve the few-shot performance, authors also propose to train kNN to generate the examples.",
+      "reasons_to_accept": "The paper is overall written very well and is easy to follow. \nExperiments are thorough and complete. Using multiple methods, multiple tasks and ablation studies lead the generalizability of the paper's claims.",
+      "reasons_to_reject": "The authors should not claim their framework as \"annotation-free\" while using a kNN trained on supervised dataset.",
+      "questions_for_the_authors": "Did you evaluate this method on some open-source LLMs, like Llama?",
+      "missing_references": "Extract feature and feed into classifier: Zheng Tang, Mihai Surdeanu; It Takes Two Flints to Make a Fire: Multitask Learning of Neural Relation and Explanation Classifiers. Computational Linguistics 2023; 49 (1): 117\u2013156. doi: https://doi.org/10.1162/coli_a_00463",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "2oxRdK6IC3",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper discusses tasks related to text classification through large models. The author first points out two reasons why large language models (LLMs) perform poorly in text classification tasks: a lack of strong reasoning capability and the performance limitations caused by window length restrictions. Subsequently, the author proposes the Clue And Reasoning Prompting (CARP) method. This method instructs large models on how to use superficial clues to enhance their reasoning ability during demonstrations. The most effective demonstrations are retrieved using kNN demonstration search. The author conducted experiments on five text classification datasets using text-devinci-003, and the results showed that this method performed well.\nContributions\uff1a 1. The author outlined the reasons why large models underperform in text classification, and introduced CARP to enhance their performance. \n2. Experiments were conducted on five commonly used text classification datasets.",
+      "reasons_to_accept": "1. The writing is good and the method is easy to follow.",
+      "reasons_to_reject": "1. The author mentions that large models perform poorly due to inadequate reasoning capability and performance constraints caused by window length limitations. However, the experimental results show that large models perform well (with an average accuracy of 90% under zero-shot) which makes it confusing. \n2. There is insufficient analysis and experimental support for the two reasons given. At the same time, there is no obvious answer to whether the strong enough reasoning capability proposed by the author is needed in these selected text classification datasets. \n3. There is a lack of novelty, and clues reasoning can be considered a natural extension of cot. Knn sampling is also something that has already been proposed in existing work. \n4. The method proposed by the author has limited improvement in performance.",
+      "questions_for_the_authors": "1. The experiment chose only one large model, which is text-devinci-003. Considering that ChatGPT has been released for eight months, why wasn't it considered in the experiment?  2. What do you think is the essential difference between your method and CoT?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

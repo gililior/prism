@@ -1,0 +1,440 @@
+[
+  {
+    "kind": "strength",
+    "text": "Instruction templates are provided in the paper (Table 8, 9, 10), which is crucial for reproducing the experiments.",
+    "grounding": "Tables 8, 9, 10",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "weakness",
+    "text": "No mention of seeds used for LLM generations or any variance analysis. This makes it difficult to assess the statistical significance of the results.",
+    "grounding": "Section 4.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not specify the exact versions of the LLMs used (e.g., GPT-4, ChatGPT).",
+    "grounding": "Table 10",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the exact versions of the LLMs used and the parameters used for generation.",
+    "grounding": "Table 10",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the seeds used for LLM generations and provide variance analysis (e.g., standard deviation) for the key results.",
+    "grounding": "Section 4.1",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific prompts used for each LLM?",
+    "grounding": "Tables 8, 9, 10",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used for evaluation publicly available?",
+    "grounding": "Section 4.1",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a new task and benchmark (SCAR) for evaluating analogical reasoning in LLMs, focusing on structure abduction in scientific analogies, and demonstrates the limitations of current LLMs on this task.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies a gap in the evaluation of LLMs' analogical reasoning abilities, moving beyond word analogies to system analogies, aligning with cognitive psychology.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction of the SCAR benchmark is a valuable contribution, providing a resource for evaluating LLMs on a novel task.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing methods for analogical reasoning, especially those that might address system analogies or structure abduction.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not clearly define the delta between the proposed method and existing methods, making it difficult to assess the novelty.",
+    "grounding": "Intro, Related Work",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a head-to-head comparison with a state-of-the-art method for analogical reasoning, even if it's adapted to the new task.",
+    "grounding": "Experiments",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the types of errors made by LLMs on the SCAR benchmark.",
+    "grounding": "Experiments",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of LLMs on SCAR correlate with their performance on other cognitive tasks?",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific challenges that LLMs face in structure abduction, as opposed to simpler analogy tasks?",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "How does the choice of domains in SCAR affect the difficulty of the task?",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of the work hinges on the definition of 'system analogy' and the specific structure abduction task.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "6",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper explores the analogical reasoning ability of LLMs, proposing a new benchmark (SCAR) and investigating the impact of background knowledge and CoT prompting. The authors acknowledge limitations in instruction design and evaluation methods.",
+    "grounding": "Sections 4.1, 6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors create 10 instruction templates and select the best one to evaluate model performance, mitigating the impact of instruction design.",
+    "grounding": "Section 4.1, Table 11",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a new benchmark, SCAR, for evaluating analogical reasoning in LLMs.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors acknowledge limitations in their work, such as the focus on concept mappings and the need for improved instruction design.",
+    "grounding": "Section 6",
+    "facet": "limitations"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the ability of SCAR to align with human cognition without providing sufficient evidence.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide enough details on how background knowledge and CoT prompting improve performance.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the experimental setup, including the specific LLMs used, the parameters, and the evaluation metrics.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a more in-depth analysis of the impact of background knowledge and CoT prompting on model performance.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of LLMs on SCAR compare to human performance?",
+    "grounding": "Section 6",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific types of background knowledge are most beneficial for LLMs in the SCAR task?",
+    "grounding": "Section 6",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the choice of instruction template impact the results?",
+    "grounding": "Section 4.1",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors adequately discuss the limitations of their work, including the focus on concept mappings and the need for improved instruction design.",
+    "grounding": "Section 6",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Ethics Statement",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present results of LLM performance across different tasks and settings. The clarity and effectiveness of the figures vary.",
+    "grounding": "Figures 1-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 appears to be well-labeled and supports the claims of domain transfer.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the results. Figure 4's heatmap lacks clear labels.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add error bars to the plots in Figure 3 to indicate the variance in the results. Provide a clear legend for the heatmap in Figure 4, explaining what each color represents.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific domains used in Figure 2? What do the different colors represent in Figure 4? What is the metric being measured in Figure 5?",
+    "grounding": "Fig 2, Fig 4, Fig 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics and do not provide detailed insights into the underlying mechanisms or specific examples.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Appendix D",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of experiments with LLMs on various analogy tasks. The tables vary in their completeness and statistical rigor. Some tables lack crucial statistical information, while others provide a more detailed analysis.",
+    "grounding": "Tables 1-11",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 includes accuracy results and overlap ratios, which provide a clear comparison of model performance across different tasks and settings. The use of bold and underlined text to highlight the best and second-best results aids in quick interpretation.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables (e.g., Table 1, Table 3) lack sufficient statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the results. The headers in some tables could be more descriptive.",
+    "grounding": "Tables 1, 3, 5, 6, 7, 9, 10, 11",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for all reported accuracy results. Add p-values to indicate the statistical significance of the differences between the models' performances. Provide clear and concise headers for each column in all tables.",
+    "grounding": "Tables 2, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to compare the performance of different LLMs? 2. What is the sample size for each experiment? 3. How were the instruction templates in Table 11 selected, and what is the impact of the selected template on the results?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables primarily focus on the performance of LLMs on specific analogy tasks. The generalizability of these results to other tasks or datasets is not fully addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a new task and benchmark (SCAR) for evaluating analogical reasoning in Large Language Models (LLMs), focusing on structure abduction, inspired by cognitive psychology's Structure Mapping Theory. The authors argue that existing word analogy tests are insufficient and demonstrate the challenges LLMs face on the new task. They propose a new benchmark and a chain-of-thought prompting method to improve performance.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization_clarity"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the motivation for the research, connecting it to limitations in existing methods and the need for a more cognitively aligned evaluation of LLMs.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The structure of the paper is logical, progressing from the problem definition to the proposed solution (task, benchmark, and method) and results.",
+    "grounding": "Introduction, Contributions",
+    "facet": "organization_clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'analogical structure abduction' is not precise. The paper mentions it is 'grounded in cognitive psychology' but does not provide a clear, concise definition. This is a core concept.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section or clear explanation of the notation used. While the concepts are explained, the formalisms (if any) are not explicitly defined, which could hinder understanding.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a clear, concise definition of 'analogical structure abduction' early in the introduction, perhaps with a formal definition or a more detailed explanation.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table or a section defining the symbols and terms used, especially if formalisms are employed in the benchmark or task definition.",
+    "grounding": "Methods section, Appendix",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the 'relational structure' formally defined or represented in the SCAR benchmark?",
+    "grounding": "Methods section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific evaluation metrics are used to assess the performance of LLMs on the analogical structure abduction task?",
+    "grounding": "Results section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the SCAR benchmark and the analogical structure abduction task is not detailed enough to allow for complete reproduction without further information (e.g., dataset details, evaluation metrics).",
+    "grounding": "Methods section",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Organization: 4/5, Clarity: 3/5, Terminology: 3/5",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential biases in the data used for the benchmark or the potential for the model to perpetuate or amplify existing societal biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the technology to be used for malicious purposes, such as generating misleading information or propaganda.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the broader societal impacts of the technology, such as its potential effects on education, scientific discovery, or public discourse.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential biases in the data and mitigation strategies. Discuss the potential for the technology to be used for malicious purposes and mitigation strategies. Include a discussion of the broader societal impacts of the technology.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Assess the potential for the benchmark to be used to create biased or harmful content.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel task of analogical structure abduction, which is grounded in cognitive psychology, and a new benchmark SCAR, which is a significant contribution over existing word analogy benchmarks.",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare with the methods used in [1] E-KAR benchmark, which also focuses on analogical reasoning. A direct comparison on the SCAR benchmark would be beneficial.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a baseline experiment using the E-KAR benchmark [1] methods on the SCAR dataset. This would provide a direct comparison of performance and highlight the advantages of the proposed structure abduction task.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper acknowledges the limitations of word analogies in reflecting LLMs' analogical reasoning abilities and addresses the gap between word analogy formats and human cognition.",
+    "grounding": "Intro, Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper mentions Chain of Thought prompting [2] but does not explicitly discuss its impact on the proposed task. It is important to analyze the effect of CoT on the SCAR benchmark.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate the performance of LLMs on the SCAR benchmark using Chain of Thought prompting [2]. This will help to understand if CoT can improve the performance of LLMs on the structure abduction task.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

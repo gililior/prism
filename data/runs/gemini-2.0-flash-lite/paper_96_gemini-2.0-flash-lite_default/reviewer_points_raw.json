@@ -1,0 +1,362 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "novelty"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper evaluates out-of-domain performance of query-as-context pre-trained models on the BEIR benchmark. The results show improvements on several datasets.",
+    "grounding": "Sec 4.5",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper evaluates the models on 14 publicly available datasets from the BEIR benchmark.",
+    "grounding": "Sec 4.5",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "weakness",
+    "text": "Insufficient details on the pretraining and fine-tuning processes are provided.",
+    "grounding": "Sec 4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed description of the experimental setup, including the specific datasets used and the evaluation metrics.",
+    "grounding": "Sec 4.5",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the datasets used in the BEIR benchmark publicly available? If so, please provide the links.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "Yes. The paper lacks details on the pretraining and fine-tuning processes, which hinders reproducibility.",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "No.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a query-as-context pre-training approach and evaluates it on MS-MARCO, TREC DL, and BEIR benchmarks. The results show improvements in both contrastive and generative context-supervised pre-training.",
+    "grounding": "Sec 4.4, 4.5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The query-as-context pre-training approach shows improved performance on MS-MARCO passage ranking and TREC DL datasets.",
+    "grounding": "Table 1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Out-of-domain evaluation on the BEIR benchmark demonstrates improvements for both coCondenser and CoT-MAE models when using query-as-context pre-training.",
+    "grounding": "Sec 4.5, Table 2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims the approach is effective and efficient, but the evidence for efficiency is not provided.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more detailed analysis of the specific contributions of each component of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost of the proposed method compared to the baseline methods?",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper does not adequately discuss the limitations of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents experimental results on out-of-domain evaluation using the BEIR benchmark. The evaluation is performed on 14 publicly available datasets.",
+    "grounding": "Section 4.5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds or reporting of variance.",
+    "grounding": "Section 4.5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information is provided regarding the environment used for the experiments.",
+    "grounding": "Section 4",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the training and evaluation scripts, along with the environment details (e.g., Dockerfile, Conda environment file).",
+    "grounding": "All sections",
+    "facet": "code/data availability, environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the seed used for all experiments and the variance across multiple runs.",
+    "grounding": "Section 4.5",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "questions",
+    "text": "Were the experiments run on a specific hardware setup? If so, please specify.",
+    "grounding": "Section 4",
+    "facet": "environment"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the datasets used in the experiments publicly available? If not, please provide information on how to access them.",
+    "grounding": "Section 4.5",
+    "facet": "data availability"
+  },
+  {
+    "kind": "limitations",
+    "text": "The review is limited by the lack of information on the code, environment, and seeds used in the experiments.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "no",
+    "grounding": "All sections",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Code/Data Availability: Poor. Seeds/Variance: Poor. Environment Reproducibility: Poor.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated for MS-MARCO and TREC Deep Learning datasets.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally support the claims, but could benefit from improved labeling and visual clarity.",
+    "grounding": "Figures 1-3",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 effectively compares the two pre-training methods.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks detailed axis labels, making it difficult to interpret the fine-tuning pipeline.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 2, add error bars to indicate the variance in performance.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the axes in Figure 2 clearly labeled with units?",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to high-level comparisons and do not provide detailed insights into the underlying mechanisms.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Paper is generally well organized with clear sectioning.",
+    "grounding": "Intro \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The problem of weakly correlated passages is clearly stated and motivated.",
+    "grounding": "Abstract, Intro",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'query-as-context pre-training' could be more precise, especially regarding the generation of queries.",
+    "grounding": "Abstract, Intro",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation section, making it difficult to follow the mathematical formulations.",
+    "grounding": "Methods section (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the query generation process (e.g., the model used, training data).",
+    "grounding": "Methods section (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table to define all symbols used in equations.",
+    "grounding": "Methods section (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific generative model (e.g., T5) is used for query generation?",
+    "grounding": "Methods section (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the query generation model trained or fine-tuned?",
+    "grounding": "Methods section (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a methods section prevents a full assessment of reproducibility.",
+    "grounding": "Methods section (if any)",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Organization: 4/5, Clarity: 3/5, Terminology: 4/5",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results on various datasets, comparing different models and pre-training approaches. The tables generally include performance scores, but the completeness of statistical information varies.",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The use of bold font to highlight the better scores in each comparison enhances readability and quickly identifies the superior performance.",
+    "grounding": "Tables 1, 2, 3, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Some tables may be missing crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the results.",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to provide a measure of result variability. Add p-values to indicate the statistical significance of the observed differences between methods.",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the results presented in each table? What are the standard deviations or confidence intervals for the reported scores? Are the datasets used in the tables representative of the broader domain? How were the human annotations in Table 5 conducted and what was the inter-annotator agreement?",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets and models evaluated. Generalizability to other datasets or models may be limited.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly differentiates itself from prior work by introducing a novel pre-training technique called 'query-as-context pre-training' to address the limitations of existing context-supervised pre-training methods, specifically the issue of weakly correlated pairs. This is a key contribution over methods like [2] that use context-supervised pre-training.",
+    "grounding": "Intro, Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance against the methods described in [1] and [3], which are highly cited works in the field of semantic models and dense retrieval model training, respectively. A direct comparison would strengthen the paper's claims.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the proposed 'query-as-context pre-training' with the method in [1] and [3]. This experiment should use the same datasets and evaluation metrics as the current paper to provide a fair comparison. This will help to quantify the performance gain of the proposed method over existing methods.",
+    "grounding": "Experimental Setup, Evaluation",
+    "facet": "experiment"
+  }
+]

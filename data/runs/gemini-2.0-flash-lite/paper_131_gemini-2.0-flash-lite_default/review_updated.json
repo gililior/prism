@@ -1,0 +1,156 @@
+{
+  "summary": "This paper introduces a novel causal intervention technique to mitigate entity bias in both white-box and black-box LLMs. The paper demonstrates the potential of this approach but lacks sufficient comparative analysis and clarity in several areas. Addressing the identified weaknesses and incorporating the suggested improvements will significantly strengthen the paper.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper proposes a novel causal intervention technique to mitigate entity bias in LLMs, clearly differentiating it from existing entity substitution techniques.",
+      "grounding": "Abstract, Intro/Related Work",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides implementation details, including backbone models, input formats, and parameter settings, supporting reproducibility.",
+      "grounding": "Section 4.1, Appendix A.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "The abstract clearly outlines the problem, solution, and contributions.",
+      "grounding": "Abstract",
+      "facet": "organization"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction provides a good overview of entity bias and its impact on LLMs.",
+      "grounding": "Introduction §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The tables include mean and standard deviation, providing a basic measure of result variability.",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 5 appears to support the claims made in the text.",
+      "grounding": "Figure 5",
+      "facet": "figures"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a detailed comparison with relevant prior work, especially those using causal interventions for bias mitigation, making the delta unclear.",
+      "grounding": "Related Work, §3.1. Authors claim comparison exists, but the delta is still unclear.",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide details on the computational resources used for the experiments, nor does it explicitly mention the random seeds used, hindering reproducibility.",
+      "grounding": "Sections 4 and 5",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The tables do not include confidence intervals or p-values, making it difficult to assess the statistical significance of the results.",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a dedicated section on societal impact, including potential risks, misuse cases, fairness considerations, and discussion of limitations.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The axes in Figure 5 lack clear labels and units, making it difficult to interpret the results.",
+      "grounding": "Figure 5",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term \"neighboring entities\" lacks a precise definition.",
+      "grounding": "Abstract, §3.2",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a quantitative comparison with a state-of-the-art method for entity bias mitigation.",
+      "grounding": "Sec 4.1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the selection of 'neighboring entities' and how their similarity is determined.",
+      "grounding": "§3.2",
+      "facet": "originality"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include the random seeds used for all experiments and specify the computational resources used.",
+      "grounding": "Sections 4 and 5",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a link to the code repository with instructions on how to reproduce the experiments.",
+      "grounding": "Sections 4 and 5",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include p-values or other statistical significance indicators to clarify the reliability of the observed differences between methods.",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed section on dataset licensing, consent, and privacy.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "For Figure 5, label the axes clearly and include a legend.",
+      "grounding": "Figure 5",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the \"specific structured causal model (SCM)\" and clarify the criteria for identifying \"similar entities\".",
+      "grounding": "Abstract, §3.1, §3.2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Elaborate on the practical implications of the \"in-context intervention\" for black-box LLMs.",
+      "grounding": "§3.3",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section discussing potential misuse, fairness concerns, and limitations of the approach.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing the proposed causal intervention method with a relevant baseline on the same tasks, datasets, and evaluation metrics.",
+      "grounding": "Sec 4.1",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include an ablation study to analyze the impact of different intervention strategies.",
+      "grounding": "Sec 4.1",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "rid": "rt1cx0wQA6",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper delves into the incorporation of syntactic knowledge into a language model through additional training. It introduces four pretraining tasks that focus on learning diverse syntactic perspectives. Additionally, the paper explores the utilization of gradient surgery and elastic weight consolidation methods as preventive measures against catastrophic forgetting. The main contributions of this research encompass: (1) the proposition of additional syntactic training incorporating four distinct syntactic tasks for language models, (2) the exploration of gradient surgery and elastic weight consolidation methods to mitigate catastrophic forgetting, and (3) the demonstration of the improved performance of the enhanced model across tasks such as CoLA, RTE, MRPC, and key phrase extraction.",
+      "reasons_to_accept": "1. The paper extensively investigates the integration of syntactic knowledge into a language model through additional training. It introduces four pretraining tasks that effectively contribute to this goal. The clarity of the ideas presented and the overall ease of following the paper are commendable. \n2. The ablation study conducted on four optimizers and four syntactic tasks provides a comprehensive analysis. The inclusion of these experiments sufficiently covers and evaluates the impact of these components.",
+      "reasons_to_reject": "1. The paper's novelty appears to be somewhat limited, as syntactic training has been widely used in previous methods, and the GS and EWC optimization functions are not entirely new. \n2. The study only explores encoder-only language models, and it may have been beneficial to expand the analysis to also include more commonly used decoder-only language models. For instance, it would have been useful to evaluate the proposed approach on models such as GPT. \n3. Despite leveraging external syntactic training, the study only demonstrates improvement on four of the tasks in GLUE, with no clear advancements observed in the remaining five tasks.",
+      "questions_for_the_authors": "Can you please provide information regarding the average performance in GLUE and whether the new method demonstrates any improvement in this score?",
+      "missing_references": "N/A",
+      "typos_grammar_style_and_presentation_improvements": "N/A",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "QDZx6l6qD9",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "To improve the peformance of pretrained transformer (BERT) models on tasks that use syntactic knowledge, the authors examine methods to train the model on a syntax-correlated task (dependency relations, phrases, clause status, coordination) together with a specialized optimizer that is intended to mitigate the catastrophic forgetting problem, namely Gradient Surgery or Elastic Weight Consolidation. \nThe authors find that the syntactic knowledge incorporated in this way improves performance on a subset of the GLUE tasks that they examine as well as for key phrase extraction",
+      "reasons_to_accept": "The method chosen by the authors seems to be fairly general and the results look good",
+      "reasons_to_reject": "Given that the main contribution consists in reinforcing the syntactic knowledge in a transformer model, the authors could discuss a bit more of the substantial body of literature that tries to do exactly that - on different tasks, or using techniques that are much more cumbersome, etc. - as a reader it isn't clear to me whether relation extraction or some other syntax-heavy task would profit even more from this.",
+      "questions_for_the_authors": "(A) What about the other GLUE tasks? Did you just do experiments on the subset presented in the paper?",
+      "missing_references": "Bai et al. (ACL 2021) Syntax-BERT: Improving Pre-trained Transformers with Syntax Trees",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "XBdEmOzeLq",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors argue that PLMs lack \"sufficient\" syntactic knowledge, and seek to add this knowledge via fine-tuning. They propose four different syntactic tasks to use during fine-tuning, however, if done naively, fine-tuning on a task which differs from the original pre-training brings the risk of catastrophic forgetting.  Four different methods for optimization (including two which are designed to prevent catastrophic forgetting) are compared on a number of benchmarks from GLUE, and a separate key phrase identification task.  At least one of the catastrophic forgetting-based optimizations typically offer the highest performance on each of the presented GLUE task, and better retain PPL performance.",
+      "reasons_to_accept": "- Both methods for catastrophic forgetting achieve respectable improvements in performance on GLUE in tasks requiring syntactic knowledge.\n- Good experimental rigor -- Many comparisons -- Many tasks -- Each comparison computed across multiple runs/hyperparameter settings",
+      "reasons_to_reject": "- The PLMs used (BERT) are by current standards, quite old, and quite small.  As work in scaling PLMs up to sizes orders of magnitude greater, performance on syntactic tasks has shown to improve naturally (along with many other useful emergent forms of knowledge).  Some comparison to larger models / application of this method to such models, is necessary to ensure that the method has any practical purpose.\n- There are also no baselines from existing work.  There are other forms of fine-tuning, such as adapters, which seek to add additional knowledge to PLMs with less chance of catastrophic forgetting.  The authors even cite one of these papers.  This is also a confusing oversight, because the many appropriate inline citations which contrast various decisions in this work to decisions in existing work demonstrate a great familiarity with the literation, so lacking any comparison to any existing methods is an odd oversight.\n- Some questionable design choices.  Perplexity is used as a measure of the model retaining semantic information after fine-tuning, and while that does relate to the original task, there are also aspects of domain drift which are possible and separate from catastrophic forgetting.  How are such factors controlled?\n- Related, there is questionable motivation.  Often when talking about catastrophic forgetting, both the original training and the new task are both relevant.  This is clear in the context of robotics, where learning a new behavior should not result in hindering the robot from performing existing behaviors.  Is this true in this case?  PPL is almost always not a valuable end goal, and the entire PLM/LLM paradigm is built around this notion of pre-training in whatever way leads to learning useful linguistic representations, before fine-tuning, aligning, or few-shotting the model towards the task the user actually cares about.  If users never care about both tasks in approximately equal measure, than what good is retaining the original model weights which were not pertinent to the target task?\n- There's arguably too much going on here.  The focus of the paper aims to be about catastrophic forgetting, but secondary to that, is also the problem of matching the right syntactic fine-tuning task to the right problem.  This is not entirely known a priori, so all possible pairings are explored, but realistically a good guess can be made (as it would likely be if pursued in a more practical setting).  For instance, it is no surprise that the phrase syntax task helps with key phrase identification.  The disadvantage of the exhaustive approach is that it has both distracted from the main takeaway points while cutting into the space available for supporting the main hypothesis.\n- No inclusion of baselines from existing work / SOTA on performance tables - Key extraction F1 results are better than standard optimizers, but negligibly so.\n- No discussion of GC vs EWC.  When a priori would you choose which method?  If the paper included only one such method, traditional optimizers would be the best choice in most situations.",
+      "questions_for_the_authors": "a)  Is the EWC procedure something first designed in this work?",
+      "typos_grammar_style_and_presentation_improvements": "- Cite GS when discussing it.\n- L345: Missing appendix reference",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

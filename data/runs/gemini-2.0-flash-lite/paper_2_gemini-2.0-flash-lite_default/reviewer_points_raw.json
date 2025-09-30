@@ -1,0 +1,224 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies a problem (co-occurrence bias in LLMs) and positions its work within the context of existing research on LLMs and factual knowledge probing.",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides empirical evidence (correlation analysis) to support its claims about co-occurrence bias, offering insights into why LLMs might fail on factual knowledge tasks.",
+    "grounding": "Sec 3",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear comparison to existing methods that address similar issues, making it difficult to assess the delta.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a quantitative comparison with existing debiasing techniques or methods that address factual inaccuracies in LLMs.",
+    "grounding": "Sec 4",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper's novelty hinges on the specific analysis of co-occurrence statistics and its impact on factual recall. The scope is somewhat narrow.",
+    "grounding": "Intro, Sec 3",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate the proposed debiasing method (filtering biased samples) on a broader range of datasets and LLMs.",
+    "grounding": "Sec 4",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper is well-organized, with a clear introduction, methods, and conclusion.",
+    "grounding": "Overall structure",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the problem of factual inaccuracies in LLMs and the authors' focus on co-occurrence statistics.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'co-occurrence statistics' could be more precise. What specific measure is used (e.g., raw counts, PMI)?",
+    "grounding": "Introduction, Methods",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for notation. This makes it difficult to follow the mathematical aspects of the analysis.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the co-occurrence calculation, including the specific formula or method used.",
+    "grounding": "Methods section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table of notation to clarify the symbols and variables used in the analysis.",
+    "grounding": "Methods section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific co-occurrence measure (e.g., raw counts, PMI) is used in the analysis?",
+    "grounding": "Methods section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the 'debiased LAMA' dataset constructed?",
+    "grounding": "Conclusion",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's reproducibility is limited without a clear description of the co-occurrence calculation and the debiasing process.",
+    "grounding": "Methods, Conclusion",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent in the provided text.",
+    "grounding": "Entire paper",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-written and addresses an important problem. However, improving the clarity of the methods and providing a notation table would significantly enhance its impact.",
+    "grounding": "Entire paper",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present results of model performance, but lack detailed axis labels and visual clarity.",
+    "grounding": "Figures 10-11",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 10 effectively shows the impact of model size and candidate set restriction on MRR in both zero-shot and fine-tuned settings. Figure 11 clearly presents the performance of term frequency baselines.",
+    "grounding": "Figures 10-11",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes in the figures lack clear labels and units, making it difficult to interpret the results precisely. The figures could benefit from improved visual design for better comprehension.",
+    "grounding": "Figures 10-11",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add axis labels with units (e.g., MRR, model size) to all figures. Include a legend to clarify the different lines or bars.",
+    "grounding": "Figures 10-11",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific model sizes and candidate set restrictions were used in Figure 10? What are the baselines used in Figure 11?",
+    "grounding": "Figures 10-11",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to micro-average MRR, which may not fully capture the nuances of model performance.",
+    "grounding": "Figures 10-11",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The provided text mentions figures but does not contain any actual tables. Therefore, a comprehensive assessment of table quality is not possible.",
+    "grounding": "Figures 10 and 11",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "N/A - No tables are present to assess.",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "N/A - No tables are present to assess.",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "N/A - No tables are present to assess.",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "Since no tables are provided, questions about methodology, statistical significance, or missing data cannot be formulated.",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The absence of tables limits the ability to assess the data presentation and statistical rigor.",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential misuse cases, such as the generation of false information or the amplification of existing biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss fairness considerations related to the co-occurrence bias and its impact on different demographic groups or topics.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed discussion of the broader societal impacts of the research, such as the potential for LLMs to influence public opinion or decision-making.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse scenarios, such as the generation of false or misleading information, and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address fairness considerations by analyzing the impact of the co-occurrence bias on different demographic groups and topics, and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand the discussion of broader societal impacts, including the potential influence of LLMs on public opinion and decision-making, and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  }
+]

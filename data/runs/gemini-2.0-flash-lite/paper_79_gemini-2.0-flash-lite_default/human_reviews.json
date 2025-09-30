@@ -1,0 +1,65 @@
+[
+  {
+    "rid": "ZZmz1EvXc0",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Robustness of the neural NLP models have become an extremely important topic as these neural models are abundantly used in real world applications. Perturbation-based robustness study is popular among the deep learning researchers, specifically, in the computer vision community where the nature of perturbation is continuous.  Perturbation-based robustness study in NLP faces the challenge of handling discrete input leading to discrete perturbation. This paper aims at connecting discrete perturbation to continuous perturbation so that perturbation in the continuous domain is applicable in NLP. Primary contributions of the paper include 1) quantifying the correlation between discrete and continuous perturbation, 2) designing a regression-based model (viz, PerturbScore) to estimate the correlation.",
+      "reasons_to_accept": "1. The paper studies one of the most important aspects of NLP research, i.e., measuring the robustness of the neural NLP models. \n2. To deal with imperceptibility of the discrete perturbations and combinatorial explosion in formulating those perturbations, the paper advocates for applying continuous perturbation. \n3. I really appreciate the two staged approach adopted by the authors: Firstly, mapping discrete perturbation to continuous perturbation with a set of non-trivial assumptions. This formalisation along with an optimization method the authors presented an elegant method for generating training examples each consisting of original input, discrete perturbation and equivalent continuous perturbation. Secondly, using those training instances, a regression model has been proposed to predict continuous prediction given a discrete perturbation. \n4. The authors performed extensive experiments to validate the claims and showcase the usefulness of the method",
+      "reasons_to_reject": "1. Many claims are ambiguous and are not supported by strong logic. ( see questions) 2. Given the results, I have doubt in the generalizability of the proposed model.",
+      "questions_for_the_authors": "1. Page 4, Column 2: the sentence  \u2018..... obtain a data tuple [S, P(S), \\epsilon] , which is the correlation\u2019 is a bit ambiguous. Assuming \u2018correlation\u2019 refers  to \u2018\\epsioln\u2019, is it a correlation between the discrete and continuous perturbations? Or to me it seems that \u2018\\epsilon\u2019 is a continuous surrogate for the discrete perturbation P(S). Please clarify. This may be confused with another correlation measured in section 4.2 in the form of Kendal and Pearson Index. Also, the tuple [S, P(S), \\epsilon] is not a correlation.\n2. Page 6, Column 1: How does better resistance of models trained FreeLB method against discrete and continuous perturbation verify assumption 1 and ensure correlation between discrete and continuous perturbation? There seems to be a logical gap. Please clarify 3. Page 6: Column 1: Table 2 shows count of data tuples under different \\epsilon ranges. This shows most of the discrete distributions correspond to lower continuous perturbation value ranges. Some of the data tuples have been discarded? The claim is as a small proportion of data tuples have been discarded, the method is able to find the \u2018norm ball that satisfies Assumption 3\u2019. What is the criteria for discarding the data tuples?  If it is manually selected then size of the set of discarded tuples may vary. Also, it is apparent why discarding a small proportion of tuples leads to satisfaction of Assumption 3.  4. Page 6: Column 1: There is no evidence in the paper that \u201cTextfooler method generates more discrete perturbations \u2026\u2026 and corresponding continuous perturbations require larger norm balls. Please specify if these experimental observations have been explicitly presented in any part of the paper.\n5. The cross-dataset analysis in Appendix shows that there is no significant difference in the correlation between edit-distance and PerturbScorer. In many cases, the correlation is poorer in PerturbScorer. Though the situation improves when the datasets are combined.  How these results reflect on the generalizability of the model?",
+      "typos_grammar_style_and_presentation_improvements": "1. Use of mixed case styles: Textfooler, textfooler 2. Page 5, Column 1, Line 1: \u2018Specifically, the notation x used in line 7\u2026\u2019. Assuming line 7 refers to the line no 7 of Algorithm 1, no mention of \u2018x\u2019 is present.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "5: Transformative: This paper is likely to change its subfield or computational linguistics broadly. It should be considered for a best paper award. This paper changes the current understanding of some phenomenon, shows a widely held practice to be erroneous in someway, enables a promising direction of research for a (broad or narrow) topic, or creates an exciting new technique.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "54DvMp7syH",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper addresses the research question: can we find a connection between discrete perturbation and continuous perturbation to study the robustness of neural NLP models? They approach this question by quantifying the connections with the norm-bound of gradient-based perturbations and training a regression model PerturbScorer to predict the strength of the connection (correlation). The resulting PerturbScorer can be useful for better understanding robust training methods of NLP models and transferring the robustness theories studied in the computer vision field to NLP.",
+      "reasons_to_accept": "1. This paper looks into an interesting problem of finding a continuous perturbation as a proxy for discrete perturbation, which provides a new angle to study the robustness of NLP models through the lens of continuous space.  2. Experiment results of PerturbScorer look promising, indicating that the generated perturbation dataset and the trained model are of good quality.\n3. The method is carefully designed and well-explained in Sec 3.",
+      "reasons_to_reject": "1. Limited numbers of models and datasets/tasks are studied in this paper. I hope to see similar results on more model architectures (including a simpler RNN model) and tasks to better support the generalization ability of PerturbScorer.\n2. I wish to see a concrete demonstration of how the PerturbScorer can be applied to broader scenarios such as studying the robustness of NLP models in continuous space, measuring sentence differences, etc.   3. The validity of the proposed method would be better supported by a theoretical proof of when the norm-bound would exist (the continuous perturbation effect is way bigger than discrete ones, line 342-345).",
+      "questions_for_the_authors": "1. The paper explores how to approximate a discrete perturbation with a continuous one. Is it possible to do the other way round, i.e. finding the corresponding discrete perturbation of a continuous one? This could make the two types of perturbations more connected.\n2. Do you use the same model (e.g. BERT) for perturbation dataset generation (sec 3.4) and perturbscoer (sec 3.5)? What would the correlation results be like if you use different types of models?",
+      "typos_grammar_style_and_presentation_improvements": "The paper seems to miss a brief introduction to the FreeLB method appeared in Fig 1 & Table 2. Can you add a few sentences to explain it?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "eR4itEZVTh",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, the authors study the problem of model robustness in NLP. Specifically, they seek to study the relationship between continuous and discrete perturbations in NLP models. The authors motivate this study by noting tha most robustness work in NLP focuses on discrete perturbations. However, this can be problematic as discrete perturbations are much more costly than their continuous counterparts. The authors first assume that there exists a connection between discrete and continuous perturbations, and using that design a method finds the proper norm bound between a continuous and discrete perturbation. They utilize this method to construct their own pertuber. They utilize this to conduct various studies comparing the two types of perturbations and the effect on model performance.\nPost-Rebuttal Update: I appreciate the detailed response. I find most of the responses satisfactory. I've raised my excitement from a 3 &rarr; 4",
+      "reasons_to_accept": "1. The goal of this study is well-motivated and clear.\n2. The authors do a strong job of supporting the assumptions made in Section 2 through empirical study.  3. The empirical results are comprehensive. Multiple datasets and methods are used.",
+      "reasons_to_reject": "1. More care can be taken in explaining the equation in Section 3. It was not obvious at first as to what exactly they should be measuring. An explanation given before or after each equation, explaining the purpose and intuition would be helpful.\n2. I don't find the results in presented in Section 4.4 to be very convincing. First, based on the results the authors state that the relationship between the discrete and continuous perturbations is weak. They conclude that discrete perturbations can't properly attack models. However, earlier they use Figure 1 to show that the continuous and discrete perturbations have a similar effect on model performance. It's hard to square these two assertions. Secondly, they note that PerturbScorer has a strong correlation with the continuous pertubations. I feel like this isn't surprising at all as PerturbScorer utilizes $\\epsilon$.",
+      "questions_for_the_authors": "1. What are the axes for the the plots in figure 1? I'd recommend including axis names in the future for better readability.\n2. Could you re-explain the significance of the findings from Section 4.4? See my comments in the weaknesses section.  3. Could you expound on some potential applications of this work? Ideally including a small section in the paper about this would be helpful.",
+      "typos_grammar_style_and_presentation_improvements": "1. I found it difficult to read Section 4. I'd recommend not utilizing so many sub sections (and sub-sub and so on...). However this may just be a personal taste.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

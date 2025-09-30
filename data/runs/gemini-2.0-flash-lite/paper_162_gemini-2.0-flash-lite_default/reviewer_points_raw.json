@@ -1,0 +1,470 @@
+[
+  {
+    "kind": "strength",
+    "text": "Datasets used for evaluation are clearly specified and sourced from HuggingFace.",
+    "grounding": "Section 3.2, Appendix D.2",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "weakness",
+    "text": "No mention of seeds used for random selection of examples or prompt generation, making results non-reproducible.",
+    "grounding": "Section 3.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on the software environment (dependencies, versions) is provided.",
+    "grounding": "All sections",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code used for prompt generation and evaluation, including the random seed used for example selection and label remapping.",
+    "grounding": "Section 3.2",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the variance of the results by running the experiments with different seeds.",
+    "grounding": "Section 3.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a requirements.txt or a Dockerfile to specify the software environment.",
+    "grounding": "All sections",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the 270k semantically-unrelated labels available for inspection?",
+    "grounding": "Section 3.2",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What is the compute infrastructure used for the experiments?",
+    "grounding": "All sections",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of code and environment details hinders reproducibility.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "All sections",
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper presents a new method, symbol tuning, and describes the tuning of four language models using this procedure.",
+    "grounding": "Section 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper states that symbol tuning improves performance on unseen in-context learning tasks, especially when prompts do not contain instructions or relevant labels.",
+    "grounding": "Section 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that symbol-tuned models were much better at algorithmic reasoning tasks, despite the lack of numerical or algorithmic data in the symbol-tuning procedure. However, the evidence supporting this claim is not provided.",
+    "grounding": "Section 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that symbol tuning (for some datasets) reunlocks the ability to follow flipped labels that was lost during instruction tuning. The evidence supporting this claim is not provided.",
+    "grounding": "Section 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the experimental setup, including the specific datasets used for evaluation and the metrics used to measure performance.",
+    "grounding": "Section 3.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include quantitative results to support the claims made in the conclusion.",
+    "grounding": "Section 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the limitations of the proposed method.",
+    "grounding": "Section 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What specific algorithmic reasoning tasks were used to evaluate the models?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does symbol tuning compare to other methods for improving in-context learning?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors do not adequately discuss the limitations of their claims.",
+    "grounding": "Section 9",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel fine-tuning procedure called \"symbol tuning\" that improves language models' ability to reason with in-context input-label mappings. (Intro)",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates improvements in several areas, including unseen in-context learning tasks, algorithmic reasoning, and handling flipped labels, providing a comprehensive evaluation of the proposed method. (Abstract, Sec 2, Sec 3)",
+    "grounding": "Abstract, Sec 2, Sec 3",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed discussion of how \"symbol tuning\" compares to other fine-tuning methods or prompt engineering techniques that aim to improve in-context learning. (Related Work)",
+    "grounding": "Related Work",
+    "facet": "relation to prior work"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a clear explanation of why symbol tuning is superior to other methods in the context of algorithmic reasoning tasks. (Sec 2)",
+    "grounding": "Sec 2",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with other fine-tuning methods or prompt engineering techniques, such as those mentioned in the introduction, to highlight the advantages of symbol tuning. (Intro)",
+    "grounding": "Intro",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more in-depth analysis of the specific algorithmic reasoning tasks where symbol tuning shows the most significant improvements. (Sec 2)",
+    "grounding": "Sec 2",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of symbol tuning vary with different choices of symbols?",
+    "grounding": "Methodology",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of symbol tuning, and in what scenarios might it not be effective?",
+    "grounding": "Discussion",
+    "facet": "limitations"
+  },
+  {
+    "kind": "limitations",
+    "text": "The effectiveness of symbol tuning may depend on the choice of symbols and the nature of the tasks.",
+    "grounding": "Methodology",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper evaluates a model's ability to perform on unseen tasks using 11 NLP datasets. The evaluation uses in-context learning settings with and without instructions and relevant labels. The paper ablates the number of in-context exemplars.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper uses 11 unseen NLP datasets for evaluation, ensuring the model's ability to generalize to new tasks.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "strength",
+    "text": "The evaluation setup includes different in-context learning settings, allowing for a comprehensive analysis of the model's reasoning capabilities.",
+    "grounding": "Fig 4",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not specify the number of random seeds used for evaluation, making it difficult to assess the statistical significance of the results.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient details on the specific metrics used for evaluation, making it difficult to assess the validity of the results.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for all reported results to assess statistical significance.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed description of the evaluation metrics used, including their definitions and how they are calculated.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "questions",
+    "text": "How many random seeds were used for each experiment? A higher number would increase the score.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific evaluation metrics are used (e.g., accuracy, F1-score)? Specifying the metrics would increase the score.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the datasets and prompts publicly available? Public availability would increase the score.",
+    "grounding": "Sec 3.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "limitations",
+    "text": "yes",
+    "grounding": "The lack of information on the number of random seeds and specific evaluation metrics limits the reproducibility and interpretability of the results.",
+    "facet": "methods"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "The paper does not appear to raise any ethical concerns.",
+    "facet": null
+  },
+  {
+    "kind": "provisional_ratings",
+    "text": "Quality: 3, Clarity: 3, Significance: 3, Originality: 3, Overall: 4, Confidence: 3",
+    "grounding": "Based on the evaluation of the methods.",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally support the claims, but could benefit from improved labeling and visual clarity.",
+    "grounding": "Figures 1-6",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 5 effectively visualizes the performance of symbol-tuned models across different task categories.",
+    "grounding": "Fig 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figures 1, 2, 3, 5, and 6 lack detailed axis labels and units, making it difficult to interpret the data precisely. Figure 4 is a text-based description and not a figure.",
+    "grounding": "Figures 1, 2, 3, 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to the axes of all plots (e.g., accuracy, task type, model size). Include units where applicable. Consider adding a legend to explain the different colors or symbols used in the plots.",
+    "grounding": "Figures 2, 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "How is performance measured in Figure 5? What are the specific tasks within each category? What are the baselines used in Figure 6?",
+    "grounding": "Figures 5, 6",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics, potentially obscuring nuances in the data.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The provided text mentions Table 1, but no actual table content is present. Therefore, the assessment is based on the description of the table and general expectations for a NeurIPS submission.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The description of Table 1 suggests it aims to present average model accuracy across multiple tasks, which is a good starting point for evaluating model performance.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks specific details. It's unclear what baselines are used, the exact metrics, and the statistical rigor (e.g., standard deviation, confidence intervals, p-values) are missing.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Table 1 should include standard deviations or confidence intervals to show the variability of the results. Also, include p-values to indicate statistical significance.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What are the specific baselines used in Table 1? 2. What statistical tests were used to compare the performance of the models? 3. How many examples were used for each task in Table 1?",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The scope of Table 1 is limited to the eleven NLP datasets mentioned in the text. The generalizability of the findings to other datasets or tasks is not clear.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces symbol tuning, a fine-tuning procedure for language models that replaces natural language labels with arbitrary symbols in in-context learning tasks. The authors evaluate symbol tuning on PaLM models, demonstrating improvements in unseen in-context learning, algorithmic reasoning, and the ability to follow flipped labels.",
+    "grounding": null,
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the key findings and contributions of the paper.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of the problem and motivates the proposed method.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'symbol tuning' could be more precise, especially regarding the scope of 'arbitrary symbols'.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for the methodology, making it difficult to understand the specifics of the symbol tuning procedure (e.g., datasets used, symbol generation).",
+    "grounding": "Sec 2",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the symbol generation process. How are the arbitrary symbols chosen? Are they unique?",
+    "grounding": "Sec 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table summarizing the datasets used for symbol tuning, including their sizes and characteristics.",
+    "grounding": "Sec 2",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clearly define all acronyms and abbreviations upon their first use.",
+    "grounding": "Throughout",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the rationale behind using Flan-PaLM models specifically? Are the results generalizable to other model architectures?",
+    "grounding": null,
+    "facet": "research_design"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive is symbol tuning to the choice of arbitrary symbols? Does the type of symbol (e.g., single character, word, etc.) affect performance?",
+    "grounding": null,
+    "facet": "research_design"
+  },
+  {
+    "kind": "questions",
+    "text": "Could you provide more details on the evaluation metrics used for the algorithmic reasoning tasks?",
+    "grounding": null,
+    "facet": "evaluation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a detailed methodology section and specific dataset information may hinder reproducibility.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "None",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper presents a novel approach to improve in-context learning. The clarity can be improved by providing more details on the methodology and symbol generation.",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address the potential for the technology to be used to generate misleading or harmful content.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss fairness considerations, such as potential biases in the training data and their impact on different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not include a Broader Impact section.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "rid": "m0usOksTlX",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "1. This paper proposes a framework called SUBSUMM for large-scale and multi-perspective opinion summarization. It introduces a review sampling strategy set based on sentiment analysis and contrastive information valuation to select high-quality review subsets from a large set of reviews. \n2. It proposes a two-stage training scheme that allows the model to learn from sub-optimal and optimal review subsets successively. The second stage uses contrastive learning to assign higher probability to better candidate summaries. \n3. Experiments on two datasets AmaSum and Rotten Tomatoes show SUBSUMM outperforms previous state-of-the-art models in generating pros, cons and verdict summaries from hundreds of reviews.",
+      "reasons_to_accept": "1. It addresses an important problem of summarizing large volumes of opinion text from different perspectives, which is useful for many real-world applications like marketing analysis and decision making. \n2. The proposed framework SUBSUMM achieves new state-of-the-art results on two benchmark datasets, and the in-depth analysis offers insights into the contribution of different components of the framework.",
+      "reasons_to_reject": "1. The problem setup itself is somewhat artificial - summarizing a very large set of reviews (average 76-74 reviews per product) when most real products would not have that many reviews. \n2. There is no component in the framework that specifically models aspect information which is crucial for opinion summarization. It is mainly driven by ROUGE scores. \n3. The two-stage training technique feels a bit ad-hoc. Ideally, the model should be able to learn from all data rather than just optimal subsets in later stages. Also, no mechanisms are introduced to reduce repetition and ensure diversity in the generated summaries.",
+      "questions_for_the_authors": "1. Have you tested SUBSUMM on any other datasets beyond online reviews to prove its generalization ability? \n2. The sampling strategies use sentiment analysis and ROUGE with reference summaries. How would the framework adapt to a purely unsupervised setting? \n3. What is the inference time of SUBSUMM on large review sets? Is it applicable for real-time usage? \n4. What were the main challenges faced in training the 2-stage model? Did you try any other scheduling or curriculum strategies?",
+      "missing_references": "1. Suyu Ge, Jiaxin Huang, Yu Meng, Jiawei Han. FineSum: Target-Oriented, Fine-Grained Opinion Summarization. WSDM 2023.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "shikfCDLTR",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "- This paper performs supervised opinion summarization with a long input setting. The study proposes a two-stage approach to perform the task. The experimental results show that the proposed method improves over the strong supervised opinion summarization baselines.",
+      "reasons_to_accept": "- It shows improvement compared to the strong supervised opinion summarization baselines.\n- It performs human evaluation using best-worst scaling (which is preferable) and demonstrates the effectiveness of the proposed system.",
+      "reasons_to_reject": "- The biggest issue with this study is the lack of comparison with long-document summarization studies, such as sparse attention-based methods and reduce-then-generate approaches.\n- I calculated the dataset statistics for your specific datasets and found that sparse attention-based encoder-decoder models, which often take 16k tokens as input, can handle all the reviews as input.\n- So, you should try the long-document summarization methods for a more comprehensive comparison.\n- I feel the BRIO and ChatGPT baselines are a bit unfair. Randomly sampled input is used for them. For training BRIO, I believe you should use an oracle set of reviews as input and perform a pipeline-based method for inference. For ChatGPT, you should use better retriever for the sampling stage.\n- As of 2023, I feel it is hardly acceptable to show a ROUGE score and claim that it is a superior model to ChatGPT. It is evident that ChatGPT is not aligned with the training set distribution, making it hard to achieve high ROUGE scores. However, with human evaluation, it can perform better. So, it feels a bit suspicious to claim that the proposed method is better than ChatGPT.",
+      "missing_references": "- [1] [Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150) (Beltagy et al., arXiv) - [2] [Big Bird: Transformers for Longer Sequences](https://proceedings.neurips.cc/paper/2020/file/c8512d142a2d849725f31a9a7a361ab9-Paper.pdf) (Zaheer et al., NeurIPS 2020) - [3] [DYLE: Dynamic Latent Extraction for Abstractive Long-Input Summarization](https://aclanthology.org/2022.acl-long.118) (Mao et al., ACL 2022) - [4] [Long Document Summarization with Top-down and Bottom-up Inference](https://aclanthology.org/2023.findings-eacl.94) (Pang et al., Findings 2023)",
+      "ethical_concerns": "No",
+      "questions_for_the_authors": "- I think this study is a really nice attempt. I'm really sad this is not an ARR submission. However, if you can address all the concerns raised in the reasons to reject during the rebuttal, I would consider raising the score.\n# after rebuttal Thanks for taking your time! I updated the score."
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "GXVGbMtFfA",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In the realm of opinion summarization, one of the primary challenges lies in creating comprehensive summaries that encompass diverse perspectives. The task becomes even more complex when dealing with a large number of reviews. However, this paper introduces a novel approach to address this issue by leveraging sentiment analysis and contrasting information from various reviews to identify the most suitable ones for each type of summary. The proposed model undergoes two stages of training. In the first stage, it is trained using Maximum Likelihood Estimation (MLE) to generate the initial summaries. Subsequently, in the second stage, the model is further refined by utilizing its capability to produce reasonable summaries, and it is trained on its own generated outputs. This innovative method shows promise in enhancing opinion summarization and streamlining the selection of reviews for different perspectives, ultimately leading to more effective and insightful summaries.",
+      "reasons_to_accept": "- ***Refreshing idea*** This idea presents a refreshing and novel approach by combining various techniques to achieve opinion summarization.\n- ***Good empirical analysis***          The paper conducts a robust empirical analysis, considering a substantial number of baselines and recent advances for comparison. Furthermore, the authors conduct thorough ablation studies, effectively justifying their choice for the final system design.",
+      "reasons_to_reject": "- Mismatch between motivation and experiments - One notable aspect where the paper falls short is the absence of comparisons with models capable of handling long context, such as the Longformer or any other recently released model with extended context length. Including such comparisons would have enriched the analysis and strengthened the overall contribution of the study.\n- Experiemnts with different values of K and N - The paper lacks experiments for different values of K, which is a significant limitation. By exploring various values of K, the authors could have gained valuable insights into the performance and behavior of their method under different settings. Additionally, it is essential to assess how well the proposed method performs when N (the number of samples or data points) is higher compared to other existing methods, as this was a primary motivation behind the research. By conducting experiments with varying N, the authors could have demonstrated the scalability and effectiveness of their approach and provided a more comprehensive evaluation of its performance in real-world scenarios. This absence of experimentation limits the paper's ability to fully support its main claims and conclusions. Including experiments with different values of K and diverse N settings would significantly enhance the paper's scientific rigor and strengthen its contribution to the field.",
+      "questions_for_the_authors": "- Clarification on K Value in Experiments:  The paper would benefit from explicitly stating the value of K used in the experiments within the main body of the text. If this information is currently relegated to the appendix, it should be brought forward to the main part of the paper for better accessibility and understanding.\n- The paper lacks clarity on how different subsets of reviews are chosen from Rotten Tomatoes data. It's also unclear which category the summary belongs to\u2014pros, cons, or verdict. These aspects require further explanation for better understanding.\n- Experiments involving retrieve and generate models, while not strictly mandatory, have become increasingly pertinent in the current age. The reviewer is understandably curious about your paper's positioning within the framework of \"Retrieve relevant context and generate.\" To address this curiosity, it would be valuable if you could furnish experiments demonstrating the application of your retrieval strategy on a Language Model (LM) like LLaMa and observe the resulting outcomes. Such experiments would serve to validate the relevance and effectiveness of your retrieval strategies independently of the specific language model employed",
+      "missing_references": "Line 130 - \u201cThese methods work well\u2026\u201d - Is this an opinion of the paper. Can you add a previous work that shows that the previous works dont work when the number of reviews increase",
+      "typos_grammar_style_and_presentation_improvements": "The first line in the introduction is too cumbersome to read. I think you can remove the heavy sounding words and simplify it.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

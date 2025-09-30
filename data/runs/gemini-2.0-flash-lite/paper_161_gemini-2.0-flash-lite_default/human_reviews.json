@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "qkwc9rewRI",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a large dataset, WikiWeb2M, for studying multimodal webpage understanding. Additionally, the authors propose a novel attention mechanism, Prefix Global, to enhance performance and efficiency. Extensive experiments and analyses demonstrate the superiority of both the dataset and the proposed method.",
+      "reasons_to_accept": "(1) The paper is very well-written and easy to follow. The organization of the manuscript effectively follows their contributions.\n(2) This paper's contributions, including both the dataset and the new attention mechanism, will significantly benefit the development of multimodal webpage understanding.\n(3) The experiments and analyses are conducted comprehensively, encompassing ablation studies and efficiency analysis.\n(4) Figure 4 demonstrates that the proposed method does not encounter performance degradation as the input sequence length increases, which is a promising solution for handling long texts.",
+      "reasons_to_reject": "(1) Other evaluation metrics, especially those [1,2] that reflect human preference and those designed for multimodal evaluation [3,4], should be reported (see missing references section).",
+      "questions_for_the_authors": "(1) Is there any noise present in the dataset parsing process? If so, including those noises and discussing their types will be beneficial.\n(2) As mentioned in line 236, the method utilizes the earlier content in a body of text. Have the authors explored other parts, such as the last content in a body of text (which is sometimes the conclusion)?",
+      "missing_references": "[1] Bertscore: Evaluating text generation with bert, ICLR 2018.\n[2] BLEURT: Learning Robust Metrics for Text Generation, ACL 2020.\n[3] CLIPScore: A Reference-free Evaluation Metric for Image Captioning, EMNLP 2021.\n[4] EMScore: Evaluating Video Captioning via Coarse-Grained and Fine-Grained Embedding Matching, CVPR 2022.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "5: Excellent: This study is one of the most thorough I have seen, given its type.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "ixVVHzIEhA",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper introduces the Wikipedia Webpage suite (WikiWeb2M) dataset, which consists of 2 million webpages, to study multimodal webpage understanding. The key feature of WikiWeb2M is that it retains the complete web content, instead of information filtered for a particular use case. WikiWeb2M enables a systematic study of several generative modeling tasks with text as the output: page description generation, section summarization, and contextual image captioning. To address the long context problem, the authors also propose a novel method called Prefix Global, which selects the most relevant image and text content as global tokens to attend to the rest of the webpage for context. The experimental results demonstrate that the new annotations from WikiWeb2M improve task performance compared to prior data. Comprehensive analyses of sequence length, input features, and model size were also conducted.",
+      "reasons_to_accept": "1. WikiWeb2M is a useful resource for multimodal webpage understanding. The inclusion of both image-caption pairs and long text articles in one place makes it a comprehensive dataset for various generative tasks. \n2. The proposed Prefix Global method is well-motivated. It helps lower computational complexity and retain performance. \n3. The experimental results demonstrate the utility of WikiWeb2M annotations. Comprehensive analyses were also conducted.",
+      "reasons_to_reject": "1. It would be interesting to see the performance of LLMs with vision input (e.g., llava) on the proposed dataset.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "5: Excellent: This study is one of the most thorough I have seen, given its type.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "zeTKXLVeEZ",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The submission introduces three new generative tasks: page description generation, section summarization, and contextual image caption to verify multimodel webpage understanding. A dataset of 2M pages named WikiWeb2M also be introduced. The authors also design a novel attention mechanism Prefix GLobal to select the most relevant image and text content.",
+      "reasons_to_accept": "It is well written with detailed analysis. \nIt provides a large dedicated dataset  of MultimodalWebpage with a trained model on this dataset.",
+      "reasons_to_reject": "The tasks they proposed are either multi-modal summarization or captioning and don't have much novelty.\nThe contribution of structural metadata signaling is not clear.",
+      "questions_for_the_authors": "What are the contributions of structural data work in different tasks?  As the first sentence can be a reasonable summary, how do you know if the model will directly borrow the first sentence to make the task trivial?",
+      "missing_references": "Pauwels, Luc. \" A multimodal framework for analyzing websites as cultural expressions.\" Journal of Computer-Mediated Communication 17.3 (2012): 247-265.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

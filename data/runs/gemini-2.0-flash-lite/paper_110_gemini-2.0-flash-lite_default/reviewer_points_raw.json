@@ -1,0 +1,362 @@
+[
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a generative spoken language model based on continuous word-sized acoustic tokens. The model's performance is comparable to models using discrete units, suggesting that a lexicon of types may not be necessary. The paper also discusses potential improvements and future work.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The model generates speech with similar diversity and accuracy as models based on discrete units.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The performance was achieved with segments not perfectly aligned with word boundaries.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The claim that building a lexicon of types is not necessary is based on the model's performance, but the paper does not provide direct evidence to support this claim.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the impact of the segment size on memory usage.",
+    "grounding": "Sec 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Further analysis is needed to quantify the impact of better word boundary alignment on performance.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "More experiments are needed to better limit the leakage of low-level acoustic information.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the model's performance compare to other state-of-the-art models?",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific improvements are expected with better word boundary alignment?",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the need for further work to improve the model, including better word boundary alignment and a better speech decoder.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a Generative Spoken Language Model (GSLM) using word-size continuous audio embeddings, aiming to improve memory efficiency and interpretability compared to discrete unit-based models. The authors replace standard LM components (lookup table, cross-entropy loss, multinomial sampling) with alternatives suitable for continuous embeddings. The model's performance is evaluated against discrete unit models.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the limitations of existing discrete unit-based spoken language models and proposes a novel approach using continuous word-size embeddings to address these limitations. The motivation is well-grounded in the NLP literature, drawing parallels between character/word-based text LMs and the proposed approach.",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims comparable performance to discrete unit models, but the specific baselines and the extent of the comparison are not fully clear. The paper should provide more details on the baselines used for comparison and the metrics used to evaluate the performance.",
+    "grounding": "Abstract, Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with the most relevant and recent discrete unit-based GSLMs, such as those by Lakhotia et al. (2021) and Borsos et al. (2022), using the same datasets and evaluation metrics. This will strengthen the claims of comparable performance.",
+    "grounding": "Abstract, Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the Lexical Embedder and how it facilitates interpretability. Include examples of the phonetic and semantic properties of the embeddings before and after the Lexical Embedder.",
+    "grounding": "Abstract, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed model handle the variability in speech (speaker, accent, speech rate) compared to discrete unit models?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost (training and inference) of the Lexical Embedder compared to the lookup table in discrete unit models?",
+    "grounding": "Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "Are the audio examples available on the website sufficient to assess the quality of the generated speech?",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the effectiveness of the Lexical Embedder and the ability of the continuous embeddings to capture the nuances of speech. The scope is limited to spoken language modeling.",
+    "grounding": "Abstract, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": "n/a",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "Paper is generally well organized with clear sectioning.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly motivates the problem and the paper's approach.",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"Lexical Embedder\" is introduced without a clear definition of its inputs, outputs, and internal workings. This is crucial for understanding the core contribution.",
+    "grounding": "Abstract, \u00a71, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear explanation of the baseline models used for comparison, making it difficult to assess the significance of the results.",
+    "grounding": "Abstract, \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the \"Lexical Embedder\" in the methods section, including its architecture and training procedure.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clearly define the metrics used to evaluate the generation quality and provide details on the human evaluation process.",
+    "grounding": "Abstract, \u00a73",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table of notation to define all symbols used in the equations and throughout the paper.",
+    "grounding": "Throughout",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What is the specific architecture of the \"Lexical Embedder\"?",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the contrastive loss function work in this context?",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific advantages of using k-NN sampling compared to other sampling methods?",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed information on the \"Lexical Embedder\" and evaluation metrics may hinder reproducibility.",
+    "grounding": "Methods, Results",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Overall, the paper presents an interesting approach to spoken language modeling. However, the lack of detail in key areas, such as the \"Lexical Embedder\" and evaluation metrics, needs to be addressed to improve clarity and reproducibility.",
+    "grounding": "Abstract, Methods, Results",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present the methodology and results, but some lack clarity in axes and legends.",
+    "grounding": "Figures 1-4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 clearly illustrates the sampling procedure.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the performance metrics.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Figure 3, label the axes with clear descriptions and units (e.g., PPX, VERT). Include a legend to clarify the different models and their corresponding lines.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "In Figure 4, what do the colors (red and green) represent in the t-SNE representations?",
+    "grounding": "Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on performance metrics and token representations, limiting the ability to assess other aspects of the model.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of various models on speech tasks, with a focus on zero-shot performance and generation quality. The tables include different metrics like ABX and NED scores, but the completeness of statistical information varies.",
+    "grounding": "Tables 1-11",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 includes both NED and ABX scores, providing a more complete picture of model performance. The inclusion of scores for both acoustic and lexical tokens is also a strength.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the results. Some tables also have unclear headers or missing descriptions of the metrics used.",
+    "grounding": "Tables 1, 3, 4, 5, 6, 7, 8, 9, 10, 11",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for all reported scores. Add p-values to indicate statistical significance of performance differences between models and configurations. Clearly define all acronyms and metrics in the table headers or captions.",
+    "grounding": "Tables 1-11",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the differences in performance between the models? What is the definition of VERT? What are the specific details of the speech segmentation methods used in Table 3? How were the example generations in Tables 8, 9, and 10 selected, and what is the meaning of the VERT values?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets (LibriSpeech, LL6k-clean) and tasks used. Generalizability to other datasets and tasks is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not include a dedicated section on societal impact, risks, or potential misuse.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a Broader Impact section that discusses potential risks, such as the generation of deepfakes or the spread of misinformation, and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel Generative Spoken Language Model (GSLM) based on word-size continuous-valued audio embeddings, which is a departure from the standard discrete unit-based approaches in the speech community (Intro).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper replaces the lookup table for lexical types with a Lexical Embedding function, cross-entropy loss with a contrastive loss, and multinomial sampling with k-NN sampling, demonstrating a different approach to spoken language modeling (Intro).",
+    "grounding": "Intro",
+    "facet": "method"
+  },
+  {
+    "kind": "strength",
+    "text": "The model achieves comparable performance to discrete unit GSLMs in generation quality, as measured by automatic metrics and human judgements, while being more memory efficient (Intro).",
+    "grounding": "Intro",
+    "facet": "performance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare with the method described in [1] (Jacobs et al., 2021), which also uses acoustic word embeddings. A direct comparison would help to highlight the specific advantages of the proposed approach.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper mentions the use of a contrastive loss, similar to Algayres et al. (2022b), but does not provide a detailed comparison of the loss function or architecture differences. A more in-depth discussion would be beneficial.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the proposed GSLM with a baseline using the acoustic word embeddings from [1] (Jacobs et al., 2021). This experiment should include a quantitative analysis of generation quality (e.g., using metrics like WER after ASR transcription) and memory efficiency.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study to isolate the impact of the Lexical Embedding function, contrastive loss, and k-NN sampling. This would help to understand the contribution of each component to the overall performance.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

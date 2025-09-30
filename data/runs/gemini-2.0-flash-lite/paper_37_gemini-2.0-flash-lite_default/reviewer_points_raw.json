@@ -1,0 +1,362 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces INSTRUCTOR, a method to improve unsupervised conversational dense retrieval using Large Language Models (LLMs). The approach uses frozen LLMs to generate supervised signals for training ad-hoc retrievers. Experiments demonstrate performance improvements across various retrievers.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper presents experimental results on multiple datasets (QReCC, TopiOCQA, CAsT-19, CAsT-20) demonstrating the effectiveness of INSTRUCTOR.",
+    "grounding": "Sec 4.1, Table 1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper analyzes the impact of different instruction types and LLM sizes on retrieval performance, providing insights into the method's behavior.",
+    "grounding": "Figure 6, Figure 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of the method without sufficient evidence. The experiments are limited to specific datasets and settings.",
+    "grounding": "Sec 4.1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper's conclusion overstates the significance of the results without acknowledging the limitations of the experimental setup.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on a wider range of datasets and retrieval models to validate the generalizability of INSTRUCTOR.",
+    "grounding": "Sec 4.1",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the computational cost and efficiency of INSTRUCTOR compared to other methods.",
+    "grounding": "Sec 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How sensitive is INSTRUCTOR to the choice of LLM? Are the improvements consistent across different LLMs?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "What is the impact of the different instruction strategies on the overall performance?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations related to computational resources and the size of the LLMs used.",
+    "grounding": "Sec 6",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces INSTRUCTOR, an unsupervised conversational dense retriever. The evaluation uses QReCC, TopiOCQA, CAsT-19, and CAsT-20 datasets across unsupervised, low-resource, and zero-shot settings.",
+    "grounding": "Sections 3 & 4",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper details the datasets used for evaluation, including QReCC, TopiOCQA, CAsT-19, and CAsT-20.",
+    "grounding": "Section 4.1",
+    "facet": "data availability"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds or report variance across multiple runs.",
+    "grounding": "Section 3 & 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the environment used for training and evaluation.",
+    "grounding": "Sections 3 & 4",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository, including the training and evaluation scripts. Include a requirements.txt or equivalent for environment setup.",
+    "grounding": "Code repository",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the random seeds used for all experiments and report the variance (e.g., standard deviation) across multiple runs.",
+    "grounding": "Section 3 & 4",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details about the hardware and software environment used for training and evaluation (e.g., operating system, Python version, library versions, and GPU type).",
+    "grounding": "Section 3 & 4",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used publicly available, or are there any licensing restrictions?",
+    "grounding": "Section 4.1",
+    "facet": "data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost (e.g., GPU hours) for training and evaluation?",
+    "grounding": "Section 3 & 4",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the LLMs used in the INSTRUCTOR model publicly available or require specific access?",
+    "grounding": "Section 3",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the information provided in the paper. Without access to the code, data, and environment details, a complete assessment of reproducibility is not possible.",
+    "grounding": "Paper content",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Partially reproducible",
+    "grounding": "Based on the information provided in the paper.",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present experimental results, but some lack clear labels and visual clarity.",
+    "grounding": "Figures 1-12",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figures 5, 6, 7, 8, 9, 10, 11, and 12 effectively support the claims by presenting performance metrics across different experimental settings.",
+    "grounding": "Figures 5-12",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figures 1, 2, and 3 lack detailed labels and clear visual explanations of the methods. Axes in performance plots are not always clearly labeled with units.",
+    "grounding": "Figures 1, 2, 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Improve Figure 1 by adding more descriptive labels and annotations to the retrieve-then-generate pipeline. Add axis labels and units to all performance plots (Figures 4-12). Include legends to clarify the meaning of different colors and line styles.",
+    "grounding": "Figures 1-12",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors and line styles represent in the performance plots (Figures 4-12)? What are the specific metrics used in each figure? Are the error bars included to show the confidence intervals?",
+    "grounding": "Figures 4-12",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on performance metrics, potentially limiting the understanding of the underlying mechanisms and qualitative aspects of the proposed method.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results across different datasets and settings. The tables vary in their presentation, with some focusing on performance metrics and others providing example data.",
+    "grounding": "Tables 1-11",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Tables 5-10 provide clear examples of the data used, which aids in understanding the context and application of the model.",
+    "grounding": "Tables 5-10",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables 1-4 lack detailed statistical information such as standard deviations or confidence intervals, making it difficult to assess the reliability of the results. The absence of p-values hinders the ability to determine the statistical significance of the observed differences.",
+    "grounding": "Tables 1-4",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations, confidence intervals, and p-values in Tables 1-4 to provide a more complete statistical analysis. Clearly define all metrics used in the tables.",
+    "grounding": "Tables 1-4",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used to evaluate the performance in Tables 1-4? What statistical tests were used to determine the significance of the results? Are the results in Tables 1-4 averages over multiple runs, and if so, how many?",
+    "grounding": "Tables 1-4",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and experimental settings described. The generalizability of the findings to other datasets or scenarios is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces INSTRUCTOR, an unsupervised method for conversational dense retrieval using large language models (LLMs). It addresses the challenges of supervised methods, such as the need for labeled data and the difficulty of compressing conversational context into a single vector. INSTRUCTOR leverages LLMs to generate relevance scores between conversation sessions and passages, guiding the training of a conversational retriever.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization_clarity"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the context, motivation, and problem statement, outlining the limitations of existing methods and the proposed solution.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a clear overview of the retrieve-then-generate pipeline and the challenges of conversational retrieval.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'instructing strategies' and their specific implementation lacks clarity. The paper mentions three strategies (context, query, and response) but doesn't fully explain how they are applied.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper could benefit from a more detailed explanation of the LLM's role in generating relevance scores, including the specific loss function or scoring mechanism used.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the three instructing strategies (context, query, and response) and how they are implemented within the LLM framework.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section or subsection that explicitly details the loss function or scoring mechanism used by the LLM to generate relevance scores.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider adding a table of notation to clarify the symbols and variables used throughout the paper.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How do the three instructing strategies specifically address the challenges of noisy conversation context and topic switching?",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost of using LLMs for relevance scoring compared to traditional methods?",
+    "grounding": "Methods Section, Results Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How sensitive is the performance of INSTRUCTOR to the choice of LLM?",
+    "grounding": "Methods Section, Results Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the methods is not detailed enough to fully reproduce the results without additional information.",
+    "grounding": "Methods Section",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent in the provided text.",
+    "grounding": "Entire paper",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the LLMs or the retrieval process.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the system to be used to generate misleading or biased information.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for misuse of the system.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a Broader Impact section addressing potential risks, fairness, and misuse.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss mitigation strategies for identified risks, such as bias detection and mitigation techniques.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Detail mechanisms for ensuring factual accuracy of generated responses.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  }
+]

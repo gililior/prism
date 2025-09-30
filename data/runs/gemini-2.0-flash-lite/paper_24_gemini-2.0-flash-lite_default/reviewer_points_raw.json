@@ -1,0 +1,512 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper reports the mean and standard deviation of the results across multiple runs (3 runs).",
+    "grounding": "Table 2, Table 3",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly mention the random seeds used for the experiments.",
+    "grounding": "Sec 6.2, Sec 6.3",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide details about the software environment used for the experiments.",
+    "grounding": "Sec 6",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for each experiment in the paper or supplementary material.",
+    "grounding": "Sec 6.2, Sec 6.3",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a detailed description of the software environment (e.g., using a requirements.txt or a Dockerfile) to ensure reproducibility.",
+    "grounding": "Sec 6",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the random seeds used in the experiments available?",
+    "grounding": "Sec 6.2, Sec 6.3",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code and the environment used for the experiments available?",
+    "grounding": "Sec 6",
+    "facet": "environment reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper does not provide enough information to fully assess the reproducibility of the experiments.",
+    "grounding": "Sec 6",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the impact of SEMLINK structures on sequence labeling performances in VerbNet and PropBank. It compares different models and training strategies, including multitask learning, joint CRF, and constrained inference, evaluating their performance on CoNLL05 data.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides a detailed comparison of different models and training strategies, including multitask learning, joint CRF, and constrained inference.",
+    "grounding": "Table 2, Table 3",
+    "facet": "methods"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper includes an analysis of SEMLINK violation rates (\u03c1) to assess the consistency of model predictions with SEMLINK structures.",
+    "grounding": "Sec 6.2",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks details on the specific architectures used for the models, making it difficult to reproduce the results.",
+    "grounding": "Insufficient evidence",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient information on the hyperparameter tuning process.",
+    "grounding": "Insufficient evidence",
+    "facet": "methods"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a more detailed description of the model architectures used in the experiments.",
+    "grounding": null,
+    "facet": "methods"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more thorough discussion of the hyperparameter tuning process, including the search space and evaluation metrics.",
+    "grounding": null,
+    "facet": "methods"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to evaluate the contribution of each component of the proposed method.",
+    "grounding": null,
+    "facet": "methods"
+  },
+  {
+    "kind": "question",
+    "text": "Are the random seeds used for training and evaluation publicly available?",
+    "grounding": null,
+    "facet": "methods"
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost of the proposed method compared to the baseline methods?",
+    "grounding": null,
+    "facet": "methods"
+  },
+  {
+    "kind": "question",
+    "text": "How sensitive are the results to different choices of hyperparameters?",
+    "grounding": null,
+    "facet": "methods"
+  },
+  {
+    "kind": "limitations",
+    "text": "yes",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a joint model for VerbNet and PropBank SRL, leveraging SEMLINK constraints during decoding and a constrained marginal model for learning. It aims to address the limitations of multitask learning by jointly modeling the tasks and incorporating SEMLINK knowledge.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the limitations of existing multitask learning approaches for SRL and proposes a novel joint modeling approach to address these limitations.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The use of SEMLINK constraints during decoding and the constrained marginal model for learning are novel contributions.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims state-of-the-art results, but the specific baselines and the delta improvements need to be clarified and justified with more detailed comparisons. The paper should provide more details on the specific baselines and the significance of the improvements.",
+    "grounding": "Abstract, Sec 4.1",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide enough details on the implementation of the joint CRF model and the constrained marginal model. The paper should provide more details on the model architecture, training details, and hyperparameter settings.",
+    "grounding": "Sec 3",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a head-to-head comparison with the best performing multitask learning model on the same dataset, highlighting the specific advantages of the proposed joint model.",
+    "grounding": "Related Work, Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide an ablation study to analyze the impact of SEMLINK constraints and the constrained marginal model on the overall performance.",
+    "grounding": "Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the performance of the model on different types of sentences and predicates to understand the strengths and weaknesses of the proposed approach.",
+    "grounding": "Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed approach handle ambiguous mappings in SEMLINK?",
+    "grounding": "Intro, Related Work",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What are the computational costs of the joint CRF model and the constrained marginal model compared to the baselines?",
+    "grounding": "Sec 3, Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "Are there any limitations on the types of sentences or predicates that the model can handle effectively?",
+    "grounding": "Sec 4",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the effectiveness of SEMLINK mappings and the availability of PropBank-only data.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "6",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the impact of SEMLINK constraints on sequence labeling performance, specifically in the context of VerbNet and PropBank. The authors evaluate different models and training setups, including multitask learning, joint CRF, and semi-supervised learning, using the CoNLL05 dataset. They analyze the effects of SEMLINK constraints during inference and the influence of semi-supervised learning on in-domain and out-of-domain performance. The results indicate that incorporating SEMLINK constraints during inference improves F1 scores, particularly for VerbNet, and that the effectiveness of semi-supervised learning depends on the model and dataset.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates that using SEMLINK constraints during inference improves F1 scores, especially for VerbNet, supported by the results in Table 3 and the statistical significance tests.",
+    "grounding": "Table 3, Sec 6.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper shows that the Joint CRF model outperforms multitask learning in terms of overall SRL F1 scores across WSJ and Brown sets, as stated in Sec 6.3.",
+    "grounding": "Sec 6.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the benefits of semi-supervised learning without sufficient evidence. The results on semi-supervised learning are mixed, and the paper acknowledges that the effectiveness depends on the model and dataset. The claim that the constrained marginal model improves generalization is not fully supported, as the results are also mixed.",
+    "grounding": "Sec 6.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide enough evidence to support the claim that the improvements are due to the reduced search space during decoding. While the authors hypothesize this, they do not provide any analysis to support this claim.",
+    "grounding": "Sec 6.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the impact of SEMLINK constraints during inference, comparing performance with and without the constraints while keeping all other factors constant.",
+    "grounding": "Sec 6.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the types of errors corrected by the SEMLINK constraints, including examples of the corrected and degraded predictions.",
+    "grounding": "Sec 6.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What specific aspects of the SEMLINK structure are most critical for improving the F1 scores?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "How does the choice of the semi-supervised learning method affect the performance and the SEMLINK violation rates?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "question",
+    "text": "Can the authors provide more details on the computational cost of using SEMLINK constraints during inference?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations of multitask learning and the mixed results of semi-supervised learning. However, they could further discuss the limitations of their approach, such as the potential for overfitting to the training data and the sensitivity of the results to the choice of hyperparameters.",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents results in tables. The figures are not present in the text.",
+    "grounding": "Tables 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The tables are well-organized and present the results clearly.",
+    "grounding": "Tables 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "No figures are present to evaluate.",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include figures to visualize the results, such as performance plots.",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are there any visualizations of the model's predictions?",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the absence of figures.",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a joint model for VerbNet and PropBank semantic role labeling (SRL), leveraging SEMLINK constraints to improve performance. It proposes a constrained marginal model to benefit from PropBank-only data and achieves state-of-the-art results on the CoNLL05 benchmark.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the problem of disjoint label sets in SRL and the limitations of existing multitask learning approaches.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly explains the motivation for using SEMLINK and the benefits of joint modeling.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of the 'joint CRF model' and 'constrained marginal model'.",
+    "grounding": "Abstract, \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a clear explanation of the input constructions used to infer VerbNet arguments from PropBank arguments.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the proposed models (joint CRF and constrained marginal model), including their architectures and loss functions.",
+    "grounding": "Abstract, \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Elaborate on the 'special input constructions' used for inferring VerbNet arguments.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table of notation to define all symbols used in the equations and model descriptions.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the joint CRF model incorporate SEMLINK constraints during training and inference?",
+    "grounding": "Abstract, \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the specific architecture of the constrained marginal model?",
+    "grounding": "Abstract, \u00a72",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the details of the 'special input constructions'?",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of detailed model descriptions and notation could hinder reproducibility.",
+    "grounding": "Abstract, \u00a72",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper presents a novel approach to SRL with promising results. However, the lack of detail in the model descriptions and notation could affect clarity and reproducibility.",
+    "grounding": "Overall",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results comparing different models and configurations for sequence labeling tasks. The tables include mean and standard deviation, but lack detailed statistical significance information in some cases.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 includes mean and standard deviation for each data point, providing a measure of result variability.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 is missing, and the description of the table does not provide enough information to assess its quality. Table 3 does not explicitly report p-values for all comparisons, although it mentions the use of t-tests.",
+    "grounding": "Table 1, Table 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include p-values or confidence intervals in Table 3 to clearly indicate the statistical significance of the improvements.",
+    "grounding": "Table 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What specific statistical tests were used to determine the significance levels reported in Table 3? 2. What is the structure and content of Table 1? 3. Are the improvements in F1 scores statistically significant across all datasets and models in Table 2?",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and models evaluated.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly discuss potential risks associated with the proposed SRL model, such as its potential for misuse or the amplification of existing biases in the data.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address fairness considerations, such as potential biases in the datasets used or the model's performance across different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section on broader impacts, limiting the discussion to the technical aspects of the model.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse cases and mitigation strategies, such as the generation of misleading information or the amplification of biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address fairness considerations by analyzing the model's performance across different demographic groups and text genres, and propose mitigation strategies to address any identified biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand the discussion of broader impacts to include the potential benefits and risks associated with the application of SRL in various domains, such as healthcare, education, and law enforcement.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "The paper should include a discussion of potential misuse, fairness, and broader impacts to ensure responsible AI development and deployment.",
+    "grounding": null,
+    "facet": null
+  }
+]

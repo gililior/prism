@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "3VMSp9tz9w",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper presents MProto, a noise-robust prototype network for distantly supervised Named Entity Recognition (DS-NER).\nThey use dictionary or knowledge base lookups for distantly labeling raw text with NER labels. Different to other prototypical networks they allow multiple prototypes per NER class (e.g. three \"types\" of ORG prototypes) to account for intra-class variance. \nThe prototype assignment is done via optimal transport (OT) algorithms.\nBeing aware that the distant labels introduce a high rate of label errors or incompleteness (due to missing entries or other), they propose a novel \"denoised optimal transport\" (DOT) algorithm to distinguish the O-assignes entitiey between falsely unlabeled entity tokens and true negative examples to mitigate the noise problem and avoid overfitting to the O-class.\nThey test their approach on two NER datasets: CoNLL03 and BC5CDR, replacing the real human labels with the distant ones from Dictionary of Knowledge Base for training. They compare their MProto approach with the fully-supervised BERT model (trained on the obviously better real human labels) as upper bound, as well as several other DS-NER models. Though naturally weaker than the baseline, MProto beats all the other DS-NER models in their experiments.\nThe authors present some ablation studies, e.g. only allowing one prototype per NER class, or removing the DOT handling of O-labeled tokens, the latter showing that this is indeed a very important feature of their approach. This is also supported by a comparison of the learned class prototypes and tokens that belong to the classes (in the real fully human annotated versions of the datasets). \nThey further notice that dictionary or knowledge base coverage is an important factor for model performance through artificially reducing coverage, which of course is a downside. However, they show that their MProto still has less performance drops compared to the other DS-NER models in comparison.",
+      "reasons_to_accept": "The paper very elegantly deals with two relevant problems - learning from unlabeled data via distant labels as well as mitigating label noise. It is an interesting read for both perspectives, could inspire similar approaches and overall is well written and presented. The argumentation is clear and the main idea comes across quickly. The experiments are well fitted and seem sound, as well as the ablation and secondary analyses which justify their main ideas and choices. I also appreciate that they present the drop when reducing the coverage. \nThe presentation (i.e. chose of sections, figures etc.) is very good and clear, also the figures in the appendix concerning token-prototype similarity are really interesting.",
+      "reasons_to_reject": "I do not find major reasons to reject. \nThe section about the (denoised) optimal transport algorithm for dealing with unlabeled entities might be a bit hard to follow or too intricate for a reader that is unfamiliar with the matter. Of course, this is not a bad thing but rather nice to learn something new. But it might help to put a more high-level or intuitive summary at the start of the section.",
+      "typos_grammar_style_and_presentation_improvements": "One thing that (for me) was not that clear is if the approach is token or span based. Maybe this could be made more clear? \nAlso, naming the source of distant labels (dictionary, knowledge base) came too late in the paper, which left me a bit confused for too long. Maybe this could be moved more to the beginning?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "2hiXstsfUO",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work focuses on distantly supervised named entity recognition (DS-NER) task. Distant supervision eliminates the expensive human annotation process but at the cost of noisy annotation. This paper proposes a prototype-based network approach for the DS-NER. The proposed method, referred to as MProto, considers multiple prototypes for each entity class. The multiple prototypes for an entity type help MProto to characterize sub-clusters within each entity type. MProto assigns each input token to one of the prototypes. The main contributions of this work are the formulation of token-prototype assignments. In the proposed formulation, this work also takes care of the issue of incomplete labeling, where entities are labeled as Other due to incomplete information in the knowledge resources used for distant supervision. Towards this, the two primary contributions are - 1. Formulation of token-prototype assignment as an optimal transport problem 2. To take care of the noise of incomplete labeling, a proposal of denoised optimal transport Extensive sets of experiments and analyses are performed to establish the effectiveness of the MProto.",
+      "reasons_to_accept": "1. Addresses a very challenging issue of noise and intra-class variance in the context of distantly supervised NER task. \n2. The authors attempted to reduce noise arising from false negative Other (O) tagged entities with the help of multiple prototype network and denoised optimal transport method. \n3. With suitable experiments, authors have established that their methods yield competitive performance against SOTA in general and domain-specific datasets.",
+      "reasons_to_reject": "Not very strong reasons to reject it. However, a few points 1. Limited to only two datasets with only a few numbers of entity types. Noise and corresponding challenges increase multitude with more entity types. This happens primarily due to complex entity boundaries 2. No error analysis was presented. Though authors have shown quantitative results with and without DOT, it would be interesting to see how DOT impacts assignments. Similarly for with and without multiple prototypes",
+      "questions_for_the_authors": "A few questions  1. How MProto handles label dependency between two or more consecutive tokens? In other words, how MProto handles labeling of entity mention spanning over more than one token?\n2. How the complexity of the model increases with fine-grained DS-NER",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "ipzljWq7D9",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper describes a method to perform distantly supervised named-entity recognition (DS-NER), called MProto, that represent more than one prototype for each NER class. In this way, variance inside a single class can be intercepted and represented. \nResults presented in the paper seem to demonstrate the effectiveness of the idea.",
+      "reasons_to_accept": "The paper is clear and well written. The procedure is easy to follow.",
+      "reasons_to_reject": "There are some inconsistencies between the data presented and the previous work. \nFor instance, the authors use BC5CDR with dictionary in (Shang et al. 2018) and compare their work with AutoNER, described right in (Shang et al. 2018). By looking at the original paper, F1 on BC5CDR is 84.80, but in this paper is 79.99 (MProto's F1 is 81.47). \nSimilarly, the paper is compared with (Zhou et al. 2022), but only in its worst configuration (Conf-MPU_BERT) and not with the best one (Conf-MPU_LBiLSTM), that performs better than MProto.",
+      "questions_for_the_authors": "Why did not you compare your results with the NCBI-Disease dataset, very similar to BC5CDR?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

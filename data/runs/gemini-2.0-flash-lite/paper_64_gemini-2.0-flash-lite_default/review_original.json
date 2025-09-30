@@ -1,0 +1,252 @@
+{
+  "summary": "This paper introduces a novel Comprehensive Quantity Extraction (CQE) framework and a new benchmark dataset, NewsQuant, demonstrating improved F1-scores compared to baselines. However, the paper lacks sufficient detail in its comparisons to existing methods and needs to address several reproducibility, ethical, and clarity concerns.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel CQE framework and a new benchmark dataset, NewsQuant, which is a valuable contribution to the field.",
+      "grounding": "Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper reports significant improvements in F1-scores for value, unit, change, and concept detection compared to baselines, with p-value < 0.01.",
+      "grounding": "Sec 4.5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions the proposed CQE framework in relation to existing work, highlighting the limitations of current approaches.",
+      "grounding": "Intro, Related Work",
+      "facet": "positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the components of the CQE framework and the structure of the NewsQuant dataset.",
+      "grounding": "Abstract, §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides a good overview of related work in quantity extraction, comparing different approaches and highlighting their limitations.",
+      "grounding": "§2",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "Hyperparameters and training recipe are enumerated.",
+      "grounding": "Appendix A",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "Figures effectively display precision, recall, and F1-score results.",
+      "grounding": "Figures showing performance metrics",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 provides descriptive statistics, which is a good starting point.",
+      "grounding": "Table 2",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper acknowledges and differentiates itself from prior work in quantity extraction, particularly [1] and [3], by highlighting differences in the definition of quantities, extraction methods, and evaluation strategies.",
+      "grounding": "Related Work",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The claim that CQE significantly outperforms related methods and a GPT-3 model is broad and lacks specific grounding beyond F1-score improvements; the exact methods compared are not specified.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks detailed comparative evidence to demonstrate the superiority of the proposed CQE framework over existing methods, especially the Illinois Quantifier and Quantulum3. The paper mentions outperforming other libraries, but does not provide specific details or quantitative results.",
+      "grounding": "Intro",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'concept' associated with detected values is not clearly defined, and its role in the CQE framework is not fully explained.",
+      "grounding": "Abstract, §1, §3.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values to support the claims of significant improvements.",
+      "grounding": "Tables 1, 3, 4, 5, 6, 7, 8, 9",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address ethical considerations, including dataset licensing, privacy, and potential risks associated with the CQE system.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing, ethics_privacy, ethics_risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "No seed reporting; variance across runs unknown.",
+      "grounding": "Sec 3.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "Some figures lack clear axis labels and units, hindering interpretation.",
+      "grounding": "Figures displaying performance metrics",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear and consistent notation for the components of the quantity representation tuple (v, u, ch, cn).",
+      "grounding": "§3.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss potential misuse scenarios or failure modes of the CQE system.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address fairness considerations related to the dataset or the extraction process.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a discussion of the broader societal impacts of the CQE system.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a detailed comparison of its performance against existing quantity extraction systems like [1] (Qsearch) or [3] (AnaSearch). A quantitative comparison, including precision, recall, and F1-score, is missing.",
+      "grounding": "Related Work",
+      "facet": "missing_comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper mentions the use of tools like Quantulum3 and Illinois Quantifier but does not thoroughly analyze their performance or limitations in the context of the proposed approach. A discussion on the choice of these tools and their impact on the overall system is missing.",
+      "grounding": "Related Work",
+      "facet": "missing_analysis"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Release code and scripts with a reproducible environment file.",
+      "grounding": "GitHub link placeholder",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the compared methods and GPT-3 model configurations.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Elaborate on the novelty of the concept detection task and its relation to existing work.",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed comparison of the CQE framework with the Illinois Quantifier and Quantulum3, providing quantitative results on the NewsQuant dataset, including precision, recall, and F1-score for quantity extraction, unit normalization, and concept extraction.",
+      "grounding": "Related Work",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a clear definition and examples of the 'concepts associated with detected values' and how they are extracted by the CQE framework.",
+      "grounding": "Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include error bars to indicate statistical significance and confidence intervals in performance plots.",
+      "grounding": "Figures showing performance metrics",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed definition of 'concept' and its role in the CQE framework, including examples.",
+      "grounding": "Abstract, §1, §3.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Introduce a notation table to define the symbols used in the quantity representation tuple (v, u, ch, cn) and their meanings.",
+      "grounding": "§3.1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations and/or confidence intervals for all reported metrics. Add p-values to indicate statistical significance of performance differences, especially where improvements are claimed. Clearly define the baselines used for comparison.",
+      "grounding": "Tables 3, 4, 5, 6, 9",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a section on potential misuse cases, such as generating misleading financial reports or spreading misinformation.",
+      "grounding": "Insufficient evidence",
+      "facet": "risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Discuss potential biases in the NewsQuant dataset and the extraction rules, and propose mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a Broader Impact section that addresses the potential economic and social impacts of the CQE system.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments comparing the proposed method with [1] and [3] on a common dataset. Evaluate the performance of quantity extraction, including the ability to identify values, units, and related concepts. If possible, include an ablation study to isolate the contribution of each component of the proposed method.",
+      "grounding": "Related Work",
+      "facet": "experiment_proposal"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Evaluate the proposed method using the same dataset as [1] and [3]. Include a discussion of the performance differences, highlighting the strengths and weaknesses of each approach. Analyze the impact of using different quantity extraction tools (e.g., Quantulum3, Illinois Quantifier) on the overall system performance.",
+      "grounding": "Related Work",
+      "facet": "experiment_proposal"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a privacy policy or statement addressing data handling practices.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Discuss potential biases in the dataset and the CQE system, and propose mitigation strategies.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Expand on the methodology used for extracting the components of the quantity representation tuple, especially the 'change' component.",
+      "grounding": "§3.1",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

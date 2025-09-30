@@ -1,0 +1,56 @@
+{
+  "rebuttal": [
+    {
+      "reviewer_concern": "The paper lacks sufficient evidence to distinguish the proposed method from the closest baselines and overclaims the superiority of SSA without providing sufficient evidence to support its claim as the best metric. (Related Work, Sec 4.2)",
+      "response": "We thank the reviewer for this feedback. We respectfully disagree that the paper overclaims the superiority of SSA. Section 4.2, particularly Table 2, directly compares SSA with CLIP and R-score on the DrawBench benchmark, demonstrating SSA's superior ability to capture fine-grained semantic nuances. We also compare with existing metrics in Table 1. While we acknowledge that SSA is not a universally superior metric, we believe the results in Section 4.2 and the error analysis in Section 4.3 provide sufficient evidence to support our claims regarding its advantages in measuring fine-grained semantic consistency, especially in comparison to existing metrics. We will revise the text to more clearly emphasize the specific strengths of SSA and avoid overly broad claims of superiority. We will also add a more detailed discussion of the limitations of each metric in the related work section."
+    },
+    {
+      "reviewer_concern": "The paper does not provide information on the variance or standard deviation of the reported metrics, making it difficult to assess the statistical significance of the results. (Table 1, Table 2, Table 3, Table 4)",
+      "response": "We acknowledge this is a valid point. We will include the standard deviation for all reported metrics in Tables 1, 2, 3, and 4 in the revised version. We will also add p-values to indicate the statistical significance of the differences between the models' performances. This will allow for a better assessment of statistical significance."
+    },
+    {
+      "reviewer_concern": "The paper lacks details on the specific implementation of the SSA metric, making it difficult to reproduce the results, and does not specify the software environment. (Sec 4.1, Sections 4.1, 4.2)",
+      "response": "We agree that reproducibility is crucial. We will provide a more detailed description of the SSA metric implementation in Section 3. We will also include the code, including training and evaluation scripts, and a requirements file to specify the software environment. We will report the random seeds used for all experiments in Section 4.1."
+    },
+    {
+      "reviewer_concern": "Several figures, such as those showing error examples (Figures 4-7), lack clear labels or explanations of the visual elements, making it difficult to understand the specific issues being highlighted. (Fig 4-8, 11, 12)",
+      "response": "We thank the reviewer for pointing this out. We will add concise captions to Figures 4-7 explaining the nature of the errors. We will also improve the labels and explanations in Figures 8, 11, and 12 to enhance clarity. We believe this will make the error examples and comparisons easier to understand."
+    },
+    {
+      "reviewer_concern": "The term 'structured semantic embeddings' is introduced without a clear definition, and the paper lacks a notation table, making it difficult to follow the mathematical formulations and the meaning of symbols. (Abstract, §1, Methods Section)",
+      "response": "We acknowledge this oversight. We will provide a clear definition of 'structured semantic embeddings' in the introduction and methods sections. We will also include a notation table to clarify the meaning of all symbols used in the mathematical formulations. This will improve the readability and understanding of the paper."
+    },
+    {
+      "reviewer_concern": "The paper does not provide a detailed comparison of the proposed method with SOA [2], specifically addressing how SSA overcomes the limitations of SOA, such as its unsuitability for datasets with single objects. (Related Work)",
+      "response": "We thank the reviewer for this suggestion. We will add a more detailed comparison of SSA with SOA [2] in the Related Work section. We will explicitly address how SSA overcomes the limitations of SOA, particularly its unsuitability for datasets with single objects, by explaining how our method handles the evaluation of semantic consistency even in such cases. We will also clarify that SOA is not suitable for datasets where only one object appears in the generated images, as stated in the Related Work section."
+    },
+    {
+      "reviewer_concern": "No discussion of potential misuse or failure modes. (Insufficient evidence)",
+      "response": "We will add a section discussing the potential misuse and failure modes of SSA in the limitations section. This will include a discussion of the potential for bias in the pre-trained models and the limitations of the prompt mutation strategy."
+    },
+    {
+      "reviewer_concern": "Add a head-to-head comparison with a contemporaneous method and conduct experiments comparing SSA with Df-GAN [1] and AttnGAN [3] using the proposed SSA metric, as well as existing metrics like CLIP score and R-score. (Sec 4.1)",
+      "response": "We appreciate the suggestion. While a head-to-head comparison with contemporaneous methods would be ideal, the computational resources required to train and evaluate these models are significant. We will include a comparison with Df-GAN [1] and AttnGAN [3] using the proposed SSA metric, as well as existing metrics like CLIP score and R-score in the revised version. We will also add a more detailed discussion of the limitations of each metric in the related work section."
+    },
+    {
+      "reviewer_concern": "Provide more detailed analysis of the SSA metric, including its sensitivity to different types of semantic variations and its comparison with other metrics and include error analysis to understand the specific failure cases of each model. (Sec 4.2, Table 3, Table 4)",
+      "response": "We agree with the need for a more detailed analysis. We will expand the analysis of the SSA metric in Section 4.2, including its sensitivity to different types of semantic variations. We will also include a more detailed error analysis to understand the specific failure cases of each model, as suggested. This will provide a deeper understanding of the strengths and weaknesses of SSA."
+    },
+    {
+      "reviewer_concern": "Report the standard deviation or confidence intervals for all reported metrics to allow for a better assessment of statistical significance and include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to indicate the statistical significance of the differences between the models' performances. Clearly define all metrics used in the tables. (Table 1, Table 2, Table 3, Table 4)",
+      "response": "We will include the standard deviation for all reported metrics in Tables 1, 2, 3, and 4 in the revised version. We will also add p-values to indicate the statistical significance of the differences between the models' performances. We will clearly define all metrics used in the tables."
+    },
+    {
+      "reviewer_concern": "For figures comparing performance (e.g., Figure 8), include error bars or confidence intervals to indicate the statistical significance of the results. For error example figures (Figures 4-7), add concise captions explaining the nature of the errors. (Fig 4-8)",
+      "response": "We will add error bars or confidence intervals to Figure 8 to indicate the statistical significance of the results. We will also add concise captions to Figures 4-7 explaining the nature of the errors."
+    },
+    {
+      "reviewer_concern": "Provide a more detailed explanation of how the 'mutated prompts' are generated, including examples of the substitution rules and define the specific benchmarks used in the experiments and the evaluation metrics in more detail. (Abstract, Methods)",
+      "response": "We will provide a more detailed explanation of how the 'mutated prompts' are generated, including examples of the substitution rules, in the methods section. We will also define the specific benchmarks used in the experiments and the evaluation metrics in more detail."
+    },
+    {
+      "reviewer_concern": "Add a Broader Impact section with mitigation strategies and add explicit license and consent statements for datasets used. (Conclusion, Insufficient evidence)",
+      "response": "We will add a Broader Impact section to the paper, discussing potential misuse and mitigation strategies. We will also include explicit license and consent statements for the datasets used."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "vhwXgW3KBC",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "- What is this paper about? This paper aims to provide a new multilingual open-domain dialogue evaluation benchmark including datasets, evaluation methods, and current metrics analysis.\n- what contributions does it make? This paper collects 9 languages versions of multiple dialogue datasets with machine translation, analyzes current reference-free metric performance on the proposed datasets, and proposes new metrics.",
+      "reasons_to_accept": "- This paper constructs xDial-Eval which contains 12 turn-level and 6 dialogue-level open-source datasets. The original English version datasets are translated into nine different languages with commercial machine translation models.\n- This paper assesses current discriminative and generative reference-free metrics on the proposed multilingual benchmark. The most recent LLMs are also evaluated in this paper.\n- This paper introduces an ensemble metric for the proposed multilingual benchmark by combining generative and discrimination models.",
+      "reasons_to_reject": "- One of the concerns about this work is that the impact of the machine translation models on multiple parts. The datasets are translated and the synthetic datasets for fine-tuning are translated. If some sampled instances from the benchmark can be evaluated by human, it could be better.\n- Regarding the proposed metric which combines LLMs and FineD, one concern is the computational limitations of the open-source LLMs and the training of the BERT-style model, especially for 9 languages of 18 datasets.",
+      "questions_for_the_authors": "1. How long will it cost to run the whole evaluation of the proposed benchmark with the Ensemble metric such as LLama-7B on a typical GPU?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "c7HpWPCgLR",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work proposes xDial-Eval, an evaluation benchmark for multilingual open domain dialogue by machine translating 18 English open domain dialogue datasets into 8 languages. To demonstrate the usability of the dataset, several metrics BERT-based/generation-based LLMs are evaluated on the benchmark. The work also suggests ensembling metrics to be better than commercial LLM systems  The contribution is primarily a resource contribution followed by NLP engineering experiment.",
+      "reasons_to_accept": "Good choice of languages for the dataset.  Good number and types of LLMs used for comparison.  Open domain multilingual conversations have received less interest and this work is a contribution towards that direction",
+      "reasons_to_reject": "The proposed dataset is an aggregation of different dialogue datasets focussing on different properties of dialogue - yet the emphasis is more on \u201ccoherence\u201d and excludes other properties of dialgoue evaluation.\nFurther, the proposed dataset, despite being an evaluation benchmark for multilingual dialogue, uses automatic translation APIs and quality evaluation is done only on automatic metrics.",
+      "questions_for_the_authors": "A. How are the human annotations for evaluation obtained? What are the scores from the metrics compared against to compute the correlation? \n(After the rebuttal, please also write this clearly in the experimentation section)",
+      "typos_grammar_style_and_presentation_improvements": "A. It is disputed whether LLMs can be used for translation quality evaluation as zero-shot , further a lot of segment level evaluation metrics are not yet equipped to do quality evaluation(https://aclanthology.org/2023.acl-long.730/) . As it is a dataset, it is essential to have some human evaluation to assess the quality.   B. 025 to 031 and 574 to 582, correlation scale ranges from -1 to 1, please check if the improvement can be quantified in absolute percentages C. Please mention the languages in the abstract D. I am slightly skeptic about the results produced by fine-tuning. If similar translation methods are used for training and evaluation, it is likely that the model is getting biased towards synthetic data. I wonder if this is causing artificial gain (See https://arxiv.org/pdf/2201.13405.pdf, https://aclanthology.org/2020.emnlp-main.618/) A quick check on the DuRecDial2.0 dataset may be helpful https://aclanthology.org/2021.emnlp-main.356/",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "mi82DXOt1Q",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper establishes a benchmark for evaluating multi-lingual, multi-turn dialogues, creating a dataset that covers various languages to address the current lack of evaluation benchmarks for language. The study also establishes strong self-supervised and multilingual baselines.",
+      "reasons_to_accept": "This paper is well organized and clearly written.",
+      "reasons_to_reject": "This paper presents a benchmark for evaluating multilingual dialogues and creates a multi-round dialogue dataset in up to ten different languages, providing an excellent tool for assessing the multilingual ability of large models. However, in my opinion, the practicality and effectiveness of such evaluations in the field of multilingualism are not as useful and effective as other evaluation tools that examine the overall capabilities of large models. Therefore, the actual relevance of evaluating the multilingual ability of large models needs to be carefully considered, especially given that the multilingual ability of large language models is generally not poor nowadays.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

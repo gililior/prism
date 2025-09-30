@@ -1,0 +1,60 @@
+[
+  {
+    "rid": "TKwt6JAaRz",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Knowledge Distillation (KD) compresses large pre-trained language models by transferring their knowledge to smaller models, enabling use in resource-constrained settings, but often sacrifices performance. To address this, the authors propose Co-Training and Co-Distillation (CTCD), a framework that co-trains two models of different sizes, mutually distilling knowledge between them. CTCD improves both model performance and inference speed, based on findings that: 1) Distilling knowledge from the smaller to the larger model boosts the larger model's performance, and 2) The improved larger model further enhances the smaller model's performance. CTCD shows promise to combine with techniques like architecture design and data augmentation, replacing one-way KD, for further gains. Extensive ablation studies demonstrate CTCD's effectiveness, where the small model distilled by CTCD significantly outperforms the original larger model by 1.66 on GLUE benchmark.",
+      "reasons_to_accept": "1. This paper addresses a critical limitation of knowledge distillation (KD) methods - the tradeoff between model compression and performance degradation. \n2. This paper proposes a novel co-training and bi-directional distillation approach. Most prior work uses one-way distillation which loses knowledge. In contrast, CTCD allows mutual transfer between teacher and student models. \n3. Experimental results indicate two important empirical findings related to co-distillation: 1) Distilling knowledge from smaller to larger model boosts the larger model's performance. 2) The improved larger model further enhances the smaller model's performance. Additionally, the distilled small model significantly outperforms the original large model by 1.66 on GLUE benchmark.",
+      "reasons_to_reject": "1. My major concern is about the source of the performance improvement, especially the finding that distilling knowledge from smaller to larger models boosts the larger model's performance. I am wondering if the improvement could be attributed to the values of the hyperparameters \u03b1_h, \u03b1_s, \u03b2_h and \u03b2_s. Although the training epoch is 10 for all different settings, larger values for these hyperparameters result in longer training. I would be convinced if the authors could provide more empirical analysis, e.g. ablation studies or theoretical analysis, to demonstrate that the performance gains are due to the distillation approach rather than the hyperparameter settings.\n2. Another key concern is the selection of teacher and student models. The authors mentioned using 6-layer BERT as the teacher and 4-layer BERT as the student. This seems like an unusual configuration. A more reasonable setting would be to use 12-layer BERT as the teacher and 6-layer or 4-layer BERT as the student model.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "FUcjWp79RY",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a novel framework called Co-Training and Co-Distillation (CTCD) for knowledge distillation. This framework simultaneously pre-trains both the teacher and student models, with bidirectional knowledge distillation between the two. Experimental results on the GLUE benchmark demonstrate the superiority of this approach.",
+      "reasons_to_accept": "1. The paper is is well written and easy to understand. \n2. The proposed Co-Training and Co-Distillation method is sensible, given the preliminary verification of reversed knowledge distillation. \n3. The authors perform extensive ablation studies to validate the effectiveness of CTCD.",
+      "reasons_to_reject": "I don\u2019t find significant flaws in this paper. There are some minor suggestions: 1. Providing implementation details for the fine-tuning phase would be beneficial. \n2. It would be interesting to explore whether this framework remains effective during a fine-tuning only stage. I would expect some experiments and analysis of this scenario.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "RGZ68dRChU",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes a novel knowledge distillation framework called Co-Training and Co-Distillation (CTCD) to improve model performance while compressing large pre-trained language models (PLMs). The key idea is to co-train a large teacher model and a small student model together, enabling bidirectional knowledge transfer between them. The results on GLUE are reported. Overall, I think the idea of mutual knowledge transfer is interesting but the actual performance gains seem quite small based on the experiments.",
+      "reasons_to_accept": "1. The idea of bidirectional knowledge transfer between teacher and student during co-training is novel. \n2. The experiments show distilling knowledge from the student to teacher improves the teacher's performance, which in turn benefits the student. \n3. The student model compressed by CTCD outperforms the standalone trained original teacher model on GLUE.",
+      "reasons_to_reject": "1. The paper studies the case where the student distills knowledge to the teacher, which improves the teacher's performance. However, the improvements could potentially be due to regularization effects rather than distillation as claimed, since all fine-tuning is performed for 10 epochs and without early-stopping. The fine-tuning on GLUE without validation early-stopping usually has very high variances, proper ablation studies are needed to verify.\n2. The performance gains (especially, the Community KD) over standard one-way distillation seem quite marginal based on the experiments when compared to other BERT distillation techniques like BERT-PKD, TinyBERT, MobileBERT, or BERT-of-Theseus. This is not a good signal given the training process is more complex with co-training and co-distillation compared to other distillation techniques.\n3. Evaluations are limited to BERT models only. Testing on other PLMs would be more convincing.",
+      "questions_for_the_authors": "1. what does \"training from scratch\" mean for co-training? Are the student and teacher not initialized from pre-trained BERTs? The wording is misleading and not compatible with the figures.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

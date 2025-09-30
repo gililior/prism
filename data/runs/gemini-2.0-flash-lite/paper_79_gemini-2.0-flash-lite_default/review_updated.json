@@ -1,0 +1,150 @@
+{
+  "summary": "This paper introduces PerturbScorer, a method for connecting discrete and continuous perturbations in NLP models, demonstrating a correlation between them. The paper addresses an important problem in model robustness. The authors have addressed some of the weaknesses raised in the initial review, particularly regarding clarity and statistical rigor. However, the paper still lacks crucial details regarding methodology and ethical considerations, limiting the impact and reproducibility of the findings.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the problem of model robustness in NLP and the challenges associated with discrete perturbations, providing a good overview of existing literature and motivating the research question. (Abstract, Introduction) [organization]",
+      "grounding": "Abstract, Introduction",
+      "facet": "organization"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper demonstrates that the PerturbScorer can learn the connection between discrete and continuous perturbations, as evidenced by significant correlation scores. (Table 3) [claims_vs_evidence]",
+      "grounding": "Table 3",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Hyperparameters and training recipe are enumerated in the appendix, which aids reproducibility. (Appendix A) [reproducibility]",
+      "grounding": "Appendix A",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper focuses on a fundamental problem in NLP robustness, which is a critical area for the trustworthy development of NLP applications. (Introduction, Conclusion) [societal_impact]",
+      "grounding": "Introduction, Conclusion",
+      "facet": "societal_impact"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks specific details on the 'previous methods' used for discrete perturbation measuring, making it difficult to assess the improvement. (Abstract) [comparative evidence]",
+      "grounding": "Abstract",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of the PerturbScorer without providing sufficient evidence for all datasets and perturbation methods mentioned. (Section 4.4) [claims_vs_evidence]",
+      "grounding": "Section 4.4",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'PerturbScore' and its specific function is not clear, lacking details on the loss function, architecture, and training procedure. (Abstract, Introduction) [clarity_presentation]",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear notation section, making it difficult to follow the technical details. (Methods Section) [clarity_presentation]",
+      "grounding": "Methods Section",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Tables 1, 3, 4, and 5 lack crucial statistical measures such as confidence intervals and p-values, making it difficult to assess the significance of the results. (Tables 1, 3, 4, 5) [tables]",
+      "grounding": "Tables 1, 3, 4, 5",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential ethical risks associated with the use of the PerturbScorer or the implications of its findings, and lacks a dedicated section on societal impact. (Insufficient evidence) [societal_impact]",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide information on dataset licensing, consent, privacy, or usage terms. (Insufficient evidence) [ethics_licensing]",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "No seed reporting; variance across runs unknown. (Sec 3.1) [reproducibility]",
+      "grounding": "Sec 3.1",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The axes labels are not fully described, making it difficult to understand what is being measured. The figure lacks a clear legend. (Figure 1) [figures]",
+      "grounding": "Figure 1",
+      "facet": "figures"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Release code and scripts with a reproducible environment file. (GitHub link placeholder) [reproducibility]",
+      "grounding": "GitHub link placeholder",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a detailed comparison with existing methods for measuring discrete perturbations, including quantitative results and analysis of the differences. (Abstract) [comparative evidence]",
+      "grounding": "Abstract",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section detailing the datasets used, their licenses, and any relevant usage restrictions, including details on consent and privacy measures if the datasets contain personal data. (Insufficient evidence) [ethics_licensing]",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Discuss potential ethical risks associated with the PerturbScorer, such as its potential misuse for generating adversarial examples or manipulating NLP models, and outline mitigation strategies. (Insufficient evidence) [ethics_risks]",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments on a wider range of datasets and perturbation methods to strengthen the claim of generalizability. (Section 4.4) [claims_vs_evidence]",
+      "grounding": "Section 4.4",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the 'PerturbScore' method, including the loss function, architecture, and training procedure, and include a diagram illustrating the process. (Methods Section) [clarity_presentation]",
+      "grounding": "Methods Section",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a notation table to define all variables and symbols used in the paper, especially those related to the perturbation methods and the 'PerturbScore'. (Methods Section) [clarity_presentation]",
+      "grounding": "Methods Section",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations, confidence intervals, and p-values in Tables 3, 4, and 5 to indicate the statistical significance of the correlation results and generalization performance. Clearly define all metrics used in Table 1. (Tables 1, 3, 4, 5) [tables]",
+      "grounding": "Tables 1, 3, 4, 5",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section discussing potential misuse scenarios (e.g., adversarial attacks, generating misleading content) and mitigation strategies. Address fairness concerns related to the datasets and models used. (Insufficient evidence) [societal_impact]",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide clear labels for all axes, including units. Add a legend to identify the different curves and data points. (Figure 1) [figures]",
+      "grounding": "Figure 1",
+      "facet": "figures"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

@@ -1,0 +1,68 @@
+{
+  "rebuttal": [
+    {
+      "reviewer_feedback": "Weakness: The paper does not provide sufficient details on the specific datasets included in TID-8, making it difficult to assess the diversity and representativeness of the benchmark. (Sec 1)",
+      "response": "We respectfully disagree. The paper provides detailed descriptions of each dataset in TID-8, including their tasks, domains, and key characteristics. Section 5.2 and Table 2 offer an overview of each dataset, including the tasks they address (NLI, sentiment analysis, hate speech detection, humor comparison), and the number of annotators and labels. Appendix B.2 provides even more detailed descriptions of each dataset. We believe the reviewer may have overlooked these sections. We will revise the introduction to explicitly point to these sections for a clearer understanding of the datasets."
+    },
+    {
+      "reviewer_feedback": "Weakness: The paper overclaims the generalizability of the findings, as the results are primarily based on experiments on TID-8. (Sec 7, 9)",
+      "response": "We acknowledge that our findings are primarily based on TID-8. While we do not explicitly overclaim generalizability, we agree that further validation on a broader range of datasets would strengthen our conclusions. We have added experiments on the Toxic Ratings dataset (Kumar et al., 2021) in Table 16 and Appendix C.8 to partially address this. In the next version, we will expand our experiments to include more diverse datasets to further substantiate the generalizability of our approach, as suggested."
+    },
+    {
+      "reviewer_feedback": "Weakness: The paper lacks a detailed comparison with existing methods that also address annotator disagreement, and the delta between the proposed method and the closest baseline is not clearly articulated. (Related Work)",
+      "response": "We acknowledge this weakness and will address it in the revised version. While Section 2 (Related Work) discusses existing methods, we will include a more direct comparison with a state-of-the-art method that addresses annotator disagreement. We will select a relevant method (e.g., methods incorporating annotator reliability scores or Bayesian approaches) and conduct a head-to-head comparison on TID-8, clearly articulating the performance delta. We will also add a more detailed discussion of the limitations of the baselines and the advantages of our approach."
+    },
+    {
+      "reviewer_feedback": "Weakness: The paper lacks a clear definition of 'annotator embeddings' and 'annotation embeddings' in the introduction, hindering understanding. (Abstract, Introduction)",
+      "response": "We agree that the initial definition of these embeddings could be clearer. The abstract and introduction do introduce the concepts, but we will revise these sections to provide a more concise and accessible definition of annotator and annotation embeddings. We will explicitly state that annotator embeddings represent individual annotator preferences, while annotation embeddings capture annotator tendencies based on their previous annotations. We will also include a brief, intuitive explanation of how these embeddings are used in the model."
+    },
+    {
+      "reviewer_feedback": "Weakness: The paper does not provide information about the software environment used for the experiments and the seeds used for the experiments, which impacts reproducibility. (Section 6, Appendix C, Tables 9, 10, 11, 12)",
+      "response": "We acknowledge the importance of reproducibility and will address this in the revised version. We will include the random seeds used for all experiments and specify the software environment (e.g., using a requirements.txt file or a Dockerfile) in Appendix C.1. We will also clarify the GPU used for the experiments."
+    },
+    {
+      "reviewer_feedback": "Weakness: The paper does not address dataset licensing, consent from annotators, privacy considerations, or potential misuse scenarios. (Insufficient evidence)",
+      "response": "We acknowledge this critical omission and will add a dedicated section to address these concerns. We will include explicit license and consent statements for the datasets used in TID-8 and the original datasets, as well as address potential privacy risks and mitigation strategies. We will also include a section on potential misuse cases and mitigation strategies, and analyze the potential for the annotator and annotation embeddings to reflect or amplify existing biases. The Ethics Statement in the current version already touches upon some of these aspects, but we will expand it significantly."
+    },
+    {
+      "reviewer_feedback": "Weakness: The text mentions the use of statistical tests (t-test) but does not consistently report p-values or confidence intervals across all tables, limiting the completeness of the statistical information. (Tables 4, 9)",
+      "response": "We will ensure that all tables include p-values to indicate statistical significance and provide clear headers and labels for all columns and rows, including standard deviations or confidence intervals. We will review all tables and add this information where it is missing."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Include the random seeds used for all experiments and specify the environment (e.g., using a requirements.txt or a Dockerfile) to improve reproducibility. (All sections)",
+      "response": "We agree and will implement this suggestion as described in our response to Weakness 5."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Conduct experiments on a wider range of datasets to substantiate the generalizability of the proposed method. (Sec 7, 9)",
+      "response": "We agree and will expand our experiments to include more diverse datasets, as described in our response to Weakness 2."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Provide a more detailed analysis of the TID-8 dataset, including statistics on annotator agreement/disagreement for each dataset and task. (Sec 1)",
+      "response": "We believe that the paper already provides a detailed analysis of the TID-8 dataset. Section 5.2 and Table 2 provide an overview of each dataset, and Appendix B.6 provides details on label disagreements. We will consider adding more specific statistics on annotator agreement/disagreement for each dataset and task in the revised version."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Conduct a head-to-head comparison with a state-of-the-art method that addresses annotator disagreement, such as methods that incorporate annotator reliability scores or Bayesian approaches. (Related Work)",
+      "response": "We will implement this suggestion as described in our response to Weakness 3."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Provide a more detailed explanation of how annotator and annotation embeddings are created and used in the model, including equations and diagrams, and include a notation table. (Methods Section (e.g., Section 4))",
+      "response": "We will enhance the explanation of the embeddings in Section 4. We will include a notation table and more detailed diagrams to clarify the creation and use of annotator and annotation embeddings. We believe that the equations in Section 4.1 and 4.2 already provide a detailed explanation, but we will revise them to be more accessible."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Address potential privacy risks and mitigation strategies for the datasets used, and add explicit license and consent statements for datasets used in TID-8 and the original datasets. (Insufficient evidence)",
+      "response": "We will implement this suggestion as described in our response to Weakness 6."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Ensure all tables include p-values to indicate statistical significance and provide clear headers and labels for all columns and rows, including standard deviations or confidence intervals. (All tables)",
+      "response": "We will implement this suggestion as described in our response to Weakness 7."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Include a section on potential misuse cases and mitigation strategies and analyze the potential for the annotator and annotation embeddings to reflect or amplify existing biases. (Insufficient evidence)",
+      "response": "We will implement this suggestion as described in our response to Weakness 6."
+    },
+    {
+      "reviewer_feedback": "Suggestion: Conduct an experiment comparing the proposed method with [1] Jiang and de Marneffe (2022) on the TID-8 dataset and include an ablation study to isolate the impact of annotator and annotation embeddings. (Sec 4.1)",
+      "response": "We will consider this suggestion. We will evaluate the feasibility of comparing our method with Jiang and de Marneffe (2022) and include an ablation study to isolate the impact of annotator and annotation embeddings."
+    }
+  ]
+}

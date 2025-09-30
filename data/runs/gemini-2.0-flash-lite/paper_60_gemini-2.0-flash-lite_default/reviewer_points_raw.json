@@ -1,0 +1,416 @@
+[
+  {
+    "kind": "strength",
+    "text": "The paper investigates the internal mechanisms of factual knowledge retrieval in Transformers, a topic of significant interest.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper uses a reverse-engineering approach with interventions on attention edges to analyze information flow, which is a reasonable methodology.",
+    "grounding": "Intro, Sec 1",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not clearly define the delta compared to prior work, especially regarding the role of MLP sublayers and MHSA parameters in attribute extraction. The novelty needs to be more clearly articulated.",
+    "grounding": "Intro, Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks quantitative comparisons with existing methods for knowledge localization and editing. The claims need to be supported by more evidence.",
+    "grounding": "Abstract, Intro",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative analysis with existing methods for knowledge localization (e.g., Meng et al., 2022b) to highlight the differences in the identified mechanisms.",
+    "grounding": "Intro, Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide quantitative results on the percentage of predictions where the identified mechanism is observed, and compare it with other methods.",
+    "grounding": "Sec 2, Sec 3",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include ablation studies to demonstrate the impact of each component (MLP sublayers, MHSA parameters) on the overall performance.",
+    "grounding": "Sec 2, Sec 3",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed mechanism generalize to different types of factual knowledge and different model architectures?",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of the reverse-engineering approach, and how do they affect the interpretation of the results?",
+    "grounding": "Intro, Sec 1",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any potential biases or limitations in the dataset used for the analysis?",
+    "grounding": "Sec 2",
+    "facet": "ethics"
+  },
+  {
+    "kind": "limitations",
+    "text": "The findings may be limited to the specific model architectures and datasets used in the analysis.",
+    "grounding": "Sec 2",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates the inner workings of auto-regressive transformer-based LMs, focusing on how they store and extract factual associations. The authors use attention blocking and other methods to analyze the role of different sublayers (MLP and MHSA) in the process of attribute extraction.",
+    "grounding": "Abstract, \u00a74, \u00a79",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides evidence for the claim that factual associations are stored in lower layers and extracted by MLP sublayers. This is supported by experiments using attention blocking and analysis of attribute rates (Fig. 15, 16, 17).",
+    "grounding": "\u00a76, \u00a77, Fig. 15, 16, 17",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides evidence for the claim that the MHSA sublayers are involved in extracting the correct attribute. This is supported by experiments using attention blocking and analysis of attribute rates.",
+    "grounding": "\u00a77, Fig. 2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of its findings. While the experiments are performed on GPT-2 and GPT-J, the paper does not discuss the limitations of applying these findings to other models or tasks.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper acknowledges limitations in the approximation of information encoded in intermediate layers (projection to vocabulary space), but does not fully address how this impacts the conclusions, especially in early layers.",
+    "grounding": "\u00a79",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on different model architectures and datasets to assess the generalizability of the findings.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed analysis of the impact of the approximation method used for interpreting intermediate layer representations, especially in early layers.",
+    "grounding": "\u00a79",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How do the findings relate to the specific training data used for GPT-2 and GPT-J? Could the observed behavior be specific to the dataset?",
+    "grounding": "Insufficient evidence",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the impact of the 'information leakage' across positions that the attention knockout intervention method does not account for?",
+    "grounding": "\u00a79",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations of their methods, including the approximation of information encoded in intermediate layers and the potential for information leakage. However, the discussion of these limitations could be more extensive.",
+    "grounding": "\u00a79",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally present results related to model behavior and attribute extraction, but some figures lack clear axis labels and legends.",
+    "grounding": "Figures 1-19",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 appears to be well-labeled and supports the claims about the impact of attention edges.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several figures lack clear axis labels, units, and legends, making it difficult to interpret the results (e.g., Figures 3, 4, 5, 6, 13, 14, 15, 16, 17, 18, 19).",
+    "grounding": "Figures 3, 4, 5, 6, 13, 14, 15, 16, 17, 18, 19",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to all axes, including units where applicable. Include legends to explain the different lines or colors used in the plots. Consider adding error bars to show confidence intervals.",
+    "grounding": "Figures 3, 4, 5, 6, 13, 14, 15, 16, 17, 18, 19",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors and line styles represent in the visualizations? What are the units for the y-axis in the plots showing attribute rates? What is the meaning of 'first intervention layer' in Figures 15 and 16?",
+    "grounding": "Figures 3, 4, 5, 6, 15, 16",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on performance metrics and do not provide detailed insights into the internal workings of the model beyond the described analyses.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of experiments on GPT-2 and GPT-J models, analyzing token representations and extraction statistics. The tables vary in detail, with some providing more comprehensive statistical information than others.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 provides per-example extraction statistics, which is a good way to present the data. The table includes extraction rates across layers and for different sublayers (MHSA and MLP), offering a detailed view of the model's behavior.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables 1, 3, 4, and 5 lack information about statistical significance. Table 1 is missing any statistical measures. Tables 3 and 4 only show top-scoring tokens without any quantitative analysis. Table 5 lacks clear labels for the columns.",
+    "grounding": "Tables 1, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "For Tables 1, 3, 4, and 5, include standard deviations or confidence intervals to quantify the variability in the results. Add p-values to indicate statistical significance of any observed differences or trends. In Table 5, add clear labels for the columns.",
+    "grounding": "Tables 1, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the significance of the extraction rates in Table 2? How were the top-scoring tokens in Tables 3 and 4 selected? What is the definition of 'extraction rate' used in Table 2 and Table 5? What is the meaning of glyph[lscript] in Tables 3 and 4? What is the sample size for each of the experiments?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the GPT-2 and GPT-J models and specific datasets, which may limit the generalizability of the findings to other models or datasets.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper investigates how factual knowledge is retrieved internally in Transformer-based language models during inference, focusing on information flow and interventions on attention edges. The authors identify a three-step mechanism for attribute extraction: subject enrichment, relation propagation, and attribute extraction via attention heads.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization_clarity"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the research question, methodology, and findings in the abstract and introduction.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization_clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'enrichment process' is used without a precise definition, making it difficult to understand the exact nature of this process.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation table, which would improve readability, especially given the technical nature of the work.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed definition of the 'enrichment process' and how it is measured or identified.",
+    "grounding": "Introduction",
+    "facet": "clarity_terminology"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table to define key variables, operations, and acronyms used in the paper.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "1. How does the model determine which attributes to encode during the 'enrichment process'?\n2. What specific attention heads are responsible for the attribute extraction, and how are they identified?\n3. What are the limitations of the proposed method, and how might they affect the generalizability of the findings?",
+    "grounding": "Methods, Results",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's writing does not prevent reproduction, as the methodology is described in sufficient detail.",
+    "grounding": "Methods",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-organized and presents a clear research question. However, the lack of precise definitions and notation could hinder understanding. Addressing these weaknesses would significantly improve the paper's clarity and impact.",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on the licenses of the datasets used for training and evaluation.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention any consent procedures for the data used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address privacy considerations related to the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not specify the usage terms for the models and datasets.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed section on the datasets used, including their licenses, any consent obtained, and privacy considerations.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the usage terms of the models and datasets.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address privacy concerns related to the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "question",
+    "text": "What specific datasets were used for training and evaluation?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "question",
+    "text": "What are the licenses associated with these datasets?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "question",
+    "text": "Were any privacy-sensitive data used, and if so, how was it handled?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "question",
+    "text": "What are the usage restrictions for the models and datasets?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "question",
+    "text": "Did the authors obtain consent for using any data?",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper investigates the internal mechanism of factual attribute extraction in Transformer-based LMs, focusing on information flow during inference, which is a novel contribution compared to prior work that primarily focuses on where factual information is stored (e.g., layers, neurons) [Intro, Related Work].",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a three-step internal mechanism for attribute extraction, including an enrichment process, information propagation from the relation, and attribute extraction via attention heads. This mechanistic analysis provides a deeper understanding of the recall process compared to prior work that focuses on identifying storage locations [Intro, Related Work].",
+    "grounding": "Intro",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its findings with the bottom-up evolution of representations in Transformers as studied in [1]. While the paper mentions [1], a direct comparison of the information flow and representation evolution with the findings in [1] is missing.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment to compare the proposed method with the findings in [1]. Specifically, analyze how the information flow and representation evolution in the proposed method align with or deviate from the bottom-up evolution described in [1]. This could involve analyzing the representations at different layers and comparing the attention patterns.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly discuss how its findings relate to the work on how much knowledge can be packed into the parameters of a language model [2].",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the amount of factual knowledge retrieved using the proposed method with the knowledge packing capacity discussed in [2]. This could involve evaluating the model's performance on a factual knowledge task and comparing it to the results reported in [2].",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare its approach to the work on crawling the internal knowledge base of language models [3].",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the proposed method with the knowledge crawling techniques described in [3]. This could involve evaluating the overlap and differences in the factual knowledge retrieved by both methods. Also, compare the efficiency and interpretability of the two approaches.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  }
+]

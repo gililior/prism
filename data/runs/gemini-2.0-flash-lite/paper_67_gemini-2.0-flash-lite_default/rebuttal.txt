@@ -1,0 +1,68 @@
+{
+  "rebuttal": [
+    {
+      "reviewer_feedback": "Weaknesses (6 points): The paper overclaims the impact of user modeling design without sufficient evidence, particularly in comparison to the closest baselines. (Sec 3.4, Related Work)",
+      "response": "We thank the reviewer for highlighting this point. We respectfully disagree that the impact of our user modeling design is overclaimed. Section 3.4 and Table 1 clearly demonstrate significant performance improvements over the closest baselines, including NRMS-BERT, UNBERT, and AMM. These baselines are PLM-based methods, and NRMS-BERT is a dual-tower architecture similar to ours. The substantial gains, especially over NRMS-BERT, provide strong evidence for the effectiveness of our user modeling approach. We believe the reviewer may have overlooked the magnitude of these improvements, which are statistically significant. We will revise the abstract and introduction to further emphasize the quantitative results and the specific advantages of our approach over the baselines."
+    },
+    {
+      "reviewer_feedback": "The paper lacks details on the statistical significance of the results, including the use of seeds and variance across multiple runs. (Section 3, Table 2)",
+      "response": "We acknowledge the reviewer's concern regarding statistical significance. While we state that we vary the pre-training seeds and take an average of 3 scores as our main results in Section 3.1, we agree that providing more detailed statistical information is crucial. We will include standard deviations and p-values in Table 1 and Table 2 to indicate statistical significance, as suggested. We will also explicitly state the random seeds used for all experiments and report the variance (e.g., standard deviation) across multiple runs in the revised manuscript."
+    },
+    {
+      "reviewer_feedback": "Figures 4 and 5 lack clear axis labels and units, hindering result interpretation. (Figures 4, 5)",
+      "response": "We thank the reviewer for pointing out this oversight. We will add clear axis labels, units, and legends to Figures 4 and 5 in the revised manuscript to improve clarity and facilitate result interpretation."
+    },
+    {
+      "reviewer_feedback": "The paper does not address critical ethical considerations, including data consent, privacy, usage terms, potential biases, misuse, and broader societal impacts. (Insufficient evidence)",
+      "response": "We acknowledge the critical importance of addressing ethical considerations. This was an oversight in the initial submission. We will add a dedicated Ethics Statement section to the revised manuscript. This section will detail the data sources, including licensing and restrictions, the data collection process, and how user consent was obtained (as described in the MIND dataset paper). We will also explain the privacy measures taken, outline the intended use of the model, discuss potential ethical risks and biases in the training data and how they might affect recommendations, and propose mitigation strategies, including a Broader Impact section."
+    },
+    {
+      "reviewer_feedback": "The term 'Siamese encoder' is used without a clear definition or reference, and the paper lacks a dedicated section for notation. (Figure 1, §1)",
+      "response": "We thank the reviewer for this feedback. The term 'Siamese encoder' is used to describe the shared-parameter encoder for both news and user embeddings. We will add a brief definition of 'Siamese encoder' in Section 1 and provide a reference to the relevant literature. While a dedicated notation section was not included, we believe the key notations are clearly defined within the relevant sections (e.g., Section 2.2). We will review the paper to ensure all notations are clearly defined and consistent."
+    },
+    {
+      "reviewer_feedback": "The paper does not explicitly compare its performance with the pre-trained language model based news recommendation approach in [1] and the fine-grained interest matching approach in [2]. (Related Work)",
+      "response": "We appreciate the reviewer's suggestion. We will add a more explicit comparison with the methods in [1] and [2] in the Related Work section. We will also include head-to-head comparisons with these methods in the experimental results, if possible, and discuss the results in Section 4.1. We will investigate the availability of the code and the feasibility of reproducing the results for these methods."
+    },
+    {
+      "reviewer_feedback": "Suggestions (10 points): Conduct head-to-head comparisons with contemporaneous methods and other user modeling techniques, including those in [1] and [2]. (Sec 4.1)",
+      "response": "We will address this suggestion as described in the response to the previous weakness. We will add a more explicit comparison with the methods in [1] and [2] in the Related Work section and include head-to-head comparisons with these methods in the experimental results, if possible, and discuss the results in Section 4.1."
+    },
+    {
+      "reviewer_feedback": "Include standard deviations or confidence intervals for reported results and add p-values to indicate statistical significance in all tables. (Table 5, Tables 1-5)",
+      "response": "We will implement this suggestion. We will include standard deviations and p-values in Table 1, Table 2, Table 3, Table 4, and Table 5 to indicate statistical significance."
+    },
+    {
+      "reviewer_feedback": "Include a section detailing the random seeds used for all experiments and report the variance (e.g., standard deviation) across multiple runs. (Section 3)",
+      "response": "We will implement this suggestion. We will explicitly state the random seeds used for all experiments and report the variance (e.g., standard deviation) across multiple runs in the revised manuscript."
+    },
+    {
+      "reviewer_feedback": "Provide a link to the code repository, including the code and scripts for training and evaluation, along with a requirements.txt or equivalent for environment setup. (GitHub link placeholder)",
+      "response": "We will provide a link to the code repository, including the code and scripts for training and evaluation, along with a requirements.txt or equivalent for environment setup, upon acceptance."
+    },
+    {
+      "reviewer_feedback": "Add axis labels, units, and legends to Figures 4 and 5. (Figures 4, 5)",
+      "response": "We will implement this suggestion. We will add clear axis labels, units, and legends to Figures 4 and 5 in the revised manuscript."
+    },
+    {
+      "reviewer_feedback": "Detail the data sources, including licensing, restrictions, data collection process, and how user consent was obtained. Explain privacy measures taken. (Insufficient evidence)",
+      "response": "We will address this suggestion by adding a dedicated Ethics Statement section to the revised manuscript. This section will detail the data sources, including licensing and restrictions, the data collection process, and how user consent was obtained (as described in the MIND dataset paper). We will also explain the privacy measures taken."
+    },
+    {
+      "reviewer_feedback": "Outline the intended use of the model, potential ethical risks, biases, and mitigation strategies, including a Broader Impact section. (Insufficient evidence)",
+      "response": "We will address this suggestion by adding a dedicated Ethics Statement section to the revised manuscript. This section will outline the intended use of the model, discuss potential ethical risks and biases in the training data and how they might affect recommendations, and propose mitigation strategies, including a Broader Impact section."
+    },
+    {
+      "reviewer_feedback": "Provide a more detailed explanation of the user behavior masking and generation tasks, including the specific loss functions used. (Abstract, §1)",
+      "response": "We will provide a more detailed explanation of the user behavior masking and generation tasks, including the specific loss functions used, in the revised manuscript. The loss functions are already described in Section 2.2, but we will clarify the explanation and provide more context in the abstract and introduction."
+    },
+    {
+      "reviewer_feedback": "Include a section that describes the datasets and evaluation metrics used in the experiments. (Abstract)",
+      "response": "We believe the datasets and evaluation metrics are sufficiently described in Section 3. We will review the abstract to ensure that the datasets and evaluation metrics are mentioned."
+    },
+    {
+      "reviewer_feedback": "Add a section on potential biases in the training data and how they might affect recommendations, and address fairness concerns. (Insufficient evidence)",
+      "response": "We will address this suggestion by adding a dedicated Ethics Statement section to the revised manuscript. This section will discuss potential biases in the training data and how they might affect recommendations, and address fairness concerns."
+    }
+  ]
+}

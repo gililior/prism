@@ -1,0 +1,86 @@
+[
+  {
+    "rid": "vKTY8jqFyT",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper focuses on the clickbait detection task and collects a new Romanian clickbait dataset (low-resource languages) for future research. \nThe main contributions consist of collecting a new Romanian clickbait dataset and adopting contrastive learning into clickbait detection task.",
+      "reasons_to_accept": "The main contributions consist of collecting a new Romanian clickbait dataset and adopting contrastive learning into clickbait detection task.",
+      "reasons_to_reject": "1. The description of the dataset is not specific enough, such as the domains, the average number of sentences of these articles, how many sentences are in the longest article, and how many sentences are in the shortest article. \n2. The data collection method, the annotation process lack of details, for example, what is the annotator agreement score? \n2. Do not describe the difference between their proposed method and Siamese networks. \n3. Do not clarify the difference between fake news detection, satirical news detection and clickbait detection. Maybe the author can explain it in the intro section.",
+      "questions_for_the_authors": "A. (Line 200-202) Is this phenomenon announced by the website itself or by the author's study? If it is a study, please give an argument, otherwise I think this conclusion is a strong hypothesis lack of justification. \nB. The conclusion does not give insight and line332 mentioned that \"non-clickbait articles is fairly easy. However, clickbait articles are comparatively\",  is it possible that the data set is biased (4,460 non-clickbait samples and 3,453 clickbait samples)?",
+      "typos_grammar_style_and_presentation_improvements": "line 278: for all i = ***, may be more understandable to use \"for all $i \\in [1,n]$\" (Latex)",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "2: Borderline: Some of the main claims/arguments are not sufficiently supported, there are major technical/methodological problems",
+      "excitement": "2: Mediocre: This paper makes marginal contributions (vs non-contemporaneous work), so I would rather not see it in the conference.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "hJSHfiA7Ao",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents the authors' experience in Clickbait Detection, introducing RoCliCo, the first public corpus for Romanian clickbait detection. They train and evaluate four models and an ensemble of these models to establish competitive baselines for future research on their corpus. The authors propose a novel approach using a BERT model based on contrastive learning, which leverages cosine similarity between the title and content to detect clickbait articles. The empirical results indicate significant potential for future research on the Romanian clickbait detection task. The availability of RoCliCo opens up opportunities for collaboration and advancement in clickbait detection methods for the Romanian language.",
+      "reasons_to_accept": "- The process of creating the dataset is thoroughly explained.\n- A dataset of Clickbait in Romanian with comprehensive annotations holds potential value for researchers.\n- The authors conduct multiple experiments to validate the efficacy of both handcrafted and deep models as baseline methods on the dataset.\n- Reporting the performance of various commonly used models on this dataset serves as a valuable reference for future benchmarking efforts.",
+      "reasons_to_reject": "- Please provide detailed information on the qualifications of the annotators and the payment process for the labeling task to ensure transparency and reliability.\n- The rationale behind separating the news platforms between the training and test sets (as discussed in Section 3) should be clearly explained to justify the authors' approach.\n- Table 1 should be appropriately placed in the text, precisely where it is mentioned, to enhance readability and facilitate easy reference.\n- To demonstrate the dataset's utility, it is essential to compare it with popular datasets to highlight the unique dimensions it can contribute to various research areas.\n- While the authors have presented a comprehensive overview of the Clickbait Detection task, including additional information on the linguistic aspects of the task would be valuable. This addition would provide readers with a deeper understanding of the study's theoretical foundations and the methodologies used to achieve the results.\n- To ascertain the significance of the reported results, the authors should provide statistical analysis. This will offer readers a more accurate understanding of the effectiveness of the methods employed.\n- The manuscript lacks mention of hyperparameters or other model parameters. It is crucial to explain how these parameters are optimized to ensure reproducibility and enable others to apply the methodology effectively.",
+      "questions_for_the_authors": "- Is there any related work for Clickbait Detection? How are their methods different from your work?\n- Please provide detailed information on the qualifications of the annotators and the payment process for the labeling task to ensure transparency and reliability.\n- The rationale behind separating the news platforms between the training and test sets (as discussed in Section 3) should be clearly explained to justify the authors' approach.\n- Table 1 should be appropriately placed in the text, precisely where it is mentioned, to enhance readability and facilitate easy reference.\n- To demonstrate the dataset's utility, it is essential to compare it with popular datasets to highlight the unique dimensions it can contribute to various research areas.\n- While the authors have presented a comprehensive overview of the Clickbait Detection task, including additional information on the linguistic aspects of the task would be valuable. This addition would provide readers with a deeper understanding of the study's theoretical foundations and the methodologies used to achieve the results.\n- To ascertain the significance of the reported results, the authors should provide statistical analysis. This will offer readers a more accurate understanding of the effectiveness of the methods employed.\n- The manuscript lacks mention of hyperparameters or other model parameters. It is crucial to explain how these parameters are optimized to ensure reproducibility and enable others to apply the methodology effectively.",
+      "typos_grammar_style_and_presentation_improvements": "- To make the analysis of the results more transparent, authors should present their results in several metrics and as a 4-digit decimal (ex: 0.81xx).",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  },
+  {
+    "rid": "iEFS0KB6hu",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Gather qnd curate a click bait classification dataset in Romanian.",
+      "reasons_to_accept": "It's a novel dataset and has well established labeling, reliability metrics, and",
+      "reasons_to_reject": "For classification tasks it would be good to see a PR curve to evaluate overall performance rather than just mean metrics.",
+      "questions_for_the_authors": "Why is it important to have this dataset in Romanian? How is it different than other languages?",
+      "missing_references": "Other click bait datasets across languages and a side by side comparison.",
+      "typos_grammar_style_and_presentation_improvements": "Some simple edits are necessary but nothing unusual.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "JGjbEFECoK",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors present RoCliCo, a corpus that is a collection of over 7,900 news samples in Romanian that are manually annotated with clickbait and non-clickbait labels. It is the first publicly available corpus for clickbait detection in Romanian news, and it provides a valuable resource for researchers and practitioners to develop and evaluate machine learning models for this task. Experiments with a few machine learning methods to establish competitive baselines, which can serve as a starting point for future research on clickbait detection in Romanian.",
+      "reasons_to_accept": "This paper is really well-motivated and well-written.\nThe RoCliCo enriches the low-resource natural language corpora and clickbait detection.\nThe selected baseline models show that Romanian clickbait detection is a challenging task.",
+      "reasons_to_reject": "The number and type of baseline models in the Experiments section are too few, only 4.  The size of RoCliCo is relatively small since the majority of non-clickbait samples can be collected from some authoritative news website.\nThough Cohen\u2019s kappa coefficient among annotators is 0.73, the labeling process lack of cross-check, which can introduce biases and errors in the labeling results.",
+      "questions_for_the_authors": "Can you provide more details on the criteria used for selecting the five Romanian news websites included in the corpus? Were there any specific reasons for choosing these websites over others?\nHow did you ensure the quality and consistency of the annotations provided by the volunteers? Did you conduct any inter-annotator agreement analysis or provide any guidelines for the annotators?\nAs the clickbait detection task is quite similar to the natural language inference task (NLI), why do the authors not pick some existing NLI models for comparison?\nSection 3: In the last paragraph, \u201c\u2026 the test data represents a more natural distribution, \u2026\u201d, what is \u201cnatural distribution\u201d? Is imbalance data the same as \u201cnatural distribution\u201d?\nSection 4: In the 1st paragraph, \u201c\u2026 based on part-of-speech, scores, and punctuation patterns.\u201d, what do the scores represent?\nSection 4: In the 2nd paragraph, \u201cEach input is first preprocessed by a tokenizer.\u201d, which tokenizer do the authors employ? NLTK, Gensim, or StanfordCoreNLP?\nSection 4: In the 2nd paragraph, \u201cThe resulting embeddings are passed as input to the neural network.\u201d, what neural network is chosen? MLP, CNN, or Transformer?\nSection 4: In the 3rd paragraph, \u201cThe generated Ro-BERT-based embeddings are passed through a dropout layer, a fully-connected layer, and a classification layer.\u201d, as the former sentence mentioned [SEP], does here the embedding denote [CLS] embedding?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

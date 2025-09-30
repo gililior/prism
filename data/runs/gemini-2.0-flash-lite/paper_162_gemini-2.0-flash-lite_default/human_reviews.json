@@ -1,0 +1,64 @@
+[
+  {
+    "rid": "6Hwj61BTA4",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes symbolic tuning for in-context learning. \nIn symbol tuning, we replace the semantic labels of the few-shot exemplars with random irrelevant labels and remvoe the instructions in the exemplars. Then the instruction-tuned models are finetuned with the new data. \nAccording to the authors, symbolic tuning not only improves performance on few-shot classification problems, but also enhances algorithmic reasoning ability and can restore the flipped-label following ability.",
+      "reasons_to_accept": "1. The symbol tuning approach is simple and effective. It seems to be complementary to instruction tuning in terms of the algorithmic reasoning ability and strict instruction-following ability (e.g. flipped labels). \n2. The extensive experiments across model scales make the results convincing. \n3. The details of the experiments are available.",
+      "reasons_to_reject": "1. The authors only experiment with one class of closed-source models which are inaccessible to most researchers. The effectiveness of symbol tuning on the open-source LLMs such as Llama 1,2, is till unclear. \n2. The template does not look like EMNLP 2023 template.",
+      "questions_for_the_authors": "1) What is the performance of symbol tuning an LLM without instruction tuning? Will it still increase its ability on algorithmic reasoning and following flipped labels?   2) What is the relationship betweem instruction tuning and symbol tuning (only for classification problems)? \n3) Does symbol tuning increase algorithmic reasoning in CoT settings, like 8-shot CoT on GSM8K, which is also open-ended generation like list function tasks?",
+      "missing_references": "None",
+      "typos_grammar_style_and_presentation_improvements": "The font does not seem to follow EMNLP2023 template.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "7KCEi5zbr7",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "What is this paper about: This paper proposes a new method called symbol tuning to overcome the disadvantages of instruction tuning. In symbol tuning, the instructions are removed and natural language outputs are replaced with a random symbol. The LLMs are the fine-tuned on the input-masked outputs. This forces the models to reason only from examples not from the instructions. Experimental results on several NLP tasks shows the effectiveness of the proposed approach.\nMain Contributions: 1. New method symbol tuning to effectively learn from in-context examples. \n2. Proposed approach helps model to override knowledge if provided with contradictory information aka. editing knowledge in LLMs. \n3. Strong results on all benchmarks compared to IT.",
+      "reasons_to_accept": "Reasons to Accept: Strong motivation: The sensitiveness of prompts in the LLMs performance has been a concern in IT. This paper provided a strong motivation behind introducing symbol tuning.\nUsefulness to the NLP community: The symbol tuning approach is useful to NLP community for training LLMs using in-context examples.\nStrong experiment results: The authors performed comprehensive experiments on a broad range of NLP tasks and with a varied sizes of LLMs.",
+      "reasons_to_reject": "None.",
+      "questions_for_the_authors": "1. Will the authors make their code once accepted? \n2. Why does symbol tuning performs worse for smaller LMs like Flan-PaLM-8B? \n3. In Table-1 we see for the IT-LLM-62B-cont that without instructions performed better than with instructions? So, in this case even without instructions the model was able to learn from in-context examples. Does it mean we don't need symbol tuning in all the cases?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "FXVQiFCttH",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, the authors provide a novel finetuning approach for LLM via \u201csymbol tuning\u201d--finetuning LMs on input-label pairs for which the natural language labels are replaced with nonce words (\u201cfoo\u201d,\u201dbar\u201d)--and conduct experimental validation of the proposed approach for in-context learning and algorithmic reasoning tasks. The authors find that symbol tuned models demonstrate superior performance on in-context learning tasks and with underspecified prompts. They further show that symbol tuning improves performance on multiple algorithmic reasoning benchmarks (BIG-Bench, Turing Concepts). The authors also conduct tests with prompts that have flipped labels, necessitating models\u2019 overriding of prior knowledge to correctly answer prompts, showing that symbol tuning improves model performance in this domain as well.",
+      "reasons_to_accept": "- Novelty: the authors provide a novel approach to finetuning models, drawing from the intuition that when LMs struggle using instructions or labels to determine the task at hand, they instead resort to learning from in-context examples. This simple but effective approach provides both unique findings and a compelling explanation for model\u2019s improvement with symbol tuning.  - Robustness: the authors support their methodology with clear and logical analysis on the impact of symbol tuning in a variety of different contexts\u2013providing robust findings while also demonstrating the need for further research on the impact of symbol tuning for LLMs; this work provides promise for future work exploring more creative uses of input-label pairs during in-context learning.",
+      "reasons_to_reject": "Minor weaknesses/nits - Reproducibility is an issue due to the models tested being closed-source (although the process of symbol-tuning is described in detail) - Although the authors hypothesize about why symbol tuning allows models to perform better in the tested in-context learning and algorithmic reasoning tasks, the research lacks clear evidence backing these model\u2019s performance (but this may be better kept for future work)",
+      "typos_grammar_style_and_presentation_improvements": "ln. 60: it \u2192 they",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "5: Excellent: This study is one of the most thorough I have seen, given its type.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "2: Would be hard pressed to reproduce the results. The contribution depends on data that are simply not available outside the author's institution or consortium; not enough details are provided."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

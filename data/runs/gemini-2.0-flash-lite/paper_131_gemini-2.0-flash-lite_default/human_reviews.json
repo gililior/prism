@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "0720gzafb8",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a structured causal model (SCM) to mitigate entity bias in PLMs/LLMs.  To mitigate the conflicts between parametric knowledge and contextual knowledge, the paper first replaces entities with placeholders for the input sentence and then finds similar entities via LLM, thirdly generates the definition of placeholders with similar entities, and finally combines the definition, context, and prompt question to a whole input sentence. The experimental results show that the framework proposed by this paper could get better results compared with baseline models.",
+      "reasons_to_accept": "The paper proposes a causal view of entity bias in PLM/LLM models, which is interesting and has practical significance.",
+      "reasons_to_reject": "Various prompt-based learning methods have should that the classification results made by PLM/LLM can be affected by prompt templates. \ns it unclear whether the improvement in results from this method is specific because it mitigates the entity bias in PLM/LLM, or generates a more specific prompting template for PLM/LLM to make decisions.\nI think that LLM does not have entity bias because it has been pre-trained on a large amount of unsupervised/semi-supervised data. The entity bias in prompts given to LLM may be the reason why there is entity bias in  LLM inference results. The paper should analyze this point of view.\n Using the top k nearest neighbors to construct the convex hull seems like the prototype-based method. As the value of k increases, the center point of the convex hull should theoretically be closer to the true meaning of this entity category. In other words, the center point of the box will have less bias towards this entity category. This means the center of the hull moves further away from the original entity. But it also means the original entity has a bigger bias, why the results become worse?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "zWZGnjsEHv",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces techniques for mitigating entity bias as both a training-time intervention and prompting intervention for white-box and black-box LLMs respectively. They conduct an analysis of past entity bias mitigating techniques, and introduce a structured casual model to frame their technique.  The causal method is separated into a training time intervention, which consists of swapping a specific entities embedding in the lowest layer with an embedding at the center of a convex hull built off of closely related entities.  They also propose a method for use with black-box LLMs, which focuses on prompting the LLM to consider related entities in addition to a specific one.\nThey experiment with their interventions on the two earlier mentioned styles of LLMs and show that the training-time intervention improves over past methods in this study, specifically in the OOD performance. They also show that their prompting intervention aids black-box LLMs in mitigating entity bias as compared to their baseline techniques.",
+      "reasons_to_accept": "A) The paper is generally well-written and does a thorough analysis of past work in the entity bias space. \nB) Figures 3 and 4 in particular are well-illustrative of the techniques used. \nC) The ablation study on the in-context prompting section also shows clearly which components of their prompting strategy contribute to performance. \nD) Methods that use causal approaches with LLMs are important in achieving high performance in applications and reducing bias/errors. \nE) The authors report a robust set of experiments with multiple runs and error bars.",
+      "reasons_to_reject": "A) In-domain performance drops when applying the method as a training-time intervention. Although this is understandably an OOD mitigation technique, it would be nice to have consistent performance in domain B) There could be additional experiments in the in-context prompting section, as some important baselines for in-context prompting have not been included.",
+      "questions_for_the_authors": "A) Where do you get the set of entity neighbors to compute the convex hull from?  Were they extracted from the relevant datasets, or from an associated KB?\nB) In figure 1 there is an option for the model to choose from two given options in order to answer the entity relation question, however, in figure 4 that option is not present. Are options used in your experiments, and if so, how does the method work without those given options?\n(If no options given), One issue I see is that the method may not debias across multiple axes. How do you ensure that the training time intervention can debias across multiple axes? In the given example, Bill Gates is decoupled from his role as a founder and is shown to be a visitor. But how can the intervention debias across his nationality, his gender, etc.?\nC) In in-context example learning, how can the prompting strategy be applied to multiple entities? Has any analysis been done on if entity bias is sought for only a fraction of the entities present in the sample and what effect that has on performance?\nD) Can you elaborate more on why in-domain performance decreases when using your method? In what situations would a practitioner utilize this method given this drop?\nE) For in-context learning, can\u2019t entity bias be mitigated through other prompting techniques, such as demonstrations via in-context examples, CoT techniques, self-checking, etc.? How would these methods compare as a baseline against your method?  F) I would like further discussion of this point from the limitations section: \u201cIn this paper, we only consider zero-shot prompting for black-box LLMs, because this will help us to control variables during causal analysis.\u201d",
+      "typos_grammar_style_and_presentation_improvements": "The \u201cPLM\u201d usage in the abstract is not defined.\nFigure 3 caption could use further explanation so that it is more easily understood on quick passes.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "1Y0yMFs2jw",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper aims to eliminate entity bias in pre-trained language models through causal intervention methods. In particular, the paper proposes an entity perturbation method that perturbs the input text with similar entities from the convex hull of the target entity\u2019s representation. Such causal intervention at the input layer is shown to be effective on both training-time and in-context interventions. The proposed debiasing approach is evaluated on relation extraction data sets (TACRED and EntRED) and reading comprehension data set (TriviaQA).  Experimental results suggest strong performance gain over other baselines.",
+      "reasons_to_accept": "1. Strong empirical results demonstrating the effectiveness of the approach.\n2. The paper shows ingenuity in constructing a prompt that is effective for debiasing entity bias. It will be interesting to the community to follow up on this work and see whether similar approaches can help to mitigate other types of biases.\n3. The paper is well written and easy to follow",
+      "reasons_to_reject": "1. It seems the effectiveness of the proposed method is over-reliant on either the LLMs ability to provide similar entities (in-context intervention) or a pre-trained model\u2019s ability to retrieve similar entities (training-time intervention).\n2. There are some missing details in the paper. See the \u201cQuestions\u201d section for details.",
+      "questions_for_the_authors": "1. How do you obtain the entity embeddings for constructing the convex hull during training time intervention? Are you using a pre-trained model that provides such embeddings?\n2. How does debiasing impact long-tail entities? In particular, given the sparsity of the embedding space near the long-tail entities, how can we construct a convex hull?\n3. What is the interpretation of OOD in the experiments? Are these the entities not seen in training?",
+      "typos_grammar_style_and_presentation_improvements": "Too many footnotes in the paper, some of these should be incorporated into the main text and some others should be placed in the Appendix section when they contain specific details, e.g., choice of an experiment set up.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  }
+]

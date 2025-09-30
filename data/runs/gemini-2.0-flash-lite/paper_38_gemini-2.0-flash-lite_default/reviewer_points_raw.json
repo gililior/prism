@@ -1,0 +1,374 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces CACAO, a method for open-vocabulary named entity recognition (OVNER). The authors evaluate CACAO on three benchmarks, reporting state-of-the-art performance. Ablation studies and analyses of entity type representations and descriptions are also presented.",
+    "grounding": "Sections 4.1, 4.3, 4.4, 4.5, 4.6",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "CACAO outperforms baselines by a significant margin on OV-OntoNotes, OV-NERD-INTRA, and OV-NERD-INTER benchmarks, achieving state-of-the-art performance. (1) in Sec 4.3",
+    "grounding": "Table 1, Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "Ablation studies demonstrate the effectiveness of alignment pre-training in improving generalization to unseen types. (1) in Sec 4.4",
+    "grounding": "Table 2, Sec 4.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that CACAO can learn a rich and complete context-type semantic space, but this is not directly evaluated or shown. (2) in Sec 4.3",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The claim that CACAO has effective fine-grained entity type recognition ability is based on the observation that the performance improvement of CACAO is more significant on OV-NERD-INTRA compared to OV-OntoNotes. However, there is no direct evidence to support this claim.",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct further experiments to analyze the impact of different components of CACAO on the performance of different entity types.",
+    "grounding": "Sec 4.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more detailed analysis on the failure cases of CACAO.",
+    "grounding": "Sec 4.3, 4.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does CACAO handle the ambiguity of entity types?",
+    "grounding": "Sec 4.3",
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the impact of the size of the pre-training corpus on the performance of CACAO?",
+    "grounding": "Sec 4.4",
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper does not explicitly discuss the limitations of CACAO.",
+    "grounding": "N/A",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a novel method CACAO for OVNER. The evaluation uses adapted datasets and macro-averaged F1-score. The paper reports results on three random seeds.",
+    "grounding": "Sections 3, 4.1, and 4.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper details the evaluation benchmarks and metrics used, including the datasets and the macro-averaged F1-score.",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly state the random seeds used for experiments, making it difficult to reproduce the results.",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on the variance across the three random seeds.",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the specific random seeds used for all experiments.",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the variance (e.g., standard deviation) across the three random seeds.",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Release the code and the environment setup (e.g., a Dockerfile or a requirements.txt file) to ensure reproducibility.",
+    "grounding": "Appendix B",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific random seeds used for the experiments?",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What is the variance (e.g., standard deviation) of the results across the three random seeds?",
+    "grounding": "Section 4.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Will the code and environment setup be released?",
+    "grounding": "Appendix B",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The review is based on the provided text only; access to code, data, and compute resources is not available.",
+    "grounding": "N/A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "Partially reproducible",
+    "grounding": "Based on the provided information.",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces CACAO, a two-stage method for Open-Vocabulary Named Entity Recognition (OVNER). It formulates OVNER as a semantic matching task, using Dual-Encoder for pre-training on context-type pairs and Cross-Encoder for fine-tuning on base types. The method aims to recognize novel entity types based on textual descriptions, mimicking human-level ability.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly defines the problem of Open-Vocabulary NER and positions the proposed method within the context of existing NER approaches, highlighting the limitations of supervised, continual, and zero-shot learning methods in handling novel entity types.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper proposes a novel two-stage approach (CACAO) for OVNER, which is a new approach to address the problem.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the most relevant and recent baselines in the OVNER or related fields. The delta between CACAO and the closest performing method is not clearly explained.",
+    "grounding": "Related Work, Sec 4.1",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide enough information about the datasets used for pre-training and fine-tuning. Details about the context-type pairs are missing.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a head-to-head comparison with a state-of-the-art method that addresses a similar problem, such as a recent zero-shot or few-shot NER approach. Analyze the performance differences.",
+    "grounding": "Sec 4.1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details about the pre-training data, including its source, size, and characteristics. This will help in understanding the impact of the pre-training stage on the overall performance.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does CACAO handle the ambiguity of entity types, especially when the textual descriptions overlap or are not sufficiently discriminative?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost of CACAO compared to other NER methods, especially considering the two-stage approach?",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of CACAO vary with different types of novel entities, and are there any entity types where it struggles?",
+    "grounding": "Sec 4.1",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of the approach hinges on the effectiveness of the context-type semantic alignment and fusion, which may be limited by the quality and diversity of the pre-training data.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "Paper is generally well organized with clear sectioning.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly outlines the problem of novel entity recognition and motivates the need for open-vocabulary NER.",
+    "grounding": "Introduction",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'OVNER' could be more explicit, especially regarding the role of textual names/descriptions.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear notation table, making it difficult to follow the mathematical formulations.",
+    "grounding": "Methods Section (e.g., 2.1)",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the 'semantic matching task' formulation of OVNER.",
+    "grounding": "Abstract",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define all acronyms (e.g., OVNER, CACAO) immediately upon first use.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table of notation in the appendix.",
+    "grounding": "Methods Section, Appendix",
+    "facet": "clarity"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present the experimental setup and results of the proposed method. The figures are generally readable, but could benefit from improved labeling and clarity.",
+    "grounding": "Figures 1-4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 clearly illustrates the two-stage framework of the proposed method.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figures 3 and 4 lack clear axis labels and units, making it difficult to interpret the results. The figures also lack legends.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add axis labels (e.g., 'F1-score (%)') and a legend to Figures 3 and 4 to clarify the meaning of the plotted data. Consider adding error bars to show confidence intervals.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors or line styles represent in Figures 3 and 4? What is the range of F1-scores shown in Figures 3 and 4? Are the results shown in Figures 3 and 4 averaged over multiple runs?",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to showing overall performance metrics and do not provide detailed insights into the model's behavior on specific examples.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results, ablation studies, and dataset statistics for the proposed OVNER model. The tables generally include macro-averaged F1-scores, but some lack crucial statistical information such as confidence intervals or p-values. The structure and content vary across tables, with some providing more detailed breakdowns than others.",
+    "grounding": "Tables 1-13",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2, presenting the ablation study, appears to be well-structured and provides clear comparisons of different model configurations. The use of macro-averaged F1-score is appropriate for the imbalanced data.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1, while presenting results, lacks information on the variance of the results (e.g., standard deviation) and does not include any statistical significance tests (e.g., p-values) to support the claims of performance improvements. Table 5 also lacks these details.",
+    "grounding": "Table 1, Table 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to indicate result variability. Add p-values to indicate statistical significance of performance differences between methods and configurations. Ensure all tables include clear headers and units.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What is the variance (e.g., standard deviation) of the reported F1-scores? 2. What statistical tests were used to determine the significance of the performance differences between the proposed method and the baselines? 3. How were the random seeds chosen, and how did they impact the results? 4. Are the results in Table 5 directly comparable to the original paper's results, given the use of a different metric (micro-averaged F1-score)? 5. What is the rationale behind the choice of entity descriptions in Tables 12 and 13?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets (OV-OntoNotes, OV-NERD-INTRA, OV-NERD-INTER, CrossNER, and CoNLL 2003) and the chosen evaluation metric (macro-averaged F1-score). Generalizability to other datasets or metrics is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly address potential biases in the training data or the model's outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the technology to be used for malicious purposes, such as surveillance or the spread of misinformation.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of potential biases in the training data and their impact on the model's performance across different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section on potential misuse cases and mitigation strategies to prevent the technology from being used for malicious purposes.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  }
+]

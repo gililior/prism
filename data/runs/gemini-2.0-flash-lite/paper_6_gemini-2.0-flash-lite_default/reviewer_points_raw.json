@@ -1,0 +1,434 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper compares APROMPT with other parameter-efficient methods. The evaluation includes a comparison with methods like Partial tuning, Adapter, BitFit, and LoRA. The paper reports performance comparisons in Table 7.",
+    "grounding": "Section C",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not report the seeds used for experiments, making it difficult to assess the variance of the results.",
+    "grounding": "Section C",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code, including the training scripts, and a requirements file (e.g., `environment.yml` or `requirements.txt`) to specify the software environment.",
+    "grounding": "All sections",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the variance of the results by providing the standard deviation or confidence intervals for the reported metrics.",
+    "grounding": "Table 7",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "questions",
+    "text": "Were multiple random seeds used for the experiments? If so, what were the seed values?",
+    "grounding": "Section C",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "questions",
+    "text": "Is the code available, and if so, where can it be found?",
+    "grounding": "All sections",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "limitations",
+    "text": "Without access to the code and environment details, it is difficult to fully assess the reproducibility of the results.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "The current assessment is based on the information provided in the text. A more thorough review would be possible with access to code, data, and environment details.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces APROMPT, a new approach for parameter-efficient fine-tuning of large language models. The authors compare APROMPT with other parameter-efficient methods, demonstrating superior performance.",
+    "grounding": "Abstract",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper compares APROMPT with several parameter-efficient methods, including Partial tuning, Adapter, BitFit, and LoRA, providing a comprehensive evaluation.",
+    "grounding": "Table 7",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks details on the statistical significance of the performance gains, making it difficult to assess the reliability of the results.",
+    "grounding": "Table 7",
+    "facet": "analysis"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals in Table 7 to quantify the variability of the results and allow for statistical comparisons.",
+    "grounding": "Table 7",
+    "facet": "analysis"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the hyperparameters used for each baseline method (Partial tuning, Adapter, BitFit, and LoRA) the same as those reported in their respective original papers? If not, why?",
+    "grounding": null,
+    "facet": "experimental design"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational cost (e.g., GPU hours) for training APROMPT compared to the other baselines?",
+    "grounding": null,
+    "facet": "experimental design"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive is APROMPT's performance to the choice of the prompt initialization?",
+    "grounding": null,
+    "facet": "experimental design"
+  },
+  {
+    "kind": "limitations",
+    "text": "yes",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "ethics flag",
+    "text": "no",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions APROMPT within the context of prompt tuning and parameter-efficient fine-tuning methods, highlighting the limitations of existing approaches and the potential for improvement by incorporating prompts into the attention mechanism.",
+    "grounding": "Intro, Related Work",
+    "facet": "positioning"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper claims that existing prompt tuning can be considered a special case of attention prompt tuning, which provides a valuable theoretical connection and enhances the understanding of prompt tuning techniques.",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper needs to provide more detailed comparisons with the closest baselines, especially those that also explore attention mechanisms or modifications to the Transformer architecture. The delta needs to be clearer.",
+    "grounding": "Related Work, Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with a recent method that also modifies the attention mechanism or incorporates prompts in a similar way. This could be a contemporaneous method.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed ablation study to analyze the impact of each type of prompt (query, key, value) and their combinations.",
+    "grounding": "Sec 4.2",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the computational cost and memory footprint of APROMPT compared to other prompt tuning and fine-tuning methods.",
+    "grounding": "Intro",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does APROMPT's performance vary across different model scales and tasks within the SuperGLUE benchmark?",
+    "grounding": null,
+    "facet": "performance"
+  },
+  {
+    "kind": "question",
+    "text": "What is the sensitivity of APROMPT to the initialization and hyperparameter settings of the attention prompts?",
+    "grounding": null,
+    "facet": "robustness"
+  },
+  {
+    "kind": "question",
+    "text": "Are there any failure cases or scenarios where APROMPT underperforms compared to other methods?",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the specific design and implementation of the attention prompts within the Transformer layers. The scope is limited to the SuperGLUE benchmark.",
+    "grounding": "Abstract, Sec 4.1",
+    "facet": "novelty"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "borderline accept",
+    "grounding": null,
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally illustrate the proposed method and its performance compared to baselines. However, some figures lack clear labels and could benefit from improved visual clarity.",
+    "grounding": "Figures 1-7",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 1 provides a clear illustration of the proposed APROMPT method and compares it with existing methods.",
+    "grounding": "Fig 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figures 5, 6, and 7 lack clear axis labels and units, making it difficult to interpret the results quantitatively. The legends are missing in some figures.",
+    "grounding": "Figures 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add axis labels (with units where applicable) and legends to all figures to improve clarity. Include error bars to indicate the variance in the results.",
+    "grounding": "Figures 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific tasks are used in the ablation study in Figure 5? What do the different colors/line styles represent in the visualizations? What is the range of values on the axes in Figures 6 and 7?",
+    "grounding": "Figures 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations primarily focus on overall performance metrics and do not provide detailed insights into the model's internal workings or qualitative examples.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on the licenses of the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address consent or privacy considerations related to the datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential ethical risks associated with the datasets or the model.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the datasets used, their licenses, and any relevant usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address consent and privacy considerations, especially if the datasets contain personal information.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section on ethical risks and mitigations.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "strength",
+    "text": "Paper is generally well organized with clear sectioning.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the problem, proposed solution (APROMPT), and key findings.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'attention prompt tuning' beyond the high-level description in the abstract and introduction. A more formal definition, including mathematical notation, is needed.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed explanation of the self-attention mechanism or how APROMPT modifies it. Readers unfamiliar with Transformers may struggle to understand the approach.",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the self-attention mechanism and how APROMPT integrates with it, possibly with a figure illustrating the changes.",
+    "grounding": "\u00a71, Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a dedicated section or subsection to formally define APROMPT, including mathematical notation for the query, key, and value prompts and their integration into the attention mechanism.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a table of notation to clarify the symbols used throughout the paper, especially for the prompts and attention mechanism components.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does APROMPT's performance vary with different sizes of pre-trained language models?",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the computational overhead of APROMPT compared to standard prompt tuning and full fine-tuning?",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the query, key, and value prompts learned independently, or is there any parameter sharing or interaction between them?",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a formal definition and detailed explanation of APROMPT, including mathematical notation, may hinder reproducibility.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present performance comparisons of different prompt tuning methods across various NLP tasks. The tables generally include accuracy scores, but some lack crucial statistical information like confidence intervals or p-values.",
+    "grounding": "Tables 1-8",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 includes the number of trainable parameters ('Para') and indicates statistical significance with respect to all baselines (p-value < 0.005).",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks standard deviations or confidence intervals, making it difficult to assess the reliability of the reported accuracy scores. The table also lacks p-values to indicate statistical significance.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for all reported accuracy scores in all tables. Add p-values to indicate statistical significance of performance differences between APROMPT and the baselines in all tables. Clearly define the tasks and metrics used in each table.",
+    "grounding": "Tables 1, 3, 4, 5, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What statistical tests were used to determine the p-values reported in Table 2? How were the average scores calculated for tasks with two metrics? What is the definition of 'Para' and how is it calculated? Are the results in Table 3, 4, 5, and 7 statistically significant? What are the specific evaluation metrics used for each task in each table?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the specific datasets and tasks used in the experiments (SuperGLUE). Generalizability to other NLP tasks is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential biases or fairness issues.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of broader impacts.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential biases and fairness issues, and discuss mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly differentiates its approach, APROMPT, from existing prompt tuning methods by incorporating prompts into the attention layers, which is a novel contribution.",
+    "grounding": "Intro, Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explicitly states that existing prompt tuning methods are a special case of APROMPT, providing a clear theoretical connection and contribution.",
+    "grounding": "Intro",
+    "facet": "method"
+  },
+  {
+    "kind": "weakness",
+    "text": "While the paper mentions UniPELT [1], a direct comparison in terms of performance and parameter efficiency is missing. This is a key baseline for parameter-efficient tuning.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should compare against SideTuning [2] as it is also an extra module method.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing APROMPT with UniPELT [1] on the SuperGLUE benchmark, measuring both performance and the number of trainable parameters. This will highlight the efficiency gains.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study to isolate the impact of incorporating prompts into the query, key, and value components of the attention mechanism, compared to only using input prompts.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

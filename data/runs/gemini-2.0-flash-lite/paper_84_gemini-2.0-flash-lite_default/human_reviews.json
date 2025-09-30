@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "dJfimrJrLt",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This position paper examines the linguistic factors and psychological mechanisms that affect anthropomorphism in dialogue systems, the harms that may arise, and recommendations for dealing with these aspects. Throughout the paper, the authors also draw on existing efforts around anthropomorphism in dialogue and conversational systems. The main contribution is an organized collection of features, consequences, and recommendations surrounding anthropomorphism in dialogue systems.",
+      "reasons_to_accept": "Anthropomorphism in dialogue systems is an issue that is increasingly relevant, but there has not been much cohesive work in defining relevant linguistic and psychological features, consequences, and how/where we might begin to address these issues. \nThis paper ties in existing work and organizes a narrative that point the community to how we can take action to move away from anthropomorphic harms.",
+      "reasons_to_reject": "I don't really have a reason to reject this paper. Some of the paragraphs could be discussed in more detail, and it would be good to clarify the differences between definitions of \"designers\", \"developers\", \"practitioners\", etc (and thus perhaps the targeted audience of different recommendations) used throughout the paper, but those are more minor points.",
+      "questions_for_the_authors": "A. Line 268 \"People's expectation is that animate things---such as human beings---and inanimate ones---like machines---have very different functions and capabilities...\" I wonder whether we can cleanly separate out these expectations nowadays? ( Especially as dialogue and other conversational systems have already been integrated with our everyday tools, though it's true that new integrations are constantly forming) B. \"Responses to Direct Questions\": from the paragraph title, I expected this section to go into more types of direct questions. Are there questions beyond \"are you human\" that warrant discussion?\nC. Line 702 \"We therefore recommend...forego embedding humanlike personality traits in dialogue systems\" Are there exceptions? Contexts or scenarios in which the benefits of using humanlike personality traits may be greater than disadvantages (systems for loneliness, education, etc?) Even if the answer is no, it may be good to further contextualize.",
+      "typos_grammar_style_and_presentation_improvements": "- Line 638: dollar sign instead of section?\n- Line 686,687: missing spaces",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "N/A: Doesn't apply, since the paper does not include empirical results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "xdrAw8vUQ3",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This position/survey paper addresses the anthropomorphism of NLP systems: it highlights the linguistic factors that influence people to anthropomorphize systems, discusses the negative consequences of this phenomenon, and makes some broad recommendations for how to address this issue in the future.",
+      "reasons_to_accept": "This is an excellently written paper that comprehensively unifies a lot of different research findings into an organized narrative. It will make a useful reference for any future work related to the topic. Some of the discussion points I find particularly insightful are: - The cognitive factors that promote anthropomorphism, in particular effectance and sociality - The fact that there is no one single feature of a system that will cause people to anthropomorphize it; instead, this emerges through multiple features - The complicated role of some linguistic factors in anthropomorphism; for example, speech disfluencies can mitigate users\u2019 over-confidence in a system but also make it appear more humanlike - The importance of systems trying to reduce the tendency of users to anthropomorphize them, by avoiding language that presumes human qualities - The recommendation to AI researchers to consider re-framing their research narratives to avoid references to building humanlike AI",
+      "reasons_to_reject": "I think this paper should be accepted for the reasons above. I do think the outlook expressed by the paper will be met with some opposing viewpoints, since it emphasizes the negative aspects of anthroporphism. A counter viewpoint is that anthropomorphism is not inherently harmful but simply needs to be controlled, and that some of recommendations given in the paper for avoiding it are unrealistic; for example, avoiding the use of first-person pronouns will be extremely difficult to achieve. I don\u2019t see this as a weakness of the paper, but it may mean the authors may need to be prepared to further argue their position with even more detailed discussion (in either the presentation, and/or a follow-up publication, and/or some other venue).",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "N/A: Doesn't apply, since the paper does not include empirical results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "2L7lNJoLkO",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This is a positional paper arguing about the harms of Anthropomorphism in dialog systems. \n1. The paper shared the Human, agent, and linguistic factors, and roles that contributed to Anthropomorphism. \n2. The paper claimed the consequence of mis-trust & deception, giving machine genders. \n3. This paper recommended 4 ways to reduce  anthropomorphism, including recognizing the tendency, using anthropomorphic tools, update research goal and avoid anthropomorphic system description.\nThe contributions include 1. Reemphasize the harms of anthropomorphism in dialogue system 2. Provided a detailed analysis of what are contributing to anthropomorphism 3. Gave practical recommendations of how to address the issue",
+      "reasons_to_accept": "1. Mainly based on the contribution above, with a focus of (2) and (3) in the contributions, as (1) isn't a new idea or arguments. \n2. The paper cited a lot of references to show the point",
+      "reasons_to_reject": "(1) The harm of anthropomorphism in dialog system isn't a new thing, it isn't a new argument (2) I would hope to see the analysis of anthropomorphism contributor can help guide the recommendation. \n(3) In general, I don't feel I am convinced by this paper about the anthropomorphism's harm",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "N/A: Doesn't apply, since the paper does not include empirical results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

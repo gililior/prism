@@ -1,0 +1,150 @@
+{
+  "summary": "This paper introduces the Adaptive Language-guided Multimodal Transformer (ALMT) to address the problem of disruptive information in multimodal sentiment analysis. The paper presents a novel approach and provides a clear overview of the proposed pipeline. The authors have addressed some of the initial concerns regarding reproducibility, statistical rigor, and thorough comparison with existing methods in their rebuttal, but further improvements are still needed.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly identifies the problem of disruptive information in multimodal sentiment analysis and proposes ALMT as a novel solution.",
+      "grounding": "Intro",
+      "facet": "positioning_originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper uses established evaluation metrics like accuracy and F1-score, and the consistent use of bold font to highlight the best results aids in quickly identifying the top-performing methods.",
+      "grounding": "Sec 4.2, Tables 1-8",
+      "facet": "methods_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 2 provides a clear overview of the proposed ALMT pipeline.",
+      "grounding": "Fig 2",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly outlines the problem and motivates the proposed ALMT approach, with clearly stated contributions.",
+      "grounding": "Intro §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper provides a good overview of the two main categories of MSA methods, which is consistent with the current literature.",
+      "grounding": "Intro",
+      "facet": "related_work"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks information on seeds, making it difficult to assess the reproducibility of the results.",
+      "grounding": "No mention of seeds",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper claims improved performance, but lacks specific details on the extent of the improvement, and lacks statistical rigor in the analysis.",
+      "grounding": "Sec 5, Sec 4.5.5",
+      "facet": "claims_vs_evidence_analysis"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks specific details on how ALMT compares to existing state-of-the-art methods, especially in terms of architecture and performance, and does not address novelty compared to top cited papers.",
+      "grounding": "Related Work",
+      "facet": "comparative_evidence_related_work"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figures 3, 8, 9, and 10 lack clear axis labels and units, making it difficult to interpret the results.",
+      "grounding": "Fig 3, 8, 9, 10",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide information on the datasets used, including their licenses, consent procedures, and privacy considerations, nor does it address potential biases present in the datasets.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing_bias"
+    },
+    {
+      "kind": "weakness",
+      "text": "Several tables lack crucial statistical information such as standard deviations, confidence intervals, or p-values, making it difficult to assess the significance of the reported results.",
+      "grounding": "Tables 1-9",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'hyper-modality' and its role in the AHL module is not entirely clear, and the paper lacks a clear notation section.",
+      "grounding": "Intro §1, Methods §3",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly address potential biases in the training data or the model's outputs, nor does it discuss potential misuse cases or the ethical implications of the technology.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness_societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code, data, and environment details (e.g., a Dockerfile or Conda environment file) to ensure reproducibility.",
+      "grounding": "Missing code/data availability",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide specific details about the datasets used and the performance improvements achieved, including quantitative results, and conduct experiments to demonstrate the effectiveness of the ALMT in suppressing the adverse effects of redundant information.",
+      "grounding": "Sec 4.2, 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals for all reported results to assess statistical significance, and add p-values to indicate statistical significance when comparing different methods or configurations.",
+      "grounding": "Tables 1-9",
+      "facet": "analysis_tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide details on the hyperparameter search strategy and the final hyperparameters used.",
+      "grounding": "Insufficient evidence",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed comparison of ALMT with the most relevant existing methods, including quantitative results and ablation studies, and perform a head-to-head comparison with [1] by implementing their method and comparing performance on the same datasets.",
+      "grounding": "Sec 4.1, Sec X",
+      "facet": "comparative_evidence_related_work"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add labels to the axes and legends to clarify the meaning of the plots in Figures 3, 8, 9, and 10. Include units where applicable.",
+      "grounding": "Fig 3, 8, 9, 10",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "The authors should explicitly state the licenses and usage terms for all datasets used in the paper. They should also provide information on how consent was obtained and address any privacy considerations, and analyze the datasets for potential biases and discuss the impact of these biases on the model's performance.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing_bias"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the AHL module, including the specific language features used and how they guide the visual and audio modalities, and include a notation table to define all symbols and variables used in the equations and model descriptions.",
+      "grounding": "Intro §1, Methods §3",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a discussion of potential biases in the training data and how they might affect the model's performance. Consider mitigation strategies, and add a section on potential misuse cases and ethical considerations, such as the use of the model in surveillance or emotion detection.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness_societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a detailed discussion of the differences between the proposed method and [2, 3], highlighting the key innovations and how they address the limitations of previous work.",
+      "grounding": "Sec X",
+      "facet": "related_work"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

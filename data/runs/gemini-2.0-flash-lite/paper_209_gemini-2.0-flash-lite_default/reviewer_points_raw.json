@@ -1,0 +1,338 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces mLongT5, a multilingual text-to-text transformer designed for long input sequences. It builds upon LongT5's architecture, incorporates multilingual datasets, and is evaluated on summarization and question-answering tasks.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the gap in existing models by combining long-sequence handling with multilingual capabilities.",
+    "grounding": "Intro \u00a71, Related Work \u00a72",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks sufficient comparative evidence to demonstrate a clear advantage over existing multilingual models, especially those designed for long sequences. The delta is unclear.",
+    "grounding": "Abstract, Related Work",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a direct comparison with a state-of-the-art multilingual model that also handles long sequences (e.g., a multilingual version of a recent long-sequence transformer).",
+    "grounding": "Evaluation section",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "1. What specific architectural modifications were made to LongT5 to adapt it for multilingual data? 2. What is the computational cost of mLongT5 compared to other multilingual models? 3. How does mLongT5 perform on languages with limited training data?",
+    "grounding": "Introduction, Experiments",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the specific architectural choices and the effectiveness of the multilingual pretraining strategy. The scope is limited to the tasks and datasets used for evaluation.",
+    "grounding": "Abstract, Experiments",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": "Based on the current evidence, the paper shows promise but requires more rigorous comparison and clarification of the novelty.",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces mLongT5, a multilingual model for summarization and question answering. The results show mLongT5 performs well on these tasks, particularly with longer input sequences.",
+    "grounding": "Sec 4, Sec 5",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "mLongT5 demonstrates improved performance on question answering tasks compared to mT5, as shown in Table 4.",
+    "grounding": "Table 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims mLongT5 handles multilingual inputs and outputs, but the evidence is not provided.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims mLongT5 performs well on a variety of summarization and question-answering tasks, but only one dataset is shown.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the multilingual capabilities of mLongT5, including the datasets used and the metrics.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include results on summarization tasks to support the claim of good performance on a variety of tasks.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What specific multilingual datasets were used to evaluate mLongT5?",
+    "grounding": "Sec 5",
+    "facet": "clarification"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific summarization tasks and datasets used to evaluate the model?",
+    "grounding": "Sec 4",
+    "facet": "clarification"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations of mLongT5, stating it is better suited for tasks with longer inputs.",
+    "grounding": "Sec 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces mLongT5, a multilingual, efficient text-to-text transformer for long inputs, built upon LongT5 and leveraging mT5's multilingual datasets and UL2's pretraining tasks. The model is evaluated on multilingual summarization and question-answering tasks, showing improved performance compared to existing multilingual models.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the model's architecture, datasets, pretraining tasks, and evaluation methodology.",
+    "grounding": "Sections 1, 3, 4",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The rationale for design choices, such as using UL2's pretraining tasks instead of PEGASUS, is well-explained.",
+    "grounding": "Section 3.2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'efficient attention mechanism' and how it is implemented in LongT5 and mLongT5.",
+    "grounding": "Section 3",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a table of notation, making it difficult to follow the equations and formulas.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the efficient attention mechanism used in LongT5 and mLongT5, including specific architectural details.",
+    "grounding": "Section 3",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a table of notation to define all symbols and abbreviations used in the paper.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the specific configurations and checkpoints that have been open-sourced.",
+    "grounding": "Section 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What specific modifications were made to the LongT5 architecture to adapt it for multilingual data?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the UniMax sampling method affect the pretraining process and the final performance of mLongT5?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific hyperparameter settings used for fine-tuning mLongT5 on the summarization and question-answering tasks?",
+    "grounding": null,
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's lack of detailed architectural explanations and notation could hinder reproducibility.",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper's figures are assessed based on legibility, caption quality, visual correctness, and their effectiveness in supporting the claims. The evaluation focuses on the clarity of axes labels, legends, and overall readability.",
+    "grounding": "Figures 1-10",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figures are readable and appear to support the claims made in the results section, particularly in demonstrating performance across different tasks.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Some figures lack clear axis labels and units, which could hinder understanding. The absence of legends in certain figures also makes it difficult to interpret the data.",
+    "grounding": "Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In performance plots, include error bars to indicate confidence intervals. Ensure all axes are clearly labeled with units, and add legends to clarify the meaning of different visual elements (e.g., colors, line styles).",
+    "grounding": "Fig 2, Fig 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors represent in the visualizations? Are the input and target lengths clearly defined in the figures? How is the performance measured and what are the specific metrics used? Are the baselines clearly identified in the figures? Are the figures consistent with the default values used for T5 finetuning?",
+    "grounding": "Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to overall performance metrics, potentially missing granular insights into specific aspects of the model's behavior or performance.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results for summarization and question answering tasks, comparing the proposed model with baseline models. The tables' quality varies, with some lacking crucial statistical information.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The tables report ROUGE scores, which are standard metrics for summarization tasks. The inclusion of multiple ROUGE metrics (ROUGE-1, ROUGE-2, ROUGE-L) provides a more complete picture of the model's performance.",
+    "grounding": "Tables 1, 2, 3, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The tables do not explicitly mention the inclusion of standard deviations or confidence intervals. Without these, it is difficult to assess the statistical significance of the results. The absence of p-values makes it hard to determine if the observed differences are statistically significant.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals for all reported metrics. Add p-values to indicate the statistical significance of the differences between the proposed model and the baselines. Clearly define all acronyms and abbreviations used in the table headers and captions.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to compare the performance of the models? 2. Are the differences in performance statistically significant? 3. What are the standard deviations or confidence intervals for the reported ROUGE scores? 4. How were the input and target lengths determined for each task?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the datasets mentioned (MLSUM, XL-Sum, WikiLingua, TyDi QA). The generalizability of the findings to other datasets or domains is not addressed.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the two main areas of related work: efficient transformer models for long inputs and multilingual models, providing a good overview of the relevant literature.",
+    "grounding": "Intro/Related Work",
+    "facet": "related_work"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explicitly states that mLongT5 builds upon the LongT5 architecture and leverages the multilingual datasets used for mT5 and the pretraining tasks of UL2, clearly differentiating its approach.",
+    "grounding": "Abstract",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare mLongT5 with LongT5 [Guo et al., 2022] on multilingual tasks. This comparison is crucial to demonstrate the effectiveness of the multilingual adaptation.",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper should compare mLongT5 with other multilingual models like mT5 [Xue et al., 2021] and umT5 [Chung et al., 2023] on long-input tasks. This comparison is missing.",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on the TyDi QA dataset [1] to evaluate the performance of mLongT5 on information-seeking question answering in typologically diverse languages and compare it with existing multilingual models.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment_suggestion"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate mLongT5 on the WikiLingua dataset [2] for cross-lingual abstractive summarization and compare it with mBART and mT5.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment_suggestion"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Evaluate mLongT5 on the XLSum dataset [3] for large-scale multilingual abstractive summarization and compare it with existing multilingual models.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment_suggestion"
+  }
+]

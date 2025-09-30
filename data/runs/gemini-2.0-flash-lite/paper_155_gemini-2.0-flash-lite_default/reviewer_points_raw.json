@@ -1,0 +1,386 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper analyzes narratives of intended use in fact-checking papers, identifying areas of concern and offering recommendations.",
+    "grounding": "Sections 6, 8",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper identifies areas of concern in fact-checking papers based on content analysis.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides recommendations to help researchers avoid vagueness in their narratives.",
+    "grounding": "Section 8",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper's claims about the limitations of current fact-checking narratives are broad and lack specific empirical grounding beyond the content analysis.",
+    "grounding": "Sections 6, 8",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more specific examples of the 'vague or unrealistic terms' used in fact-checking papers.",
+    "grounding": "Section 8",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a more detailed discussion of the limitations of the content analysis methodology.",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific types of vagueness are most prevalent in the analyzed fact-checking papers?",
+    "grounding": "Section 8",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How were the papers selected for content analysis?",
+    "grounding": "Section 6",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations of their analysis by focusing on automated fact-checking and suggesting their recommendations can inspire introspection in related fields.",
+    "grounding": "Section 8",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper analyzes 100 highly-cited papers on automated fact-checking to assess the clarity of their narratives regarding intended use. It identifies common vagueness in these narratives, particularly concerning the actors, means, and ends of the proposed fact-checking systems. The paper provides recommendations for improving the clarity and practicality of future research in this area.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the problem of vagueness in the narratives surrounding automated fact-checking.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides concrete recommendations for improving the clarity of future research.",
+    "grounding": "Introduction, Recommendations",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'artefacts' could be more precise, especially in the context of NLP and automated fact-checking.",
+    "grounding": "Introduction",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper could benefit from a more detailed explanation of the methodology used for annotating the epistemic elements.",
+    "grounding": "Introduction, Methods",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a table or list defining the key terms used in the analysis (e.g., data actors, application means, epistemic ends).",
+    "grounding": "Introduction, Figure 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand on the discussion of how the recommendations can be implemented in practice.",
+    "grounding": "Recommendations",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How were the 100 papers selected for analysis?",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific criteria were used to categorize the narratives?",
+    "grounding": "Methods",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the limitations of the content analysis approach used?",
+    "grounding": "Methods",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's analysis relies on a specific set of 100 papers, which may limit the generalizability of the findings.",
+    "grounding": "Introduction",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "This paper analyzes 100 highly-cited papers on automated fact-checking to identify and categorize narratives about the intended use of fact-checking artifacts. The authors find that many papers lack clarity regarding key epistemic elements (stakeholders, means, and ends), which they argue hinders the technology's effectiveness. They provide recommendations for improving the clarity and rigor of discussions about the intended use of fact-checking artifacts.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's focus on the intended use of automated fact-checking artifacts and the analysis of epistemic elements (stakeholders, means, ends) offers a novel perspective on the field. The methodology of content analysis applied to a large corpus of papers is well-defined.",
+    "grounding": "Intro, Sec 1, Sec 2",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'overclaiming' and how it specifically manifests in the context of automated fact-checking. The paper does not provide a detailed comparison with existing literature on the responsible design and deployment of AI systems.",
+    "grounding": "Intro, Related Work",
+    "facet": "positioning"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative analysis of the identified narratives with existing frameworks for responsible AI development and deployment (e.g., fairness, accountability, and transparency).",
+    "grounding": "Related Work",
+    "facet": "positioning"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide concrete examples of how the proposed recommendations can be implemented in the design and evaluation of automated fact-checking systems.",
+    "grounding": "Sec 1.4",
+    "facet": "novelty"
+  },
+  {
+    "kind": "question",
+    "text": "How does the paper's definition of 'epistemic tool' align with existing definitions in philosophy and information science?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What specific criteria were used to select the 100 highly-cited papers?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of the content analysis methodology used in this study?",
+    "grounding": "Sec 1.4",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the specific categorization of epistemic elements and the application of content analysis to a corpus of fact-checking papers.",
+    "grounding": "Intro, Sec 1.4",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "{\"originality\": \"moderate\", \"relation_to_prior_work\": \"good\", \"positioning\": \"moderate\", \"comparative_evidence\": \"weak\"}",
+    "grounding": "all",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions are not explicitly addressed in the paper.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "Consent and privacy considerations for data subjects are not discussed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address the usage terms of the automated fact-checking tools.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should encourage the papers they analyze to include explicit license and consent statements for datasets used.",
+    "grounding": "Based on the analysis of the paper's recommendations.",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should encourage the papers they analyze to address privacy considerations for data subjects.",
+    "grounding": "Based on the analysis of the paper's recommendations.",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should encourage the papers they analyze to include usage terms for the automated fact-checking tools.",
+    "grounding": "Based on the analysis of the paper's recommendations.",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present a variety of visualizations related to automated fact-checking, including diagrams, frequency distributions, and time series data. The clarity and effectiveness of the figures vary.",
+    "grounding": "Figures 1-9",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 provides a clear diagram of epistemic elements, aiding in understanding the narrative structure.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several figures lack clear axis labels, units, and legends, making it difficult to interpret the data accurately. Figure 3 and 4 are examples.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Ensure all axes are clearly labeled with units. Provide comprehensive legends to explain all visual elements, such as colors and symbols. Consider using more descriptive titles for each figure.",
+    "grounding": "Figures 3-7",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific metrics are used in Figure 4 to determine the frequency of each epistemic narrative? What are the units on the y-axis in Figure 5? What do the colors represent in Figure 1?",
+    "grounding": "Fig 1, Fig 4, Fig 5",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations may be limited in their ability to convey the nuances of the data, particularly if the axes and legends are not clear. The flowcharts (Figures 8 and 9) may be difficult to follow without detailed explanations.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present basic descriptive statistics but lack detailed statistical analysis.",
+    "grounding": "Tables 1 and 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 clearly presents percentages for each epistemic narrative.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks any statistical measures, such as standard deviation or confidence intervals, and Table 2 lacks any measure of variance or statistical significance.",
+    "grounding": "Tables 1 and 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals in Table 1. Add a measure of variance or statistical significance to Table 2.",
+    "grounding": "Tables 1 and 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What is the total number of papers analyzed in Table 1? 2. What methodology was used to identify the epistemic narratives in Table 2? 3. How were the percentages in Table 2 calculated?",
+    "grounding": "Tables 1 and 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The scope of the tables is limited to the specific dataset of 100 highly cited papers.",
+    "grounding": "Tables 1 and 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly discuss the potential risks associated with automated fact-checking technologies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential misuse scenarios.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss fairness considerations.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a comprehensive analysis of broader societal impacts.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on potential misuse scenarios, such as the spread of misinformation by malicious actors using the technology.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss fairness considerations, such as potential biases in the datasets or algorithms used for fact-checking.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Outline mitigation strategies for identified risks and fairness concerns.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's focus on the epistemic aspects of automated fact-checking, including means, ends, and stakeholder considerations, distinguishes it from prior work that often concentrates on technical aspects like veracity prediction [1, 2].",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare its findings with the methodologies or results of existing fact-checking systems, such as those discussed in [1] and [2]. A comparison of the epistemic elements considered in the current paper versus those in existing systems would strengthen the analysis.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative analysis of the epistemic elements (means, ends, stakeholders) in the current paper's analysis with the design and evaluation of existing fact-checking systems, such as those described in [1] and [2]. This could involve a qualitative comparison of how these systems address the identified epistemic concerns.",
+    "grounding": "Sec X",
+    "facet": "experiment"
+  }
+]

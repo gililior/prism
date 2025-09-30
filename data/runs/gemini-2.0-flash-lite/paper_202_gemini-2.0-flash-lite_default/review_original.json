@@ -1,0 +1,144 @@
+{
+  "summary": "This paper investigates the impact of linguistic properties of prompts on LLM performance, a valuable but under-explored area. While the study design is a strength, the paper suffers from weaknesses in reproducibility, statistical rigor, and clarity, particularly regarding terminology and result presentation.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper's controlled study design, systematically varying prompts to analyze their impact on model performance, is a key strength, addressing an important area of LLM research.",
+      "grounding": "Intro, Sec 1",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The authors clearly state the limitations of their study, such as the exclusion of certain models and experimental settings.",
+      "grounding": "Conclusion section",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Tables 2, 3, and 4 clearly indicate the highest accuracy per category and dataset using bold font, with statistical comparisons indicated by asterisks.",
+      "grounding": "Tables 2, 3, 4",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly outlines the problem, research questions, and the paper's contributions.",
+      "grounding": "Abstract, §1",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the generalizability of its findings, particularly in the Ethics & broader impact section, where prompt engineering recommendations are given despite the localized nature of the results.",
+      "grounding": "Ethics & broader impact section",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks crucial information for reproducibility, including the seeds used for experiments and the environment details (libraries, versions, hardware).",
+      "grounding": "Section 4.2",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'prompt' and 'instruction' and uses them interchangeably, which could lead to confusion.",
+      "grounding": "Abstract, §1",
+      "facet": "terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a notation table, making it difficult to follow the different LLMs and datasets used.",
+      "grounding": "§1, §2",
+      "facet": "organization"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks statistical rigor in result presentation; Table 1 lacks statistical information, and Tables 9-20 lack standard deviations or confidence intervals.",
+      "grounding": "Table 1, Tables 9-20",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset licensing and usage restrictions are not stated.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not discuss potential misuse or failure modes.",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a quantitative comparison with a state-of-the-art prompt optimization method to demonstrate the performance gains of the proposed approach.",
+      "grounding": "Sec 1, Sec 5",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed analysis of the specific linguistic features that correlate with performance variations, potentially involving statistical analysis or case studies.",
+      "grounding": "Sec 5, Sec 6",
+      "facet": "None"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a link to the code repository (e.g., GitHub) with the code, data, and a detailed README file, including the environment setup (e.g., Conda environment.yml or Dockerfile).",
+      "grounding": "Code/Data Availability",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Report the seeds used for all experiments and the variance (e.g., standard deviation) across multiple runs.",
+      "grounding": "Section 4.2",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals for the accuracy results in Tables 9-14 to provide a measure of result variability. Add p-values to Tables 2, 3, and 4 to clarify the significance of the differences. For Tables 15-20, provide context by including the mean and standard deviation of the perplexity scores.",
+      "grounding": "Tables 2-4, Tables 9-20",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Define 'prompt' and 'instruction' early on and consistently use the terms.",
+      "grounding": "Abstract, §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Create a table or list to clarify the different LLMs, datasets, and tasks used in the experiments.",
+      "grounding": "§1, §2",
+      "facet": "organization"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies.",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing the performance of the proposed linguistic variations of prompts with the multi-task prompted training approach of [1] (Sanh et al., 2022).",
+      "grounding": "Sec 4.1",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a discussion of potential biases in the datasets used for evaluation.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Appendix D",
+      "facet": "ethics_licensing"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

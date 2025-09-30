@@ -1,0 +1,156 @@
+{
+  "summary": "This paper introduces mLongT5, a model combining long-sequence handling with multilingual capabilities. The paper demonstrates improved performance on question answering and summarization tasks. The authors have clarified some aspects of the model and its evaluation based on the rebuttals, including the datasets used and the multilingual capabilities. However, the lack of sufficient comparative evidence and clarity in certain areas, such as the efficient attention mechanism and statistical significance of results, still limits the overall assessment.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper clearly identifies the gap in existing models by combining long-sequence handling with multilingual capabilities, providing a good overview of the relevant literature. (Intro §1, Related Work §2)",
+      "grounding": "Intro §1, Related Work §2",
+      "facet": "novelty_and_related_work"
+    },
+    {
+      "kind": "strength",
+      "text": "mLongT5 demonstrates improved performance on question answering tasks compared to mT5. (Table 4)",
+      "grounding": "Table 4",
+      "facet": "experimental_results"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly outlines the model's architecture, datasets, pretraining tasks, and evaluation methodology. (Sections 1, 3, 4)",
+      "grounding": "Sections 1, 3, 4",
+      "facet": "organization_and_clarity"
+    },
+    {
+      "kind": "strength",
+      "text": "Figures are readable and appear to support the claims made in the results section, particularly in demonstrating performance across different tasks. (Fig 2)",
+      "grounding": "Fig 2",
+      "facet": "figures_and_visualization"
+    },
+    {
+      "kind": "strength",
+      "text": "The tables report standard metrics for summarization tasks, providing a more complete picture of the model's performance. (Tables 1, 2, 3, 5)",
+      "grounding": "Tables 1, 2, 3, 5",
+      "facet": "tables_and_metrics"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper explicitly states that mLongT5 builds upon the LongT5 architecture and leverages the multilingual datasets used for mT5 and the pretraining tasks of UL2, clearly differentiating its approach. (Abstract)",
+      "grounding": "Abstract",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper presents results on MLSUM, XL-Sum, and WikiLingua datasets, clarifying the variety of tasks addressed. (Sec 4)",
+      "grounding": "Sec 4",
+      "facet": "experimental_results"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient comparative evidence to demonstrate a clear advantage over existing multilingual models, especially those designed for long sequences; the performance delta is unclear. (Abstract, Related Work)",
+      "grounding": "Abstract, Related Work",
+      "facet": "experimental_results"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper claims mLongT5 handles multilingual inputs and outputs and performs well on a variety of tasks, but the evidence is not fully provided. (Sec 5)",
+      "grounding": "Sec 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'efficient attention mechanism' and how it is implemented in LongT5 and mLongT5. (Section 3)",
+      "grounding": "Section 3",
+      "facet": "clarity_and_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The tables do not explicitly mention the inclusion of standard deviations or confidence intervals, making it difficult to assess the statistical significance of the results. The absence of p-values makes it hard to determine if the observed differences are statistically significant. (Tables 1-5)",
+      "grounding": "Tables 1-5",
+      "facet": "tables_and_metrics"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a discussion of potential misuse or failure modes. (Insufficient evidence)",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare mLongT5 with LongT5 on multilingual tasks, nor with other multilingual models like mT5 and umT5 on long-input tasks. (Related Work)",
+      "grounding": "Related Work",
+      "facet": "missing_comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset license and usage restrictions are not stated. (Insufficient evidence)",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_and_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "Some figures lack clear axis labels and units, and the absence of legends in certain figures makes it difficult to interpret the data. (Fig 3)",
+      "grounding": "Fig 3",
+      "facet": "figures_and_visualization"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a table of notation, making it difficult to follow the equations and formulas. (Throughout the paper)",
+      "grounding": "Throughout the paper",
+      "facet": "clarity_and_presentation"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a direct comparison with a state-of-the-art multilingual model that also handles long sequences.",
+      "grounding": "Evaluation section",
+      "facet": "experimental_design"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the multilingual capabilities of mLongT5, including the datasets used and the metrics, and include results on summarization tasks.",
+      "grounding": "Sec 5, Sec 4",
+      "facet": "experimental_design"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the efficient attention mechanism used in LongT5 and mLongT5, including specific architectural details.",
+      "grounding": "Section 3",
+      "facet": "clarity_and_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a table of notation to define all symbols and abbreviations used in the paper.",
+      "grounding": "Throughout the paper",
+      "facet": "clarity_and_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "In performance plots, include error bars to indicate confidence intervals, ensure all axes are clearly labeled with units, and add legends to clarify the meaning of different visual elements.",
+      "grounding": "Fig 2, Fig 3",
+      "facet": "figures_and_visualization"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals for all reported metrics, add p-values to indicate the statistical significance of the differences between the proposed model and the baselines, and clearly define all acronyms and abbreviations used in the table headers and captions.",
+      "grounding": "Tables 1-5",
+      "facet": "tables_and_metrics"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies.",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_and_licensing"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

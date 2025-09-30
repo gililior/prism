@@ -1,0 +1,506 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces MProto, a prototype-based network for distant supervised NER. Experiments demonstrate its robustness to incomplete labeling noise compared to baselines.",
+    "grounding": "Sec 3.5, Sec 5",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The performance of MProto is shown to be more robust to incomplete labeling noise compared to Negative Sampling and Early Stopping, with quantitative results on BC5CDR and CoNLL03 datasets.",
+    "grounding": "Sec 3.5, Fig 3, Table 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly states the use of multiple prototypes to model intra-class variance and the application of the Sinkhorn-Knopp algorithm to solve the optimal transport problem.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims MProto achieves SOTA performance, but lacks specific comparisons to other SOTA methods.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper claims that visualizations and detailed analysis confirm MProto's ability to characterize intra-class variance and the effectiveness of denoised optimal transport, but does not provide specific details or references to these analyses.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed comparison with other SOTA methods, including quantitative results and discussion of the differences.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the visualizations and detailed analysis to support the claims about intra-class variance and the effectiveness of denoised optimal transport.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific SOTA methods being compared against?",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "Can the authors provide more details about the visualizations and detailed analysis?",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge that the current work focuses on DS-NER and suggest future work on few-shot and fully supervised NER tasks.",
+    "grounding": "Sec 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes MProto, a novel prototype-based network for Distantly Supervised Named Entity Recognition (DS-NER). MProto addresses the issues of incomplete labeling and intra-class variance in DS-NER by using multiple prototypes per class and a Denoised Optimal Transport (DOT) algorithm. The method is evaluated on various datasets and claims state-of-the-art performance.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the problems of incomplete labeling and intra-class variance in DS-NER and positions the proposed method as a solution to these problems.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The use of multiple prototypes to capture intra-class variance is a novel approach in the context of DS-NER.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the most relevant existing DS-NER methods. While SOTA is claimed, the specific baselines and the delta in performance are not clearly articulated.",
+    "grounding": "Related Work, Experiments",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient details on the computational complexity of the proposed method compared to existing methods.",
+    "grounding": "Methods",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed comparison with a strong baseline DS-NER method, such as AutoNER (Shang et al., 2018) or a recent self-training method.",
+    "grounding": "Related Work, Experiments",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to demonstrate the contribution of the multiple prototypes and the DOT algorithm separately.",
+    "grounding": "Methods, Experiments",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the sensitivity of the method to the number of prototypes and the parameters of the DOT algorithm.",
+    "grounding": "Methods, Experiments",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does the computational complexity of MProto compare to existing DS-NER methods?",
+    "grounding": "Methods",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What is the impact of the number of prototypes on the performance?",
+    "grounding": "Methods, Experiments",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What specific datasets were used for evaluation, and what metrics were used to measure performance?",
+    "grounding": "Experiments",
+    "facet": null
+  },
+  {
+    "kind": "limitation",
+    "text": "The novelty of the approach hinges on the effectiveness of the multiple prototypes and the DOT algorithm, which need to be validated through rigorous experiments.",
+    "grounding": "Methods, Experiments",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a novel method, MProto, for a specific task. The experiments evaluate the method's performance on different datasets and with varying configurations.",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper describes the experimental setup, including datasets and evaluation metrics.",
+    "grounding": "Section 3.5",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds for the experiments, making it impossible to assess the variance.",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the computational environment used for the experiments.",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include the random seeds used for all experiments. Report the variance (e.g., standard deviation) across multiple runs.",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide details about the software environment (e.g., Python version, library versions) used for the experiments, ideally with a requirements.txt or a Dockerfile.",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Were multiple runs performed to calculate the variance? If so, what were the results?",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code available? If so, where can it be found?",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "What hardware (CPU, GPU) was used for the experiments?",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "environment"
+  },
+  {
+    "kind": "limitation",
+    "text": "The review is limited by the lack of information regarding code availability, seed usage, and environment details.",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper lacks crucial information regarding reproducibility, including seed usage and environment details. The lack of code availability further hinders reproducibility.",
+    "grounding": "Sections 2, 3.5, and E",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures provide visualizations of the proposed method and its performance. Some figures lack clear axis labels and legends, which could hinder understanding.",
+    "grounding": "Figures 1-8",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 provides a clear overview of the MProto method, illustrating the token-prototype assignment process.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 3 lacks clear axis labels and units, making it difficult to interpret the performance results. Figures 4, 5, 7, and 8 could benefit from more descriptive captions.",
+    "grounding": "Fig 3, Fig 4, Fig 5, Fig 7, Fig 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add axis labels and units to Figure 3. Include legends to clarify the different methods and datasets. Consider adding error bars to show confidence intervals in performance plots. Provide more descriptive captions for Figures 4, 5, 7, and 8.",
+    "grounding": "Fig 3, Fig 4, Fig 5, Fig 7, Fig 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the different colors represent in the t-SNE visualizations (Figures 4 and 6)? What are the units for the y-axis in Figure 5 and Figure 8? What is the meaning of the x and y axes in Figure 7?",
+    "grounding": "Fig 4, Fig 5, Fig 6, Fig 7, Fig 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to overall performance metrics and t-SNE visualizations, which may not fully capture the nuances of the method's behavior.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results, ablation studies, and hyperparameter settings. The quality varies, with some tables lacking crucial statistical information.",
+    "grounding": "Tables 1, 2, 3, 4, 5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 (Ablation Study) is mentioned as a strength, implying it includes comprehensive statistical measures, though the specific measures are not detailed in the provided text.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 (Overall performance) is mentioned as lacking confidence intervals or statistical significance tests. Table 3 (Distant annotation quality) and other tables may also suffer from similar issues.",
+    "grounding": "Table 1, Table 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add p-values to Table 1 and Table 3 to indicate statistical significance of performance differences between methods and across different dictionary coverages. Include standard deviations or confidence intervals in all tables.",
+    "grounding": "Tables 1, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the performance differences reported in Table 1 and Table 3? 2. Are the results in Table 3 averaged over multiple runs, and if so, what is the standard deviation or confidence interval? 3. How were the hyperparameters in Table 4 chosen and tuned?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the datasets and experimental settings described in the paper. The generalizability of the findings to other datasets or scenarios is not directly addressed.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly state the datasets used for training and evaluation, making it impossible to assess their licenses and ethical implications.",
+    "grounding": "Insufficient evidence",
+    "facet": "dataset_details"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should provide detailed information about the datasets used, including their sources, licenses, and any relevant usage restrictions.",
+    "grounding": "Insufficient evidence",
+    "facet": "dataset_details"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases present in the datasets or the model's outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "bias_and_fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should analyze the datasets for potential biases and discuss how these biases might affect the model's performance and fairness.",
+    "grounding": "Insufficient evidence",
+    "facet": "bias_and_fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for misuse of the model or its outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "potential_misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should discuss potential misuse cases and consider mitigation strategies to prevent harmful applications of the model.",
+    "grounding": "Insufficient evidence",
+    "facet": "potential_misuse"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear statement on data privacy and how it is ensured.",
+    "grounding": "Insufficient evidence",
+    "facet": "privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "The authors should include a section detailing how data privacy is ensured, especially if the datasets contain personal information.",
+    "grounding": "Insufficient evidence",
+    "facet": "privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention any consent procedures if the datasets contain data from individuals.",
+    "grounding": "Insufficient evidence",
+    "facet": "consent"
+  },
+  {
+    "kind": "suggestion",
+    "text": "If the datasets contain data from individuals, the authors should describe how consent was obtained.",
+    "grounding": "Insufficient evidence",
+    "facet": "consent"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly establishes the problem of distant supervision in NER and motivates the proposed approach.",
+    "grounding": "Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly outlines the contributions.",
+    "grounding": "Contributions section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of the task formulation in Section 2.1 could be more precise. Specifically, the notation for the human-annotated tag sequence (\u02dcY) is introduced without clear explanation.",
+    "grounding": "Section 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a comprehensive notation table, which would improve readability, especially given the introduction of several new variables and concepts (e.g., prototypes, OT, DOT).",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the 'O class' and its role in the context of incomplete labeling in the introduction.",
+    "grounding": "Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In Section 2.1, clarify the purpose and usage of the human-annotated tag sequence (\u02dcY). Is it only for evaluation?",
+    "grounding": "Section 2.1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a dedicated section or subsection to explain the Optimal Transport (OT) problem and its relevance to the proposed method. This would improve the understanding for readers unfamiliar with OT.",
+    "grounding": "Section 2.3",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the choice of multiple prototypes affect the computational complexity of the model compared to single-prototype classifiers?",
+    "grounding": "Section 2.2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the specific architecture of the 'MProto' network (e.g., layers, activation functions)?",
+    "grounding": "Section 2.2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "Are there any limitations in reproducing the results due to the lack of details on the datasets used?",
+    "grounding": "Experiments section",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper may be difficult to reproduce without details on the datasets and specific model configurations.",
+    "grounding": "Experiments section",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper presents a novel approach to DS-NER. The organization is good, but clarity can be improved by providing more details on the method and a notation table.",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential biases in the datasets or the model's impact on different demographic groups.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential misuse cases, such as the use of NER in surveillance or biased applications.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not include a discussion of the broader societal impacts of the technology.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the problem of noisy distant supervision in NER and positions its approach within the context of existing methods for addressing this issue (Intro/Related). It explicitly mentions the two types of issues in DS-NER, setting the stage for the proposed solution.",
+    "grounding": "Intro/Related",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explicitly contrasts its approach with existing methods like AutoNER, negative sampling, PU-learning, and self-learning-based methods (Related). This demonstrates a clear understanding of the existing literature and highlights the specific contributions of the proposed method.",
+    "grounding": "Related",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its method against the state-of-the-art DS-NER methods, such as BOND [3]. A direct comparison, including quantitative results, is missing.",
+    "grounding": "Related",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper mentions the use of prototypical networks (Prototypical Network) but does not provide a detailed comparison with existing prototypical network-based methods for NER, especially those designed for few-shot NER [1].",
+    "grounding": "Prototypical Network",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include BOND [3] as a baseline in the experimental evaluation. This will help to quantify the improvement of the proposed method over existing DS-NER approaches.",
+    "grounding": "Related",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the impact of the denoised optimal transport algorithm. Compare the performance of the proposed method with and without this component.",
+    "grounding": "Related",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the proposed method with the multiple prototype approach of Tong et al. [1] on a few-shot NER dataset to demonstrate the advantages of the proposed method in handling intra-class variance.",
+    "grounding": "Prototypical Network",
+    "facet": "experiment"
+  }
+]

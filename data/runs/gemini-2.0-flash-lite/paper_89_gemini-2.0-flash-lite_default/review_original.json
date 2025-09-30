@@ -1,0 +1,192 @@
+{
+  "summary": "This paper introduces the compositionality gap as a novel metric for evaluating compositional reasoning in language models and proposes a new method, self-ask, to improve performance. While self-ask demonstrates promising results, particularly with search engine integration, the paper lacks crucial details for reproducibility and a thorough comparative analysis.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel metric, the compositionality gap, and a new method, self-ask, for improving compositional reasoning in language models.",
+      "grounding": "Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "Self-ask improves over chain of thought on 2WikiMultiHopQA and Musique, and by a large margin on Bamboogle (11% absolute). Integrating a search engine into self-ask further improves performance on all datasets.",
+      "grounding": "Sec 3.6, Table 1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Self-ask achieves similar or better performance while running more than 30% faster than least-to-most.",
+      "grounding": "Table 2",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 5 effectively visualizes the relationship between sub-question answer confidence and the probability of answering the compositional question correctly.",
+      "grounding": "Figure 5",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 includes both accuracy and speed metrics, providing a more complete picture of the performance of the methods.",
+      "grounding": "Table 2",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly defines the 'compositionality gap' and its significance.",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_terminology"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction provides a good overview of the problem and the paper's contributions.",
+      "grounding": "Introduction",
+      "facet": "clarity_organization"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a detailed comparison of self-ask with other prompting techniques, such as chain-of-thought, on the same datasets.",
+      "grounding": "Sec 2",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper's analysis of the compositionality gap in relation to model size is limited by the lack of publicly shared details about the training data or model architecture for ChatGPT and GPT-4.",
+      "grounding": "Sec 2",
+      "facet": "positioning"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not mention the use of seeds, making it difficult to reproduce the results, and does not provide information on the variance of the results.",
+      "grounding": "Section 3.4, 3.5",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper overclaims the impact of the search engine integration, and the exact datasets and conditions for this improvement are not specified.",
+      "grounding": "Sec 3.6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 6 lacks clear axis labels and units, making it difficult to interpret the results.",
+      "grounding": "Figure 6",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "Tables 1 and 14 lack crucial statistical information such as standard deviations or confidence intervals. Table 15 is qualitative, presenting examples rather than quantitative results. The headers in some tables could be more descriptive.",
+      "grounding": "Tables 1, 14, 15",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'elicitive prompting' could be more precise.",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a dedicated section for notation, making it difficult to follow the mathematical expressions and terminology.",
+      "grounding": "Throughout the paper",
+      "facet": "clarity_organization"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address potential biases in the dataset or model outputs, the potential for the model to be used to generate misleading or harmful content, or the broader societal impacts of the research.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not explicitly compare its self-ask method with the methods presented in [1] and [2] on the same tasks.",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not fully address the limitations of the self-ask method, such as the potential for the model to generate incorrect follow-up questions.",
+      "grounding": "Sec 4.1",
+      "facet": "limitations"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Conduct a head-to-head comparison of self-ask with chain-of-thought and other prompting methods on the Compositional Celebrities dataset, providing detailed performance metrics.",
+      "grounding": "Sec 2",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide the code used for the experiments, including the prompts and the implementation of the methods. Specify the random seeds used for all experiments and report the variance of the results.",
+      "grounding": "Section 3.4, 3.5",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an ablation study to isolate the impact of each component of the self-ask method (e.g., explicit decomposition, search engine integration).",
+      "grounding": "Sec 3.6, 5",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide more details on the datasets used, including statistics on question complexity and the types of reasoning required.",
+      "grounding": "Sec 3.4, 3.6",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "For Figure 5, consider adding a y-axis label to clarify what is being measured.",
+      "grounding": "Figure 5",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals for the accuracy and speed metrics in Table 2. Add p-values to Table 1 to indicate the statistical significance of the differences between the methods. For Table 15, consider quantifying the rate of full-sentence answers for each method to provide a more objective comparison.",
+      "grounding": "Tables 1, 2, 15",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the 'self-ask' method, including pseudocode or a clear algorithmic description.",
+      "grounding": "Abstract, Introduction",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a table of notation to clarify the symbols and abbreviations used throughout the paper.",
+      "grounding": "Throughout the paper",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Expand on the limitations of the study, such as the potential for dataset bias or the generalizability of the findings to other LM architectures.",
+      "grounding": "Discussion/Conclusion",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section on potential biases in the dataset and model outputs, and how these biases might affect the model's performance or societal impact. Add a discussion of the potential for the model to be used to generate misleading or harmful content, and propose mitigation strategies. Explore the broader impacts of the research, including its potential benefits and drawbacks for society.",
+      "grounding": "Insufficient evidence",
+      "facet": "broader_impacts"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct experiments comparing the performance of self-ask with the methods in [1] and [2] on the same multi-hop question answering tasks. This comparison should include the compositionality gap metric to evaluate the effectiveness of each method in addressing the issue.",
+      "grounding": "Sec 4.1",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a discussion on the potential limitations of the self-ask method, such as the generation of incorrect follow-up questions. Propose potential solutions or future research directions to address these limitations.",
+      "grounding": "Sec 5",
+      "facet": "future_work"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

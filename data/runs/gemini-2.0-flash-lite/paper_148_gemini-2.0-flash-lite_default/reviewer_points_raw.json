@@ -1,0 +1,416 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper presents a method for creating understandable representations from LLM embeddings. The evaluation includes qualitative and quantitative experiments, including a human study. The paper lacks details on seeds and variance.",
+    "grounding": "Sec 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper describes the datasets, models, and parameters used in the experiments.",
+    "grounding": "Sec 3, 3.2, 3.3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not report the seeds used for the random forest and KNN classifiers, making it difficult to reproduce the results. No variance is reported.",
+    "grounding": "Sec 3.2, 3.3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information on the specific hardware and software environment used for the experiments, making it difficult to reproduce the results.",
+    "grounding": "Sec 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code and data used in the experiments. Include the random seeds used for all experiments. Report the variance (e.g., standard deviation) of the results across multiple runs.",
+    "grounding": "Sec 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the hardware and software environment (e.g., operating system, Python version, library versions) used for the experiments. Consider using a Docker container or a similar tool to ensure a reproducible environment.",
+    "grounding": "Sec 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Were the experiments repeated with different random seeds? If so, what were the results?",
+    "grounding": "Sec 3.2, 3.3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What is the specific version of the 'all-distilroberta-v1' model used? (e.g., from Hugging Face)",
+    "grounding": "Sec 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Can the authors provide the code for the human evaluation?",
+    "grounding": "Sec 3.3.1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The paper lacks information on the specific hardware and software environment used for the experiments, making it difficult to reproduce the results.",
+    "grounding": "Sec 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "2",
+    "grounding": "Based on the lack of seeds and variance reporting.",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a novel method for interpreting embeddings from LLMs by transforming the latent embedding space into a comprehensible conceptual space. It presents an algorithm for deriving a conceptual space with dynamic granularity and a new evaluation method using human or LLM-based raters. The method is applied to tasks like comparing models and tracing LLM layers.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper addresses an important problem: the interpretability of LLM embeddings. The proposed method offers a model-agnostic approach, which is a valuable contribution.",
+    "grounding": "Intro, Contributions",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a new evaluation method for assessing the quality of the conceptualized vectors.",
+    "grounding": "Contributions",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks specific details about the proposed algorithm, making it difficult to assess its novelty and effectiveness. The algorithm's inner workings and the ontology used are not clearly explained.",
+    "grounding": "Intro, Sec 1, Sec 5",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient comparative evidence. It mentions related work but does not directly compare the proposed method with existing approaches, especially those that also aim to interpret LLM embeddings.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed comparison with existing methods for interpreting LLM embeddings, such as those that use orthogonal transformations or probing techniques. Quantify the performance differences.",
+    "grounding": "Related Work, Sec 5",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more in-depth explanation of the algorithm, including its computational complexity and any limitations.",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct ablation studies to evaluate the impact of different components of the proposed method (e.g., the choice of ontology, the granularity of the conceptual space).",
+    "grounding": "Sec 2, Sec 3",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed method handle the ambiguity and context-dependence of word embeddings?",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific advantages of using a dynamic on-demand granularity in the conceptual space?",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "question",
+    "text": "What is the computational cost of the proposed method compared to other methods?",
+    "grounding": "Sec 3",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The performance of the method may depend on the quality and completeness of the ontology used.",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "Weak Reject",
+    "grounding": "Based on the lack of comparative evidence and insufficient details about the method.",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents results using tables to show the performance of the proposed method. The tables are generally clear, but could benefit from more detailed labels and error bars.",
+    "grounding": "Tables 1-3",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Tables 2 and 3 clearly present the agreement and accuracy results for different classifiers and datasets, supporting the claims of the method's effectiveness.",
+    "grounding": "Tables 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The tables lack detailed descriptions of the metrics used, and the absence of error bars makes it difficult to assess the statistical significance of the results.",
+    "grounding": "Tables 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals in Tables 2 and 3 to indicate the variability of the results. Add more descriptive labels to the columns and rows.",
+    "grounding": "Tables 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific datasets used in the experiments, and how are they represented in the tables?",
+    "grounding": "Tables 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables only present aggregated performance metrics, without providing insights into the behavior of the method on individual examples or the impact of different parameter settings.",
+    "grounding": "Tables 1-3",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results evaluating the proposed method. The tables include agreement metrics and accuracy results. However, the tables lack detailed statistical analysis.",
+    "grounding": "Tables 1, 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 2 includes raw agreement, Cohen's kappa coefficient, and standard deviations, providing a good overview of the agreement between classifiers.",
+    "grounding": "Table 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Table 1 lacks any statistical measures, making it difficult to assess the quality of the conceptual embeddings. Table 3 lacks standard deviations.",
+    "grounding": "Table 1, Table 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations for all reported metrics in Table 3. Add p-values or confidence intervals to indicate the statistical significance of the observed differences in agreement and accuracy across different methods in Tables 2 and 3.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What is the statistical significance of the differences in agreement and accuracy reported in Tables 2 and 3? 2. What is the inter-rater reliability for the human evaluation in section 3.3.1? 3. How were the datasets selected for the human evaluation?",
+    "grounding": "Tables 2, 3, Section 3.3.1",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited by the specific datasets and experimental setups used. Generalizability to other datasets or tasks is not directly addressed.",
+    "grounding": "Tables 2, 3",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper is well-organized, with a clear introduction, methodology, and contributions section.",
+    "grounding": "Abstract, \u00a71, \u00a72",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the problem, the proposed solution, and the contributions of the paper.",
+    "grounding": "Abstract",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of the mapping function \u03c4 : C \u2192 T is not entirely clear. What is the nature of the textual representation?",
+    "grounding": "Sec 2",
+    "facet": "clarity"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated notation section or table, which would improve readability, especially given the mathematical notation.",
+    "grounding": "Throughout",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more context or examples for the textual representation \u03c4(c) of a concept c.",
+    "grounding": "Sec 2",
+    "facet": "clarity"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table to define all symbols used in the paper.",
+    "grounding": "Throughout",
+    "facet": "organization"
+  },
+  {
+    "kind": "questions",
+    "text": "How is the ontology used to generate the conceptual embedding space?",
+    "grounding": "Abstract, \u00a72",
+    "facet": "clarity"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific similarity measures are considered for 'sim'?",
+    "grounding": "Sec 2",
+    "facet": "clarity"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the computational costs of the proposed method?",
+    "grounding": "Throughout",
+    "facet": "organization"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the method is sufficient for understanding the general approach, but the lack of detailed algorithm specifications might hinder exact reproduction.",
+    "grounding": "Sec 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns are apparent in the provided text.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions are not explicitly stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "Consent and privacy considerations for the datasets are not addressed.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The ethics statement lacks detail on potential biases and mitigation strategies.",
+    "grounding": "Section 8",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address consent and privacy considerations, especially if the datasets contain personal information.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Expand the ethics statement to include potential biases and mitigation strategies.",
+    "grounding": "Section 8",
+    "facet": "ethics_risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the ontology used to create the conceptual space, which could lead to biased interpretations.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the method to be used to generate misleading explanations or manipulate public opinion.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the method to be used to create more convincing deepfakes.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of the potential for the method to be used to generate misleading explanations or manipulate public opinion, and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss the potential for the method to perpetuate biases present in the ontology and propose mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper's introduction clearly positions its approach within the context of interpretability methods for LLM embeddings, highlighting the limitations of existing methods and the need for a novel approach to understand the embedding space (Intro).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explicitly states its difference from methods that assign a specific concept to each dimension, indicating a different approach to understanding the latent space (Related Work, Senel et al., 2018).",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its method with methods that use the un-embedding matrix to map latent vectors to the token space (Dar et al., 2022; nostalgebraist, 2020). A comparison would help to understand the advantages and disadvantages of the proposed method.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare its approach to methods that create new tools for model interpretation, such as Yun et al. (2021) and Molino et al. (2019).",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not directly compare its approach to probing methods like Vig et al. (2020), Tenney et al. (2019), Bau et al. (2019), and Clark et al. (2019).",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a quantitative comparison with [1] Wu et al. (2021) on a shared dataset, evaluating the ability to generate counterfactuals or explanations. This would demonstrate the advantages of the proposed method over existing methods.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the proposed method's performance with [2] Bau et al. (2019) and [3] Vig et al. (2020) on bias detection and model debugging tasks. This comparison would help to understand the effectiveness of the proposed method in these tasks.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

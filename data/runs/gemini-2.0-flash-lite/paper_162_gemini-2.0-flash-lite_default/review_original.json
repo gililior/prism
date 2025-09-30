@@ -1,0 +1,126 @@
+{
+  "summary": "This paper introduces \"symbol tuning,\" a novel fine-tuning procedure for language models, demonstrating improved performance on unseen in-context learning tasks, algorithmic reasoning, and handling flipped labels. However, the paper lacks crucial details regarding reproducibility, comparative analysis, and statistical rigor, hindering a complete assessment of the method's effectiveness.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel fine-tuning procedure called \"symbol tuning\" that improves language models' ability to reason with in-context input-label mappings.",
+      "grounding": "Abstract, Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper demonstrates improvements in several areas, including unseen in-context learning tasks, algorithmic reasoning, and handling flipped labels, providing a comprehensive evaluation of the proposed method.",
+      "grounding": "Abstract, Sec 2, Sec 3",
+      "facet": "positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "Datasets used for evaluation are clearly specified and sourced from HuggingFace.",
+      "grounding": "Section 3.2, Appendix D.2",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 5 effectively visualizes the performance of symbol-tuned models across different task categories.",
+      "grounding": "Fig 5",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The abstract clearly outlines the key findings and contributions of the paper.",
+      "grounding": "Abstract",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction provides a good overview of the problem and motivates the proposed method.",
+      "grounding": "Introduction §1",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks information on the software environment (dependencies, versions) and the seeds used for random selection, making results non-reproducible.",
+      "grounding": "All sections, Section 3.2",
+      "facet": "environment reproducibility, seeds/variance"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper claims improvements in algorithmic reasoning and handling flipped labels, but lacks supporting evidence.",
+      "grounding": "Section 9",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a detailed discussion of how \"symbol tuning\" compares to other fine-tuning methods or prompt engineering techniques.",
+      "grounding": "Related Work",
+      "facet": "relation to prior work"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient details on the specific metrics used for evaluation and the number of random seeds, making it difficult to assess the validity and statistical significance of the results.",
+      "grounding": "Sec 3.2",
+      "facet": "methods"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figures 1, 2, 3, 5, and 6 lack detailed axis labels and units, and Table 1 lacks specific details, including baselines, metrics, and statistical rigor.",
+      "grounding": "Figures 1, 2, 3, 5, 6, Table 1",
+      "facet": "figures, tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The definition of 'symbol tuning' could be more precise, especially regarding the scope of 'arbitrary symbols'.",
+      "grounding": "Abstract, §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a dedicated methodology section, and does not address dataset licensing, fairness considerations, or broader impact.",
+      "grounding": "Sec 2, Insufficient evidence",
+      "facet": "organization, ethics_licensing, fairness, broader_impact"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code used for prompt generation and evaluation, including the random seed used for example selection and label remapping, and a requirements.txt or a Dockerfile to specify the software environment.",
+      "grounding": "Section 3.2, All sections",
+      "facet": "code/data availability, environment reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Report the variance of the results by running the experiments with different seeds and include standard deviations or confidence intervals for all reported results to assess statistical significance.",
+      "grounding": "Section 3.2, Sec 3.2",
+      "facet": "seeds/variance, methods"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a direct comparison with other fine-tuning methods or prompt engineering techniques to highlight the advantages of symbol tuning and provide a more in-depth analysis of the specific algorithmic reasoning tasks where symbol tuning shows the most significant improvements.",
+      "grounding": "Intro, Sec 2",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed description of the evaluation metrics used, including their definitions and how they are calculated, and add clear labels to the axes of all plots. Table 1 should include standard deviations or confidence intervals to show the variability of the results.",
+      "grounding": "Sec 3.2, Figures 2, 5, 6, Table 1",
+      "facet": "methods, figures, tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the symbol generation process and include a table summarizing the datasets used for symbol tuning, including their sizes and characteristics.",
+      "grounding": "Sec 2",
+      "facet": "clarity_presentation, organization"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add explicit license and consent statements for datasets used and a Broader Impact section with mitigation strategies.",
+      "grounding": "Insufficient evidence, Conclusion",
+      "facet": "ethics_licensing, societal_impact"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

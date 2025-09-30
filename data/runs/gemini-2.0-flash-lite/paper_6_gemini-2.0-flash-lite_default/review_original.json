@@ -1,0 +1,222 @@
+{
+  "summary": "This paper introduces APROMPT, a novel approach to prompt tuning that incorporates prompts into the attention mechanism of Transformer models. The paper demonstrates APROMPT's effectiveness through comprehensive experiments, but lacks clarity in certain areas and requires more rigorous statistical analysis and comparisons to fully assess its impact.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper provides a comprehensive evaluation of APROMPT by comparing it with several parameter-efficient methods, including Partial tuning, Adapter, BitFit, and LoRA, as shown in Table 7.",
+      "grounding": "Table 7",
+      "facet": "experimental_design"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions APROMPT within the context of prompt tuning and parameter-efficient fine-tuning methods, highlighting the limitations of existing approaches and the potential for improvement by incorporating prompts into the attention mechanism (Intro, Related Work).",
+      "grounding": "Intro, Related Work",
+      "facet": "positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper claims that existing prompt tuning can be considered a special case of attention prompt tuning, which provides a valuable theoretical connection and enhances the understanding of prompt tuning techniques (Intro).",
+      "grounding": "Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 1 provides a clear illustration of the proposed APROMPT method and compares it with existing methods (Fig 1).",
+      "grounding": "Fig 1",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The abstract clearly outlines the problem, proposed solution (APROMPT), and key findings (Abstract).",
+      "grounding": "Abstract",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "strength",
+      "text": "Table 2 includes the number of trainable parameters ('Para') and indicates statistical significance with respect to all baselines (p-value < 0.005) (Table 2).",
+      "grounding": "Table 2",
+      "facet": "tables"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly differentiates its approach, APROMPT, from existing prompt tuning methods by incorporating prompts into the attention layers, which is a novel contribution (Intro, Related Work).",
+      "grounding": "Intro, Related Work",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper lacks details on the statistical significance of the performance gains, making it difficult to assess the reliability of the results (Table 7).",
+      "grounding": "Table 7",
+      "facet": "analysis"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper needs to provide more detailed comparisons with the closest baselines, especially those that also explore attention mechanisms or modifications to the Transformer architecture. The delta needs to be clearer (Related Work, Sec 4.1).",
+      "grounding": "Related Work, Sec 4.1",
+      "facet": "comparative_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figures 5, 6, and 7 lack clear axis labels and units, making it difficult to interpret the results quantitatively. The legends are missing in some figures (Figures 5, 6, 7).",
+      "grounding": "Figures 5, 6, 7",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks a clear definition of 'attention prompt tuning' beyond the high-level description in the abstract and introduction. A more formal definition, including mathematical notation, is needed (Abstract, §1).",
+      "grounding": "Abstract, §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide a detailed explanation of the self-attention mechanism or how APROMPT modifies it. Readers unfamiliar with Transformers may struggle to understand the approach (§1).",
+      "grounding": "§1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "Table 1 lacks standard deviations or confidence intervals, making it difficult to assess the reliability of the reported accuracy scores. The table also lacks p-values to indicate statistical significance (Table 1).",
+      "grounding": "Table 1",
+      "facet": "tables"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not address consent or privacy considerations related to the datasets used, nor does it discuss potential ethical risks associated with the datasets or the model.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide information on the licenses of the datasets used.",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "weakness",
+      "text": "No discussion of potential biases or fairness issues or broader impacts.",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "weakness",
+      "text": "While the paper mentions UniPELT [1], a direct comparison in terms of performance and parameter efficiency is missing. This is a key baseline for parameter-efficient tuning (Related Work).",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper should compare against SideTuning [2] as it is also an extra module method (Related Work).",
+      "grounding": "Related Work",
+      "facet": "comparison"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Provide the code, including the training scripts, and a requirements file (e.g., `environment.yml` or `requirements.txt`) to specify the software environment (All sections).",
+      "grounding": "All sections",
+      "facet": "code/data availability"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Report the variance of the results by providing the standard deviation or confidence intervals for the reported metrics (Table 7).",
+      "grounding": "Table 7",
+      "facet": "seeds/variance"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a direct comparison with a recent method that also modifies the attention mechanism or incorporates prompts in a similar way. This could be a contemporaneous method (Sec 4.1).",
+      "grounding": "Sec 4.1",
+      "facet": "comparative_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed ablation study to analyze the impact of each type of prompt (query, key, value) and their combinations (Sec 4.2).",
+      "grounding": "Sec 4.2",
+      "facet": "originality"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Analyze the computational cost and memory footprint of APROMPT compared to other prompt tuning and fine-tuning methods (Intro).",
+      "grounding": "Intro",
+      "facet": "comparative_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add axis labels (with units where applicable) and legends to all figures to improve clarity. Include error bars to indicate the variance in the results (Figures 5, 6, 7).",
+      "grounding": "Figures 5, 6, 7",
+      "facet": "figures"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section detailing the datasets used, their licenses, and any relevant usage restrictions (Insufficient evidence).",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_licensing"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Address consent and privacy considerations, especially if the datasets contain personal information (Insufficient evidence).",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a section on ethical risks and mitigations (Insufficient evidence).",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_risks"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a more detailed explanation of the self-attention mechanism and how APROMPT integrates with it, possibly with a figure illustrating the changes (§1, Figure 1).",
+      "grounding": "§1, Figure 1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a dedicated section or subsection to formally define APROMPT, including mathematical notation for the query, key, and value prompts and their integration into the attention mechanism (Abstract, §1).",
+      "grounding": "Abstract, §1",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a table of notation to clarify the symbols used throughout the paper, especially for the prompts and attention mechanism components (Throughout the paper).",
+      "grounding": "Throughout the paper",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include standard deviations or confidence intervals for all reported accuracy scores in all tables. Add p-values to indicate statistical significance of performance differences between APROMPT and the baselines in all tables. Clearly define the tasks and metrics used in each table (Tables 1, 3, 4, 5, 7).",
+      "grounding": "Tables 1, 3, 4, 5, 7",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include a section on potential biases and fairness issues, and discuss mitigation strategies (Insufficient evidence).",
+      "grounding": "Insufficient evidence",
+      "facet": "fairness"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies (Conclusion).",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct an experiment comparing APROMPT with UniPELT [1] on the SuperGLUE benchmark, measuring both performance and the number of trainable parameters. This will highlight the efficiency gains (Sec 4.1).",
+      "grounding": "Sec 4.1",
+      "facet": "experiment"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include an ablation study to isolate the impact of incorporating prompts into the query, key, and value components of the attention mechanism, compared to only using input prompts (Sec 4.1).",
+      "grounding": "Sec 4.1",
+      "facet": "experiment"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

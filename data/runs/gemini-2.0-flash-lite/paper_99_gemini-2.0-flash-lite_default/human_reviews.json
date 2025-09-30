@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "1AwSqgb2mG",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a TE dataset built on natural claim and evidence pairs extracted from Wikipedia; especially annotations over sub-sentence units. The authors conduct sufficient NLP experiments to support claims about shortcomings of prior NLI datasets and the usefulness of the dataset.",
+      "reasons_to_accept": "- good presentation and well written - paper identifies use-cases of models trained on Textual entailment and finds that the underlying datasets are not suited for such use cases. Hence, they propose a new dataset for this.\n- I think such a dataset is a useful and interesting contribution to the community - good amount of relevant experiments conducted",
+      "reasons_to_reject": "- None really",
+      "questions_for_the_authors": "- what is the average hourly for m-turkers if you pay 0.75$ per HIT?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "kdeWxPxVlE",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes WICE, a new fine-grained textual entailment dataset built on natural claim and evidence pairs extracted from Wikipedia. \nIt provides entailment judgments over subsentence units of the claim, and a minimal subset of evidence sentences that support each subclaim. \nExperiments show that decomposing complex claims into subclaims can be a valuable pre-processing step for both annotation and entailment prediction.",
+      "reasons_to_accept": "1. Fine-grained textual entailment is more realistic and deserves further research. \n2. Paper is well-written and the experiments are solid.",
+      "reasons_to_reject": "1. The data comes from Wikipedia, which makes it difficult to test the model's capabilities, as many models are pre-trained on the Wikipedia.",
+      "missing_references": "[1] Logic-Regularized Reasoning for Interpretable Fact Verification. AAAI 2022.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "Z4x5QhIhy6",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper is about a new entailment dataset created from Wikipedia. \nTheir dataset has three key features compared to existing similar datasets; (1) its premises are long; (2) negative examples are natural ones, i.e. not synthetic ones; and (3) its annotation is fine-grained and allows to identify which parts of claims are not supported by evidence text.\nQuantitative analyses in Table 3 shows that their dataset is more challenging than previous datasets (FEVER and VitaminC).\nThe dataset allows to conduct three entailment-related tasks; (a) entailment classification; (b) evidence retrieval; and (c) non-supported token detection.\nThe authors demonstrated that these three tasks defined on their dataset were difficult by comparing the performances of several competitive models with those of humans.\nThe authors also proposed Claim-Split, which automatically splits a claim into sub-claims using GPT-3.5. \nTheir experiments showed that Claim-Split was effective for entailment classification.",
+      "reasons_to_accept": "The new entailment dataset will be useful for textual entailment recognition research.\nA series of the quantitative analyses and experiments are informative for RTE researchers.",
+      "reasons_to_reject": "The weakness of this paper is the lack of description and justification for some important aspects of the paper.\nFirst, the contributions of the paper are not clearly described. \nI guess they are (1) the new entailment dataset that has the above three features, (2) the Claim-Split method, and (3) the quantitative analyses and experiments.\nSecond, it should be justified why the authors did not directly use GPT-3.5 for the three tasks (entailment classification, evidence retrieval, and non-supported token detection). The authors used GPT-3.5 for Claim-Split. \nTheir problem settings therefore allow to use GPT-3.5. It should be a reasonable baseline given that we can use it relatively easily.\nThird, 50 samples might be too few to draw any conclusion about human performances for the tasks. \nUsing only 50 samples should have been justified too.\nFourth, I wonder why AUROC was used for the entailment classification results in Table 8 while F1 and accuracy were used for the entailment classification results in Tables 4 and 5. This needs explanation.\nLast, there are many descriptions that need more detailed explanations or justification. \nI understand that there may be many details that cannot be written in the paper. \nBut some of them seem important information or key research decisions. Below are some examples: p.1 - What does it mean for a token to be supported? A fact or a proposition can be supported. \nBut I don't really understand how a token is supported. Do you simply mean that a token is supported if the token is written in an evidence text?\n- What do you mean by \"ecologically valid\"? Do you mean naturally occurring negative examples?\np.3 - \"In total, only 8.6% of the claims included one of the two types of errors.\" \n... What are the two types?\n- \"we re-retrieve the cited web article(s)\" ... Why did you need to re-retrieve them?\n- \"Also, we filter claims that are decomposed into either only one or more than six subclaims.\" \n... Why did you need this filter? Why six?\np.4 - In Table 3, WiCE Subcl and WiCE Claim do not add up to 100%.\np.6 - \"p(SUPPORTED) + 0.5 \u00d7 p(PARTIALLY-SUPPORTED)\" ... How was this derived?\n- \"As there can be multiple gold sets of supporting sentences for each claim/subclaim in WICE,\" ... I could not understand this clause.\n- In Table 6, why was ANLI+WiCE worse than WiCE in the \"w/ evidence context\" setting, while it was better in the other setting?\np.7 - I could not understand footnote 7.",
+      "typos_grammar_style_and_presentation_improvements": "p.2 \"Real world claims, such are those\" --> \"Real world claims, such as those\" p.6 \"Performance of models fine-tuned with evidence context on WICE is supported in the bottom half of the table.\" \n--> \"Performance of models fine-tuned with evidence context on WICE is reported in the bottom half of the table.\"",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

@@ -1,0 +1,446 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces a self-verification method for verifying prediction results. The method involves generating candidate answers and calculating verification scores. The paper presents experimental results comparing different verification methods.",
+    "grounding": "Sections 3, A.4, and Figure 8",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper describes the method and provides examples of the verification process.",
+    "grounding": "Section 3, Figure 8, and Table 3",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not mention the use of seeds or the reporting of variance. The experimental setup lacks details on the environment.",
+    "grounding": "Sections 3 and A.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the experimental setup, including the specific versions of libraries, the hardware used, and the random seeds. Report the variance of the results.",
+    "grounding": "Sections 3 and A.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository and data used in the experiments. Include instructions on how to reproduce the results.",
+    "grounding": "Sections 3 and A.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the specific versions of the libraries used in the experiments available?",
+    "grounding": "Sections 3 and A.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the random seeds used in the experiments available?",
+    "grounding": "Sections 3 and A.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Is the variance of the experimental results reported?",
+    "grounding": "Sections 3 and A.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The lack of information on the experimental setup and the absence of code and data make it difficult to assess the reproducibility of the results.",
+    "grounding": "Sections 3 and A.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper needs significant improvements to ensure reproducibility. The lack of seeds, variance reporting, and environment details are major concerns.",
+    "grounding": "Sections 3 and A.4",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a self-verification method to improve prediction results. The method involves generating multiple candidate answers and selecting the one with the highest verification score.",
+    "grounding": "Sec 3",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The method is clearly described, including the forward reasoning and self-verification steps.",
+    "grounding": "Sec 3",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The experimental setup lacks details on the specific datasets used and the evaluation metrics.",
+    "grounding": "Insufficient evidence",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient information on the statistical significance of the results.",
+    "grounding": "Table 5, Table 6, Table 7",
+    "facet": "analysis"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed description of the datasets used, including their size and characteristics.",
+    "grounding": "Insufficient evidence",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Perform a statistical analysis (e.g., t-tests) to compare the performance of the proposed method with baseline methods.",
+    "grounding": "Table 5, Table 6, Table 7",
+    "facet": "analysis"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets and code publicly available for reproducibility?",
+    "grounding": null,
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific evaluation metrics used to assess the performance of the proposed method?",
+    "grounding": null,
+    "facet": "experimental design"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed method compare to existing verification methods?",
+    "grounding": null,
+    "facet": "analysis"
+  },
+  {
+    "kind": "limitations",
+    "text": "Yes",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "ethics flag",
+    "text": "No",
+    "grounding": null,
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a self-verification method for improving reasoning in LLMs. It uses a two-step process: forward reasoning with CoT to generate candidate answers, and backward verification to assess the consistency of the answers by predicting original conditions. The method aims to avoid the need for additional training or annotations.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper addresses the problem of error accumulation in CoT prompting, which is a relevant and important problem in LLM reasoning. The proposed method of self-verification is novel and offers a potential solution to this problem.",
+    "grounding": "Intro, Sec 1.2",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly positions the work relative to existing methods that use verifiers, highlighting the limitations of those methods (e.g., the need for training and lack of explainability).",
+    "grounding": "Intro, Related Work",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with the most relevant baselines. The delta between the proposed method and the existing methods is not clearly articulated.",
+    "grounding": "Related Work, Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper's claims of novelty hinge on the specific implementation of self-verification. The exact prompting strategy and the details of the backward verification process are not fully described, making it difficult to assess the novelty.",
+    "grounding": "Sec 2.2",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a head-to-head comparison with a strong baseline that also addresses error correction in CoT, such as methods that use ensemble or reranking techniques. Quantify the performance difference.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed ablation study to understand the contribution of each component of the proposed method (e.g., forward reasoning, backward verification, the specific prompting strategy).",
+    "grounding": "Sec 4.2",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed method handle cases where the initial CoT reasoning is completely incorrect, leading to a wrong answer?",
+    "grounding": "Sec 2.1",
+    "facet": "originality"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of the self-verification approach, and under what conditions might it fail?",
+    "grounding": "Sec 3",
+    "facet": "limitations"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of the approach hinges on the specific implementation details of the prompting strategy and the backward verification process. The generalizability of the method to different tasks and LLMs is not fully explored.",
+    "grounding": "Sec 2.2, Sec 4",
+    "facet": "novelty"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "n/a",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present experimental results related to self-verification methods in language models. The figures aim to show the impact of different parameters and conditions on the performance of the proposed method.",
+    "grounding": "Figures 3-7",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 3 effectively visualizes the self-verification ability of models with different sizes. Figure 4 demonstrates the impact of different sample sizes on arithmetic reasoning datasets.",
+    "grounding": "Figures 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Several figures lack clear axis labels and units, making it difficult to interpret the results. Some figures lack legends to distinguish between different conditions or methods.",
+    "grounding": "Figures 3, 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels and units to all axes in all figures. Include legends to explain the different colors, lines, or markers used in the plots. Consider adding error bars to show the variance in the results.",
+    "grounding": "Figures 3-7",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What specific datasets are used in Figures 4, 5, and 6? What do the different colors or line styles represent in each figure? What is the meaning of 'P' in Figure 7?",
+    "grounding": "Figures 4, 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations focus on overall performance metrics and do not provide detailed insights into the reasoning process or specific examples.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on dataset consent or privacy is provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "Usage terms for LLMs are not specified.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section detailing the datasets used, their licenses, and any relevant privacy policies.",
+    "grounding": "Appendix D",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the usage terms of the LLMs used in the paper.",
+    "grounding": "Appendix C",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "strength",
+    "text": "Paper is generally well organized with clear sectioning.",
+    "grounding": "Intro \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly explains the problem of error accumulation in CoT prompting and motivates the need for self-verification.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term \"Forward Reasoning\" and \"Backward Verification\" are introduced without clear definitions or formal notation. This makes it difficult to understand the proposed method.",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The use of \"GLYPH(cmap:d835)\" and similar notations in Figure 1 and the surrounding text is not explained, making the figure and related explanations incomprehensible.",
+    "grounding": "Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide clear definitions and, if possible, mathematical formulations for \"Forward Reasoning\" and \"Backward Verification\".",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Replace or explain the \"GLYPH\" notations in Figure 1 and the surrounding text. If these are special characters, provide a key or a more accessible representation.",
+    "grounding": "Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a notation table to aid readability.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed self-verification method handle multi-step reasoning tasks, and what is the computational complexity compared to existing methods?",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of the proposed method, and under what conditions might it fail?",
+    "grounding": "Intro \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The use of unexplained notations in Figure 1 and the lack of formal definitions for key concepts prevent full reproduction of the method.",
+    "grounding": "Figure 1, Intro \u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The provided text references several tables (Table 1, and figures that could be interpreted as tables) but lacks detailed descriptions of their structure and content. The assessment is based on the general claims made about the tables.",
+    "grounding": "Table 1, Figures 3-7",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The text claims that Table 1 presents results and that the proposed method improves upon existing methods. If the table includes clear headers, dataset names, and performance metrics, it would be considered well-structured.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The text does not provide enough information to assess the completeness of the tables. It is unclear if the tables include all necessary statistical information (e.g., standard deviation, confidence intervals, p-values).",
+    "grounding": "Table 1, Figures 3-7",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Ensure that all tables include standard deviations or confidence intervals to indicate the variability of the results. Add p-values to indicate statistical significance of performance differences between methods.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific metrics used in each table? What statistical tests were used to compare the methods? Are the results statistically significant? What is the sample size for each dataset or experiment?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The tables' scope is limited to the datasets and models described in the text. The generalizability of the findings to other tasks or models is not clear.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address the potential for the technology to be used for malicious purposes, such as generating misleading information or automating harmful activities.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential biases in the LLMs or the datasets used, and how these biases might affect the reasoning process and the fairness of the outcomes.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a comprehensive discussion of broader societal impacts.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed discussion of potential risks and misuse cases, such as the generation of misleading information or the automation of harmful activities.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address fairness considerations by discussing potential biases in the LLMs and datasets and how these biases might affect the reasoning process and the fairness of the outcomes.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide concrete mitigation strategies to address the identified risks and biases.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a Broader Impact section that discusses the potential societal implications of the research, both positive and negative.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper explicitly addresses the limitations of Chain of Thought (CoT) prompting, specifically its sensitivity to errors, which is a key area of improvement over existing CoT methods discussed in the introduction and related work.",
+    "grounding": "Intro/Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper proposes a method for self-verification of answers, which is a novel approach compared to existing methods that often rely on external annotations or fine-tuning for answer verification, as highlighted in the 'Answer Verification' section.",
+    "grounding": "Answer Verification",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its self-verification approach with the performance of existing CoT methods, such as those proposed by Wei et al. (2022) or Wang et al. (2023c), on the same reasoning tasks. A direct comparison would strengthen the paper.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed discussion of the specific architectural or training differences compared to the methods described in [1] and [2]. The paper should clarify the differences in the approach.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments comparing the proposed self-verification method with CoT prompting (Wei et al., 2022) and self-consistency decoding (Wang et al., 2023c) on a set of reasoning tasks. Evaluate the performance in terms of accuracy and robustness to errors.",
+    "grounding": "Related Work",
+    "facet": "experiment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include an ablation study to isolate the impact of the self-verification component. This could involve removing the verification step and comparing the results with and without it.",
+    "grounding": "Methods",
+    "facet": "experiment"
+  }
+]

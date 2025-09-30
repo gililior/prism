@@ -1,0 +1,138 @@
+{
+  "summary": "This paper introduces a novel Structural Causal Model (SCM) approach for affective reasoning in conversations, demonstrating effectiveness on ECPE and ECSR tasks. The paper has been updated to address concerns about baselines, statistical rigor, reproducibility, and clarity, but still needs to address some concerns regarding societal impact and ethics.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "The paper introduces a novel approach to affective reasoning in conversation by formulating the dialogue process as a Structural Causal Model (SCM). (Intro) [originality]",
+      "grounding": "Intro",
+      "facet": "originality"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly identifies limitations in existing methods, particularly LLMs, and proposes a solution to address these limitations. (Intro, Sec 2.3) [positioning]",
+      "grounding": "Intro, Sec 2.3",
+      "facet": "positioning"
+    },
+    {
+      "kind": "strength",
+      "text": "The proposed method demonstrates effectiveness in affective reasoning tasks, with statistically significant results (p < 0.01) reported for ECPE and ECSR tasks. (Sec 4.2) [claims_vs_evidence]",
+      "grounding": "Sec 4.2",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "strength",
+      "text": "Figure 4 effectively visualizes the distribution of latent variables and implicit causes, supporting the claims about their relationship. (Figure 4) [figures]",
+      "grounding": "Figure 4",
+      "facet": "figures"
+    },
+    {
+      "kind": "strength",
+      "text": "The introduction clearly outlines the problem, motivation, and proposed solution, providing a good overview of the paper's contributions. (Introduction) [organization]",
+      "grounding": "Introduction",
+      "facet": "organization"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly defines the tasks and terminology used, such as ERC, ECPE, and ECSR, in Section 2.1, which aids in understanding. (Section 2.1) [clarity_presentation]",
+      "grounding": "Section 2.1",
+      "facet": "clarity_presentation"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper does not provide sufficient detail on the specific baselines used for comparison, making it difficult to assess the delta between the proposed method and the baselines. (Sec 4.1) [comparative evidence]",
+      "grounding": "Sec 4.1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks sufficient evidence to support claims, particularly regarding the impact of the ablation study and the distribution of the latent variable E. (Sec 4.2, Sec 4.4) [claims_vs_evidence]",
+      "grounding": "Sec 4.2, Sec 4.4",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks crucial information for reproducibility, including the use of seeds for experiments, variance across multiple runs, and links to code and data. (Section 4) [reproducibility]",
+      "grounding": "Section 4",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 4 lacks clear labels and units on its axes, and Tables 3, 4, and 5 lack crucial statistical information (e.g., standard deviations, p-values), hindering interpretation and assessment of significance. (Figure 4, Tables 3, 4, 5) [figures]",
+      "grounding": "Figure 4, Tables 3, 4, 5",
+      "facet": "figures"
+    },
+    {
+      "kind": "weakness",
+      "text": "The term 'cogn skeleton' is introduced without a clear definition, and the paper lacks a comprehensive notation table, hindering understanding and readability. (Introduction) [terminology]",
+      "grounding": "Introduction",
+      "facet": "terminology"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper lacks discussion of potential misuse or failure modes. (Insufficient evidence) [societal_impact]",
+      "grounding": "Insufficient evidence",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "weakness",
+      "text": "Dataset privacy and consent details are missing, as well as usage terms for the synthetic dataset. (Insufficient evidence) [ethics_privacy]",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Include a more detailed comparison with SOTA methods, discussing their limitations and how the proposed method overcomes them. (Sec 4.1) [comparative evidence]",
+      "grounding": "Sec 4.1",
+      "facet": "comparative evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide ablation studies to demonstrate the contribution of each component of the proposed method. (Sec 4.1) [originality]",
+      "grounding": "Sec 4.1",
+      "facet": "originality"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Conduct additional experiments comparing the proposed method with more baselines and provide more details about the datasets used. (Sec 4.1) [claims_vs_evidence]",
+      "grounding": "Sec 4.1",
+      "facet": "claims_vs_evidence"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide the code, data, and a detailed description of the experimental setup, including the random seeds used and report the variance across multiple runs. (Sections 3, 4) [reproducibility]",
+      "grounding": "Sections 3, 4",
+      "facet": "reproducibility"
+    },
+    {
+      "kind": "suggestion",
+      "text": "In Figure 4, add axis labels and a legend. In Tables 3, 4, and 5, include standard deviations, confidence intervals, and p-values, and clearly define all abbreviations. (Figure 4, Tables 3, 4, 5) [tables]",
+      "grounding": "Figure 4, Tables 3, 4, 5",
+      "facet": "tables"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Provide a concise definition of 'cogn' when introducing the 'cogn skeleton' and include a notation table. (Introduction) [clarity_presentation]",
+      "grounding": "Introduction",
+      "facet": "clarity_presentation"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Add a Broader Impact section with mitigation strategies. (Conclusion) [societal_impact]",
+      "grounding": "Conclusion",
+      "facet": "societal_impact"
+    },
+    {
+      "kind": "suggestion",
+      "text": "Include details on data collection, consent procedures, and privacy measures, and detail the usage terms for the synthetic dataset. (Insufficient evidence) [ethics_privacy]",
+      "grounding": "Insufficient evidence",
+      "facet": "ethics_privacy"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}

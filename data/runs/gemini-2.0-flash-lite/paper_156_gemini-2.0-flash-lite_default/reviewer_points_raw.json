@@ -1,0 +1,500 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces detection methods for hallucinations and omissions in machine translation. The evaluation includes internal and external methods, with results presented for high and low-resource settings. The paper highlights the importance of a new dataset for large-scale evaluation.",
+    "grounding": "Abstract, Sections 4.1, 4.2",
+    "facet": "overview"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper uses established methods and provides a detailed comparison of different detection techniques.",
+    "grounding": "Section 4.1, Figure 4, Figure 5",
+    "facet": "methodology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly mention the use of seeds for experiments, making it difficult to assess the reproducibility of the results. The variance across multiple runs is not discussed.",
+    "grounding": "Sections 4.1, 4.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the computational resources used for the experiments, which makes it difficult to reproduce the results.",
+    "grounding": "Sections 4.1, 4.2",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code, data, and environment details (e.g., Dockerfile, Conda environment) to ensure reproducibility.",
+    "grounding": "All sections",
+    "facet": "code/data availability, environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the random seeds used for all experiments and report the variance of the results across multiple runs.",
+    "grounding": "Sections 4.1, 4.2",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include details about the computational resources (e.g., GPU type, memory) used for the experiments.",
+    "grounding": "Sections 4.1, 4.2",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Are the code and data publicly available, or will they be released?",
+    "grounding": "All sections",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "question",
+    "text": "Are the specific versions of the external models (e.g., COMET-QE, LASER3, LaBSE, BLASER 2.0-QE) used in the experiments specified?",
+    "grounding": "Section 4.1",
+    "facet": "environment"
+  },
+  {
+    "kind": "question",
+    "text": "Are the hyperparameter settings for the models and the training process available?",
+    "grounding": "Sections 4.1, 4.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "limitation",
+    "text": "The paper lacks information on code availability, data availability, and computational resources, which limits the ability to reproduce the results.",
+    "grounding": "Sections 4.1, 4.2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper needs significant improvements in reproducibility. The lack of code, data, and environment details, along with the absence of seed information, makes it difficult to reproduce the results.",
+    "grounding": "All sections",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents experimental results on the detection of hallucinations and omissions in machine translation. The authors evaluate various methods, including internal and external approaches, across high- and low-resource language settings. They highlight the performance of different methods and compare them to previous work.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides experimental results on the detection scores for hallucinations and omissions, as shown in Figure 5.",
+    "grounding": "Figure 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors show that it is easier to detect pathologies in high-resource settings, with a significant gap in performance compared to low-resource settings (e.g., for hallucinations, 0.89 vs 0.79).",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper notes that in low-resource settings, internal methods perform better than external methods.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors find that Seq-Logprob is the most robust method for hallucination detection across translation directions.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper states that BLASER-QE performs on par with the best hallucination detection methods in high-resource directions and outperforms them in low-resource directions.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The authors show that ALTI T performs best for detecting omissions.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the performance of the proposed methods without providing detailed analysis.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient evidence to support the claim that the detectors are complementary.",
+    "grounding": "Figure 8",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct more detailed analysis to explain why certain methods perform better in specific resource settings.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more examples and analysis to support the claim that the detectors are complementary.",
+    "grounding": "Figure 8",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What are the specific metrics used to evaluate the performance of the methods?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How do the authors define and measure 'high-resource' and 'low-resource' settings?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "question",
+    "text": "What are the limitations of the dataset used in the experiments?",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors discuss the limitations of relying on attention patterns and the importance of large-scale evaluation.",
+    "grounding": "Sec 4.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper introduces a new dataset for hallucination and omission detection in machine translation, covering 18 language pairs with fine-grained annotations. It revisits existing detection methods, establishes new baselines, and provides valuable observations regarding the performance of these methods across different language pairs and resource levels.",
+    "grounding": "Abstract, Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper addresses a significant gap in the field by providing a new, annotated dataset for hallucination and omission detection, which is currently limited to a few high-resource languages. The dataset covers 18 translation directions with varying resource levels and scripts, offering a valuable resource for future research.",
+    "grounding": "Intro, Abstract",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper provides valuable observations and insights into the performance of existing hallucination and omission detection methods, demonstrating that conclusions drawn from single-language pair evaluations may not generalize. The introduction of word-level pathology detection tasks is also a notable contribution.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear comparison with the most recent state-of-the-art methods for hallucination and omission detection. While it mentions revisiting previous methods, it does not explicitly compare against the most recent advancements in the field.",
+    "grounding": "Related Work, Sec 6",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient details on the annotation guidelines and inter-annotator agreement, which is crucial for assessing the quality and reliability of the dataset.",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a head-to-head comparison with a recent, relevant method for hallucination and omission detection, such as [Insert Name of Recent Method] to demonstrate the improvements offered by the new dataset and baselines.",
+    "grounding": "Related Work, Sec 6",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more details on the annotation process, including the annotation guidelines, inter-annotator agreement, and the qualifications of the annotators.",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to analyze the impact of different annotation levels (sentence vs. word level) on the performance of detection methods.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of the proposed baselines compare to the state-of-the-art methods on the new dataset?",
+    "grounding": "Sec 6",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific annotation guidelines used for identifying hallucinations and omissions, and what is the inter-annotator agreement?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "questions",
+    "text": "What are the limitations of the dataset in terms of language coverage and the types of hallucinations and omissions covered?",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty hinges on the quality and coverage of the annotated dataset. The generalizability of the findings may be limited by the choice of language pairs and the specific machine translation model used (NLLB-200).",
+    "grounding": "Intro, Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "6",
+    "grounding": "Based on the current information, the paper presents a valuable contribution with a new dataset and insights. However, the lack of detailed comparisons and annotation information slightly lowers the rating.",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset license and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The provided text references figures and experimental results but does not include any actual tables. Therefore, the assessment is based on the descriptions of the results and the claims made about them.",
+    "grounding": "Figures 5, 6, 7, and 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The descriptions suggest the use of performance metrics (e.g., detection scores) which, if presented in tables, would allow for quantitative comparison of different methods.",
+    "grounding": "Figures 5 and 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The absence of tables makes it impossible to assess the completeness of data presentation, statistical rigor, or the clarity of the results. The descriptions lack specific statistical measures like standard deviations or confidence intervals.",
+    "grounding": "Figures 5, 6, 7, and 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "When tables are included, ensure they contain clear headers, concise descriptions of the methods, and complete statistical information (mean, standard deviation, confidence intervals, and p-values).",
+    "grounding": "Figures 5, 6, 7, and 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What specific metrics are used to evaluate the performance of the detection methods? 2. Are the differences in performance between the methods statistically significant? 3. What are the standard deviations or confidence intervals for the reported scores?",
+    "grounding": "Figures 5 and 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the scope of the experiments and the datasets used. The lack of tables prevents a thorough evaluation of the generalizability of the findings.",
+    "grounding": "Figures 5, 6, 7, and 8",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present experimental results related to hallucination and omission detection in machine translation. The figures appear to support the claims made in the text, but could benefit from improved clarity in axes labels and legends.",
+    "grounding": "Figures 5, 6, 7, 8",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figures 5, 6, and 7 appear to be well-labeled and support the claims made in the text regarding the performance of different methods for detecting hallucinations and omissions. Figure 7 shows the proposed methods perform better than the random baseline.",
+    "grounding": "Figures 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes in the figures lack clear labels and units. The legends are missing or unclear, making it difficult to interpret the different methods and their performance. The visual design could be improved for better comprehension.",
+    "grounding": "Figures 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to the axes, including units where applicable. Include a comprehensive legend to identify the different methods and their corresponding colors/markers. Consider using error bars to show confidence intervals in the performance plots.",
+    "grounding": "Figures 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What metrics are used to evaluate the performance of the methods? What do the different colors or markers represent in the visualizations? What is the baseline used in Figure 7?",
+    "grounding": "Figures 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to overall performance metrics and do not provide detailed insights into the specific types of errors or the behavior of the methods on individual examples.",
+    "grounding": "Figures 5, 6, 7",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly defines the problem, the contributions, and the scope of the work.",
+    "grounding": "Abstract",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction provides a good overview of the problem and the limitations of existing approaches.",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The definition of 'internal methods' and 'external methods' in the context of detection methods is unclear. Provide a clear definition or reference.",
+    "grounding": "Introduction \u00a71",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'resource levels' (high, low, zero-shot).",
+    "grounding": "Introduction \u00a71, Sec 2.1",
+    "facet": "terminology"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In the introduction, explicitly state the research questions addressed in the paper.",
+    "grounding": "Introduction \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a table summarizing the language pairs, their resource levels, and scripts in Section 2.1.",
+    "grounding": "Sec 2.1",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define 'internal methods' and 'external methods' when they are first introduced.",
+    "grounding": "Introduction \u00a71",
+    "facet": "terminology"
+  },
+  {
+    "kind": "question",
+    "text": "What specific metrics are used to evaluate the performance of the detection methods?",
+    "grounding": "Introduction \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How are the annotation guidelines developed and validated?",
+    "grounding": "Abstract, Sec 2",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's writing prevents reproduction because the annotation guidelines are not included.",
+    "grounding": "Sec 2",
+    "facet": "reproduction"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "all",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the paper is well-structured and addresses an important problem. However, clarity can be improved by providing more precise definitions and details about the methodology.",
+    "grounding": "all",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section discussing potential risks, misuse scenarios, or fairness considerations related to the dataset and the developed methods. The potential for the dataset to be used for malicious purposes or to create biased translations is not addressed.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential biases in the dataset or how the methods might impact different language communities or user groups. There is no analysis of fairness.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not include a Broader Impacts section to discuss the wider societal implications of the research. The potential for misuse, unintended consequences, and the impact on different communities are not addressed.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section to discuss potential misuse cases (e.g., malicious translation, spreading misinformation), fairness considerations (e.g., biases in the dataset), and the impact on different language communities.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of the limitations of the dataset and methods in terms of their societal impact, including potential for misuse and unintended consequences.",
+    "grounding": "Limitations",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Consider the ethical implications of the research, especially regarding the potential for the dataset to be used to create biased or harmful translations. Address these concerns in the paper.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel, large-scale, human-annotated dataset for hallucination and omission detection in machine translation, addressing a critical gap in the field where annotated data is scarce (Intro).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper revisits and re-evaluates existing hallucination and omission detection methods on the new dataset, revealing limitations of previous conclusions based on single-language pair evaluations and establishing new baselines (Sec 6).",
+    "grounding": "Sec 6",
+    "facet": "method"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its proposed methods against the state-of-the-art MT evaluation framework COMET [2] in terms of hallucination and omission detection. A direct comparison would help assess the performance gain.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the proposed method with COMET [2] on the new dataset, evaluating the performance using metrics like precision, recall, and F1-score for both hallucination and omission detection. This would provide a quantitative comparison.",
+    "grounding": "Sec 6",
+    "facet": "experiment"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed analysis of the architectural or methodological differences between the proposed approach and the attention-based analysis methods described in [1] and [3].",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Compare the attention weights from the proposed model with those from [1] and [3] to see if the attention mechanisms are correlated with hallucination and omission. This could involve visualizing attention weights and calculating their correlation with the annotation.",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

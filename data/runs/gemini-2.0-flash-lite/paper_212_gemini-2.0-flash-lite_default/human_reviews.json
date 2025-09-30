@@ -1,0 +1,85 @@
+[
+  {
+    "rid": "Io5usUG5cO",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper introduces a unified summarization benchmark (USB) that supports 9 summarization-related tasks. \nTo construct USB, the authors first conduct a sophisticated preprocessing pipeline to contain source text of their interest. Then, given a wikipedia article, the authors perform human annotation by asking human annotators 1) identify relevant evidence for each sentence in the summary (wikipedia leading paragraph); 2) edit (delete) contents in the summary, which cannot be supported by the wikipedia article (input text). In this way, they obtain parallel data, including article, leading paragraph, modified leading paragraph, supporting evidence, etc, and design 8 tasks using those data. \nAfter building the USB, the authors conduct extensive experiments on it, and specifically analyze the OOD performance and influence of human annotated data compared with silver data. \nGenerally, this paper is well written and can provide some insights to the filed.",
+      "reasons_to_accept": "1. This paper is well-written and easy to follow. \n2. The USB benchmark can serve as a valuable data source for future research on evidence mining and factuality. \n3. Extensive experiments and detailed analysis.",
+      "reasons_to_reject": "Generally, this paper is well motivated and can be valuable to the filed. \nThe only concern is the lack of an ethics consideration section to discuss the human annotation and evaluation detailedly, which correspondingly leads to the data quality concern.",
+      "questions_for_the_authors": "Q1 Instead of stating they are Mechanical Turk workers, could the authors provide more detailed ethical consideration that discusses the detailed human annotation process. For example, what are the background of human annotators? Are they linguists or just native speakers? What are their education level? Are they compensated and how?\nQ2 How reliable are the human evaluation results? Have the authors measure their agreements (e.g. kappa)?",
+      "missing_references": "Some statements are not alway true. \nL548-L554: \"There exist plenty of datasets... many of them were created heuristically\". However, *they are also many datasets that are human annotated*, for example, SAMSUM, QMSum, DialogSum. The authors could discuss more the difference compared with those abstractive datasets, instead of extractive ones.\nAlso, more recently, there is SummZoo benchmark, and more relevantly, there is MACSum, which contains multiple controllable attributes, and *is a unified benchmark as well*. However, they are not cited.\nZhang, Yusen, Yang Liu, Ziyi Yang, Yuwei Fang, Yulong Chen, Dragomir Radev, Chenguang Zhu, Michael Zeng, and Rui Zhang. \" Macsum: Controllable summarization with mixed attributes.\" Transactions of the Association for Computational Linguistics 11 (2023): 787-803.\nZhong, Ming, Da Yin, Tao Yu, Ahmad Zaidi, Mutethia Mutuma, Rahul Jha, Ahmed Hassan et al. \"QMSum: A New Benchmark for Query-based Multi-domain Meeting Summarization.\" In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pp. 5905-5921. 2021.\nGliwa, Bogdan, Iwona Mochol, Maciej Biesek, and Aleksander Wawer. \" SAMSum Corpus: A Human-annotated Dialogue Dataset for Abstractive Summarization.\" In Proceedings of the 2nd Workshop on New Frontiers in Summarization, pp. 70-79. 2019.\nChen, Yulong, Yang Liu, Liang Chen, and Yue Zhang. \" DialogSum: A Real-Life Scenario Dialogue Summarization Dataset.\" In Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021, pp. 5062-5074. 2021.\nChen, Yulong, Yang Liu, Ruochen Xu, Ziyi Yang, Chenguang Zhu, Michael Zeng, and Yue Zhang. \" Unisumm: Unified few-shot summarization with multi-task pre-training and prefix-tuning.\" arXiv preprint arXiv:2211.09783 (2022).",
+      "ethical_concerns": "No",
+      "justification_for_ethical_concerns": "The only concern is the lack of an ethics consideration section to discuss the human annotation and evaluation detailedly, which correspondingly leads to the data quality concern.\nIn particular, the authors did not provide a detailed ethical consideration section that discusses the detailed human annotation and evaluation process. For example, what are the background of human annotators? Are they linguists or just native speakers? What are their education level? Are they compensated and how?"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "MnOesQCWw9",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The authors propose a unified summarization benchmark (USB). They use the overall section of Wikipedia pages as the candidate summary of the rest of the source. Then, they ask annotators to find the evidence for each sentence in the candidate summary and correct the sentences with no evidence. They propose 8 tasks over the annotated dataset and evaluate it on fine-tuned models and LLMs. Results show that fine-tuned models outperform few-shot LLMs. They also split the dataset into 6 domains and evaluated the cross-domain performances.",
+      "reasons_to_accept": "1. It is important to create a manually labeled summarization benchmark that includes various tasks. Especially for detecting the factual issues of the LLMs. \n2. Overall, the paper is well-written and easy to follow. I can understand the motivation for each step of dataset construction and experiment. \n3. The proposed benchmark is relatively comprehensive. It covers 8 tasks and 6 domains with an evaluation of two types of SOTA models. A number of insightful findings are proposed by analyzing experimental results.",
+      "reasons_to_reject": "1. Quality of the summaries is unknown. Although there is verification for annotation of the evidence, it is not clear about the quality of the summaries themselves. How could we know that the overview section of Wikipedia can serve as a good summary of the rest of the source text? Probably, some key information in the content sections is missing as a summary. The overall section is not designed to serve as a summary initially. That's why we can find factual errors in it. So I think the authors also need to prove they can serve as summaries by some human annotation.\n2. Some proposed tasks are not natural. Since the dataset is not written but edited by humans, some tasks seem pseudo data as well. For instance, for EXT task, evidence is just for the overall section which may not be a good extractive summary. And for the TOPIC task, the topic-based summary is directly extracted from the overall section. I believe the readability will decrease. It is also a pseudo-summary rather than a human-written one. Similarly, in the COMP task, some coreference issues may happen. And it may not be a good summary of evidence without rewriting.\n3. Domain bias. Biographies contain 1514 samples which is much larger than the sum of the rest domains. The second largest domain only contains 150 samples. This may weaken your conclusions on the domain experiments.\nOverall, although some manual labels are involved, the construction of the dataset still contains some bias and noises which weaken the conclusions. Among the 8 tasks, the most useful or clean ones are fact-check-related tasks.",
+      "questions_for_the_authors": "- QA line 80, if evidence was lacking, do you directly remove all sentences? Or do you remove only some related spans?\n- QB line 205, do you only consider hyperlinks as entities? Have you ever done an experiment to show its coverage of all entities?\n- QC line 248, how do you deal with the sentences that are verified to be wrong?",
+      "typos_grammar_style_and_presentation_improvements": "For figure 2, I suggest to use 30 as pure white and 50 as pure blue to make the figure more clear.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "uKganOG6f8",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this paper, a benchmark derived from human-annotated Wikipedia content is presented, encompassing eight closely connected tasks: extracted summarization, abstractive summarization, topic-based summarization, sentence compressing, evidence selection, factual accuracy predicting, unsupported span prediction, factual errors correction. The authors also conduct a comprehensive comparison between traditional fine-tuned models and the most recent LLMs across these tasks, using both automatic and human evaluations.",
+      "reasons_to_accept": "The paper is well written. High quality summarization datasets are always important for the research community. This paper integrated eight very interesting summarization-related tasks and annotated a relatively large amount of examples for training and evaluation. This will be helpful for everyone in the research community.",
+      "reasons_to_reject": "My main worry is the absence of human assessment for the ultimate version of the proposed dataset. Maynez et al. 2020 noted that ground truth summaries are prone to hallucinations. I believe that incorporating thorough human evaluation of the dataset would provide researchers with confidence to explore this dataset extensively. \nDue to the lack of human confirmation, I currently have some doubts about the quality of the annotated summaries. This is because, in Table 2, the difference in performance between ChatGPT and the fine-tuned models on generation tasks, as assessed w.r.t. the reference summaries, is quite substantial. \nThis indicates that summaries generated by fine-tuned models are more aligned with the annotated ground truth summaries, whereas summaries produced by ChatGPT do not closely resemble the ground truth. Interestingly, human evaluation highlighted a preference for summaries generated by ChatGPT. This suggests that the proximity to human-annotated summaries may not necessarily correlate with higher human satisfaction. Perhaps it's necessary to conduct a more thorough analysis of the distinctions between human-annotated summaries and the summaries generated by ChatGPT.\nAdditionally, the paper lacks an in-depth examination of the experimental outcomes. Of particular note is the notably poor performance of LLMs on tasks other than generation (such as EVEXT, EXT, FAC, UNSUP).",
+      "questions_for_the_authors": "The Landmarks and Newspapers are not included in any experiments?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "qL89Gu8xqd",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "They present a benchmark based on Wikipedia, enhanced with a comprehensive set of crowd-sourced annotations, supporting 8 interconnected tasks: (i) extractive summarization, (ii) abstractive summarization, (iii) topic-centered summarization, (iv) compressing selected sentences to a single line summary, (v) identifying evidence backing a summary, (vi) determining a summary's factual accuracy, (vii) spotting unsupported segments in a summary, and (viii) rectifying factual errors in summaries. When comparing different approaches on this benchmark, they find that medium-sized fine-tuned models consistently surpass larger few-shot prompted models across several tasks. Regarding tasks tied to factuality, heuristics-based training data perform worse than training on much fewer human-labeled datasets. Their sourced articles span 6 fields, enabling cross-domain studies. Depending on the task, the quantity of training data can be more influential than its domain origin, but for some tasks, domain-specific training, even if scarce, proves more effective.",
+      "reasons_to_accept": "1. The benchmark offers a diverse platform for training and assessment on 8 unique tasks focusing on essential yet overlooked facets of text summarization. \n2. Various models and training approaches, such as fine-tuning, few-shot prompting, and multi-task training, were evaluated. \n3. They provided insights on how different tasks generalize outside their original domain, pinpointing which tasks prioritize the volume of training data over its specific domain origin. \n4. The paper is well-written.",
+      "reasons_to_reject": "1.The dataset is not written but edited by humans, and the quality of the dataset is unknown. Therefore, the evaluations done on this dataset might not be so trustworthy. \n2. The experimental analysis lacks depth, so the findings based on using this benchmark is not exciting enough.",
+      "ethical_concerns": "No",
+      "questions_for_the_authors": "could you please give more details about bout the annotators and how human build the dataset? More evidences for the quality of the datasets could be provided."
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

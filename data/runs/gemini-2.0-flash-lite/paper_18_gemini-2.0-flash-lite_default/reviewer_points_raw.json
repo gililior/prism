@@ -1,0 +1,488 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces SGVL, a method applied to CLIP, BLIP, and BLIP2, evaluated on VL compositional datasets. Additional results and ablations are presented in the supplementary material.",
+    "grounding": "Sec 4",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper applies the proposed method to multiple VLMs (CLIP, BLIP, BLIP2) and evaluates on standard datasets.",
+    "grounding": "Sec 4",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "weakness",
+    "text": "The main text lacks details about the experimental setup, including specific datasets, evaluation metrics, and baseline comparisons.",
+    "grounding": "Sec 4",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a detailed description of the datasets used, including their size, composition, and any preprocessing steps.",
+    "grounding": "Sec 4",
+    "facet": "experimental design"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets and evaluation metrics standard for the VL compositional tasks? If not, what are the justifications for the choices? A positive answer would increase the score.",
+    "grounding": null,
+    "facet": "experimental design"
+  },
+  {
+    "kind": "limitations",
+    "text": "Yes. The paper does not discuss the limitations of the proposed method.",
+    "grounding": null,
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "No.",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents results on VLMs, with additional ablations in the appendix. The paper lacks information on seeds and variance.",
+    "grounding": "Sections 4, Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on seeds or variance is provided.",
+    "grounding": "Sections 4, Appendix A",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on the environment is provided.",
+    "grounding": "Sections 4, Appendix A",
+    "facet": "environment"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide the code, including training and evaluation scripts, and a requirements file to specify the environment.",
+    "grounding": "Code/Data Availability",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Report the seeds used for all experiments and the variance across multiple runs.",
+    "grounding": "Sections 4, Appendix A",
+    "facet": "seeds/variance"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the datasets used publicly available or require special access?",
+    "grounding": "Sections 4",
+    "facet": "code/data availability"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the compute infrastructure used for the experiments?",
+    "grounding": "Sections 4, Appendix A",
+    "facet": "environment"
+  },
+  {
+    "kind": "limitations",
+    "text": "The review is limited by the lack of information on code, data, seeds, and environment.",
+    "grounding": "Sections 4, Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics flag",
+    "text": "no",
+    "grounding": "Sections 4, Appendix A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Overall, the reproducibility of the paper is rated as low due to the lack of information on seeds, variance, and environment.",
+    "grounding": "Sections 4, Appendix A",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a new approach for incorporating structured information into pretrained VLMs from SG data to improve scene understanding. The authors demonstrate improved performance on four benchmarks probing compositional scene understanding with only a mild degradation in ZS performance.",
+    "grounding": "Sec 5",
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "The method shows improved performance on fine-grained Winoground, VLC, and VSR splits compared to pretrained models.",
+    "grounding": "Table 2, Table 3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper demonstrates the flexibility of the approach by showing comparable results when using image-text pairs from COCO.",
+    "grounding": "Table 7",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the benefits of the approach by stating that it improves multiple architectures (CLIP, BLIP, and BLIP2) on a variety of VL datasets without providing sufficient evidence for all claims.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient evidence to support the claim that only a small amount of high-quality annotations may be sufficient to improve models.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more detailed analysis of the specific improvements on each dataset and split.",
+    "grounding": "Sec 4.4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the contribution of each component of the proposed method.",
+    "grounding": "Table 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the definition of \"mild degradation\" in zero-shot performance?",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance on the NoTag split of Winoground compare to the other splits?",
+    "grounding": "Table 8",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the slight degradation in zero-shot classification.",
+    "grounding": "Sec A.3",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "The paper presents a novel approach to incorporate structured information into VLMs and demonstrates improved performance on several benchmarks. However, some claims are overstated, and more detailed analysis is needed to substantiate the claims.",
+    "grounding": "Sec 4, Sec 5",
+    "facet": "overall_assessment"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a method to improve compositional scene understanding in Vision-Language Models (VLMs) using small Scene Graph (SG) datasets. The approach involves generating fine-grained captions from SGs and incorporating 'Adaptive Scene Graph Tokens' into the image transformer encoder to predict SG information. The method is evaluated on multiple VL datasets.",
+    "grounding": "Abstract",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper addresses the problem of improving compositional scene understanding in VLMs, a relevant and timely research area. The approach of using small SG datasets to enhance VLMs is novel and well-motivated.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly explains the limitations of existing VLMs in compositional scene understanding and highlights the need for structured information.",
+    "grounding": "Intro",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear comparison with existing methods that also utilize scene graphs or structured information to improve VLMs. The delta compared to the closest baseline is not clearly articulated.",
+    "grounding": "Related Work",
+    "facet": null
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient details on the architecture of the 'SG Component' and the generation of hard-negative captions. More details are needed to assess the novelty and effectiveness of these components.",
+    "grounding": "Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a head-to-head comparison with a state-of-the-art VLM that incorporates scene graph information. This comparison should include quantitative results on the same datasets.",
+    "grounding": "Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to demonstrate the contribution of each component (e.g., SG tokens, hard negative captions) to the overall performance.",
+    "grounding": "Sec 4.5",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Analyze the impact of different SG datasets (e.g., Visual Genome, other datasets) on the performance of the proposed method.",
+    "grounding": "Sec 1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed method compare to other methods that use structured knowledge for VLM training?",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "question",
+    "text": "What are the computational costs associated with the proposed method compared to standard VLM training?",
+    "grounding": "Sec 1",
+    "facet": "limitations"
+  },
+  {
+    "kind": "question",
+    "text": "How does the performance of the proposed method vary with the size of the SG dataset?",
+    "grounding": "Sec 1",
+    "facet": "limitations"
+  },
+  {
+    "kind": "limitations",
+    "text": "The novelty of the approach hinges on the effectiveness of the 'SG Component' and the hard-negative caption generation, which are not fully detailed.",
+    "grounding": "Sec 1",
+    "facet": null
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "NeurIPS guidelines",
+    "facet": null
+  },
+  {
+    "kind": "provisional_rating",
+    "text": "3",
+    "grounding": "Based on the current information, the paper shows promise but needs more evidence.",
+    "facet": null
+  },
+  {
+    "kind": "summary",
+    "text": "The figures generally support the claims, but could benefit from improved labeling and visual clarity.",
+    "grounding": "Figures 1-4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 1 provides a clear overview of the proposed approach, illustrating the key components and their interactions.",
+    "grounding": "Figure 1",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figure 4 is mentioned but not described, making it difficult to assess its quality. The text mentions tables more than figures.",
+    "grounding": "Figure 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Ensure all axes are clearly labeled with units in all figures. Provide a detailed caption for Figure 4, explaining the different components and results.",
+    "grounding": "Figures 2, 3, 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the 'Adaptive Scene Graph Tokens' visualized in any of the figures? How is the performance of the proposed method compared to other state-of-the-art methods?",
+    "grounding": "Figures 1, 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The figures primarily focus on performance metrics, lacking detailed visualizations of the model's internal workings or qualitative examples.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper proposes a method to improve vision-language models (VLMs) for compositional scene understanding using small scene graph (SG) datasets. The approach involves integrating structured information into both visual and textual representations by generating fine-grained captions from SGs and incorporating 'Adaptive Scene Graph Tokens' into the image transformer encoder. The method aims to enhance VLM performance while maintaining zero-shot capabilities.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The introduction clearly outlines the problem of compositional scene understanding in VLMs and motivates the use of scene graphs to address this issue. The paper clearly states the research questions and the proposed approach.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'Adaptive Scene Graph Tokens' is introduced without a clear definition of its function and how it interacts with other components of the model. The explanation of how these tokens are trained to predict SG information needs more detail.",
+    "grounding": "Abstract, Introduction, Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for notation. This makes it difficult to understand the mathematical formulations and the meaning of symbols used in the method.",
+    "grounding": "Methods section (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the 'Adaptive Scene Graph Tokens' and their role in the image transformer encoder, including how they are trained and how they interact with other tokens.",
+    "grounding": "Methods section (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a notation table to define all symbols and abbreviations used in the paper, especially those related to the model architecture and training process.",
+    "grounding": "Throughout the paper",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "1.  How are the hard-negative captions generated from the scene graphs? What specific rules or algorithms are used?\n2.  What is the specific architecture of the 'SG Component' and how does it integrate with the image transformer?\n3.  What are the specific loss functions used for training the model, especially for the SG tokens?\n4.  How does the proposed method compare to other methods that use scene graphs for improving VLMs?",
+    "grounding": "Methods section (if any)",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's writing may prevent reproduction if the details of the 'SG Component' and the caption generation process are not fully described.",
+    "grounding": "Methods section (if any)",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "ratings",
+    "text": "Clarity: 3/5, Organization: 4/5, Terminology: 3/5",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly mention the licenses for the datasets used, specifically Visual Genome and LAION.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address consent related to the use of images in the Visual Genome dataset, which may contain images of identifiable individuals.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss privacy considerations related to the datasets or the model's outputs.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide information about the usage terms of the model or the datasets.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address consent requirements for the Visual Genome dataset.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_consent"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section on ethical considerations, discussing potential biases and privacy implications.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_privacy"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Clarify the usage terms of the model and datasets.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_usage_terms"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present results of the proposed method across various datasets and baselines. The tables generally compare the performance of the proposed method (SGVL) against baseline models (CLIP, BLIP, BLIP2) on different datasets and splits. The tables include ablation studies to analyze the contribution of different components of the proposed method. The tables are referenced throughout the text to support the claims made about the performance of the proposed method.",
+    "grounding": "Tables 1-10",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The tables report gains and losses relative to the base models, which is a clear and effective way to present the performance improvements or degradations of the proposed method. Table 4 includes multiple metrics (WG, ZS, mAP) which allows for a more comprehensive evaluation of the method.",
+    "grounding": "Tables 1, 4, 7, 8, 9, 10",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The descriptions of the tables are sometimes vague, making it difficult to understand the exact content and the specific metrics reported. Some tables lack detailed statistical information, such as standard deviations or confidence intervals, which limits the ability to assess the reliability of the results. The absence of p-values makes it difficult to assess the statistical significance of the observed differences.",
+    "grounding": "Tables 1-10",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide clear and concise table titles and column headers. Include standard deviations or confidence intervals to quantify the variability of the results. Add p-values to indicate the statistical significance of the performance differences between the proposed method and the baselines. Specify the exact experimental setup, including the number of trials or repetitions, to ensure reproducibility.",
+    "grounding": "Tables 1-10",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific evaluation metrics used for each dataset and split? What statistical tests were used to determine the significance of the results? How were the gains and losses calculated? What is the experimental setup for each table (e.g., number of runs, random seeds)? Are the results in Table 7, 8, 9, and 10 statistically significant?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions are limited by the specific datasets and splits used for evaluation. The generalizability of the results to other datasets or tasks is not fully addressed. The ablation studies are limited to the components and settings explored in the paper.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "No discussion of potential misuse or failure modes.",
+    "grounding": "Insufficient evidence",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section with mitigation strategies.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly differentiates itself from prior work by focusing on enhancing structured understanding in VLMs using small SG datasets, a novel approach compared to methods that rely on large-scale structured annotations or focus solely on zero-shot capabilities (Intro).",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel architecture that integrates SG information into both visual and textual representations, specifically through an 'SG Component' in the image transformer and fine-grained caption generation. This is a key methodological difference from prior work that may not explicitly incorporate structured information into both modalities (Figure 2).",
+    "grounding": "Figure 2",
+    "facet": "methods"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare its performance against BLIP-2 [1], a top-cited related work, which also focuses on improving VLMs. A direct comparison, especially on compositional understanding benchmarks, is missing.",
+    "grounding": "Related Work",
+    "facet": "missing_comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an ablation study to isolate the impact of the 'SG Component' and fine-grained caption generation, comparing the performance with and without these components against BLIP-2 [1].",
+    "grounding": "Sec 4.1",
+    "facet": "experiment"
+  }
+]

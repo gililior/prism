@@ -1,0 +1,66 @@
+[
+  {
+    "rid": "g8sL9rSiAK",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper surveys recent developments on out-of-domain detection. They focus specifically on semantic shift, where samples come from unknown categories. The paper organizes based on the availability of in-domain and out-of-domain data. The approaches surveyed are comprehensive and the paper would provide useful pointers to researchers new to the task.",
+      "reasons_to_accept": "1. The paper is clearly-written and organized using a meaningful taxonomy to navigate the space 2. The survey covers a large body of recent work using different approaches. \n3. Provides insightful discussions and future work",
+      "reasons_to_reject": "1. The survey didn't present (or reference) any empirical result. For someone new to the problem, it's unclear where to start 2. It would be helpful to discuss the pros and cons of the datasets and metrics and propose a standardized benchmark for the task 3. The survey only focuses on semantic shift, but didn't cover non-semantic shift where samples come from different domains and styles. In the real world, semantic- and non-semantic shift often happen together.",
+      "questions_for_the_authors": "1. Section 3.1.2: Why do we need *labeled* OOD data? Since you only classify ID/OOD and discard the OOD ones? Isn't it sufficient to use the unlabeled OOD examples? \n2. How do different approaches for OOD scoring compare? I suppose output-based detecting is more prone to over-confidence of the classifiers than feature-based detecting. Does the latter usually perform better? \n3. Section 3.2.2: The generated pseudo OOD approach appears to me more like data augmentation that makes the model more robust. They will unavoidably differ much from the real-world OOD data. Besides, the generated data also will contain noise. I wonder whether are the generated data used differently during training? \n4. Section 4: the (2) and (3) approach to get datasets are much more trivial than annotating OOD samples (1). I wonder if there's any drawback.",
+      "missing_references": "- Li, Chenliang, et al. \"Seed-guided topic model for document filtering and classification.\" ACM Transactions on Information Systems (TOIS) 37.1 (2018): 1-37.\n- Jin, Yiping, Dittaya Wanvarie, and Phu TV Le. \" Learning from noisy out-of-domain corpus using dataless classification.\" Natural Language Engineering 28.1 (2022): 39-69.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "N/A: Doesn't apply, since the paper does not include empirical results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "giSojV8d8s",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper introduces the survey on Out-of-Distribution Detection (OOD) in the NLP field. The authors present the taxonomy of OOD detection methods, based on OOD data availability. A detailed description of the existing approaches is done for each method is provided. Also, there are chapters devoted to datasets, commonly used metrics, and applications. The paper compares the differences between CV and NLP OOD methods and discusses future research directions.   This work is well-written and effectively conveys the main idea.  From my point of view, it covers most of the recent works concerned with OOD in the NLP field. The authors raise the discussion for which setup labeled/unlabeled methods could be applied, so the overview of existing approaches looks comprehensive and could be beneficial to make a clear picture of existing approaches, metrics, and datasets.  On the other hand, I would like to see a more experimental setup. More precisely,  the paper will benefit if it would present which setup and what method achieve better results. I would like to see more discussions about the possible limitations of existing approaches and their pros/cons for different setups (section 6.1 is too short and obvious). The chapter devoted to the comparison between CV and NLP methods doesn`t draw any comparison between methods but just outlines them. Also, it is better to be aligned with previous surveys [1], [2] Strengths: 1) The comprehensive survey of existing OOD methods in NLP may be interesting for researchers in the OOD area. \n2) The suggested taxonomy looks logical for OOD in NLP.\nWeaknesses: 1) There are no experimental results of the observed methods. From the survey, it is not obvious when one should select which type of method.   2) The suggested taxonomy is not well-aligned with the previous surveys [1],[2] [1] Yang, J., Zhou, K., Li, Y., & Liu, Z. (2021). Generalized out-of-distribution detection: A survey.\n[2] Salehi, M., Mirzaei, H., Hendrycks, D., Li, Y., Rohban, M. H., & Sabokrou, M. (2021). A unified survey on anomaly, novelty, open-set, and out-of-distribution detection: Solutions and future challenges.",
+      "reasons_to_accept": "1) The comprehensive survey of existing OOD methods in NLP may be interesting for researchers in the OOD area. \n2) The suggested taxonomy looks logical for OOD in NLP.",
+      "reasons_to_reject": "1) There are no experimental results of the observed methods. From the survey, it is not obvious when one should select which type of method.   2) The suggested taxonomy is not well-aligned with the previous surveys [1],[2]",
+      "questions_for_the_authors": "A. Why pre-training and finetuning are organized as separate classes in Figure 1? All of the further described approaches rely on pre-trained/finetune models. \nB. In [1],[2] is used common-knowledge taxonomy with 1) classification-based methods; 2) density-based methods; 3) distance-based methods; 4) reconstruction-based methods. Why do you prefer to select the other granularity?  [1] Yang, J., Zhou, K., Li, Y., & Liu, Z. (2021). Generalized out-of-distribution detection: A survey.\n[2] Salehi, M., Mirzaei, H., Hendrycks, D., Li, Y., Rohban, M. H., & Sabokrou, M. (2021). A unified survey on anomaly, novelty, open-set, and out-of-distribution detection: Solutions and future challenges.",
+      "missing_references": "Salehi, M., Mirzaei, H., Hendrycks, D., Li, Y., Rohban, M. H., & Sabokrou, M. (2021). A unified survey on anomaly, novelty, open-set, and out-of-distribution detection: Solutions and future challenges",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "N/A: Doesn't apply, since the paper does not include empirical results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "c9QZIl1KwG",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This survey paper is concerned with the task of Out-of-Distribution Detection in NLP, specifically on the case where the test data contains instances whose label is not in the training data (semantic shift). Methods are classified based on whether OOD labelled data is available. Those methods with access to only labelled ID data are subdivided into those that learn representations that can distinguish between ID and OOD, and methods that generate synthetic OOD data. Completely unsupervised methods (no access to labelled ID data) are also discussed. Datasets, applications and metrics are briefly described.",
+      "reasons_to_accept": "- Potentially useful survey for someone beginning a project on this task or for someone looking for references to recent work in the area - Generally well written",
+      "reasons_to_reject": "- The survey is relatively narrow in focus.\n- The structure of the paper could be improved, e.g.  it could benefit from a table which clearly presents the studies included in Section 3 in a structured and easy to access format. This table could include columns referring to availability of ID and OOD labelled data, whether pseudo-OOD data is generated, whether a detection score is used, and what the task is.\n- Section 3.2.3 (Other Methods) is not very satisfactory. I think more effort could have been made to either discuss these methods under existing categories or to create new categories.\n- Some of the information in the Metrics section is widely known and doesn\u2019t need to be included, e.g. the formulae for true positive and false positive rate.\n- Section 6.1 is repetitive. I\u2019m also not sure how necessary the section containing the comparison with Computer Vision (6.2) is. The discussion is somewhat superficial.",
+      "questions_for_the_authors": "- 745-747: what does it mean to combine OOD detection with a life-long learning process? More detail should be presented\t\t \t\t - In Table 1, what does \u201cWhether to consider ID performance\u201d mean?\n- Does OOD Detection (with semantic shift) have a role to play in structured prediction tasks such as parsing?",
+      "missing_references": "- The Related Research Areas section is a good idea but the references in each section are limited. Consider the Domain Adaptation section which contains only two references! A search for \"Domain Adaptation\" in the ACL Anthology reveals 10 pages of results, with dedicated workshops on the topic, e.g. https://aclanthology.org/W10-26.pdf.  - Lines 729:733 This reminds me of this work which follows outbound links to obtain data for use in domain generalisation in part-of-speech tagging and NER:  https://aclanthology.org/C14-1168.pdf",
+      "typos_grammar_style_and_presentation_improvements": "**Presentation** - The focus on OOD Detection with semantic shift should be highlighted in the paper title.\n- Section 3 should not be given the title \u201cMethodology\u201d but rather something like \u201cTaxonomy of Methods\u201d - Applications could benefit from a section or subsection of its own.\n- 59-60 \u201curgently needed\u201d This is an over-statement!\n**Typos** - 33: existing flourishes? Maybe replace with \u201cexisting versions\u201d?\n- 364: Ensembles-based -> Ensemble-based - 630: this stage benefit -> this stage benefits - 782-783: several alias -> several aliases",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "N/A: Doesn't apply, since the paper does not include empirical results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

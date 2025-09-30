@@ -1,0 +1,82 @@
+[
+  {
+    "rid": "dMfs0VsPQv",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes a formal framework for LLM simulations and introduces the caricature phenomena from the individuation and exaggeration side. The evaluation results from existing works on LLM simulations demonstrate that simulations of certain demographics (political and marginalized groups) and topics (general, uncontroversial) are highly susceptible to caricature.\nMain Contributions: 1. A new framework for characterizing the dimensions of LLM simulations. \n2. Methods (mainly some metrics) for measuring simulations\u2019 susceptibility to caricatures. \n3. An analysis of existing work on LLM simulations of certain demographics and topics.",
+      "reasons_to_accept": "1. The paper provides a framework for evaluating LLM simulations, which can be useful for researchers working with language models in social science. The idea is novel and inspiring, and the findings can inform future work on improving the quality of LLM simulations and reducing the potential for caricature. \n2. The paper provides a useful overview of previous work on LLM simulations and helps to construct a new detection framework on individuation and exaggeration. \n3. This paper concludes several recommendations with abundant experimental evidence for LLM simulations.",
+      "reasons_to_reject": "1. The detection framework seems to be limited to specific one-round QA formats and scenarios and may not be applicable to other situations or applications of LLM simulating. \n2. Detection (or classification) methods appear to be simple for Individuation and Exaggeration and may be too biased when based on only sentence embedding features. \n3. More complete samples of person and non-person responses should be provided to validate the accuracy of the test, in addition to the manual (or at least gpt4) results.",
+      "questions_for_the_authors": "1. Tables A1 and A2 do seem to capture some correlation between Pole Seed Words and simulation objectives but also noise a lot. Is there any direct evidence of the exaggeration phenomenon (e.g., some complete transcripts of conversations), and how does your method successfully detect on them? \n2. The correlation between your proposed metrics and the phenomenon of exaggeration does not appear to have been carefully verified. How to demonstrate the relationship between preference for particular words and the model bias\uff1f \n3. How do these metrics work on more complex simulation tasks, I would guess that more complex simulations (e.g. a specific historical character) would be more independent of wordings.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "USkmyx916z",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work introduces a framework, CoMPosT, for characterizing and evaluating caricature (individuation and exaggeration) in LLM simulations. In doing so, the authors propose two different metrics for measuring individuation and exaggeration.  Specifically, they evaluate simulations in the online forum and interview context and find certain demographics and topics are more susceptible to caricature. \nThe main contribution of this paper is to offer a shared language to the field to critique problematic applications of LLM simulations.",
+      "reasons_to_accept": "- This paper is well written and explained. The motivation to characterize and evaluate caricature in LLM simulations is very clear and important.  - The definition of caricature is sensible and informative. It is important to distinguish caricature and exaggeration as the authors mention in the paper: a caricature not only exaggerates particular features of the subject but also exaggerates in a manner that meaningfully differentiates the subject from others.  - The experiments are quite solid. The authors consider different contexts in LLM simulations such as online forum, interview, and twitter. Besides, they consider a reasonable amount of combinations of persona and topic. The empirical results are convincing.  - The recommendations proposed by the authors are helpful for researchers and stakeholders.",
+      "reasons_to_reject": "- This paper has a lack of error analysis about false positive cases that seem acceptable and caricature-free based on CoMPosT.  - A power analysis may be needed to determine the number of examples for each simulation setting. In the paper, the authors choose to generate 100 outputs but it is a little unclear where the number comes from.  - It would be nice to include explanations about the differences in individuation scores in various contexts. In Figure 4, the mean individuation scores in the online forum context are consistently lower than in the interview context across all personas.",
+      "questions_for_the_authors": "- Question A: For reproducibility purposes, could you please elaborate on the setup of the binary classifier used in measuring individuation?  - Question B: Have you ever considered using persona-topic semantic axes to measure individuation? It would be better if we have the metrics for individuation and exaggeration defined in a comparable way.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "JngkBn0pU1",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Topic: caricature detection in LLM Main contribution: formal formulation of caricature, a novel caricature detection method based on two metrics (individuation and exaggeration), experiment to show how the proposed method can be used to quantify individuation and exaggeration for a variety of personas in two different contexts (online forums and interview), and result that individuation is less helpful than exaggeration in this task.",
+      "reasons_to_accept": "- Clear formulation of caricature - Novel methods to detect caricature based on two dimensions  - Interesting explanation of experimental results (e.g. marginalized groups are subject to higher exaggeration and thus caricature) - Extended works for other platforms, e.g. Twitter, in the appendix",
+      "reasons_to_reject": "My only major concern is the lack of evaluation to show the validity of their proposed method in Figure 3 with respect to the caricature detection task (e.g. whether it is valid to use classifier accuracy between default persona and simulation S as a proxy for individuation; whether it is valid to use similarity between simulation S and persona-topic semantic axes) as there seems to be no ground truth for caricature to compare their results with. The experiment seems to be based on the assumption that their method is already valid, and the experiment is just there to show how their method helps social science findings (e.g. which groups are subject to caricature). It will be great if the authors may construct (or use) a small human-annotated dataset of caricatures to further evaluate their proposed method.",
+      "questions_for_the_authors": "A: Could you please elaborate on the rationale behind choosing the two contexts: Online Forum vs. Interview (e.g. which contrast you want to make)?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "BxumWKeELU",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper presents a novel framework for identifying and measuring the extent of caricatures in LLM generations/simulations. In their proposed framework, the paper introduces 4 major dimensions: model, context, persona, and topic. The paper defines persona as demographic attributes for a group of people but I believe it can extend to more nuanced views as well. The paper motivates the problem by showcasing examples of how a persona can be exaggerated while simulating a specific topic. Finally, the paper proposes several metrics to measure individuation and exaggeration in LLM generations and finds out several scenarios where LLM simulations are caricatures.",
+      "reasons_to_accept": "1. The paper introduces a novel framework to measure caricature, which is a nuanced way of how LLMs can be biased in an open-ended generation setup. \n2. With the growing adaptability of LLMs, measuring caricature is a timely and important problem to be addressed. \n3. The paper shares several recommendations for measuring and mitigating caricatures in LLM simulations in the future.",
+      "reasons_to_reject": "- The experiments were conducted on a single LLM GPT 4. Although it is one of the popular LLMs with API access, it would be interesting to see small-scale simulations with other commercial or non-commercial LLMs.\n- The description of some of the figures can be improved. \n    * What do 20, 40, 80 refer to in Figure 4? Later I find that these numbers correspond to a person\u2019s age. \n    * It would be nice to label Figure 5 components into subfigures 5(a), 5(b), etc. It is difficult to follow the text (for example in section 6.2.2) at times and figure out which components are being discussed.\n- Some sections of the evaluation are a bit confusing to me. Please find the details in the questions section below.",
+      "questions_for_the_authors": "- Measuring individuation: For paper and analysis, using the classifier seems reasonable. I would like to know if the authors had any suggestions for users trying to measure the extent of individuation for a small set of samples. Also, there is a chance that BERT based classifier overfits some characteristic words or starting words from the default simulation. \n    * Will any unsupervised metric like V-measure be helpful to figure out how separable the two sets are? \n    * It would be interesting to have any such unsupervised metric being compared with the classifier performance.  - Measuring exaggeration: I understand that the paper reuses the framework of Lucy et al, 2022 to measure exaggeration. But the intuition behind the measure is a bit unclear to me. It would be great if the authors could clarify the following:     * From my understanding, the generated simulation shouldn\u2019t lean much toward either the persona or topic-related words. For this why can\u2019t we measure the cosine similarity with E[p_i] and E[t_i], and form a normalized score of its sum? Specifically, I\u2019m confused about why subtraction is required in the definition of $V_{p, t}$.     * What does $S^i_{p,t,c}$ refer to? Description of the superscript $i$ is missing?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

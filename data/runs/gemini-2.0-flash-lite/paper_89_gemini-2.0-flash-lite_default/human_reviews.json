@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "7kuXn7zbc2",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper explores the performance gap of LMs between answering compositional questions and their sub-questions. The authors discover that the growing size of LMs could not narrow the gap. The authors then find that the elicitive prompting (e.g., chain-of-thought prompting) could narrow the gap, and propose a better version of it (using search engines to answer sub-questions) for improvement. In experiments, two existing QA datasets and one newly proposed dataset (around hundreds of questions) are used for evaluation. Results show that the proposed prompting method can improve the performance in answering compositional questions more or less.\nThe main contributions here are two findings mentioned above, a newly proposed elecitive prompting method, and a new multi-hop QA dataset.",
+      "reasons_to_accept": "This paper discusses an interesting and important topic for LMs: whether pretrained LLMs can solve compositional tasks well. The findings indicate that enlarging the size of LMs would not help them much to achieve higher compositional ability (i.e., narrowing the compositional gap). It can only let LMs learn to answer the one-hop sub-questions better. But designing better elecitive prompt could help more or less. \nThese findings are interesting and could be inspiring for the community.",
+      "reasons_to_reject": "Based on the findings, the contribution of the proposed prompting method is marginal. First of all, decomposing compositional questions and using search engines is not a new idea. Second, experiment results cannot clearly indicate that the proposed prompting method can effectively narrow the compositional gap. They only show that it could bring slight performance improvement.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "bwSwcSyIMX",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work focuses on the compositional reasoning ability of large language models, and makes contributions in both evaluation and method. For evaluation, the main idea of this work is to evaluate the model's ability on two-hop questions where each individual hop is easy to understand. This work also constructs two new datasets for such evaluation, one is CC, and the other is Bamboogle. Method-wise, this work proposes the self-ask prompting method. Specifically, it encourages the model to decompose the original question and ask follow-up questions when needed. This process can also be extended to include an external search step. In the experiments on multi-hop reasoning datasets, self-ask shows better performance than chain-of-thought (further gain when using external search), and similar performance to least-to-most with better speed.",
+      "reasons_to_accept": "1. This is a straightforward idea and it shows decent improvement in the evaluation. Its compatibility with external searching steps brings huge potential to this method. \n2. The evaluation idea to evaluate compositionally with 2-hop questions is neat. This work also provides two new datasets for this type of evaluation.",
+      "reasons_to_reject": "1. All the analyses and experiments are conducted with GPT-3 models. This is fine for the self-ask experiments, but having results from more models can make the observation of \"the compositional gap\" more convincing, as the current results may be influenced by some e GPT-3 specific training data or tricks. \n2. While the self-ask prompting style really fits multi-hop reasoning questions, it's unclear whether these ideas will work for implicit multi-hop questions (i.e., the multi-hop decomposition is not clear just from the question) or more generally, implicit multi-step reasoning questions. Having those evaluations can further strengthen this paper. Also I find it pretty strange that as the first dataset mentioned in this draft, self-ask results on CC can only be seen in the Appendix and is not compared to other baselines.",
+      "questions_for_the_authors": "1. In Table 6, why do the right/wrong probabilities do not sum up to one? And in general, why does the model performance vary significantly across different question types? Can the difference be explained by different confidences (as in line 222-226)?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "sqJ29Tesoo",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper studies the compositional reasoning ability of LLMs, especially the GPT-3 family. The paper introduces the notion of the compositionality gap to study whether LLMs can obtain stronger compositional ability as the scale increases. The authors also proposed a new method, i.e., self-ask, that achieves improvement over chain-of-thought.",
+      "reasons_to_accept": "- This work studies the compositionality gap in multi-hop reasoning tasks. The authors present several interesting findings that can shed light on future research on compositional reasoning and emergent abilities in LLMs.\n- This work introduces Compositional Celebrities (CC) and Bamboogle datasets to study the compositionality gap and they can serve as useful resources for the community.\n- The paper proposed the self-ask elicitive prompting which effectively narrows down the compositionality gap in larger LMs.",
+      "reasons_to_reject": "- More qualitative analysis on why and how elicitive prompting narrows down the compositionality gap can shed more light on related research.\n- The study mainly focuses on 2-hop reasoning and it would be more interesting to look into the compositionality that involves more than 2 hops.\n- The paper only validates the problem in GPT models. It\u2019s not clear if the conclusions drawn in this paper can still hold true in other LLMs, such as Flan-T5.\n- The novelty of self-ask prompting is somewhat limited as there\u2019s much recent literature proposing similar ideas.",
+      "questions_for_the_authors": "- Do you have any analysis on how many follow-up questions the LLMs ask? Will this statistic relate to the size of language models?\n- Do you have any analysis or evaluation that compares the quality of intermediate reasoning steps between CoT and self-ask?",
+      "typos_grammar_style_and_presentation_improvements": "- The authors can consider putting the important experiment results into the main body (e.g., how self-ask narrows the compositionality gap in Figure 6). The current presentation in the main body looks lack of enough empirical analysis.\n- The writing can be more concise and has a more clear flow.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

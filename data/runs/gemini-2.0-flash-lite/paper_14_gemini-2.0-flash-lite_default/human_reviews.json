@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "4bpRycQnwk",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper tackles the task of speech query based referring video object segmentation (R-VOS). To handle the noisy nature of speech queries, the authors proposed two modules, namely noise-aware semantic adjustment, and semantic jitter suppression. Experiments show that the proposed modules are effective, and their approach achieves the state-of-the-art performance on three referring video object segmentation benchmarks, outperforming both speech R-VOS models, and ASR + text R-VOS models, closing the gap between speech based models and text based models using ground truth text.",
+      "reasons_to_accept": "two modules - noise-aware semantic adjustment, and semantic jitter suppression are proposed to handle the noisy speech input for semantic information extraction. Extensive ablation studies showed that the proposed modules are effective. The proposed approach is effective even when no noise is injected (table1). The impact of different noise types are also investigated, and they show that \"sustained and loud noises can lead to a severe performance drop compared to short-lived and faint noises\"",
+      "reasons_to_reject": "1. The type of noise is limited to only background noise (and from AudioSet specifically), but the definition of noise in speech is much broader - reverberation, far-field, low bandwidth, missing segments, accents. Accents in particular appeared in the abstract as a motivating factor, but never mentioned in the main text of the paper. \nThe approach contains a background noise class prediction module, which could mean that the approach only works for background noise. If this is the case, I suggest the authors modify the paper to be clearer on what kind of noise is being tackled here.\n2. The generalization ability. Only a limited pool of noise categories (21 kinds in total) are used as injected noise, and therefore not sure how this approach generalize when OOD background noise appear in the speech query.\n3. The info regarding the ASR model are largely missing. The only info the author presented in the paper is that it's W2V2, but the size, pretraining/finetuning data are missing. It might be worth considering whether the proposed approach is still competitive compared to a stronger ASR model, e.g. Whisper",
+      "questions_for_the_authors": "Another benefit of this end2end approach compared to using ASR, is inference speed. I'm curious of the quantitative comparison.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "XDr3eDjgH4",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper addresses the problem of referring video object segmentation (R-VOS) using speech input, which is more challenging compared to using text input due to noise and potential information loss. The paper makes several contributions to the field of R-VOS and speech-referring segmentation: Firstly, it addresses the gap between text and speech input, which is an underexplored area in the field. It introduces a method to align the semantic spaces between speech and text, enabling the adaptation of text-input R-VOS models to handle noisy speech input effectively. This allows for a more natural and convenient way for humans to refer to objects in videos using speech.\nSecondly, the paper proposes the Noise-Aware Semantic Adjustment (NSA) module, which enhances the R-VOS models to handle incomplete and distorted information from noisy speech. It focuses on extracting accurate semantics from noisy speech, enabling effective segmentation even with perturbed referring queries.\nThirdly, the paper introduces the Semantic Jitter Suppression (SJS) module, which helps the R-VOS models tolerate noisy queries by generating perturbations and suppressing noise in the textual features. This module allows the models to learn from incomplete referring guidance and adapt to noisy speech input.\nThe paper provides comprehensive experiments on three challenging benchmarks, demonstrating the superiority of the proposed method compared to state-of-the-art approaches. The experiments cover both clean and noisy speech input scenarios, showcasing the noise-tolerant capabilities of the proposed method.",
+      "reasons_to_accept": "Strengths: 1. Novel Approach: The paper proposes a new approach, STBridge, to bridge the gap between speech and text in R-VOS tasks. The incorporation of two key modules, NSA and SJS, effectively addresses the challenges of noisy speech input and aligning the semantic spaces between speech and text. \n2. Robust Performance: The comprehensive experiments conducted on three challenging benchmarks demonstrate that the proposed method outperforms state-of-the-art approaches. STBridge achieves significant improvements in both clean and noisy speech input scenarios, highlighting the effectiveness of the proposed modules.\nBenefits to the NLP Community: 1. Expanded Scope: The paper addresses a gap in the existing literature by exploring the underexplored area of speech-input R-VOS models. By adapting text-input R-VOS models to accommodate noisy speech input effectively, the proposed method expands the scope of R-VOS research and opens up new possibilities for multimodal HCI tasks. \n2. Noise-Tolerant Speech Understanding: The robustness of the proposed method to handle noisy speech queries provides valuable insights for researchers working on speech understanding tasks. This can contribute to the development of more accurate and reliable speech-based models, benefiting various NLP applications beyond video object segmentation. \n3. Practical Applications: The practical applications of the proposed method, such as video editing and augmented reality, have significant implications for the NLP community. The successful adaptation of text-input R-VOS models to handle noisy speech input enables the development of more user-friendly and natural human-computer interaction systems, enhancing the user experience in real-world scenarios.",
+      "reasons_to_reject": "Weakness: Lack of analysis of failure cases: The paper focuses on the performance improvements achieved by the proposed method but does not analyze the failure cases where the method might not perform well. Understanding the limitations and failure cases of the approach would provide a more comprehensive evaluation.\nRisk: Lack of real-world scenarios: The evaluation is conducted on benchmark datasets, and it would be beneficial to include real-world scenarios or scenarios with more complex visual scenes. This would provide a more realistic evaluation of the approach.",
+      "questions_for_the_authors": "A. How does the proposed method handle cases where the spoken descriptions are ambiguous or inconsistent with the video content? Are there any strategies or techniques to handle such cases?\nB. Have you considered using noise reduction techniques to first reduce the noise in speech and then extract text through ASR to perform the R-VOS task? If so, how effective is this approach?\nC. How sensitive is the proposed method to variations in speech quality or the levels of noise in the speech? Did you observe any significant performance degradation with extremely noisy speech (e.g. SNR higher than 40 dB) or low-quality recordings?\nD. Have you tested the proposed method on languages other than English? If so, what were the challenges and how did the method perform in those cases?\nE. Have you considered incorporating other modalities (e.g. visual cues or lip movements) along with speech to improve the performance of the proposed method? If so, what were the challenges and potential benefits of such an approach?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "yvTPGBGzGY",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposed a novel approach that adapts R-VOS models trained on clean text-video pairs to noisy speech input.  To align the semantic spaces between speech and text by incorporating two key modules: 1) Noise-Aware Semantic Adjustment for clear semantics extraction from noisy speech; and 2) Semantic Jitter Suppression enabling R-VOS models to tolerate noisy queries.",
+      "reasons_to_accept": "1. The method provides solution to the important field of speech driven video object segmentation with many application scenarios. \n2. The novelty is sufficient though the solution is a modularized approach which provides step-by-step functions to deal with a challenging task. Hopefully this could lead to a more end-to-end solution from audio signals to VOS. \n3. The experiments are thorough with good results and ablation studies. \n4. The reference looks comprehensive to me. \n5. The writing is clear and easy to follow.",
+      "reasons_to_reject": "Please refer to my questions below for possible improvement, mostly in the approach, or at least in the writing to clarify a few details.",
+      "questions_for_the_authors": "1. What are the essential difference between noise in query and noise in ASR (line 067 vs line 076). From my understanding, the first noise is due to ASR errors which is mostly caused by the second noise. \n2. Following the above question, can you leverage the background noise from audio signals as contextual information for better queries? \n3. Is it possible to extend your idea to ASR-free queries, i.e., taking raw audio signal as input to the R-VOS model? \n4. Can you use entity/keywords extraction from speech instead of ASR? \n5. The approach relies on training data with the triplet set of video, text and audio, all synced. Is there enough data like this? How could you leverage the data with only aligned video & audio, or text and audio, etc?",
+      "ethical_concerns": "No",
+      "justification_for_ethical_concerns": "No concerns."
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

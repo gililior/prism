@@ -1,0 +1,62 @@
+[
+  {
+    "rid": "N890jVPGLf",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper proposes a recursive visual explanation method for step-by-step vision-language explanation generation. The proposed method appears to build upon the powerful BLIP-2 model. Experiments on three datasets demonstrate the effectiveness of the proposed method.",
+      "reasons_to_accept": "- The paper proposes a multi-step explanation generation method, and the experimental results indicate that the model's performance improves with more steps.\n- The paper proposes a few-shot self-training method, enabling training with generated pseudo-explanations.",
+      "reasons_to_reject": "- Lack of detailed description of the first contribution. 5% of the human-annotated explanations are insufficient to understand the significance of this aspect. The paper should provide more comprehensive information regarding the comparison methods, experimental settings, and detailed analyses to establish a clear contribution.\n- It seems that the novelty of the proposed recursive method is relatively incremental, as the iterative computation of visual features conditioned on text input is a common technique in the multimodal domain, as seen in previous work (e.g., Paper [1]). The paper should address how the proposed method extends beyond existing techniques to justify its contribution.\n- The paper should include a thorough analysis of the significant performance gap observed between the proposed method and state-of-the-art methods, which are essential for a comprehensive evaluation of the proposed method's effectiveness.\nReferences:   [1] Improving one-stage visual grounding by recursive sub-query construction. ECCV, 2020.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "Z5Gq2d9i43",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper proposes ReVise, a method that recursively generate explanations for vision-language tasks by recomputing visual features. The method is data efficient and achieves on-par performance with current methods for VL-NLE. They also showed the effectiveness of ReVise in self-training by generating pseudo ground truth annotations for explanations and self-train on these generated explanations.",
+      "reasons_to_accept": "- Paper is written with clarity and easy to follow.\n- Extensive experiments to show the effectiveness of ReVise against previous methods and also its use in self-training.\n- Method is data efficient, compared to existing approaches.\n- This method also allows for few-shot self-training, further addresses the issue of scarce annotations.",
+      "reasons_to_reject": "- I had a hard time understanding the results because of the various metrics. While the different metrics show ReVise performs the best, it would be nice if the authors can give a better idea of what metrics to look at and how to interpret them.  - Unclear evaluation: not sure whether the evaluation is conducted on answers or explanations.",
+      "questions_for_the_authors": "A. Are the reported metrics evaluated on the answer or the explanation?\nB. Have you looked into how explanation quality varies in the iteration process?",
+      "typos_grammar_style_and_presentation_improvements": "- Too many tables / figures (especially in page 6, 7, and 8.) Some can be moved to appendix.\n- Some citations should use \\citet",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "dhBphAA2OD",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "In this manuscript, the authors address the visual question answering problem, aiming to provide insightful explanations together with the answers. The proposed approach, namely the Recursive Visual Explanation algorithm (ReVisE), recursively generates an answer, together with an explanation, based on the encoded image. The generated answer and explanation will be used for the next step in the recursion. The motivation is to allow the model to improve the answer and explanation step by step in the recursion until it converges. The authors also proposed a few-shot self-training mechanism to train the model with low annotated explanation resources. Experimental results are shown to support the proposed method.",
+      "reasons_to_accept": "Recursive revising the answer and explanation is a promising direction towards explanation AI. \nThe self-training mechanism is interesting. \nThe manuscript is well organized, and the writing is easy to follow.",
+      "reasons_to_reject": "The convergence of the algorithm is questionable. \nThe improvement of most metrics is somewhat marginal, given times of recursion as the price.",
+      "questions_for_the_authors": "My main concern is the convergence of such recursion. First, the answer and explanation generation involves a  sampling, with which $A_n = A_{n-1}$ doesn't necessarily lead to convergence. Second, why would the model tend to converge? There is no source of \"improvement\" at each step. Providing clear proof might be challenging given the complexity of LLM, but it would be better to give a persuasive motivation for the possible step-wise improvement that leads to convergence.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "5: Positive that my evaluation is correct. I read the paper very carefully and I am very familiar with related work."
+    }
+  }
+]

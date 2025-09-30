@@ -1,0 +1,344 @@
+[
+  {
+    "kind": "strength",
+    "text": "Positions the work relative to prior art with clear gaps.",
+    "grounding": "Intro \u00a71.2",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "Need stronger evidence distinguishing from closest baseline.",
+    "grounding": "Related Work",
+    "facet": "novelty"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a head-to-head comparison with contemporaneous method X.",
+    "grounding": "Sec 4.1",
+    "facet": "novelty"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper explores internal feature constraints in language models, proposing a topological probe. Experiments are conducted on BERT-large and its submodules.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "Experiments are focused on BERT-large and its submodules, with supplementary results on RoBERTa-large (Appendix F).",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of the findings without providing sufficient evidence for models beyond BERT and RoBERTa.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The construction scheme for the topological probe lacks sufficient mathematical formalization.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct experiments on a wider range of models to substantiate the generalizability claims.",
+    "grounding": "Sec 4",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more rigorous mathematical formalization of the topological probe.",
+    "grounding": "Sec 5",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "Are the observed improvements solely due to the proposed topological probe, or are there other contributing factors?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How sensitive are the results to the specific hyperparameters used in the experiments?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge limitations in the approximate construction of mins W and maxs W.",
+    "grounding": "Sec 5",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "weakness",
+    "text": "Dataset licensing and usage restrictions not stated.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add explicit license and consent statements for datasets used.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures present experimental results related to the tree topological probe, but lack sufficient detail for a full assessment.",
+    "grounding": "Figures 1-3",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "The figures appear to support the claims made in the text, showing relationships between different metrics.",
+    "grounding": "Figures 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "The axes in the figures lack clear labels and units, making it difficult to interpret the results.",
+    "grounding": "Figures 1, 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more descriptive axis labels, including units where applicable, to improve clarity.",
+    "grounding": "Figures 1, 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What do the variables X, A, C, Y, M, ssp, essp, sp represent in the figures?",
+    "grounding": "Figures 1, 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the range of values for the axes in Figures 2 and 3?",
+    "grounding": "Figures 2, 3",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The provided text does not offer enough detail to assess the figures' effectiveness fully.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Paper is generally well organized with clear sectioning.",
+    "grounding": "Intro \u00a71",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The abstract clearly outlines the paper's focus, approach, and contributions.",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'tree topological probe' is introduced without a clear definition of what constitutes a 'tree' in this context. Is it a dependency tree, a parse tree, or something else?",
+    "grounding": "Abstract",
+    "facet": "terminology"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a clear definition of 'whitebox model' and how it relates to the proposed approach. The distinction between whitebox and blackbox models should be clarified.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "terminology"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the 'novel line' mentioned in the abstract. What specific aspects of metric construction are being emphasized?",
+    "grounding": "Abstract",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Define all acronyms (e.g., BERT) upon first use.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In the introduction, clarify the specific challenges of achieving interpretability in white-box models when the source model lacks inherent interpretability. What are the key difficulties?",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more detailed explanation of the trade-off being discussed in the introduction. What are the specific aspects being balanced?",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What specific algebraic operations are you referring to when you mention 'algebraic operation' on vectors?",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "What is the specific intuition behind the statement: 'if a white-box model cannot distinguish embeddings that exhibit practical differences... it should be considered ineffective'?",
+    "grounding": "\u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "question",
+    "text": "How does the proposed 'tree topological probe' address the limitations of existing methods like the structural probe?",
+    "grounding": "Abstract, \u00a71",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "limitations",
+    "text": "The lack of a clear definition of the 'tree topological probe' and the 'novel line' may hinder reproducibility.",
+    "grounding": "Abstract, \u00a71",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "None",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results related to model performance, grouped and categorized based on different criteria. The descriptions are brief, and the tables' quality depends on the specific content within each.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "The tables' structure is described, indicating a clear organization based on the grouping criteria (X ssp, X essp).",
+    "grounding": "Tables 1, 2",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The provided text lacks details about the content of the tables, making it impossible to assess the completeness of statistical information. It is unclear if the tables include standard deviations, confidence intervals, or p-values.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations and/or confidence intervals for all reported values. Add p-values to compare the performance of different methods or groups.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What are the specific evaluation metrics used in each table? 2. What statistical tests were used to compare the performance of different methods? 3. Are the ranges for X ssp and X essp clearly defined and justified? 4. What is the sample size for each group or condition in the tables? 5. How were the 'true X sp' values determined?",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The scope of the tables is limited to BERT-large and its submodules, and potentially RoBERTa-large. The generalizability of the findings to other models is not clear.",
+    "grounding": "Tables 1-5",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address potential biases in the data or model, which could lead to unfair interpretations.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for the method to be used for malicious purposes, such as manipulating model behavior or deceiving users.",
+    "grounding": "Insufficient evidence",
+    "facet": "misuse"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address the broader societal impacts of the work, such as the potential for the method to be used in applications that have significant social consequences.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss potential failure modes or the limitations of the proposed method.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a detailed discussion of potential risks associated with the proposed method, such as the possibility of misinterpreting model behavior or the potential for biased interpretations.",
+    "grounding": "Conclusion",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Address potential misuse cases, such as the use of the method to manipulate or deceive users.",
+    "grounding": "Conclusion",
+    "facet": "misuse"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Discuss fairness considerations, including the potential for the method to amplify existing biases in the data or model.",
+    "grounding": "Conclusion",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section to discuss the societal implications of the work, including both positive and negative impacts.",
+    "grounding": "Conclusion",
+    "facet": "broader_impact"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide concrete mitigation strategies for the identified risks and potential harms.",
+    "grounding": "Conclusion",
+    "facet": "societal_impact"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel approach to constructing metrics for understanding pretrained language models, specifically focusing on a 'tree topological probe' (Intro). This is a clear contribution over existing methods.",
+    "grounding": "Intro",
+    "facet": "novelty"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly compare the proposed 'tree topological probe' with existing probing methods, such as those discussed in [1] and [3]. A direct comparison on a shared task or dataset is missing.",
+    "grounding": "Related Work",
+    "facet": "comparison"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct an experiment comparing the performance of the 'tree topological probe' against a standard probing method (e.g., a linear probe) on a benchmark task (e.g., part-of-speech tagging or dependency parsing). This would help to quantify the benefits of the proposed approach.",
+    "grounding": "Sec X (Experimental Setup)",
+    "facet": "experiment"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the limitations of the proposed method, such as its computational cost or sensitivity to hyperparameters. This is important for a complete evaluation.",
+    "grounding": "Discussion Section",
+    "facet": "limitations"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a section discussing the limitations of the 'tree topological probe', including its computational complexity and sensitivity to hyperparameter settings. Also, discuss the potential for the method to be applied to other model architectures.",
+    "grounding": "Discussion Section",
+    "facet": "future_work"
+  }
+]

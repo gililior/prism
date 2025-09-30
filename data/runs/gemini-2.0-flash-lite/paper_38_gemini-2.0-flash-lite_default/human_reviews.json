@@ -1,0 +1,63 @@
+[
+  {
+    "rid": "03ddnktwqI",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper is about Open-Vocabulary Named Entity Recognition (NER), which is the task of identifying and classifying named entities in text, where the set of entity types is not fixed in advance. The paper proposes a novel and scalable two-stage method called Context-Type SemAntiC Alignment and FusiOn (CACAO) to recognize entities in novel types by their textual names or descriptions. The method is formulated as a semantic matching task and pre-trained on 80M context-type pairs, making it easily accessible through natural supervision. The paper addresses the challenge of open-vocabulary named entity recognition and makes several contributions towards a solution, including proposing the CACAO method, evaluating it on multiple datasets, and releasing the pre-trained models and code for reproducibility. The paper also provides a thorough analysis of the proposed method and its limitations, as well as directions for future work.",
+      "reasons_to_accept": "1. The strengths of this paper include proposing a novel and scalable two-stage method for open-vocabulary named entity recognition , which is a challenging and interesting task in natural language processing. \n2. The paper provides a thorough analysis of the proposed method and its limitations, as well as directions for future work. \n3. The paper also evaluates the proposed method on multiple datasets and releases the pre-trained models and code for reproducibility.",
+      "reasons_to_reject": "1. The paper mainly focuses on the English language, and it is unclear how well the proposed method would generalize to other languages. \n2. The paper does not provide a detailed analysis of the computational complexity and efficiency of the proposed method, which could limit its practical applicability in some scenarios. \n3. The paper does not provide a detailed analysis of the impact of different hyperparameters on the performance of the proposed method, which could limit the understanding of the robustness of the method. \n4. It is better to compare with other LLM-based NER methods, which seems to be more suitable for zero-shot and open-vocabulary.",
+      "questions_for_the_authors": "Could you provide some examples of cases where the proposed method fails or makes errors, and how the method could be improved to handle such cases?",
+      "missing_references": "Li B, Yin W, Chen M. Ultra-fine entity typing with indirect supervision from natural language inference[J]. Transactions of the Association for Computational Linguistics, 2022, 10: 607-622.\nLi D, Hu B, Chen Q. Prompt-based Text Entailment for Low-Resource Named Entity Recognition[C]//Proceedings of the 29th International Conference on Computational Linguistics. 2022: 1896-1903.\nJiao Y, Li S, Xie Y, et al. Open-vocabulary argument role prediction for event extraction[J]. arXiv preprint arXiv:2211.01577, 2022.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "uUh2CxobHE",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper tackles a realistic open-vocabulary NER problem, i.e., recognizing novel types of entities given only their surface names/descriptions and annotation of base types. \nThe paper formulates OVNER as a semantic matching task and proposes a two-stage method. It first pretrains dual encoders on distantly-annotated context-type pairs for alignment based on contrastive learning, then it finetunes the cross-encoder on base type supervision.",
+      "reasons_to_accept": "The paper is easy to follow and well-motivated. \nAbundant experimental results verify the effectiveness of the approach.",
+      "reasons_to_reject": "The paper only compares with discriminative methods, it is expected to compare with generative methods or LLMs which might perform better in some cases.",
+      "questions_for_the_authors": "Question A: Continual learning NER requires sufficient annotated data for new type, while continual few-shot NER does not. Comparing OVNER with this paradigm makes the discussion more complete in the introduction (Line 064).\nQuestion B: It seems that the performance of novel types remains largely lower than that of base types. Discussion about future efforts to improve the performance and error analysis are expected.",
+      "ethical_concerns": "No",
+      "typos_grammar_style_and_presentation_improvements": "A: \u201cOur Proposed Method\u201d in Table 1 can be omitted."
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "CVJYRBJh8W",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This work proposes a more challenging task called Open Vocabulary Named Entity Recognition(OVNER) in response to a real-world need. The authors started with the motivation that the current NER approach does not work well to discover novel entity types. The goal of the newly proposed OVNER is to automatically recognize new types when given a description beside the name. For OVNER, the work also proposed a framework called CACAO and experimentally validated its effectiveness.",
+      "reasons_to_accept": "1. This work proposes a new Setting in an attempt to address an important challenge for NER in recent years, which is how to discover new entity types. Acceptance of this work may be useful for subsequent research in the NLP community. \n2. The work is relatively complete and somewhat sound. While proposing OVNER, the CACAO framework is proposed to address it. The design and results of the experiment can relatively support their claims.",
+      "reasons_to_reject": "1. The work does not bridge well to past related research work in the community. This work criticizes past related research directions. OVNER should also have certain limitations, such as the provision of descriptions being necessary. \n2. Does OVNER cover Domain-Adapted NER scenarios? Does it include scenarios with large domain differences?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  }
+]

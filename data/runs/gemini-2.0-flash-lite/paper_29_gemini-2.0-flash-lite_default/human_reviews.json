@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "PQsr3FbfSf",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper focuses on the cross-domain few-shot RE task from causal perspective. The authors propose a novel framework CausalGF based on structural causal model. The structural graph provides a theoretical explanation of feature selection and fusion for classification. Experimental results show that the proposed model outperforms baseline models on two benchmark datasets of this task.",
+      "reasons_to_accept": "This paper proposes a novel theoretical framework for classification feature selection and fusion, and experimental results demonstrate the effectiveness of the proposed method.",
+      "reasons_to_reject": "The motivation of graph topology selection is not well presented. See details in the first question in \u201cQuestion For The Authors\u201d.",
+      "questions_for_the_authors": "1. In Figure 1, the edge from C to X is blocked and the counterfactual S* and E* are connected to X. However, it\u2019s easy to observe another alternative, which blocks the edge from C to Y and connects S* and E* to Y. The resulting graph will be like S*, E*, L, X connected to Y and C connected to X. In the prompt encoding step, h_S and h_E will be separately weighted and contribute to the total causal effect, which is different to the proposed method. Here\u2019s my question: why are you choosing the graph described in the paper instead of the above alternative? Is concatenating h_S and h_E better than separating them? If yes, would you please explain the reason? \n2. Is this approach capable of migrating to regular cross-domain RE task? \n3. In Figure 2, training on source domain is using S* and E*, but they are not used in inference. I don\u2019t think S* and E* include label information, so would you please explain the reason or point out if I am missing some information?",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "LnxyqRQbk3",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "Previous work has mainly focused on transferring knowledge between domains through shared feature representations without analyzing the impact of each factor that may produce databases based on the characteristics of each domain. In this paper, the authors proposed a new framework CausalGF which is the first work analyzing data bias and the influence of various factors from a causal perspective in cross-domain few-shot RE tasks. The CausalGF outperforms previous SOTA methods in all scenarios.",
+      "reasons_to_accept": "1. The symbols are clear and the content is correct and comparatively novel.   2. It is the first work analyzing data bias and the influence of various factors from a causal perspective in cross-domain few-shot RE tasks.",
+      "reasons_to_reject": "1. Some content in the appendix needs to be adjusted to the main text to improve clarity and conciseness. For example, consider moving a brief description of the baseline from Appendix D to Section 3.1.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "5: Could easily reproduce the results."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "2: Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work."
+    }
+  },
+  {
+    "rid": "Tmzcec5ieK",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper focuses on the cross-domain few-shot Relation Extraction task. It proposes an unified structral causal model called CausalGF from the causal perspective. This model adaptively fills the data bias gap across diffrent domains, using intervention and counterfactual generation causal operation to achieve this purpose. Extensive experiments on different datasets and settings demonstrate the effectiveness of this approach.",
+      "reasons_to_accept": "(1) The causal perspective to mitigate the domain gap for cross-domain RE task is sound.\n(2) The method is elaborated through theoretical proof, which is interesting.\n(3) The method obtains significant improvements over multiple baseline models.",
+      "reasons_to_reject": "(1) Lack of necessary case study to demonstrate why this method works.\n(2) The reason why syntactic structure and entities are distinct cross-domain gaps is not clarified.\n(3) Detailed experiment settings should be provided such as hyperparameter and data preprocessing.",
+      "questions_for_the_authors": "Please refer to \"Reasons To Reject\".",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "3: Could reproduce the results with some difficulty. The settings of parameters are underspecified or subjectively determined; the training/evaluation data are not widely available."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

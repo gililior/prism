@@ -1,0 +1,428 @@
+[
+  {
+    "kind": "summary",
+    "text": "The paper introduces CARP, a prompting method for text classification. Experiments on various datasets demonstrate CARP's effectiveness, especially in low-resource settings, often outperforming baselines and achieving SOTA results on some benchmarks.",
+    "grounding": null,
+    "facet": "summary"
+  },
+  {
+    "kind": "strength",
+    "text": "CARP achieves new SOTA performances on four out of five datasets (SST-2, AGNews, R8, R52) (Sec 5.2).",
+    "grounding": "Sec 5.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "strength",
+    "text": "CARP demonstrates strong generalization ability in low-resource settings, outperforming supervised models with limited training data (Sec 5.3).",
+    "grounding": "Sec 5.3",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper overclaims the generalizability of CARP without providing sufficient evidence for all datasets or settings. The performance on MR is comparable to SOTA, not a clear improvement (Sec 5.2).",
+    "grounding": "Sec 5.2",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide a detailed ablation study to isolate the impact of individual components of CARP, making it difficult to assess the contribution of each part.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct ablation studies to isolate the impact of each component of CARP.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide more detailed analysis on the performance differences across different datasets, including error analysis.",
+    "grounding": "Insufficient evidence",
+    "facet": "claims_vs_evidence"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific limitations of CARP, beyond token limits and annotation difficulty, and how do they affect performance?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "questions",
+    "text": "How does CARP compare to other prompting methods beyond CoT and Vanilla?",
+    "grounding": null,
+    "facet": "questions"
+  },
+  {
+    "kind": "limitations",
+    "text": "The authors acknowledge the limitations of CARP, including the difficulty of annotating clues and the token limit issue of LLMs (Sec 7).",
+    "grounding": "Sec 7",
+    "facet": "limitations"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper introduces a novel framework, CARP, for text classification using LLMs, addressing limitations in reasoning and context length (Intro).",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly identifies the limitations of LLMs in text classification, specifically the lack of reasoning ability and limited context length, and positions CARP as a solution (Intro).",
+    "grounding": "Intro",
+    "facet": "positioning"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a detailed comparison with existing prompting techniques for LLMs in text classification. The delta compared to existing methods is not clearly articulated.",
+    "grounding": "Related Work",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide sufficient details on the fine-tuning process of the model used for demonstration search, making it difficult to assess the impact of this component.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Conduct a comparative analysis with other prompting methods (e.g., chain-of-thought prompting) on the same datasets to demonstrate the effectiveness of CARP.",
+    "grounding": "Related Work, Sec 4.1",
+    "facet": "comparative evidence"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide ablation studies to evaluate the contribution of each component of CARP (clue extraction, reasoning, and demonstration search).",
+    "grounding": "Sec 4.2",
+    "facet": "originality"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion on the computational cost of CARP compared to other methods.",
+    "grounding": "Sec 4.3",
+    "facet": "positioning"
+  },
+  {
+    "kind": "questions",
+    "text": "How does CARP handle ambiguous or nuanced language in text classification?",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "questions",
+    "text": "What are the specific criteria used to select the 'k' nearest neighbors for demonstration search?",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "questions",
+    "text": "How does the performance of CARP vary with different LLMs?",
+    "grounding": "Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "limitations",
+    "text": "The performance of CARP is likely dependent on the quality of the LLM and the fine-tuned model used for demonstration search.",
+    "grounding": "Abstract, Intro",
+    "facet": "originality"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": null,
+    "facet": "ethics"
+  },
+  {
+    "kind": "summary",
+    "text": "The paper presents experimental results on text classification using LLMs. The evaluation includes full and low-resource setups across five datasets. The paper reports mean results over multiple runs but lacks details on seeds and variance.",
+    "grounding": "Abstract, Sec 3.1, Table 1, Table 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper specifies the LLM used (text-davinci-003) and the number of shots (k=16) for few-shot experiments.",
+    "grounding": "Sec 3.1, Table 1",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not explicitly state the random seeds used for experiments. The variance across runs is reported, but the specific seed configurations are missing.",
+    "grounding": "Sec 3.1, Table 1, Table 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not provide details on the environment used for the experiments, such as the specific versions of libraries and the hardware used.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a link to the code repository (e.g., GitHub) with the code used for the experiments. Include a requirements.txt or a similar file to specify the necessary dependencies and their versions.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Specify the random seeds used for all experiments and report the standard deviation or confidence intervals along with the mean results.",
+    "grounding": "Sec 3.1, Table 1, Table 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Detail the hardware and software environment used for the experiments, including the specific versions of the libraries (e.g., PyTorch, Transformers) and the operating system.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the prompts used for the experiments available?",
+    "grounding": "Appendix H",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Is the code for the SimCSE retrieval method available?",
+    "grounding": "Table 2",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "question",
+    "text": "Are the datasets used in the experiments publicly available or can they be shared?",
+    "grounding": "Sec 3.1",
+    "facet": "data availability"
+  },
+  {
+    "kind": "limitation",
+    "text": "The paper does not mention any computational constraints.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "All sections",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "The paper needs significant improvements in reproducibility. The lack of seed reporting, environment details, and code availability are major concerns.",
+    "grounding": "All sections",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "summary",
+    "text": "The figures provide examples of prompts and performance visualizations. The clarity of axes and legends could be improved.",
+    "grounding": "Figures 1-4",
+    "facet": "figures"
+  },
+  {
+    "kind": "strength",
+    "text": "Figure 2 appears to show performance trends effectively.",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "Figures 3 and 4 lack clear axis labels and units, making it difficult to interpret the visualizations.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add clear labels to the axes in Figures 3 and 4, specifying what is being measured (e.g., accuracy, loss) and the units.",
+    "grounding": "Fig 3, Fig 4",
+    "facet": "figures"
+  },
+  {
+    "kind": "questions",
+    "text": "What metrics are used to evaluate performance in Figure 2?",
+    "grounding": "Fig 2",
+    "facet": "figures"
+  },
+  {
+    "kind": "limitations",
+    "text": "The visualizations are limited to the presentation of prompts and overall performance metrics.",
+    "grounding": "All figures",
+    "facet": "figures"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "figures"
+  },
+  {
+    "kind": "weakness",
+    "text": "No information on dataset licensing, consent, or privacy is provided.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include dataset licenses and consent information.",
+    "grounding": "Insufficient evidence",
+    "facet": "ethics_licensing"
+  },
+  {
+    "kind": "strength",
+    "text": "The paper clearly introduces the problem of LLMs underperforming in text classification and provides two main reasons for this.",
+    "grounding": "Abstract, Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "strength",
+    "text": "The CARP framework is well-defined, breaking down the reasoning process into three clear steps.",
+    "grounding": "Abstract, Introduction",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The term 'clues' is not consistently defined. The examples in Figure 1 provide a list of what constitutes a clue, but a formal definition is missing.",
+    "grounding": "Abstract, Figure 1",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section for notation. This makes it difficult to quickly understand the symbols and abbreviations used.",
+    "grounding": "Throughout the paper",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Provide a more precise definition of 'clues' in the methods section, including examples and non-examples.",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Create a notation table (or list) in the appendix to define all symbols and abbreviations used in the paper.",
+    "grounding": "Throughout the paper",
+    "facet": "organization"
+  },
+  {
+    "kind": "suggestion",
+    "text": "In the introduction, explicitly state the contributions of the paper.",
+    "grounding": "Introduction",
+    "facet": "organization"
+  },
+  {
+    "kind": "questions",
+    "text": "How does CARP handle ambiguous clues?",
+    "grounding": "Methods Section",
+    "facet": "clarity_presentation"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the specific fine-tuned model used for demonstration search?",
+    "grounding": "Abstract, Introduction",
+    "facet": "methods"
+  },
+  {
+    "kind": "questions",
+    "text": "What is the impact of the number of shots (k) on the performance of CARP?",
+    "grounding": "Figure 1",
+    "facet": "experiments"
+  },
+  {
+    "kind": "limitations",
+    "text": "The paper's description of the fine-tuned model and demonstration search is not detailed enough to reproduce the experiments.",
+    "grounding": "Abstract, Introduction",
+    "facet": "reproducibility"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "No ethical concerns identified.",
+    "grounding": "N/A",
+    "facet": "ethics"
+  },
+  {
+    "kind": "rating",
+    "text": "6",
+    "grounding": "Overall",
+    "facet": "overall"
+  },
+  {
+    "kind": "summary",
+    "text": "The tables present experimental results of the proposed method across different datasets and settings. The tables compare the performance of the proposed method with baseline methods. The tables lack some statistical information.",
+    "grounding": "Tables 1, 2, 3, 4, 5, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "strength",
+    "text": "Table 1 reports mean results over 5 runs, which provides a basic measure of result consistency.",
+    "grounding": "Table 1",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "Tables lack standard deviations, confidence intervals, or p-values to assess the statistical significance of the results. Some tables lack clear headers and descriptions.",
+    "grounding": "Tables 1, 2, 3, 4, 5, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include standard deviations or confidence intervals to show result variance. Add p-values to indicate the statistical significance of the performance differences between methods. Ensure all table headers are clear and descriptive.",
+    "grounding": "Tables 1, 2, 3, 4, 5, 7",
+    "facet": "tables"
+  },
+  {
+    "kind": "questions",
+    "text": "1. What statistical tests were used to determine the significance of the results? 2. What is the standard deviation for each reported mean result? 3. Are the datasets used in the tables representative of the problem domain?",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "limitations",
+    "text": "The conclusions drawn from the tables are limited to the specific datasets and experimental setups used in the study.",
+    "grounding": "All tables",
+    "facet": "tables"
+  },
+  {
+    "kind": "ethics_flag",
+    "text": "no",
+    "grounding": "N/A",
+    "facet": "tables"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not discuss the potential for misuse of the model, such as generating biased or misleading content.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper does not address fairness considerations, such as how the model's performance might vary across different demographic groups or sensitive topics.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "weakness",
+    "text": "The paper lacks a dedicated section on broader impacts, including the potential societal consequences of the model.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a section discussing potential biases in the LLMs and datasets used, and how these biases might affect the model's performance and fairness.",
+    "grounding": "Insufficient evidence",
+    "facet": "fairness"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Include a discussion of potential misuse cases, such as generating biased or misleading content, and mitigation strategies.",
+    "grounding": "Insufficient evidence",
+    "facet": "risks"
+  },
+  {
+    "kind": "suggestion",
+    "text": "Add a Broader Impact section to discuss the potential societal consequences of the model and its applications.",
+    "grounding": "Insufficient evidence",
+    "facet": "broader_impacts"
+  }
+]

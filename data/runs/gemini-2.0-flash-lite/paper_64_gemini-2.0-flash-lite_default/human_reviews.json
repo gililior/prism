@@ -1,0 +1,65 @@
+[
+  {
+    "rid": "7W3TjPW5w5",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "The paper presents a new method called CQE for the extraction of mentions of quantity, unit, and concept in textual documents. CQE consists of a set of 61 syntax-based rules and a BERT-based classifier for unit disambiguation. The classifier is trained with examples automatically generated using ChatGPT. \nThe paper also presents NewsQuant, which is a new corpus manually annotated with quantity, unit, and concept mentions where quantity and units are normalized. \nCQE is compared to three other quantity extractors and GPT3. The experiments show that CQE outperforms them on NewsQuant.",
+      "reasons_to_accept": "The extraction of quantities, units, and the entity measured is a difficult problem that has many applications in science, technics, and the general domain. There are relatively few methods and corpora available. This paper describes a new work for the English language that will be made available on GitHub.  The method is compared to four state-of-the-art methods that it outperforms. The paper is globally clear and convincing. The experiments are detailed. The result analysis section and the A6 appendix provide relevant hypotheses and examples.",
+      "reasons_to_reject": "The notion of \u2018concept\u2019 is insufficiently described and formalized. Concepts are defined as \u201ceither properties being measured or entities that the value is referring to or is acting upon\u201d, which is vague. The CQE method is designed \u201cto capture as many concepts as possible.\u201d This has consequences for the manual annotation of the NewsQuant corpus where the inter-annotator agreement is low, and for the comparison of CQE and GPT3 (Table 5), which is based on a questionable reference.\nMore generally, a more formal definition would make the evaluation of the method and, furthermore, its comparison with other methods more robust. It would also broaden the scope of application. As a source of inspiration, the authors could look at SSN and SOSA that distinguish between the measured property and the entity (or part of entity) observed and spatiotemporal conditions.\nThe same remark applies to \u2018change\u2019. IllQ achieves lower performances for Value+change extraction. How much could it be due to a different understanding of what \u2018change\u2019 is? The definition of IllQ for the \u2018change\u2019 entity would be needed here.\nIt is standard to provide the annotators with written guidelines, along with the corpus distribution. It would improve the annotation quality and reusability.\nThe reader understands that the outputs of the methods are not directly comparable, and some post-processing is applied to unify them that add information to the direct output. This is not a correct procedure, whatever is the post-processing is. The comparison should be done on the minimal common subset instead of \u201cimproving\u201d the existing methods to mimic the CQE results.\nMore precisely, the comparison of units extracted by IllQ and Q3 and by CQE as described in section 4.4 Implementation seems unfair and must be clarified. The reader understands that the outputs of the three methods are not directly comparable, and some post-processing is applied to normalize and unify them. The paper must provide the performance score of the extraction of units of the three methods without alteration for a fair comparison. The post-processing needed for comparing the normalized extracted units must be detailed and show that no bias is introduced. The mention \u201cUnit normalization does not work for the majority of the times\u201d for IllQ and GPT3 should be replaced by \u201cUnit normalization not available\u201d to be consistent with Table 1 (line 10).\nAnother postprocessing is added to R-Txt model (Line 478-479) that adds extra annotations for all types of quantities. This makes R-Txt and CQE methods not comparable. The evaluation should have been done for the only quantities that R-Txt can predict.",
+      "questions_for_the_authors": "A.\tPlease define \u201chelper tokens\u201d.\nB.\tCould you explain why the method computes the similarity between subclauses by comparing sequences instead of parsed trees? ( section 3.2.3) C.\tLine 366-367: \u201cthe conversion between metric units is not supported\u201d. Is the conversion of other units, such as volumes (ml, l) supported?\nD.\tWhy has Grobid-quantities method cited in the Related Work section (line 87) not been compared?\nE.\tAre units expressed by Greek letters handled by CQE?",
+      "typos_grammar_style_and_presentation_improvements": "About the formalization of units and linked concepts, these three papers could be useful to look at.\nRijgersberg, H., Van Assem, M., & Top, J. (2013). Ontology of units of measure and related concepts. Semantic Web, 4(1), 3-13. \nJanowicz, K., Haller, A., Cox, S. J., Le Phuoc, D., & Lefran\u00e7ois, M. (2019). SOSA: A lightweight ontology for sensors, observations, samples, and actuators. Journal of Web Semantics, 56, 1-10.\nCompton, M., Barnaghi, P., Bermudez, L., Garcia-Castro, R., Corcho, O., Cox, S., ... & Taylor, K. (2012). The SSN ontology of the W3C semantic sensor network incubator group. Journal of Web Semantics, 17, 25-32.\nAbout the extraction of units, measures, and entities, the reference [Berrahou et al., 2017] may interesting to look at.\nBerrahou, S. L., Buche, P., Dibie, J., & Roche, M. (2017). Xart: Discovery of correlated arguments of n-ary relations in text. Expert Systems with Applications, 73, 115-124.",
+      "ethical_concerns": "No",
+      "justification_for_ethical_concerns": "NA"
+    },
+    "scores": {
+      "soundness": "3: Good: This study provides sufficient support for its major claims/arguments, some minor points may need extra support or details.",
+      "excitement": "3: Ambivalent: It has merits (e.g., it reports state-of-the-art results, the idea is nice), but there are key weaknesses (e.g., it describes incremental work), and it can significantly benefit from another round of revision. However, I won't object to accepting it if my co-reviewers champion it.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  },
+  {
+    "rid": "YT60pDkdPR",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper describes an interesting solution for a seemly simple problem with a dedicated approach to extract quantities, units, modifiers, and concepts from textual sources.",
+      "reasons_to_accept": "This work is of a refreshing return to ingenious solutions to problems seemly simple, but that can elude state of the art solutions. The paper is well written and easy to follow. The developed work is sound and the originality resides in narrowing the application to a single problem and solving it with a high precision and recall compared to baselines.",
+      "reasons_to_reject": "The options and decisions taken could have been more explored and analyzed in greater detail.",
+      "questions_for_the_authors": "No specific question to ask.",
+      "missing_references": "As far as I could tell, the presented references are enough.",
+      "typos_grammar_style_and_presentation_improvements": "As far as I could tell, there were no typos or grammar issues.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "4: Strong: This study provides sufficient support for all of its claims/arguments. ",
+      "excitement": "4: Strong: This paper deepens the understanding of some phenomenon or lowers the barriers to an existing research direction.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "3: Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty."
+    }
+  },
+  {
+    "rid": "H3WlCwjnpv",
+    "reviewer": null,
+    "report": {
+      "paper_topic_and_main_contributions": "This paper presents a novel framework for quantity extraction from unstructured text, utilising dependency parsing and a dictionary of units. The key contributions include a novel methodology for detecting concepts associated with identified quantities and introducing a new benchmark dataset for evaluating quantity extraction methods.",
+      "reasons_to_accept": "The paper lays a strong mathematical foundation for the proposed methodology, ensuring its reproducibility. The experimental design and results are well-documented, enabling a clear understanding to the reader. Moreover, the introduction of a new benchmark dataset is a significant contribution to the field.",
+      "reasons_to_reject": "While the paper presents a sound framework, including a visual representation of the proposed methodology would have been beneficial.",
+      "ethical_concerns": "No"
+    },
+    "scores": {
+      "soundness": "5: Excellent: This study is one of the most thorough I have seen, given its type.",
+      "excitement": "5: Transformative: This paper is likely to change its subfield or computational linguistics broadly. It should be considered for a best paper award. This paper changes the current understanding of some phenomenon, shows a widely held practice to be erroneous in someway, enables a promising direction of research for a (broad or narrow) topic, or creates an exciting new technique.",
+      "reproducibility": "4: Could mostly reproduce the results, but there may be some variation because of sample variance or minor variations in their interpretation of the protocol or method."
+    },
+    "meta": {
+      "license": "CC BY 4.0",
+      "reviewer_confidence": "4: Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings."
+    }
+  }
+]

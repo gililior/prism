@@ -1,0 +1,54 @@
+{
+  "summary": "This paper introduces LLM4CS, a novel framework leveraging Large Language Models for conversational search, demonstrating improved performance in conveying user intent compared to existing methods. The paper addresses some weaknesses raised in the initial review, including clarifying prompting strategies and aggregation methods, and will add a Broader Impact section. However, the paper still needs to improve figure clarity.",
+  "strengths": [
+    {
+      "kind": "strength",
+      "text": "LLM4CS demonstrates improved performance in conveying user search intent, as shown in human evaluations (Figure 3).",
+      "grounding": "(Figure 3)",
+      "facet": "performance"
+    },
+    {
+      "kind": "strength",
+      "text": "The paper clearly positions LLM4CS within the field of conversational search, differentiating it from existing methods.",
+      "grounding": "(Intro/Related Work)",
+      "facet": "novelty"
+    },
+    {
+      "kind": "strength",
+      "text": "The framework's design, generating both rewrites and hypothetical responses, is a novel approach.",
+      "grounding": "(Intro)",
+      "facet": "novelty"
+    }
+  ],
+  "weaknesses": [
+    {
+      "kind": "weakness",
+      "text": "The paper will add a Broader Impact section to address potential risks associated with the use of LLMs, such as the generation of biased or misleading information, potential misuse cases, or fairness considerations.",
+      "grounding": "Authors will add a \"Broader Impact\" section to the conclusion.",
+      "facet": "ethics"
+    },
+    {
+      "kind": "weakness",
+      "text": "Figure 3 and 4 lack clear axis labels, units, and component definitions, which could hinder understanding.",
+      "grounding": "(Figures 3, 4)",
+      "facet": "presentation"
+    },
+    {
+      "kind": "weakness",
+      "text": "The paper needs to clarify the delta between LLM4CS and existing methods, especially in terms of the specific prompting strategies and aggregation methods used.",
+      "grounding": "Authors will revise the introduction to explicitly state the key differences.",
+      "facet": "methodology"
+    }
+  ],
+  "suggestions": [
+    {
+      "kind": "suggestion",
+      "text": "Add axis labels and specify the categories on the x-axis for Figure 3. Clearly label the different parts of the prompt in Figure 4.",
+      "grounding": "(Figures 3, 4)",
+      "facet": "presentation"
+    }
+  ],
+  "scores": null,
+  "overall": null,
+  "confidence": null
+}
