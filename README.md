@@ -1,4 +1,4 @@
-# Reviewer Agent MVP
+# PRISM
 
 A modular, facet-routed peer review agent that produces structured reviews with dynamic expert routing, citation-based related work analysis, and rebuttal simulation.
 
